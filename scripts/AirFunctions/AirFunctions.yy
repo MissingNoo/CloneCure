@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"AirFunctions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"AirFunctions",
+  "parent":{
+    "name":"AirUI",
+    "path":"folders/AirUI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
