@@ -5,3 +5,6 @@ s = method(self, wid.run_step);
 es = method(self, wid.run_end_step);
 d = method(self, wid.run_draw);
 c();
+hit_frame = 0;
+hits = wid.hits[wid.level];
+last_frame = frame + wid.duration;

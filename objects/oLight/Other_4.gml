@@ -1,0 +1,1 @@
+light = new BulbLight(oLightController.renderer, sLight, 0, x, y);

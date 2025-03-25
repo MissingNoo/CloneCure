@@ -1,3 +1,7 @@
+#macro GameConfig global.game_config
+GameConfig = {
+    sound_volume : 1
+}
 global.minutes = 0;
 global.seconds = 0;
 
@@ -24,11 +28,14 @@ function weapon(_name) constructor {
     perk = false;
     character_name = undefined;
     delay = 0;
+    mindmg = [];
+    maxdmg = [];
     run_create = function(){};
     run_begin_step = function(){};
     run_step = function(){};
     run_end_step = function(){};
     run_draw = function(){
+        //draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, alpha);
         draw_self();
     };
     Weapons[$ name] = self;
@@ -88,6 +95,11 @@ function weapon(_name) constructor {
         delay = amount;
         return self;
     }
+    static set_damage = function(_min, _max) {
+        mindmg = _min;
+        maxdmg = _max;
+        return self;
+    }
 }
 
 var w = new weapon("Ame_Pistol");
@@ -112,10 +124,11 @@ w.set_sprite(sAmeliaWeapon, sAmeliaWeaponProjectile)
         inst.image_angle = direction;
     }
 })
-.set_hits([1, 2, 2, 2, 3, 3, 3])
+.set_hits([0, 1, 2, 2, 2, 3, 3, 3])
 .set_duration(120)
 .set_hit_cooldown(20)
-.set_cooldown([80, 80, 80, 80, 60, 60, 60], 50)
+.set_cooldown([0, 80, 80, 80, 80, 60, 60, 60], 50)
 .set_shoots([0, 3, 5, 5, 5, 5, 5, 5])
 .set_perk(true, "Amelia")
-.set_delay(6);
+.set_delay(6)
+.set_damage([0, 8, 8, 10, 10, 10, 12, 12], [0, 12, 12, 14, 14, 14, 16, 16]);

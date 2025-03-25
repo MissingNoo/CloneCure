@@ -1,3 +1,8 @@
+if (keyboard_check_pressed(vk_f2)) {
+    instance_create_depth(x + 30, y, depth + 1, oEnemy, {
+        name : "Urufugang"
+    });
+}
 if (keyboard_check_pressed(vk_f1)) {
 	debug_rooms();
 }
@@ -21,11 +26,18 @@ array_foreach(Player_Weapons, function(e, i) {
     if (e == undefined) {
     	return;
     }
-    e.cooldown = clamp(e.cooldown - 1, 0, infinity);
-    if (e.cooldown == 0) {
+    if (e.cooldown <= frame) {
     	instance_create_depth(oPlayer.x, oPlayer.y - (sprite_height / 2), oPlayer.depth + 1, oWeapon, {
-            wid : Weapons[$ e.name]
+            wid : e
         });
-        e.cooldown = e.base_cooldown[e.level];
+        e.cooldown = frame + e.base_cooldown[e.level];
     }
 });
+
+//occluder.x = x;
+//occluder.y = y;
+light.x = x;
+light.y = y - sprite_height / 2;
+//light1.x = x;
+//light1.y = y - sprite_height / 2;
+light.angle = point_direction(x, y, mouse_x, mouse_y);

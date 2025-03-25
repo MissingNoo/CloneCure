@@ -1,6 +1,8 @@
 x = floor(oPlayer.x);
 y = floor(oPlayer.y);
-
+if (instance_exists(oLightController)) {
+	oLightController.renderer.SetCamera(view_camera[0]);
+}
 ////var xTo, yTo;
 //if (distance_to_object(oPlayer) > DebugManager.a) {
 //    move_towards_point(oPlayer.x, oPlayer.y, oPlayer.spd);
