@@ -1,3 +1,4 @@
+//feather ignore all
 editor_area = [0, 0, 0, 0];
 editor_area2 = [0, 0, 0, 0];
 original_depth = depth;

@@ -4,7 +4,7 @@
   "name":"TGM_Credits",
   "parent":{
     "name":"Others",
-    "path":"folders/KazanGames/TurboGML/Others.yy",
+    "path":"folders/Libs/TurboGML/Others.yy",
   },
   "resourceType":"GMNotes",
   "resourceVersion":"2.0",

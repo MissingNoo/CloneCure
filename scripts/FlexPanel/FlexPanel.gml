@@ -1,7 +1,9 @@
+//feather ignore all
 global.edit_mode = false;
 global.edit_node = undefined;
 global.edit_node_owner = undefined;
 function window(struct, _generate = true) constructor {
+    visible = true;
     ostruct = struct;
 	generate = _generate;
 	lastdepth = 0;
@@ -12,8 +14,13 @@ function window(struct, _generate = true) constructor {
 	startingdepth = 0;
 	
 	recalculate();
+    
+    static set_visible = function(boolean) {
+        visible = boolean;
+    }
 		
 	static foreach = function(_function, node = undefined) {
+        if (!visible) { exit; }
 		node ??= root;
 		var pos = flexpanel_node_layout_get_position(node, false);
 		var _name = flexpanel_node_get_name(node);

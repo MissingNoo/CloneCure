@@ -1,3 +1,4 @@
+//feather ignore all
 draw_set_color(c_white);
 if (draw_back)
 {

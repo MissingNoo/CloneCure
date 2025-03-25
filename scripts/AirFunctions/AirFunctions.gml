@@ -225,11 +225,15 @@ function textbox() constructor {
         return self;
     }
 }
-
+global.reset_button = false;
 function button(_text) constructor {
 	owner = noone;
     text = _text;
+    original_area = [0, 0, 0, 0];
     area = [0, 0, 0, 0];
+    selected_area = [0, 0, 0, 0];
+    on_area = false;
+    keyboard_selected = false;
     enabled = true;
     gui = true;
 	sprite_back = sButton;
@@ -250,8 +254,15 @@ function button(_text) constructor {
         return self;
     }
     
+    static set_selected_area = function(x, y, xx, yy) {
+        selected_area = [x, y, xx, yy];
+        return self;
+    }
+    
     static position = function(x, y, xx, yy) {
         area = [x, y, xx, yy];
+        selected_area = area;
+        original_area = area;
         return self;
     }
     
@@ -277,16 +288,40 @@ function button(_text) constructor {
         //draw_rectangle_area(area, true);
         var _y = area[1];
         var held = false; 
+        if (enabled and ((!gui and mouse_in_area(area)) or (gui and mouse_in_area_gui(area)))) {
+            global.reset_button = true;
+            on_area = true;
+        } else {
+        	on_area = false;
+        }
+        if (keyboard_selected) {
+            if (!global.reset_button) {
+            	on_area = true;
+            } else {
+            	global.reset_button = false;
+                keyboard_selected = false;
+            }
+        }
+        if (on_area) {
+        	area = selected_area;
+            held = true;
+        } else {
+        	area = original_area;
+        }
         if (enabled and ((!gui and mouse_in_area(area)) or (gui and mouse_in_area_gui(area))) and device_mouse_check_button(0, mb_left)) {
             held = true;
             _y += 3;
         }
 		if (sprite_back != undefined) {
 		    draw_sprite_stretched(sprite_back, held, area[0], area[1], area[2] - area[0], area[3] - area[1]);
-		}        
+		}
+        var color = "c_white";
+        if (held) {
+        	color = "c_black";
+        }
         draw_sprite_stretched(sprite, held, area[0], area[1], area[2] - area[0], area[3] - area[1]);
         var alpha = enabled ? 1 : 0.5;
-        scribble($"[Fnt][alpha,{alpha}][c_black][fa_center]{text}").scale_to_box(area[2] - area[0] - string_width("X") - 2, area[3] - area[1] - 3, true).draw(area[0] + ((area[2] - area[0]) / 2), _y - 2);
+        scribble($"[Fnt][alpha,{alpha}][{color}][fa_center]{text}").scale_to_box(area[2] - area[0] - string_width("X") - 2, area[3] - area[1] - 3, true).draw(area[0] + ((area[2] - area[0]) / 2), _y - 2);
         return self;
     }
 }

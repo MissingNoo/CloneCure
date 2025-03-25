@@ -1,5 +1,5 @@
 global.game_uis = {};
-global.game_uis.stage = {
+global.game_uis.stage = { 
   "data":{
     "image":"game1"
   },
@@ -248,4 +248,129 @@ global.game_uis.stage = {
       "positionType":"absolute"
     }
   ]
+}
+
+global.game_uis.pause = {
+  "data":{
+    "image":"pauseda"
+  },
+  "nodes":[
+    {
+      "data":{
+        "image":"sMenu"
+      },
+      "gapColumn":1.0,
+      "padding":0.0,
+      "nodes":[
+        {
+          "maxHeight":46.0,
+          "marginTop":26.0,
+          "marginBottom":18.0,
+          "margin":0.0,
+          "name":"paused",
+          "marginLeft":54.0,
+          "data":{
+            "image":"sHudPaused"
+          },
+          "maxWidth":144.0,
+          "flex":0.18000000715255737,
+          "padding":10.0,
+          "height":60.0
+        },
+        {
+          "data":{
+          },
+          "flex":1.0,
+          "padding":8.0,
+          "nodes":[
+            {
+              "data":{
+                "image":"sHudButton"
+              },
+              "maxHeight":43.0,
+              "minWidth":140.0,
+              "flex":1.0,
+              "marginTop":6.0,
+              "marginBottom":17.0,
+              "width":60.0,
+              "name":"button_character",
+              "height":57.0
+            },
+            {
+              "data":{
+              },
+              "maxHeight":43.0,
+              "minWidth":140.0,
+              "flex":1.0,
+              "marginBottom":17.0,
+              "width":60.0,
+              "name":"button_stamps",
+              "height":60.0
+            },
+            {
+              "data":{
+              },
+              "maxHeight":43.0,
+              "minWidth":140.0,
+              "flex":1.0,
+              "marginBottom":17.0,
+              "width":60.0,
+              "name":"button_collabs",
+              "height":60.0
+            },
+            {
+              "data":{
+              },
+              "maxHeight":43.0,
+              "minWidth":140.0,
+              "flex":1.0,
+              "marginBottom":17.0,
+              "width":60.0,
+              "name":"button_resume",
+              "height":60.0
+            },
+            {
+              "data":{
+              },
+              "maxHeight":43.0,
+              "minWidth":140.0,
+              "flex":1.0,
+              "marginBottom":17.0,
+              "border":0.0,
+              "width":60.0,
+              "name":"button_settings",
+              "height":60.0
+            },
+            {
+              "data":{
+              },
+              "maxHeight":43.0,
+              "minWidth":140.0,
+              "flex":1.0,
+              "marginBottom":35.0,
+              "margin":0.0,
+              "width":60.0,
+              "name":"button_quit",
+              "height":41.0
+            }
+          ],
+          "alignSelf":"center",
+          "name":"panel_49436",
+          "height":60.0,
+          "alignItems":"center"
+        }
+      ],
+      "alignSelf":"center",
+      "width":257.0,
+      "name":"panel_base",
+      "height":490.0,
+      "left":0.0,
+      "top":140.0
+    }
+  ],
+  "width":1280.0,
+  "name":"base",
+  "height":720.0,
+  "left":275.0,
+  "top":50.0
 }

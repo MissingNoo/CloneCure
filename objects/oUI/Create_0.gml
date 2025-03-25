@@ -1,3 +1,4 @@
+//feather ignore all
 display_set_gui_size(1920, 1080);
 global.filename = "test.ui";
 depth = -2000;
