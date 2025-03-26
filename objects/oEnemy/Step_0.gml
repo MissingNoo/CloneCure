@@ -1,6 +1,7 @@
-if (frame > inv_frame) {
-	was_hit = false;
-}
 if (hp <= 0) {
-	instance_destroy();
+    image_alpha -= 0.05;
+    x -= image_xscale;
+    if (image_alpha <= 0) {
+    	instance_destroy();
+    }
 }

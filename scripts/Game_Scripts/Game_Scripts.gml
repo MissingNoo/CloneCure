@@ -6,6 +6,8 @@ global.minutes = 0;
 global.seconds = 0;
 
 GameData ??= {};
+#macro Spawn_List GameData.spawn_list
+Spawn_List = [];
 #macro GameData global.gamedata
 GameData.selected_character = "noone";
 #macro Weapons global.gamedata.weapons

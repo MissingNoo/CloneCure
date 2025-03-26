@@ -1,5 +1,6 @@
 e = Enemies[$ name];
 hp = e.hp;
+atk = e.atk;
 sprite_index = e.sprite;
 speed = e.spd;
 direction = point_direction(x, y, oPlayer.x, oPlayer.y);
@@ -8,3 +9,4 @@ image_yscale = e.scale;
 ds_queue_enqueue(oGame.dir_queue, self.id);
 was_hit = false;
 inv_frame = 0;
+attack_frame = 0;

@@ -5,3 +5,4 @@ is_paused = false;
 depth = oGameUI.depth + 1;
 dir_queue = ds_queue_create();
 spawn_frame = 0;
+last_second = "";

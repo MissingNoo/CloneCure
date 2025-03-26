@@ -17,9 +17,18 @@ function Enemy(_name) constructor {
 
 var e = new Enemy("Urufugang");
 e.sprite = sUrufu;
-e.hp = 16;
+e.hp = 8;
 e.spd = .35;
 e.atk = 2;
 e.experience = 6;
 e.weight = 1;
 e.scale = 0.75;
+
+e = new Enemy("Theo");
+e.sprite = sTheo;
+e.hp = 20;
+e.spd = .35;
+e.atk = 2;
+e.experience = 6;
+e.weight = 3;
+e.scale = 1;

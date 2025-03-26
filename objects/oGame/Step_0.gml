@@ -1,10 +1,16 @@
+if (keyboard_check_pressed(vk_f1)) {
+	debug_rooms();
+}
+
 if (keyboard_check_pressed(vk_escape)) {
 	if (!instance_exists(oPauseUI)) {
         surf = surface_recreate(surf, surface_get_width(application_surface), surface_get_height(application_surface));
         surface_copy(surf, 0, 0, application_surface);
         instance_deactivate_all(true);
-        instance_activate_object(input_controller_object);
-        instance_activate_object(oGameUI);
+        var dont_deactivate = [input_controller_object, oGameUI];
+        array_foreach(dont_deactivate, function(e, i) {
+           instance_activate_object(e);
+        });
         is_paused = true;
     	instance_create_depth(0, 0, -1100, oPauseUI);
     } else {
@@ -38,15 +44,19 @@ if (spawn_frame < frame) {
             break;
     }
     spawn_frame = frame + 120;
-    instance_create_layer(_x, _y, "Instances", oEnemy, {
-        name : "Urufugang"
-    });
+    if (array_length(Spawn_List) > 0) {
+    	instance_create_layer(_x, _y, "Instances", oEnemy, {
+            name : Spawn_List[irandom(array_length(Spawn_List) - 1)]
+        });
+    }
+    
 }
 
 if (ds_queue_size(dir_queue) > 0 and !is_paused) {
 	var e = ds_queue_dequeue(dir_queue);
     if (instance_exists(e)) {
         with (e) {
+            if (hp <= 0) { exit; }
         	direction = point_direction(x, y, oPlayer.x, oPlayer.y);
             if (x < oPlayer.x) {
             	image_xscale = abs(image_xscale);

@@ -1,11 +1,3 @@
-if (keyboard_check_pressed(vk_f2)) {
-    instance_create_depth(x + 30, y, depth + 1, oEnemy, {
-        name : "Urufugang"
-    });
-}
-if (keyboard_check_pressed(vk_f1)) {
-	debug_rooms();
-}
 var left_right = - input_check("left") + input_check("right");
 var up_down = - input_check("up") + input_check("down");
 var moving = abs(left_right) + abs(up_down);
