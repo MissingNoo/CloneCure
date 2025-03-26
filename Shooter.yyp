@@ -903,6 +903,7 @@
     {"id":{"name":"sCropStrawberry","path":"sprites/sCropStrawberry/sCropStrawberry.yy",},},
     {"id":{"name":"sCropTomato","path":"sprites/sCropTomato/sCropTomato.yy",},},
     {"id":{"name":"sCropWheat","path":"sprites/sCropWheat/sCropWheat.yy",},},
+    {"id":{"name":"sCursor","path":"sprites/sCursor/sCursor.yy",},},
     {"id":{"name":"sCuttingBoard","path":"sprites/sCuttingBoard/sCuttingBoard.yy",},},
     {"id":{"name":"sCuttingBoardThumb","path":"sprites/sCuttingBoardThumb/sCuttingBoardThumb.yy",},},
     {"id":{"name":"sDadRod","path":"sprites/sDadRod/sDadRod.yy",},},

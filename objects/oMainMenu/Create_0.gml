@@ -1,3 +1,5 @@
+cursor_sprite = sCursor;
+window_set_cursor(cr_none);
 GameData.font = font_add_sprite_ext(sDmgFont, "0123456789KO!", true, 1);
 scribble_font_bake_outline_4dir("sDmgFont", "fDmg", c_black, true);
 //oo = 0;
