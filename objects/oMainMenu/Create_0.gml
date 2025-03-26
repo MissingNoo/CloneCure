@@ -23,7 +23,7 @@ buttons.button_quit.set_function(function() {
 });
 
 buttons.button_play.set_function(function() {
-   room_goto(Room1);
+   room_goto(rStage1);
 });
 
 bars = [];
