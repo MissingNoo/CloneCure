@@ -2,6 +2,7 @@ if (other.inv_frame > frame or hit_frame > frame or image_alpha == 0 or other.im
 	exit;
 }
 hits--;
+on_hit();
 hit_frame = frame + wid.hit_cooldown;
 other.inv_frame = frame + 15;
 var dmg = irandom_range(wid.mindmg[wid.level], wid.maxdmg[wid.level]);

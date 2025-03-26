@@ -20,7 +20,8 @@ array_foreach(Player_Weapons, function(e, i) {
     }
     if (e.cooldown <= frame) {
     	instance_create_depth(oPlayer.x, oPlayer.y - (sprite_height / 2), oPlayer.depth + 1, oWeapon, {
-            wid : e
+            wid : e,
+            can_spawn_other : true
         });
         e.cooldown = frame + e.base_cooldown[e.level];
     }

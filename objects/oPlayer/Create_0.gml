@@ -7,5 +7,8 @@ shield = 0;
 max_shield = 0;
 //show_debug_overlay(true);
 Player_Weapons[0] = variable_clone(Weapons[$ char.main_weapon]);
+Player_Weapons[0].level = 7;
+Player_Weapons[1] = variable_clone(Weapons[$ "BL_Book"]);
+Player_Weapons[1].level = 7;
 depth = depth - 10;
 inv_frame = 0;

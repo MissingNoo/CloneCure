@@ -16,7 +16,7 @@ ui.foreach(function(name, pos, data) {
             var wp = Player_Weapons[real(string_digits(name))];
             if (wp != undefined) {
             	draw_sprite_ext(wp.sprite, wp.level == wp.max_level ? 1 : 0, _x + (_w / 2 ), _y + ((sprite_get_width(wp.sprite) * 2) / 2), 2, 2, 0, c_white, 1);
-            	draw_sprite_ext(sUiLevelHeaderPink, 0, _x, _y + _h, 2, 2, 0, c_white, 1);
+            	draw_sprite_ext(wp.perk ? sUiLevelHeaderPink: sUiLevelHeaderWhite, 0, _x, _y + _h, 2, 2, 0, c_white, 1);
             	draw_sprite_ext(wp.perk ? sUiDigitPink : sUiDigitWhite, wp.level, _x, _y + _h, 2, 2, 0, c_white, 1);
             } 
             break;
