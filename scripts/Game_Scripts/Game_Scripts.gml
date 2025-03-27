@@ -28,6 +28,14 @@ enum weapon_enchantments {
 }
 function weapon(_name) constructor {
     name = _name;
+    run_create = function(){};
+    run_begin_step = function(){};
+    run_step = function(){};
+    run_end_step = function(){};
+    run_on_hit = function(){};
+    run_draw = function(){
+        draw_self();
+    };
     sprite = sBlank;
     level = 1;
     max_level = 7;
@@ -47,15 +55,7 @@ function weapon(_name) constructor {
     type = undefined;
     can_enchant = [];
     weight = 0;
-    run_create = function(){};
-    run_begin_step = function(){};
-    run_step = function(){};
-    run_end_step = function(){};
-    run_on_hit = function(){};
-    run_draw = function(){
-        //draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, alpha);
-        draw_self();
-    };
+    
     Weapons[$ name] = self;
     static set_sprite = function(spr, projectile) {
         sprite = spr;
@@ -149,7 +149,7 @@ var w = new weapon("Ame_Pistol");
 w.set_sprite(sAmeliaWeapon, sAmeliaWeaponProjectile);
 w.set_create(function(){
     timer = wid.delay;
-    remaining = wid.shoots[wid.level];
+    remaining = wid.shoots[level];
     direction = point_direction(x, y, mouse_x, mouse_y);
     image_angle = direction;
     speed = 5;

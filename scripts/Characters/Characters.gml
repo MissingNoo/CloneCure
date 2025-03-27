@@ -15,7 +15,9 @@ function character(_name) constructor {
     ball_size = 1;
     flat = false;
     unlocked_by_default = true;
+    unlocked = false;
     agency = undefined;
+    locked_color = undefined;
     
     GameData.characters[$ _name] = self;
      
@@ -29,6 +31,12 @@ function character(_name) constructor {
         run_sprite = run;
         portrait = port;
         title_sprite = title;
+        var surf = surface_create(1, 1);
+        surface_set_target(surf);
+        draw_sprite_centered(title, 0, 0, 33);
+        surface_reset_target();
+        locked_color = surface_getpixel(surf, 0, 0);
+        surface_free(surf);
         return self;
     }
     
@@ -56,8 +64,13 @@ function character(_name) constructor {
         flat = s;
         return self;
     }
-    static set_unlocked = function(s) {
+    static set_unlocked_default = function(s) {
         unlocked_by_default = s;
+        unlocked = s;
+        return self;
+    }
+    static set_unlocked = function(s) {
+        unlocked = s;
         return self;
     }
     static set_agency = function(s) {
@@ -75,7 +88,7 @@ c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAme)
     .set_crit(1.10)
     .set_ballsize(3)
     .set_flat(false)
-    .set_unlocked(true)
+    .set_unlocked_default(true)
 
 c = new character("Aki_Rosenthal");
 c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAki)

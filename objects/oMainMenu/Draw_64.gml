@@ -34,7 +34,9 @@ ui.foreach(function(name, pos, data) {
                 var n = string_split(chars[i], "_");
                 var si = sine_between(current_time / 1000, clamp((string_length(n[0]) * 2) / (string_length(n[1]) / 4), -3, 5), 10, -10);
                 var tspr = Characters[$ chars[i]].title_sprite;
+                gpu_set_fog(!Characters[$ chars[i]].unlocked, Characters[$ chars[i]].locked_color, 0, 0);
             	draw_sprite_centered_ext(tspr, 0, _x + xoffset, _y + si + yoffset, 2, 2, 0, c_white, 1);
+                gpu_set_fog(false, 0, 0, 0);
                 if (_x + xoffset > title_x and yoffset == 0) {
                 	do {
                     	xoffset++;
