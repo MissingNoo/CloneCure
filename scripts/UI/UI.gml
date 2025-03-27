@@ -404,7 +404,7 @@ global.game_uis.main_menu = {
           }
         }
       ],
-      "name":"panel_base_98191",
+      "name":"chars",
       "height":300.0,
       "top":0.0,
       "data":{

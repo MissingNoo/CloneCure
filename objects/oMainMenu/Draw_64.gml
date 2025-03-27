@@ -22,11 +22,42 @@ ui.foreach(function(name, pos, data) {
     }
     
     switch(name) {
+        case "chars":
+            var _ox = _x;
+            _x += sprite_get_width(sTitleAme) * 2;
+            _y += (sprite_get_width(sTitleAme) * 2 + 30) - start_y;
+            var chars = struct_get_names(Characters);
+            repeat (30) {
+            	array_push(chars, chars[0]);
+            }
+            for (var row = 1, layer_dist = 0, xoffset = 0, yoffset = 0, i = 0; i < array_length(chars); i++) {
+                var n = string_split(chars[i], "_");
+                var si = sine_between(current_time / 1000, clamp((string_length(n[0]) * 2) / (string_length(n[1]) / 4), -3, 5), 10, -10);
+                var tspr = Characters[$ chars[i]].title_sprite;
+            	draw_sprite_centered_ext(tspr, 0, _x + xoffset, _y + si + yoffset, 2, 2, 0, c_white, 1);
+                if (_x + xoffset > title_x and yoffset == 0) {
+                	do {
+                    	xoffset++;
+                    } until (_x + xoffset > title_x_end - (sprite_get_width(sTitleAme) * 1));
+                }
+                xoffset += (sprite_get_width(tspr) * 1.20) - layer_dist;
+                if (_x + xoffset > _ox + _w - sprite_get_width(sTitleAme) - (layer_dist * 5)) {
+                	yoffset += sprite_get_height(sTitleAme) * 1.25;
+                    row++;
+                    xoffset = 0;
+                    layer_dist += 20;
+                    _x += layer_dist;
+                    layer_dist = layer_dist / row;
+                }
+            }
+            break;
         case "version":
             scribble("[Fnt]Version 0.7.1740637402").scale_to_box(_w, _h, true).draw(_x, _y);
             break;
         case "title":
-            _y += sine_between(current_time / 1000, 6, -10, 7);
+            title_x ??= _x - 10;
+            title_x_end ??= _x + _w;
+            _y += (sine_between(current_time / 1000, 6, -10, 7)) - start_y;
             draw_sprite_stretched(spr, 0, _x, _y, _w, _h);
             break;
         case "panel_btn":

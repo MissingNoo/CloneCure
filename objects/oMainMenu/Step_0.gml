@@ -6,3 +6,4 @@ if (left_right != 0) {
     });
 }
 buttons[$ btn_array[selected]].keyboard_selected = true;
+start_y = lerp(start_y, 0, 0.1);

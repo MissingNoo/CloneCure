@@ -1,5 +1,6 @@
 GameData ??= {};
 GameData.characters = {};
+#macro Characters GameData.characters
 function character(_name) constructor {
     name = _name;
     spd = 0;
@@ -65,7 +66,7 @@ function character(_name) constructor {
     }
 }
 
-var c = new character("Amelia");
+var c = new character("Amelia_Watson");
 c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAme)
     .set_speed(1.35)
     .set_weapon("Ame_Pistol")
@@ -75,3 +76,9 @@ c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAme)
     .set_ballsize(3)
     .set_flat(false)
     .set_unlocked(true)
+
+c = new character("Aki_Rosenthal");
+c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAki)
+
+c = new character("Kiara_Takanashi");
+c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleKiara)

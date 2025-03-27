@@ -4,7 +4,7 @@ up = false;
 edit_node = undefined;
 node = undefined;
 creating = false;
-str = {
+str = global.game_uis.main_menu;/*{
     name : "base",
     width : 1280,
     height : 720,
@@ -23,7 +23,7 @@ str = {
             "height":300.0,
         }
     ]
-}
+}*/
 
 //ui = new window(global.player_info_ui);
 ui = new window(str);

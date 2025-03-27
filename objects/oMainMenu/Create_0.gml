@@ -27,3 +27,7 @@ buttons.button_play.set_function(function() {
 });
 
 bars = [];
+
+start_y = 350;
+title_x = undefined;
+title_x_end = undefined;
