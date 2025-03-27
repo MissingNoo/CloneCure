@@ -26,10 +26,10 @@ ui.foreach(function(name, pos, data) {
             var _ox = _x;
             _x += sprite_get_width(sTitleAme) * 2;
             _y += (sprite_get_width(sTitleAme) * 2 + 30) - start_y;
-            var chars = struct_get_names(Characters);
-            repeat (30) {
-            	array_push(chars, chars[0]);
-            }
+            //var chars = struct_get_names(Characters);
+            //repeat (30) {
+            	//array_push(chars, chars[irandom(array_length(chars) - 1)]);
+            //}
             for (var row = 1, layer_dist = 0, xoffset = 0, yoffset = 0, i = 0; i < array_length(chars); i++) {
                 var n = string_split(chars[i], "_");
                 var si = sine_between(current_time / 1000, clamp((string_length(n[0]) * 2) / (string_length(n[1]) / 4), -3, 5), 10, -10);

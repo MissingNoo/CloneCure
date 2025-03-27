@@ -31,3 +31,7 @@ bars = [];
 start_y = 350;
 title_x = undefined;
 title_x_end = undefined;
+chars = struct_get_names(Characters);
+repeat (30) {
+    array_push(chars, chars[irandom(array_length(chars) - 1)]);
+}
