@@ -1,18 +1,12 @@
-var left_right = - input_check("left") + input_check("right");
-var up_down = - input_check("up") + input_check("down");
-var moving = abs(left_right) + abs(up_down);
+movement.movement();
+image_xscale = movement.last_h;
 
-if (left_right != 0) {
-    image_xscale = left_right;
-}
 
-if (moving != 0) {
+if (movement.is_moving()) {
 	sprite_index = char.run_sprite;
 } else {
 	sprite_index = char.idle_sprite;
 }
-
-move_and_collide(left_right * char.spd, up_down * char.spd, oGameUI);
 
 array_foreach(Player_Weapons, function(e, i) {
     if (e == undefined) {

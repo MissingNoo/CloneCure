@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"LDtkParser",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"LDtkParser",
+  "parent":{
+    "name":"LDtkParser",
+    "path":"folders/LDtkParser.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

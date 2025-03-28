@@ -149,10 +149,12 @@ var w = new weapon("Ame_Pistol");
 w.set_sprite(sAmeliaWeapon, sAmeliaWeaponProjectile);
 w.set_create(function(){
     timer = wid.delay;
-    remaining = wid.shoots[level];
+    remaining = wid.shoots[level] - 1;
     direction = point_direction(x, y, mouse_x, mouse_y);
+    other_dir = direction;
     image_angle = direction;
     speed = 5;
+    ricocheted = false;
 });
 w.set_step(function() {
     timer = clamp(timer - 1, 0, infinity);
@@ -162,9 +164,18 @@ w.set_step(function() {
         var inst = instance_create_depth(oPlayer.x, oPlayer.y - (oPlayer.sprite_height / 2), oPlayer.depth + 1, oWeapon, {
             wid : wid
         });
-        inst.direction = direction;
-        inst.image_angle = direction;
+        inst.direction = other_dir;
+        inst.image_angle = other_dir;
     }
+});
+w.set_on_hit(function() {
+    if (level > 4 and hits <= 0 and !ricocheted) {
+        ricocheted = true;
+    	hits = 3;
+        direction = random(360);
+        image_angle = direction;
+    }
+    //TODO: Level 7, no fucking idea
 });
 w.set_hits([1, 2, 2, 2, 3, 3, 3])
 w.set_duration(120)

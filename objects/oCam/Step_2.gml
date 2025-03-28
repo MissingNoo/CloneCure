@@ -1,5 +1,6 @@
-x = floor(oPlayer.x);
-y = floor(oPlayer.y);
+x = lerp(x, floor(oPlayer.x), 0.1);
+y = lerp(y, floor(oPlayer.y), 0.1);
+
 if (instance_exists(oLightController)) {
 	oLightController.renderer.SetCamera(view_camera[0]);
 }

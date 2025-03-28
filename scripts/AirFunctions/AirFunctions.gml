@@ -470,3 +470,40 @@ function json_load(_filename) {
   // We then return it as a handle
   return _struct;
 }
+
+function topdown_movement(owner, _spd) constructor {
+    spd = _spd;
+    hspd = 0;
+    vspd = 0;
+    last_h = 1;
+    move = method(owner, move_and_collide);
+    
+    static get_input = function() {
+        var left_right = - input_check("left") + input_check("right");
+        var up_down = - input_check("up") + input_check("down");
+        
+        if (left_right != 0) {
+        	last_h = left_right;
+        } 
+        
+        hspd = left_right * spd;
+        vspd = up_down * spd;
+    }
+    
+    static normalize = function() {
+        var len = hspd != 0 or vspd != 0;
+        var dir = point_direction(0, 0, hspd, vspd);
+        hspd = lengthdir_x(len, dir);
+        vspd = lengthdir_y(len, dir);
+    }
+    
+    static movement = function() {
+        get_input();
+        normalize();
+        move(hspd, vspd, oGameUI);
+    }
+    
+    static is_moving = function() {
+        return hspd != 0 or vspd != 0;
+    }
+}
