@@ -3,7 +3,7 @@ if (!cancollide) {
 }
 //if (other.x == x or other.y == y) {
 var dont = [sTree, sDeadTree];
-if (!array_contains(dont, sprite_index) and distance_to_object(other) < 2) {
+if (distance_to_object(other) < 5 and (other.sprite_index != sprite_index and !array_contains(dont, sprite_index))) {
 	other.cancollide = false;
     instance_destroy();
 }

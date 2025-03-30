@@ -2,13 +2,13 @@
 draw_set_color(c_white);
 if (draw_back)
 {
-	draw_sprite_stretched(sButton, bimg, x, y, width, height);
+	draw_sprite_stretched(sButton, 1, x, y, width, height);
 }
 
 // Draw image (e.g. an icon)
 if (image != -1)
 {
-	draw_sprite_stretched(image, index, x, y, width, height);
+	draw_sprite_stretched(image, 1, x, y, width, height);
 }
 
 // Draw bar image (e.g. for health bars)

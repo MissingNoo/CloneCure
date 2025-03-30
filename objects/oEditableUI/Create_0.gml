@@ -4,26 +4,26 @@ up = false;
 edit_node = undefined;
 node = undefined;
 creating = false;
-str = global.game_uis.main_menu;/*{
-    name : "base",
-    width : 1280,
-    height : 720,
-    left : 275,
-    top : 50,
-    nodes : [
-        {
-            "name":"panel_base",
-            "left" :300,
-            "top" :150,
-            "padding":0.0,
-            "width":400.0,
-            "data":{
-                image : sButton,
-            },
-            "height":300.0,
-        }
-    ]
-}*/
+str = global.game_uis.stage;
+//str = {
+    //name : "base",
+    //width : 1280,
+    //height : 720,
+    //left : 275,
+    //top : 50,
+    //nodes : [
+        //{
+            //"name":"panel_base",
+            //"left" :300,
+            //"top" :150,
+            //"padding":0.0,
+            //"width":400.0,
+            //"data":{ 
+            //},
+            //"height":300.0,
+        //}
+    //]
+//}
 
 //ui = new window(global.player_info_ui);
 ui = new window(str);
@@ -62,7 +62,7 @@ save = function(name = "test") {
 
 load = function() {
 	ui.dispose();
-	ui = new window(json_parse(buffer_read(buffer_load("test"), buffer_text)));
+	ui = new window(json_parse(buffer_read(buffer_load("/home/airgeadlamh/.config/Shooter/test.ui"), buffer_text)));
 	ui.edit_mode();
 }
 

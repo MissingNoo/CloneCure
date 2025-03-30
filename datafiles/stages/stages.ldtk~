@@ -46,6 +46,7 @@
   "dummyWorldIid":"0b3b83d0-e920-11ef-bcfa-f16d295ece61",
   "exportLevelBg":true,
   "exportTiled":false,
+  "externalLevels":true,
   "flags":[],
   "identifierStyle":"Capitalize",
   "iid":"0b3ae790-e920-11ef-bcfa-dffcb6e81e3c",
@@ -440,7 +441,7 @@
   "worlds":[],
   "__header__":{
     "app":"LDtk",
-    "appAuthor":"Sebastien deepnight Benard",
+    "appAuthor":"Sebastien 'deepnight' Benard",
     "appVersion":"1.5.3",
     "doc":"https://ldtk.io/json",
     "fileType":"LDtk Project JSON",

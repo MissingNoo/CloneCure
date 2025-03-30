@@ -3,14 +3,14 @@
 
 // REMEMBER TO TURN ON "disable file system sandbox" WHEN USING LIVE UPDATING
 // ...and to set this macro to 0 when building the game!
-#macro LDTK_LIVE 0
+#macro LDTK_LIVE 1
 
 
 if (LDTK_LIVE) {
 	// live reload config
 	LDtkConfig({
 		// change this to your project directory
-		file: "/home/airgeadlamh/GameMakerProjects/Shooter/datafiles/stages/stages.ldtk",
+		file: "/home/airgeadlamh/GameMakerProjects/LDTK/cure.ldtk",
 		level_name: "Stage1"
 	})
 }

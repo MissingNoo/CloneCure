@@ -46,7 +46,16 @@ ui.foreach(function(name, pos, data) {
             if (seconds < 10) {
             	seconds = $"0{seconds}";
             }
-            scribble($"{minutes} : {seconds}").scale_to_box(_w, _h, true).draw(_x, _y);
+            //scribble($"[fDmg]{minutes} : {seconds}").scale_to_box(_w, _h, true).draw(_x, _y);
+			var str = $"[fDmg][fa_middle][fa_center]{minutes}:{seconds}";
+            scribble(str).scale(1).draw(_x, _y);
+		case "xp":
+			xpsurf = surface_recreate(xpsurf, sprite_get_width(spr), sprite_get_height(spr));
+			surface_set_target(xpsurf);
+			draw_sprite(spr, 0, 0, 0);
+			surface_reset_target();
+			draw_surface_stretched(xpsurf, 0, 0, gui_x_percent(100), surface_get_height(xpsurf) * 1.5);
+			break;
         default:
 			draw_sprite_stretched(spr, 0, _x, _y, _w, _h);
 	        break;

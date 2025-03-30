@@ -1,6 +1,6 @@
 //feather ignore all
 display_set_gui_size(1920, 1080);
-global.filename = "test.ui";
+global.filename = "/home/airgeadlamh/.config/Shooter/test.ui";
 depth = -2000;
 up = false;
 down = false;
