@@ -536,7 +536,7 @@ top = {
           "data":{
             text : "Save",
 			f : function() {
-				oUI.saveui = new window(oUI.save);
+				oUI.saveui = new window(oUI.save, true);
 			}
           },
           "name":"button_save"
@@ -546,7 +546,7 @@ top = {
           "data":{
             text : "Save as",
 			f : function() {
-				oUI.saveasui = new window(oUI.saveas);
+				oUI.saveasui = new window(oUI.saveas, true);
 				oUI.saveasui.startingdepth = -1000;
 				oUI.saveasui.dispose();
 				oUI.saveasui.recalculate();
@@ -755,8 +755,8 @@ nodes : [
     }
   ]
 }
-ui = new window(str);
-top = new window(top);
+ui = new window(str, true);
+top = new window(top, true);
 //show_message(flexpanel_node_get_struct(global.inspector));
 load_info = function(n) {
 	//show_message(editing);

@@ -11,7 +11,10 @@
     "name":"MapItems",
     "path":"folders/Objects/MapItems.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oMapItemParent",
+    "path":"objects/oMapItemParent/oMapItemParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sBush1",
+    "path":"sprites/sBush1/sBush1.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

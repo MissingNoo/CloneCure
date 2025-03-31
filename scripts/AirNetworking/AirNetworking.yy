@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"FlexPanel",
+  "%Name":"AirNetworking",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"FlexPanel",
+  "name":"AirNetworking",
   "parent":{
     "name":"AirLib",
     "path":"folders/AirLib.yy",

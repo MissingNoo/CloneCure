@@ -49,8 +49,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"AirUI",
-    "path":"folders/AirUI.yy",
+    "name":"AirLib",
+    "path":"folders/AirLib.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

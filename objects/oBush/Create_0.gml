@@ -1,1 +1,3 @@
-instance_change(choose(oBush1, oBush2), true);
+event_inherited();
+prop_start();
+sprite_index = choose(sBush1, sBush2);
