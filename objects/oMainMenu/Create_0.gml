@@ -1,7 +1,11 @@
 cursor_sprite = sCursor;
 window_set_cursor(cr_none);
 GameData.font = font_add_sprite_ext(sDmgFont, "0123456789KO!:", true, 1);
+var fstr = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ[]{}()<>=?*:!%0123456789./, \"|-+";
+//if (os_type != os_android) {
+GameData.font2 = font_add_sprite_ext(sHFont, fstr, true, 1);
 scribble_font_bake_outline_4dir("sDmgFont", "fDmg", c_black, true);
+scribble_font_set_default("sHFont");	
 //oo = 0;
 //yy = 0;
 ui = new window(global.game_uis.main_menu, false);
@@ -28,7 +32,6 @@ buttons.button_play.set_function(function() {
 });
 
 bars = [];
-
 start_y = 350;
 title_x = undefined;
 title_x_end = undefined;

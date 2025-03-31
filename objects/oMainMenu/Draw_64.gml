@@ -63,10 +63,13 @@ ui.foreach(function(name, pos, data) {
             draw_sprite_stretched(spr, 0, _x, _y, _w, _h);
             break;
         case "panel_btn":
+			if (array_length(bars) < 30) {
+				array_push(bars, [-100, irandom_range(_y, _y + _h), irandom_range(40, 100), irandom_range(7, 20)]);
+			}
             draw_sprite_stretched(spr, 0, 0, _y, gui_x_percent(100), _h);
             draw_set_alpha(0.75);
             for (var i = 0; i < array_length(bars); i++) {
-                draw_line_width_color(bars[i][0], _yc + bars[i][1], bars[i][0] + bars[i][2], _yc + bars[i][1], 2, #788dab, #3573a9);
+                draw_line_width_color(bars[i][0], bars[i][1], bars[i][0] + bars[i][2], bars[i][1], 2, #788dab, #3573a9);
             }
             draw_set_alpha(1);
             break;

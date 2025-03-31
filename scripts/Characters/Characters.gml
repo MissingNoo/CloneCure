@@ -11,7 +11,7 @@ function character(_name) constructor {
     portrait = sBlank;
     hp = 10;
     atk = 1;
-    crt = 1;
+    crit = 1;
     ball_size = 1;
     flat = false;
     unlocked_by_default = true;
@@ -49,7 +49,7 @@ function character(_name) constructor {
         return self;
     }
     static set_crit = function(s) {
-        crt = s;
+        crit = s;
         return self;
     }
     static set_atk = function(s) {

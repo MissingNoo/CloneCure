@@ -2,7 +2,7 @@ if (other.attack_frame > frame and inv_frame > frame) {
 	exit;
 }
 var dmg = other.atk;
-hp -= dmg;
+GameData.hp -= dmg;
 instance_create_depth(x, y - (sprite_height / 2), depth - 1, oDamageText, {
     dir : abs(image_xscale),
     dmg : dmg

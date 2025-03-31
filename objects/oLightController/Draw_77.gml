@@ -24,5 +24,5 @@
 //Reset the surface target and the shader, and we're done
 //surface_reset_target()
 //BulbNormalMapShaderReset();
-renderer.Update();
-BulbApplyLightingToSurface(renderer, application_surface);
+//renderer.Update();
+//BulbApplyLightingToSurface(renderer, application_surface);

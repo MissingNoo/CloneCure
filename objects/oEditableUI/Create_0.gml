@@ -4,26 +4,27 @@ up = false;
 edit_node = undefined;
 node = undefined;
 creating = false;
+
+str = {
+    name : "base",
+    width : 1280,
+    height : 720,
+    left : 275,
+    top : 50,
+    nodes : [
+        {
+            "name":"panel_base",
+            "left" :300,
+            "top" :150,
+            "padding":0.0,
+            "width":400.0,
+            "data":{ 
+            },
+            "height":300.0,
+        }
+    ]
+}
 str = global.game_uis.stage;
-//str = {
-    //name : "base",
-    //width : 1280,
-    //height : 720,
-    //left : 275,
-    //top : 50,
-    //nodes : [
-        //{
-            //"name":"panel_base",
-            //"left" :300,
-            //"top" :150,
-            //"padding":0.0,
-            //"width":400.0,
-            //"data":{ 
-            //},
-            //"height":300.0,
-        //}
-    //]
-//}
 
 //ui = new window(global.player_info_ui);
 ui = new window(str);

@@ -1,6 +1,3 @@
-if (array_length(bars) < 30) {
-	array_push(bars, [-100, irandom_range(-90, 35), irandom_range(40, 100), irandom_range(7, 20)]);
-}
 for (var i = array_length(bars) - 1; i >= 0; i--) {
     bars[i][0] += bars[i][3];
     if (bars[i][0] > gui_x_percent(100)) {

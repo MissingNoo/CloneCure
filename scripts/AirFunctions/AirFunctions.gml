@@ -323,7 +323,8 @@ function button(_text) constructor {
         draw_sprite_stretched(sprite, held, area[0], area[1], area[2] - area[0], area[3] - area[1]);
         var alpha = enabled ? 1 : 0.5;
         if (use_text) {
-        	scribble($"[Fnt][alpha,{alpha}][{color}][fa_center]{text}").scale_to_box(area[2] - area[0] - string_width("X") - 2, area[3] - area[1] - 3, true).draw(area[0] + ((area[2] - area[0]) / 2), _y - 2);
+        	//scribble($"[alpha,{alpha}][{color}][fa_center]{text}").scale_to_box(area[2] - area[0] - string_width("X") - 2, area[3] - area[1], true).draw(area[0] + ((area[2] - area[0]) / 2), _y);
+        	scribble($"[alpha,{alpha}][{color}][fa_middle][fa_center]{text}").scale(2).draw(area[0] + ((area[2] - area[0]) / 2), area[1] + ((area[3] - area[1]) / 2));
         }
         return self;
     }

@@ -1,7 +1,7 @@
 //light1 = new BulbLight(oLightController.renderer, sLight, 0, x, y);
 //light1.xscale = 0.25;
 //light1.yscale = 0.25;
-light = new BulbLight(oLightController.renderer, sLight_1, 0, x, y);
+light = new BulbLight(oLightController.renderer, sLight, 0, x, y);
 //Create a new occluder that the player will use to block light
 //occluder = new BulbDynamicOccluder(oLightController.renderer);
 //
