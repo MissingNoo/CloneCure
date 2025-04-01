@@ -1,4 +1,7 @@
-lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit massa et suscipit mattis. Etiam vel velit rutrum, pellentesque nunc in, pulvinar augue. Duis blandit venenatis scelerisque. Sed vulputate mi dictum augue convallis pulvinar. Aliquam mattis tincidunt mi, ornare rutrum est blandit vel. Fusce sit amet pellentesque diam.";
+lorem0 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit massa et suscipit mattis. Etiam vel velit rutrum, pellentesque nunc in, pulvinar augue. Duis blandit venenatis scelerisque. Sed vulputate mi dictum augue convallis pulvinar. Aliquam mattis tincidunt mi, ornare rutrum est blandit vel. Fusce sit amet pellentesque diam.";
+lorem1 = "Lorem2 ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit massa et suscipit mattis. Etiam vel velit rutrum, pellentesque nunc in, pulvinar augue. Duis blandit venenatis scelerisque. Sed vulputate mi dictum augue convallis pulvinar. Aliquam mattis tincidunt mi, ornare rutrum est blandit vel. Fusce sit amet pellentesque diam.";
+lorem2 = "Lorem3 ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit massa et suscipit mattis. Etiam vel velit rutrum, pellentesque nunc in, pulvinar augue. Duis blandit venenatis scelerisque. Sed vulputate mi dictum augue convallis pulvinar. Aliquam mattis tincidunt mi, ornare rutrum est blandit vel. Fusce sit amet pellentesque diam.";
+lorem3 = "Lorem4 ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit massa et suscipit mattis. Etiam vel velit rutrum, pellentesque nunc in, pulvinar augue. Duis blandit venenatis scelerisque. Sed vulputate mi dictum augue convallis pulvinar. Aliquam mattis tincidunt mi, ornare rutrum est blandit vel. Fusce sit amet pellentesque diam.";
 //feather ignore GM2023
 //feather ignore GM1041
 ui = new window(global.game_uis.level_up);
@@ -27,3 +30,9 @@ for (var i = 0; i < array_length(names); i++) {
 		dbg_slider_int(ref_create(self, names[i]), -50, 300, string_first_letter_upper_case(string_replace_all(names[i], "_", " ")));
 	}
 }
+instance_create_depth(x, y, depth + 1, oPlayerStatsUI);
+key = new animated_sprite(sHudLeftKey);
+u0 = undefined;
+u1 = undefined;
+u2 = undefined;
+u3 = undefined;

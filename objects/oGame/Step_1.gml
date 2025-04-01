@@ -1,10 +1,8 @@
+if (keyboard_check_pressed(vk_f10)) {
+	instance_create_depth(x, y, depth - 1, oLevelUp);
+}
 if (GameData.is_paused) {
     exit;
-}
-if (room == rStage1) {
-	GameData.on_stage = true;
-} else {
-	GameData.on_stage = false;
 }
 if (GameData.on_stage) {
 	if (!instance_exists(oGameUI)) {

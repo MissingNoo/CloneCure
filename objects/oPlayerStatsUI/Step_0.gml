@@ -1,0 +1,1 @@
+start_x = lerp(start_x, 0, 0.2);

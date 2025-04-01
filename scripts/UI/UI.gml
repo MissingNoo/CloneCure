@@ -898,7 +898,7 @@ global.game_uis.level_up = {
   "height":720.0,
   "top":50.0,
   "data":{
-    "image":"paused"
+    "image":"pauseda"
   },
   "left":275.0
 }

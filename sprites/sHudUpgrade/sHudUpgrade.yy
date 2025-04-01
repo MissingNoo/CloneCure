@@ -46,8 +46,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Hud",
-    "path":"folders/Sprites/Hud.yy",
+    "name":"LevelUp",
+    "path":"folders/Sprites/Hud/LevelUp.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

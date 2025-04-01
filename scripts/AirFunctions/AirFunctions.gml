@@ -508,3 +508,21 @@ function topdown_movement(owner, _spd) constructor {
         return hspd != 0 or vspd != 0;
     }
 }
+
+function animated_sprite(spr) constructor {
+	f = 0;
+	sprite = spr;
+	speed = sprite_get_speed(sprite);
+	last_f = sprite_get_number(sprite);
+	
+	static animate = function() {
+		f += (speed / game_get_speed(gamespeed_fps));
+		if (f > last_f) {
+			f = 0;
+		}
+	}
+	
+	static get_frame = function() {
+		return f;
+	}
+}
