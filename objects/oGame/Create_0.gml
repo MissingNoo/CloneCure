@@ -1,3 +1,8 @@
+if (file_exists(game_save_id + "SaveData.json")) {
+	SaveData = json_load(game_save_id + "SaveData.json");
+	update_save_data();
+}
+
 var scale = os_type == os_android ? 2 : 1;
 display_set_gui_maximise(scale, scale);
 #macro frame global.current_frame

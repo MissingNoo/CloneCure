@@ -2,7 +2,7 @@
 global.edit_mode = false;
 global.edit_node = undefined;
 global.edit_node_owner = undefined;
-function window(struct, _generate = true) constructor {
+function window(struct, _generate = false) constructor {
     visible = true;
     ostruct = struct;
 	generate = _generate;
