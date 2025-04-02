@@ -21,3 +21,6 @@ image_yscale = 1;
 depth = depth - 10;
 inv_frame = 0;
 movement = new topdown_movement(self, char.spd);
+GameData.strafing = false;
+GameData.arrow_dir = 0;
+dir = 0;

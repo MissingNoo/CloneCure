@@ -150,7 +150,6 @@ w.set_sprite(sAmeliaWeapon, sAmeliaWeaponProjectile);
 w.set_create(function(){
     timer = wid.delay;
     remaining = wid.shoots[level] - 1;
-    direction = point_direction(x, y, mouse_x, mouse_y);
     other_dir = direction;
     image_angle = direction;
     speed = 5;

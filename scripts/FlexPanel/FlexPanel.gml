@@ -198,6 +198,15 @@ function get_align(str) {
 	    case "baseline":
 			align = flexpanel_align.baseline
 	        break;
+		case "space_between":
+			align = flexpanel_align.space_between
+	        break;
+		case "space_around":
+			align = flexpanel_align.space_around
+	        break;
+		case "space_evenly":
+			align = flexpanel_align.space_evenly
+	        break;
 	    case "column":
 			align = flexpanel_flex_direction.column
 	        break;
