@@ -1,4 +1,6 @@
-cursor_sprite = sCursor;
+if (os_type != os_android) {
+	cursor_sprite = sCursor;
+}
 window_set_cursor(cr_none);
 GameData.font = font_add_sprite_ext(sDmgFont, "0123456789KO!:", true, 1);
 var fstr = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ[]{}()<>=?*:!%0123456789./, \"|-+";
@@ -8,6 +10,8 @@ scribble_font_bake_outline_4dir("sDmgFont", "fDmg", c_black, true);
 scribble_font_set_default("sHFont");	
 //oo = 0;
 //yy = 0;
+var scale = os_type == os_android ? 2 : 1;
+display_set_gui_maximise(scale, scale);
 ui = new window(global.game_uis.main_menu, false);
 ui.fit_to_gui();
 buttons = {
