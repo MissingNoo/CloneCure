@@ -1,4 +1,4 @@
-display_set_gui_size(1280, 720);
+//display_set_gui_size(1280, 720);
 instance_create_depth(x, y, depth, oCam);
 GameData.selected_character = "Amelia_Watson";
 char = GameData.characters[$ GameData.selected_character];

@@ -494,13 +494,10 @@ function topdown_movement(owner, _spd) constructor {
     static normalize = function() {
         var len = hspd != 0 or vspd != 0;
         var dir = point_direction(0, 0, hspd, vspd);
-		var touch = array_find_index(oGame.screen_touch, function(e, i){
-			return e[2] == "left";
-		});
-		if (touch != -1) {
-			var arr = oGame.screen_touch[touch];
+		var touch = GameData.touch.left;
+		if (touch.enabled) {
 			len = 1; 
-			dir = point_direction(arr[5], arr[6], arr[3], arr[4]);
+			dir = touch.get_direction();
 		}
         hspd = lengthdir_x(len, dir);
         vspd = lengthdir_y(len, dir);

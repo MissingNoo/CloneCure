@@ -39,11 +39,13 @@ if ((left_right != 0 or up_down != 0) and !GameData.strafing) {
 	dir = point_direction(0, 0, left_right, up_down);
 	GameData.arrow_dir += angle_difference(dir, GameData.arrow_dir) * 0.25;
 }
-var touch = array_find_index(oGame.screen_touch, function(e, i){
-	return e[2] == "right";
-});
-if (touch != -1) {
-	var arr = oGame.screen_touch[touch];
-	GameData.arrow_dir = point_direction(arr[5], arr[6], arr[3], arr[4]);
+var touch = GameData.touch.right;
+if (touch.enabled) {
+	GameData.arrow_dir = touch.get_direction();
+	if (abs(angle_difference(180, GameData.arrow_dir)) < 90) {
+		movement.last_h = -1;
+	} else {
+		movement.last_h = 1;
+	}
 }
 
