@@ -3,7 +3,8 @@
 
 // REMEMBER TO TURN ON "disable file system sandbox" WHEN USING LIVE UPDATING
 // ...and to set this macro to 0 when building the game!
-#macro LDTK_LIVE 1
+#macro LDTK_LIVEO 1
+LDTK_LIVE = os_type != os_android ? 1 : 0
 
 
 if (LDTK_LIVE) {
@@ -17,7 +18,7 @@ if (LDTK_LIVE) {
 else {
 	// release config
 	LDtkConfig({
-		file: "stages/stages.ldtk",
+		file: "stages.ldtk",
 		level_name: "Stage1"
 	})
 }
