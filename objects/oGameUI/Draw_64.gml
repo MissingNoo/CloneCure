@@ -56,6 +56,20 @@ ui.foreach(function(name, pos, data) {
 			surface_reset_target();
 			draw_surface_stretched(xpsurf, 0, 0, gui_x_percent(100), surface_get_height(xpsurf) * 1.5);
 			break;
+		case "killspr":
+			draw_sprite_stretched(sHuddefeatedEnemies, 0, _x, _y, _w, _h);
+			break;
+		case "kills":
+			var str = $"[fa_middle][fDmg]{GameData.kills}";
+            scribble(str).scale(1).draw(round(_x + (_w / 2)), round(_y + (_h / 2)));
+			break;
+		case "coin":
+			draw_sprite_stretched(coinspr.sprite, coinspr.get_frame(), _x, _y, _w, _h);
+			break;
+		case "money":
+			var str = $"[fa_middle][fDmg]{GameData.stage_coins}";
+            scribble(str).scale(1).draw(round(_x + (_w / 2)), round(_y + (_h / 2)));
+			break;
         default:
 			draw_sprite_stretched(spr, 0, _x, _y, _w, _h);
 	        break;

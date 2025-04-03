@@ -1,37 +1,103 @@
 global.game_uis = {};
 global.game_uis.stage = {
-  "width":1280.0,
-  "name":"base",
-  "height":720.0,
   "nodes":[
     {
-      "margin":0.0,
       "padding":0.0,
-      "width":1366.0,
-      "name":"panel_base",
       "flex":0.0,
-      "height":720.0,
       "nodes":[
         {
           "padding":0.0,
+          "positionType":"absolute",
+          "nodes":[
+            {
+              "padding":0.0,
+              "flex":1.0,
+              "nodes":[
+                {
+                  "minHeight":31.0,
+                  "maxHeight":0.0,
+                  "padding":10.0,
+                  "maxWidth":33.0,
+                  "flex":1.0,
+                  "width":60.0,
+                  "name":"coin",
+                  "data":{
+                  }
+                },
+                {
+                  "minHeight":31.0,
+                  "maxHeight":31.0,
+                  "padding":10.0,
+                  "flex":1.0,
+                  "width":60.0,
+                  "name":"money",
+                  "data":{
+                  },
+                  "margin":0.0
+                }
+              ],
+              "name":"panel_12663",
+              "height":60.0,
+              "data":{
+              },
+              "flexDirection":"row"
+            },
+            {
+              "padding":0.0,
+              "flex":1.0,
+              "nodes":[
+                {
+                  "marginTop":1.0,
+                  "padding":10.0,
+                  "maxWidth":33.0,
+                  "flex":1.0,
+                  "width":60.0,
+                  "name":"killspr",
+                  "data":{
+                  }
+                },
+                {
+                  "marginTop":1.0,
+                  "padding":10.0,
+                  "flex":1.0,
+                  "width":60.0,
+                  "name":"kills",
+                  "data":{
+                  },
+                  "margin":0.0
+                }
+              ],
+              "name":"panel_54087",
+              "height":58.0,
+              "data":{
+              },
+              "flexDirection":"row",
+              "margin":0.0
+            }
+          ],
+          "width":70.0,
+          "name":"runinfo",
+          "height":65.0,
+          "top":32.0,
+          "data":{
+          },
+          "left":1052.0
+        },
+        {
           "maxHeight":41.0,
-          "name":"xp",
+          "padding":0.0,
           "flex":1.0,
+          "name":"xp",
           "height":71.0,
           "data":{
             "image":"sExpBarBG"
           }
         },
         {
-          "flexDirection":"row",
-          "padding":0.0,
           "minHeight":160.0,
           "maxHeight":0.0,
-          "minWidth":727.0,
-          "height":160.0,
-          "marginTop":-13.0,
+          "padding":0.0,
           "maxWidth":0.0,
-          "name":"info_panel",
           "flex":1.0,
           "nodes":[
             {
@@ -45,27 +111,23 @@ global.game_uis.stage = {
               }
             },
             {
-              "padding":0.0,
-              "marginRight":0.0,
               "marginTop":89.0,
+              "padding":0.0,
+              "positionType":"absolute",
+              "marginLeft":31.0,
               "width":58.0,
               "name":"special_timer",
               "height":18.0,
+              "marginRight":0.0,
               "data":{
-              },
-              "marginLeft":31.0,
-              "positionType":"absolute"
+              }
             },
             {
-              "padding":0.0,
               "minHeight":158.0,
               "maxHeight":158.0,
-              "minWidth":319.0,
-              "width":66.0,
-              "height":160.0,
+              "padding":0.0,
               "maxWidth":319.0,
               "flex":1.0,
-              "name":"other_panel",
               "nodes":[
                 {
                   "name":"hpbar",
@@ -76,173 +138,174 @@ global.game_uis.stage = {
                 },
                 {
                   "padding":4.0,
-                  "height":60.0,
-                  "margin":4.0,
-                  "marginRight":0.0,
-                  "marginTop":13.0,
-                  "marginBottom":8.0,
-                  "name":"panel_72420",
                   "flex":1.0,
                   "nodes":[
                     {
-                      "flexDirection":"row",
                       "padding":0.0,
-                      "name":"weapons_panel",
                       "flex":1.0,
-                      "height":60.0,
                       "nodes":[
                         {
                           "name":"w0",
-                          "flex":1.0,
                           "padding":10.0,
+                          "flex":1.0,
                           "data":{
                           },
                           "width":60.0
                         },
                         {
                           "name":"w1",
-                          "flex":1.0,
                           "padding":10.0,
+                          "flex":1.0,
                           "data":{
                           },
                           "width":60.0
                         },
                         {
-                          "flexDirection":"row",
                           "padding":10.0,
+                          "flex":1.0,
                           "width":60.0,
                           "name":"w2",
-                          "flex":1.0,
                           "data":{
-                          }
+                          },
+                          "flexDirection":"row"
                         },
                         {
                           "name":"w3",
-                          "flex":1.0,
                           "padding":10.0,
+                          "flex":1.0,
                           "data":{
                           },
                           "width":60.0
                         },
                         {
                           "name":"w4",
-                          "flex":1.0,
                           "padding":10.0,
+                          "flex":1.0,
                           "data":{
                           },
                           "width":60.0
                         },
                         {
                           "name":"w5",
-                          "flex":1.0,
                           "padding":10.0,
+                          "flex":1.0,
                           "data":{
                           },
                           "width":60.0
                         }
                       ],
+                      "name":"weapons_panel",
+                      "height":60.0,
                       "data":{
-                      }
+                      },
+                      "flexDirection":"row"
                     },
                     {
-                      "flexDirection":"row",
                       "padding":0.0,
-                      "name":"items_panel",
                       "flex":1.0,
-                      "height":60.0,
                       "nodes":[
                         {
                           "name":"i0",
-                          "flex":1.0,
                           "padding":10.0,
+                          "flex":1.0,
                           "data":{
                           },
                           "width":60.0
                         },
                         {
                           "name":"i1",
-                          "flex":1.0,
                           "padding":10.0,
+                          "flex":1.0,
                           "data":{
                           },
                           "width":60.0
                         },
                         {
                           "name":"i2",
-                          "flex":1.0,
                           "padding":10.0,
+                          "flex":1.0,
                           "data":{
                           },
                           "width":60.0
                         },
                         {
                           "name":"i3",
-                          "flex":1.0,
                           "padding":10.0,
+                          "flex":1.0,
                           "data":{
                           },
                           "width":60.0
                         },
                         {
                           "name":"i4",
-                          "flex":1.0,
                           "padding":10.0,
+                          "flex":1.0,
                           "data":{
                           },
                           "width":60.0
                         },
                         {
                           "name":"i5",
-                          "flex":1.0,
                           "padding":10.0,
+                          "flex":1.0,
                           "data":{
                           },
                           "width":60.0
                         }
                       ],
+                      "name":"items_panel",
+                      "height":60.0,
                       "data":{
-                      }
+                      },
+                      "flexDirection":"row"
                     }
                   ],
+                  "height":60.0,
+                  "margin":4.0,
+                  "marginTop":13.0,
+                  "marginBottom":8.0,
+                  "name":"panel_72420",
+                  "border":0.0,
+                  "marginRight":0.0,
                   "data":{
                     "image":"sItemsArea"
-                  },
-                  "border":0.0
+                  }
                 }
               ],
+              "width":66.0,
+              "height":160.0,
+              "marginLeft":7.0,
+              "name":"other_panel",
               "data":{
               },
-              "marginLeft":7.0
+              "minWidth":319.0
             },
             {
               "padding":10.0,
+              "flex":1.0,
               "width":60.0,
               "name":"panel_34362",
-              "flex":1.0,
               "height":60.0,
               "data":{
               }
             },
             {
               "padding":9.0,
-              "width":109.0,
-              "name":"stage_panel",
-              "height":60.0,
               "nodes":[
                 {
-                  "padding":0.0,
                   "marginTop":4.0,
+                  "padding":0.0,
                   "marginBottom":4.0,
+                  "marginLeft":14.0,
                   "width":64.0,
                   "name":"stage",
                   "height":12.0,
                   "data":{
-                  },
-                  "marginLeft":14.0
+                  }
                 },
                 {
-                  "padding":10.0,
                   "marginTop":2.0,
+                  "padding":10.0,
                   "width":93.0,
                   "name":"time",
                   "height":24.0,
@@ -250,21 +313,29 @@ global.game_uis.stage = {
                   }
                 }
               ],
+              "width":109.0,
+              "name":"stage_panel",
+              "height":60.0,
               "data":{
               }
             }
           ],
+          "height":160.0,
+          "flexDirection":"row",
+          "marginTop":-13.0,
+          "marginLeft":8.0,
+          "name":"info_panel",
           "top":0.0,
           "data":{
           },
-          "marginLeft":8.0,
+          "minWidth":727.0,
           "left":0.0
         },
         {
           "padding":10.0,
+          "flex":1.0,
           "width":60.0,
           "name":"panel_8777",
-          "flex":1.0,
           "height":60.0,
           "data":{
           }
@@ -272,28 +343,35 @@ global.game_uis.stage = {
         {
           "name":"buffs",
           "height":60.0,
-          "margin":10.0,
           "padding":10.0,
           "data":{
-          }
+          },
+          "margin":10.0
         },
         {
           "padding":10.0,
+          "flex":0.33000001311302185,
           "width":60.0,
           "name":"panel_87397",
-          "flex":0.33000001311302185,
           "height":60.0,
           "data":{
           }
         }
       ],
+      "width":1366.0,
+      "name":"panel_base",
+      "height":720.0,
       "top":0.0,
       "data":{
-        "image":"gamea"
+        "image":"gamae"
       },
+      "margin":0.0,
       "left":0.0
     }
   ],
+  "width":1280.0,
+  "name":"base",
+  "height":720.0,
   "top":50.0,
   "data":{
   },

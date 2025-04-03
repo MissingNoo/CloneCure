@@ -632,7 +632,7 @@ top = {
           "data":{
             text : "Sprite",
 			f : function() {
-				oUI.setsprui = new window(oUI.setspr);
+				oUI.setsprui = new window(oUI.setspr, true);
 				var _data = oUI.setsprui.get_child_data("textbox_filename_char");
 				var spr = oEditableUI.ui.get_child_data(oUI.last_edit, "image");
 				if (spr != undefined) {
