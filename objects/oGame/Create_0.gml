@@ -11,3 +11,4 @@ surf = surface_create(surface_get_width(application_surface), surface_get_height
 GameData.is_paused = false;
 GameData.on_stage = false;
 lastroom = room;
+screen_touch = [[false, -1, undefined, 0, 0, undefined, undefined], [false, -1, undefined, 0, 0, undefined, undefined]];

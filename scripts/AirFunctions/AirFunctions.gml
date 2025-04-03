@@ -480,8 +480,8 @@ function topdown_movement(owner, _spd) constructor {
     move = method(owner, move_and_collide);
     
     static get_input = function() {
-        var left_right = - input_check("left") + input_check("right");
-        var up_down = - input_check("up") + input_check("down");
+        var left_right = - input_check("left") + input_check("right");// - (touch_lr[3] < touch_lr[5]) + (touch_lr[3] > touch_lr[5]);
+        var up_down = - input_check("up") + input_check("down");// - (touch_lr[4] < touch_lr[6]) + (touch_lr[4] > touch_lr[6]);
         
         if (left_right != 0) {
         	last_h = left_right;
@@ -494,6 +494,14 @@ function topdown_movement(owner, _spd) constructor {
     static normalize = function() {
         var len = hspd != 0 or vspd != 0;
         var dir = point_direction(0, 0, hspd, vspd);
+		var touch = array_find_index(oGame.screen_touch, function(e, i){
+			return e[2] == "left";
+		});
+		if (touch != -1) {
+			var arr = oGame.screen_touch[touch];
+			len = 1; 
+			dir = point_direction(arr[5], arr[6], arr[3], arr[4]);
+		}
         hspd = lengthdir_x(len, dir);
         vspd = lengthdir_y(len, dir);
     }

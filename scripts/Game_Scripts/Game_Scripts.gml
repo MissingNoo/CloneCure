@@ -6,6 +6,8 @@ global.minutes = 0;
 global.seconds = 0;
 
 GameData ??= {};
+GameData.mx = 0;
+GameData.my = 0;
 #macro Spawn_List GameData.spawn_list
 Spawn_List = [];
 #macro GameData global.gamedata
