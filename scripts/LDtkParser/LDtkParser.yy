@@ -6,7 +6,7 @@
   "name":"LDtkParser",
   "parent":{
     "name":"LDtkParser",
-    "path":"folders/LDtkParser.yy",
+    "path":"folders/Libs/LDtkParser.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

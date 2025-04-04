@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"LDtkParser",
-    "path":"folders/LDtkParser.yy",
+    "path":"folders/Libs/LDtkParser.yy",
   },
   "parentObjectId":null,
   "persistent":true,

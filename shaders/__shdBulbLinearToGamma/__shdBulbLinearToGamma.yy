@@ -4,7 +4,7 @@
   "name":"__shdBulbLinearToGamma",
   "parent":{
     "name":"Shaders",
-    "path":"folders/Bulb/(System)/(Pay no attention to that man behind the curtain)/Shaders.yy",
+    "path":"folders/Libs/Bulb/(System)/(Pay no attention to that man behind the curtain)/Shaders.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",

@@ -6,7 +6,7 @@
   "name":"ScribblejrDrawNative",
   "parent":{
     "name":"Scribble Jr.",
-    "path":"folders/Scribble Jr..yy",
+    "path":"folders/Libs/Scribble Jr..yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -6,7 +6,7 @@
   "name":"__ScribblejrClassBakerFit",
   "parent":{
     "name":"Baker",
-    "path":"folders/Scribble Jr./(System)/Classes/Baker.yy",
+    "path":"folders/Libs/Scribble Jr./(System)/Classes/Baker.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

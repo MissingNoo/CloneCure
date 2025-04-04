@@ -6,7 +6,7 @@
   "name":"__ScribblejrClassNullWrapper",
   "parent":{
     "name":"Classes",
-    "path":"folders/Scribble Jr./(System)/Classes.yy",
+    "path":"folders/Libs/Scribble Jr./(System)/Classes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

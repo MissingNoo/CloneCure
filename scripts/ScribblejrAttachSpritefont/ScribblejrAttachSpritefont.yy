@@ -6,7 +6,7 @@
   "name":"ScribblejrAttachSpritefont",
   "parent":{
     "name":"Font",
-    "path":"folders/Scribble Jr./Setup/Font.yy",
+    "path":"folders/Libs/Scribble Jr./Setup/Font.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

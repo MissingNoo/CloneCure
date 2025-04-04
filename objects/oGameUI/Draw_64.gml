@@ -26,6 +26,7 @@ ui.foreach(function(name, pos, data) {
         case "i3":
         case "i4":
         case "i5":
+			//TODO: items
             draw_sprite_centered_ext(sUiEmptySlotItem, 0, _xc, _yc, 2, 2, 0, c_white, 0.5);
             break;
         case "portrait":
@@ -37,6 +38,9 @@ ui.foreach(function(name, pos, data) {
             draw_sprite_stretched(port, 0, _x, _y, _w, _h);
             draw_sprite_stretched(spr, 0, _x, _y, _w, _h);
             break;
+		case "stage":
+			scribble($"[fa_middle]{GameData.stage_mode}").scale(a).draw(_x + (_w / 2), _y);
+			break;
         case "time":
             var minutes = global.minutes;
             if (minutes < 10) {

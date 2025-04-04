@@ -120,7 +120,7 @@
   "name":"ScribblejrDefaultFont",
   "parent":{
     "name":"(System)",
-    "path":"folders/Scribble Jr./(System).yy",
+    "path":"folders/Libs/Scribble Jr./(System).yy",
   },
   "pointRounding":0,
   "ranges":[

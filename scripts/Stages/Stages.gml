@@ -1,6 +1,7 @@
 GameData ??= {}
 #macro Stages GameData.stages
 Stages = {};
+GameData.stage_mode = "STAGE";
 function Stage(_name) constructor {
     name = _name;
     timings = {};
