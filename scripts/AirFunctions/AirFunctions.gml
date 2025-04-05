@@ -531,3 +531,22 @@ function animated_sprite(spr) constructor {
 		return f;
 	}
 }
+
+function air_timer(timeout, callback) constructor {
+	amount = timeout;
+	time = frame + amount;
+	exec = callback;
+	done = false;
+	
+	static count = function() {
+		if (!done and time < frame) {
+			done = true;
+			exec();
+		}
+	}
+	
+	static restart = function() {
+		time = frame + amount;
+		done = false;
+	}
+}

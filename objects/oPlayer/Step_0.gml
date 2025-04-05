@@ -1,3 +1,12 @@
+var near_xp = instance_nearest(x, y, oXP);
+if (distance_to_object(near_xp) < 40) {
+	with (near_xp) {
+		following = true;
+		speed = GameData.SPD + 1;
+		direction = point_direction(x, y, oPlayer.x, oPlayer.y);
+	}
+}
+
 movement.movement();
 if (!GameData.strafing) {
 	image_xscale = movement.last_h;
@@ -49,3 +58,8 @@ if (touch.enabled) {
 	}
 }
 
+if (device_mouse_check_button_released(0, mb_right)) {
+	instance_create_depth(mouse_x, mouse_y, depth, oXP, {
+		xp : 10
+	});
+}

@@ -40,7 +40,7 @@ ui.foreach(function(name, pos, data) {
             break;
 		case "stage":
 			var str = $"[fa_middle][fa_center]{GameData.stage_mode}"
-			scribble(str).scale(a).draw(_x - (string_width_scribble(str) / 2), _y);
+			scribble(str).scale(1).draw(_x - (string_width_scribble(str) / 2), _y);
 			break;
         case "time":
             var minutes = global.minutes;

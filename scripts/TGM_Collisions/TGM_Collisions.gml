@@ -139,7 +139,7 @@ function instance_number_object(_object) {
 /// @desc Gets the nearest instance of an object, based on x and y position.
 /// @param {Real} x The x position to check from.
 /// @param {Real} y The y position to check from.
-/// @param {Id.GMObject} object Object asset index.
+/// @param {Asset.GMObject} object Object asset index.
 /// @param {Real} number The position number.
 /// @returns {id} 
 function instance_nearest_nth(_x, _y, _object, _number) {
