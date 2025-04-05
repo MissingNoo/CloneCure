@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"bgm_mythortreat",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":207.36461,
+  "name":"bgm_mythortreat",
+  "parent":{
+    "name":"bgm",
+    "path":"folders/Sounds/bgm.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"bgm_mythortreat.ogg",
+  "type":0,
+  "volume":1.0,
+}

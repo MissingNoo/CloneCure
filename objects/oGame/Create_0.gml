@@ -2,6 +2,10 @@ if (file_exists(game_save_id + "SaveData.json")) {
 	SaveData = json_load(game_save_id + "SaveData.json");
 	update_save_data();
 }
+if (file_exists(game_save_id + "Config.json")) {
+	GameConfig = json_load(game_save_id + "Config.json");
+	//update_save_data();
+}
 #macro frame global.current_frame
 frame = 0;
 surf = surface_create(surface_get_width(application_surface), surface_get_height(application_surface));

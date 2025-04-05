@@ -1,13 +1,13 @@
 #macro GameConfig global.game_config
 GameConfig = {
-    sound_volume : 1
+    sound_volume : 1,
+    music_volume : 1
 }
 global.minutes = 0;
 global.seconds = 0;
 
 GameData ??= {};
-GameData.mx = 0;
-GameData.my = 0;
+GameData.music = undefined;
 #macro Spawn_List GameData.spawn_list
 Spawn_List = [];
 #macro GameData global.gamedata

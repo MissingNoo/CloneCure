@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_dynamitebody",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":2.8887756,
+  "name":"snd_dynamitebody",
+  "parent":{
+    "name":"sfx",
+    "path":"folders/Sounds/sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_dynamitebody.wav",
+  "type":0,
+  "volume":1.0,
+}

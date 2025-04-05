@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_roulettespinC",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.044104308,
+  "name":"snd_roulettespinC",
+  "parent":{
+    "name":"sfx",
+    "path":"folders/Sounds/sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_roulettespinC.wav",
+  "type":0,
+  "volume":1.0,
+}
