@@ -12,8 +12,6 @@ if (!GameData.strafing) {
 	image_xscale = movement.last_h;
 }
 
-
-
 if (movement.is_moving()) {
 	sprite_index = char.run_sprite;
 } else {

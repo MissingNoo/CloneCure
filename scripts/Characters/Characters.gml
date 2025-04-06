@@ -93,5 +93,8 @@ c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAme)
 c = new character("Aki_Rosenthal");
 c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAki)
 
-c = new character("Kiara_Takanashi");
+c = new character("Takanashi_Kiara");
 c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleKiara)
+
+c = new character("Tenma_Maemi");
+c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaSake, sTitleTenma);

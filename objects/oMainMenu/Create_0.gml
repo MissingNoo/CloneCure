@@ -16,14 +16,14 @@ display_set_gui_maximise(scale, scale);
 ui = new window(global.game_uis.main_menu, false);
 ui.fit_to_gui();
 buttons = {
-    button_leaderboards : new button("Leaderboard"),
-    button_achievements : new button("Achievements"),
-    button_play : new button("Play"),
-    button_credits : new button("Credits"), 
-    button_shop : new button("Shop"),
-    button_settings : new button("Settings"),
-    button_house : new button("Holo House"),
-    button_quit : new button("Quit"),
+    button_leaderboards : new button("MainMenu.Leaderboard"),
+    button_achievements : new button("MainMenu.Achievements"),
+    button_play : new button("MainMenu.Play"),
+    button_credits : new button("MainMenu.Credits"),
+    button_shop : new button("MainMenu.Shop"),
+    button_settings : new button("MainMenu.Settings"),
+    button_house : new button("MainMenu.HoloHouse"),
+    button_quit : new button("MainMenu.Quit"),
 };
 btn_array = ["button_leaderboards", "button_achievements", "button_shop", "button_play", "button_house", "button_settings", "button_credits", "button_quit"];
 selected = 3;

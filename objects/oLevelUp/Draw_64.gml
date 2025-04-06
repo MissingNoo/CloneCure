@@ -1,4 +1,5 @@
 //feather ignore GM1041
+//feather ignore GM1044
 //feather ignore GM2016
 //yy += - input_check_pressed("up") + input_check_pressed("down");
 //oo += (- input_check_pressed("left") + input_check_pressed("right")) * 0.05;
@@ -14,6 +15,11 @@ ui.foreach(function(name, pos, data) {
 		case "u2":
 		case "u3":
 			var opt = real(string_char_at(name, 2));
+			if (mx != mouse_x or my != mouse_y and point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), _x, _y, _x + _w, _y + _h)) {
+				selected_option = opt;
+				mx = mouse_x;
+				my = mouse_y;
+			}
 			var selected = selected_option == opt ? 1 : 0;
 			draw_sprite_stretched(sHudUpgrade, selected, _x, _y, _w, _h);
 			draw_sprite_stretched_ext(sHudUpgradeColor, selected, _x, _y, _w, _h, c_orange, 0.5);

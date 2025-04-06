@@ -12,6 +12,8 @@ GameData.CRT = char.crit;
 GameData.Pickup = 0;
 GameData.Haste = 0;
 GameData.xp = 0;
+GameData.needed_xp = 79;
+GameData.level = 1;
 //show_debug_overlay(true);
 Player_Weapons[0] = variable_clone(Weapons[$ char.main_weapon]);
 //Player_Weapons[0].level = 7;

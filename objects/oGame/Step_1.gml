@@ -1,5 +1,5 @@
 if (keyboard_check_pressed(vk_f10)) {
-	instance_create_depth(x, y, depth - 1, oLevelUp);
+	instance_create_depth(x, y, depth - 2, oLevelUp);
 }
 if (GameData.is_paused) {
     exit;

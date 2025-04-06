@@ -7,6 +7,8 @@ global.minutes = 0;
 global.seconds = 0;
 
 GameData ??= {};
+GameData.xp = 0;
+GameData.needed_xp = 79;
 GameData.music = undefined;
 #macro Spawn_List GameData.spawn_list
 Spawn_List = [];

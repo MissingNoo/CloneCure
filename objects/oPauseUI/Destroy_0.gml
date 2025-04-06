@@ -1,1 +1,1 @@
-instance_destroy(oPlayerStatsUI);
+instance_destroy(stats);

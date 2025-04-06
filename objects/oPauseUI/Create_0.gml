@@ -13,4 +13,4 @@ selected = 0;
 buttons.button_quit.set_function(function() {
     game_end();
 });
-instance_create_depth(x, y, depth, oPlayerStatsUI);
+stats = instance_create_depth(x, y, depth, oPlayerStatsUI);

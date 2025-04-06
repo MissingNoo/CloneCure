@@ -17,7 +17,7 @@ ui.foreach(function(name, pos, data) {
         buttons[$ name].sprite_back = undefined;
         buttons[$ name].draw();
         if (buttons[$ name].on_area) {
-        	scribble($"[Fnt][fa_center][fa_top]{string_first_letter_upper_case(string_replace(name, "button_", ""))}").scale(0.30).draw(_xc - 10, _y + _h + 5);
+        	scribble($"[Fnt][fa_center][fa_top]{lexicon_text(buttons[$ name].text)}").scale(0.30).draw(_xc - 10, _y + _h + 5);
         }
     }
     

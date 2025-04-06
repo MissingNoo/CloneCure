@@ -1,3 +1,7 @@
+mx = 0;
+my = 0;
+GameData.level++;
+GameData.needed_xp += round((4*(GameData.level + 1)) *2.1) - round((4*GameData.level)*2.1);
 lorem0 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit massa et suscipit mattis. Etiam vel velit rutrum, pellentesque nunc in, pulvinar augue. Duis blandit venenatis scelerisque. Sed vulputate mi dictum augue convallis pulvinar. Aliquam mattis tincidunt mi, ornare rutrum est blandit vel. Fusce sit amet pellentesque diam.";
 lorem1 = "Lorem2 ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit massa et suscipit mattis. Etiam vel velit rutrum, pellentesque nunc in, pulvinar augue. Duis blandit venenatis scelerisque. Sed vulputate mi dictum augue convallis pulvinar. Aliquam mattis tincidunt mi, ornare rutrum est blandit vel. Fusce sit amet pellentesque diam.";
 lorem2 = "Lorem3 ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit massa et suscipit mattis. Etiam vel velit rutrum, pellentesque nunc in, pulvinar augue. Duis blandit venenatis scelerisque. Sed vulputate mi dictum augue convallis pulvinar. Aliquam mattis tincidunt mi, ornare rutrum est blandit vel. Fusce sit amet pellentesque diam.";
