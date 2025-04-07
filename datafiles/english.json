@@ -76,8 +76,8 @@
 					"6":"Send [4] Aik.",
 					"7":"Become a cross shape beam. Increase damage and size of beam by [30%]. Has a chance to apply a debuff that reduces DEF by [30%]."
 				},
-            "Pistol Shot":{
-            "name":"Pistol Shot",
+            "Ame_Pistol":{
+				"name":"Pistol Shot",
 				"1":"Shoots 3 Projectiles forward.", 
 				"2":"Shoot [1] additional shot, and each bullet can pierce [+1] times.",
 				"3":"Increase damage by [25%].",

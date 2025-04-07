@@ -550,3 +550,11 @@ function air_timer(timeout, callback) constructor {
 		done = false;
 	}
 }
+
+function sprite_get_width_ext(spr, scale = 1) {
+	return sprite_get_width(spr) * scale;
+}
+
+function sprite_get_height_ext(spr, scale = 1) {
+	return sprite_get_height(spr) * scale;
+}

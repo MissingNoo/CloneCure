@@ -40,3 +40,11 @@ u0 = undefined;
 u1 = undefined;
 u2 = undefined;
 u3 = undefined;
+
+mouse_select = function(_x, _y, _w, _h, num) {
+	if ((mx != device_mouse_x_to_gui(0) or my != device_mouse_y_to_gui(0)) and point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), _x, _y, _x + _w, _y + _h)) {
+		selected_option = num;
+		mx = device_mouse_x_to_gui(0);
+		my = device_mouse_y_to_gui(0);
+	} 
+}

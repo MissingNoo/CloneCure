@@ -1,4 +1,4 @@
-function pause_game() {
+function pause_game(reason = undefined) {
 	var can_unpause = !instance_exists(oLevelUp);
 	if (!can_unpause and GameData.is_paused) {
 		exit;
@@ -16,6 +16,11 @@ function pause_game() {
            instance_activate_object(e);
         });
         GameData.is_paused = true;
-    	instance_create_depth(0, 0, -1100, oPauseUI);
+		switch (reason) {
+			case "pause":
+				instance_create_depth(0, 0, -1100, oPauseUI);
+				break;
+		}
+    	
 	}
 }

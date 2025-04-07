@@ -45,5 +45,5 @@ if (keyboard_check_pressed(vk_f1)) {
 }
 
 if (keyboard_check_pressed(vk_escape)) {
-	pause_game();
+	pause_game("pause");
 }

@@ -59,6 +59,7 @@ function weapon(_name) constructor {
     type = undefined;
     can_enchant = [];
     weight = 0;
+	lex = "Weapons"
     
     Weapons[$ name] = self;
     static set_sprite = function(spr, projectile) {
