@@ -24,6 +24,18 @@ function touch_control() constructor {
 		device = undefined;
 		enabled = false;
 	}
+    
+    static draw = function() {
+        if (!enabled) {
+            exit;
+        }
+        draw_sprite_ext(sHudJoystick, 0, startx, starty, 0.5, 0.5, 0, c_white, 1);
+        var _xlen = clamp(abs(x - startx), 0, sprite_get_width_ext(sHudJoystick, 0.35));
+        var _ylen = clamp(abs(y - starty), 0, sprite_get_width_ext(sHudJoystick, 0.35));
+        var _x = lengthdir_x(_xlen, point_direction(startx, starty, x, y));
+        var _y = lengthdir_y(_ylen, point_direction(startx, starty, x, y));
+        draw_sprite_ext(sHudJoystick, 1, startx + _x, starty + _y, 0.5, 0.5, 0, c_white, 1);
+    }
 }
 GameData.touch = {
 	left : new touch_control(),
