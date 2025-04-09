@@ -3,6 +3,7 @@ GameData.characters = {};
 #macro Characters GameData.characters
 function character(_name) constructor {
     name = _name;
+    uiname = string_replace_all(_name, "_", " ");
     spd = 0;
     idle_sprite = sBlank;
     run_sprite = sBlank;
@@ -19,7 +20,7 @@ function character(_name) constructor {
     agency = undefined;
     locked_color = undefined;
     
-    GameData.characters[$ _name] = self;
+    Characters[$ _name] = self;
      
     static set_weapon = function(_w) {
         main_weapon = _w;

@@ -24,7 +24,7 @@ str = {
         }
     ]
 }
-str = global.game_uis.stage;
+//str = global.game_uis.stage;
 
 //ui = new window(global.player_info_ui);
 ui = new window(str, true);

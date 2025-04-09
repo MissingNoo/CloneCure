@@ -335,7 +335,7 @@ saveas = {
               "data":{
 				  text : "Save",
 				  f : function() {
-					  oEditableUI.save(oUI.saveasui.get_element_data("textbox_filename_char", "text") + ".ui");
+					  oEditableUI.save(oUI.saveasui.get_element_data(game_save_id + "textbox_filename_char", "text") + ".ui");
 					  oUI.saveasui.dispose();
 				  }
               },
