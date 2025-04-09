@@ -1,4 +1,8 @@
+var omat = matrix_get(matrix_world);
 var _x = (x), _y = (y);
+matrix_set(matrix_world, matrix_build(x, y, depth, xrot, yrot, zrot, 1, 1, 1));
+_x = 0;
+_y = 0;
 draw_sprite_ext(sCharShadow, 0, _x, _y, 1, 1, 0, c_white, 0.8);
 if (GameData.hp > 0 and GameData.hp < GameData.max_hp) {
     draw_healthbar((_x - 13), ((_y - sprite_height) - 3), (_x + 13), ((_y - sprite_height) - 6), ((GameData.hp / GameData.max_hp) * 100), c_red, c_lime, c_lime, 0, 1, 0);
@@ -14,4 +18,7 @@ var _color = c_white;
     //_color = c_purple;
 	//draw_sprite_ext(sMouseAim, 0, mouse_x, mouse_y, 1, 1, 0, c_white, 1);
 //}
-draw_sprite_ext(sArrow, GameData.strafing, x, y - (sprite_height / 2), 1, 1, GameData.arrow_dir, _color, 1);
+matrix_set(matrix_world, matrix_build(x, y, depth - 1, xrot, yrot, zrot, 1, 1, 1));
+//draw_sprite_ext(sArrow, GameData.strafing, _x, _y - (sprite_height / 2), 1, 1, GameData.arrow_dir, _color, 1);
+draw_sprite_ext(sArrow, GameData.strafing, _x, _y, 1, 1, GameData.arrow_dir, _color, 1);
+matrix_set(matrix_world, omat);

@@ -1,3 +1,4 @@
+depth = oPlayer.depth;
 sprite_index = wid.projectile_sprite;
 c = method(self, wid.run_create);
 bs = method(self, wid.run_begin_step);
@@ -10,3 +11,7 @@ c();
 hit_frame = 0;
 hits = wid.hits[level];
 last_frame = frame + wid.duration;
+xrot = -90;
+yrot = 0;
+zrot = 0;
+zz = 0;

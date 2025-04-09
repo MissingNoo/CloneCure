@@ -15,3 +15,4 @@ if (!is_undefined(near) and place_meeting(x, y, near)) {
 	instance_destroy(near);
 	event_perform(ev_create, 0);
 }
+zrot-=2;

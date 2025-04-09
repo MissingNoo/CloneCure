@@ -26,9 +26,11 @@ function prop_draw(){
 	if (!instance_exists(oPlayer)) {
 	    return;
 	}
+	var omat = matrix_get(matrix_world);
+	var _x = (x), _y = (y);
 	var sprw = sprite_width / 2;
 	var sprh = sprite_height;
-	var alpha = oPlayer.y < y and collision_rectangle(x- sprw,y - sprh, x + sprw, y, oPlayer, false, false) ? 0.75 : 1;
+	var alpha = oPlayer.y < _y and collision_rectangle(_x - sprw,_y - sprh, _x + sprw, _y, oPlayer, false, false) ? 0.75 : 1;
 	var _offset = 0;
 	switch (sprite_index) {
 	    case sTree:
@@ -38,7 +40,13 @@ function prop_draw(){
 	        // code here
 	        break;
 	}
-	
-	draw_sprite_ext(sprite_index, 0, x, y + _offset, 1, -0.75, 0, c_black, 0.25);
-	draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_white, alpha);
+	_x = 0;
+	_y = 0;
+	//matrix_set(matrix_world, matrix_build(x, y, depth, 0, 0, 0, 1, 1, 1));
+	//draw_sprite_ext(sprite_index, 0, _x, _y + _offset, 1, -0.75, 0, c_black, 0.25);
+	matrix_set(matrix_world, matrix_build(x, y, depth, -90, 0, 0, 1, 1, 1));
+	draw_sprite_ext(sprite_index, 0, _x, _y, 1, 1, 0, c_white, alpha);
+	matrix_set(matrix_world, matrix_build(x, y, depth, -90, 0, 90, 1, 1, 1));
+	draw_sprite_ext(sprite_index, 0, _x, _y, 1, 1, 0, c_white, alpha);
+	matrix_set(matrix_world, omat);
 }

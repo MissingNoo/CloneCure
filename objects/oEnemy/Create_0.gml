@@ -10,3 +10,4 @@ ds_queue_enqueue(oStage.dir_queue, self.id);
 was_hit = false;
 inv_frame = 0;
 attack_frame = 0;
+depth = oPlayer.depth;

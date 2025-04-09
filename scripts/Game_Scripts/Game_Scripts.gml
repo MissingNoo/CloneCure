@@ -32,13 +32,19 @@ enum weapon_enchantments {
 }
 function weapon(_name) constructor {
     name = _name;
-    run_create = function(){};
+    run_create = function(){ };
     run_begin_step = function(){};
     run_step = function(){};
     run_end_step = function(){};
     run_on_hit = function(){};
     run_draw = function(){
-        draw_self();
+		var omat = matrix_get(matrix_world);
+		var _x = (x), _y = (y);
+		matrix_set(matrix_world, matrix_build(_x, _y, depth - sprite_get_height(sprite_index) + zz, xrot, yrot, zrot, 1, 1, 1));
+		_x = 0;
+		_y = 0;
+        draw_sprite_ext(sprite_index, image_index, _x, _y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+		matrix_set(matrix_world, omat);
     };
     sprite = sBlank;
     level = 1;
@@ -226,6 +232,7 @@ w.set_create(function(){
 	y = oPlayer.y - 16 + lengthdir_y(orbit_length, round(orbit_place));
 })
 w.set_step(function(){
+	zz = sine_between(current_time / 1000, 1, -10, 10);
     orbit_place -= spinning_speed;
     x = oPlayer.x + lengthdir_x(orbit_length, round(orbit_place));
 	y = oPlayer.y - 16 + lengthdir_y(orbit_length, round(orbit_place));

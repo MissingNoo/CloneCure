@@ -36,3 +36,6 @@ for (var i = 0; i < array_length(range); i++) {
 if (irandom_range(0, 3000) == 1) {
 	sprite_index = sXPMagnet; //TODO: double if got super study glasses
 }
+xrot = -90;
+yrot = -90;
+zrot = -90;
