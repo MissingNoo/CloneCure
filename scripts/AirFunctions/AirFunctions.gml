@@ -506,7 +506,7 @@ function topdown_movement(owner, _spd) constructor {
     static movement = function() {
         get_input();
         normalize();
-        move(hspd, vspd, oGameUI);
+        move(hspd, vspd, oCol);
     }
     
     static is_moving = function() {

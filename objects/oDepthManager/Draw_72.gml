@@ -5,11 +5,9 @@ ds_grid_resize(grid, 2 , count);
 var g = grid;
 var yy = 0;
 with (oDepthParent) {
-	if (!variable_instance_exists(self, "saved") or (variable_instance_exists(self, "saved") and distance_to_object(oPlayer) < oPlayer.renderDistance)) {
 	    g[# 0, yy] = id;
 		g[# 1, yy] = y;
 		yy++;
-	}
 }
 //with (oMapAssetParent) {
 //	if (!variable_instance_exists(self, "saved") or (variable_instance_exists(self, "saved") and distance_to_object(oPlayer) < oPlayer.renderDistance)) {

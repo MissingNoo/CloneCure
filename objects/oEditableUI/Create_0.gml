@@ -64,7 +64,7 @@ save = function(name = "test") {
 
 load = function() {
 	ui.dispose();
-	ui = new window(json_parse(buffer_read(buffer_load("/home/airgeadlamh/.config/Shooter/test.ui"), buffer_text)));
-	ui.edit_mode();
+	ui = new window(json_parse(buffer_read(buffer_load(game_save_id + "test.ui"), buffer_text)), true);
+	//ui.edit_mode();
 }
 

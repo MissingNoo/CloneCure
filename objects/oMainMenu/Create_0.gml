@@ -11,8 +11,6 @@ scribble_font_bake_outline_4dir("sDmgFont", "fDmg", c_black, true);
 scribble_font_set_default("sHFont");	
 //oo = 0;
 //yy = 0;
-var scale = os_type == os_android ? 2 : 1;
-display_set_gui_maximise(scale, scale);
 ui = new window(global.game_uis.main_menu, false);
 ui.fit_to_gui();
 buttons = {
@@ -32,15 +30,15 @@ buttons.button_quit.set_function(function() {
 });
 
 buttons.button_play.set_function(function() {
-	//var stage = Stages[$ "Stage1"];
-	//GameData.on_stage = true;
-	//if (!is_undefined(GameData.music)) { audio_stop_sound(GameData.music); }
-	//GameData.music = audio_play_sound(stage.music, 0, -1, GameConfig.music_volume);
-	//global.seconds = 0;
-	//global.minutes = 0;
-	//frame = 0;
-   	//room_goto(stage.rm);
-   	room_goto(rCharSelect);
+	var stage = Stages[$ "Stage1"];
+	GameData.on_stage = true;
+	if (!is_undefined(GameData.music)) { audio_stop_sound(GameData.music); }
+	GameData.music = audio_play_sound(stage.music, 0, -1, GameConfig.music_volume);
+	global.seconds = 0;
+	global.minutes = 0;
+	frame = 0;
+	room_goto(stage.rm); 
+	//room_goto(rCharSelect);
 });
 
 bars = [];
