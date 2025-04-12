@@ -1,3 +1,33 @@
+ups = [
+	Weapons[$ "Ame_Pistol"],
+	Weapons[$ "Ame_Pistol"],
+	Weapons[$ "Ame_Pistol"],
+	Weapons[$ "Ame_Pistol"],
+]
+var wnames = struct_get_names(Weapons);
+avaliable_weapons = [];
+for (var i = 0; i < array_length(wnames); i++) {
+	repeat (Weapons[$ wnames].weight) {
+    	array_push(avaliable_weapons, wnames);
+    }
+}
+
+for (var i = array_length(Player_Weapons) - 1; i >= 0; i--) {
+    if (Player_Weapons[i] == undefined) {
+    	continue;
+    }
+	if (Player_Weapons[i].level == 7) {
+        repeat (Player_Weapons[i].weight + 1) {
+        	var index = array_get_index(avaliable_weapons, Player_Weapons[i].name);
+            if (index != -1) {
+            	array_delete(avaliable_weapons, index, 1);
+            }
+            
+        }
+        
+    }
+}
+show_message(avaliable_weapons);
 mx = 0;
 my = 0;
 GameData.level++;

@@ -4,12 +4,6 @@
 //yy += - input_check_pressed("up") + input_check_pressed("down");
 //oo += (- input_check_pressed("left") + input_check_pressed("right")) * 0.05;
 //show_debug_message($"o {oo}");
-ups = [
-	Weapons[$ "Ame_Pistol"],
-	Weapons[$ "Ame_Pistol"],
-	Weapons[$ "Ame_Pistol"],
-	Weapons[$ "Ame_Pistol"],
-]
 ui.foreach(function(name, pos, data) {
     var spr = data[$ "image"] != undefined ? asset_get_index(data.image) : undefined;
     spr = (spr != undefined and spr != -1) ? spr : sBlank;

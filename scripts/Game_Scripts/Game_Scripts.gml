@@ -58,7 +58,7 @@ function weapon(_name) constructor {
     maxdmg = [];
     type = undefined;
     can_enchant = [];
-    weight = 0;
+    weight = 3;
 	lex = "Weapons"
     
     Weapons[$ name] = self;
