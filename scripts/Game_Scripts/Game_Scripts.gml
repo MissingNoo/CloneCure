@@ -53,7 +53,7 @@ function weapon(_name) constructor {
     hits = 0;
     duration = 10;
     hit_cooldown = 10;
-    shoots = 1;
+    shoots = array_create(8, 1);
     projectile_sprite = sBlank;
     perk = false;
     character_name = undefined;
@@ -67,6 +67,7 @@ function weapon(_name) constructor {
 	area = [0, 1, 1, 1, 1, 1, 1, 1];
 	knockback_duration = array_create(8, 0);
  	knockback_speed = array_create(8, 0);
+	sound = undefined;
     
     Weapons[$ name] = self;
 	/// @function                set_sprite(spr, projectile)
@@ -183,13 +184,28 @@ function weapon(_name) constructor {
         maxdmg = _max;
         return self;
     }
+	/// @function                set_sound(snd)
+	/// @description             Defines the sound for the weapon.
+	/// @param {Asset.GMSound}   snd The sound to play.
+    static set_sound = function(snd) {
+        sound = snd;
+        return self;
+    }
 	/// @function                set_knockback(duration, speed)
 	/// @description             Defines the damage for the weapon.
-	/// @param {array}     _dur The minimum damage for the weapon.
-	/// @param {array}     _spd  The max damage for the weapon.
+	/// @param {Any}     _dur	 The minimum damage for the weapon.
+	/// @param {Any}     _spd    The max damage for the weapon.
     static set_knockback = function(_dur, _spd) {
-        array_insert(_dur, 0, 0);
-        array_insert(_spd, 0, 0);
+		if (is_array(_dur)) {
+			array_insert(_dur, 0, 0);
+		} else {
+			_dur = array_create(8, _dur);
+		}
+		if (is_array(_spd)) {
+			array_insert(_spd, 0, 0);
+		} else {
+			_spd = array_create(8, _spd);
+		}
         knockback_duration = _dur;
         knockback_speed = _spd;
         return self;
@@ -346,4 +362,31 @@ w.set_enchants([
 ]);
 w.set_type(weapon_type.Melee);
 w.set_knockback([0, 0, 5, 5, 5, 5, 5], [0, 0, 5, 5, 5, 5, 5]);
+w.set_weight(3);
+#endregion
+
+#region Wamy Water
+w = new weapon("Wamy_Water");
+w.set_sprite(sWamyWaterThumb, sWamyWater);
+w.set_weight(3);
+w.set_create(function(){
+	image_angle = GameData.arrow_dir;
+});
+w.set_on_animation_end(function() {
+	instance_destroy();
+});
+w.set_damage([9, 11, 11, 11, 11, 15, 15], [13, 15, 15, 15, 15, 19, 19]);
+w.set_cooldown([120, 120, 120, 120, 96, 96, 96], 10);
+w.set_shoots([1, 1, 1, 1, 1, 1, 1]);
+w.set_hits(999);
+w.set_hit_cooldown(30);
+w.set_area([1.2, 1.2, 1.44, 1.44, 1.44, 1.44, 2]);
+w.set_knockback(10, [5, 5, 5, 8, 8, 8, 8]);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Size,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Cooldown,
+	weapon_enchantments.Knockback
+])
 #endregion

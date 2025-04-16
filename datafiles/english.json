@@ -236,15 +236,15 @@
 				"6":"Increase attack size by 50%.",
 				"7":"Increase damage by 50%."
             },
-            "Wamy Water":{
-            "name":"Wamy Water",
+            "Wamy_Water":{
+				"name":"Wamy Water",
 				"1":"Create a splash of unknown water in front, knocking targets back.",
-				"2":"Increase damage by 20%.",
-				"3":"Increase attack area by 30%.",
-				"4":"Increase splash knockback.",
-				"5":"Reduce time between attacks by 20%.",
-				"6":"Increase damage by 30%.",
-				"7":"Increase attack area by 30% and stops targets for a short moment after knockback."
+				"2":"Increase damage by [c_green]20%[c_white].",
+				"3":"Increase attack area by [c_green]30%[c_white].",
+				"4":"Increase splash [c_yellow]knockback.[c_white]",
+				"5":"Reduce time between attacks by [c_green]20%[c_white].",
+				"6":"Increase damage by [c_green]30%[c_white].",
+				"7":"Increase attack area by [c_green]30% [c_white]and [c_cyan]stuns [c_white]targets for a short moment after knockback."
             },
             "X-Potato":{
 				"name":"X-Potato",

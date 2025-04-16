@@ -13,3 +13,6 @@ hits = wid.hits[level];
 last_frame = frame + wid.duration;
 image_xscale = image_xscale * wid.area[level];
 image_yscale = image_yscale * wid.area[level];
+if (wid.sound != undefined) {
+	audio_play_sound(wid.sound, 0, 0, GameConfig.sound_volume);
+}
