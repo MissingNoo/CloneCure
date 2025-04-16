@@ -65,6 +65,16 @@
 			}
         },
         "Weapons":{
+			"Sausage" : {
+				"name" : "Sausage",
+				"1" : "If there are targets nearby, swings a small sausage towards the closest target.",
+				"2" : "Increase damage by [c_green]20%[c_white].",
+				"3" : "Adds a small [c_yellow]knockback [c_white]on hit.",
+				"4" : "Reduce the time between attacks by [c_green]20%[c_white].",
+				"5" : "Increase attack area by and damage by [c_green]30%[c_white].",
+				"6" : "Reduce the time between attacks by [c_green]20%[c_white].",
+				"7" : "Sausage swing becomes a [c_green]2-hit combo[c_white].",
+			},
 			"Aik":{
 				"name":"Aik",
 				 	"desc" : "Sends Aik to the closest as well as random targets and fires a beam.",

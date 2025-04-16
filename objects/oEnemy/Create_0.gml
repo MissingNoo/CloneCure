@@ -1,3 +1,4 @@
+hit_frame = {};
 e = Enemies[$ name];
 hp = e.hp;
 atk = e.atk;

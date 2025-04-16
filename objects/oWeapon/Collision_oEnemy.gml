@@ -1,9 +1,15 @@
-if (other.inv_frame > frame or hit_frame > frame or image_alpha == 0 or other.image_alpha != 1) {
+var ohit = other.hit_frame[$ $"i{id}"];
+if (is_undefined(ohit)) {
+	other.hit_frame[$ $"i{id}"] = 0;
+	ohit = 0;
+}
+if (other.inv_frame > frame or ohit > frame or image_alpha == 0 or other.image_alpha != 1) {
 	exit;
 }
 hits--;
 on_hit();
-hit_frame = frame + wid.hit_cooldown;
+other.hit_frame[$ $"i{id}"] = frame + wid.hit_cooldown;
+
 other.inv_frame = frame + 15;
 var dmg = irandom_range(wid.mindmg[wid.level], wid.maxdmg[wid.level]);
 other.hp -= dmg;
