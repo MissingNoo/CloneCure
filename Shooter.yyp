@@ -1797,6 +1797,8 @@
     {"id":{"name":"sSaplingB","path":"sprites/sSaplingB/sSaplingB.yy",},},
     {"id":{"name":"sSaplingC","path":"sprites/sSaplingC/sSaplingC.yy",},},
     {"id":{"name":"sSaplingKing","path":"sprites/sSaplingKing/sSaplingKing.yy",},},
+    {"id":{"name":"sSausageSwing","path":"sprites/sSausageSwing/sSausageSwing.yy",},},
+    {"id":{"name":"sSausageThumb","path":"sprites/sSausageThumb/sSausageThumb.yy",},},
     {"id":{"name":"sSaved","path":"sprites/sSaved/sSaved.yy",},},
     {"id":{"name":"sSelectScreenThingy","path":"sprites/sSelectScreenThingy/sSelectScreenThingy.yy",},},
     {"id":{"name":"sShark","path":"sprites/sShark/sShark.yy",},},
