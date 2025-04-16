@@ -1,4 +1,5 @@
 #macro GameConfig global.game_config
+#macro weapon_create instance_create_depth(oPlayer.x, oPlayer.y - (oPlayer.sprite_height / 2), oPlayer.depth + 1, oWeapon, 
 GameConfig = {
     sound_volume : 1,
     music_volume : 1
@@ -217,7 +218,7 @@ w.set_step(function() {
     if (can_spawn_other and timer == 0 and remaining > 0) {
         remaining--;
         timer = wid.delay;
-        var inst = instance_create_depth(oPlayer.x, oPlayer.y - (oPlayer.sprite_height / 2), oPlayer.depth + 1, oWeapon, {
+        var inst = weapon_create {
             wid : wid
         });
         inst.direction = other_dir;
@@ -267,7 +268,7 @@ w.set_create(function(){
         var off_count = 360 / (books);
         var off = 0;
     	repeat (books) {
-    	    var inst = instance_create_depth(oPlayer.x, oPlayer.y - (oPlayer.sprite_height / 2), oPlayer.depth + 1, oWeapon, {
+    	    var inst = weapon_create {
                 wid : wid,
                 orbit_place : off
             });
@@ -307,6 +308,17 @@ w.set_create(function(){
 		instance_destroy();
 	} else {
 		image_angle = point_direction(x, y, on_range.x, on_range.y);
+	}
+	sausagetimer = frame + wid.delay;
+	sausages = wid.shoots[level] - 1;
+});
+w.set_step(function() {
+	if (sausagetimer < frame and can_spawn_other and sausages > 0) {
+		sausages--;
+		sausagetimer = frame + wid.delay;
+		var inst = weapon_create {
+			wid : wid,
+		});
 	}
 });
 w.set_on_animation_end(function(){
