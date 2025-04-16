@@ -65,6 +65,8 @@ function weapon(_name) constructor {
     weight = 3;
 	lex = "Weapons"
 	area = [0, 1, 1, 1, 1, 1, 1, 1];
+	knockback_duration = array_create(8, 0);
+ 	knockback_speed = array_create(8, 0);
     
     Weapons[$ name] = self;
 	/// @function                set_sprite(spr, projectile)
@@ -179,6 +181,17 @@ function weapon(_name) constructor {
         array_insert(_max, 0, 0);
         mindmg = _min;
         maxdmg = _max;
+        return self;
+    }
+	/// @function                set_knockback(duration, speed)
+	/// @description             Defines the damage for the weapon.
+	/// @param {array}     _dur The minimum damage for the weapon.
+	/// @param {array}     _spd  The max damage for the weapon.
+    static set_knockback = function(_dur, _spd) {
+        array_insert(_dur, 0, 0);
+        array_insert(_spd, 0, 0);
+        knockback_duration = _dur;
+        knockback_speed = _spd;
         return self;
     }
 	/// @function                set_area(area)
@@ -332,4 +345,5 @@ w.set_enchants([
 	weapon_enchantments.Knockback
 ]);
 w.set_type(weapon_type.Melee);
+w.set_knockback([0, 0, 5, 5, 5, 5, 5], [0, 0, 5, 5, 5, 5, 5]);
 #endregion

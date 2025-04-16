@@ -1,3 +1,4 @@
+knocktimer = 0;
 hit_frame = {};
 e = Enemies[$ name];
 hp = e.hp;

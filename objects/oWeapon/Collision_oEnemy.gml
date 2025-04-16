@@ -18,3 +18,14 @@ instance_create_depth(other.x, other.y - (other.sprite_height / 2), other.depth 
     dmg : dmg
 });
 audio_play_sound(choose(snd_hit1, snd_hit2, snd_hit3), 0, 0, GameConfig.sound_volume, undefined, random_range(0.75, 1));
+if (wid.knockback_speed[level] != 0 and other.knocktimer < frame) {
+	other.knocktimer = frame + wid.knockback_duration[level];
+	var push = wid.knockback_speed[level];
+	
+	var dir = point_direction(x, y, other.x, other.y);
+	var hspd = lengthdir_x(push, dir);
+	var vspd = lengthdir_y(push, dir);
+	
+	other.x += hspd;
+	other.y += vspd;
+}
