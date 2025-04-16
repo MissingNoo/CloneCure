@@ -79,7 +79,7 @@ function Stage(_name) constructor {
 
 var stage1 = new Stage("Stage1");
 stage1.add_enemy("Urufugang", "00:01");
-stage1.add_enemy("Theo", "00:10");
+stage1.add_enemy("DarkShrimp", "00:10");
 stage1.remove_enemy("Urufugang", "00:15");
 stage1.set_border(610, 610, 3170, 3170);
 stage1.set_music(bgm_suspect);

@@ -1,3 +1,4 @@
+#extension GL_OES_standard_derivatives : require
 precision highp float;
 
 attribute vec3 in_Position;

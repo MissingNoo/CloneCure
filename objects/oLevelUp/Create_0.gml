@@ -7,8 +7,8 @@ ups = [
 var wnames = struct_get_names(Weapons);
 avaliable_weapons = [];
 for (var i = 0; i < array_length(wnames); i++) {
-	repeat (Weapons[$ wnames].weight) {
-    	array_push(avaliable_weapons, wnames);
+	repeat (Weapons[$ wnames[i]].weight) {
+    	array_push(avaliable_weapons, wnames[i]);
     }
 }
 
@@ -27,15 +27,10 @@ for (var i = array_length(Player_Weapons) - 1; i >= 0; i--) {
         
     }
 }
-show_message(avaliable_weapons);
 mx = 0;
 my = 0;
 GameData.level++;
 GameData.needed_xp += round((4*(GameData.level + 1)) *2.1) - round((4*GameData.level)*2.1);
-lorem0 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit massa et suscipit mattis. Etiam vel velit rutrum, pellentesque nunc in, pulvinar augue. Duis blandit venenatis scelerisque. Sed vulputate mi dictum augue convallis pulvinar. Aliquam mattis tincidunt mi, ornare rutrum est blandit vel. Fusce sit amet pellentesque diam.";
-lorem1 = "Lorem2 ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit massa et suscipit mattis. Etiam vel velit rutrum, pellentesque nunc in, pulvinar augue. Duis blandit venenatis scelerisque. Sed vulputate mi dictum augue convallis pulvinar. Aliquam mattis tincidunt mi, ornare rutrum est blandit vel. Fusce sit amet pellentesque diam.";
-lorem2 = "Lorem3 ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit massa et suscipit mattis. Etiam vel velit rutrum, pellentesque nunc in, pulvinar augue. Duis blandit venenatis scelerisque. Sed vulputate mi dictum augue convallis pulvinar. Aliquam mattis tincidunt mi, ornare rutrum est blandit vel. Fusce sit amet pellentesque diam.";
-lorem3 = "Lorem4 ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit massa et suscipit mattis. Etiam vel velit rutrum, pellentesque nunc in, pulvinar augue. Duis blandit venenatis scelerisque. Sed vulputate mi dictum augue convallis pulvinar. Aliquam mattis tincidunt mi, ornare rutrum est blandit vel. Fusce sit amet pellentesque diam.";
 //feather ignore GM2023
 //feather ignore GM1041
 ui = new window(global.game_uis.level_up);

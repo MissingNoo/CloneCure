@@ -48,6 +48,16 @@ function window(struct, _generate = false) constructor {
         recalculate();
         return self;
     }
+	
+	static fit_to_dimension = function(w, h) {
+        ostruct.top = 0;
+        ostruct.left = 0;
+        ostruct.width = w;
+        ostruct.height = h;
+        root = flexpanel_create_node(ostruct);
+        recalculate();
+        return self;
+    }
     
 	static set_data = function(node, newdata) { 
 		var olddata = 	flexpanel_node_get_data(flexpanel_node_get_child(root, node));

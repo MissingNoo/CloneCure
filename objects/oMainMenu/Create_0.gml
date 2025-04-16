@@ -43,6 +43,7 @@ buttons.button_play.set_function(function() {
 
 bars = [];
 start_y = 350;
+tween(self, "start_y", 0, "ease", 30);
 title_x = undefined;
 title_x_end = undefined;
 chars = struct_get_names(Characters);
