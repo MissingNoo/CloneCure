@@ -1695,6 +1695,8 @@
     {"id":{"name":"sNurseHorn","path":"sprites/sNurseHorn/sNurseHorn.yy",},},
     {"id":{"name":"sOnionIcon","path":"sprites/sOnionIcon/sOnionIcon.yy",},},
     {"id":{"name":"sOnionSeed","path":"sprites/sOnionSeed/sOnionSeed.yy",},},
+    {"id":{"name":"sOwlDaggerSlash","path":"sprites/sOwlDaggerSlash/sOwlDaggerSlash.yy",},},
+    {"id":{"name":"sOwlDaggerThumb","path":"sprites/sOwlDaggerThumb/sOwlDaggerThumb.yy",},},
     {"id":{"name":"sPepperIcon","path":"sprites/sPepperIcon/sPepperIcon.yy",},},
     {"id":{"name":"sPepperSeed","path":"sprites/sPepperSeed/sPepperSeed.yy",},},
     {"id":{"name":"sPhaseCoin","path":"sprites/sPhaseCoin/sPhaseCoin.yy",},},

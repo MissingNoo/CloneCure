@@ -31,7 +31,8 @@ enum weapon_enchantments {
     Crit,
     Projectile,
 	Cooldown,
-	Knockback
+	Knockback,
+	Hit_Rate
 }
 function weapon(_name) constructor {
     name = _name;
@@ -130,9 +131,12 @@ function weapon(_name) constructor {
     }
 	/// @function                set_cooldown(cooldown, minimum_cooldown)
 	/// @description             Defines the cooldown for the weapon.
-	/// @param {array}    _cooldown   The base cooldown levels.
+	/// @param {Any}    _cooldown   The base cooldown levels.
 	/// @param {real}    _min_cooldown   The minimum possible cooldown.
     static set_cooldown = function(_cooldown, _min_cooldown) {
+		if (!is_array(_cooldown)) {
+			_cooldown = array_create(7, _cooldown);
+		}
         array_insert(_cooldown, 0, 0);
         base_cooldown = _cooldown;
         cooldown = _cooldown[1];
@@ -160,6 +164,9 @@ function weapon(_name) constructor {
         return self;
     }
     static set_shoots = function(amount) {
+		if (!is_array(amount)) {
+			amount = array_create(7, amount);
+		}
         array_insert(amount, 0, 0);
         shoots = amount;
         return self;
@@ -388,5 +395,65 @@ w.set_enchants([
 	weapon_enchantments.Crit,
 	weapon_enchantments.Cooldown,
 	weapon_enchantments.Knockback
-])
+]);
+w.set_type(weapon_type.Melee);
+#endregion
+
+#region Owl Dagger
+w = new weapon("Owl_Dagger");
+w.set_sprite(sOwlDaggerThumb, sOwlDaggerSlash);
+w.set_weight(2);
+w.set_create(function(){
+	image_angle = GameData.arrow_dir;
+});
+w.set_on_animation_end(function() {
+	instance_destroy();
+});
+w.set_damage([10, 10, 12, 12, 12, 15, 15], [14, 14, 16, 16, 16, 19, 19]);
+w.set_cooldown([60, 48, 48, 48, 33, 33, 20], 10);
+w.set_shoots([1, 1, 1, 1, 1, 1, 2]);
+w.set_delay(6);
+w.set_hits(999);
+w.set_hit_cooldown(50);
+w.set_area([1, 1, 1, 1.2, 1.2, 1.2, 1.2]);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Size,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Cooldown,
+]);
+w.set_type(weapon_type.Melee);
+#endregion
+
+#region Spider Cooking
+w = new weapon("Spider_Cooking");
+w.set_sprite(sSpiderCookingThumb, sSpiderCooking);
+w.set_weight(4);
+w.set_damage([7, 7, 10, 10, 10, 12, 12], [11, 11, 14, 14, 14, 16, 16]);
+w.set_cooldown(600, 600);
+w.set_shoots(1);
+w.set_hits(999);
+w.set_area([1.1, 1.265, 1.265, 1.58, 1.58, 1.58, 1.58]);
+w.set_duration(601);
+w.set_knockback([0, 0, 0, 0, 0, 0, 8], [0, 0, 0, 0, 0, 0, 3]);
+w.set_hit_cooldown(36);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Size,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Knockback,
+	weapon_enchantments.Hit_Rate,
+]);
+w.set_draw(function() {
+	draw_sprite_ext(sprite_index, 0, x, y, image_xscale, image_yscale, 0, c_white, 0.25);
+});
+w.set_create(function() {
+	x = oPlayer.x;
+	y = oPlayer.y;
+});
+w.set_step(function() {
+	x = oPlayer.x;
+	y = oPlayer.y;
+});
+w.set_type(weapon_type.Melee);
 #endregion

@@ -57,6 +57,7 @@ update_items = function(w, h) {
 	});
 	surface_reset_target();
 	surface_set_target(itemssurf);
+	draw_clear_alpha(c_black, 0);
 	draw_surface_part(tempsurf, temppos.left, temppos.top, temppos.width, temppos.height, 0, 0);
 	surface_reset_target();
 }

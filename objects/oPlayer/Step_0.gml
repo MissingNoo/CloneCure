@@ -1,3 +1,10 @@
+if (keyboard_check_pressed(ord("O"))) {
+	Player_Weapons[0].level++;
+}
+if (keyboard_check_pressed(ord("I"))) {
+	Player_Weapons[0].level--;
+}
+Player_Weapons[0].level = clamp(Player_Weapons[0].level, 1, 7);
 var near_xp = instance_nearest(x, y, oXP);
 if (distance_to_object(near_xp) < 40) {
 	with (near_xp) {

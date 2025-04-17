@@ -246,6 +246,16 @@
 				"6":"Increase damage by [c_green]30%[c_white].",
 				"7":"Increase attack area by [c_green]30% [c_white]and [c_cyan]stuns [c_white]targets for a short moment after knockback."
             },
+            "Owl_Dagger" : {
+				"name" : "Owl Dagger",
+				"1" : "A very fast dagger that slashes continuously in front.",
+				"2" : "Reduce the time between attacks by [c_green]20%[c_white].",
+				"3" : "Increase damage by [c_green]20%[c_white].",
+				"4" : "Increase attack area by [c_green]20%[c_white].",
+				"5" : "Reduce the time between attacks by [c_green]30%[c_white].",
+				"6" : "Increase damage by [c_green]20%[c_white].",
+				"7" : "Reduce the time between attacks further and slashes [c_green]twice [c_white]each time.",
+            },
             "X-Potato":{
 				"name":"X-Potato",
 				"1": "Throw a potato that bounces around the screen before exploding into an X.",

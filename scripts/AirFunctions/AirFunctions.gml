@@ -558,3 +558,15 @@ function sprite_get_width_ext(spr, scale = 1) {
 function sprite_get_height_ext(spr, scale = 1) {
 	return sprite_get_height(spr) * scale;
 }
+
+/// @function     		 lenghtdir(lenght, dir)
+/// @description  		 Calculates the X and Y positions with the lenght and direction specified.
+/// @param {real} lenght The minimum damage for the weapon.
+/// @param {real} dir 	 The direction to calculate.
+/// @return {struct} 	 Returns a struct containing the calculated positions.
+function lengthdir(lenght, dir) {
+	return {
+		x : lengthdir_x(lenght, dir),
+		y : lengthdir_y(lenght, dir),
+	}
+}
