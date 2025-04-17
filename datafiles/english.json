@@ -226,15 +226,15 @@
 				"6":"Increase music note size by 25%.",
 				"7":"Increase damage by 50%."
             },
-            "Psycho Axe":{
-            "name":"Spit Bottle",
-				"1":"Throw an bottle that spirals outward from the player.",
-				"2":"Increase size of the bottle by 20%. Increase damage by 20%.",
-				"3":"Reduce delay between attacks by 20%.",
-				"4":"Increase damage by 33%, and size by 20%.",
-				"5":"Remove hit limit, and lasts 1 second longer.",
-				"6":"Increase attack size by 50%.",
-				"7":"Increase damage by 50%."
+            "Psycho_Axe":{
+				"name":"Psycho Axe",
+				"1" : "Throw an axe that spirals outward from the player. ",
+				"2" : "Increase size of axe by [c_green]20%[c_white]. Increase damage by [c_green]20%[c_white].",
+				"3" : "Reduce time between attacks by [c_green]20%[c_white].",
+				"4" : "Increase damage by [c_green]33%[c_white], and size by [c_green]20%[c_white].",
+				"5" : "Remove hit limit, and lasts [c_green]1 [c_white]second longer.",
+				"6" : "Increase attack size by [c_green]50%[c_white].",
+				"7" : "Increase damage by [c_green]50%[c_white]."
             },
             "Wamy_Water":{
 				"name":"Wamy Water",

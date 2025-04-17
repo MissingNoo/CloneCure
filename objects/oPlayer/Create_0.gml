@@ -16,9 +16,15 @@ GameData.needed_xp = 79;
 GameData.level = 1;
 //show_debug_overlay(true);
 //Player_Weapons[0] = variable_clone(Weapons[$ char.main_weapon]);
-Player_Weapons[0] = variable_clone(Weapons[$ "Spider_Cooking"]);
+Player_Weapons[0] = variable_clone(Weapons[$ "Psycho_Axe"]);
 Player_Weapons[0].level = 1;
-//Player_Weapons[1] = variable_clone(Weapons[$ "Sausage"]);
+/*Player_Weapons[1] = variable_clone(Weapons[$ "Sausage"]);
+Player_Weapons[1].level = 7;
+Player_Weapons[2] = variable_clone(Weapons[$ "Wamy_Water"]);
+Player_Weapons[2].level = 7;
+Player_Weapons[3] = variable_clone(Weapons[$ "Owl_Dagger"]);
+Player_Weapons[3].level = 7;
+Player_Weapons[1] = variable_clone(Weapons[$ "Sausage"]);*/
 //Player_Weapons[1].level = 7;
 image_xscale = 1;
 image_yscale = 1;

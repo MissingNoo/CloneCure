@@ -164,6 +164,10 @@ function weapon(_name) constructor {
         return self;
     }
     static set_duration = function(amount) {
+		if (!is_array(amount)) {
+			amount = array_create(7, amount);
+		}
+		array_insert(amount, 0, 0);
         duration = amount;
         return self;
     }
@@ -246,6 +250,7 @@ function weapon(_name) constructor {
         return self;
     }
 }
+
 #region Ame Pistol
 var w = new weapon("Ame_Pistol");
 w.set_sprite(sAmeliaWeapon, sAmeliaWeaponProjectile);
@@ -494,4 +499,37 @@ w.set_clean_up(function() {
 	part_system_destroy(_ps);
 });
 w.set_type(weapon_type.Melee);
+#endregion
+
+#region Psycho Axe
+w = new weapon("Psycho_Axe");
+w.set_sprite(sPsychoAxeThumb, sPsychoAxe);
+w.set_create(function() {
+	orbit_length = 0;
+	orbit_place = 0;
+});
+w.set_step(function() {
+	orbit = lengthdir(orbit_length, orbit_place);
+	x = xstart + orbit.x;
+	y = ystart + orbit.y;
+	orbit_place -= 4;
+	orbit_length += 0.75;
+	//image_angle += 10;
+});
+w.set_weight(3);
+w.set_type(weapon_type.Ranged);
+w.set_damage([10, 14, 14, 19, 19, 19, 28], [14, 18, 18, 23, 23, 23, 34]);
+w.set_cooldown([240, 240, 192, 192, 192, 192, 192], 10);
+w.set_duration([180, 180, 180, 180, 240, 240, 240]);
+w.set_hit_cooldown(50);
+w.set_shoots(1);
+w.set_hits([10, 10, 10, 10, 999, 999, 999]);
+w.set_area([1, 1.20, 1.20, 1.44, 1.44, 2.16, 2.16]);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Size,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Knockback,
+	weapon_enchantments.Cooldown
+]);
 #endregion
