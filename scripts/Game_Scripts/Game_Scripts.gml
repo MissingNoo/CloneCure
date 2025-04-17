@@ -42,6 +42,7 @@ function weapon(_name) constructor {
     run_end_step = function(){};
     run_on_hit = function(){};
     run_on_animation_end = function(){};
+    clean_up = function(){};
     run_draw = function(){
         draw_self();
     };
@@ -92,6 +93,13 @@ function weapon(_name) constructor {
 	/// @param {function}    f   The function to be executed
     static set_begin_step = function(f) {
         run_step = f;
+        return self;
+    }
+	/// @function                set_clean_up(function)
+	/// @description             Defines the function executed after destroying.
+	/// @param {function}    f   The function to be executed
+    static set_clean_up = function(f) {
+        clean_up = f;
         return self;
     }
 	/// @function                set_step(function)
@@ -445,15 +453,45 @@ w.set_enchants([
 	weapon_enchantments.Hit_Rate,
 ]);
 w.set_draw(function() {
-	draw_sprite_ext(sprite_index, 0, x, y, image_xscale, image_yscale, 0, c_white, 0.25);
+	draw_sprite_ext(sprite_index, 0, x, y, image_xscale, image_yscale, 0, c_white, 0.5);
 });
 w.set_create(function() {
 	x = oPlayer.x;
-	y = oPlayer.y;
+	y = oPlayer.y - 16;
+	//ParticleSystem5
+	_ps = part_system_create();
+	part_system_draw_order(_ps, true);
+	
+	//Emitter
+	var _ptype1 = part_type_create();
+	part_type_shape(_ptype1, pt_shape_flare);
+	part_type_size(_ptype1, 0.8, 1.2, 0, 0);
+	part_type_scale(_ptype1, 0.1, 0.1);
+	part_type_speed(_ptype1, 1, 1, 0, 0);
+	part_type_direction(_ptype1, 80, 100, 1, 0);
+	part_type_gravity(_ptype1, 0, 270);
+	part_type_orientation(_ptype1, 0, 0, 0, 0, false);
+	part_type_colour3(_ptype1, $9C0761, $9C0761, $9C0761);
+	part_type_alpha3(_ptype1, 1, 1, 1);
+	part_type_blend(_ptype1, true);
+	part_type_life(_ptype1, 10, 30);
+	
+	var _pemit1 = part_emitter_create(_ps);
+	var _size = (sprite_get_width(sSpiderCooking) * image_xscale) / 2;
+	part_emitter_region(_ps, _pemit1, -_size, _size, -_size, _size, ps_shape_ellipse, ps_distr_linear);
+	part_emitter_stream(_ps, _pemit1, _ptype1, 3);
+	
+	part_system_position(_ps, x, y);
+	depth+=10;
+	
 });
 w.set_step(function() {
 	x = oPlayer.x;
-	y = oPlayer.y;
+	y = oPlayer.y - 16;
+	part_system_position(_ps, x, y);
+});
+w.set_clean_up(function() {
+	part_system_destroy(_ps);
 });
 w.set_type(weapon_type.Melee);
 #endregion

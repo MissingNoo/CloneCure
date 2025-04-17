@@ -5,14 +5,15 @@ s = method(self, wid.run_step);
 es = method(self, wid.run_end_step);
 d = method(self, wid.run_draw);
 on_hit = method(self, wid.run_on_hit);
+clean_up = method(self, wid.clean_up);
 on_animation_end = method(self, wid.run_on_animation_end);
 level = wid.level;
+image_xscale = image_xscale * wid.area[level];
+image_yscale = image_yscale * wid.area[level];
 c();
 hit_frame = 0;
 hits = wid.hits[level];
 last_frame = frame + wid.duration;
-image_xscale = image_xscale * wid.area[level];
-image_yscale = image_yscale * wid.area[level];
 if (wid.sound != undefined) {
 	audio_play_sound(wid.sound, 0, 0, GameConfig.sound_volume);
 }
