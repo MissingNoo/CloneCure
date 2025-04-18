@@ -98,4 +98,12 @@ c = new character("Takanashi_Kiara");
 c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleKiara)
 
 c = new character("Tenma_Maemi");
-c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaSake, sTitleTenma);
+c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaSake, sTitleTenma)
+    .set_speed(1.35)
+    .set_weapon("Ame_Pistol")
+    .set_hp(75)
+    .set_atk(1.30)
+    .set_crit(1.10)
+    .set_ballsize(3)
+    .set_flat(false)
+    .set_unlocked_default(true)

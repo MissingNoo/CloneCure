@@ -53,7 +53,7 @@ function weapon(_name) constructor {
     base_cooldown = [];
     min_cooldown = 0;
     hits = 0;
-    duration = 10;
+    duration = array_create(8, 10);
     hit_cooldown = 10;
     shoots = array_create(8, 1);
     projectile_sprite = sBlank;
@@ -532,4 +532,43 @@ w.set_enchants([
 	weapon_enchantments.Knockback,
 	weapon_enchantments.Cooldown
 ]);
+#endregion
+
+#region Fan Beam
+w = new weapon("Fan_Beam");
+w.set_sprite(sFanBeamThumb, sFanBeam);
+w.set_weight(3);
+w.set_on_animation_end(function() {
+	instance_destroy();
+});
+w.set_damage([27, 27, 27, 36, 36, 36, 36], [33, 33, 33, 44, 44, 44, 44]);
+w.set_cooldown([180, 180, 150, 150, 120, 120, 120], 10);
+w.set_delay(1);
+w.set_area([1, 1.30, 1.30, 1.30, 1.30, 2, 2]);
+w.set_shoots([1, 1, 1, 1, 1, 1, 2]);
+w.set_type(weapon_type.Ranged);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Size,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Cooldown
+]);
+w.set_knockback(10, 15);
+w.set_hit_cooldown(60);
+w.set_hits(999);
+w.set_duration(999);
+w.set_create(function() {
+	if (!can_spawn_other) {
+		image_xscale = image_xscale * -1;
+	}
+	if (can_spawn_other and wid.shoots[level] == 2) {
+		var inst = weapon_create {
+			wid : wid
+		});
+	}
+});
+w.set_step(function() {
+	x = oPlayer.x;
+	y = oPlayer.y;
+});
 #endregion

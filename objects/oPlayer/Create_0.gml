@@ -1,6 +1,6 @@
 //display_set_gui_size(1280, 720);
 instance_create_depth(x, y, depth, oCam);
-GameData.selected_character = "Amelia_Watson";
+GameData.selected_character = "Tenma_Maemi";
 char = GameData.characters[$ GameData.selected_character];
 GameData.hp = char.hp;
 GameData.max_hp = GameData.hp;
@@ -16,7 +16,7 @@ GameData.needed_xp = 79;
 GameData.level = 1;
 //show_debug_overlay(true);
 //Player_Weapons[0] = variable_clone(Weapons[$ char.main_weapon]);
-Player_Weapons[0] = variable_clone(Weapons[$ "Psycho_Axe"]);
+Player_Weapons[0] = variable_clone(Weapons[$ "Fan_Beam"]);
 Player_Weapons[0].level = 1;
 /*Player_Weapons[1] = variable_clone(Weapons[$ "Sausage"]);
 Player_Weapons[1].level = 7;
