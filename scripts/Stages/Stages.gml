@@ -32,7 +32,7 @@ function Stage(_name) constructor {
 	}
 	
 	static tp_insts = function(px, py) {
-		var insts = [oWeapon, oEnemy, oAnvil];
+		var insts = [oWeapon, oEnemy, oAnvil, oXP];
 		for (var i = 0; i < array_length(insts); ++i) {
 			with (insts[i]) {
 				var xx = x - px;

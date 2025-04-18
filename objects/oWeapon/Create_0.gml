@@ -8,8 +8,11 @@ on_hit = method(self, wid.run_on_hit);
 clean_up = method(self, wid.clean_up);
 on_animation_end = method(self, wid.run_on_animation_end);
 level = wid.level;
-image_xscale = image_xscale * wid.area[level];
-image_yscale = image_yscale * wid.area[level];
+if (image_xscale == 1) {
+	image_xscale = image_xscale * wid.area[level];
+	image_yscale = image_yscale * wid.area[level];
+}
+
 c();
 hit_frame = 0;
 hits = wid.hits[level];

@@ -558,17 +558,19 @@ w.set_hit_cooldown(60);
 w.set_hits(999);
 w.set_duration(999);
 w.set_create(function() {
-	if (!can_spawn_other) {
+	if (oPlayer.image_xscale < 0 and can_spawn_other) {
 		image_xscale = image_xscale * -1;
 	}
 	if (can_spawn_other and wid.shoots[level] == 2) {
 		var inst = weapon_create {
-			wid : wid
+			wid : wid,
+			image_xscale : image_xscale * -1,
+			image_yscale : image_yscale
 		});
 	}
 });
 w.set_step(function() {
 	x = oPlayer.x;
-	y = oPlayer.y;
+	y = oPlayer.y - 16;
 });
 #endregion
