@@ -28,6 +28,9 @@ selected = 3;
 buttons.button_quit.set_function(function() {
     game_end();
 });
+buttons.button_shop.set_function(function() {
+   room_goto(rShop);
+});
 
 buttons.button_play.set_function(function() {
 	var stage = Stages[$ "Stage1"];

@@ -16,7 +16,7 @@ str = {
     {
       "padding":0.0,
       "flexDirection":"row",
-      "name":"top_panel",
+      "name":"top_panel_grid",
       "height":300.0,
       "flex":1.0,
       "top":0.0,
@@ -54,7 +54,7 @@ str = {
     {
       "padding":0.0,
       "flexDirection":"row",
-      "name":"middle_panel",
+      "name":"middle_panel_grid",
       "height":300.0,
       "flex":1.0,
       "top":0.0,
@@ -94,7 +94,7 @@ str = {
     {
       "padding":0.0,
       "flexDirection":"row",
-      "name":"bottom_panel",
+      "name":"bottom_panel_grid",
       "height":300.0,
       "flex":1.0,
       "top":0.0,

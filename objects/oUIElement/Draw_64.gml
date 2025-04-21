@@ -186,17 +186,21 @@ if (editable) {
 	    _color = "[c_red]";
 		draw_set_color(c_red);
 	}
-    draw_rectangle(x, y, x + width, y + height, true);
-	if (type == "panel" and keyboard_check(vk_f2) or oUI.editing == name or oUI.last_edit == name) {
-		if (_color = "[c_blue]") {
-		    _color = "[c_purple]";
-		}
-		
-	    scribble($"{_color}[fa_center][fa_middle]{name}").draw(x + (width / 2), y + (height / 2));
-	}
-	else if (type != "panel") {
-		scribble($"{_color}[fa_center][fa_middle]{name}").draw(x + (width / 2), y + (height / 2));
-	}
+    if (!string_contains(name, "grid") or keyboard_check(ord("Z"))) {
+    	draw_rectangle(x, y, x + width, y + height, true);
+        if (type == "panel" and keyboard_check(vk_f2) or oUI.editing == name or oUI.last_edit == name) {
+    		if (_color = "[c_blue]") {
+    		    _color = "[c_purple]";
+    		}
+    		
+    	    scribble($"{_color}[fa_center][fa_middle]{name}").draw(x + (width / 2), y + (height / 2));
+    	}
+    	else if (type != "panel") {
+    		scribble($"{_color}[fa_center][fa_middle]{name}").draw(x + (width / 2), y + (height / 2));
+    	}
+    }
+    
+	
 	draw_set_color(c_white);
 }
 //scribble($"[c_blue][fa_center][fa_middle]{type}").draw(x + (width / 2), y + (height / 2));
