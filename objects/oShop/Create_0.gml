@@ -3,14 +3,36 @@ ui.fit_to_gui();
 tabs = ["ability", "stats", "other"];
 selected_tab = 0;
 coinspr = new animated_sprite(sHolocoin);
+desc_wrap = 620;
 item_sprite_x = 40;
 item_sprite_y = 40;
 item_sprite_scale = 2;
-selected_item = "Special_Attack";
+item_s_offset = 5;
+cost_xoffset = 130;
+cost_yoffset = 65;
+cost_scale = 2;
+tab_items = [];
+selecting = "item";
+
+update_tab = function() {
+    tab_items = [];
+    var names = struct_get_names(Shop.upgrades);
+    for (var i = 0; i < array_length(names); i++) {
+    	if (Shop.upgrades[$ names[i]].type == tabs[selected_tab]) {
+        	array_push(tab_items, names[i]);
+        }
+    }
+    array_sort(tab_items, true);
+}
+update_tab();
+selected_item = tab_items[0];
+selected_item_num = 0;
 text_offset = 30;
 text_yoffset = 34;
 text_scale = 2;
-dbg = dbg_view("Shop", true, gui_x_percent(50));
+category_text_offset = 12;
+category_text_scale = 2;
+dbg = dbg_view("Shop", true, gui_x_percent(10));
 dbg_section("Positions");
 var names = struct_get_names(self);
 for (var i = 0; i < array_length(names); i++) {

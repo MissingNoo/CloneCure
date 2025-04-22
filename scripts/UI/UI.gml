@@ -1,3 +1,5 @@
+#macro Lorem "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas efficitur neque vitae dolor commodo, vitae pretium massa tincidunt. Cras non mattis elit. Quisque finibus ligula turpis, et placerat erat efficitur eget. Quisque ex justo, scelerisque ac dignissim nec, malesuada vel quam. Etiam ut felis arcu. Nulla facilisi. Etiam euismod viverra lectus, quis gravida eros iaculis id. Nullam gravida, augue id efficitur ullamcorper, nulla ligula commodo metus, in ultrices erat ante a velit. In vehicula mollis justo, et luctus dolor. Nullam nec efficitur nibh. Maecenas sagittis sem vitae mi rutrum, ac mattis eros molestie. Etiam elit magna, pharetra eu accumsan non, cursus in turpis. Pellentesque in fermentum mi, nec fermentum elit."
+
 global.game_uis = {};
 
 global.game_uis.select = {
@@ -2087,10 +2089,24 @@ global.game_uis.shop = {
             {
               "nodes":[
                 {
+                  "nodes":[
+                    {
+                      "marginBottom":65.0,
+                      "marginTop":5.0,
+                      "padding":10.0,
+                      "name":"tabs",
+                      "marginLeft":10.0,
+                      "height":60.0,
+                      "marginRight":5.0,
+                      "data":{
+                      },
+                      "flex":1.0
+                    }
+                  ],
+                  "padding":-10.0,
                   "width":212.0,
-                  "name":"tabs",
+                  "name":"tabs_panel",
                   "height":357.0,
-                  "padding":10.0,
                   "data":{
                   }
                 },

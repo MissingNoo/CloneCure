@@ -8,7 +8,8 @@ var fstr = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ[]{}()<>=?*:!%01
 //if (os_type != os_android) {
 GameData.font2 = font_add_sprite_ext(sHFont, fstr, true, 1);
 scribble_font_bake_outline_4dir("sDmgFont", "fDmg", c_black, true);
-scribble_font_set_default("sHFont");	
+scribble_font_bake_outline_4dir("sHFont", "fnt", c_black, true);
+scribble_font_set_default("fnt");	
 //oo = 0;
 //yy = 0;
 ui = new window(global.game_uis.main_menu, false);
@@ -50,6 +51,7 @@ tween(self, "start_y", 0, "ease", 30);
 title_x = undefined;
 title_x_end = undefined;
 chars = struct_get_names(Characters);
+array_sort(chars, true);
 //repeat (30) {
     //array_push(chars, chars[irandom(array_length(chars) - 1)]);
 //}
