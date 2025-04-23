@@ -8,8 +8,8 @@ var fstr = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ[]{}()<>=?*:!%01
 //if (os_type != os_android) {
 GameData.font2 = font_add_sprite_ext(sHFont, fstr, true, 1);
 scribble_font_bake_outline_4dir("sDmgFont", "fDmg", c_black, true);
-scribble_font_bake_outline_4dir("sHFont", "fnt", c_black, true);
-scribble_font_set_default("fnt");	
+scribble_font_bake_outline_4dir("sHFont", "ffnt", c_black, true);
+scribble_font_set_default("sHFont");	
 //oo = 0;
 //yy = 0;
 ui = new window(global.game_uis.main_menu, false);

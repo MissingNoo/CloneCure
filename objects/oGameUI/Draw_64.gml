@@ -18,7 +18,7 @@ if (seconds < 10) {
 	seconds = $"0{seconds}";
 }
 //scribble($"[fDmg]{minutes} : {seconds}").scale_to_box(_w, _h, true).draw(_x, _y);
-var str = $"[fDmg][fa_middle][fa_center]{minutes}:{seconds}";
+var str = $"[ffnt][fa_middle][fa_center]{minutes}:{seconds}";
 scribble(str).scale(1).draw(gui_x_percent(50), gui_y_percent(10));
 update_ui(); 
 draw_surface(uisurf, 0, 0);

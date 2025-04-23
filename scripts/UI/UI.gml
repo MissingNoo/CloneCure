@@ -2014,13 +2014,13 @@ global.game_uis.shop = {
           "flex":1.0
         },
         {
+          "margin":0.0,
           "padding":0.0,
           "width":60.0,
           "name":"grid_panel2",
           "data":{
           },
-          "flex":1.0,
-          "margin":0.0
+          "flex":1.0
         },
         {
           "nodes":[
@@ -2038,8 +2038,8 @@ global.game_uis.shop = {
               "padding":10.0,
               "width":301.0,
               "name":"holocoins",
-              "marginLeft":0.0,
               "height":53.0,
+              "marginLeft":0.0,
               "marginRight":29.0,
               "data":{
               }
@@ -2075,14 +2075,14 @@ global.game_uis.shop = {
           "flex":1.0
         },
         {
-          "border":0.0,
+          "margin":0.0,
           "padding":0.0,
+          "border":0.0,
           "width":60.0,
           "name":"grid_panel5",
           "data":{
           },
-          "flex":1.0,
-          "margin":0.0
+          "flex":1.0
         },
         {
           "nodes":[
@@ -2095,8 +2095,8 @@ global.game_uis.shop = {
                       "marginTop":5.0,
                       "padding":10.0,
                       "name":"tabs",
-                      "marginLeft":10.0,
                       "height":60.0,
+                      "marginLeft":10.0,
                       "marginRight":5.0,
                       "data":{
                       },
@@ -2153,13 +2153,13 @@ global.game_uis.shop = {
     {
       "nodes":[
         {
+          "margin":0.0,
           "padding":0.0,
           "width":60.0,
           "name":"grid_panel7",
           "data":{
           },
-          "flex":1.0,
-          "margin":0.0
+          "flex":1.0
         },
         {
           "width":60.0,
@@ -2187,16 +2187,51 @@ global.game_uis.shop = {
                   "padding":10.0,
                   "width":64.0,
                   "name":"item_icon",
-                  "marginLeft":37.0,
                   "height":65.0,
+                  "marginLeft":37.0,
                   "marginRight":0.0,
                   "data":{
                   }
                 },
                 {
+                  "nodes":[
+                    {
+                      "marginTop":8.0,
+                      "padding":10.0,
+                      "width":139.0,
+                      "name":"buy",
+                      "height":43.0,
+                      "marginLeft":80.0,
+                      "data":{
+                      },
+                      "flex":0.0
+                    },
+                    {
+                      "padding":10.0,
+                      "width":60.0,
+                      "name":"panel_81326",
+                      "height":60.0,
+                      "data":{
+                      },
+                      "flex":1.0
+                    },
+                    {
+                      "marginTop":8.0,
+                      "padding":10.0,
+                      "width":139.0,
+                      "name":"refund",
+                      "height":43.0,
+                      "marginLeft":0.0,
+                      "marginRight":178.0,
+                      "data":{
+                      },
+                      "flex":0.0
+                    }
+                  ],
                   "marginBottom":9.0,
                   "marginTop":43.0,
-                  "padding":10.0,
+                  "padding":12.0,
+                  "flexDirection":"row",
                   "name":"item_desc",
                   "marginLeft":44.0,
                   "marginRight":24.0,
@@ -2251,7 +2286,7 @@ global.game_uis.shop = {
   "height":720.0,
   "top":50.0,
   "data":{
-    "image":"Shopbg"
+    "image":"Shop2asd"
   },
   "left":275.0
 }

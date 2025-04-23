@@ -132,7 +132,7 @@ str = {
   ],
   "left":275.0
 }
-//str = global.game_uis.stage;
+str = global.game_uis.shop;
 
 //ui = new window(global.player_info_ui);
 ui = new window(str, true);

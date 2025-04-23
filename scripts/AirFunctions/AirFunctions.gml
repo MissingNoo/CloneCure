@@ -240,6 +240,7 @@ function button(_text) constructor {
 	sprite_back = sButton;
 	sprite = sButton;
     func = function(){};
+	on_area_func = function(){};
     
 	static set_sprite = function(spr) {
 		sprite = spr;
@@ -271,6 +272,11 @@ function button(_text) constructor {
         func = f;
         return self;
     }
+	
+	static set_on_area_function = function(f) {
+        on_area_func = f;
+        return self;
+    }
     
     static on_click = function() {
         if (enabled and (gui ? mouse_in_area_gui(area) : mouse_in_area(area)) and device_mouse_check_button_released(0, mb_left) and gui_can_interact()) {
@@ -292,6 +298,7 @@ function button(_text) constructor {
         if (enabled and ((!gui and mouse_in_area(area)) or (gui and mouse_in_area_gui(area)))) {
             global.reset_button = true;
             on_area = true;
+			on_area_func();
         } else {
         	on_area = false;
         }
@@ -569,4 +576,8 @@ function lengthdir(lenght, dir) {
 		x : lengthdir_x(lenght, dir),
 		y : lengthdir_y(lenght, dir),
 	}
+}
+
+function between(val, _min, _max) {
+	return val >= _min and val <= _max;
 }

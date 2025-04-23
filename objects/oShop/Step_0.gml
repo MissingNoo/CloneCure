@@ -3,6 +3,8 @@ var left = input_check_pressed("left");
 var up = input_check_pressed("up");
 var down = input_check_pressed("down");
 var right = input_check_pressed("right");
+var confirm = input_check_pressed("accept");
+var cancel = input_check_pressed("cancel");
 switch (selecting) {
 	case "item":
         var cant = [2, 5, 8, 11, 14];
@@ -25,6 +27,9 @@ switch (selecting) {
         }
         selected_item_num = clamp(selected_item_num, 0, array_length(tab_items) - 1);
         selected_item = tab_items[selected_item_num];
+		if (confirm or device_mouse_check_button_released(0, mb_left)) {
+			selecting = "buysell";
+		}
         break;
     case "tab":
         tab_arrow_offset = sine_between(current_time / 1000, tab_arrow_offset_speed, -tab_arrow_offset_dist, tab_arrow_offset_dist);
@@ -34,4 +39,42 @@ switch (selecting) {
         	selecting = "item";
         }
         break;
+	case "buysell":
+		if (cancel or device_mouse_check_button_released(0, mb_right)) {
+			selecting = "item";
+		}
+		var item = Shop.upgrades[$ selected_item];
+		if (item.level == array_length(item.cost)) {
+			buysell = 1;
+			buybutton.set_enabled(false);
+			sellbutton.set_enabled(true);
+		}
+		if (item.level == 0) {
+			buysell = 0;
+			buybutton.set_enabled(true);
+			sellbutton.set_enabled(false);
+		}
+		if (between(item.level, 1, array_length(item.cost) - 1)) {
+			buybutton.set_enabled(true);
+			sellbutton.set_enabled(true);
+		}
+		if (right and sellbutton.enabled) {
+			buysell = 1;
+		}
+		if (left and buybutton.enabled) {
+			buysell = 0;
+		}
+		buybutton.keyboard_selected = buysell == 0;
+		sellbutton.keyboard_selected = buysell == 1;
+		if (confirm) {
+			switch (buysell) {
+				case 0:
+					buybutton.func();
+					break;
+				case 1:
+					sellbutton.func();
+					break;
+			}
+		}
+		break;
 }

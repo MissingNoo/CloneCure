@@ -1601,6 +1601,7 @@
     {"id":{"name":"sHook","path":"sprites/sHook/sHook.yy",},},
     {"id":{"name":"sHoomanA","path":"sprites/sHoomanA/sHoomanA.yy",},},
     {"id":{"name":"sHoomanB","path":"sprites/sHoomanB/sHoomanB.yy",},},
+    {"id":{"name":"Shop2","path":"sprites/Shop2/Shop2.yy",},},
     {"id":{"name":"Shopbg","path":"sprites/Shopbg/Shopbg.yy",},},
     {"id":{"name":"sHopeSoda","path":"sprites/sHopeSoda/sHopeSoda.yy",},},
     {"id":{"name":"sHouseCategoryIcons","path":"sprites/sHouseCategoryIcons/sHouseCategoryIcons.yy",},},

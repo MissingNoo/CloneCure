@@ -1,4 +1,8 @@
 ui = new window(global.game_uis.shop);
+mx = 0;
+my = 0;
+mxprevious = 0;
+myprevious = 0;
 ui.fit_to_gui();
 tabs = ["ability", "stats", "other"];
 selected_tab = 0;
@@ -13,6 +17,31 @@ cost_yoffset = 65;
 cost_scale = 2;
 tab_items = [];
 selecting = "item";
+buysell = 0;
+
+buyfunc = function() {
+	item = Shop.upgrades[$ selected_item];
+	SaveData.money -= item.cost[item.level];
+	item.level++;
+}
+buybutton = new button("Buy");
+buybutton.enabled = true;
+buybutton.set_function(method(self, buyfunc));
+buybutton.set_on_area_function(method(self, function() {
+	buysell = 0;
+}));
+
+sellfunc = function() {
+	item = Shop.upgrades[$ selected_item];
+	item.level--;
+	SaveData.money += item.cost[item.level]; 
+}
+sellbutton = new button("Refund");
+sellbutton.enabled = true;
+sellbutton.set_function(method(self, sellfunc));
+sellbutton.set_on_area_function(method(self, function() {
+	buysell = 1;
+}));
 
 update_tab = function() {
     tab_items = [];
@@ -37,6 +66,11 @@ text_yoffset = 34;
 text_scale = 2;
 category_text_offset = 12;
 category_text_scale = 2;
+
+coins_offset = 2;
+coins_yoffset = 60;
+coins_scale = 4;
+
 dbg = dbg_view("Shop", true, gui_x_percent(10));
 dbg_section("Positions");
 var names = struct_get_names(self);
