@@ -25,6 +25,11 @@ update_tab = function() {
     array_sort(tab_items, true);
 }
 update_tab();
+tab_arrow_offset = 0;
+tab_arrow_offset_dist = 10;
+tab_arrow_offset_speed = 2;
+tab_arrow_offset_scale = 3;
+
 selected_item = tab_items[0];
 selected_item_num = 0;
 text_offset = 30;

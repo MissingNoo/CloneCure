@@ -11,6 +11,9 @@ ui.foreach(function(name, pos, data) {
     switch(name) {
         case "tabs_panel":
             draw_sprite_stretched(sShopBar, 0, _x, _y, _w, _h);
+            if (selecting == "tab") {
+            	draw_sprite_ext(sHoloCursor, 0, _x - sprite_get_width(sHoloCursor) + tab_arrow_offset, _y + _h / 2, tab_arrow_offset_scale, tab_arrow_offset_scale, 0, c_white, 1);
+            }
             break;
         case "tabs":
             var _hh = _h / array_length(tabs);
@@ -56,7 +59,7 @@ ui.foreach(function(name, pos, data) {
                 draw_sprite_stretched(sShopLevelFill, Shop.upgrades[$ item_names[i]].level, _x + offset + item_s_offset, _y + yoffset + item_s_offset, item_width - (item_s_offset * 2), item_height - (item_s_offset * 2));
                 draw_sprite_ext(Shop.upgrades[$ item_names[i]].sprite, 0, _x + offset + item_sprite_x, _y + yoffset + item_sprite_y, item_sprite_scale, item_sprite_scale, 0, c_white, 1);
                 scribble($"[c_yellow][fa_middle][fa_center]{Shop.upgrades[$ item_names[i]].cost[Shop.upgrades[$ item_names[i]].level]}").scale(cost_scale).draw(_x + offset + cost_xoffset, _y + yoffset + cost_yoffset);
-                if (selected_item == item_names[i]) {
+                if (selecting == "item" and selected_item == item_names[i]) {
                 	draw_sprite_stretched(sShopItemSelected, 0, _x + offset, _y + yoffset, item_width, item_height);
                 }
                 //scribble($"[fa_center][fa_middle]{item_names[i]}").draw(_x + offset + item_width / 2, _y + yoffset + item_height / 2);
