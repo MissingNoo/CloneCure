@@ -68,7 +68,7 @@ category_text_offset = 12;
 category_text_scale = 2;
 
 coins_offset = 2;
-coins_yoffset = 60;
+coins_yoffset = 53;
 coins_scale = 4;
 
 dbg = dbg_view("Shop", true, gui_x_percent(10));

@@ -12,7 +12,6 @@ if (image_xscale == 1) {
 	image_xscale = image_xscale * wid.area[level];
 	image_yscale = image_yscale * wid.area[level];
 }
-
 c();
 hit_frame = 0;
 hits = wid.hits[level];
