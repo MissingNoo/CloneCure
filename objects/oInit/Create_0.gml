@@ -9,6 +9,9 @@ else {
 if (file_exists(game_save_id + "SaveData.json")) {
 	SaveData = json_load(game_save_id + "SaveData.json");
 	update_save_data();
+    struct_foreach(SaveData.shop.upgrades, function(name, value){
+        Shop.upgrades[$ name].level = value;
+    });
 }
 if (file_exists(game_save_id + "Config.json")) {
 	GameConfig = json_load(game_save_id + "Config.json");

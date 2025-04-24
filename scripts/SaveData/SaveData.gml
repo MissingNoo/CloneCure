@@ -5,7 +5,9 @@ SaveData = {
 	money : 0,
 	gacha : {},
 	seen_before : [],
-	shop : {}
+	shop : {
+        upgrades : {}
+    }
 }
 
 global.base_data = variable_clone(SaveData);
@@ -15,6 +17,14 @@ function update_save_data() {
 		if (is_undefined(SaveData[$ name])) {
 			SaveData[$ name] = value;
 		}
+        if (is_struct(SaveData[$ name])) {
+            global.savenext = name;
+        	struct_foreach(global.base_data[$ name], function(name, value){
+                if (is_undefined(SaveData[$ global.savenext][$ name])) {
+                	SaveData[$ global.savenext][$ name] = value;
+                } 
+            });
+        }
 	});
 	struct_foreach(Characters, function(name, value) {
 		if (is_undefined(SaveData.characters[$ name])) {
@@ -24,5 +34,4 @@ function update_save_data() {
 			}
 		}
 	});
-	
 }

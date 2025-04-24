@@ -34,7 +34,7 @@ buybutton.set_on_area_function(method(self, function() {
 sellfunc = function() {
 	item = Shop.upgrades[$ selected_item];
 	item.level--;
-	SaveData.money += item.cost[item.level]; 
+	SaveData.money += item.cost[item.level];
 }
 sellbutton = new button("Refund");
 sellbutton.enabled = true;
