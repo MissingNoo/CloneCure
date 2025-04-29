@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_treesummon",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":2.9923356,
+  "exportDir":"",
   "name":"snd_treesummon",
   "parent":{
     "name":"sfx",

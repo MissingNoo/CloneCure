@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_reaperabsorb",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":3.1963944,
+  "exportDir":"",
   "name":"snd_reaperabsorb",
   "parent":{
     "name":"sfx",

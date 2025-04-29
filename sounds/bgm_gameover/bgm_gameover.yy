@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"bgm_gameover",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":5.271338,
+  "exportDir":"",
   "name":"bgm_gameover",
   "parent":{
     "name":"bgm",

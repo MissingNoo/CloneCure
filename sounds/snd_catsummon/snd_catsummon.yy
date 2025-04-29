@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_catsummon",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":3.0106122,
+  "exportDir":"",
   "name":"snd_catsummon",
   "parent":{
     "name":"sfx",

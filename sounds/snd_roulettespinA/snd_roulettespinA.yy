@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_roulettespinA",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":0.037505668,
+  "exportDir":"",
   "name":"snd_roulettespinA",
   "parent":{
     "name":"sfx",

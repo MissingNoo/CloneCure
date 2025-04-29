@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_goldanvildrop",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":1.0416327,
+  "exportDir":"",
   "name":"snd_goldanvildrop",
   "parent":{
     "name":"sfx",

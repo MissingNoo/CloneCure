@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_AxeThrow",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":0.3018594,
+  "exportDir":"",
   "name":"snd_AxeThrow",
   "parent":{
     "name":"sfx",

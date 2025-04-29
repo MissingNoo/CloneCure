@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"bgm_gamewin",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":7.3585486,
+  "exportDir":"",
   "name":"bgm_gamewin",
   "parent":{
     "name":"bgm",

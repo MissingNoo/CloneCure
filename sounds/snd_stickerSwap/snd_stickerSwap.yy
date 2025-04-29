@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_stickerSwap",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":0.46253967,
+  "exportDir":"",
   "name":"snd_stickerSwap",
   "parent":{
     "name":"sfx",

@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_eliminatemode",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":0.31360543,
+  "exportDir":"",
   "name":"snd_eliminatemode",
   "parent":{
     "name":"sfx",

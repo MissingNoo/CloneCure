@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_kickexplosion",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":5.3345804,
+  "exportDir":"",
   "name":"snd_kickexplosion",
   "parent":{
     "name":"sfx",

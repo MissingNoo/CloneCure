@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_rarestmetal",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":1.1884581,
+  "exportDir":"",
   "name":"snd_rarestmetal",
   "parent":{
     "name":"sfx",

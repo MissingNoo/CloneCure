@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_fullmoon",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":1.2146258,
+  "exportDir":"",
   "name":"snd_fullmoon",
   "parent":{
     "name":"sfx",

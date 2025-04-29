@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"bgm_halloweennight",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":178.17247,
+  "exportDir":"",
   "name":"bgm_halloweennight",
   "parent":{
     "name":"bgm",

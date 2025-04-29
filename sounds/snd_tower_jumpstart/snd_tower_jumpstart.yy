@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_tower_jumpstart",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":0.41961452,
+  "exportDir":"",
   "name":"snd_tower_jumpstart",
   "parent":{
     "name":"sfx",

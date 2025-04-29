@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"bgm_chestopen2_short",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":3.4687529,
+  "exportDir":"",
   "name":"bgm_chestopen2_short",
   "parent":{
     "name":"bgm",

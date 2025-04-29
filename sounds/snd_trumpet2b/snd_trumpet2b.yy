@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_trumpet2b",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":0.2370068,
+  "exportDir":"",
   "name":"snd_trumpet2b",
   "parent":{
     "name":"sfx",

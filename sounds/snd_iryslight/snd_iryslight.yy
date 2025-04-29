@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_iryslight",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":3.5866213,
+  "exportDir":"",
   "name":"snd_iryslight",
   "parent":{
     "name":"sfx",

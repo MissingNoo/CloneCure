@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_kaelatrumpet1",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":0.34723356,
+  "exportDir":"",
   "name":"snd_kaelatrumpet1",
   "parent":{
     "name":"sfx",

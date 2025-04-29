@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_gachaopening",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":4.2101135,
+  "exportDir":"",
   "name":"snd_gachaopening",
   "parent":{
     "name":"sfx",

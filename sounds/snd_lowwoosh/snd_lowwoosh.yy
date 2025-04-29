@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_lowwoosh",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":0.5102721,
+  "exportDir":"",
   "name":"snd_lowwoosh",
   "parent":{
     "name":"sfx",

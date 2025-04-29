@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_bigbombexplosion",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":1.8322903,
+  "exportDir":"",
   "name":"snd_bigbombexplosion",
   "parent":{
     "name":"sfx",

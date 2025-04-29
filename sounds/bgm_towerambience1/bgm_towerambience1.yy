@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"bgm_towerambience1",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":264.2547,
+  "exportDir":"",
   "name":"bgm_towerambience1",
   "parent":{
     "name":"bgm",

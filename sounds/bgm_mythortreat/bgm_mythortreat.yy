@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"bgm_mythortreat",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":207.36461,
+  "exportDir":"",
   "name":"bgm_mythortreat",
   "parent":{
     "name":"bgm",

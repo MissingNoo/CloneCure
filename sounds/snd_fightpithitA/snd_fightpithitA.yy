@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_fightpithitA",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":0.34575963,
+  "exportDir":"",
   "name":"snd_fightpithitA",
   "parent":{
     "name":"sfx",

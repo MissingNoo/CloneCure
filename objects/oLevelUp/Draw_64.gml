@@ -19,12 +19,27 @@ ui.foreach(function(name, pos, data) {
 			var selected = selected_option == opt ? 1 : 0;
 			draw_sprite_stretched(sHudUpgrade, selected, _x, _y, _w, _h);
 			draw_sprite_stretched_ext(sHudUpgradeColor, selected, _x, _y, _w, _h, c_orange, 0.5);
-			draw_sprite_centered_ext(ups[opt].sprite, 0, _x + icon_x - sprite_get_width_ext(ups[opt].sprite, 0.5), _y + icon_y - sprite_get_height_ext(ups[opt].sprite, 0.5), icon_scale, icon_scale, 0, c_white, 1);
 			draw_sprite_centered_ext(sItemType, 0, _x + icon_x, _y + icon_y, icon_scale, icon_scale, 0, c_white, 1);
 			var iname = lexicon_text($"{ups[opt].lex}.{ups[opt].name}.name");
 			scribble($"[fa_bottom]{iname}").scale(title_scale).draw(_x + title_x, _y + title_y);
 			scribble($"[fa_right][fa_bottom]>> {string_first_letter_upper_case(ups[opt].lex)}").scale(title_scale).draw(_x + _w - title_end_x, _y + title_y);
-			self[$ $"u{opt}"] ??= scribble(lexicon_text($"{ups[opt].lex}.{ups[opt].name}.{ups[opt].level + 1}")).scale(title_scale).wrap(_w - description_x_end, _h - description_y_end);
+            switch (ups[opt].lex) {
+                case "Weapons":
+                    self[$ $"u{opt}"] ??= scribble(lexicon_text($"{ups[opt].lex}.{ups[opt].name}.{ups[opt].level + 1}"));
+                    draw_sprite_centered_ext(ups[opt].sprite, 0, _x + icon_x - sprite_get_width_ext(ups[opt].sprite, 0.5), _y + icon_y - sprite_get_height_ext(ups[opt].sprite, 0.5), icon_scale, icon_scale, 0, c_white, 1);
+                    break;
+                case "Stats":
+                    self[$ $"u{opt}"] ??= scribble(lexicon_text($"{ups[opt].lex}.{ups[opt].name}.desc"));
+                    draw_sprite_centered_ext(ups[opt].sprite, 0, _x + icon_x - sprite_get_width_ext(ups[opt].sprite, 2.5), _y + icon_y - sprite_get_height_ext(ups[opt].sprite, 2.5), icon_scale, icon_scale, 0, c_white, 1);
+                    break;
+                case "Item":
+                    self[$ $"u{opt}"] ??= scribble(lexicon_text($"{ups[opt].lex}.{ups[opt].name}.{ups[opt].level + 1}"));
+                    break;
+                default:
+                    self[$ $"u{opt}"] ??= scribble("err");
+                    break;
+            }
+            self[$ $"u{opt}"].scale(title_scale).wrap(_w - description_x_end, _h - description_y_end);
 			var desc = self[$ $"u{opt}"];
 			desc.draw(_x + description_x, _y + description_y);
 			if (desc.get_page_count() > 1) {

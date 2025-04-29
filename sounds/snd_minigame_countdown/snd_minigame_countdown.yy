@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_minigame_countdown",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":1.75,
+  "exportDir":"",
   "name":"snd_minigame_countdown",
   "parent":{
     "name":"sfx",

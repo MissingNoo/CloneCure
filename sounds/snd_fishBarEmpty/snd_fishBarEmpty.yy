@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_fishBarEmpty",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":0.42553288,
+  "exportDir":"",
   "name":"snd_fishBarEmpty",
   "parent":{
     "name":"sfx",

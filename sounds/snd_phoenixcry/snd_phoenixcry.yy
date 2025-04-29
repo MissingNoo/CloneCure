@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_phoenixcry",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":4.0180044,
+  "exportDir":"",
   "name":"snd_phoenixcry",
   "parent":{
     "name":"sfx",

@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_cookingpot",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":13.274876,
+  "exportDir":"",
   "name":"snd_cookingpot",
   "parent":{
     "name":"sfx",

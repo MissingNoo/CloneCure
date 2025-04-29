@@ -17,6 +17,8 @@ Spawn_List = [];
 GameData.selected_character = "noone";
 #macro Weapons global.gamedata.weapons
 Weapons = {};
+#macro Stats global.gamedata.stats
+Stats = {};
 #macro Player_Weapons global.gamedata.player_weapons
 Player_Weapons = array_create(6, undefined);
 enum weapon_type {
@@ -34,6 +36,47 @@ enum weapon_enchantments {
 	Knockback,
 	Hit_Rate
 }
+
+function stat(_name, _sprite, _weight) constructor {
+    name = _name;
+    sprite = _sprite;
+    weight = _weight;
+    type = "Stat";
+    lex = "Stats"
+    bought = function() {};
+    static set_function = function(f) {
+        bought = f;
+        return self;
+    }
+    Stats[$ _name] = self;
+}
+
+#region Stats
+var s = new stat("Max_HP_Up", sHudHPIcon, 2);
+    s.set_function(function() {
+        GameData.max_hp += GameData.max_hp * 0.10;
+    });
+s = new stat("ATK_Up", sHudATKIcon, 3);
+    s.set_function(function() {
+        GameData.ATK += GameData.ATK * 0.08;
+    });
+s = new stat("SPD_Up", sHudSPDIcon, 4);
+    s.set_function(function() {
+        GameData.SPD += GameData.SPD * 0.12;
+    });
+s = new stat("Crit_Up", sHudCRTIcon, 3);
+    s.set_function(function() {
+        GameData.CRT += GameData.CRT * 0.03;
+    });
+s = new stat("Pick_Up_Range", sHudPickupIcon, 4);
+    s.set_function(function() {
+        GameData.Pickup += GameData.Pickup * 0.20;
+    });
+s = new stat("Haste_Up", sHudHasteIcon, 2);
+    s.set_function(function() {
+        GameData.Haste += GameData.Haste * 0.05;
+    });
+#endregion
 function weapon(_name) constructor {
     name = _name;
     run_create = function(){};
@@ -67,8 +110,8 @@ function weapon(_name) constructor {
     weight = 3;
 	lex = "Weapons"
 	area = [0, 1, 1, 1, 1, 1, 1, 1];
-	knockback_duration = array_create(8, 0);
- 	knockback_speed = array_create(8, 0);
+	knockback_duration = array_create(8, 0); 
+    knockback_speed = array_create(8, 0);
 	sound = undefined;
     
     Weapons[$ name] = self;

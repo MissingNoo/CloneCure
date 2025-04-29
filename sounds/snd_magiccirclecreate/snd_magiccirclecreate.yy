@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"snd_magiccirclecreate",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":2.9225624,
+  "exportDir":"",
   "name":"snd_magiccirclecreate",
   "parent":{
     "name":"sfx",
