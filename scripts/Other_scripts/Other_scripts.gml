@@ -1,5 +1,8 @@
 function pause_game(reason = undefined) {
 	var can_unpause = !instance_exists(oLevelUp);
+	if (reason == "lvlup") {
+		can_unpause = true;
+	}
 	if (!can_unpause and GameData.is_paused) {
 		exit;
 	}
@@ -8,8 +11,8 @@ function pause_game(reason = undefined) {
         GameData.is_paused = false;
         instance_activate_all();
 	} else {
-		surf = surface_recreate(surf, surface_get_width(application_surface), surface_get_height(application_surface));
-        surface_copy(surf, 0, 0, application_surface);
+		oGame.surf = surface_recreate(oGame.surf, surface_get_width(application_surface), surface_get_height(application_surface));
+        surface_copy(oGame.surf, 0, 0, application_surface);
         instance_deactivate_all(true);
         var dont_deactivate = [input_controller_object, oGameUI];
         array_foreach(dont_deactivate, function(e, i) {

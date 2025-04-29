@@ -23,17 +23,39 @@ ui.foreach(function(name, pos, data) {
 			var iname = lexicon_text($"{ups[opt].lex}.{ups[opt].name}.name");
 			scribble($"[fa_bottom]{iname}").scale(title_scale).draw(_x + title_x, _y + title_y);
 			scribble($"[fa_right][fa_bottom]>> {string_first_letter_upper_case(ups[opt].lex)}").scale(title_scale).draw(_x + _w - title_end_x, _y + title_y);
+			var lvl = 0;
+			var index = -1;
+			global.search = ups[opt].name;
             switch (ups[opt].lex) {
                 case "Weapons":
-                    self[$ $"u{opt}"] ??= scribble(lexicon_text($"{ups[opt].lex}.{ups[opt].name}.{ups[opt].level + 1}"));
+					index = array_find_index(Player_Weapons, function(e, i) {
+						if (e == undefined) {
+							return false;
+						}
+						return e.name == global.search;
+					});
+					if (index != -1) {
+						lvl = Player_Weapons[index].level;
+					}
+					
+                    self[$ $"u{opt}"] ??= scribble(lexicon_text($"{ups[opt].lex}.{ups[opt].name}.{lvl + 1}"));
                     draw_sprite_centered_ext(ups[opt].sprite, 0, _x + icon_x - sprite_get_width_ext(ups[opt].sprite, 0.5), _y + icon_y - sprite_get_height_ext(ups[opt].sprite, 0.5), icon_scale, icon_scale, 0, c_white, 1);
                     break;
                 case "Stats":
                     self[$ $"u{opt}"] ??= scribble(lexicon_text($"{ups[opt].lex}.{ups[opt].name}.desc"));
                     draw_sprite_centered_ext(ups[opt].sprite, 0, _x + icon_x - sprite_get_width_ext(ups[opt].sprite, 2.5), _y + icon_y - sprite_get_height_ext(ups[opt].sprite, 2.5), icon_scale, icon_scale, 0, c_white, 1);
                     break;
-                case "Item":
-                    self[$ $"u{opt}"] ??= scribble(lexicon_text($"{ups[opt].lex}.{ups[opt].name}.{ups[opt].level + 1}"));
+                case "Items":
+					//index = array_find_index(Player_Items, function(e, i) {
+						//if (e == undefined) {
+							//return false;
+						//}
+						//return e.name == global.search;
+					//});
+					//if (index != -1) {
+						//lvl = Player_Items[index].level;
+					//}
+                    self[$ $"u{opt}"] ??= scribble(lexicon_text($"{ups[opt].lex}.{ups[opt].name}.{lvl + 1}"));
                     break;
                 default:
                     self[$ $"u{opt}"] ??= scribble("err");
