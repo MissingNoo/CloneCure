@@ -21,6 +21,11 @@ Weapons = {};
 Stats = {};
 #macro Player_Weapons global.gamedata.player_weapons
 Player_Weapons = array_create(6, undefined);
+	
+	
+#region Functions
+
+#endregion
 enum weapon_type {
     Multishot,
     Ranged,
@@ -650,4 +655,20 @@ w.set_step(function() {
 	x = oPlayer.x;
 	y = oPlayer.y - 16;
 });
+#endregion
+
+#region Shockwave
+w = new weapon("Shockwave");
+w.set_sprite(sShockwave, sShockwave);
+w.set_weight(0);
+w.set_hits(999);
+w.set_hit_cooldown(60);
+w.set_type(weapon_type.Melee);
+w.set_damage([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]);
+w.set_on_animation_end(function() {
+	instance_destroy();
+});
+w.perk = true;
+w.set_duration(999);
+w.set_knockback(10, 10);
 #endregion

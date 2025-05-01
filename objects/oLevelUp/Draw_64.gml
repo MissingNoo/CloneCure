@@ -56,6 +56,7 @@ ui.foreach(function(name, pos, data) {
 						lvl = Player_Items[index].level;
 					}
                     self[$ $"u{opt}"] ??= scribble(lexicon_text($"{ups[opt].lex}.{ups[opt].name}.{lvl + 1}"));
+					draw_sprite_centered_ext(ups[opt].sprite, 0, _x + icon_x - sprite_get_width_ext(ups[opt].sprite, 0.5), _y + icon_y - sprite_get_height_ext(ups[opt].sprite, 0.5), icon_scale, icon_scale, 0, c_white, 1);
                     break;
                 default:
                     self[$ $"u{opt}"] ??= scribble("err");

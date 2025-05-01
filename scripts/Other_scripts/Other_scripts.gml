@@ -27,3 +27,14 @@ function pause_game(reason = undefined) {
     	
 	}
 }
+
+function damage_player(dmg) {
+	if (dmg == 0) {
+		exit;
+	}
+	if (GameData.shield > 0) {
+		GameData.shield = clamp(GameData.shield - dmg, 0, GameData.max_shield);
+	} else {
+		GameData.hp = clamp(GameData.hp - dmg, 0, GameData.max_hp);
+	}
+}

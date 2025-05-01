@@ -1,13 +1,13 @@
 if (other.attack_frame > frame and inv_frame > frame) {
 	exit;
 }
-var dmg = other.atk;
-if (GameData.shield > 0) {
-	GameData.shield = clamp(GameData.shield - dmg, 0, GameData.max_shield);
-} else {
-	GameData.hp = clamp(GameData.hp - dmg, 0, GameData.max_hp);
-}
-
+dmg = other.atk;
+array_foreach(Player_Items, function(e, i) {
+	if (e != undefined) {
+		e.on_hit();
+	}
+});
+damage_player(dmg);
 oGameUI.update_ui();
 instance_create_depth(x, y - (sprite_height / 2), depth - 1, oDamageText, {
     dir : abs(image_xscale),

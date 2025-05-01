@@ -34,3 +34,4 @@ movement = new topdown_movement(self, GameData.SPD);
 GameData.strafing = false;
 GameData.arrow_dir = 0;
 dir = 0;
+dmg = 0;
