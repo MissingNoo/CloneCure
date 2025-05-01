@@ -2,7 +2,12 @@ if (other.attack_frame > frame and inv_frame > frame) {
 	exit;
 }
 var dmg = other.atk;
-GameData.hp -= dmg;
+if (GameData.shield > 0) {
+	GameData.shield = clamp(GameData.shield - dmg, 0, GameData.max_shield);
+} else {
+	GameData.hp = clamp(GameData.hp - dmg, 0, GameData.max_hp);
+}
+
 oGameUI.update_ui();
 instance_create_depth(x, y - (sprite_height / 2), depth - 1, oDamageText, {
     dir : abs(image_xscale),

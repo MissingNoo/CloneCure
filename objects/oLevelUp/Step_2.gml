@@ -1,4 +1,5 @@
 if (input_check_pressed("accept")) {
+	global.search = ups[selected_option].name;
 	switch (selected_option) {
 		case 0:
 		case 1:
@@ -6,7 +7,6 @@ if (input_check_pressed("accept")) {
 		case 3:
 			switch (ups[selected_option].lex) {
 				case "Weapons":
-					global.search = ups[selected_option].name;
 					var pos = array_find_index(Player_Weapons, function(e, i) {
 						if (e == undefined) {
 							return false;
@@ -23,9 +23,24 @@ if (input_check_pressed("accept")) {
 					}
 					break;
 				case "Items":
+					var pos = array_find_index(Player_Items, function(e, i) {
+						if (e == undefined) {
+							return false;
+						}
+						return e.name == global.search;
+					});
+					if (pos != -1) {
+						Player_Items[pos].level++;
+					} else {
+						pos = array_get_index(Player_Items, undefined);
+						if (pos != -1) {
+							Player_Items[pos] = variable_clone(Items[$ global.search]);
+						}
+					}
+					Player_Items[pos].on_bought();
 					break;
 				case "Stats":
-					ups[selected_option].bought();
+					ups[selected_option].on_bought();
 					break;
 				default:
 					show_message("WIP");

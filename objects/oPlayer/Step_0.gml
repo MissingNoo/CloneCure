@@ -38,6 +38,15 @@ array_foreach(Player_Weapons, function(e, i) {
         e.cooldown = frame + e.base_cooldown[e.level];
     }
 });
+array_foreach(Player_Items, function(e, i) {
+    if (e == undefined) {
+    	return;
+    }
+    if (e.cooldown <= frame) {
+		e.on_cooldown();
+        e.cooldown = frame + e.base_cooldown[e.level];
+    }
+});
 
 //occluder.x = x;
 //occluder.y = y;

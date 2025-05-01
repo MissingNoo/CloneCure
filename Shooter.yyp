@@ -506,6 +506,7 @@
     {"id":{"name":"draw_text_scribble","path":"scripts/draw_text_scribble/draw_text_scribble.yy",},},
     {"id":{"name":"Enemies","path":"scripts/Enemies/Enemies.yy",},},
     {"id":{"name":"FlexPanel","path":"scripts/FlexPanel/FlexPanel.yy",},},
+    {"id":{"name":"Game_Items","path":"scripts/Game_Items/Game_Items.yy",},},
     {"id":{"name":"Game_Scripts","path":"scripts/Game_Scripts/Game_Scripts.yy",},},
     {"id":{"name":"input_accessibility_global_cooldown_get","path":"scripts/input_accessibility_global_cooldown_get/input_accessibility_global_cooldown_get.yy",},},
     {"id":{"name":"input_accessibility_global_cooldown_set","path":"scripts/input_accessibility_global_cooldown_set/input_accessibility_global_cooldown_set.yy",},},

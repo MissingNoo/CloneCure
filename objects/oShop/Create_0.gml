@@ -20,7 +20,7 @@ selecting = "item";
 buysell = 0;
 
 buyfunc = function() {
-	item = Shop.upgrades[$ selected_item];
+	var item = Shop.upgrades[$ selected_item];
 	SaveData.money -= item.cost[item.level];
 	item.level++;
 }
@@ -32,7 +32,7 @@ buybutton.set_on_area_function(method(self, function() {
 }));
 
 sellfunc = function() {
-	item = Shop.upgrades[$ selected_item];
+	var item = Shop.upgrades[$ selected_item];
 	item.level--;
 	SaveData.money += item.cost[item.level];
 }

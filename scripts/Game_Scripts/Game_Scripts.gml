@@ -42,10 +42,10 @@ function stat(_name, _sprite, _weight) constructor {
     sprite = _sprite;
     weight = _weight;
     type = "Stat";
-    lex = "Stats"
-    bought = function() {};
+    lex = "Stats";
+    on_bought = function() {};
     static set_function = function(f) {
-        bought = f;
+        on_bought = f;
         return self;
     }
     Stats[$ _name] = self;
@@ -77,24 +77,68 @@ s = new stat("Haste_Up", sHudHasteIcon, 2);
         GameData.Haste += GameData.Haste * 0.05;
     });
 #endregion
-function weapon(_name) constructor {
-    name = _name;
-    run_create = function(){};
-    run_begin_step = function(){};
-    run_step = function(){};
-    run_end_step = function(){};
-    run_on_hit = function(){};
-    run_on_animation_end = function(){};
-    clean_up = function(){};
-    run_draw = function(){
-        draw_self();
-    };
-    sprite = sBlank;
-    level = 1;
-    max_level = 7;
-    cooldown = 0;
-    base_cooldown = [];
-    min_cooldown = 0;
+	
+function base_item(_name) constructor {
+	name = _name;
+	sprite = sBlank;
+	level = 1;
+	max_level = 7;
+	cooldown = 0;
+	base_cooldown = [];
+	min_cooldown = 0;
+	on_cooldown = function(){};
+	on_bought = function(){};
+	weight = 3;
+	/// @function                set_max_level(lvl)
+	/// @description             Defines the max level for the item.
+	/// @param {real}    lvl     The max level.
+	static set_max_level = function(lvl) {
+		max_level = lvl;
+		return self;
+	}
+	/// @function                set_on_cooldown(function)
+	/// @description             Defines the function executed.
+	/// @param {function}    f   The function to be executed
+	static set_on_cooldown = function(f) {
+		on_cooldown = f;
+		return self;
+	}
+	/// @function                set_on_bought(function)
+	/// @description             Defines the function executed when the item is bought.
+	/// @param {function}    f   The function to be executed
+	static set_on_bought = function(f) {
+		on_bought = f;
+		return self;
+	}
+	/// @function                set_sprite(spr)
+	/// @description             Set the weapon sprites.
+	/// @param {Asset.GMSprite}    spr The thumbnail for the weapon.
+	/// @param {Asset.GMSprite}  	 projectile The sprite used for the projectile on map.
+	static set_sprite = function(spr) {
+		sprite = spr;
+		return self;
+	}
+	
+	/// @function                set_cooldown(cooldown, minimum_cooldown)
+	/// @description             Defines the cooldown for the weapon.
+	/// @param {Any}    _cooldown   The base cooldown levels.
+	/// @param {real}    _min_cooldown   The minimum possible cooldown.
+	static set_cooldown = function(_cooldown, _min_cooldown) {
+		if (!is_array(_cooldown)) {
+			_cooldown = array_create(7, _cooldown);
+		}
+		array_insert(_cooldown, 0, 0);
+		base_cooldown = _cooldown;
+		cooldown = _cooldown[1];
+		min_cooldown = _min_cooldown;
+		return self;
+	}
+	static set_weight = function(amount) {
+		weight = amount;
+		return self;
+	}
+}
+function weapon(_name) : base_item(_name) constructor {
     hits = 0;
     duration = array_create(8, 10);
     hit_cooldown = 10;
@@ -107,157 +151,158 @@ function weapon(_name) constructor {
     maxdmg = [];
     type = undefined;
     can_enchant = [];
-    weight = 3;
 	lex = "Weapons"
 	area = [0, 1, 1, 1, 1, 1, 1, 1];
 	knockback_duration = array_create(8, 0); 
     knockback_speed = array_create(8, 0);
 	sound = undefined;
-    
+	run_create = function(){};
+	run_begin_step = function(){};
+	run_step = function(){};
+	run_end_step = function(){};
+	run_on_hit = function(){};
+	run_on_animation_end = function(){};
+	run_draw = function(){
+		draw_self();
+	};
+    clean_up = function(){};
     Weapons[$ name] = self;
-	/// @function                set_sprite(spr, projectile)
-	/// @description             Set the weapon sprites.
-	/// @param {Asset.GMSprite}    spr The thumbnail for the weapon.
-	/// @param {Asset.GMSprite}  	 projectile The sprite used for the projectile on map.
-    static set_sprite = function(spr, projectile) {
-        sprite = spr;
-        projectile_sprite = projectile;
-        return self;
-    }
 	/// @function                set_create(function)
 	/// @description             Defines the function executed when spawned.
 	/// @param {function}    f   The function to be executed
-    static set_create = function(f) {
-        run_create = f;
-        return self;
-    }
+	static set_create = function(f) {
+		run_create = f;
+		return self;
+	}
 	/// @function                set_begin_step(function)
 	/// @description             Defines the function executed before step.
 	/// @param {function}    f   The function to be executed
-    static set_begin_step = function(f) {
-        run_step = f;
-        return self;
-    }
-	/// @function                set_clean_up(function)
-	/// @description             Defines the function executed after destroying.
-	/// @param {function}    f   The function to be executed
-    static set_clean_up = function(f) {
-        clean_up = f;
-        return self;
-    }
+	static set_begin_step = function(f) {
+		run_step = f;
+		return self;
+	}
 	/// @function                set_step(function)
 	/// @description             Defines the function executed every step.
 	/// @param {function}    f   The function to be executed
-    static set_step = function(f) {
-        run_step = f;
-        return self;
-    }
+	static set_step = function(f) {
+		run_step = f;
+		return self;
+	}
 	/// @function                set_end_step(function)
 	/// @description             Defines the function executed after every step.
 	/// @param {function}    f   The function to be executed
-    static set_end_step = function(f) {
-        run_end_step = f;
-        return self;
-    }
+	static set_end_step = function(f) {
+		run_end_step = f;
+		return self;
+	}
 	/// @function                set_draw(function)
 	/// @description             Defines a custom draw function for the weapon.
 	/// @param {function}    f   The function to be executed
-    static set_draw = function(f) {
-        run_draw = f;
-        return self;
-    }
+	static set_draw = function(f) {
+		run_draw = f;
+		return self;
+	}
 	/// @function                set_on_hit(function)
 	/// @description             Defines the function to be execute when a collision with a enemy happens.
 	/// @param {function}    f   The function to be executed
-    static set_on_hit = function(f) {
-        run_on_hit = f;
-        return self;
-    }
+	static set_on_hit = function(f) {
+		run_on_hit = f;
+		return self;
+	}
 	/// @function                set_on_animation_end(function)
 	/// @description             Defines the function to be execute when the weapon animation ends.
 	/// @param {function}    f   The function to be executed
-    static set_on_animation_end = function(f) {
-        run_on_animation_end = f;
-        return self;
-    }
-	/// @function                set_cooldown(cooldown, minimum_cooldown)
-	/// @description             Defines the cooldown for the weapon.
-	/// @param {Any}    _cooldown   The base cooldown levels.
-	/// @param {real}    _min_cooldown   The minimum possible cooldown.
-    static set_cooldown = function(_cooldown, _min_cooldown) {
-		if (!is_array(_cooldown)) {
-			_cooldown = array_create(7, _cooldown);
-		}
-        array_insert(_cooldown, 0, 0);
-        base_cooldown = _cooldown;
-        cooldown = _cooldown[1];
-        min_cooldown = _min_cooldown;
-        return self;
-    }
+	static set_on_animation_end = function(f) {
+		run_on_animation_end = f;
+		return self;
+	}
+	/// @function                set_clean_up(function)
+	/// @description             Defines the function executed after destroying.
+	/// @param {function}    f   The function to be executed
+	static set_clean_up = function(f) {
+		clean_up = f;
+		return self;
+	}
+	/// @function                set_area(area)
+	/// @description             Defines weapon scale.
+	/// @param {array}     _area The minimum damage for the weapon.
+	static set_area = function(_area) {
+		array_insert(_area, 0, 0);
+		area = _area;
+		return self;
+	}
+	static set_type = function(_type) {
+		type = _type;
+		return self;
+	}
+	static set_enchants = function(list) {
+		can_enchant = list;
+		return self;
+	}
 	/// @function                set_hits(amount)
 	/// @description             Defines how many collisions the projectile can do before vanishing.
 	/// @param {Any}    amount  The maximum amount of hits.
-    static set_hits = function(amount) {
-        if (is_array(amount)) {
-            array_insert(amount, 0, 0);
-        	hits = amount;
-        } else {
-        	hits = array_create(8, amount);
-        } 
-        return self;
-    }
-    static set_duration = function(amount) {
+	static set_hits = function(amount) {
+		if (is_array(amount)) {
+			array_insert(amount, 0, 0);
+			hits = amount;
+		} else {
+			hits = array_create(8, amount);
+		} 
+		return self;
+	}
+	static set_duration = function(amount) {
 		if (!is_array(amount)) {
 			amount = array_create(7, amount);
 		}
 		array_insert(amount, 0, 0);
-        duration = amount;
-        return self;
-    }
-    static set_hit_cooldown = function(amount) {
-        hit_cooldown = amount;
-        return self;
-    }
-    static set_shoots = function(amount) {
+		duration = amount;
+		return self;
+	}
+	static set_hit_cooldown = function(amount) {
+		hit_cooldown = amount;
+		return self;
+	}
+	static set_shoots = function(amount) {
 		if (!is_array(amount)) {
 			amount = array_create(7, amount);
 		}
-        array_insert(amount, 0, 0);
-        shoots = amount;
-        return self;
-    }
-    static set_perk = function(boolean, char) {
-        perk = boolean;
-        character_name = char;
-        return self;
-    }
-    static set_delay = function(amount) {
-        delay = amount;
-        return self;
-    }
+		array_insert(amount, 0, 0);
+		shoots = amount;
+		return self;
+	}
+	static set_perk = function(boolean, char) {
+		perk = boolean;
+		character_name = char;
+		return self;
+	}
+	static set_delay = function(amount) {
+		delay = amount;
+		return self;
+	}
 	/// @function                set_damage(min_damage, max_damage)
 	/// @description             Defines the damage for the weapon.
 	/// @param {array}     _min  The minimum damage for the weapon.
 	/// @param {array}     _max  The max damage for the weapon.
-    static set_damage = function(_min, _max) {
-        array_insert(_min, 0, 0);
-        array_insert(_max, 0, 0);
-        mindmg = _min;
-        maxdmg = _max;
-        return self;
-    }
+	static set_damage = function(_min, _max) {
+		array_insert(_min, 0, 0);
+		array_insert(_max, 0, 0);
+		mindmg = _min;
+		maxdmg = _max;
+		return self;
+	}
 	/// @function                set_sound(snd)
 	/// @description             Defines the sound for the weapon.
 	/// @param {Asset.GMSound}   snd The sound to play.
-    static set_sound = function(snd) {
-        sound = snd;
-        return self;
-    }
+	static set_sound = function(snd) {
+		sound = snd;
+		return self;
+	}
 	/// @function                set_knockback(duration, speed)
 	/// @description             Defines the damage for the weapon.
 	/// @param {Any}     _dur	 The minimum damage for the weapon.
 	/// @param {Any}     _spd    The max damage for the weapon.
-    static set_knockback = function(_dur, _spd) {
+	static set_knockback = function(_dur, _spd) {
 		if (is_array(_dur)) {
 			array_insert(_dur, 0, 0);
 		} else {
@@ -268,30 +313,19 @@ function weapon(_name) constructor {
 		} else {
 			_spd = array_create(8, _spd);
 		}
-        knockback_duration = _dur;
-        knockback_speed = _spd;
-        return self;
-    }
-	/// @function                set_area(area)
-	/// @description             Defines weapon scale.
-	/// @param {array}     _area The minimum damage for the weapon.
-    static set_area = function(_area) {
-        array_insert(_area, 0, 0);
-        area = _area;
-        return self;
-    }
-    static set_type = function(_type) {
-        type = _type;
-        return self;
-    }
-    static set_enchants = function(list) {
-        can_enchant = list;
-        return self;
-    }
-    static set_weight = function(amount) {
-        weight = amount;
-        return self;
-    }
+		knockback_duration = _dur;
+		knockback_speed = _spd;
+		return self;
+	}
+	/// @function                set_sprite(spr, projectile)
+	/// @description             Set the weapon sprites.
+	/// @param {Asset.GMSprite}    spr The thumbnail for the weapon.
+	/// @param {Asset.GMSprite}  	 projectile The sprite used for the projectile on map.
+	static set_sprite = function(spr, projectile) {
+		sprite = spr;
+		projectile_sprite = projectile;
+		return self;
+	}
 }
 
 #region Ame Pistol

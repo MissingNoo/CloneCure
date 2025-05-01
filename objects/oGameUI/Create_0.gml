@@ -52,6 +52,14 @@ update_items = function(w, h) {
 	        case "i5":
 				//TODO: items
 	            draw_sprite_centered_ext(sUiEmptySlotItem, 0, _xc, _yc, 2, 2, 0, c_white, 0.5);
+				var ip = Player_Items[real(string_digits(name))];
+	            if (ip != undefined) {
+					var _sw = sprite_get_width(ip.sprite) / 2;
+					var _sh = sprite_get_height(ip.sprite) / 2;
+	            	draw_sprite_ext(ip.sprite, 0, _x + (_w / 2 ), _y + ((sprite_get_width(ip.sprite) * 2) / 2), 2, 2, 0, c_white, 1);
+					draw_sprite_ext(sUiLevelHeaderYellow, 0, _x, _y + _h, 2, 2, 0, c_white, 1);
+					draw_sprite_ext(sUiDigitYellow, ip.level, _x, _y + _h, 2, 2, 0, c_white, 1);
+	            }
 	            break;
 		}
 	});
