@@ -1,3 +1,4 @@
+movement.set_speed(GameData.SPD);
 if (keyboard_check_pressed(ord("O"))) {
 	Player_Weapons[0].level++;
 }
@@ -5,9 +6,10 @@ if (keyboard_check_pressed(ord("I"))) {
 	Player_Weapons[0].level--;
 }
 Player_Weapons[0].level = clamp(Player_Weapons[0].level, 1, 7);
-var near_xp = instance_nearest(x, y, oXP);
-if (distance_to_object(near_xp) < 40) {
-	with (near_xp) {
+ds_list_clear(xplist);
+var xps = collision_circle_list(x, y, 40 * (GameData.Pickup / 100), oXP, false, true, xplist, true);
+for (var i = 0; i < ds_list_size(xplist); i++) {
+	with (xplist[| i]) {
 		following = true;
 		speed = GameData.SPD + 1;
 		direction = point_direction(x, y, oPlayer.x, oPlayer.y);

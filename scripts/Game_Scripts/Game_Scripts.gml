@@ -59,7 +59,7 @@ function stat(_name, _sprite, _weight) constructor {
 #region Stats
 var s = new stat("Max_HP_Up", sHudHPIcon, 2);
     s.set_function(function() {
-        GameData.max_hp += GameData.max_hp * 0.10;
+        GameData.max_hp = GameData.max_hp + round(GameData.max_hp * 0.10);
     });
 s = new stat("ATK_Up", sHudATKIcon, 3);
     s.set_function(function() {

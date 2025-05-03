@@ -40,7 +40,7 @@ i.set_on_bought(method(i, function(){
 	chance = chances[level];
 }));
 i.set_on_hit(method(i, function() {
-	var rnd = chance <= irandom_range(0, 100);
+	var rnd = irandom_range(0, 100) <= chance;
 	if (rnd) {
 		oPlayer.dmg = 0;
 		var inst = weapon_create { wid : variable_clone(Weapons[$ "Shockwave"]) });

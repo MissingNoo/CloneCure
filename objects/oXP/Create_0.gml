@@ -32,7 +32,7 @@ for (var i = 0; i < array_length(range); i++) {
 		sprite_index = range[i][0];
 	}
 }
-
-if (irandom_range(0, 3000) == 1) {
-	sprite_index = sXPMagnet; //TODO: double if got super study glasses
+var rnd_range = player_have_item("Super_Study_Glasses") ? 1500 : 3000;
+if (irandom_range(0, rnd_range) == 1) {
+	sprite_index = sXPMagnet;
 }

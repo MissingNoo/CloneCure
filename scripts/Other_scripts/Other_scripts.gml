@@ -37,4 +37,28 @@ function damage_player(dmg) {
 	} else {
 		GameData.hp = clamp(GameData.hp - dmg, 0, GameData.max_hp);
 	}
+	if (dmg > 0) {
+		instance_create_depth(x, y - (sprite_height / 2), depth - 1, oDamageText, {
+		    dir : abs(image_xscale),
+		    dmg : dmg
+		});
+	}
+}
+
+/**
+ * Checks if player has the item.
+ * @param {string} name Item Name
+ */
+function player_have_item(name) {
+	var have = false;
+	global.isearch = name;
+	if (array_find_index(Player_Items, function(e, i) {
+		if (is_undefined(e)) {
+			return false;
+		}
+		return e.name == global.isearch;
+	}) != -1) {
+		have = true;
+	}
+	return have;
 }

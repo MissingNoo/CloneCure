@@ -12,7 +12,7 @@ stats.foreach(function(name, pos, data) {
 		draw_sprite_ext(hud_spr, 0, _x + icon_x_offset, _y + icon_y_offset, icon_scale, icon_scale, 0, c_white, 1);
 	}
 	//}
-	var char= GameData.characters[$ GameData.selected_character];
+	var char = GameData.characters[$ GameData.selected_character];
     switch(name) {
 		case "back":
 			spr = char.title_sprite;
@@ -37,6 +37,9 @@ stats.foreach(function(name, pos, data) {
 			break;
         default:
 			var value = GameData[$ name];
+			if (string_lower(name) == "pickup") {
+				value -= 100;
+			}
 			if (!is_undefined(value)) {
 				scribble($"[fa_right]{value >= 0 ? "+" : ""}{value}%").scale(text_scale).draw(_x + _w - line_end, _y + text_y);
 			}

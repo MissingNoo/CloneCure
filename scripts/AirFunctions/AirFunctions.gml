@@ -503,6 +503,11 @@ function topdown_movement(owner, _spd) constructor {
     static is_moving = function() {
         return hspd != 0 or vspd != 0;
     }
+	
+	static set_speed = function(_spd) {
+		spd = _spd;
+		return self;
+	}
 }
 
 function animated_sprite(spr) constructor {
