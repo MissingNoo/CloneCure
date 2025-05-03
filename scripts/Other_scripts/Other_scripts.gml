@@ -62,3 +62,11 @@ function player_have_item(name) {
 	}
 	return have;
 }
+
+function shop_level(name) {
+	if (!variable_struct_exists(Shop.upgrades, name)) {
+		show_debug_message($"{name} doesn't exist on ShopData!");
+		return 0;
+	}
+	return Shop.upgrades[$ name].level;
+}

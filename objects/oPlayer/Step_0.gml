@@ -1,4 +1,12 @@
-movement.set_speed(GameData.SPD);
+#region Regeneration
+if (healframe < frame) {
+	healframe = frame + seconds_to_frames(5);
+	GameData.hp += shop_level("Regeneration");
+}
+#endregion
+var basespd = GameData.SPD;
+basespd += basespd * (0.06 * shop_level("SPD_Up"))
+movement.set_speed(basespd);
 if (keyboard_check_pressed(ord("O"))) {
 	Player_Weapons[0].level++;
 }
@@ -7,7 +15,9 @@ if (keyboard_check_pressed(ord("I"))) {
 }
 Player_Weapons[0].level = clamp(Player_Weapons[0].level, 1, 7);
 ds_list_clear(xplist);
-var xps = collision_circle_list(x, y, 40 * (GameData.Pickup / 100), oXP, false, true, xplist, true);
+var pickrange = 40 * (GameData.Pickup / 100);
+pickrange += pickrange * (0.10 * shop_level("Pick_Up_Range"));
+var xps = collision_circle_list(x, y, pickrange, oXP, false, true, xplist, true);
 for (var i = 0; i < ds_list_size(xplist); i++) {
 	with (xplist[| i]) {
 		following = true;

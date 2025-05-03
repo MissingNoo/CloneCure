@@ -2,8 +2,12 @@
 instance_create_depth(x, y, depth, oCam);
 GameData.selected_character = "Tenma_Maemi";
 char = GameData.characters[$ GameData.selected_character];
-GameData.hp = char.hp;
-GameData.max_hp = GameData.hp;
+
+GameData.max_hp = char.hp;
+repeat (shop_level("Max_HP_Up")) {
+	GameData.max_hp += 4;
+}
+GameData.hp = GameData.max_hp;
 GameData.shield = 0;
 GameData.max_shield = 0;
 GameData.ATK = char.atk;
@@ -36,3 +40,4 @@ GameData.arrow_dir = 0;
 dir = 0;
 dmg = 0;
 xplist = ds_list_create();
+healframe = 0;

@@ -27,7 +27,7 @@ switch (selecting) {
         }
         selected_item_num = clamp(selected_item_num, 0, array_length(tab_items) - 1);
         selected_item = tab_items[selected_item_num];
-		if (confirm or device_mouse_check_button_released(0, mb_left)) {
+		if (confirm) {
 			selecting = "buysell";
 		}
         break;
@@ -43,18 +43,18 @@ switch (selecting) {
 		if (cancel or device_mouse_check_button_released(0, mb_right)) {
 			selecting = "item";
 		}
-		var item = Shop.upgrades[$ selected_item];
-		if (item.level == array_length(item.cost)) {
+		var sitem = Shop.upgrades[$ selected_item];
+		if (sitem.level == array_length(sitem.cost)) {
 			buysell = 1;
 			buybutton.set_enabled(false);
 			sellbutton.set_enabled(true);
 		}
-		if (item.level == 0) {
+		if (sitem.level == 0) {
 			buysell = 0;
 			buybutton.set_enabled(true);
 			sellbutton.set_enabled(false);
 		}
-		if (between(item.level, 1, array_length(item.cost) - 1)) {
+		if (between(sitem.level, 1, array_length(sitem.cost) - 1)) {
 			buybutton.set_enabled(true);
 			sellbutton.set_enabled(true);
 		}

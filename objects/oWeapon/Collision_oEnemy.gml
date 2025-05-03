@@ -12,12 +12,24 @@ other.hit_frame[$ $"i{id}"] = frame + wid.hit_cooldown;
 
 other.inv_frame = frame + 15;
 var dmg = irandom_range(wid.mindmg[wid.level], wid.maxdmg[wid.level]);
+
+//Growth
+if (wid.perk) {
+	dmg += (((0.1 * shop_level("Growth")) * GameData.level) / max_projectiles) * wid.hit_cooldown < 20 ? wid.hit_cooldown / 20 : 1;
+}
+
+//Max Atk Up
+dmg += dmg * (0.06 * shop_level("ATK_Up"));
+
 other.hp -= dmg;
+
 instance_create_depth(other.x, other.y - (other.sprite_height / 2), other.depth - 1, oDamageText, {
     dir : abs(image_xscale),
     dmg : dmg
 });
+
 audio_play_sound(choose(snd_hit1, snd_hit2, snd_hit3), 0, 0, GameConfig.sound_volume, undefined, random_range(0.75, 1));
+
 if (wid.knockback_speed[level] != 0 and other.knocktimer < frame) {
 	other.knocktimer = frame + wid.knockback_duration[level];
 	var push = wid.knockback_speed[level];

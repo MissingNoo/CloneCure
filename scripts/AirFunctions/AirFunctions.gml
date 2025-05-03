@@ -570,3 +570,7 @@ function lengthdir(lenght, dir) {
 function between(val, _min, _max) {
 	return val >= _min and val <= _max;
 }
+
+function seconds_to_frames(seconds) {
+	return seconds * game_get_speed(gamespeed_fps);
+}

@@ -20,9 +20,9 @@ selecting = "item";
 buysell = 0;
 
 buyfunc = function() {
-	var item = Shop.upgrades[$ selected_item];
-	SaveData.money -= item.cost[item.level];
-	item.level++;
+	var sitem = Shop.upgrades[$ selected_item];
+	SaveData.money -= sitem.cost[sitem.level];
+	sitem.level++;
 }
 buybutton = new button("Buy");
 buybutton.enabled = true;
@@ -32,9 +32,9 @@ buybutton.set_on_area_function(method(self, function() {
 }));
 
 sellfunc = function() {
-	var item = Shop.upgrades[$ selected_item];
-	item.level--;
-	SaveData.money += item.cost[item.level];
+	var sitem = Shop.upgrades[$ selected_item];
+	sitem.level--;
+	SaveData.money += sitem.cost[sitem.level];
 }
 sellbutton = new button("Refund");
 sellbutton.enabled = true;

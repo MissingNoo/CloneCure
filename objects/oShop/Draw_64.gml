@@ -53,10 +53,17 @@ ui.foreach(function(name, pos, data) {
                 	offset = 0;
                 	yoffset += item_height + 2;
                 }
-                if (mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + item_width, _y + yoffset + item_height]) and mx != mxprevious and selecting != "buysell") {
-					selecting = "item";
-                    selected_item_num = i;
-                	selected_item = item_names[i];
+                if (mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + item_width, _y + yoffset + item_height])) {
+					if (selecting != "buysell") {
+						if (mx != mxprevious) {
+							selecting = "item";
+		                    selected_item_num = i;
+		                	selected_item = item_names[i];
+						} 
+						if (device_mouse_check_button_released(0, mb_left)) {
+							selecting = "buysell";
+						}
+					}
                 }
                 //draw_rectangle(_x + offset, _y + yoffset, _x + offset + item_width, _y + yoffset + item_height, true);
                 draw_sprite_stretched(sShopItemBG, 0, _x + offset + item_s_offset, _y + yoffset + item_s_offset, item_width - (item_s_offset * 2), item_height - (item_s_offset * 2));
