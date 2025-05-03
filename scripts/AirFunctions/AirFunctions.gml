@@ -164,26 +164,17 @@ function textbox() constructor {
             }
         }
         if (selected) {
-			if (keyboard_lastkey == vk_f1) {
-                //text = string_copy(text, 1, string_length(text) - 1);
-                text = "";
-                keyboard_lastkey = vk_nokey;
-				return self;
-            }
 			if (keyboard_lastkey == vk_backspace) {
-                //text = string_copy(text, 1, string_length(text) - 1);
                 text = string_delete(text, string_length(text), 1);
-                keyboard_lastkey = vk_nokey;
-				return self;
+				if (keyboard_check(vk_shift)) {
+					text = "";
+				}
             }
 			if (keyboard_lastkey == vk_enter and text != "") {
 			    func(self);
-				keyboard_lastkey = vk_nokey;
-				return self;
 			}
-            if (keyboard_lastchar != "") {
+            if (keyboard_lastchar != "" and keyboard_lastkey != vk_backspace and keyboard_lastkey != vk_enter) {
                 text = string(text) + string(keyboard_lastchar);
-                keyboard_lastchar = "";
 				if (only_numbers) {
 					global.dot_pos = undefined;
 					string_foreach(text, function(e, i) {
@@ -205,24 +196,17 @@ function textbox() constructor {
 					    text = string_insert("%", text, global.percent_pos);
 					}
 				}
-				if (keyboard_lastkey == vk_enter) {
-				    text = string_copy(text, 1, string_length(text) - 1);
-				}
-				return self;
             }
+			keyboard_lastchar = "";
+			keyboard_lastkey = vk_nokey;
         }
-        return self;
     }
     
     static draw = function() {
 		if (area[0] == area[2]) { exit; }
         tick();
-        //draw_set_color(c_black);
-        //draw_rectangle_area(area, false, [c_black, selected ? c_yellow : c_white]);
         draw_sprite_stretched(sInput, 0, area[0], area[1], area[2] - area[0], area[3] - area[1]);
         scribble($"[Fnt][c_black] {text}").scale_to_box(area[2] - area[0] - string_width("X") - 2, area[3] - area[1] - 3, true).draw(area[0], area[1]);
-        //draw_set_color(c_white);
-        return self;
     }
 }
 global.reset_button = false;
