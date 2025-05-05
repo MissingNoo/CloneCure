@@ -608,7 +608,7 @@ function __LDtkTrace(str) {
 		else
 			str += " " + string(argument[i])
 	}
-	show_debug_message("[LDtk parser] " + str)
+	//show_debug_message("[LDtk parser] " + str)
 }
 
 // if this is a useful script for you, you can copy it and rename to something like InheritVariables(src, dest)
