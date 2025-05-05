@@ -37,7 +37,8 @@ stats.foreach(function(name, pos, data) {
 			break;
         default:
 			var value = GameData[$ name];
-			if (string_lower(name) == "pickup") {
+			var lower = ["pickup"];
+			if (array_contains(lower, string_lower(name))) {
 				value -= 100;
 			}
 			if (!is_undefined(value)) {

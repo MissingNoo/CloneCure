@@ -18,8 +18,16 @@ if (wid.perk) {
 	dmg += (((0.1 * shop_level("Growth")) * GameData.level) / max_projectiles) * wid.hit_cooldown < 20 ? wid.hit_cooldown / 20 : 1;
 }
 
-//Max Atk Up
-dmg += dmg * (0.06 * shop_level("ATK_Up"));
+var BaseATK = GameData.ATK;
+var damage_bonus = 1;
+
+for (var i = 0; i < array_length(Player_Items); i++) {
+	if (!is_undefined(Player_Items[i])) {
+		damage_bonus += Player_Items[i].damage_bonus - 1;
+	}
+}
+trace($"Damage Bonus: {BaseATK} + {damage_bonus}");
+dmg = (dmg * BaseATK) * damage_bonus;
 
 other.hp -= dmg;
 

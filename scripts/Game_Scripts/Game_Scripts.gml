@@ -59,27 +59,27 @@ function stat(_name, _sprite, _weight) constructor {
 #region Stats
 var s = new stat("Max_HP_Up", sHudHPIcon, 2);
     s.set_function(function() {
-        GameData.max_hp = GameData.max_hp + round(GameData.max_hp * 0.10);
+        GameData.max_hp = GameData.max_hp + round(GameData.max_hp * 0.10); //TODO: see if it's correct?
     });
 s = new stat("ATK_Up", sHudATKIcon, 3);
     s.set_function(function() {
-        GameData.ATK += GameData.ATK * 0.08;
+        GameData.ATK += 0.08;
     });
 s = new stat("SPD_Up", sHudSPDIcon, 4);
     s.set_function(function() {
-        GameData.SPD += GameData.SPD * 0.12;
+        GameData.SPD += 0.12;
     });
 s = new stat("Crit_Up", sHudCRTIcon, 3);
     s.set_function(function() {
-        GameData.CRT += GameData.CRT * 0.03;
+        GameData.CRT += 0.03;
     });
 s = new stat("Pick_Up_Range", sHudPickupIcon, 4);
     s.set_function(function() {
-        GameData.Pickup += GameData.Pickup * 0.20;
+        GameData.Pickup += 20;
     });
 s = new stat("Haste_Up", sHudHasteIcon, 2);
     s.set_function(function() {
-        GameData.Haste += GameData.Haste * 0.05;
+        GameData.Haste += 5;
     });
 #endregion
 	

@@ -38,7 +38,7 @@ new shop_stat("ATK_Up", sHudATKIcon, [300, 750, 1800, 4100, 9100, 18000, 25000, 
 new shop_stat("SPD_Up", sHudSPDIcon, [200, 500, 1200, 2750, 6000, 12000, 18000, 24000, 30000, 36000]);
 new shop_stat("Crit_Up", sHudCRTIcon, [300, 750, 1800, 4100, 9100]);
 new shop_stat("Pick_Up_Range", sHudPickupIcon, [200, 500, 1200, 2750, 6000, 12000, 18000, 24000, 30000, 36000]);
-new shop_stat("Haste Up", sHudHasteIcon, [400, 1000, 2400, 5500, 12000]);
+new shop_stat("Haste_Up", sHudHasteIcon, [400, 1000, 2400, 5500, 12000]);
 new shop_stat("Regeneration", sHudRegenerationIcon, [200, 500, 1200, 2750, 6000]);
 new shop_stat("Defense_Up", sHudDefenseIcon, [500, 1250, 3000, 6900, 15000]);
 new shop_stat("Special_Cooldown_Reduction", sHudSpecialCooldownIcon, [500, 1250, 3000, 6900, 15000]);

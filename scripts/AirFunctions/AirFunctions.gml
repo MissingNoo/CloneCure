@@ -39,7 +39,7 @@ function __trace_pre(_file, _line) {
     return 1;
 }
 function __trace() {
-    if (os_get_config() != "Debug") {
+    if (os_get_config() == "Release") {
         return;
     }
     var _buf = global.__trace_buf;

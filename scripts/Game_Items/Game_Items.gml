@@ -5,6 +5,8 @@ Player_Items = array_create(6, undefined);
 Items = {};
 function item(_name) : base_item(_name) constructor {
 	lex = "Items";
+	damage_bonus = 1;
+	crit_debuff = 0;
 	on_hit = function(){};
 	Items[$ _name] = self;
 	
@@ -30,7 +32,7 @@ i.set_on_cooldown(method(i, function() {
 	GameData.shield = GameData.max_shield;
 }));
 
-var i = new item("Headphones");
+i = new item("Headphones");
 i.set_weight(4);
 i.set_cooldown(1, 1);
 i.set_sprite(sHeadPhones);
@@ -45,4 +47,15 @@ i.set_on_hit(method(i, function() {
 		oPlayer.dmg = 0;
 		var inst = weapon_create { wid : variable_clone(Weapons[$ "Shockwave"]) });
 	}
+}));
+
+i = new item("Gorilla_Paw");
+i.set_weight(3);
+i.set_cooldown(1, 1);
+i.set_sprite(sGorillaPaw);
+i.set_max_level(3);
+i.set_on_bought(method(i, function(){
+	var bonus = [0, 1.2, 1.3, 1.4];
+	crit_debuff = [0, 0.20, 0.20, 0.20];
+	damage_bonus = bonus[level];
 }));

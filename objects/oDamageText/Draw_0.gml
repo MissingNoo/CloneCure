@@ -5,7 +5,7 @@ draw_set_alpha(image_alpha);
 var color = critical ? "c_yellow" : "c_white";
 var _str = "";
 if (dmg != 0) {
-    _str = string(dmg);
+    _str = string(round(dmg));
 }
 else{
 	color = "c_white";

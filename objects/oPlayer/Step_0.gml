@@ -5,7 +5,6 @@ if (healframe < frame) {
 }
 #endregion
 var basespd = GameData.SPD;
-basespd += basespd * (0.06 * shop_level("SPD_Up"))
 movement.set_speed(basespd);
 if (keyboard_check_pressed(ord("O"))) {
 	Player_Weapons[0].level++;
@@ -16,7 +15,6 @@ if (keyboard_check_pressed(ord("I"))) {
 Player_Weapons[0].level = clamp(Player_Weapons[0].level, 1, 7);
 ds_list_clear(xplist);
 var pickrange = 40 * (GameData.Pickup / 100);
-pickrange += pickrange * (0.10 * shop_level("Pick_Up_Range"));
 var xps = collision_circle_list(x, y, pickrange, oXP, false, true, xplist, true);
 for (var i = 0; i < ds_list_size(xplist); i++) {
 	with (xplist[| i]) {
@@ -38,7 +36,7 @@ if (movement.is_moving()) {
 }
 
 array_foreach(Player_Weapons, function(e, i) {
-    if (e == undefined) {
+    if (is_undefined(e)) {
     	return;
     }
     if (e.cooldown <= frame) {
@@ -47,11 +45,14 @@ array_foreach(Player_Weapons, function(e, i) {
             can_spawn_other : true,
 			direction : GameData.arrow_dir
         });
-        e.cooldown = frame + e.base_cooldown[e.level];
+		var cool = e.base_cooldown[e.level];
+		var newcool = clamp(round(cool / (1 + (GameData.Haste / 100))), e.min_cooldown, infinity);
+		trace($"Cooldown: {cool} : {newcool}");
+        e.cooldown = frame + cool;
     }
 });
 array_foreach(Player_Items, function(e, i) {
-    if (e == undefined) {
+    if (is_undefined(e)) {
     	return;
     }
     if (e.cooldown <= frame) {
