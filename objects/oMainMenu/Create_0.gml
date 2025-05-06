@@ -12,7 +12,7 @@ scribble_font_bake_outline_4dir("sHFont", "ffnt", c_black, true);
 scribble_font_set_default("sHFont");	
 //oo = 0;
 //yy = 0;
-ui = new window(global.game_uis.main_menu, false);
+ui = new window(global.game_uis.main_menu, false);//
 ui.fit_to_gui();
 buttons = {
     button_leaderboards : new button("MainMenu.Leaderboard"),
