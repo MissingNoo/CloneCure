@@ -74,17 +74,38 @@ ui.foreach(function(name, pos, data) {
 			}
 			break;
 		case "Eliminate":
-			mouse_select(_x, _y, _w, _h, 4);
+			if (shop_level("Eliminate") == 0) break;
+			if (eliminate.enabled) {
+				mouse_select(_x, _y, _w, _h, 5);
+			}
+			eliminate.text = $"Eliminate ({GameData.Eliminates})";
+			if (GameData.Eliminates == 0) {
+				eliminate.enabled = false;
+			}
 			eliminate.position(_x, _y, _x + _w, _y + _h);
 			eliminate.draw();
 			break;
 		case "Reroll":
-			mouse_select(_x, _y, _w, _h, 5);
+			if (shop_level("Reroll") == 0) break;
+			if (reroll.enabled) {
+				mouse_select(_x, _y, _w, _h, 4);
+			}
+			reroll.text = $"Reroll ({GameData.Rerolls})";
+			if (GameData.Rerolls == 0) {
+				reroll.enabled = false;
+			}
 			reroll.position(_x, _y, _x + _w, _y + _h);
 			reroll.draw();
 			break;
 		case "Hold":
-			mouse_select(_x, _y, _w, _h, 6);
+			if (shop_level("Hold") == 0) break;
+			if (hold.enabled) {
+				mouse_select(_x, _y, _w, _h, 6);
+			}
+			hold.text = $"Hold ({GameData.Holds})";
+			if (GameData.Holds == 0) {
+				hold.enabled = false;
+			}
 			hold.position(_x, _y, _x + _w, _y + _h);
 			hold.draw();
 			break;

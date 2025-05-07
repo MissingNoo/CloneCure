@@ -49,8 +49,17 @@ ui = new window(global.game_uis.level_up);
 ui.fit_to_gui();
 selected_option = 0;
 eliminate = new button("Eliminate");
+eliminate.set_function(function() {
+	GameData.Eliminates = clamp(GameData.Eliminates - 1, 0, infinity);
+});
 reroll = new button("Reroll");
+reroll.set_function(function() {
+	GameData.Rerolls = clamp(GameData.Rerolls - 1, 0, infinity);
+});
 hold = new button("Hold");
+hold.set_function(function() {
+	GameData.Holds = clamp(GameData.Holds - 1, 0, infinity);
+});
 
 icon_x = 104;
 icon_y = 114;
