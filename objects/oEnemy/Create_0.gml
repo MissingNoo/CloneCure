@@ -1,6 +1,7 @@
 knocktimer = 0;
 hit_frame = {};
 e = Enemies[$ name];
+boss = e.boss;
 hp = e.hp;
 atk = e.atk;
 sprite_index = e.sprite;

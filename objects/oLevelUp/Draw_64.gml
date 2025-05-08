@@ -28,8 +28,8 @@ ui.foreach(function(name, pos, data) {
 			global.search = ups[opt].name;
             switch (ups[opt].lex) {
                 case "Weapons":
-					index = array_find_index(Player_Weapons, function(e, i) {
-						if (e == undefined) {
+					index = array_find_index(Player_Weapons, function(e, i) /*=>*/ {
+						if (is_undefined(e)) {
 							return false;
 						}
 						return e.name == global.search;
@@ -46,8 +46,8 @@ ui.foreach(function(name, pos, data) {
                     draw_sprite_centered_ext(ups[opt].sprite, 0, _x + icon_x - sprite_get_width_ext(ups[opt].sprite, 2.5), _y + icon_y - sprite_get_height_ext(ups[opt].sprite, 2.5), icon_scale, icon_scale, 0, c_white, 1);
                     break;
                 case "Items":
-					index = array_find_index(Player_Items, function(e, i) {
-						if (e == undefined) {
+					index = array_find_index(Player_Items, function(e, i) /*=>*/ {
+						if (is_undefined(e)) {
 							return false;
 						}
 						return e.name == global.search;

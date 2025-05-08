@@ -59,3 +59,12 @@ i.set_on_bought(method(i, function(){
 	crit_debuff = [0, 0.20, 0.20, 0.20];
 	damage_bonus = bonus[level];
 }));
+
+i = new item("Chicken_Feather");
+i.set_weight(2);
+i.set_cooldown(1, 1);
+i.set_sprite(sChickenFeather);
+i.set_max_level(3);
+i.set_on_bought(function() /*=>*/ {
+	GameData.revives++;
+});

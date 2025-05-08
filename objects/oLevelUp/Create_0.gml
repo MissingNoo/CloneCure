@@ -19,7 +19,7 @@ struct_foreach(Weapons, function(i, e) {
     }
 });
 for (var i = array_length(Player_Weapons) - 1; i >= 0; i--) {
-    if (Player_Weapons[i] == undefined) {
+    if (is_undefined(Player_Weapons[i])) {
     	continue;
     }
 	if (Player_Weapons[i].level == 7) {
@@ -35,7 +35,7 @@ for (var i = array_length(Player_Weapons) - 1; i >= 0; i--) {
 ups = [
 	Stats[$ "ATK_Up"],
 	Items[$ "Gorilla_Paw"],
-	Items[$ "Headphones"],
+	Items[$ "Chicken_Feather"],
 	Weapons[$ "Ame_Pistol"],
 ];
 

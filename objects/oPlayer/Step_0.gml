@@ -1,3 +1,15 @@
+#region Revives
+if(GameData.hp <= 0 and GameData.revives > 0) {
+	//TODO: revive window
+	GameData.revives--;
+	GameData.hp = GameData.max_hp / 2;
+	with (oEnemy) {
+		if(!boss){
+			hp = 0;
+		}
+	}
+}
+#endregion
 #region Regeneration
 if (healframe < frame) {
 	healframe = frame + seconds_to_frames(5);

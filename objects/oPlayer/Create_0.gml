@@ -21,6 +21,7 @@ GameData.level = 1;
 GameData.Rerolls = shop_level("Reroll");
 GameData.Holds = shop_level("Hold");
 GameData.Eliminates = shop_level("Eliminate");
+GameData.revives = 0;
 //show_debug_overlay(true);
 Player_Weapons[0] = variable_clone(Weapons[$ char.main_weapon]);
 //Player_Weapons[0] = variable_clone(Weapons[$ "Fan_Beam"]);

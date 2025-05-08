@@ -21,8 +21,7 @@ Weapons = {};
 Stats = {};
 #macro Player_Weapons global.gamedata.player_weapons
 Player_Weapons = array_create(6, undefined);
-	
-	
+
 #region Functions
 
 #endregion
@@ -240,6 +239,9 @@ function weapon(_name) : base_item(_name) constructor {
 		type = _type;
 		return self;
 	}
+	/// @function                set_enchants(amount)
+	/// @description             Defines wich enchantments the weapon can be granted.
+	/// @param {Array}    list	 Enchantment list
 	static set_enchants = function(list) {
 		can_enchant = list;
 		return self;
@@ -256,6 +258,9 @@ function weapon(_name) : base_item(_name) constructor {
 		} 
 		return self;
 	}
+	/// @function                set_duration(amount)
+	/// @description             Defines how many frames until the projectile is destroyed.
+	/// @param {Any}    amount   The projectile duration.
 	static set_duration = function(amount) {
 		if (!is_array(amount)) {
 			amount = array_create(7, amount);
@@ -336,7 +341,7 @@ function weapon(_name) : base_item(_name) constructor {
 #region Ame Pistol
 var w = new weapon("Ame_Pistol");
 w.set_sprite(sAmeliaWeapon, sAmeliaWeaponProjectile);
-w.set_create(function(){
+w.set_create(function() /*=>*/ {
     timer = wid.delay;
     remaining = wid.shoots[level] - 1;
     other_dir = direction;
@@ -344,7 +349,7 @@ w.set_create(function(){
     speed = 5;
     ricocheted = false;
 });
-w.set_step(function() {
+w.set_step(function() /*=>*/ {
     timer = clamp(timer - 1, 0, infinity);
     if (can_spawn_other and timer == 0 and remaining > 0) {
         remaining--;
@@ -356,7 +361,7 @@ w.set_step(function() {
         inst.image_angle = other_dir;
     }
 });
-w.set_on_hit(function() {
+w.set_on_hit(function() /*=>*/ {
     if (level > 4 and hits <= 0 and !ricocheted) {
         ricocheted = true;
     	hits = 3;
@@ -365,30 +370,30 @@ w.set_on_hit(function() {
     }
     //TODO: Level 7, no fucking idea
 });
-w.set_hits([1, 2, 2, 2, 3, 3, 3])
-w.set_duration(120)
-w.set_hit_cooldown(20)
-w.set_cooldown([80, 80, 80, 80, 60, 60, 60], 50)
-w.set_shoots([3, 5, 5, 5, 5, 5, 5])
-w.set_perk(true, "Amelia")
-w.set_delay(6)
-w.set_damage([8, 8, 10, 10, 10, 12, 12], [12, 12, 14, 14, 14, 16, 16])
-w.set_type(weapon_type.Multishot)
+w.set_hits([1, 2, 2, 2, 3, 3, 3]);
+w.set_duration(120);
+w.set_hit_cooldown(20);
+w.set_cooldown([80, 80, 80, 80, 60, 60, 60], 50);
+w.set_shoots([3, 5, 5, 5, 5, 5, 5]);
+w.set_perk(true, "Amelia");
+w.set_delay(6);
+w.set_damage([8, 8, 10, 10, 10, 12, 12], [12, 12, 14, 14, 14, 16, 16]);
+w.set_type(weapon_type.Multishot);
 #endregion
 
 #region BL Book
 w = new weapon("BL_Book");
-w.set_sprite(sBLBookThumb, sBLBook)
-w.set_hits(7)
-w.set_duration(120)
-w.set_hit_cooldown(20)
-w.set_cooldown([360, 360, 300, 300, 300, 300, 300], 300)
-w.set_shoots([3, 4, 4, 5, 5, 6, 6])
-w.set_delay(0.1)
-w.set_damage([12, 12, 16, 16, 16, 16, 23], [16, 16, 20, 20, 20, 20, 28])
-w.set_type(weapon_type.Multishot)
-w.set_weight(3)
-w.set_create(function(){
+w.set_sprite(sBLBookThumb, sBLBook);
+w.set_hits(7);
+w.set_duration(120);
+w.set_hit_cooldown(20);
+w.set_cooldown([360, 360, 300, 300, 300, 300, 300], 300);
+w.set_shoots([3, 4, 4, 5, 5, 6, 6]);
+w.set_delay(0.1);
+w.set_damage([12, 12, 16, 16, 16, 16, 23], [16, 16, 20, 20, 20, 20, 28]);
+w.set_type(weapon_type.Multishot);
+w.set_weight(3);
+w.set_create(function() /*=>*/ {
     var len = [0, 50, 50, 50, 50, 62.5, 62.5, 62.5];
     var spd = [0, 3, 3, 3, 3, 5, 5, 5];
     books = wid.shoots[level];
@@ -408,12 +413,12 @@ w.set_create(function(){
     }
 	x = oPlayer.x + lengthdir_x(orbit_length, round(orbit_place));
 	y = oPlayer.y - 16 + lengthdir_y(orbit_length, round(orbit_place));
-})
-w.set_step(function(){
+});
+w.set_step(function() /*=>*/ {
     orbit_place -= spinning_speed;
     x = oPlayer.x + lengthdir_x(orbit_length, round(orbit_place));
 	y = oPlayer.y - 16 + lengthdir_y(orbit_length, round(orbit_place));
-})
+});
 w.set_enchants([
     weapon_enchantments.Damage,
     weapon_enchantments.Size,
@@ -432,7 +437,7 @@ w.set_shoots([1, 1, 1, 1, 1, 1, 2]);
 w.set_delay(10);
 w.set_hit_cooldown(30);
 w.set_area([1, 1, 1, 1, 1.2, 1.2, 1.2]);
-w.set_create(function(){
+w.set_create(function() /*=>*/ {
 	range = [0, 60, 60, 60, 60, 80, 80, 80];
 	var on_range = collision_circle(x, y, range[level], oEnemy, true, true);
 	if (on_range == noone) {
@@ -443,7 +448,7 @@ w.set_create(function(){
 	sausagetimer = frame + wid.delay;
 	sausages = wid.shoots[level] - 1;
 });
-w.set_step(function() {
+w.set_step(function() /*=>*/ {
 	if (sausagetimer < frame and can_spawn_other and sausages > 0) {
 		sausages--;
 		sausagetimer = frame + wid.delay;
@@ -452,7 +457,7 @@ w.set_step(function() {
 		});
 	}
 });
-w.set_on_animation_end(function(){
+w.set_on_animation_end(function() /*=>*/ {
 	instance_destroy();
 });
 w.set_enchants([
@@ -474,7 +479,7 @@ w.set_weight(3);
 w.set_create(function(){
 	image_angle = GameData.arrow_dir;
 });
-w.set_on_animation_end(function() {
+w.set_on_animation_end(function() /*=>*/ {
 	instance_destroy();
 });
 w.set_damage([9, 11, 11, 11, 11, 15, 15], [13, 15, 15, 15, 15, 19, 19]);
@@ -498,10 +503,10 @@ w.set_type(weapon_type.Melee);
 w = new weapon("Owl_Dagger");
 w.set_sprite(sOwlDaggerThumb, sOwlDaggerSlash);
 w.set_weight(2);
-w.set_create(function(){
+w.set_create(function() /*=>*/ {
 	image_angle = GameData.arrow_dir;
 });
-w.set_on_animation_end(function() {
+w.set_on_animation_end(function() /*=>*/ {
 	instance_destroy();
 });
 w.set_damage([10, 10, 12, 12, 12, 15, 15], [14, 14, 16, 16, 16, 19, 19]);
@@ -539,10 +544,10 @@ w.set_enchants([
 	weapon_enchantments.Knockback,
 	weapon_enchantments.Hit_Rate,
 ]);
-w.set_draw(function() {
+w.set_draw(function() /*=>*/ {
 	draw_sprite_ext(sprite_index, 0, x, y, image_xscale, image_yscale, 0, c_white, 0.5);
 });
-w.set_create(function() {
+w.set_create(function() /*=>*/ {
 	x = oPlayer.x;
 	y = oPlayer.y - 16;
 	//ParticleSystem5
@@ -572,12 +577,12 @@ w.set_create(function() {
 	depth+=10;
 	
 });
-w.set_step(function() {
+w.set_step(function() /*=>*/ {
 	x = oPlayer.x;
 	y = oPlayer.y - 16;
 	part_system_position(_ps, x, y);
 });
-w.set_clean_up(function() {
+w.set_clean_up(function() /*=>*/ {
 	part_system_destroy(_ps);
 });
 w.set_type(weapon_type.Melee);
@@ -586,11 +591,11 @@ w.set_type(weapon_type.Melee);
 #region Psycho Axe
 w = new weapon("Psycho_Axe");
 w.set_sprite(sPsychoAxeThumb, sPsychoAxe);
-w.set_create(function() {
+w.set_create(function() /*=>*/ {
 	orbit_length = 0;
 	orbit_place = 0;
 });
-w.set_step(function() {
+w.set_step(function() /*=>*/ {
 	orbit = lengthdir(orbit_length, orbit_place);
 	x = xstart + orbit.x;
 	y = ystart + orbit.y;
@@ -620,7 +625,7 @@ w.set_enchants([
 w = new weapon("Fan_Beam");
 w.set_sprite(sFanBeamThumb, sFanBeam);
 w.set_weight(3);
-w.set_on_animation_end(function() {
+w.set_on_animation_end(function() /*=>*/ {
 	instance_destroy();
 });
 w.set_damage([27, 27, 27, 36, 36, 36, 36], [33, 33, 33, 44, 44, 44, 44]);
@@ -639,7 +644,7 @@ w.set_knockback(10, 15);
 w.set_hit_cooldown(60);
 w.set_hits(999);
 w.set_duration(999);
-w.set_create(function() {
+w.set_create(function() /*=>*/ {
 	if (oPlayer.image_xscale < 0 and can_spawn_other) {
 		image_xscale = image_xscale * -1;
 	}
@@ -651,7 +656,7 @@ w.set_create(function() {
 		});
 	}
 });
-w.set_step(function() {
+w.set_step(function() /*=>*/ {
 	x = oPlayer.x;
 	y = oPlayer.y - 16;
 });
@@ -665,7 +670,7 @@ w.set_hits(999);
 w.set_hit_cooldown(60);
 w.set_type(weapon_type.Melee);
 w.set_damage([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]);
-w.set_on_animation_end(function() {
+w.set_on_animation_end(function() /*=>*/ {
 	instance_destroy();
 });
 w.perk = true;
