@@ -87,9 +87,9 @@ function base_item(_name) constructor {
 	sprite = sBlank;
 	level = 1;
 	max_level = 7;
-	cooldown = 0;
-	base_cooldown = [];
-	min_cooldown = 0;
+	cooldown = 1;
+	base_cooldown = array_create(7, 1);
+	min_cooldown = 1;
 	on_cooldown = function(){};
 	on_bought = function(){};
 	weight = 3;
@@ -260,7 +260,7 @@ function weapon(_name) : base_item(_name) constructor {
 	}
 	/// @function                set_duration(amount)
 	/// @description             Defines how many frames until the projectile is destroyed.
-	/// @param {Any}    amount   The projectile duration.
+		/// @param {Any}    amount   The projectile duration.
 	static set_duration = function(amount) {
 		if (!is_array(amount)) {
 			amount = array_create(7, amount);

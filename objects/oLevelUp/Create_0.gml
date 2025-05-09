@@ -35,7 +35,7 @@ for (var i = array_length(Player_Weapons) - 1; i >= 0; i--) {
 ups = [
 	Stats[$ "ATK_Up"],
 	Items[$ "Gorilla_Paw"],
-	Items[$ "Chicken_Feather"],
+	Items[$ "Energy_Drink"],
 	Weapons[$ "Ame_Pistol"],
 ];
 

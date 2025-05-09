@@ -329,7 +329,8 @@ function listbox() constructor {
     area = undefined;
     openarea = undefined;
     text = "";
-    func_on_select = function(){};
+    
+    func_on_select = function(inst){};
     
     static position = function(x, y, xx, yy) {
         area = [x, y, xx, yy];
@@ -490,8 +491,14 @@ function topdown_movement(owner, _spd) constructor {
 			len = 1; 
 			dir = touch.get_direction();
 		}
-        hspd = lengthdir_x(len, dir);
-        vspd = lengthdir_y(len, dir);
+		var xlen = 0;
+		var ylen = 0;
+		if (len != 0) {
+			xlen = abs(hspd);
+			ylen = abs(vspd);
+		}
+        hspd = lengthdir_x(xlen, dir);
+        vspd = lengthdir_y(ylen, dir);
     }
     
     static movement = function() {
