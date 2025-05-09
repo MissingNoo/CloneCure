@@ -13,14 +13,14 @@ if (LDTK_LIVE) {
 		// change this to your project directory
 		file: "/home/airgeadlamh/GameMakerProjects/LDTK/cure.ldtk",
 		level_name: "Stage1"
-	})
+	});
 }
 else {
 	// release config
 	LDtkConfig({
 		file: "stages.ldtk",
 		level_name: "Stage1"
-	})
+	});
 }
 
 

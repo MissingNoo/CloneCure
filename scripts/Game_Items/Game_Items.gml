@@ -99,17 +99,52 @@ i.set_weight(3);
 i.set_type(item_type.Stat);
 i.set_sprite(sEnergyDrink);
 i.set_max_level(3);
-i.set_on_bought(method(i, function() /*=>*/ {
+i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
 	var haste_levels = [0, 10, 5, 5];
 	var spd_levels = [0, 0.40, 0.10, 0.10];
-	GameData.Haste += haste_levels[level];
-	GameData.SPD += spd_levels[level];
+	var shacklescalc = function() {
+		if(player_have_item("Kusogaki_Shackles") and hpdiff != 0){
+			var reduction = get_item_data("Kusogaki_Shackles").reduction;
+			var hpcalc = GameData.max_hp + abs(hpdiff);
+			newhp = hpcalc * (0.8 + (0.2 * (reduction / 100)));
+			hpdiff = hpcalc - newhp;
+			GameData.max_hp = round(newhp);
+		}
+	}
+	if(!recalc){
+		GameData.Haste += haste_levels[level];
+		GameData.SPD += spd_levels[level];
+	} else {
+		shacklescalc();
+	}
 	self[$ "lowered_hp"] ??= false;
+	self[$ "hpdiff"] ??= 0;
+	self[$ "newhp"] ??= 0;
 	if(!lowered_hp){
 		lowered_hp = true;
-		GameData.max_hp = GameData.max_hp * 0.8;
-		GameData.hp = clamp(GameData.hp, 0, GameData.max_hp);
+		newhp = GameData.max_hp * 0.8;
+		hpdiff = GameData.max_hp - newhp;
+		GameData.max_hp = newhp;
+		shacklescalc();
+		GameData.max_hp = round(newhp);
+		GameData.hp = clamp(round(GameData.hp), 0, GameData.max_hp);
 	}
 }));
+#endregion
+
+#region Kusogaki Shackles
+i = new item("Kusogaki_Shackles");
+i.set_weight(1);
+i.set_type(item_type.Utility);
+i.set_sprite(sKusogakiShackles);
+i.set_max_level(3);
+i.set_on_bought(method(i, function() /*=>*/ {
+	var reductions = [0, 33, 66, 100];
+	reduction = reductions[level];
+	if(player_have_item("Energy_Drink")){
+		get_item_data("Energy_Drink").on_bought(true);
+	}
+}));
+
 #endregion
 #endregion

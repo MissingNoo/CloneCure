@@ -4,6 +4,7 @@ GameData.selected_character = "Tenma_Maemi";
 char = GameData.characters[$ GameData.selected_character];
 
 GameData.max_hp = char.hp;
+GameData.max_hp_base = GameData.max_hp;
 repeat (shop_level("Max_HP_Up")) {
 	GameData.max_hp += 4;
 }

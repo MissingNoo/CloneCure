@@ -15,7 +15,7 @@ function pause_game(reason = undefined) {
         surface_copy(oGame.surf, 0, 0, application_surface);
         instance_deactivate_all(true);
         var dont_deactivate = [input_controller_object, oGameUI];
-        array_foreach(dont_deactivate, function(e, i) {
+        array_foreach(dont_deactivate, function(e, i) /*=>*/ {
            instance_activate_object(e);
         });
         GameData.is_paused = true;
@@ -35,7 +35,7 @@ function damage_player(dmg) {
 	if (GameData.shield > 0) {
 		GameData.shield = clamp(GameData.shield - dmg, 0, GameData.max_shield);
 	} else {
-		GameData.hp = clamp(GameData.hp - dmg, 0, GameData.max_hp);
+		GameData.hp = clamp(round(GameData.hp - dmg), 0, GameData.max_hp);
 	}
 	if (dmg > 0) {
 		instance_create_depth(x, y - (sprite_height / 2), depth - 1, oDamageText, {
@@ -52,7 +52,7 @@ function damage_player(dmg) {
 function player_have_item(name) {
 	var have = false;
 	global.isearch = name;
-	if (array_find_index(Player_Items, function(e, i) {
+	if (array_find_index(Player_Items, function(e, i) /*=>*/ {
 		if (is_undefined(e)) {
 			return false;
 		}
@@ -61,6 +61,36 @@ function player_have_item(name) {
 		have = true;
 	}
 	return have;
+}
+
+function get_item_level(itemname) {
+	var level = 0;
+	global.lvlsearch = itemname;
+	var item_index = array_find_index(Player_Items, function(e, i) /*=>*/ {
+		if (is_undefined(e)) {
+			return false;
+		}
+		return e.name == global.lvlsearch;
+	});
+	if (item_index != -1) {
+		level = Player_Items[item_index].level;
+	}
+	return level;
+}
+
+function get_item_data(itemname) {
+	var data = {};
+	global.datasearch = itemname;
+	var item_index = array_find_index(Player_Items, function(e, i) /*=>*/ {
+		if (is_undefined(e)) {
+			return false;
+		}
+		return e.name == global.datasearch;
+	});
+	if (item_index != -1) {
+		data = Player_Items[item_index];
+	}
+	return data;
 }
 
 function shop_level(name) {

@@ -15,4 +15,4 @@ var _color = c_white;
 	//draw_sprite_ext(sMouseAim, 0, mouse_x, mouse_y, 1, 1, 0, c_white, 1);
 //}
 draw_sprite_ext(sArrow, GameData.strafing, x, y - (sprite_height / 2), 1, 1, GameData.arrow_dir, _color, 1);
-draw_text(x, y - 30, $"SPD: {movement.spd}");
+//draw_text(x, y - 30, $"SPD: {movement.spd}");

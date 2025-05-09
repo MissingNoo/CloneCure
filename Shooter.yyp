@@ -1658,6 +1658,7 @@
     {"id":{"name":"sKoiIcon","path":"sprites/sKoiIcon/sKoiIcon.yy",},},
     {"id":{"name":"sKronieA","path":"sprites/sKronieA/sKronieA.yy",},},
     {"id":{"name":"sKronieB","path":"sprites/sKronieB/sKronieB.yy",},},
+    {"id":{"name":"sKusogakiShackles","path":"sprites/sKusogakiShackles/sKusogakiShackles.yy",},},
     {"id":{"name":"sLavaPoolEnd","path":"sprites/sLavaPoolEnd/sLavaPoolEnd.yy",},},
     {"id":{"name":"sLavaPoolLoop","path":"sprites/sLavaPoolLoop/sLavaPoolLoop.yy",},},
     {"id":{"name":"sLavaPoolStart","path":"sprites/sLavaPoolStart/sLavaPoolStart.yy",},},

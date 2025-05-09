@@ -58,7 +58,8 @@ function stat(_name, _sprite, _weight) constructor {
 #region Stats
 var s = new stat("Max_HP_Up", sHudHPIcon, 2);
     s.set_function(function() {
-        GameData.max_hp = GameData.max_hp + round(GameData.max_hp * 0.10); //TODO: see if it's correct?
+    	var newhp = GameData.max_hp + round(GameData.max_hp * (player_have_item("Energy_Drink") ? 0.8 : 0.10)); //TODO: see if it's correct?
+        GameData.max_hp = newhp;
     });
 s = new stat("ATK_Up", sHudATKIcon, 3);
     s.set_function(function() {
