@@ -41,6 +41,7 @@ enum weapon_enchantments {
 	Hit_Rate
 }
 
+#region Stat upgrade constructor
 function stat(_name, _sprite, _weight) constructor {
     name = _name;
     sprite = _sprite;
@@ -54,6 +55,7 @@ function stat(_name, _sprite, _weight) constructor {
     }
     Stats[$ _name] = self;
 }
+#endregion
 
 #region Stats
 var s = new stat("Max_HP_Up", sHudHPIcon, 2);
@@ -82,7 +84,8 @@ s = new stat("Haste_Up", sHudHasteIcon, 2);
         GameData.Haste += 5;
     });
 #endregion
-	
+
+#region Base Item Constructor
 function base_item(_name) constructor {
 	name = _name;
 	sprite = sBlank;
@@ -143,6 +146,9 @@ function base_item(_name) constructor {
 		return self;
 	}
 }
+#endregion
+
+#region Weapon Constructor
 function weapon(_name) : base_item(_name) constructor {
     hits = 0;
     duration = array_create(8, 10);
@@ -338,7 +344,8 @@ function weapon(_name) : base_item(_name) constructor {
 		return self;
 	}
 }
-
+#endregion
+#region Weapons
 #region Ame Pistol
 var w = new weapon("Ame_Pistol");
 w.set_sprite(sAmeliaWeapon, sAmeliaWeaponProjectile);
@@ -677,4 +684,5 @@ w.set_on_animation_end(function() /*=>*/ {
 w.perk = true;
 w.set_duration(999);
 w.set_knockback(10, 10);
+#endregion
 #endregion

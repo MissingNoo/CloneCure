@@ -9,4 +9,6 @@ if (hp <= 0) {
     if (image_alpha <= 0) {
     	instance_destroy();
     }
+} else {
+	image_alpha = lerp(image_alpha, 1, 0.1);
 }

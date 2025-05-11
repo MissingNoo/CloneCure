@@ -246,6 +246,7 @@
     {"id":{"name":"oLightController","path":"objects/oLightController/oLightController.yy",},},
     {"id":{"name":"oMainMenu","path":"objects/oMainMenu/oMainMenu.yy",},},
     {"id":{"name":"oMapItemParent","path":"objects/oMapItemParent/oMapItemParent.yy",},},
+    {"id":{"name":"oOtherCam","path":"objects/oOtherCam/oOtherCam.yy",},},
     {"id":{"name":"oPauseUI","path":"objects/oPauseUI/oPauseUI.yy",},},
     {"id":{"name":"oPillar","path":"objects/oPillar/oPillar.yy",},},
     {"id":{"name":"oPillarBroken","path":"objects/oPillarBroken/oPillarBroken.yy",},},

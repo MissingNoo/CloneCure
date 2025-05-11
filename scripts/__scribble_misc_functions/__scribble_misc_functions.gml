@@ -4,7 +4,7 @@ function __scribble_trace()
 {
     var _string = "ScribbleDX: ";
     
-    var _i = 0
+    var _i = 0;
     repeat(argument_count)
     {
         if (is_real(argument[_i]))

@@ -10,7 +10,7 @@ function pause_game(reason = undefined) {
 		instance_destroy(oPauseUI);
         GameData.is_paused = false;
         instance_activate_all();
-	} else {
+	} else if (GameData.on_stage) {
 		oGame.surf = surface_recreate(oGame.surf, surface_get_width(application_surface), surface_get_height(application_surface));
         surface_copy(oGame.surf, 0, 0, application_surface);
         instance_deactivate_all(true);

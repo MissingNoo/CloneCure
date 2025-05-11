@@ -47,7 +47,7 @@ if (movement.is_moving()) {
 	sprite_index = char.idle_sprite;
 }
 
-array_foreach(Player_Weapons, function(e, i) {
+array_foreach(Player_Weapons, function(e, i) /*=>*/ {
     if (is_undefined(e)) {
     	return;
     }
@@ -63,7 +63,7 @@ array_foreach(Player_Weapons, function(e, i) {
         e.cooldown = frame + cool;
     }
 });
-array_foreach(Player_Items, function(e, i) {
+array_foreach(Player_Items, function(e, i) /*=>*/ {
     if (is_undefined(e)) {
     	return;
     }
@@ -96,7 +96,7 @@ if (touch.enabled) {
 		movement.last_h = 1;
 	}
 }
-
+GameData.arrow_dir = point_direction(x, y, mouse_x, mouse_y);
 if (device_mouse_check_button_released(0, mb_right)) {
 	instance_create_depth(mouse_x, mouse_y, depth, oXP, {
 		xp : 10
