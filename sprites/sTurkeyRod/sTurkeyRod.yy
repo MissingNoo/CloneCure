@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sTurkeyRod",
   "bboxMode":0,
   "bbox_bottom":22,
@@ -17,7 +17,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"650637c7-b7f1-4109-a481-5e0cd3a4bc2e","name":"650637c7-b7f1-4109-a481-5e0cd3a4bc2e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"650637c7-b7f1-4109-a481-5e0cd3a4bc2e","name":"650637c7-b7f1-4109-a481-5e0cd3a4bc2e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

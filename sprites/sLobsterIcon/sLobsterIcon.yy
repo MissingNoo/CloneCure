@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sLobsterIcon",
   "bboxMode":0,
   "bbox_bottom":24,
@@ -17,8 +17,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"3da1322d-e706-4a4e-9ab6-ee0c0579b76d","name":"3da1322d-e706-4a4e-9ab6-ee0c0579b76d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"e076d5cb-b97c-4b3b-a52e-2fe888114b0f","name":"e076d5cb-b97c-4b3b-a52e-2fe888114b0f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3da1322d-e706-4a4e-9ab6-ee0c0579b76d","name":"3da1322d-e706-4a4e-9ab6-ee0c0579b76d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e076d5cb-b97c-4b3b-a52e-2fe888114b0f","name":"e076d5cb-b97c-4b3b-a52e-2fe888114b0f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

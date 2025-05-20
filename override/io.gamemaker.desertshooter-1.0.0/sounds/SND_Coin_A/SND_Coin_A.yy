@@ -1,5 +1,5 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v1",
   "%Name":"SND_Coin_A",
   "audioGroupId":{
     "name":"audiogroup_default",
@@ -10,6 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":0.0,
+  "exportDir":"",
   "name":"SND_Coin_A",
   "parent":{
     "name":"Coin",

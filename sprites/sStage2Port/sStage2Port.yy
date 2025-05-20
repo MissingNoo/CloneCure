@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sStage2Port",
   "bboxMode":0,
   "bbox_bottom":89,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"756da175-9f9b-4a73-b3bf-de2b4674cd4a","name":"756da175-9f9b-4a73-b3bf-de2b4674cd4a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"756da175-9f9b-4a73-b3bf-de2b4674cd4a","name":"756da175-9f9b-4a73-b3bf-de2b4674cd4a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

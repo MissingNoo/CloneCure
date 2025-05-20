@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAkiPerk3",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a2a34374-fbc3-44e5-9f68-a18e2681d43e","name":"a2a34374-fbc3-44e5-9f68-a18e2681d43e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a2a34374-fbc3-44e5-9f68-a18e2681d43e","name":"a2a34374-fbc3-44e5-9f68-a18e2681d43e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

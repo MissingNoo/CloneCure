@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sPippaPortrait",
   "bboxMode":0,
   "bbox_bottom":37,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"ed38ec4a-5298-46ac-bac9-f8d49c3c6385","name":"ed38ec4a-5298-46ac-bac9-f8d49c3c6385","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ed38ec4a-5298-46ac-bac9-f8d49c3c6385","name":"ed38ec4a-5298-46ac-bac9-f8d49c3c6385","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

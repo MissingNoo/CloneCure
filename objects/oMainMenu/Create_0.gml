@@ -21,6 +21,14 @@ buttons = {
     button_house : new button("MainMenu.HoloHouse"),
     button_quit : new button("MainMenu.Quit"),
 };
+struct_foreach(buttons, function(n, e) {
+	e.top_spr = asset_get_index($"sTitle{string_first_letter_upper_case(string_replace(n, "button_", ""))}");
+	e.custom_draw = method(e, function(){ 
+		var sprw = sprite_get_width_ext(top_spr, 2) / 2;
+		var sprh = sprite_get_height_ext(top_spr, 2) / 2;
+		draw_sprite_ext(top_spr, on_area, area[0] + sprw, area[1] + sprh, 2, 2, 0, c_white, 1);
+ 	});
+});
 btn_array = ["button_leaderboards", "button_achievements", "button_shop", "button_play", "button_house", "button_settings", "button_credits", "button_quit"];
 selected = 3;
 buttons.button_quit.set_function(function() {

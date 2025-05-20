@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_HoloCureTitlea",
   "bboxMode":0,
   "bbox_bottom":148,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"ee5b23e8-9c8d-4dce-94bf-8ddcca53dd78","name":"ee5b23e8-9c8d-4dce-94bf-8ddcca53dd78","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ee5b23e8-9c8d-4dce-94bf-8ddcca53dd78","name":"ee5b23e8-9c8d-4dce-94bf-8ddcca53dd78","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

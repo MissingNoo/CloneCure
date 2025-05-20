@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sPikiPikiPiman",
   "bboxMode":0,
   "bbox_bottom":19,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"e63aab78-6790-4aaf-ae7e-b90ea41e6808","name":"e63aab78-6790-4aaf-ae7e-b90ea41e6808","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e63aab78-6790-4aaf-ae7e-b90ea41e6808","name":"e63aab78-6790-4aaf-ae7e-b90ea41e6808","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

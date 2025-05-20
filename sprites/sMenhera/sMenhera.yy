@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sMenhera",
   "bboxMode":0,
   "bbox_bottom":21,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"bdd7a9d3-5e4f-40cb-a5e4-3347e2927ffe","name":"bdd7a9d3-5e4f-40cb-a5e4-3347e2927ffe","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bdd7a9d3-5e4f-40cb-a5e4-3347e2927ffe","name":"bdd7a9d3-5e4f-40cb-a5e4-3347e2927ffe","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

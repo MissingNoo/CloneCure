@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sFanBeamThumb",
   "bboxMode":0,
   "bbox_bottom":19,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f8e61842-3e9d-43fd-a331-ed7337ba8ba3","name":"f8e61842-3e9d-43fd-a331-ed7337ba8ba3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f8e61842-3e9d-43fd-a331-ed7337ba8ba3","name":"f8e61842-3e9d-43fd-a331-ed7337ba8ba3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

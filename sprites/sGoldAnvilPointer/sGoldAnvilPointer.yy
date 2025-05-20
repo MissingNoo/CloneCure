@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sGoldAnvilPointer",
   "bboxMode":0,
   "bbox_bottom":27,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"23ef5aba-1773-4e6d-abf3-6ec4848079d6","name":"23ef5aba-1773-4e6d-abf3-6ec4848079d6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"23ef5aba-1773-4e6d-abf3-6ec4848079d6","name":"23ef5aba-1773-4e6d-abf3-6ec4848079d6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

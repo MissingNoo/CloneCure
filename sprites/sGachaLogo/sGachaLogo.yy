@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sGachaLogo",
   "bboxMode":0,
   "bbox_bottom":97,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"32962ef5-aa5a-40b8-8fea-e78861158c8d","name":"32962ef5-aa5a-40b8-8fea-e78861158c8d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"32962ef5-aa5a-40b8-8fea-e78861158c8d","name":"32962ef5-aa5a-40b8-8fea-e78861158c8d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

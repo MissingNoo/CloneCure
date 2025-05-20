@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sPippaArt",
   "bboxMode":0,
   "bbox_bottom":1126,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b9f89c59-9bcb-44fa-8b62-41be502af5d5","name":"b9f89c59-9bcb-44fa-8b62-41be502af5d5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b9f89c59-9bcb-44fa-8b62-41be502af5d5","name":"b9f89c59-9bcb-44fa-8b62-41be502af5d5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

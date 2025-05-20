@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sYellowPetal",
   "bboxMode":0,
   "bbox_bottom":8,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"58f7b03b-6cf9-4bb9-869f-ed4ddcc8dabb","name":"58f7b03b-6cf9-4bb9-869f-ed4ddcc8dabb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"58f7b03b-6cf9-4bb9-869f-ed4ddcc8dabb","name":"58f7b03b-6cf9-4bb9-869f-ed4ddcc8dabb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_Title_Aqua_0",
   "bboxMode":0,
   "bbox_bottom":109,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"308d4be5-6fbb-4727-8229-fdc53db477ec","name":"308d4be5-6fbb-4727-8229-fdc53db477ec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"308d4be5-6fbb-4727-8229-fdc53db477ec","name":"308d4be5-6fbb-4727-8229-fdc53db477ec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

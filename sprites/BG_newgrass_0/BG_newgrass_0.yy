@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"BG_newgrass_0",
   "bboxMode":0,
   "bbox_bottom":1279,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"268c5ae2-ac3f-4527-b100-5acdc93d2f55","name":"268c5ae2-ac3f-4527-b100-5acdc93d2f55","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"268c5ae2-ac3f-4527-b100-5acdc93d2f55","name":"268c5ae2-ac3f-4527-b100-5acdc93d2f55","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

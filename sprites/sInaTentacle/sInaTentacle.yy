@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sInaTentacle",
   "bboxMode":0,
   "bbox_bottom":36,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"57f81b11-c40f-458f-ad2d-d90ffb918532","name":"57f81b11-c40f-458f-ad2d-d90ffb918532","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"3132fbb8-2cfe-480f-9d02-e96770740c7b","name":"3132fbb8-2cfe-480f-9d02-e96770740c7b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"57f81b11-c40f-458f-ad2d-d90ffb918532","name":"57f81b11-c40f-458f-ad2d-d90ffb918532","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3132fbb8-2cfe-480f-9d02-e96770740c7b","name":"3132fbb8-2cfe-480f-9d02-e96770740c7b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

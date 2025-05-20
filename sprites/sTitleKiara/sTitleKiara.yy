@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sTitleKiara",
   "bboxMode":0,
   "bbox_bottom":114,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c1bbc4b2-b6a1-4fb0-b8f7-abcb5e11f489","name":"c1bbc4b2-b6a1-4fb0-b8f7-abcb5e11f489","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c1bbc4b2-b6a1-4fb0-b8f7-abcb5e11f489","name":"c1bbc4b2-b6a1-4fb0-b8f7-abcb5e11f489","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

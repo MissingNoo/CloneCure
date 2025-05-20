@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sDadRod",
   "bboxMode":0,
   "bbox_bottom":21,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b68e7cf9-ad64-43e3-bf07-2e6934d4b6b3","name":"b68e7cf9-ad64-43e3-bf07-2e6934d4b6b3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b68e7cf9-ad64-43e3-bf07-2e6934d4b6b3","name":"b68e7cf9-ad64-43e3-bf07-2e6934d4b6b3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

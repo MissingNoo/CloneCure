@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sCeoTearsThumb",
   "bboxMode":0,
   "bbox_bottom":16,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"cd763f52-c9b7-484d-b3a4-1e826e249df4","name":"cd763f52-c9b7-484d-b3a4-1e826e249df4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"cd763f52-c9b7-484d-b3a4-1e826e249df4","name":"cd763f52-c9b7-484d-b3a4-1e826e249df4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

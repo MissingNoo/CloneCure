@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAchFubura",
   "bboxMode":0,
   "bbox_bottom":21,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b03aa99b-fc59-4d7b-870d-8f3f7ddeb969","name":"b03aa99b-fc59-4d7b-870d-8f3f7ddeb969","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b03aa99b-fc59-4d7b-870d-8f3f7ddeb969","name":"b03aa99b-fc59-4d7b-870d-8f3f7ddeb969","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

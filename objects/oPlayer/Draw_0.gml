@@ -6,7 +6,7 @@ if (GameData.hp > 0 and GameData.hp < GameData.max_hp) {
 if (GameData.shield > 0 and GameData.hp > 0) {
     draw_healthbar((_x - 13), ((_y - 19) - 20), (_x + 13), ((_y - 19) - 23), ((GameData.shield / GameData.max_shield) * 100), c_red, c_blue, c_blue, 0, 1, 0);
 }
-gpu_set_fog(inv_frame >= frame, c_white, 0, 0);
+gpu_set_fog(inv_frame >= AirLib.frame, c_white, 0, 0);
 draw_sprite_ext(sprite_index, image_index, _x, _y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
 gpu_set_fog(false, c_white, 0, 0);
 var _color = c_white;

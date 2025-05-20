@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sShopBar",
   "bboxMode":0,
   "bbox_bottom":178,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d25a99b0-44ad-4114-8dd5-2d87b3056a3b","name":"d25a99b0-44ad-4114-8dd5-2d87b3056a3b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d25a99b0-44ad-4114-8dd5-2d87b3056a3b","name":"d25a99b0-44ad-4114-8dd5-2d87b3056a3b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

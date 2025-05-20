@@ -12,9 +12,7 @@ ui.foreach(function(name, pos, data) {
         var o = 19;
         var yy = 6;
         buttons[$ name].position(_x - o, _y - o - yy, _x + _w + o, _y - yy + _h + o);
-        buttons[$ name].sprite = asset_get_index($"sTitle{string_first_letter_upper_case(string_replace(name, "button_", ""))}");
         buttons[$ name].use_text = false;
-        buttons[$ name].sprite_back = undefined;
         buttons[$ name].draw();
         if (buttons[$ name].on_area) {
         	scribble($"[Fnt][fa_center][fa_top]{lexicon_text(buttons[$ name].text)}").scale(0.30).draw(_xc - 10, _y + _h + 5);

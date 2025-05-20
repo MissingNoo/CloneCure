@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sTunaIcon",
   "bboxMode":0,
   "bbox_bottom":24,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f4a4681e-92ef-43d7-8dac-85d855366307","name":"f4a4681e-92ef-43d7-8dac-85d855366307","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"4b2a44bc-9fdc-4e16-8861-47aaecf4006c","name":"4b2a44bc-9fdc-4e16-8861-47aaecf4006c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f4a4681e-92ef-43d7-8dac-85d855366307","name":"f4a4681e-92ef-43d7-8dac-85d855366307","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"4b2a44bc-9fdc-4e16-8861-47aaecf4006c","name":"4b2a44bc-9fdc-4e16-8861-47aaecf4006c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sUiLevelHeaderWhite",
   "bboxMode":0,
   "bbox_bottom":8,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"29f45ff7-4e5b-4394-87b1-6345d7455b71","name":"29f45ff7-4e5b-4394-87b1-6345d7455b71","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"29f45ff7-4e5b-4394-87b1-6345d7455b71","name":"29f45ff7-4e5b-4394-87b1-6345d7455b71","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

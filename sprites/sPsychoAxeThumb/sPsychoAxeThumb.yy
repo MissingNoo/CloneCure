@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sPsychoAxeThumb",
   "bboxMode":0,
   "bbox_bottom":18,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9b8203ef-c5ca-416a-8b50-a9ed3b9e2f03","name":"9b8203ef-c5ca-416a-8b50-a9ed3b9e2f03","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9b8203ef-c5ca-416a-8b50-a9ed3b9e2f03","name":"9b8203ef-c5ca-416a-8b50-a9ed3b9e2f03","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

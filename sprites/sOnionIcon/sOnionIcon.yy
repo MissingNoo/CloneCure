@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sOnionIcon",
   "bboxMode":0,
   "bbox_bottom":22,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"64678744-1d05-4ec6-ada0-fc1ca9bd80c2","name":"64678744-1d05-4ec6-ada0-fc1ca9bd80c2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"64678744-1d05-4ec6-ada0-fc1ca9bd80c2","name":"64678744-1d05-4ec6-ada0-fc1ca9bd80c2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sLiaArt",
   "bboxMode":0,
   "bbox_bottom":1406,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"00c5d7ac-a6d3-4739-b355-61de42c9f1f2","name":"00c5d7ac-a6d3-4739-b355-61de42c9f1f2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"00c5d7ac-a6d3-4739-b355-61de42c9f1f2","name":"00c5d7ac-a6d3-4739-b355-61de42c9f1f2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

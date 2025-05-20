@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sHoloHouseWallWoodA",
   "bboxMode":0,
   "bbox_bottom":79,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a45997c2-e2d7-4410-bc1c-c8af9d01e122","name":"a45997c2-e2d7-4410-bc1c-c8af9d01e122","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a45997c2-e2d7-4410-bc1c-c8af9d01e122","name":"a45997c2-e2d7-4410-bc1c-c8af9d01e122","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

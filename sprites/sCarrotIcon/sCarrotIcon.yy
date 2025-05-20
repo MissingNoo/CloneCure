@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sCarrotIcon",
   "bboxMode":0,
   "bbox_bottom":24,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6bdd3dd0-ea1a-48ae-b20d-1cf79998cc1e","name":"6bdd3dd0-ea1a-48ae-b20d-1cf79998cc1e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6bdd3dd0-ea1a-48ae-b20d-1cf79998cc1e","name":"6bdd3dd0-ea1a-48ae-b20d-1cf79998cc1e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

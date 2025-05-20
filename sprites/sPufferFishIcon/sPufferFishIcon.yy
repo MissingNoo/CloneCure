@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sPufferFishIcon",
   "bboxMode":0,
   "bbox_bottom":24,
@@ -17,8 +17,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"116dedd5-dbde-4f58-9faa-0e9ad3212330","name":"116dedd5-dbde-4f58-9faa-0e9ad3212330","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"f2aa0926-a17b-4246-b070-8e589524523a","name":"f2aa0926-a17b-4246-b070-8e589524523a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"116dedd5-dbde-4f58-9faa-0e9ad3212330","name":"116dedd5-dbde-4f58-9faa-0e9ad3212330","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f2aa0926-a17b-4246-b070-8e589524523a","name":"f2aa0926-a17b-4246-b070-8e589524523a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

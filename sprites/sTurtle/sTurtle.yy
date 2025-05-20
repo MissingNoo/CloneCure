@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sTurtle",
   "bboxMode":0,
   "bbox_bottom":68,
@@ -17,8 +17,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6d301433-0f66-4822-9a20-c7c9c6b9a3fb","name":"6d301433-0f66-4822-9a20-c7c9c6b9a3fb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"692db393-549d-4e8b-828b-2f30c3c8e5eb","name":"692db393-549d-4e8b-828b-2f30c3c8e5eb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6d301433-0f66-4822-9a20-c7c9c6b9a3fb","name":"6d301433-0f66-4822-9a20-c7c9c6b9a3fb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"692db393-549d-4e8b-828b-2f30c3c8e5eb","name":"692db393-549d-4e8b-828b-2f30c3c8e5eb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

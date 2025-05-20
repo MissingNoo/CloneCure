@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_Title_Okayu_0",
   "bboxMode":0,
   "bbox_bottom":108,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"1881a4c4-2833-4835-91b0-1aa666f9ef1a","name":"1881a4c4-2833-4835-91b0-1aa666f9ef1a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1881a4c4-2833-4835-91b0-1aa666f9ef1a","name":"1881a4c4-2833-4835-91b0-1aa666f9ef1a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

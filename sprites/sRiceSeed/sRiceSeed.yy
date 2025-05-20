@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sRiceSeed",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"828b3d7c-ff1e-4b62-b9af-a652fe3f8d04","name":"828b3d7c-ff1e-4b62-b9af-a652fe3f8d04","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"828b3d7c-ff1e-4b62-b9af-a652fe3f8d04","name":"828b3d7c-ff1e-4b62-b9af-a652fe3f8d04","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

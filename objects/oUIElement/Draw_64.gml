@@ -1,14 +1,54 @@
 //feather ignore all
 draw_set_color(c_white);
-if (draw_back)
-{
-	draw_sprite_stretched(sButton, 1, x, y, width, height);
+if (!is_undefined(data[$ "tags"])) {
+	flexpanel_draw_tags(data.tags, {
+        top : y,
+        left : x,
+        width,
+        height
+    });
+}
+if (draw_back) {
+    switch (AirLibDefaultStyle) {
+    	case AirLibBtnStyle.Default:
+            draw_sprite_stretched(sButton, 1, x, y, width, height);
+            break;
+        case AirLibBtnStyle.Flat:
+            draw_set_color(AirLibBG);
+            draw_rectangle(x, y, x + width, y + height, false);
+            draw_set_color(c_white);
+            break;
+        case AirLibBtnStyle.Rounded:
+            draw_set_color(AirLibBG);
+		    draw_roundrect_ext(x, y, x + width, y + height, AirLibRoundX, AirLibRoundY, false);
+		    draw_set_color(c_white);
+            break;
+    } 
 }
 
 // Draw image (e.g. an icon)
 if (image != -1)
 {
-	draw_sprite_stretched(image, 1, x, y, width, height);
+    if (image == sButton) {
+        switch (AirLibDefaultStyle) {
+        	case AirLibBtnStyle.Default:
+                draw_sprite_stretched(sButton, 1, x, y, width, height);
+                break;
+            case AirLibBtnStyle.Flat:
+                draw_set_color(AirLibBG);
+                draw_rectangle(x, y, x + width, y + height, false);
+                draw_set_color(c_white);
+                break;
+            case AirLibBtnStyle.Rounded:
+                draw_set_color(AirLibBG);
+    		    draw_roundrect_ext(x, y, x + width, y + height, AirLibRoundX, AirLibRoundY, false);
+    		    draw_set_color(c_white);
+                break;
+        }
+     } else {
+    	draw_sprite_stretched(image, 1, x, y, width, height);
+    }
+	
 }
 
 // Draw bar image (e.g. for health bars)

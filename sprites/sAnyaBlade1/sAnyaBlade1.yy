@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAnyaBlade1",
   "bboxMode":0,
   "bbox_bottom":141,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"130f895b-af0a-4f25-b2fe-927813cc1881","name":"130f895b-af0a-4f25-b2fe-927813cc1881","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"130f895b-af0a-4f25-b2fe-927813cc1881","name":"130f895b-af0a-4f25-b2fe-927813cc1881","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

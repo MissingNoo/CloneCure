@@ -453,13 +453,13 @@ w.set_create(function() /*=>*/ {
 	} else {
 		image_angle = point_direction(x, y, on_range.x, on_range.y);
 	}
-	sausagetimer = frame + wid.delay;
+	sausagetimer = AirLib.frame + wid.delay;
 	sausages = wid.shoots[level] - 1;
 });
 w.set_step(function() /*=>*/ {
-	if (sausagetimer < frame and can_spawn_other and sausages > 0) {
+	if (sausagetimer < AirLib.frame and can_spawn_other and sausages > 0) {
 		sausages--;
-		sausagetimer = frame + wid.delay;
+		sausagetimer = AirLib.frame + wid.delay;
 		var inst = weapon_create {
 			wid : wid,
 		});

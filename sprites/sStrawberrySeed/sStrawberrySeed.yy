@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sStrawberrySeed",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f0b46cdb-de0c-48bd-a1be-2c298aab5fbf","name":"f0b46cdb-de0c-48bd-a1be-2c298aab5fbf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f0b46cdb-de0c-48bd-a1be-2c298aab5fbf","name":"f0b46cdb-de0c-48bd-a1be-2c298aab5fbf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

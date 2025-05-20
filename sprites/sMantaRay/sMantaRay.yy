@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sMantaRay",
   "bboxMode":0,
   "bbox_bottom":46,
@@ -17,8 +17,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6bb94e2d-5170-4177-b4f4-334c10a4ea2f","name":"6bb94e2d-5170-4177-b4f4-334c10a4ea2f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"57a02149-e2a2-43a2-a85f-832cb95415c2","name":"57a02149-e2a2-43a2-a85f-832cb95415c2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6bb94e2d-5170-4177-b4f4-334c10a4ea2f","name":"6bb94e2d-5170-4177-b4f4-334c10a4ea2f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"57a02149-e2a2-43a2-a85f-832cb95415c2","name":"57a02149-e2a2-43a2-a85f-832cb95415c2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

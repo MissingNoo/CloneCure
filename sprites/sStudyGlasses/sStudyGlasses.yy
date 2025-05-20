@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sStudyGlasses",
   "bboxMode":0,
   "bbox_bottom":12,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"3875debe-9c2b-4c76-9b36-af8e8b578ea9","name":"3875debe-9c2b-4c76-9b36-af8e8b578ea9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3875debe-9c2b-4c76-9b36-af8e8b578ea9","name":"3875debe-9c2b-4c76-9b36-af8e8b578ea9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

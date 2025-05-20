@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sHuddefeatedEnemies",
   "bboxMode":0,
   "bbox_bottom":14,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f11eb59e-be95-4f0e-a1e6-b2b5ed9cad40","name":"f11eb59e-be95-4f0e-a1e6-b2b5ed9cad40","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f11eb59e-be95-4f0e-a1e6-b2b5ed9cad40","name":"f11eb59e-be95-4f0e-a1e6-b2b5ed9cad40","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

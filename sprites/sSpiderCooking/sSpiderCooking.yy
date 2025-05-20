@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sSpiderCooking",
   "bboxMode":0,
   "bbox_bottom":106,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"222b9e9b-1010-49a3-8db4-74255a062a97","name":"222b9e9b-1010-49a3-8db4-74255a062a97","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"222b9e9b-1010-49a3-8db4-74255a062a97","name":"222b9e9b-1010-49a3-8db4-74255a062a97","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

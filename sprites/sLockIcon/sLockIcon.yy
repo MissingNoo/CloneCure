@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sLockIcon",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"65f98ed3-4d71-4cc8-9d78-ca490058b754","name":"65f98ed3-4d71-4cc8-9d78-ca490058b754","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"65f98ed3-4d71-4cc8-9d78-ca490058b754","name":"65f98ed3-4d71-4cc8-9d78-ca490058b754","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

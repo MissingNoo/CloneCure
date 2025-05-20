@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAchDeckedOut",
   "bboxMode":0,
   "bbox_bottom":17,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"baa81b8e-d3d3-4681-888d-e7d1cd0f8726","name":"baa81b8e-d3d3-4681-888d-e7d1cd0f8726","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"baa81b8e-d3d3-4681-888d-e7d1cd0f8726","name":"baa81b8e-d3d3-4681-888d-e7d1cd0f8726","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

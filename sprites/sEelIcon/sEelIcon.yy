@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sEelIcon",
   "bboxMode":0,
   "bbox_bottom":24,
@@ -17,8 +17,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"19790388-c430-439f-b3f7-44f2e21d984a","name":"19790388-c430-439f-b3f7-44f2e21d984a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"b3d32de0-b28e-4644-96ea-05c65985abf4","name":"b3d32de0-b28e-4644-96ea-05c65985abf4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"19790388-c430-439f-b3f7-44f2e21d984a","name":"19790388-c430-439f-b3f7-44f2e21d984a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b3d32de0-b28e-4644-96ea-05c65985abf4","name":"b3d32de0-b28e-4644-96ea-05c65985abf4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

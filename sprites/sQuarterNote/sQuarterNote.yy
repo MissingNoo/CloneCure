@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sQuarterNote",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"525e94d4-b11e-4836-a3a6-1a8206b85819","name":"525e94d4-b11e-4836-a3a6-1a8206b85819","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"525e94d4-b11e-4836-a3a6-1a8206b85819","name":"525e94d4-b11e-4836-a3a6-1a8206b85819","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

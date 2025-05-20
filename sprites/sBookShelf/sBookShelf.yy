@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sBookShelf",
   "bboxMode":2,
   "bbox_bottom":36,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"332ca20e-ba59-4cd5-bb4d-dcf3b2e608ca","name":"332ca20e-ba59-4cd5-bb4d-dcf3b2e608ca","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"332ca20e-ba59-4cd5-bb4d-dcf3b2e608ca","name":"332ca20e-ba59-4cd5-bb4d-dcf3b2e608ca","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

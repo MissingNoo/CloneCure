@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sGlasses",
   "bboxMode":0,
   "bbox_bottom":100,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"2624f620-72d1-4dea-b145-42f5498964c3","name":"2624f620-72d1-4dea-b145-42f5498964c3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"2624f620-72d1-4dea-b145-42f5498964c3","name":"2624f620-72d1-4dea-b145-42f5498964c3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

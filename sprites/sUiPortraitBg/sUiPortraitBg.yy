@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sUiPortraitBg",
   "bboxMode":0,
   "bbox_bottom":33,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c1f85ec6-f9a6-4b22-bafa-6ba386529213","name":"c1f85ec6-f9a6-4b22-bafa-6ba386529213","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c1f85ec6-f9a6-4b22-bafa-6ba386529213","name":"c1f85ec6-f9a6-4b22-bafa-6ba386529213","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

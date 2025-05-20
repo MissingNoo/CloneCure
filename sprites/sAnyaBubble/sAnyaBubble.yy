@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAnyaBubble",
   "bboxMode":0,
   "bbox_bottom":44,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"4bc6e70d-7dc4-47e0-ab29-7f6db008c6ba","name":"4bc6e70d-7dc4-47e0-ab29-7f6db008c6ba","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"4bc6e70d-7dc4-47e0-ab29-7f6db008c6ba","name":"4bc6e70d-7dc4-47e0-ab29-7f6db008c6ba","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

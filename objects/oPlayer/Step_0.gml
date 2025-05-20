@@ -11,8 +11,8 @@ if(GameData.hp <= 0 and GameData.revives > 0) {
 }
 #endregion
 #region Regeneration
-if (healframe < frame) {
-	healframe = frame + seconds_to_frames(5);
+if (healframe < AirLib.frame) {
+	healframe = AirLib.frame + seconds_to_frames(5);
 	GameData.hp += shop_level("Regeneration");
 }
 #endregion
@@ -51,7 +51,7 @@ array_foreach(Player_Weapons, function(e, i) /*=>*/ {
     if (is_undefined(e)) {
     	return;
     }
-    if (e.cooldown <= frame) {
+    if (e.cooldown <= AirLib.frame) {
     	instance_create_depth(oPlayer.x, oPlayer.y - (sprite_height / 2), oPlayer.depth + 1, oWeapon, {
             wid : e,
             can_spawn_other : true,
@@ -60,16 +60,16 @@ array_foreach(Player_Weapons, function(e, i) /*=>*/ {
 		var cool = e.base_cooldown[e.level];
 		var newcool = clamp(round(cool / (1 + (GameData.Haste / 100))), e.min_cooldown, infinity);
 		trace($"Cooldown: {cool} : {newcool}");
-        e.cooldown = frame + cool;
+        e.cooldown = AirLib.frame + cool;
     }
 });
 array_foreach(Player_Items, function(e, i) /*=>*/ {
     if (is_undefined(e)) {
     	return;
     }
-    if (e.cooldown <= frame) {
+    if (e.cooldown <=  AirLib.frame) {
 		e.on_cooldown();
-        e.cooldown = frame + e.base_cooldown[e.level];
+        e.cooldown = AirLib.frame + e.base_cooldown[e.level];
     }
 });
 

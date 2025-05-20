@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAmeClock",
   "bboxMode":0,
   "bbox_bottom":329,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c890050c-da09-44a7-849a-1975241deeb4","name":"c890050c-da09-44a7-849a-1975241deeb4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c890050c-da09-44a7-849a-1975241deeb4","name":"c890050c-da09-44a7-849a-1975241deeb4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

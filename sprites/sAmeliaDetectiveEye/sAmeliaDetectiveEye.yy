@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAmeliaDetectiveEye",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"1ccbc81b-a01a-46d3-9f0b-c8e66dbfe7cf","name":"1ccbc81b-a01a-46d3-9f0b-c8e66dbfe7cf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1ccbc81b-a01a-46d3-9f0b-c8e66dbfe7cf","name":"1ccbc81b-a01a-46d3-9f0b-c8e66dbfe7cf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

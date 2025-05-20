@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sChickenFeather",
   "bboxMode":0,
   "bbox_bottom":16,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"eb2d0f7e-e3ec-465b-8a49-3687b796937d","name":"eb2d0f7e-e3ec-465b-8a49-3687b796937d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"eb2d0f7e-e3ec-465b-8a49-3687b796937d","name":"eb2d0f7e-e3ec-465b-8a49-3687b796937d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

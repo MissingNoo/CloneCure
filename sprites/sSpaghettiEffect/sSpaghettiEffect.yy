@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sSpaghettiEffect",
   "bboxMode":0,
   "bbox_bottom":27,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"bf077c39-5ec0-41d1-b265-6cdcd471e0cc","name":"bf077c39-5ec0-41d1-b265-6cdcd471e0cc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bf077c39-5ec0-41d1-b265-6cdcd471e0cc","name":"bf077c39-5ec0-41d1-b265-6cdcd471e0cc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

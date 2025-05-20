@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sHudJoystick",
   "bboxMode":0,
   "bbox_bottom":158,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d806751c-a9ba-41c1-a6c0-06d6cdce39ec","name":"d806751c-a9ba-41c1-a6c0-06d6cdce39ec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"f2d0fbe9-af8f-415e-b35d-a096ccedd210","name":"f2d0fbe9-af8f-415e-b35d-a096ccedd210","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d806751c-a9ba-41c1-a6c0-06d6cdce39ec","name":"d806751c-a9ba-41c1-a6c0-06d6cdce39ec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f2d0fbe9-af8f-415e-b35d-a096ccedd210","name":"f2d0fbe9-af8f-415e-b35d-a096ccedd210","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sNasaArt",
   "bboxMode":0,
   "bbox_bottom":1149,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9c7ffb63-22d2-479f-b5e1-ed0cb8698ee8","name":"9c7ffb63-22d2-479f-b5e1-ed0cb8698ee8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9c7ffb63-22d2-479f-b5e1-ed0cb8698ee8","name":"9c7ffb63-22d2-479f-b5e1-ed0cb8698ee8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sEldricthHorrorSmoke",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,9 +12,9 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"86cd41de-d429-49e1-b08d-558a6081670e","name":"86cd41de-d429-49e1-b08d-558a6081670e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"1f7e39f5-7b22-4ea3-a5ae-e753e8cba5e5","name":"1f7e39f5-7b22-4ea3-a5ae-e753e8cba5e5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"542ea6f4-b89e-44c7-966e-8e9d7f10022a","name":"542ea6f4-b89e-44c7-966e-8e9d7f10022a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"86cd41de-d429-49e1-b08d-558a6081670e","name":"86cd41de-d429-49e1-b08d-558a6081670e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1f7e39f5-7b22-4ea3-a5ae-e753e8cba5e5","name":"1f7e39f5-7b22-4ea3-a5ae-e753e8cba5e5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"542ea6f4-b89e-44c7-966e-8e9d7f10022a","name":"542ea6f4-b89e-44c7-966e-8e9d7f10022a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

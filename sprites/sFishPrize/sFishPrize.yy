@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sFishPrize",
   "bboxMode":0,
   "bbox_bottom":136,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"37422c80-3e6b-48fd-bd24-ad3aae494e53","name":"37422c80-3e6b-48fd-bd24-ad3aae494e53","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"37422c80-3e6b-48fd-bd24-ad3aae494e53","name":"37422c80-3e6b-48fd-bd24-ad3aae494e53","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

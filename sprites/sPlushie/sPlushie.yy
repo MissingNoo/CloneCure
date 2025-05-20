@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sPlushie",
   "bboxMode":0,
   "bbox_bottom":19,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"bc4d9bea-8f3d-4e8d-8e1b-ba6bb1ccc992","name":"bc4d9bea-8f3d-4e8d-8e1b-ba6bb1ccc992","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bc4d9bea-8f3d-4e8d-8e1b-ba6bb1ccc992","name":"bc4d9bea-8f3d-4e8d-8e1b-ba6bb1ccc992","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

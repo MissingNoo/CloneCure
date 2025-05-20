@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sFarmingSpot",
   "bboxMode":0,
   "bbox_bottom":14,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"7bd543b1-73e3-465e-8ccc-807b550e66bc","name":"7bd543b1-73e3-465e-8ccc-807b550e66bc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"0244e35b-281c-44b5-923f-5dd73147daa2","name":"0244e35b-281c-44b5-923f-5dd73147daa2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7bd543b1-73e3-465e-8ccc-807b550e66bc","name":"7bd543b1-73e3-465e-8ccc-807b550e66bc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0244e35b-281c-44b5-923f-5dd73147daa2","name":"0244e35b-281c-44b5-923f-5dd73147daa2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

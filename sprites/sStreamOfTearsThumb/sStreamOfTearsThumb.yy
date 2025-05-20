@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sStreamOfTearsThumb",
   "bboxMode":0,
   "bbox_bottom":21,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f0ba96bc-c5e1-4b2e-8f7a-39380fc9f68b","name":"f0ba96bc-c5e1-4b2e-8f7a-39380fc9f68b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f0ba96bc-c5e1-4b2e-8f7a-39380fc9f68b","name":"f0ba96bc-c5e1-4b2e-8f7a-39380fc9f68b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sGreenBeanIcon",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"e8d2a26b-2b42-4967-ace6-afee89dc2917","name":"e8d2a26b-2b42-4967-ace6-afee89dc2917","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e8d2a26b-2b42-4967-ace6-afee89dc2917","name":"e8d2a26b-2b42-4967-ace6-afee89dc2917","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

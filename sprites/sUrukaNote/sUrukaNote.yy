@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sUrukaNote",
   "bboxMode":0,
   "bbox_bottom":27,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"bbf61dab-fcb2-4bf5-b35d-3a233cd9d3c8","name":"bbf61dab-fcb2-4bf5-b35d-3a233cd9d3c8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"27b05fb2-afbd-4a0c-a65d-fb54b5a4ebd7","name":"27b05fb2-afbd-4a0c-a65d-fb54b5a4ebd7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bbf61dab-fcb2-4bf5-b35d-3a233cd9d3c8","name":"bbf61dab-fcb2-4bf5-b35d-3a233cd9d3c8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"27b05fb2-afbd-4a0c-a65d-fb54b5a4ebd7","name":"27b05fb2-afbd-4a0c-a65d-fb54b5a4ebd7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sWamyWaterThumb",
   "bboxMode":0,
   "bbox_bottom":21,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5b297b1b-efaf-47d4-84a4-c4a54989fe77","name":"5b297b1b-efaf-47d4-84a4-c4a54989fe77","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5b297b1b-efaf-47d4-84a4-c4a54989fe77","name":"5b297b1b-efaf-47d4-84a4-c4a54989fe77","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sUiEmptySlotWeapon",
   "bboxMode":0,
   "bbox_bottom":10,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"008dd912-7ad8-47c0-b5a3-9a77502599af","name":"008dd912-7ad8-47c0-b5a3-9a77502599af","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"008dd912-7ad8-47c0-b5a3-9a77502599af","name":"008dd912-7ad8-47c0-b5a3-9a77502599af","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

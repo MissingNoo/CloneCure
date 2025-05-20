@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sOwlDaggerThumb",
   "bboxMode":0,
   "bbox_bottom":20,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c30c4f57-7ee5-4ddd-b6f7-5ff0b512e0f9","name":"c30c4f57-7ee5-4ddd-b6f7-5ff0b512e0f9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c30c4f57-7ee5-4ddd-b6f7-5ff0b512e0f9","name":"c30c4f57-7ee5-4ddd-b6f7-5ff0b512e0f9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

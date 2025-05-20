@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sEldricthHorrorThumb",
   "bboxMode":0,
   "bbox_bottom":20,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"bbbac5b8-a435-42e4-8d92-93ba6d17ad36","name":"bbbac5b8-a435-42e4-8d92-93ba6d17ad36","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bbbac5b8-a435-42e4-8d92-93ba6d17ad36","name":"bbbac5b8-a435-42e4-8d92-93ba6d17ad36","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

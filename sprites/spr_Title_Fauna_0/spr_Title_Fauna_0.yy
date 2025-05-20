@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_Title_Fauna_0",
   "bboxMode":0,
   "bbox_bottom":112,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"cfca6c90-2005-4893-bdb3-7e182283d6d1","name":"cfca6c90-2005-4893-bdb3-7e182283d6d1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"cfca6c90-2005-4893-bdb3-7e182283d6d1","name":"cfca6c90-2005-4893-bdb3-7e182283d6d1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

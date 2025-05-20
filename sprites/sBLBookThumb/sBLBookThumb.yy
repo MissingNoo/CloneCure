@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sBLBookThumb",
   "bboxMode":0,
   "bbox_bottom":19,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5a5951f5-596d-4ec7-a2a9-133f59791c97","name":"5a5951f5-596d-4ec7-a2a9-133f59791c97","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"6561b241-0972-4b3b-9cd8-cd0dc534c877","name":"6561b241-0972-4b3b-9cd8-cd0dc534c877","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5a5951f5-596d-4ec7-a2a9-133f59791c97","name":"5a5951f5-596d-4ec7-a2a9-133f59791c97","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6561b241-0972-4b3b-9cd8-cd0dc534c877","name":"6561b241-0972-4b3b-9cd8-cd0dc534c877","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

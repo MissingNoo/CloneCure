@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sWBedGreenIcon",
   "bboxMode":0,
   "bbox_bottom":22,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"79cb85c4-b14e-4cb2-be55-0d717062fe8f","name":"79cb85c4-b14e-4cb2-be55-0d717062fe8f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"79cb85c4-b14e-4cb2-be55-0d717062fe8f","name":"79cb85c4-b14e-4cb2-be55-0d717062fe8f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

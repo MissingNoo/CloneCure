@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_Title_Matsuri_0",
   "bboxMode":0,
   "bbox_bottom":110,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"82b86b79-2bd6-4fda-af3f-262cc5590f84","name":"82b86b79-2bd6-4fda-af3f-262cc5590f84","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"82b86b79-2bd6-4fda-af3f-262cc5590f84","name":"82b86b79-2bd6-4fda-af3f-262cc5590f84","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

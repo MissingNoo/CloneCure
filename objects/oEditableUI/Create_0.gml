@@ -5,11 +5,12 @@ edit_node = undefined;
 node = undefined;
 creating = false;
 
-str = {
+grid_template = {
   "width":1280.0,
-  "name":"base",
+  "name":"main_panel",
   "height":720.0,
   "top":50.0,
+
   "data":{
   },
   "nodes":[
@@ -132,15 +133,24 @@ str = {
   ],
   "left":275.0
 }
-str = global.game_uis.shop;
-
-//ui = new window(global.player_info_ui);
-ui = new window(str, true);
+clear_template = {
+    "width":1280.0,
+    "name":"main_panel",
+    "height":720.0,
+    "top":50.0,
+    "data":{
+    },
+    "left":275.0
+};
+//template = global.game_uis.rooms;
+//template = grid_template;
+template = clear_template;
+ui = new window(template, true);
 ui.edit_mode();
 
 new_window = function() {
 	ui.dispose();
-	ui = new window(str, true);
+	ui = new window(template, true);
 	ui.edit_mode();
 }
 
@@ -172,7 +182,8 @@ save = function(name = "test") {
 
 load = function() {
 	ui.dispose();
-	ui = new window(json_parse(buffer_read(buffer_load(game_save_id + "test.ui"), buffer_text)), true);
+	ui = new window(json_parse(buffer_read(buffer_load("/home/airgeadlamh/.config/DenoTest1/test.ui"), buffer_text)), true);
 	//ui.edit_mode();
 }
 
+depth = depth + 1;

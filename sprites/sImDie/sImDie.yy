@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sImDie",
   "bboxMode":0,
   "bbox_bottom":19,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"ee4d5fe8-ea80-49ac-a7b7-fb73b93ad5c1","name":"ee4d5fe8-ea80-49ac-a7b7-fb73b93ad5c1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"e1563196-7647-4cf8-8124-bd33f636102f","name":"e1563196-7647-4cf8-8124-bd33f636102f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ee4d5fe8-ea80-49ac-a7b7-fb73b93ad5c1","name":"ee4d5fe8-ea80-49ac-a7b7-fb73b93ad5c1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e1563196-7647-4cf8-8124-bd33f636102f","name":"e1563196-7647-4cf8-8124-bd33f636102f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sFarmListWindow",
   "bboxMode":0,
   "bbox_bottom":262,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"39555818-8e2f-4779-8aa5-ff43b388f441","name":"39555818-8e2f-4779-8aa5-ff43b388f441","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"39555818-8e2f-4779-8aa5-ff43b388f441","name":"39555818-8e2f-4779-8aa5-ff43b388f441","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

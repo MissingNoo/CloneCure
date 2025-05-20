@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_Title_Azki_0",
   "bboxMode":0,
   "bbox_bottom":109,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"02f80906-8f37-4c81-9782-36281b98ced7","name":"02f80906-8f37-4c81-9782-36281b98ced7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"02f80906-8f37-4c81-9782-36281b98ced7","name":"02f80906-8f37-4c81-9782-36281b98ced7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

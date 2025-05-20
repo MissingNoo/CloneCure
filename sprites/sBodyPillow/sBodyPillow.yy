@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sBodyPillow",
   "bboxMode":0,
   "bbox_bottom":25,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"764766d3-4f55-4aed-b508-695f4ce29aa1","name":"764766d3-4f55-4aed-b508-695f4ce29aa1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"477b4c13-8947-4f79-88b7-90695a76074f","name":"477b4c13-8947-4f79-88b7-90695a76074f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"764766d3-4f55-4aed-b508-695f4ce29aa1","name":"764766d3-4f55-4aed-b508-695f4ce29aa1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"477b4c13-8947-4f79-88b7-90695a76074f","name":"477b4c13-8947-4f79-88b7-90695a76074f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

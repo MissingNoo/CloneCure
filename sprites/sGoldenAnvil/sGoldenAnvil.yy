@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sGoldenAnvil",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"cc247e4f-6ce9-4b38-8cb3-ec77e38b386d","name":"cc247e4f-6ce9-4b38-8cb3-ec77e38b386d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"cc247e4f-6ce9-4b38-8cb3-ec77e38b386d","name":"cc247e4f-6ce9-4b38-8cb3-ec77e38b386d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

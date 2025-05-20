@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_Title_Kaela_0",
   "bboxMode":0,
   "bbox_bottom":116,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"774d0fe2-a0f2-475e-827f-f0ddbc1dbd79","name":"774d0fe2-a0f2-475e-827f-f0ddbc1dbd79","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"774d0fe2-a0f2-475e-827f-f0ddbc1dbd79","name":"774d0fe2-a0f2-475e-827f-f0ddbc1dbd79","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

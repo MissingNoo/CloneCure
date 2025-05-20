@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAnyaPerk3D",
   "bboxMode":0,
   "bbox_bottom":24,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b2ebd9d5-d2a9-47f7-ba78-e48f19fbb2f7","name":"b2ebd9d5-d2a9-47f7-ba78-e48f19fbb2f7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b2ebd9d5-d2a9-47f7-ba78-e48f19fbb2f7","name":"b2ebd9d5-d2a9-47f7-ba78-e48f19fbb2f7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

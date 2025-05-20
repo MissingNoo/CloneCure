@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sPotatoIcon",
   "bboxMode":0,
   "bbox_bottom":21,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"149fe83b-2e4a-4d5a-8da6-cc891c2ff642","name":"149fe83b-2e4a-4d5a-8da6-cc891c2ff642","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"149fe83b-2e4a-4d5a-8da6-cc891c2ff642","name":"149fe83b-2e4a-4d5a-8da6-cc891c2ff642","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

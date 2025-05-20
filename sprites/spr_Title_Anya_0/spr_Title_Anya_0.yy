@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_Title_Anya_0",
   "bboxMode":0,
   "bbox_bottom":99,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"e0baf04d-4294-46fd-b947-4e8b2c3e9d7c","name":"e0baf04d-4294-46fd-b947-4e8b2c3e9d7c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e0baf04d-4294-46fd-b947-4e8b2c3e9d7c","name":"e0baf04d-4294-46fd-b947-4e8b2c3e9d7c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

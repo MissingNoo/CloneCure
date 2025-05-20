@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sStolenPiggyBank",
   "bboxMode":0,
   "bbox_bottom":17,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"34489ede-9e7d-48e2-9a7a-b6f7791e46f8","name":"34489ede-9e7d-48e2-9a7a-b6f7791e46f8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"34489ede-9e7d-48e2-9a7a-b6f7791e46f8","name":"34489ede-9e7d-48e2-9a7a-b6f7791e46f8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

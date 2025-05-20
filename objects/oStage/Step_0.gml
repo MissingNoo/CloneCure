@@ -1,6 +1,6 @@
 if (GameData.is_paused) { exit; }
 
-if (spawn_frame < frame) {
+if (spawn_frame < AirLib.frame) {
 	var place = irandom_range(1,4);
     var _x = oPlayer.x;
     var _y = oPlayer.y;
@@ -22,7 +22,7 @@ if (spawn_frame < frame) {
             _y += random_range(0, camera_get_view_height(view_camera[0]) + 16);
             break;
     }
-    spawn_frame = frame + 120;
+    spawn_frame = AirLib.frame + 120;
     if (array_length(Spawn_List) > 0) {
     	instance_create_layer(_x, _y, "Instances", oEnemy, {
             name : Spawn_List[irandom(array_length(Spawn_List) - 1)]

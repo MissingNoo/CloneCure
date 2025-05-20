@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sCropTomato",
   "bboxMode":2,
   "bbox_bottom":38,
@@ -12,10 +12,10 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5418da7d-b81a-48ec-a4f2-a67958244fef","name":"5418da7d-b81a-48ec-a4f2-a67958244fef","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"1afa079b-18e4-423b-a864-e044f7e883c0","name":"1afa079b-18e4-423b-a864-e044f7e883c0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"ad5e4717-3216-4b25-8942-917624351a6b","name":"ad5e4717-3216-4b25-8942-917624351a6b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"6183505f-9c09-432a-a8ee-d6de1576f409","name":"6183505f-9c09-432a-a8ee-d6de1576f409","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5418da7d-b81a-48ec-a4f2-a67958244fef","name":"5418da7d-b81a-48ec-a4f2-a67958244fef","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1afa079b-18e4-423b-a864-e044f7e883c0","name":"1afa079b-18e4-423b-a864-e044f7e883c0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ad5e4717-3216-4b25-8942-917624351a6b","name":"ad5e4717-3216-4b25-8942-917624351a6b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6183505f-9c09-432a-a8ee-d6de1576f409","name":"6183505f-9c09-432a-a8ee-d6de1576f409","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

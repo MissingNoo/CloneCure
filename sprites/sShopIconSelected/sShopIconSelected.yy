@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sShopIconSelected",
   "bboxMode":0,
   "bbox_bottom":54,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"96d73a8b-f1e8-4654-8f68-eafca5fbffba","name":"96d73a8b-f1e8-4654-8f68-eafca5fbffba","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"96d73a8b-f1e8-4654-8f68-eafca5fbffba","name":"96d73a8b-f1e8-4654-8f68-eafca5fbffba","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

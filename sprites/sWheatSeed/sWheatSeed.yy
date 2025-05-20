@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sWheatSeed",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"0dbc6087-c7f4-4348-a9ce-9594fc6837c4","name":"0dbc6087-c7f4-4348-a9ce-9594fc6837c4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0dbc6087-c7f4-4348-a9ce-9594fc6837c4","name":"0dbc6087-c7f4-4348-a9ce-9594fc6837c4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_Title_Miko_0",
   "bboxMode":0,
   "bbox_bottom":115,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"1e3e3f12-6b07-4ab8-a6ec-fbe9ac26fc8d","name":"1e3e3f12-6b07-4ab8-a6ec-fbe9ac26fc8d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1e3e3f12-6b07-4ab8-a6ec-fbe9ac26fc8d","name":"1e3e3f12-6b07-4ab8-a6ec-fbe9ac26fc8d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

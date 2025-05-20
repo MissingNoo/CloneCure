@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sUrukaPortrait",
   "bboxMode":0,
   "bbox_bottom":37,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"68da2d1a-c54a-4af6-85d8-0d1b3cd69bca","name":"68da2d1a-c54a-4af6-85d8-0d1b3cd69bca","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"68da2d1a-c54a-4af6-85d8-0d1b3cd69bca","name":"68da2d1a-c54a-4af6-85d8-0d1b3cd69bca","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

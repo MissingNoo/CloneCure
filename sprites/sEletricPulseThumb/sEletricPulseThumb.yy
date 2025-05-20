@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sEletricPulseThumb",
   "bboxMode":0,
   "bbox_bottom":18,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"fa7afb78-6d02-46f0-bb06-c86283d8f8a5","name":"fa7afb78-6d02-46f0-bb06-c86283d8f8a5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"fa7afb78-6d02-46f0-bb06-c86283d8f8a5","name":"fa7afb78-6d02-46f0-bb06-c86283d8f8a5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

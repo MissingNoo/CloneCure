@@ -1,6 +1,8 @@
 //feather ignore all
+vis = true;
+AirLib.ui_editor_order = [];
 display_set_gui_size(1920, 1080);
-global.filename = "/home/airgeadlamh/.config/Shooter/test.ui";
+global.filename = "/home/airgeadlamh/.config/DenoTest1/test.ui";
 depth = -2000;
 up = false;
 down = false;
@@ -645,6 +647,17 @@ top = {
           },
           "name":"button_save_as"
         },
+        {
+          "width":60.0,
+          "data":{
+            text : "Tags",
+			f : function() {
+                var data = flexpanel_node_get_data(oEditableUI.ui.get_child(oUI.last_edit));
+                instance_create_depth(0, 0, 6000, oTagManager, { data });
+			}
+          },
+          "name":"button_tag_editor"
+        },
         //{
         //  "width":32.0,
         //  "data":{
@@ -683,7 +696,7 @@ str = {
   "width":1920.0,
   "top" : 35,
   "data":{
-    image : wall4,
+    //image : "wall4",
   },
   "height":1080 - 35,
     flexDirection : "row",
@@ -697,7 +710,9 @@ str = {
     name : "panel_side",
 	maxWidth : 30,
     flex : 0.15,
-	data : {image : sButton},
+	data : {
+        //image : wall4
+        },
 nodes : [
     {
       "padding":10.0,
@@ -952,3 +967,5 @@ add_to_list = function() {
 }
 
 //add_to_list();
+
+depth = -2001;

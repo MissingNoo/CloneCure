@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sENCurseThumb",
   "bboxMode":0,
   "bbox_bottom":19,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"0ade17b4-d3e8-4f77-8b88-d48f7fdc8dfd","name":"0ade17b4-d3e8-4f77-8b88-d48f7fdc8dfd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0ade17b4-d3e8-4f77-8b88-d48f7fdc8dfd","name":"0ade17b4-d3e8-4f77-8b88-d48f7fdc8dfd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sSakanabg",
   "bboxMode":0,
   "bbox_bottom":431,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"72f17ce8-0887-4105-93c6-043fdc151dbb","name":"72f17ce8-0887-4105-93c6-043fdc151dbb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"72f17ce8-0887-4105-93c6-043fdc151dbb","name":"72f17ce8-0887-4105-93c6-043fdc151dbb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

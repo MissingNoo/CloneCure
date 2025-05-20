@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAtlanticRod",
   "bboxMode":0,
   "bbox_bottom":22,
@@ -17,7 +17,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"851bb083-1419-4db3-88cf-6976f79124a5","name":"851bb083-1419-4db3-88cf-6976f79124a5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"851bb083-1419-4db3-88cf-6976f79124a5","name":"851bb083-1419-4db3-88cf-6976f79124a5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sMantaRayIcon",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -17,8 +17,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"3ffd6191-3467-47b9-b9d5-50b9934467e2","name":"3ffd6191-3467-47b9-b9d5-50b9934467e2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"39b38157-2cb8-4d34-b147-4d9d60986826","name":"39b38157-2cb8-4d34-b147-4d9d60986826","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3ffd6191-3467-47b9-b9d5-50b9934467e2","name":"3ffd6191-3467-47b9-b9d5-50b9934467e2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"39b38157-2cb8-4d34-b147-4d9d60986826","name":"39b38157-2cb8-4d34-b147-4d9d60986826","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

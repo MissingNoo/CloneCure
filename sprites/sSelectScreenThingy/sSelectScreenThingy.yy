@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sSelectScreenThingy",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"bf1ab299-f4ed-4209-8343-2b3d7ae43a1c","name":"bf1ab299-f4ed-4209-8343-2b3d7ae43a1c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bf1ab299-f4ed-4209-8343-2b3d7ae43a1c","name":"bf1ab299-f4ed-4209-8343-2b3d7ae43a1c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

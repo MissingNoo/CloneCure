@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sLiaPortrait",
   "bboxMode":0,
   "bbox_bottom":37,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"aa8e6ae9-c6bc-4fda-bc33-cd302e72b78a","name":"aa8e6ae9-c6bc-4fda-bc33-cd302e72b78a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"aa8e6ae9-c6bc-4fda-bc33-cd302e72b78a","name":"aa8e6ae9-c6bc-4fda-bc33-cd302e72b78a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

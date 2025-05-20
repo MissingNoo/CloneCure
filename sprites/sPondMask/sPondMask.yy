@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sPondMask",
   "bboxMode":0,
   "bbox_bottom":191,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5a4dd0bc-bd29-41e3-b76f-0639e0bd5ca8","name":"5a4dd0bc-bd29-41e3-b76f-0639e0bd5ca8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5a4dd0bc-bd29-41e3-b76f-0639e0bd5ca8","name":"5a4dd0bc-bd29-41e3-b76f-0639e0bd5ca8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

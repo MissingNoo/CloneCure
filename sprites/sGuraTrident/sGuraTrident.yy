@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sGuraTrident",
   "bboxMode":0,
   "bbox_bottom":24,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"4e94b0b0-9e23-41d7-a847-7f8fe31d3dec","name":"4e94b0b0-9e23-41d7-a847-7f8fe31d3dec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"36b37481-0fb2-45e9-96ce-480ebe0bcdf5","name":"36b37481-0fb2-45e9-96ce-480ebe0bcdf5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"4e94b0b0-9e23-41d7-a847-7f8fe31d3dec","name":"4e94b0b0-9e23-41d7-a847-7f8fe31d3dec","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"36b37481-0fb2-45e9-96ce-480ebe0bcdf5","name":"36b37481-0fb2-45e9-96ce-480ebe0bcdf5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

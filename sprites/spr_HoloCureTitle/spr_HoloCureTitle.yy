@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_HoloCureTitle",
   "bboxMode":0,
   "bbox_bottom":258,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"810cfbcf-79ad-4d5e-b6b4-696eb647f109","name":"810cfbcf-79ad-4d5e-b6b4-696eb647f109","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"810cfbcf-79ad-4d5e-b6b4-696eb647f109","name":"810cfbcf-79ad-4d5e-b6b4-696eb647f109","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

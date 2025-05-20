@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sExpBarBG",
   "bboxMode":0,
   "bbox_bottom":25,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"1961abb7-a79f-4b8e-89a5-33b6d0ea9e98","name":"1961abb7-a79f-4b8e-89a5-33b6d0ea9e98","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"d78eb5c9-6607-4de3-93b4-c62ad2cf55dd","name":"d78eb5c9-6607-4de3-93b4-c62ad2cf55dd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1961abb7-a79f-4b8e-89a5-33b6d0ea9e98","name":"1961abb7-a79f-4b8e-89a5-33b6d0ea9e98","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d78eb5c9-6607-4de3-93b4-c62ad2cf55dd","name":"d78eb5c9-6607-4de3-93b4-c62ad2cf55dd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

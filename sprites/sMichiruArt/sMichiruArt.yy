@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sMichiruArt",
   "bboxMode":0,
   "bbox_bottom":1472,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b46aecfb-24ac-41c1-b015-098f1cda82b8","name":"b46aecfb-24ac-41c1-b015-098f1cda82b8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b46aecfb-24ac-41c1-b015-098f1cda82b8","name":"b46aecfb-24ac-41c1-b015-098f1cda82b8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

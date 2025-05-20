@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sTenmaArt",
   "bboxMode":0,
   "bbox_bottom":830,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"0ccb6d44-1af1-4670-8dfc-e8c0752a4254","name":"0ccb6d44-1af1-4670-8dfc-e8c0752a4254","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0ccb6d44-1af1-4670-8dfc-e8c0752a4254","name":"0ccb6d44-1af1-4670-8dfc-e8c0752a4254","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

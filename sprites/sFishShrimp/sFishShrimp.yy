@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sFishShrimp",
   "bboxMode":0,
   "bbox_bottom":24,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"cf9ebd7a-5c46-499a-87e0-da415d54cd62","name":"cf9ebd7a-5c46-499a-87e0-da415d54cd62","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"12db3221-e314-4448-b6e3-d1c95c41486b","name":"12db3221-e314-4448-b6e3-d1c95c41486b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"cf9ebd7a-5c46-499a-87e0-da415d54cd62","name":"cf9ebd7a-5c46-499a-87e0-da415d54cd62","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"12db3221-e314-4448-b6e3-d1c95c41486b","name":"12db3221-e314-4448-b6e3-d1c95c41486b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

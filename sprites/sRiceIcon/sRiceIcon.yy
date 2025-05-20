@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sRiceIcon",
   "bboxMode":0,
   "bbox_bottom":20,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5520bd8d-4e5b-491e-8fd2-d7955eeb0aa8","name":"5520bd8d-4e5b-491e-8fd2-d7955eeb0aa8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5520bd8d-4e5b-491e-8fd2-d7955eeb0aa8","name":"5520bd8d-4e5b-491e-8fd2-d7955eeb0aa8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

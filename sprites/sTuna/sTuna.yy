@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sTuna",
   "bboxMode":0,
   "bbox_bottom":27,
@@ -17,8 +17,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"40370e8d-6584-46b5-8475-dce2559cc289","name":"40370e8d-6584-46b5-8475-dce2559cc289","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"1f20e4e3-955f-4c8e-a1d8-62592cb695a2","name":"1f20e4e3-955f-4c8e-a1d8-62592cb695a2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"40370e8d-6584-46b5-8475-dce2559cc289","name":"40370e8d-6584-46b5-8475-dce2559cc289","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1f20e4e3-955f-4c8e-a1d8-62592cb695a2","name":"1f20e4e3-955f-4c8e-a1d8-62592cb695a2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

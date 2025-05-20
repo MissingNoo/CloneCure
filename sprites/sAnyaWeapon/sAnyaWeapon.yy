@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAnyaWeapon",
   "bboxMode":0,
   "bbox_bottom":21,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"785c3eb5-c211-417b-bd46-79336fe19084","name":"785c3eb5-c211-417b-bd46-79336fe19084","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"31711c01-4784-4c06-8e6c-d514e21b6ece","name":"31711c01-4784-4c06-8e6c-d514e21b6ece","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"785c3eb5-c211-417b-bd46-79336fe19084","name":"785c3eb5-c211-417b-bd46-79336fe19084","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"31711c01-4784-4c06-8e6c-d514e21b6ece","name":"31711c01-4784-4c06-8e6c-d514e21b6ece","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAmeliaWeaponProjectile",
   "bboxMode":0,
   "bbox_bottom":7,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"308851e7-6fbf-4276-92e2-dfc5e575f79b","name":"308851e7-6fbf-4276-92e2-dfc5e575f79b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"dbb809a9-4fb5-481a-bed0-3c017532f5f0","name":"dbb809a9-4fb5-481a-bed0-3c017532f5f0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"308851e7-6fbf-4276-92e2-dfc5e575f79b","name":"308851e7-6fbf-4276-92e2-dfc5e575f79b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"dbb809a9-4fb5-481a-bed0-3c017532f5f0","name":"dbb809a9-4fb5-481a-bed0-3c017532f5f0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sHudSpecialUnlockIcon",
   "bboxMode":0,
   "bbox_bottom":24,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a9e2ed16-c5cf-41e3-bd44-3dc6bb51e5be","name":"a9e2ed16-c5cf-41e3-bd44-3dc6bb51e5be","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a9e2ed16-c5cf-41e3-bd44-3dc6bb51e5be","name":"a9e2ed16-c5cf-41e3-bd44-3dc6bb51e5be","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sTitleAki",
   "bboxMode":0,
   "bbox_bottom":109,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"e37f08df-f73a-449c-a1e4-51cb32386a42","name":"e37f08df-f73a-449c-a1e4-51cb32386a42","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e37f08df-f73a-449c-a1e4-51cb32386a42","name":"e37f08df-f73a-449c-a1e4-51cb32386a42","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

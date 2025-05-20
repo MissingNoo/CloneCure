@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sEliteCookingThumb",
   "bboxMode":0,
   "bbox_bottom":21,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b29616fb-d82a-455d-8e24-8e23c5b7c74a","name":"b29616fb-d82a-455d-8e24-8e23c5b7c74a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b29616fb-d82a-455d-8e24-8e23c5b7c74a","name":"b29616fb-d82a-455d-8e24-8e23c5b7c74a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

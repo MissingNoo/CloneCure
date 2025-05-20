@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sPhaseIcon",
   "bboxMode":0,
   "bbox_bottom":110,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"eaecd956-c716-4e16-8fba-e3907f7764b6","name":"eaecd956-c716-4e16-8fba-e3907f7764b6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"eaecd956-c716-4e16-8fba-e3907f7764b6","name":"eaecd956-c716-4e16-8fba-e3907f7764b6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

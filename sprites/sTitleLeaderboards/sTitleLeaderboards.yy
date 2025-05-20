@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sTitleLeaderboards",
   "bboxMode":0,
   "bbox_bottom":34,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"ffb7949e-1c63-4cfd-a438-82c1c3d133b4","name":"ffb7949e-1c63-4cfd-a438-82c1c3d133b4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"6c61d961-9c3e-42bb-9dd6-d49f9bd35bdc","name":"6c61d961-9c3e-42bb-9dd6-d49f9bd35bdc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ffb7949e-1c63-4cfd-a438-82c1c3d133b4","name":"ffb7949e-1c63-4cfd-a438-82c1c3d133b4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6c61d961-9c3e-42bb-9dd6-d49f9bd35bdc","name":"6c61d961-9c3e-42bb-9dd6-d49f9bd35bdc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

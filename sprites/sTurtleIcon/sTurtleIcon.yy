@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sTurtleIcon",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -17,8 +17,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6027fac8-2680-4778-bba6-5ca1de17cd74","name":"6027fac8-2680-4778-bba6-5ca1de17cd74","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"5f135ade-0017-4d7d-99ae-6b359d42ff7c","name":"5f135ade-0017-4d7d-99ae-6b359d42ff7c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6027fac8-2680-4778-bba6-5ca1de17cd74","name":"6027fac8-2680-4778-bba6-5ca1de17cd74","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5f135ade-0017-4d7d-99ae-6b359d42ff7c","name":"5f135ade-0017-4d7d-99ae-6b359d42ff7c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

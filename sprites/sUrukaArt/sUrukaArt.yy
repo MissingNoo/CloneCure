@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sUrukaArt",
   "bboxMode":0,
   "bbox_bottom":1189,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"e4739f43-ac47-4cd0-a195-dc1ffc18be6c","name":"e4739f43-ac47-4cd0-a195-dc1ffc18be6c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e4739f43-ac47-4cd0-a195-dc1ffc18be6c","name":"e4739f43-ac47-4cd0-a195-dc1ffc18be6c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

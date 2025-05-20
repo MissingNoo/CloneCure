@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAkiWeapon",
   "bboxMode":0,
   "bbox_bottom":21,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a49cbd09-84c8-4ab2-a098-d93e14066a85","name":"a49cbd09-84c8-4ab2-a098-d93e14066a85","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"ad6bfefa-0f26-4827-bfa7-6c270a593e3a","name":"ad6bfefa-0f26-4827-bfa7-6c270a593e3a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a49cbd09-84c8-4ab2-a098-d93e14066a85","name":"a49cbd09-84c8-4ab2-a098-d93e14066a85","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ad6bfefa-0f26-4827-bfa7-6c270a593e3a","name":"ad6bfefa-0f26-4827-bfa7-6c270a593e3a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

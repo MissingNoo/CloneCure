@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAchFirstBoss",
   "bboxMode":0,
   "bbox_bottom":18,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"528e71ad-0671-4dc1-81f5-b1b62d05442a","name":"528e71ad-0671-4dc1-81f5-b1b62d05442a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"528e71ad-0671-4dc1-81f5-b1b62d05442a","name":"528e71ad-0671-4dc1-81f5-b1b62d05442a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

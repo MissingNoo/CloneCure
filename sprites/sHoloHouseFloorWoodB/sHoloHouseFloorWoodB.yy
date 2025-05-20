@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sHoloHouseFloorWoodB",
   "bboxMode":0,
   "bbox_bottom":223,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"cd9d3d87-b8e6-487d-9ebf-2e11c02c6933","name":"cd9d3d87-b8e6-487d-9ebf-2e11c02c6933","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"cd9d3d87-b8e6-487d-9ebf-2e11c02c6933","name":"cd9d3d87-b8e6-487d-9ebf-2e11c02c6933","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

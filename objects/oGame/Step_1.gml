@@ -16,7 +16,6 @@ if (GameData.on_stage) {
 if (room != lastroom) {
 	lastroom = room;
 }
-frame++;
 global.seconds += 1/60;
 if (global.seconds > 60) {
     global.seconds -= 60;

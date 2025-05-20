@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sCornIcon",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c45abee0-3ff4-4ee9-b787-d47db2dc9aa9","name":"c45abee0-3ff4-4ee9-b787-d47db2dc9aa9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c45abee0-3ff4-4ee9-b787-d47db2dc9aa9","name":"c45abee0-3ff4-4ee9-b787-d47db2dc9aa9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

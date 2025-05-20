@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sUiLevelHeaderPink",
   "bboxMode":0,
   "bbox_bottom":8,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d0c166c5-fcbb-4f20-95a0-14c558f3a29b","name":"d0c166c5-fcbb-4f20-95a0-14c558f3a29b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d0c166c5-fcbb-4f20-95a0-14c558f3a29b","name":"d0c166c5-fcbb-4f20-95a0-14c558f3a29b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

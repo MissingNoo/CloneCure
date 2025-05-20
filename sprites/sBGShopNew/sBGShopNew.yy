@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sBGShopNew",
   "bboxMode":0,
   "bbox_bottom":359,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b775428b-07c8-4cf3-8f68-9d7d17a5a193","name":"b775428b-07c8-4cf3-8f68-9d7d17a5a193","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b775428b-07c8-4cf3-8f68-9d7d17a5a193","name":"b775428b-07c8-4cf3-8f68-9d7d17a5a193","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

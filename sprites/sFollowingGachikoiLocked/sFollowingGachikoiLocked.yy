@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sFollowingGachikoiLocked",
   "bboxMode":0,
   "bbox_bottom":26,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b1ea51ad-5af8-4ba5-8813-3defff85f6a3","name":"b1ea51ad-5af8-4ba5-8813-3defff85f6a3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b1ea51ad-5af8-4ba5-8813-3defff85f6a3","name":"b1ea51ad-5af8-4ba5-8813-3defff85f6a3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

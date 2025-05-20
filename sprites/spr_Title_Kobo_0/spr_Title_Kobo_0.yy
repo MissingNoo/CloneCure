@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_Title_Kobo_0",
   "bboxMode":0,
   "bbox_bottom":115,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"fed6dc1d-ea8a-44f1-aa3a-1d8aefe10f60","name":"fed6dc1d-ea8a-44f1-aa3a-1d8aefe10f60","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"fed6dc1d-ea8a-44f1-aa3a-1d8aefe10f60","name":"fed6dc1d-ea8a-44f1-aa3a-1d8aefe10f60","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

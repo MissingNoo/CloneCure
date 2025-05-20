@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sHoloHouseWallWoodBIcon",
   "bboxMode":0,
   "bbox_bottom":17,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"155bf771-33c7-4e83-8c81-9169466bc2f0","name":"155bf771-33c7-4e83-8c81-9169466bc2f0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"155bf771-33c7-4e83-8c81-9169466bc2f0","name":"155bf771-33c7-4e83-8c81-9169466bc2f0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

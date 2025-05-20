@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sHudHomeIcon",
   "bboxMode":0,
   "bbox_bottom":127,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"ec153807-4fd9-4aad-bbb6-3e40fbab9ffd","name":"ec153807-4fd9-4aad-bbb6-3e40fbab9ffd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ec153807-4fd9-4aad-bbb6-3e40fbab9ffd","name":"ec153807-4fd9-4aad-bbb6-3e40fbab9ffd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

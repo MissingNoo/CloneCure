@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAkiCircle",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6ef88d88-eed2-4a0c-97ec-3c0ede9823c2","name":"6ef88d88-eed2-4a0c-97ec-3c0ede9823c2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6ef88d88-eed2-4a0c-97ec-3c0ede9823c2","name":"6ef88d88-eed2-4a0c-97ec-3c0ede9823c2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

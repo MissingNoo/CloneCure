@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sBoneBrosThumb",
   "bboxMode":0,
   "bbox_bottom":21,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"3cf9b2a0-359e-4de4-90cb-251a04ae6b16","name":"3cf9b2a0-359e-4de4-90cb-251a04ae6b16","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3cf9b2a0-359e-4de4-90cb-251a04ae6b16","name":"3cf9b2a0-359e-4de4-90cb-251a04ae6b16","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

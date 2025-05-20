@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sSakeFood",
   "bboxMode":0,
   "bbox_bottom":19,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"424e4cfa-621b-4920-ba8c-5312bb50d8a2","name":"424e4cfa-621b-4920-ba8c-5312bb50d8a2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"424e4cfa-621b-4920-ba8c-5312bb50d8a2","name":"424e4cfa-621b-4920-ba8c-5312bb50d8a2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

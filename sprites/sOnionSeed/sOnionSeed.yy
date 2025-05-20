@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sOnionSeed",
   "bboxMode":0,
   "bbox_bottom":23,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b45b9304-86c7-4f2b-b568-e2a52b1f7781","name":"b45b9304-86c7-4f2b-b568-e2a52b1f7781","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b45b9304-86c7-4f2b-b568-e2a52b1f7781","name":"b45b9304-86c7-4f2b-b568-e2a52b1f7781","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sSakana",
   "bboxMode":0,
   "bbox_bottom":511,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b2d584c9-43ed-4a2d-a58d-b4e7b885a22b","name":"b2d584c9-43ed-4a2d-a58d-b4e7b885a22b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b2d584c9-43ed-4a2d-a58d-b4e7b885a22b","name":"b2d584c9-43ed-4a2d-a58d-b4e7b885a22b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

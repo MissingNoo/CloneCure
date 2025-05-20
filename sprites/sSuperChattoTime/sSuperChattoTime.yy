@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sSuperChattoTime",
   "bboxMode":0,
   "bbox_bottom":12,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"bffcfb11-9800-461f-93f0-b938b0cf4dba","name":"bffcfb11-9800-461f-93f0-b938b0cf4dba","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bffcfb11-9800-461f-93f0-b938b0cf4dba","name":"bffcfb11-9800-461f-93f0-b938b0cf4dba","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sIdolSongThumb",
   "bboxMode":0,
   "bbox_bottom":19,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9eb419cf-cf53-4d0f-b0ac-c7f80cdbe5cc","name":"9eb419cf-cf53-4d0f-b0ac-c7f80cdbe5cc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9eb419cf-cf53-4d0f-b0ac-c7f80cdbe5cc","name":"9eb419cf-cf53-4d0f-b0ac-c7f80cdbe5cc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

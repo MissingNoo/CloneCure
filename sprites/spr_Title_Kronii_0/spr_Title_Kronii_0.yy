@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_Title_Kronii_0",
   "bboxMode":0,
   "bbox_bottom":137,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"08a85535-b889-4439-bcfc-f511268aaa8b","name":"08a85535-b889-4439-bcfc-f511268aaa8b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"08a85535-b889-4439-bcfc-f511268aaa8b","name":"08a85535-b889-4439-bcfc-f511268aaa8b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

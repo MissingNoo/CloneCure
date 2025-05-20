@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sHudIndiesIcon",
   "bboxMode":0,
   "bbox_bottom":119,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"2ba39e32-b30f-4a8e-847c-f004e05ecb2a","name":"2ba39e32-b30f-4a8e-847c-f004e05ecb2a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"2ba39e32-b30f-4a8e-847c-f004e05ecb2a","name":"2ba39e32-b30f-4a8e-847c-f004e05ecb2a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

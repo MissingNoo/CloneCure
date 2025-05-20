@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAnyaSharpAura",
   "bboxMode":0,
   "bbox_bottom":56,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"fb45b8b5-2ad1-415d-9b4f-e8108e3743d1","name":"fb45b8b5-2ad1-415d-9b4f-e8108e3743d1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"e98b9395-d402-49c1-8781-1e5b70259650","name":"e98b9395-d402-49c1-8781-1e5b70259650","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"fb45b8b5-2ad1-415d-9b4f-e8108e3743d1","name":"fb45b8b5-2ad1-415d-9b4f-e8108e3743d1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e98b9395-d402-49c1-8781-1e5b70259650","name":"e98b9395-d402-49c1-8781-1e5b70259650","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

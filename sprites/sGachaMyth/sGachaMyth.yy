@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sGachaMyth",
   "bboxMode":0,
   "bbox_bottom":193,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f35bb524-e5ef-448d-b5c6-e354bebbff8b","name":"f35bb524-e5ef-448d-b5c6-e354bebbff8b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f35bb524-e5ef-448d-b5c6-e354bebbff8b","name":"f35bb524-e5ef-448d-b5c6-e354bebbff8b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

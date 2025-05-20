@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"BG_Pillar",
   "bboxMode":2,
   "bbox_bottom":43,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"58adbbdb-cdf3-4f7f-9d52-5e6140b01564","name":"58adbbdb-cdf3-4f7f-9d52-5e6140b01564","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"58adbbdb-cdf3-4f7f-9d52-5e6140b01564","name":"58adbbdb-cdf3-4f7f-9d52-5e6140b01564","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

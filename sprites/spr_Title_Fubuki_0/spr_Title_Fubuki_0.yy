@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"spr_Title_Fubuki_0",
   "bboxMode":0,
   "bbox_bottom":114,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c435cc13-d9b0-4e31-aa66-01b2b4fcea82","name":"c435cc13-d9b0-4e31-aa66-01b2b4fcea82","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c435cc13-d9b0-4e31-aa66-01b2b4fcea82","name":"c435cc13-d9b0-4e31-aa66-01b2b4fcea82","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

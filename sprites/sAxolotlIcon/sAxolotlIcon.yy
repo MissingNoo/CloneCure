@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"v1",
+  "$GMSprite":"v2",
   "%Name":"sAxolotlIcon",
   "bboxMode":0,
   "bbox_bottom":24,
@@ -17,8 +17,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"ba5f38e7-b15e-4b1b-b9d4-246418ad9a36","name":"ba5f38e7-b15e-4b1b-b9d4-246418ad9a36","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"97e675a8-90fa-41da-b053-f020ac848391","name":"97e675a8-90fa-41da-b053-f020ac848391","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ba5f38e7-b15e-4b1b-b9d4-246418ad9a36","name":"ba5f38e7-b15e-4b1b-b9d4-246418ad9a36","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"97e675a8-90fa-41da-b053-f020ac848391","name":"97e675a8-90fa-41da-b053-f020ac848391","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
