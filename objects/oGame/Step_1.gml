@@ -1,6 +1,8 @@
-if (keyboard_check_pressed(vk_f10)) {
-	//instance_create_depth(x, y, depth - 2, oLevelUp);
-	instance_create_depth(oPlayer.x, oPlayer.y + 20, oPlayer.depth, oCol);
+if(keyboard_check_pressed(vk_f9)){
+	show_debug_overlay(false);
+}
+if(keyboard_check_pressed(vk_f10)){
+	show_debug_overlay(true);
 }
 if (GameData.is_paused) {
     exit;

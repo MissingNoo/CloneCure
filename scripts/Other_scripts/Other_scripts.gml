@@ -29,6 +29,7 @@ function pause_game(reason = undefined) {
 }
 
 function damage_player(dmg) {
+	
 	if (dmg == 0) {
 		exit;
 	}

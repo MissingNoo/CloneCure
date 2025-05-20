@@ -37,13 +37,9 @@ if (GameData.xp >= GameData.needed_xp) {
 	instance_create_depth(0, 0, depth - 2, oLevelUp);
 }
 #endregion
-if (keyboard_check_pressed(vk_f2)) {
-	display_set_gui_size(1920, 1080);
-}
 if (keyboard_check_pressed(vk_f1)) {
 	debug_rooms();
 }
-
 if (keyboard_check_pressed(vk_escape)) {
 	pause_game("pause");
 }

@@ -146,5 +146,29 @@ i.set_on_bought(method(i, function() /*=>*/ {
 	}
 }));
 
+#region Researcher's Coat
+i = new item("Researcher_Coat");
+i.set_weight(2);
+i.set_type(item_type.Stat);
+i.set_sprite(sResearcherCoat);
+i.set_max_level(3);
+i.set_cooldown(120, 120);
+i.set_on_bought(method(i, function() /*=>*/ {
+	var lv = [0, 2, 3, 4];
+	max_percent = lv[level];
+	self[$ "percent"] ??= 1;
+}));
+i.set_on_cooldown(method(i, function() /*=>*/ {
+	if (GameData.hp == GameData.max_hp) {
+		percent = clamp(percent + 1, 1, max_percent);
+	}
+	GameData.xp += GameData.needed_xp * (percent / 100);
+	trace(percent);
+}));
+i.set_on_hit(method(i, function() /*=>*/ {
+	percent = 1;
+}));
+#endregion
+
 #endregion
 #endregion

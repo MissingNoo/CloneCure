@@ -1,3 +1,9 @@
+if(keyboard_check_pressed(vk_f9)){
+	show_debug_overlay(false);
+}
+if(keyboard_check_pressed(vk_f10)){
+	show_debug_overlay(true);
+}
 #region Revives
 if(GameData.hp <= 0 and GameData.revives > 0) {
 	//TODO: revive window

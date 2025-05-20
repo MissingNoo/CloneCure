@@ -1805,6 +1805,7 @@
     {"id":{"name":"sQuarterNote","path":"sprites/sQuarterNote/sQuarterNote.yy",},},
     {"id":{"name":"sRadishIcon","path":"sprites/sRadishIcon/sRadishIcon.yy",},},
     {"id":{"name":"sRadishSeed","path":"sprites/sRadishSeed/sRadishSeed.yy",},},
+    {"id":{"name":"sResearcherCoat","path":"sprites/sResearcherCoat/sResearcherCoat.yy",},},
     {"id":{"name":"sRestNote","path":"sprites/sRestNote/sRestNote.yy",},},
     {"id":{"name":"sRhythmBar","path":"sprites/sRhythmBar/sRhythmBar.yy",},},
     {"id":{"name":"sRhythmButton","path":"sprites/sRhythmButton/sRhythmButton.yy",},},
