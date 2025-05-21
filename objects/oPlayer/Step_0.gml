@@ -1,9 +1,3 @@
-if(keyboard_check_pressed(vk_f9)){
-	show_debug_overlay(false);
-}
-if(keyboard_check_pressed(vk_f10)){
-	show_debug_overlay(true);
-}
 #region Revives
 if(GameData.hp <= 0 and GameData.revives > 0) {
 	//TODO: revive window
@@ -65,7 +59,7 @@ array_foreach(Player_Weapons, function(e, i) /*=>*/ {
         });
 		var cool = e.base_cooldown[e.level];
 		var newcool = clamp(round(cool / (1 + (GameData.Haste / 100))), e.min_cooldown, infinity);
-		trace($"Cooldown: {cool} : {newcool}");
+		//trace($"Cooldown: {cool} : {newcool}");
         e.cooldown = AirLib.frame + cool;
     }
 });

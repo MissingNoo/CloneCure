@@ -1,3 +1,4 @@
+//feather disable all
 GameData = {};
 #region GUI Functions
 
@@ -153,7 +154,7 @@ function textbox() constructor {
 	align = "";
 	strx = undefined;
 	stry = undefined;
-	func = function() {};
+	func = function(inst) {};
 
 	static set_align = function(h, v) {
 		var newalign = "";
@@ -698,9 +699,15 @@ function topdown_movement(owner, _spd) constructor {
 	move = method(owner, move_and_collide);
 
 	static get_input = function() {
-		var left_right = -input_check("left") + input_check("right"); // - (touch_lr[3] < touch_lr[5]) + (touch_lr[3] > touch_lr[5]);
-		var up_down = -input_check("up") + input_check("down"); // - (touch_lr[4] < touch_lr[6]) + (touch_lr[4] > touch_lr[6]);
+		var touch = GameData.touch.left;
+		var left_right = -input_check("left") + input_check("right");
+		var up_down = -input_check("up") + input_check("down");
 
+		if (touch.enabled) {
+			left_right = - (touch.x < touch.startx) + (touch.x > touch.startx);
+			up_down = - (touch.y < touch.starty) + (touch.y > touch.starty);
+		}
+		
 		if (left_right != 0) {
 			last_h = left_right;
 		}
@@ -723,6 +730,7 @@ function topdown_movement(owner, _spd) constructor {
 			xlen = abs(hspd);
 			ylen = abs(vspd);
 		}
+		//trace($"{touch.enabled}:{len}:{dir}:{xlen}:{ylen}");
 		hspd = lengthdir_x(xlen, dir);
 		vspd = lengthdir_y(ylen, dir);
 	};

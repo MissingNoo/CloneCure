@@ -26,7 +26,7 @@ for (var i = 0; i < array_length(Player_Items); i++) {
 		damage_bonus += Player_Items[i].damage_bonus - 1;
 	}
 }
-trace($"Damage Bonus: {BaseATK} + {damage_bonus}");
+//trace($"Damage Bonus: {BaseATK} + {damage_bonus}");
 dmg = (dmg * BaseATK) * damage_bonus;
 
 other.hp -= dmg;
