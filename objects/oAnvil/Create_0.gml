@@ -1,2 +1,4 @@
 /// @description Insert description here
-// You can write your code in this editor
+colliding = false;
+uses = 1;
+if (player_have_item("Blacksmith_Gear")) uses++;

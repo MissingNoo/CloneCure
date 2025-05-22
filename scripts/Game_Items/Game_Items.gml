@@ -238,7 +238,6 @@ i.set_weight(3);
 i.set_type(item_type.Stat);
 i.set_sprite(sBeetle);
 i.set_max_level(3);
-i.set_cooldown(120, 120);
 i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
 	var multiplier_lv = [0, 1.33, 1.66, 2];
 	multiplier = multiplier_lv[level];
@@ -248,6 +247,18 @@ i.set_on_hit(method(i, function() /*=>*/ {
 	if (instance_exists(projectile) and projectile.wid.from_skill) {
 		projectile.dmg = projectile.dmg * multiplier;
 	}
+}));
+#endregion
+
+#region Blacksmith_Gear
+i = new item("Blacksmith_Gear");
+i.set_weight(1);
+i.set_type(item_type.Utility);
+i.set_sprite(sBlacksmithGear);
+i.set_max_level(3);
+i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
+	var enchant_lv = [0, 0, .5, 1];
+	enchant = enchant_lv[level];
 }));
 #endregion
 

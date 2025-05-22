@@ -269,6 +269,7 @@
     {"id":{"name":"oWeapon","path":"objects/oWeapon/oWeapon.yy",},},
     {"id":{"name":"oXP","path":"objects/oXP/oXP.yy",},},
     {"id":{"name":"part_saved","path":"particles/part_saved/part_saved.yy",},},
+    {"id":{"name":"ParticleSystem6","path":"particles/ParticleSystem6/ParticleSystem6.yy",},},
     {"id":{"name":"pFlower1","path":"particles/pFlower1/pFlower1.yy",},},
     {"id":{"name":"pFlowerWhite","path":"particles/pFlowerWhite/pFlowerWhite.yy",},},
     {"id":{"name":"pFloweryellow","path":"particles/pFloweryellow/pFloweryellow.yy",},},

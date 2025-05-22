@@ -163,7 +163,7 @@ function weapon(_name) : base_item(_name) constructor {
     maxdmg = [];
     type = undefined;
     can_enchant = [];
-	lex = "Weapons"
+	lex = "Weapons";
 	area = [0, 1, 1, 1, 1, 1, 1, 1];
 	knockback_duration = array_create(8, 0); 
     knockback_speed = array_create(8, 0);
