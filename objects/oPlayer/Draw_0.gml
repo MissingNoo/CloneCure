@@ -16,4 +16,3 @@ var _color = c_white;
 //}
 draw_sprite_ext(sArrow, GameData.strafing, x, y - (sprite_height / 2), 1, 1, GameData.arrow_dir, _color, 1);
 //draw_text(x, y - 30, $"SPD: {movement.spd}");
-scribble($"{GameData.touch.left}").fit_to_box(400, 500).draw(x - 50, y - 50);

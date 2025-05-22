@@ -1,10 +1,10 @@
 if (input_check_pressed("accept")) {
-	global.search = ups[selected_option].name;
 	switch (selected_option) {
 		case 0:
 		case 1:
 		case 2:
 		case 3:
+			global.search = ups[selected_option].name;
 			switch (ups[selected_option].lex) {
 				case "Weapons":
 					var pos = array_find_index(Player_Weapons, function(e, i) {

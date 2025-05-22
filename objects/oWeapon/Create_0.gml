@@ -20,3 +20,4 @@ last_frame = AirLib.frame + wid.duration[level];
 if (wid.sound != undefined) {
 	audio_play_sound(wid.sound, 0, 0, GameConfig.sound_volume);
 }
+dmg = 0;

@@ -15,8 +15,17 @@ function item(_name) : base_item(_name) constructor {
 	lex = "Items";
 	damage_bonus = 1;
 	crit_debuff = 0;
+	on_hurt = function(){};
 	on_hit = function(){};
 	Items[$ _name] = self;
+	
+	/// @function                set_on_hurt(function)
+	/// @description             Defines the function to be execute when a collision with a enemy happens.
+	/// @param {function}    f   The function to be executed
+	static set_on_hurt = function(f) {
+		on_hurt = f;
+		return self;
+	}
 	
 	/// @function                set_on_hit(function)
 	/// @description             Defines the function to be execute when a collision with a enemy happens.
@@ -60,7 +69,7 @@ i.set_on_bought(method(i, function(){
 	var chances = [0, 15, 20, 25, 30, 35];
 	chance = chances[level];
 }));
-i.set_on_hit(method(i, function() {
+i.set_on_hurt(method(i, function() {
 	var rnd = irandom_range(0, 100) <= chance;
 	if (rnd) {
 		oPlayer.dmg = 0;
@@ -144,7 +153,11 @@ i.set_on_bought(method(i, function() /*=>*/ {
 	if(player_have_item("Energy_Drink")){
 		get_item_data("Energy_Drink").on_bought(true);
 	}
+	if(player_have_item("Breastplate")){
+		get_item_data("Breastplate").on_bought(true);
+	}
 }));
+#endregion
 
 #region Researcher's Coat
 i = new item("Researcher_Coat");
@@ -165,10 +178,77 @@ i.set_on_cooldown(method(i, function() /*=>*/ {
 	GameData.xp += GameData.needed_xp * (percent / 100);
 	trace(percent);
 }));
-i.set_on_hit(method(i, function() /*=>*/ {
+i.set_on_hurt(method(i, function() /*=>*/ {
 	percent = 1;
 }));
 #endregion
 
+#region Breastplate
+i = new item("Breastplate");
+i.set_weight(2);
+i.set_type(item_type.Utility);
+i.set_sprite(sBreastplate);
+i.set_max_level(3);
+i.set_cooldown(120, 120);
+i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
+	var rebound_lv = [0, 50, 60, 70];
+	rebound_chance = rebound_lv[level];
+	var multiplier_lv = [0, 2, 2.5, 3];
+	multiplier = multiplier_lv[level];
+	var shacklescalc = function() {
+		if(player_have_item("Kusogaki_Shackles") and spddiff != 0){
+			var reduction = get_item_data("Kusogaki_Shackles").reduction;
+			var spdcalc = GameData.SPD + abs(spddiff);
+			newspd = spdcalc * (0.9 + (0.1 * (reduction / 100)));
+			spddiff = spdcalc - newspd;
+			GameData.SPD = newspd;
+		}
+	}
+	if(recalc) {
+		shacklescalc();
+	}
+	self[$ "lowered_spd"] ??= false;
+	if (!lowered_spd) {
+		lowered_spd = true;
+		newspd = GameData.SPD * 0.9;
+		spddiff = GameData.SPD - newspd;
+		GameData.SPD = newspd;
+		shacklescalc();
+	}
+}));
+i.set_on_hurt(method(i, function() /*=>*/ {
+	oPlayer.dmg = oPlayer.dmg * 0.75;
+	if (irandom_range(0, 100) <= rebound_chance) {
+		var odmg = oPlayer.dmg * multiplier;
+		var inst = global.lastenemy;
+		if (instance_exists(inst)) {
+			inst.hp -= odmg;
+			instance_create_depth(inst.x, inst.y - (inst.sprite_height / 2), inst.depth - 1, oDamageText, {
+			    dir : abs(oPlayer.image_xscale),
+			    dmg : odmg
+			});
+		}
+	}
+}));
 #endregion
+
+#region Beetle
+i = new item("Beetle");
+i.set_weight(3);
+i.set_type(item_type.Stat);
+i.set_sprite(sBeetle);
+i.set_max_level(3);
+i.set_cooldown(120, 120);
+i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
+	var multiplier_lv = [0, 1.33, 1.66, 2];
+	multiplier = multiplier_lv[level];
+}));
+i.set_on_hit(method(i, function() /*=>*/ {
+	var projectile = global.lastproj;
+	if (instance_exists(projectile) and projectile.wid.from_skill) {
+		projectile.dmg = projectile.dmg * multiplier;
+	}
+}));
+#endregion
+
 #endregion

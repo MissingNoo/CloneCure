@@ -11,7 +11,7 @@ on_hit();
 other.hit_frame[$ $"i{id}"] = AirLib.frame + wid.hit_cooldown;
 
 other.inv_frame = AirLib.frame + 15;
-var dmg = irandom_range(wid.mindmg[wid.level], wid.maxdmg[wid.level]);
+dmg = irandom_range(wid.mindmg[wid.level], wid.maxdmg[wid.level]);
 
 //Growth
 if (wid.perk) {
@@ -28,6 +28,14 @@ for (var i = 0; i < array_length(Player_Items); i++) {
 }
 //trace($"Damage Bonus: {BaseATK} + {damage_bonus}");
 dmg = (dmg * BaseATK) * damage_bonus;
+
+global.lastenemy = other;
+global.lastproj = self;
+array_foreach(Player_Items, function(e, i) /*=>*/ {
+	if (e != undefined) {
+		e.on_hit();
+	}
+});
 
 other.hp -= dmg;
 

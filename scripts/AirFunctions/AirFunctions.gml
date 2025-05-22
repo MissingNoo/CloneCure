@@ -357,7 +357,7 @@ function button(_text) constructor {
 	gui = true;
 	sprite_back = AirLibDefaultButtonSprite;
 	held = false;
-	func = function() {};
+	func = function(struct) {};
 	on_area_func = function() {};
 
 	static style_draw = function() {
@@ -440,7 +440,7 @@ function button(_text) constructor {
 		//draw_rectangle_area(area, false);
 		//draw_set_color(c_white);
 		//draw_rectangle_area(area, true);
-		var _y = area[1];
+		var _y = area[1] + abs((area[3] - area[1]) / 2);
 		held = false;
 		if (
 			enabled && ((!gui && mouse_in_area(area)) || (gui && mouse_in_area_gui(area)))
@@ -486,10 +486,10 @@ function button(_text) constructor {
 		//draw_sprite_stretched(sprite, held, area[0], area[1], area[2] - area[0], area[3] - area[1]);
 		var alpha = enabled ? 1 : 0.5;
 		if (use_text) {
-			scribble($"[alpha,{alpha}][{color}][fa_center]{text}")
+			scribble($"[alpha,{alpha}][{color}][fa_center][fa_middle]{text}")
 				.scale_to_box(
-					area[2] - area[0] - string_width("X") - 2,
-					area[3] - area[1],
+					abs(area[0] - area[2]) - string_width("X") - 2,
+					abs(area[1] - area[3]) - string_height("X"),
 					true
 				)
 				.draw(area[0] + ((area[2] - area[0]) / 2), _y);

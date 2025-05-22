@@ -2,9 +2,10 @@ if (other.attack_frame > AirLib.frame and inv_frame > AirLib.frame) {
 	exit;
 }
 dmg = other.atk;
+global.lastenemy = other;
 array_foreach(Player_Items, function(e, i) /*=>*/ {
 	if (e != undefined) {
-		e.on_hit();
+		e.on_hurt();
 	}
 });
 damage_player(dmg);
