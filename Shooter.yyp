@@ -1471,6 +1471,7 @@
     {"id":{"name":"sBush1","path":"sprites/sBush1/sBush1.yy",},},
     {"id":{"name":"sBush2","path":"sprites/sBush2/sBush2.yy",},},
     {"id":{"name":"sButton","path":"sprites/sButton/sButton.yy",},},
+    {"id":{"name":"sCandySweets","path":"sprites/sCandySweets/sCandySweets.yy",},},
     {"id":{"name":"sCarrotIcon","path":"sprites/sCarrotIcon/sCarrotIcon.yy",},},
     {"id":{"name":"sCarrotSeed","path":"sprites/sCarrotSeed/sCarrotSeed.yy",},},
     {"id":{"name":"sCaught1","path":"sprites/sCaught1/sCaught1.yy",},},

@@ -108,7 +108,11 @@ i.set_weight(3);
 i.set_type(item_type.Stat);
 i.set_sprite(sEnergyDrink);
 i.set_max_level(3);
-i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
+i.set_on_bought(method(i, function() /*=>*/ {
+	self[$ "curlevel"] ??= 0;
+	self[$ "lowered_hp"] ??= false;
+	self[$ "hpdiff"] ??= 0;
+	self[$ "newhp"] ??= 0;
 	var haste_levels = [0, 10, 5, 5];
 	var spd_levels = [0, 0.40, 0.10, 0.10];
 	var shacklescalc = function() {
@@ -120,15 +124,12 @@ i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
 			GameData.max_hp = round(newhp);
 		}
 	}
-	if(!recalc){
+	if(curlevel == level){
+		shacklescalc();
+	} else {
 		GameData.Haste += haste_levels[level];
 		GameData.SPD += spd_levels[level];
-	} else {
-		shacklescalc();
 	}
-	self[$ "lowered_hp"] ??= false;
-	self[$ "hpdiff"] ??= 0;
-	self[$ "newhp"] ??= 0;
 	if(!lowered_hp){
 		lowered_hp = true;
 		newhp = GameData.max_hp * 0.8;
@@ -138,6 +139,7 @@ i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
 		GameData.max_hp = round(newhp);
 		GameData.hp = clamp(round(GameData.hp), 0, GameData.max_hp);
 	}
+	curlevel = level;
 }));
 #endregion
 
@@ -150,12 +152,9 @@ i.set_max_level(3);
 i.set_on_bought(method(i, function() /*=>*/ {
 	var reductions = [0, 33, 66, 100];
 	reduction = reductions[level];
-	if(player_have_item("Energy_Drink")){
-		get_item_data("Energy_Drink").on_bought(true);
-	}
-	if(player_have_item("Breastplate")){
-		get_item_data("Breastplate").on_bought(true);
-	}
+	array_foreach(Player_Items, function(e, p) /*=>*/ {
+		if (!is_undefined(e) and e.name != "Kusogaki_Shackles") { e.on_bought(); }
+	});
 }));
 #endregion
 
@@ -190,7 +189,8 @@ i.set_type(item_type.Utility);
 i.set_sprite(sBreastplate);
 i.set_max_level(3);
 i.set_cooldown(120, 120);
-i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
+i.set_on_bought(method(i, function() /*=>*/ {
+	self[$ "curlevel"] ??= 0;
 	var rebound_lv = [0, 50, 60, 70];
 	rebound_chance = rebound_lv[level];
 	var multiplier_lv = [0, 2, 2.5, 3];
@@ -204,7 +204,7 @@ i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
 			GameData.SPD = newspd;
 		}
 	}
-	if(recalc) {
+	if(curlevel == level) {
 		shacklescalc();
 	}
 	self[$ "lowered_spd"] ??= false;
@@ -215,6 +215,7 @@ i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
 		GameData.SPD = newspd;
 		shacklescalc();
 	}
+	curlevel = level;
 }));
 i.set_on_hurt(method(i, function() /*=>*/ {
 	oPlayer.dmg = oPlayer.dmg * 0.75;
@@ -259,6 +260,33 @@ i.set_max_level(3);
 i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
 	var enchant_lv = [0, 0, .5, 1];
 	enchant = enchant_lv[level];
+}));
+#endregion
+
+#region Candy Kingdom Sweets
+i = new item("Candy_Kingdom_Sweets");
+i.set_sprite(sCandySweets)
+.set_max_level(3)
+.set_weight(2)
+.set_on_bought(method(i, function() /*=>*/ {
+	self[$ "curlevel"] ??= 0;
+	var haste_levels = [0, 40, 10, 10];
+	multiplier = 0.75;
+	if(player_have_item("Kusogaki_Shackles")){
+		var reduction = get_item_data("Kusogaki_Shackles").reduction;
+		multiplier = 0.75 + (0.25 * (reduction / 100));
+	}
+	if (curlevel != level) {
+		GameData.Haste += haste_levels[level];
+	}
+	curlevel = level;
+}))
+.set_on_hit(method(i, function() /*=>*/ {
+	trace($"mult: {multiplier}");
+	var projectile = global.lastproj;
+	if (instance_exists(projectile)) {
+		projectile.dmg = projectile.dmg * multiplier;
+	}
 }));
 #endregion
 
