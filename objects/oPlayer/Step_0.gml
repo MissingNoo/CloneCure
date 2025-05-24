@@ -1,5 +1,6 @@
-if (keyboard_check_pressed(ord("C"))) {
-	instance_create_depth(x, y + 40, depth, oAnvil);
+if (keyboard_check(ord("C"))) {
+	//instance_create_depth(x, y + 40, depth, oAnvil);
+	GameData.Pickup++;
 }
 if (keyboard_check_pressed(ord("O"))) {
 	Player_Weapons[0].level++;

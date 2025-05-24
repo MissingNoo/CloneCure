@@ -13,6 +13,14 @@ if (image_xscale == 1) {
 	image_xscale = image_xscale * wid.area[level];
 	image_yscale = image_yscale * wid.area[level];
 }
+if (player_have_item("Corporate_Pin")) {
+	var multiplier = round((GameData.Pickup - 100) / 40);
+	var base_multiplier = get_item_data("Corporate_Pin").multiplier;
+	var end_multiplier = base_multiplier * multiplier;
+	//trace($"base: {base_multiplier}, mult: {multiplier}, end: {end_multiplier}");
+	image_xscale = image_xscale + end_multiplier;
+	image_yscale = image_yscale + end_multiplier;
+}
 c();
 hit_frame = 0;
 hits = wid.hits[level];

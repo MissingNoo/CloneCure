@@ -290,4 +290,15 @@ i.set_sprite(sCandySweets)
 }));
 #endregion
 
+#region Corporate Pin
+i = new item("Corporate_Pin");
+i.set_sprite(sCorporatePin)
+.set_max_level(3)
+.set_weight(3) //TODO: Unknown?
+.set_on_bought(method(i, function() /*=>*/ {
+	var multiplier_lv = [0, 0.02, 0.025, 0.03];
+	multiplier = multiplier_lv[level];
+}));
+#endregion
+
 #endregion
