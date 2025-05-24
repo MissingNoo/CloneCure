@@ -1,8 +1,8 @@
-x = (approach(x, floor(oPlayer.x), 2));
-y = (approach(y, floor(oPlayer.y), 2));
+x = floor(oPlayer.x);
+y = floor(oPlayer.y);
 //x = round(oPlayer.x);
 //y = round(oPlayer.y);
-if (distance_to_object(oPlayer) > 200) {
+if (distance_to_object(oPlayer) > 50) {
 	x = oPlayer.x + xoffset;
 	y = oPlayer.y + yoffset;
 }
