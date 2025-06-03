@@ -266,6 +266,7 @@ i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
 #region Candy Kingdom Sweets
 i = new item("Candy_Kingdom_Sweets");
 i.set_sprite(sCandySweets)
+.set_type(item_type.Stat)
 .set_max_level(3)
 .set_weight(2)
 .set_on_bought(method(i, function() /*=>*/ {
@@ -293,6 +294,7 @@ i.set_sprite(sCandySweets)
 #region Corporate Pin
 i = new item("Corporate_Pin");
 i.set_sprite(sCorporatePin)
+.set_type(item_type.Stat)
 .set_max_level(3)
 .set_weight(3) //TODO: Unknown?
 .set_on_bought(method(i, function() /*=>*/ {

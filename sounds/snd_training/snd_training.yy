@@ -1,13 +1,14 @@
 {
-  "$GMSound":"v1",
+  "$GMSound":"v2",
   "%Name":"snd_training",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":0,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":1.8995465,
   "exportDir":"",
@@ -21,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_training.wav",
-  "type":0,
   "volume":1.0,
 }

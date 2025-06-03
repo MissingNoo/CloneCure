@@ -1,13 +1,14 @@
 {
-  "$GMSound":"v1",
+  "$GMSound":"v2",
   "%Name":"snd_fireworks",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "bitRate":128,
+  "channelFormat":0,
   "compression":0,
+  "compressionQuality":4,
   "conversionMode":0,
   "duration":2.2703629,
   "exportDir":"",
@@ -21,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_fireworks.wav",
-  "type":0,
   "volume":1.0,
 }
