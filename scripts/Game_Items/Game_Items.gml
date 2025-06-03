@@ -303,4 +303,26 @@ i.set_sprite(sCorporatePin)
 }));
 #endregion
 
+#region Credit Card
+//TODO:    Enhancing cost reduction
+i = new item("Credit_Card");
+i.set_sprite(sCreditCard)
+.set_type(item_type.Utility)
+.set_max_level(5)
+.set_weight(3)
+.set_on_bought(method(i, function() /*=>*/ {
+	var drop_levels = [0, 0.18, 0.28, 0.38, 0.45, 0.5];
+	var reduction_levels = [0, 20, 25, 30, 35, 40];
+	reduction = reduction_levels[level];
+	drop_chance_buff = drop_levels[level];
+	var anvil_timers = [[0, 0], [120, 240], [105, 210], [90, 180], [75, 150], [60, 120]];
+	var anvil_time = anvil_timers[level];
+	//TODO:    Fix
+	var anvil_create = time_source_create(time_source_game, irandom_range(anvil_time[0], anvil_time[1]), time_source_units_seconds, function() {
+		instance_create_depth(oPlayer.x, oPlayer.y - 50, oPlayer.depth, oAnvil);
+	});
+	time_source_start(anvil_create);
+}));
+#endregion
+
 #endregion

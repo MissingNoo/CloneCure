@@ -295,6 +295,7 @@ function textbox() constructor {
 			}
 			keyboard_lastchar = "";
 			keyboard_lastkey = vk_nokey;
+			text = string_trim(text);
 		}
 	};
 
