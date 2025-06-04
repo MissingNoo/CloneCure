@@ -317,12 +317,47 @@ i.set_sprite(sCreditCard)
 	drop_chance_buff = drop_levels[level];
 	var anvil_timers = [[0, 0], [120, 240], [105, 210], [90, 180], [75, 150], [60, 120]];
 	var anvil_time = anvil_timers[level];
-	//TODO:    Fix
 	var anvil_create = time_source_create(time_source_game, irandom_range(anvil_time[0], anvil_time[1]), time_source_units_seconds, function() {
-		instance_create_depth(oPlayer.x, oPlayer.y - 50, oPlayer.depth, oAnvil);
+		instance_create_depth(oPlayer.x, oPlayer.y - 80, oPlayer.depth, oAnvil);
 	});
 	time_source_start(anvil_create);
 }));
+#endregion
+
+#region Face Mask
+i = new item("Face_Mask");
+i.set_sprite(sFaceMask)
+.set_type(item_type.Stat)
+.set_max_level(1)
+.set_weight(1)
+.set_on_bought(method(i, function() /*=>*/ { 
+	self[$ "curlevel"] ??= 0;
+	multiplier = 1.30;
+	taken_multiplier = 1.30;
+	var shacklescalc = function() {
+		if(player_have_item("Kusogaki_Shackles")){
+			var reduction = get_item_data("Kusogaki_Shackles").reduction;
+			taken_multiplier = real($"1.{string_replace(string(30 - (30 * reduction / 100)), ".", "")}");
+		}
+	}
+	if(curlevel == level) {
+		shacklescalc();
+	}
+	shacklescalc();
+	if (curlevel != level) {
+		GameData.Haste += 10;
+	}
+	curlevel = level;
+}))
+.set_on_hurt(method(i, function() {
+	oPlayer.dmg = oPlayer.dmg * taken_multiplier;
+}))
+.set_on_hit(method(i, function() {
+	var projectile = global.lastproj;
+	if (instance_exists(projectile)) {
+		projectile.dmg = projectile.dmg * multiplier;
+	}
+}))
 #endregion
 
 #endregion
