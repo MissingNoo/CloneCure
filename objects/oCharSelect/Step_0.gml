@@ -1,13 +1,25 @@
 btn[stagemodeselected].keyboard_selected = true;
 charspr.animate();
 var left_right = input_check_pressed("right") - input_check_pressed("left");
-if (left_right != 0) {
+var up_down = input_check_pressed("down") - input_check_pressed("up");
+if (left_right != 0 or up_down != 0) {
 	if (!character_was_selected) {
-		selected = wrap(selected + left_right, 0, struct_names_count(GameData.characters));
-		selected_char = chars[selected];
-		GameData.selected_character = selected_char;
-		charspr.set_sprite(Characters[$ selected_char].idle_sprite);
-		charoffset = -(sprite_get_width_ext(Characters[$ selected_char].title_sprite, charscale) + 20);
+		if (up_down == 1) {
+			if (selected <= 10) {
+				up_down = 10;
+			} else {
+				up_down = 9
+			}
+		}
+		if (up_down == -1) {
+			if (selected <= 19) {
+				up_down = -10;
+			} else {
+				up_down = -9;
+			}
+		}
+		selected = clamp_wrap(selected + left_right + up_down, 0, 46);
+		select_char();
 		exit;
 	}
 	

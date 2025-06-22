@@ -12,14 +12,22 @@ ui.foreach(function(name, pos, data) {
     switch(name) {
 		case "char_list_1":
 			for (var offset = 0, yoffset = 0, i = 0; i <= 19; i++) {
+				draw_set_color(c_black);
+				draw_set_alpha(0.25);
+				draw_rectangle(_x + offset - 1, _y + yoffset - 1, _x + offset + 88, _y + yoffset + 64, false);
+				draw_set_alpha(1);
+				draw_set_color(c_white);
+				draw_rectangle(_x + offset - 1, _y + yoffset - 1, _x + offset + 88, _y + yoffset + 64, true);
 				if (i > struct_names_count(GameData.characters) - 1) {
-					break;
-				}
-				draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset, _y + yoffset, 87, 63);
-				if ((lmxx != mx or lmy != my) and mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
-					lmxx = mx;
-					lmy = my;
-					selected = i;
+					draw_sprite_centered(sAchLocked, 0, _x + offset + 44, _y + 31 + yoffset);
+				} else {
+					draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset, _y + yoffset, 87, 63);
+					if (selected != i and (lmxx != mx or lmy != my) and mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
+						lmxx = mx;
+						lmy = my;
+						selected = i;
+						select_char();
+					}
 				}
 				if (i == selected) {
 					draw_sprite_stretched(sMenuCharSelectCursor, -1, _x + offset, _y + yoffset, 87, 63);
@@ -34,14 +42,22 @@ ui.foreach(function(name, pos, data) {
 		
 		case "char_list_2":
 			for (var offset = 0, yoffset = 0, i = 20; i <= 46; i++) {
+				draw_set_color(c_black);
+				draw_set_alpha(0.25);
+				draw_rectangle(_x + offset - 1, _y + yoffset - 1, _x + offset + 88, _y + yoffset + 64, false);
+				draw_set_alpha(1);
+				draw_set_color(c_white);
+				draw_rectangle(_x + offset - 1, _y + yoffset - 1, _x + offset + 88, _y + yoffset + 64, true);
 				if (i > struct_names_count(GameData.characters) - 1) {
-					break;
-				}
-				draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset, _y + yoffset, 87, 63);
-				if ((lmxx != mx or lmy != my) and mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
-					lmxx = mx;
-					lmy = my;
-					selected = i;
+					draw_sprite_centered(sAchLocked, 0, _x + offset + 44, _y + 31 + yoffset);
+				} else {
+					draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset, _y + yoffset, 87, 63);
+					if (selected != i and (lmxx != mx or lmy != my) and mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
+						lmxx = mx;
+						lmy = my;
+						selected = i;
+						select_char();
+					}
 				}
 				if (i == selected) {
 					draw_sprite_stretched(sMenuCharSelectCursor, -1, _x + offset, _y + yoffset, 87, 63);
@@ -66,7 +82,7 @@ ui.foreach(function(name, pos, data) {
 			_y -= character_selected_offset;
 			draw_rectangle_color(_x, _y, _x + _w, _y + _h, c_white, c_white, c_white, c_white, false);
 			var str = $"[c_black][fa_middle]{string_upper(char_name)}";
-			scribble(str).scale(2).draw(_x, _y + _h / 2);
+			scribble(str).scale(2).draw(_x + 10, _y + _h / 2);
 			break;
 		
 		case "weapon_name":
@@ -86,6 +102,8 @@ ui.foreach(function(name, pos, data) {
 			draw_rectangle_color(_x, _y, _x + _w, _y + _h, c_black, c_black, c_black, c_black, false);
 			draw_set_alpha(1);
 			draw_rectangle_color(_x, _y, _x + _w, _y + _h, c_white, c_white, c_white, c_white, true);
+			var str = lexicon_text($"Weapons.{char_weapon.name}.1");
+			scribble(str).scale(2).wrap(_w).draw(_x + 10, _y + 10);
 			break;
 
 		case "special_name":
@@ -103,6 +121,8 @@ ui.foreach(function(name, pos, data) {
 			draw_rectangle_color(_x, _y, _x + _w, _y + _h, c_black, c_black, c_black, c_black, false);
 			draw_set_alpha(1);
 			draw_rectangle_color(_x, _y, _x + _w, _y + _h, c_white, c_white, c_white, c_white, true);
+			//var text = lexicon_text($"Specials.{}")
+			//scribble()
 			break;
 		
 		case "panel_61046":
@@ -110,11 +130,64 @@ ui.foreach(function(name, pos, data) {
 			draw_set_alpha(0.5);
 			draw_rectangle_color(_x, _y, _x + _w, _y + _h, c_black, c_black, c_black, c_black, false);
 			draw_set_alpha(1);
-			draw_rectangle_color(_x, _y, _x + _w, _y + _h, c_white, c_white, c_white, c_white, true);
+			draw_rectangle_color(_x, _y, _x + _w, _y + _h, c_white, c_white, c_white, c_white, true); 
+			break;
+		
+		case "char_sprite":
+			_y -= character_selected_offset;
+			draw_sprite_ext(charspr.sprite, charspr.get_frame(), (_x + _w  / 2), _y + _h / 1.5, skin_scale / 2, skin_scale / 2, 0, c_white, 1);
+			break;
+		
+		case "stat_hp":
+			_y -= character_selected_offset;
+			draw_sprite_ext(sHudHPIcon, 0, _x, _y, 2, 2, 0, c_white, 1);
+			draw_set_color(c_aqua);
+			var _xx = _x + sprite_get_width_ext(sHudHPIcon, 2) + 5;
+			draw_rectangle(_xx, _y + _h / 2, (_x + _w) - (100 - Characters[$ selected_char].hp), _y + _h, false);
+			draw_set_color(c_white);
+			draw_rectangle(_xx, _y + _h - 1, _x + _w, _y + _h, false);
+			scribble("[fa_middle]HP").scale(2).draw(_xx, _y + _h / 2 + 2);
+			scribble($"[fa_right][fa_middle]{Characters[$ selected_char].hp}").scale(2).draw(_x + _w, _y + _h / 2 + 2);
+			break;
+		case "stat_atk":
+			_y -= character_selected_offset;
+			draw_sprite_ext(sHudATKIcon, 0, _x, _y, 2, 2, 0, c_white, 1);
+			draw_set_color(c_aqua);
+			var _xx = _x + sprite_get_width_ext(sHudATKIcon, 2) + 5;
+			draw_rectangle(_xx, _y + _h / 2, (_x + _w) - (100 - (real(string_replace(Characters[$ selected_char].atk, "1.", "")) * 2)), _y + _h, false);
+			draw_set_color(c_white);
+			draw_rectangle(_xx, _y + _h - 1, _x + _w, _y + _h, false);
+			scribble("[fa_middle]ATK").scale(2).draw(_xx, _y + _h / 2 + 2);
+			scribble($"[fa_right][fa_middle]{Characters[$ selected_char].atk}").scale(2).draw(_x + _w, _y + _h / 2 + 2);
+			break;
+		case "stat_spd":
+			_y -= character_selected_offset;
+			draw_sprite_ext(sHudSPDIcon, 0, _x, _y, 2, 2, 0, c_white, 1);
+			draw_set_color(c_aqua);
+			var _xx = _x + sprite_get_width_ext(sHudSPDIcon, 2) + 5;
+			draw_rectangle(_xx, _y + _h / 2, (_x + _w) - (100 - (real(string_replace(Characters[$ selected_char].spd, "1.", "")) * 1.5)), _y + _h, false);
+			draw_set_color(c_white);
+			draw_rectangle(_xx, _y + _h - 1, _x + _w, _y + _h, false);
+			scribble("[fa_middle]SPD").scale(2).draw(_xx, _y + _h / 2 + 2);
+			scribble($"[fa_right][fa_middle]{Characters[$ selected_char].spd}").scale(2).draw(_x + _w, _y + _h / 2 + 2);
+			break;
+		case "stat_crt":
+			_y -= character_selected_offset;
+			draw_sprite_ext(sHudCRTIcon, 0, _x, _y, 2, 2, 0, c_white, 1);
+			draw_set_color(c_aqua);
+			var _xx = _x + sprite_get_width_ext(sHudCRTIcon, 2) + 5;
+			draw_rectangle(_xx, _y + _h / 2, (_x + _w) - (real(string_replace(Characters[$ selected_char].crit, "1.", "")) * 4), _y + _h, false);
+			draw_set_color(c_white);
+			draw_rectangle(_xx, _y + _h - 1, _x + _w, _y + _h, false);
+			scribble("[fa_middle]CRT").scale(2).draw(_xx, _y + _h / 2 + 2);
+			scribble($"[fa_right][fa_middle]{string_replace(Characters[$ selected_char].crit, "1.", "")}%").scale(2).draw(_x + _w, _y + _h / 2 + 2);
 			break;
 		
 		case "base":
 			draw_sprite_stretched(spr, 0, _x, _y, _w, _h);
+			with (oTriangle) {
+				draw_self();
+			}
 			draw_sprite_ext(Characters[$ selected_char].title_sprite, 0, 0 + charoffset, chary, charscale, charscale, 0, c_white, 0.8);
 			draw_sprite_ext(Characters[$ selected_char].title_sprite, 0, gui_w - charoffset, chary, charscale * -1, charscale, 0, c_white, 0.8);
 			break;

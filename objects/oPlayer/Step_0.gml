@@ -1,6 +1,6 @@
 if (keyboard_check(ord("C"))) {
 	//instance_create_depth(x, y + 40, depth, oAnvil);
-	GameData.Pickup++;
+	//GameData.Pickup++;
 }
 if (keyboard_check_pressed(ord("O"))) {
 	Player_Weapons[0].level++;
@@ -100,7 +100,7 @@ if (touch.enabled) {
 		movement.last_h = 1;
 	}
 }
-GameData.arrow_dir = point_direction(x, y, mouse_x, mouse_y);
+//GameData.arrow_dir = point_direction(x, y, mouse_x, mouse_y);
 if (device_mouse_check_button_released(0, mb_right)) {
 	instance_create_depth(mouse_x, mouse_y, depth, oXP, {
 		xp : 10

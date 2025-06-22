@@ -1,3 +1,4 @@
+draw_sprite_centered_ext(objNekoPresenceDemo.sprite_index, 0, x, y - sprite_height - 10, 0.1, 0.1, 0, c_white, 0.5);
 var _x = (x), _y = (y);
 draw_sprite_ext(sCharShadow, 0, _x, _y, 1, 1, 0, c_white, 0.8);
 if (GameData.hp > 0 and GameData.hp < GameData.max_hp) {

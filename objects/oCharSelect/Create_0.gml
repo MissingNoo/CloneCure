@@ -1,3 +1,6 @@
+repeat (6) {
+	instance_create_depth(irandom(gui_w), 0, 1000, oTriangle);
+}
 ui = new window(global.game_uis.select, false);
 ui.fit_to_gui();
 skinui = new window(global.game_uis.skin_area);
@@ -17,6 +20,16 @@ selected = 0;
 char1o = 92;
 char1yo = 70;
 
+select_char = function() {
+	if (selected < 0 or selected > struct_names_count(Characters) - 1) {
+		exit;
+	}
+	selected_char = chars[selected];
+	GameData.selected_character = selected_char;
+	charspr.set_sprite(Characters[$ selected_char].idle_sprite);
+	charoffset = -(sprite_get_width_ext(Characters[$ selected_char].title_sprite, charscale) + 20);
+}
+
 mx = 0;
 my = 0;
 lmxx = 0;
@@ -31,8 +44,12 @@ stageoffset = gui_w;
 stagemode = false;
 stagemodeselected = 0;
 stagemodewasselected = false;
+
+button_scale = 1;
+button_text_y = 1;
 btnfunc = function() {
 	draw_sprite_stretched(sUpgradeBackgroundWH, 3, area[0], area[1], area[2] - area[0], area[3] - area[1]);
+	scribble($"[fa_center][fa_middle]{text}").scale(2).draw((area[0] + area[2]) / 2, area[1] + 25);
 	if (on_area or keyboard_selected) {
 		draw_set_alpha(0.25);
 		draw_sprite_stretched(sUpgradeBackgroundWH, 0, area[0], area[1], area[2] - area[0], area[3] - area[1]);
@@ -47,15 +64,21 @@ on_area_func = function() {
 	oCharSelect.stagemodeselected = array_get_index(oCharSelect.btn, self);
 }
 
-time = new button("");
+time = new button("Time");
 time.custom_draw = method(time, btnfunc);
 time.set_on_area_function(method(time, on_area_func));
-endless = new button("");
+time.use_text = false;
+time.desc = "test";
+endless = new button("Endless");
 endless.custom_draw = method(endless, btnfunc);
 endless.set_on_area_function(method(endless, on_area_func));
-stage = new button("");
+endless.use_text = false;
+endless.desc = "test";
+stage = new button("Stage");
 stage.custom_draw = method(stage, btnfunc);
 stage.set_on_area_function(method(stage, on_area_func));
+stage.use_text = false;
+stage.desc = "test";
 btn = [stage, endless, time];
 
 charscale = 4;

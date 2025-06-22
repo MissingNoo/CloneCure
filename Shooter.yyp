@@ -266,6 +266,7 @@
     {"id":{"name":"oStage","path":"objects/oStage/oStage.yy",},},
     {"id":{"name":"oTagManager","path":"objects/oTagManager/oTagManager.yy",},},
     {"id":{"name":"oTree","path":"objects/oTree/oTree.yy",},},
+    {"id":{"name":"oTriangle","path":"objects/oTriangle/oTriangle.yy",},},
     {"id":{"name":"oUI","path":"objects/oUI/oUI.yy",},},
     {"id":{"name":"oUIElement","path":"objects/oUIElement/oUIElement.yy",},},
     {"id":{"name":"oVars","path":"objects/oVars/oVars.yy",},},
