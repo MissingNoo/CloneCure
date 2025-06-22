@@ -1,17 +1,57 @@
 //feather ignore GM1041
-//yy += - input_check_pressed("up") + input_check_pressed("down");
-//oo += (- input_check_pressed("left") + input_check_pressed("right")) * 0.05;
-//show_debug_message($"o {oo}");
 ui.foreach(function(name, pos, data) {
-    var spr = (data[$ "image"] != undefined and data[$ "image"] != "") ? asset_get_index(data.image) : undefined;
-    spr = (spr != undefined and spr != -1) ? spr : sBlank;
-	var _x = pos.left, _y = pos.top, _w = pos.width, _h = pos.height;
+    AirUIDefaultSpr;
+	AirUIArea;
 	
 	var char_name = Characters[$ selected_char].uiname;
 	var char_weapon = Weapons[$ Characters[$ selected_char].main_weapon];
-	
+	var chars = struct_get_names(GameData.characters);
 	
     switch(name) {
+		case "char_list_1":
+			for (var offset = 0, yoffset = 0, i = 0; i <= 19; i++) {
+				if (i > struct_names_count(GameData.characters) - 1) {
+					break;
+				}
+				draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset, _y + yoffset, 87, 63);
+				if ((lmxx != mx or lmy != my) and mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
+					lmxx = mx;
+					lmy = my;
+					selected = i;
+				}
+				if (i == selected) {
+					draw_sprite_stretched(sMenuCharSelectCursor, -1, _x + offset, _y + yoffset, 87, 63);
+				}
+				offset += char1o;
+				if (i == 9) {
+					offset = 0;
+					yoffset += char1yo;
+				}
+			}
+			break;
+		
+		case "char_list_2":
+			for (var offset = 0, yoffset = 0, i = 20; i <= 46; i++) {
+				if (i > struct_names_count(GameData.characters) - 1) {
+					break;
+				}
+				draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset, _y + yoffset, 87, 63);
+				if ((lmxx != mx or lmy != my) and mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
+					lmxx = mx;
+					lmy = my;
+					selected = i;
+				}
+				if (i == selected) {
+					draw_sprite_stretched(sMenuCharSelectCursor, -1, _x + offset, _y + yoffset, 87, 63);
+				}
+				offset += char1o;
+				if (i == 28 or i == 37) {
+					offset = 0;
+					yoffset += char1yo;
+				}
+			}
+			break;
+		
 		case "label_title":
 			draw_set_alpha(0.25);
 			draw_rectangle_color(_x, _y, _x + _w, _y + _h, c_black, c_black, c_black, c_black, false);
@@ -64,6 +104,10 @@ ui.foreach(function(name, pos, data) {
 			draw_set_alpha(1);
 			draw_rectangle_color(_x, _y, _x + _w, _y + _h, c_white, c_white, c_white, c_white, true);
 			break;
+		
+		/*case "base":
+			draw_sprite_stretched(select, 0, _x, _y, _w, _h);
+			break;*/
 		
         default:
 			draw_sprite_stretched(spr, 0, _x, _y, _w, _h);

@@ -250,6 +250,7 @@
     {"id":{"name":"oLevelUp","path":"objects/oLevelUp/oLevelUp.yy",},},
     {"id":{"name":"oLight","path":"objects/oLight/oLight.yy",},},
     {"id":{"name":"oLightController","path":"objects/oLightController/oLightController.yy",},},
+    {"id":{"name":"oLoadUI","path":"objects/oLoadUI/oLoadUI.yy",},},
     {"id":{"name":"oMainMenu","path":"objects/oMainMenu/oMainMenu.yy",},},
     {"id":{"name":"oMapItemParent","path":"objects/oMapItemParent/oMapItemParent.yy",},},
     {"id":{"name":"oOtherCam","path":"objects/oOtherCam/oOtherCam.yy",},},

@@ -1,6 +1,6 @@
 //display_set_gui_size(1280, 720);
 instance_create_depth(x, y, depth, oCam);
-GameData.selected_character = "Tenma_Maemi";
+//GameData.selected_character = "Tenma_Maemi";
 char = GameData.characters[$ GameData.selected_character];
 
 GameData.max_hp = char.hp;

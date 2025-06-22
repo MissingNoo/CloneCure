@@ -263,6 +263,7 @@ function textbox() constructor {
 				}
 			}
 			if (keyboard_lastkey == vk_enter && text != "") {
+				text = string_trim(text);
 				func(self);
 			}
 			if (
@@ -293,9 +294,11 @@ function textbox() constructor {
 					}
 				}
 			}
+			if (keyboard_lastkey != vk_space and keyboard_lastkey != vk_nokey) {
+				text = string_trim(text);
+			}
 			keyboard_lastchar = "";
 			keyboard_lastkey = vk_nokey;
-			text = string_trim(text);
 		}
 	};
 
@@ -490,7 +493,7 @@ function button(_text) constructor {
 			scribble($"[alpha,{alpha}][{color}][fa_center][fa_middle]{text}")
 				.scale_to_box(
 					abs(area[0] - area[2]) - string_width("X") - 2,
-					abs(area[1] - area[3]) - string_height("X"),
+					abs(area[1] - area[3]),
 					true
 				)
 				.draw(area[0] + ((area[2] - area[0]) / 2), _y);
@@ -510,10 +513,6 @@ function listbox() constructor {
 	pos = {left: 0, top: 0, width: 0, height: 0};
 	openarea = undefined;
 	text = "";
-
-	static style_draw = function() {
-		draw_bg_fg(pos, self);
-	};
 
 	func_on_select = function(inst) {};
 
@@ -581,7 +580,7 @@ function listbox() constructor {
 		//draw_rectangle_area(area, false);
 		//draw_set_color(c_white);
 		//draw_rectangle_area(area, true);
-		style_draw();
+		draw_bg_fg(pos, self);
 		scribble($"[Fnt][c_black] {text}")
 			.scale_to_box(
 				area[2] - area[0] - string_width("X") - 2,
@@ -592,14 +591,12 @@ function listbox() constructor {
 		if (open) {
 			self.ldepth = gpu_get_depth();
 			gpu_set_depth(self.ldepth - 100);
-			draw_sprite_stretched(
-				sInput,
-				0,
-				openarea[0],
-				openarea[1],
-				openarea[2] - openarea[0],
-				openarea[3] - openarea[1]
-			);
+			draw_bg_fg({
+				left : openarea[0],
+				top : openarea[1],
+				width : openarea[2] - openarea[0],
+				height : openarea[3] - openarea[1] 
+			}, self);
 			//draw_set_color(c_black);
 			//draw_rectangle_area(openarea, false);
 			//draw_set_color(c_white);
@@ -617,14 +614,14 @@ function listbox() constructor {
 					func_on_select(self);
 				}
 				var _str = $"[Fnt][c_black] {list[i]}";
-				scribble(_str)
+				var txt = scribble(_str)
 					.scale_to_box(
 						area[2] - area[0] - string_width("X") - 2,
 						area[3] - area[1] - 3,
 						true
-					)
-					.draw(openarea[0], _y);
-				offset += string_height(_str);
+					);
+					txt.draw(openarea[0], _y);
+				offset += txt.get_bbox().height;
 				if (openarea[3] < _y) {
 					openarea[3] = _y;
 				}
@@ -640,7 +637,9 @@ function gui_can_interact() {
 	return !global.listboxopen && AirLib.listframe < AirLib.frame;
 }
 
-global.currenttextbox = undefined;
+global.currenttextbox = {
+	selected : false
+};
 
 function string_contains(str, contain) {
 	for (var i = 1; i < string_length(str); ++i) {

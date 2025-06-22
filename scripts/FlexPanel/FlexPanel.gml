@@ -1,4 +1,5 @@
 //feather ignore all
+#macro AirUIDefaultSpr var spr = (data[$ "image"] != undefined and data[$ "image"] != "") ? asset_get_index(data.image) : undefined; spr = (spr != undefined and spr != -1) ? spr : sBlank
 #macro AirUIArea var _x = pos.left, _y = pos.top, _w = pos.width, _h = pos.height, area = [_x, _y, _x + _w, _y + _h]
 global.edit_mode = false;
 global.edit_node = undefined;

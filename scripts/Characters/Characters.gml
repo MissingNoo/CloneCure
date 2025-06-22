@@ -92,15 +92,29 @@ c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAme)
     .set_unlocked_default(true)
 
 c = new character("Aki_Rosenthal");
-c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAki)
+c.set_sprite(sAmeliaIdle, sAmeliaRun, sAkiPortrait, sTitleAki)
+.set_speed(1.35)
+    .set_weapon("Ame_Pistol")
+    .set_hp(75)
+    .set_atk(1.30)
+    .set_crit(1.10)
+    .set_ballsize(3)
+    .set_flat(false)
 
 c = new character("Takanashi_Kiara");
 c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleKiara)
+.set_speed(1.35)
+    .set_weapon("BL_Book")
+    .set_hp(75)
+    .set_atk(1.30)
+    .set_crit(1.10)
+    .set_ballsize(3)
+    .set_flat(false)
 
 c = new character("Tenma_Maemi");
 c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaSake, sTitleTenma)
     .set_speed(1.35)
-    .set_weapon("Ame_Pistol")
+    .set_weapon("Sausage")
     .set_hp(75)
     .set_atk(1.30)
     .set_crit(1.10)
