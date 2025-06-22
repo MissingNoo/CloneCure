@@ -8,6 +8,8 @@ function Stage(_name) constructor {
 	border = [];
 	music = undefined;
 	rm = undefined;
+	multiplier = 1;
+	bg = sStage1Port;
     Stages[$ name] = self;
     
     static add_enemy = function(enemy, time) {
@@ -75,6 +77,16 @@ function Stage(_name) constructor {
 		rm = r;
 		return self;
 	}
+	
+	static set_bg = function(_bg) {
+		bg = _bg;
+		return self;
+	}
+	
+	static set_coin_multiplier = function(amount) {
+		multiplier = amount;
+		return self;
+	}
 }
 
 var stage1 = new Stage("Stage1");
@@ -84,3 +96,13 @@ stage1.remove_enemy("Urufugang", "00:15");
 stage1.set_border(610, 610, 3170, 3170);
 stage1.set_music(bgm_suspect);
 stage1.set_room(rStage1);
+stage1.set_bg(sStage1Port);
+stage1.set_coin_multiplier(1.25);
+
+var stage2 = new Stage("Stage2");
+stage2.add_enemy("Urufugang", "00:01");
+stage2.set_border(610, 610, 3170, 3170);
+stage2.set_music(bgm_suspect);
+stage2.set_room(rStage1);
+stage2.set_bg(sStage2Port);
+stage2.set_coin_multiplier(1.60);

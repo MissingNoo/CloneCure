@@ -112,7 +112,7 @@ c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleKiara)
     .set_flat(false)
 
 c = new character("Tenma_Maemi");
-c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaSake, sTitleTenma)
+c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaPortrait, sTitleTenma)
     .set_speed(1.35)
     .set_weapon("Sausage")
     .set_hp(75)

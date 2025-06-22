@@ -1,14 +1,69 @@
 ui = new window(global.game_uis.select, false);
 ui.fit_to_gui();
+skinui = new window(global.game_uis.skin_area);
+skinui.fit_to_gui();
+skinui.set_visible(false);
+stageui = new window(global.game_uis.stage_mode);
+stageui.fit_to_gui();
+stageui.set_visible(false);
+
+stageinfo = new window(global.game_uis.stage_info);
+stageinfo.fit_to_gui();
+
 chars = struct_get_names(Characters);
 selected_char = "Amelia_Watson";
+charspr = new animated_sprite(Characters[$ selected_char].idle_sprite);
 selected = 0;
 char1o = 92;
 char1yo = 70;
-dbg = dbg_view("CharSelect", true, gui_x_percent(50));
-dbg_section("Position");
-create_view_from_instance(self);
+
 mx = 0;
 my = 0;
 lmxx = 0;
 lmy = 0;
+character_was_selected = false;
+character_selected_offset = 0;
+character_selected_max_offset = 430;
+skin_was_selected = false;
+
+selected_stage = Stages[$ "Stage1"];
+stageoffset = gui_w;
+stagemode = false;
+stagemodeselected = 0;
+stagemodewasselected = false;
+btnfunc = function() {
+	draw_sprite_stretched(sUpgradeBackgroundWH, 3, area[0], area[1], area[2] - area[0], area[3] - area[1]);
+	if (on_area or keyboard_selected) {
+		draw_set_alpha(0.25);
+		draw_sprite_stretched(sUpgradeBackgroundWH, 0, area[0], area[1], area[2] - area[0], area[3] - area[1]);
+		draw_set_alpha(1);
+	}
+}
+on_area_func = function() {
+	oCharSelect.time.keyboard_selected = false;
+	oCharSelect.endless.keyboard_selected = false;
+	oCharSelect.stage.keyboard_selected = false;
+	keyboard_selected = true;
+	oCharSelect.stagemodeselected = array_get_index(oCharSelect.btn, self);
+}
+
+time = new button("");
+time.custom_draw = method(time, btnfunc);
+time.set_on_area_function(method(time, on_area_func));
+endless = new button("");
+endless.custom_draw = method(endless, btnfunc);
+endless.set_on_area_function(method(endless, on_area_func));
+stage = new button("");
+stage.custom_draw = method(stage, btnfunc);
+stage.set_on_area_function(method(stage, on_area_func));
+btn = [stage, endless, time];
+
+charscale = 4;
+chary = 180;
+charoffset = 0;
+
+skinselect = false;
+skin_scale = 6;
+dbg = dbg_view("CharSelect", true, gui_x_percent(50));
+dbg_section("Position");
+create_view_from_instance(self);

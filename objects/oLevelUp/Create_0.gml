@@ -1,3 +1,4 @@
+//feather disable all
 ups = [
 	Weapons[$ "Ame_Pistol"],
 	Weapons[$ "Ame_Pistol"],

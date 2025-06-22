@@ -181,6 +181,11 @@ function window(struct, _generate = false) constructor {
 		flexpanel_node_style_set_display(nn, !flexpanel_node_style_get_display(nn));
 		recalculate();
 	};
+	
+	static node_is_visible = function(n) {
+		var nn = flexpanel_node_get_child(root, n);
+		return !flexpanel_node_style_get_display(nn);
+	};
 
 	static edit_mode = function() {
 		editing = !editing;

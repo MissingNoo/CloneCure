@@ -756,7 +756,17 @@ function animated_sprite(spr) constructor {
 	sprite = spr;
 	speed = sprite_get_speed(sprite);
 	last_f = sprite_get_number(sprite);
+	width = sprite_get_width(sprite);
+	height = sprite_get_height(sprite);
 
+	static set_sprite = function(spr) {
+		sprite = spr;
+		speed = sprite_get_speed(sprite);
+		last_f = sprite_get_number(sprite);
+		width = sprite_get_width(sprite);
+		height = sprite_get_height(sprite);
+	}
+	
 	static animate = function() {
 		f += speed / game_get_speed(gamespeed_fps);
 		if (f > last_f) {
