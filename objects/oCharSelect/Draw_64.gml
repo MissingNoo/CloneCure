@@ -3,7 +3,7 @@
 //oo += (- input_check_pressed("left") + input_check_pressed("right")) * 0.05;
 //show_debug_message($"o {oo}");
 ui.foreach(function(name, pos, data) {
-    var spr = data[$ "image"] != undefined ? asset_get_index(data.image) : undefined;
+    var spr = (data[$ "image"] != undefined and data[$ "image"] != "") ? asset_get_index(data.image) : undefined;
     spr = (spr != undefined and spr != -1) ? spr : sBlank;
 	var _x = pos.left, _y = pos.top, _w = pos.width, _h = pos.height;
 	

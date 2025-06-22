@@ -43,3 +43,9 @@ if (keyboard_check_pressed(vk_f1)) {
 if (keyboard_check_pressed(vk_escape)) {
 	pause_game("pause");
 }
+if (keyboard_check_released(vk_pageup)) {
+	window_set_size(window_get_width() * 1.2, window_get_height() * 1.2);
+}
+if (keyboard_check_released(vk_pagedown)) {
+	window_set_size(window_get_width() * 0.8, window_get_height() * 0.8);
+}

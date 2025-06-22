@@ -2,7 +2,7 @@
 //feather ignore GM2016
 
 ui.foreach(function(name, pos, data) {
-    var spr = data[$ "image"] != undefined ? asset_get_index(data.image) : undefined;
+    var spr = (data[$ "image"] != undefined and data[$ "image"] != "") ? asset_get_index(data.image) : undefined;
     spr = (spr != undefined and spr != -1) ? spr : sBlank;
 	var _x = pos.left, _y = pos.top, _w = pos.width, _h = pos.height;
     
