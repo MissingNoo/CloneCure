@@ -1,3 +1,4 @@
+forcez = false;
 repeat (6) {
 	instance_create_depth(irandom(gui_w), 0, 1000, oTriangle);
 }

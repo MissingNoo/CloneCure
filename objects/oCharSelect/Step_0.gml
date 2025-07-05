@@ -32,7 +32,7 @@ if (left_right != 0 or up_down != 0) {
 	}
 }
 
-if (keyboard_check_released(ord("X"))) {
+if (keyboard_check_released(ord("X")) or device_mouse_check_button_released(0, mb_right)) {
 	if (stagemodewasselected) {
 		stagemodewasselected = false;
 		exit;
@@ -54,7 +54,8 @@ if (keyboard_check_released(ord("X"))) {
 	
 	
 }
-if (keyboard_check_released(ord("Z"))) {
+if (keyboard_check_released(ord("Z")) or forcez) {
+    forcez = false;
 	if (stagemodewasselected) {
 		GameData.on_stage = true;
 		if (!is_undefined(GameData.music)) { audio_stop_sound(GameData.music); }

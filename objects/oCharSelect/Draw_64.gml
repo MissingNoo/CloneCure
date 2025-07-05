@@ -22,11 +22,18 @@ ui.foreach(function(name, pos, data) {
 					draw_sprite_centered(sAchLocked, 0, _x + offset + 44, _y + 31 + yoffset);
 				} else {
 					draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset, _y + yoffset, 87, 63);
-					if (selected != i and (lmxx != mx or lmy != my) and mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
-						lmxx = mx;
-						lmy = my;
-						selected = i;
-						select_char();
+					if (mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
+                        if ((lmxx != mx or lmy != my)) {
+                        	lmxx = mx;
+                            lmy = my;
+                            if (selected != i) {
+        						selected = i;
+        						select_char();
+                            }
+                        }
+                        if (selected == i and device_mouse_check_button_released(0, mb_left)) {
+                        	forcez = true;
+                        }
 					}
 				}
 				if (i == selected) {
@@ -52,11 +59,18 @@ ui.foreach(function(name, pos, data) {
 					draw_sprite_centered(sAchLocked, 0, _x + offset + 44, _y + 31 + yoffset);
 				} else {
 					draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset, _y + yoffset, 87, 63);
-					if (selected != i and (lmxx != mx or lmy != my) and mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
-						lmxx = mx;
-						lmy = my;
-						selected = i;
-						select_char();
+					if (mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
+                        if ((lmxx != mx or lmy != my)) {
+                        	lmxx = mx;
+                            lmy = my;
+                            if (selected != i) {
+        						selected = i;
+        						select_char();
+                            }
+                        }
+                        if (selected == i and device_mouse_check_button_released(0, mb_left)) {
+                        	forcez = true;
+                        }
 					}
 				}
 				if (i == selected) {
