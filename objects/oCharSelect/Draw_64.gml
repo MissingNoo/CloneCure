@@ -271,6 +271,11 @@ stageinfo.foreach(function(name, pos, data) {
 			break;
 		case "stage_icon":
 			draw_sprite_stretched(selected_stage.bg, 0, _x, _y, _w, _h);
+			if (mouse_in_area_gui(area)) {
+				if (device_mouse_check_button_released(0, mb_left)) {
+					forcez = true;
+				}
+			}
 			break;
 		case "holocoins":
 			scribble($"Holocoin: [sHolocoin]x {selected_stage.multiplier}").scale(2).draw(_x, _y);

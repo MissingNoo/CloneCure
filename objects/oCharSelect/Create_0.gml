@@ -70,16 +70,28 @@ time.custom_draw = method(time, btnfunc);
 time.set_on_area_function(method(time, on_area_func));
 time.use_text = false;
 time.desc = "test";
+time.set_function(function() {
+	GameData.stage_mode = "TIME";
+	forcez = true;
+});
 endless = new button("Endless");
 endless.custom_draw = method(endless, btnfunc);
 endless.set_on_area_function(method(endless, on_area_func));
 endless.use_text = false;
 endless.desc = "test";
+endless.set_function(function() {
+	GameData.stage_mode = "ENDLESS";
+	forcez = true;
+});
 stage = new button("Stage");
 stage.custom_draw = method(stage, btnfunc);
 stage.set_on_area_function(method(stage, on_area_func));
 stage.use_text = false;
 stage.desc = "test";
+stage.set_function(function() {
+	GameData.stage_mode = "STAGE";
+	forcez = true;
+});
 btn = [stage, endless, time];
 
 charscale = 4;
