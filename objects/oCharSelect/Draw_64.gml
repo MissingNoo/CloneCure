@@ -12,17 +12,18 @@ ui.foreach(function(name, pos, data) {
     switch(name) {
 		case "char_list_1":
 			for (var offset = 0, yoffset = 0, i = 0; i <= 19; i++) {
+				var xoff2 = charxoff * (i <= 9 ? 1 : -1);
 				draw_set_color(c_black);
 				draw_set_alpha(0.25);
-				draw_rectangle(_x + offset - 1, _y + yoffset - 1, _x + offset + 88, _y + yoffset + 64, false);
+				draw_rectangle(_x + offset - 1 + xoff2, _y + yoffset - 1, _x + offset + 88 + xoff2, _y + yoffset + 64, false);
 				draw_set_alpha(1);
 				draw_set_color(c_white);
-				draw_rectangle(_x + offset - 1, _y + yoffset - 1, _x + offset + 88, _y + yoffset + 64, true);
+				draw_rectangle(_x + offset - 1 + xoff2, _y + yoffset - 1, _x + offset + 88 + xoff2, _y + yoffset + 64, true);
 				if (i > struct_names_count(GameData.characters) - 1) {
-					draw_sprite_centered(sAchLocked, 0, _x + offset + 44, _y + 31 + yoffset);
+					draw_sprite_centered(sAchLocked, 0, _x + offset + 44 + xoff2, _y + 31 + yoffset);
 				} else {
-					draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset, _y + yoffset, 87, 63);
-					if (mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
+					draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset + xoff2, _y + yoffset, 87, 63);
+					if (mouse_in_area_gui([_x + offset + xoff2, _y + yoffset, _x + offset + 87 + xoff2, _y + yoffset + 63])) {
                         if ((lmxx != mx or lmy != my)) {
                         	lmxx = mx;
                             lmy = my;
@@ -37,7 +38,7 @@ ui.foreach(function(name, pos, data) {
 					}
 				}
 				if (i == selected) {
-					draw_sprite_stretched(sMenuCharSelectCursor, -1, _x + offset, _y + yoffset, 87, 63);
+					draw_sprite_stretched(sMenuCharSelectCursor, -1, _x + offset + xoff2, _y + yoffset, 87, 63);
 				}
 				offset += char1o;
 				if (i == 9) {
@@ -49,17 +50,27 @@ ui.foreach(function(name, pos, data) {
 		
 		case "char_list_2":
 			for (var offset = 0, yoffset = 0, i = 20; i <= 46; i++) {
+				var xoff2 = 0;
+				if (i >= 20) {
+					xoff2 = charxoff * (i >= 20 ? 1 : -1);
+				}
+				if (i >= 29) {
+					xoff2 = charxoff * (i >= 29 ? -1 : 1);
+				}
+				if (i >= 38) {
+					xoff2 = charxoff * (i >= 38 ? 1 : -1);
+				}
 				draw_set_color(c_black);
 				draw_set_alpha(0.25);
-				draw_rectangle(_x + offset - 1, _y + yoffset - 1, _x + offset + 88, _y + yoffset + 64, false);
+				draw_rectangle(_x + offset - 1 + xoff2, _y + yoffset - 1, _x + offset + 88 + xoff2, _y + yoffset + 64, false);
 				draw_set_alpha(1);
 				draw_set_color(c_white);
-				draw_rectangle(_x + offset - 1, _y + yoffset - 1, _x + offset + 88, _y + yoffset + 64, true);
+				draw_rectangle(_x + offset - 1 + xoff2, _y + yoffset - 1, _x + offset + 88 + xoff2, _y + yoffset + 64, true);
 				if (i > struct_names_count(GameData.characters) - 1) {
-					draw_sprite_centered(sAchLocked, 0, _x + offset + 44, _y + 31 + yoffset);
+					draw_sprite_centered(sAchLocked, 0, _x + offset + 44 + xoff2, _y + 31 + yoffset);
 				} else {
-					draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset, _y + yoffset, 87, 63);
-					if (mouse_in_area_gui([_x + offset, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
+					draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset + xoff2, _y + yoffset, 87, 63);
+					if (mouse_in_area_gui([_x + offset + xoff2, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
                         if ((lmxx != mx or lmy != my)) {
                         	lmxx = mx;
                             lmy = my;
@@ -73,8 +84,9 @@ ui.foreach(function(name, pos, data) {
                         }
 					}
 				}
+				draw_text(_x + offset + xoff2, _y + yoffset, i);
 				if (i == selected) {
-					draw_sprite_stretched(sMenuCharSelectCursor, -1, _x + offset, _y + yoffset, 87, 63);
+					draw_sprite_stretched(sMenuCharSelectCursor, -1, _x + offset + xoff2, _y + yoffset, 87, 63);
 				}
 				offset += char1o;
 				if (i == 28 or i == 37) {
