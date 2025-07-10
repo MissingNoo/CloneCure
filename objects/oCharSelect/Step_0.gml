@@ -1,37 +1,11 @@
 btn[stagemodeselected].keyboard_selected = true;
 charspr.animate();
-st.step();
 left_right = input_check_pressed("right") - input_check_pressed("left");
 up_down = input_check_pressed("down") - input_check_pressed("up");
-if (left_right != 0 or up_down != 0) {
-	if (!character_was_selected) {
-		if (up_down == 1) {
-			if (selected <= 10) {
-				up_down = 10;
-			} else {
-				up_down = 9
-			}
-		}
-		if (up_down == -1) {
-			if (selected <= 19) {
-				up_down = -10;
-			} else {
-				up_down = -9;
-			}
-		}
-		selected = clamp_wrap(selected + left_right + up_down, 0, 46);
-		select_char();
-		exit;
-	}
-	
-	if (skin_was_selected) {
-		stagemodeselected = wrap(stagemodeselected + left_right, 0, 3);
-		for (var i = 0; i < array_length(btn); i++) {
-			btn[i].keyboard_selected = i == stagemodeselected;
-		}
-		exit;
-	}
-}
+character_selected_offset = lerp(character_selected_offset, character_was_selected ? character_selected_max_offset : 0, 0.4);
+stageoffset = lerp(stageoffset, (skin_was_selected ? 0 : gui_w) - (stagemodewasselected ? gui_w : 0), 0.4);
+charoffset = lerp(charoffset, 20, 0.3);
+st.step();
 /*
 if (keyboard_check_released(ord("Z")) or forcez) {
     forcez = false;
@@ -60,6 +34,3 @@ if (keyboard_check_released(ord("Z")) or forcez) {
 		exit;
 	}
 }*/
-character_selected_offset = lerp(character_selected_offset, character_was_selected ? character_selected_max_offset : 0, 0.4);
-stageoffset = lerp(stageoffset, (skin_was_selected ? 0 : gui_w) - (stagemodewasselected ? gui_w : 0), 0.4);
-charoffset = lerp(charoffset, 20, 0.3);

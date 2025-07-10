@@ -220,6 +220,11 @@ skinui.foreach(function(name, pos, data) {
 		case "skin_area":
 			draw_sprite_stretched(sCharacterselected, 0, _x, _y, _w, _h);
 			draw_sprite_centered_ext(charspr.sprite, charspr.get_frame(), (_x + _w / 2) + ((charspr.width * skin_scale) / 2), (_y + _h / 2) + ((charspr.height * skin_scale)), skin_scale, skin_scale, 0, c_white, 1);
+            if (mouse_in_area_gui(area)) {
+				if (device_mouse_check_button_released(0, mb_left)) {
+					forcez = true;
+				}
+			}
 			break;
 		case "back_panel":
 			draw_set_color(c_black);

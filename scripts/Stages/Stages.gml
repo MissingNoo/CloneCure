@@ -1,6 +1,8 @@
 GameData ??= {}
 #macro Stages GameData.stages
+#macro StagesArr GameData.stagesArr
 Stages = {};
+StagesArr = [];
 GameData.stage_mode = "STAGE";
 function Stage(_name) constructor {
     name = _name;
@@ -11,7 +13,7 @@ function Stage(_name) constructor {
 	multiplier = 1;
 	bg = sStage1Port;
     Stages[$ name] = self;
-    
+    array_push(StagesArr, name);
     static add_enemy = function(enemy, time) {
         time = $"m{string_replace(time, ":", "s")}";
         timings[$ time] ??= {};

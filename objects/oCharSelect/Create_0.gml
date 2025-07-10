@@ -43,7 +43,8 @@ character_selected_offset = 0;
 character_selected_max_offset = 430;
 skin_was_selected = false;
 
-selected_stage = Stages[$ "Stage1"];
+stagenum = 0;
+selected_stage = Stages[$ StagesArr[stagenum]];
 stageoffset = gui_w;
 stagemode = false;
 stagemodeselected = 0;
@@ -118,9 +119,30 @@ st.add("Char", {
         character_was_selected = false;
     },
     step:function(){
+        if (input_check_pressed("cancel")) {
+            room_goto(rMainMenu);
+          }
         if (input_check_pressed("accept") or forcez) {
             character_was_selected = true;
         	st.change("Skin");
+        }
+        if (up_down == 1) {
+			if (selected <= 10) {
+				up_down = 10;
+			} else {
+				up_down = 9
+			}
+		}
+		if (up_down == -1) {
+			if (selected <= 19) {
+				up_down = -10;
+			} else {
+				up_down = -9;
+			}
+		}
+		selected = clamp_wrap(selected + left_right + up_down, 0, 46);
+        if (left_right != 0 or up_down != 0) {
+        	select_char();
         }
     },
     leave:function (){
@@ -139,9 +161,11 @@ st.add("Skin", {
             skin_was_selected = true;
         	st.change("StageMode");
         }
+        if (input_check_pressed("cancel")) {
+            st.change("Char");
+          }
     },
     leave:function (){
-        skinui.set_visible(false);
 		ui.node_visible("label_title", false);
 		ui.node_visible("char_list_1", false);
 		ui.node_visible("char_list_2", false);
@@ -150,19 +174,32 @@ st.add("Skin", {
 st.add("StageMode", {
     enter:function (){
         stagemodewasselected = false;
+        stageui.set_visible(true);
     },
     step: function (){
         if (input_check_pressed("accept") or forcez) {
             stagemodewasselected = true;
         	st.change("Stage");
         }
+        if (input_check_pressed("cancel")) {
+            st.change("Skin"); 
+        }
+        stagemodeselected = wrap(stagemodeselected + left_right, 0, 3);
+		for (var i = 0; i < array_length(btn); i++) {
+			btn[i].keyboard_selected = i == stagemodeselected;
+		}
     }
 });
 st.add("Stage", {
     step: function (){
+        stagenum = clamp_wrap(stagenum + left_right, 0, array_length(StagesArr) - 1);
+        selected_stage = Stages[$ StagesArr[stagenum]];
         if (input_check_pressed("accept") or forcez) {
         	st.change("GO");
         }
+        if (input_check_pressed("cancel")) {
+            st.change("StageMode");
+          }
     }
 });
 st.add("GO", {
@@ -173,5 +210,10 @@ st.add("GO", {
 		global.seconds = 0;
 		global.minutes = 0;
 		room_goto(selected_stage.rm);
+    },
+    step:function (){
+        if (input_check_pressed("cancel")) {
+            st.change("Stage");
+          }
     }
 })
