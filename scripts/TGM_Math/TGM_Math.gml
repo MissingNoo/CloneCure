@@ -52,7 +52,7 @@ function smoothstep(_a, _b, _value) {
 /// @param {Real} edge The location of the edge of the step function.
 /// @param {Real} value The value to be used to generate the step function.
 /// @returns {real}
-function step(_edge, _value) {
+function _step(_edge, _value) {
 	return (_value < _edge) ? 0 : 1;
 }
 

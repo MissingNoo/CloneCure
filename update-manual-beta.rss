@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>GameMaker Beta Manual Feed</title>
+    <link>http://gms.yoyogames.com/update-manual-beta.rss</link>
+    <description>The manual feed for GameMaker's Beta releases</description>
+    <language>en</language>
+    <!-- END yygames -->
+    <item>
+      <title>Version 2024.1400.7.106</title>
+      <pubDate>Tue, 01 Jul 2025 08:35:50 Z</pubDate>
+      <sparkle:releaseNotesLink>https://gms.yoyogames.com/readme.txt</sparkle:releaseNotesLink>
+      <enclosure url="https://gms.yoyogames.com/GMS2-Robohelp-english-2024.1400.7.106.zip" sparkle:version="2024.1400.7.106" type="application/octet-stream" length="164122651" sparkle:dsaSignature="MC0CFFcAZq7iV0OGt4hZPh2R7aKa89hvAhUAm9ejjErBLWimDBigpgKzDHxvdRo=">
+        <module name="en" url="https://gms.yoyogames.com/GMS2-Robohelp-english-2024.1400.7.106.zip" sparkle:version="2024.1400.7.106" length="164122651" sparkle:dsaSignature="MC0CFQCIJWU1UuMnR74yxFHqgphGMie2kAIUK0KrDsih0OSRQ4HK+ebYbu4nKZY=" />
+        <module name="es" url="https://gms.yoyogames.com/GMS2-Robohelp-spanish-2024.1400.7.106.zip" sparkle:version="2024.1400.7.106" length="92730596" sparkle:dsaSignature="MCwCFC14bqOdbN/5GYYArl43skbvJ7YYAhRWSulDr1gXv9R5YbcfwZQifUFfBQ==" />
+        <module name="fr" url="https://gms.yoyogames.com/GMS2-Robohelp-french-2024.1400.7.106.zip" sparkle:version="2024.1400.7.106" length="76337326" sparkle:dsaSignature="MC0CFAuOOFO5ADkiPbchli9fe4kjKC0LAhUAmVO9xPHIf7Td3nD80MPJom8j8Vs=" />
+        <module name="de" url="https://gms.yoyogames.com/GMS2-Robohelp-german-2024.1400.7.106.zip" sparkle:version="2024.1400.7.106" length="76528807" sparkle:dsaSignature="MCwCFE3d/nUKVEnkFdLH+QUDIxzctZzBAhR9dlJHwAtZpc4iRPAJRF41+nmqnQ==" />
+        <module name="ru" url="https://gms.yoyogames.com/GMS2-Robohelp-russian-2024.1400.7.106.zip" sparkle:version="2024.1400.7.106" length="79202398" sparkle:dsaSignature="MCwCFEkpzNtfFCgRTJ8Q16+zVGtHYQbSAhQZcH+voPT7wUb0kx2MLhSq5wdSTw==" />
+        <module name="pt-br" url="https://gms.yoyogames.com/GMS2-Robohelp-brazilian-2024.1400.7.106.zip" sparkle:version="2024.1400.7.106" length="76089257" sparkle:dsaSignature="MCwCFG966DJ4XSvwzH3LERpuc1tEMiE/AhQS8OSVPdioKcd7ttNkPOhHhLP2Jw==" />
+        <module name="zh" url="https://gms.yoyogames.com/GMS2-Robohelp-chinese-2024.1400.7.106.zip" sparkle:version="2024.1400.7.106" length="66457469" sparkle:dsaSignature="MCwCFBbcdyj2u5d9/Bdzy2FZlVGhysmfAhRR0TlZrZY29uXYz1Goin88PbXLPg==" />
+        <module name="it" url="https://gms.yoyogames.com/GMS2-Robohelp-italian-2024.1400.7.106.zip" sparkle:version="2024.1400.7.106" length="79707935" sparkle:dsaSignature="MC0CFF3z8F0QLkRKrsKMgBhiTNbTPcuMAhUAg44FoIpURS4dhi06Pg4YjfR5UWU=" />
+        <module name="ja" url="https://gms.yoyogames.com/GMS2-Robohelp-japanese-2024.1400.7.106.zip" sparkle:version="2024.1400.7.106" length="83796757" sparkle:dsaSignature="MCwCFCNhnACGFkHAsRRMJkI/CT0EDiJXAhRovu5ruLbwHcPI7HPFSA94rdMjgQ==" />
+        <module name="ko" url="https://gms.yoyogames.com/GMS2-Robohelp-korean-2024.1400.7.106.zip" sparkle:version="2024.1400.7.106" length="160289263" sparkle:dsaSignature="MC0CFQCFI+TyV50IHiPCqJ0L2ZRUARePXAIUDCgj9SpeA6lqpykv8/oU54ajMBI=" />
+        <module name="pl" url="https://gms.yoyogames.com/GMS2-Robohelp-polish-2024.1400.7.106.zip" sparkle:version="2024.1400.7.106" length="83398599" sparkle:dsaSignature="MC0CFB2jUVOPYTS0EejHHUfgZeXre7z5AhUAk7GQkTdt0JJtwmonmy6pF70p23g=" />
+      </enclosure>
+    </item>
+  </channel>
+</rss>

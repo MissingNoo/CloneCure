@@ -4,6 +4,9 @@ repeat (6) {
 }
 ui = new window(global.game_uis.select, false);
 ui.fit_to_gui();
+ui.node_visible("label_title");
+ui.node_visible("char_list_1");
+ui.node_visible("char_list_2");
 skinui = new window(global.game_uis.skin_area);
 skinui.fit_to_gui();
 skinui.set_visible(false);
@@ -103,3 +106,72 @@ skin_scale = 6;
 dbg = dbg_view("CharSelect", true, gui_x_percent(50));
 dbg_section("Position");
 create_view_from_instance(self);
+left_right = 0;
+up_down = 0;
+st = new SnowState("Char");
+st.add("Char", {
+    enter:function (){
+        skinui.set_visible(false);
+		ui.node_visible("label_title", true);
+		ui.node_visible("char_list_1", true);
+		ui.node_visible("char_list_2", true);
+        character_was_selected = false;
+    },
+    step:function(){
+        if (input_check_pressed("accept") or forcez) {
+            character_was_selected = true;
+        	st.change("Skin");
+        }
+    },
+    leave:function (){
+    }
+});
+st.add("Skin", {
+    enter:function (){
+        skin_was_selected = false;
+        skinui.set_visible(true);
+		ui.node_visible("label_title", false);
+		ui.node_visible("char_list_1", false);
+		ui.node_visible("char_list_2", false);
+    },
+    step: function (){
+        if (input_check_pressed("accept") or forcez) {
+            skin_was_selected = true;
+        	st.change("StageMode");
+        }
+    },
+    leave:function (){
+        skinui.set_visible(false);
+		ui.node_visible("label_title", false);
+		ui.node_visible("char_list_1", false);
+		ui.node_visible("char_list_2", false);
+    }
+});
+st.add("StageMode", {
+    enter:function (){
+        stagemodewasselected = false;
+    },
+    step: function (){
+        if (input_check_pressed("accept") or forcez) {
+            stagemodewasselected = true;
+        	st.change("Stage");
+        }
+    }
+});
+st.add("Stage", {
+    step: function (){
+        if (input_check_pressed("accept") or forcez) {
+        	st.change("GO");
+        }
+    }
+});
+st.add("GO", {
+    enter: function (){
+        GameData.on_stage = true;
+		if (!is_undefined(GameData.music)) { audio_stop_sound(GameData.music); }
+		GameData.music = audio_play_sound(selected_stage.music, 0, -1, GameConfig.music_volume);
+		global.seconds = 0;
+		global.minutes = 0;
+		room_goto(selected_stage.rm);
+    }
+})

@@ -176,9 +176,14 @@ function window(struct, _generate = false) constructor {
 		recalculate();
 	};
 
-	static node_visible = function(n) {
+	static node_visible = function(n, b = undefined) {
 		var nn = flexpanel_node_get_child(root, n);
-		flexpanel_node_style_set_display(nn, !flexpanel_node_style_get_display(nn));
+        if (is_undefined(b)) {
+        	flexpanel_node_style_set_display(nn, !flexpanel_node_style_get_display(nn));
+        } else {
+        	flexpanel_node_style_set_display(nn, !b);
+        }
+		
 		recalculate();
 	};
 	

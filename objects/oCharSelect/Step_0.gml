@@ -1,7 +1,8 @@
 btn[stagemodeselected].keyboard_selected = true;
 charspr.animate();
-var left_right = input_check_pressed("right") - input_check_pressed("left");
-var up_down = input_check_pressed("down") - input_check_pressed("up");
+st.step();
+left_right = input_check_pressed("right") - input_check_pressed("left");
+up_down = input_check_pressed("down") - input_check_pressed("up");
 if (left_right != 0 or up_down != 0) {
 	if (!character_was_selected) {
 		if (up_down == 1) {
@@ -31,38 +32,11 @@ if (left_right != 0 or up_down != 0) {
 		exit;
 	}
 }
-
-if (keyboard_check_released(ord("X")) or device_mouse_check_button_released(0, mb_right)) {
-	if (stagemodewasselected) {
-		stagemodewasselected = false;
-		exit;
-	}
-	
-	if (skin_was_selected) {
-		skin_was_selected = false;
-		exit;
-	}
-	
-	if (character_was_selected) {
-		character_was_selected = false;
-		skinui.set_visible(false);
-		ui.node_visible("label_title");
-		ui.node_visible("char_list_1");
-		ui.node_visible("char_list_2");
-		exit;
-	}
-	
-	
-}
+/*
 if (keyboard_check_released(ord("Z")) or forcez) {
     forcez = false;
 	if (stagemodewasselected) {
-		GameData.on_stage = true;
-		if (!is_undefined(GameData.music)) { audio_stop_sound(GameData.music); }
-		GameData.music = audio_play_sound(selected_stage.music, 0, -1, GameConfig.music_volume);
-		global.seconds = 0;
-		global.minutes = 0;
-		room_goto(selected_stage.rm);
+		
 	}
 	
 	if (skin_was_selected) {
@@ -85,8 +59,7 @@ if (keyboard_check_released(ord("Z")) or forcez) {
 		stageui.set_visible(true);
 		exit;
 	}
-}
-
+}*/
 character_selected_offset = lerp(character_selected_offset, character_was_selected ? character_selected_max_offset : 0, 0.4);
 stageoffset = lerp(stageoffset, (skin_was_selected ? 0 : gui_w) - (stagemodewasselected ? gui_w : 0), 0.4);
 charoffset = lerp(charoffset, 20, 0.3);
