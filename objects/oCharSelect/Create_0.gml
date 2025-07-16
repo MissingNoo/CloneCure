@@ -26,6 +26,10 @@ char1yo = 70;
 
 charxoff = 200;
 
+recsyoff = 30;
+recyoff = 40;
+recscale = 2;
+
 select_char = function() {
 	if (selected < 0 or selected > struct_names_count(Characters) - 1) {
 		exit;
@@ -122,7 +126,7 @@ st.add("Char", {
         character_was_selected = false;
     },
     step:function(){
-        if (input_check_pressed("cancel") or device_mouse_check_button_pressed(0, mb_left)) {
+        if (input_check_pressed("cancel") or device_mouse_check_button_pressed(0, mb_right)) {
             room_goto(rMainMenu);
           }
         if (input_check_pressed("accept") or forcez) {
@@ -164,7 +168,7 @@ st.add("Skin", {
             skin_was_selected = true;
         	st.change("StageMode");
         }
-        if (input_check_pressed("cancel") or device_mouse_check_button_pressed(0, mb_left)) {
+        if (input_check_pressed("cancel") or device_mouse_check_button_pressed(0, mb_right)) {
             st.change("Char");
           }
     },
@@ -184,7 +188,7 @@ st.add("StageMode", {
             stagemodewasselected = true;
         	st.change("Stage");
         }
-        if (input_check_pressed("cancel") or device_mouse_check_button_pressed(0, mb_left)) {
+        if (input_check_pressed("cancel") or device_mouse_check_button_pressed(0, mb_right)) {
             st.change("Skin"); 
         }
         stagemodeselected = wrap(stagemodeselected + left_right, 0, 3);
@@ -200,7 +204,7 @@ st.add("Stage", {
         if (input_check_pressed("accept") or forcez) {
         	st.change("GO");
         }
-        if (input_check_pressed("cancel") or device_mouse_check_button_pressed(0, mb_left)) {
+        if (input_check_pressed("cancel") or device_mouse_check_button_pressed(0, mb_right)) {
             st.change("StageMode");
   		}
     }
@@ -215,7 +219,7 @@ st.add("GO", {
 		room_goto(selected_stage.rm);
     },
     step:function (){
-        if (input_check_pressed("cancel") or device_mouse_check_button_pressed(0, mb_left)) {
+        if (input_check_pressed("cancel") or device_mouse_check_button_pressed(0, mb_right)) {
             st.change("Stage");
   		}
     }

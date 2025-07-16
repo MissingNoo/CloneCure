@@ -299,6 +299,13 @@ stageinfo.foreach(function(name, pos, data) {
 			break;
 		case "upgrades":
 			scribble($"Recommended Upgrades:").scale(2).draw(_x, _y);
+			for (var yo = 0, i = 0; i < array_length(selected_stage.recomendation); i++) {
+				var r = selected_stage.recomendation[i];
+				var upg = Shop.upgrades[$ r[0]];
+				var color = upg.level >= r[1] ? "c_white" : "c_red";
+				scribble($"[fa_right][fa_center][{sprite_get_name(upg.sprite)}][{color}]  x  LV {r[1]}").scale(recscale).draw(_x + _w / 2, _y + yo + recsyoff);
+				yo += recyoff;
+			}
 			break;
 		case "back_panel":
 			draw_set_color(c_black);
