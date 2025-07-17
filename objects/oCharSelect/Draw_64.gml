@@ -84,7 +84,7 @@ ui.foreach(function(name, pos, data) {
                         }
 					}
 				}
-				draw_text(_x + offset + xoff2, _y + yoffset, i);
+				//draw_text(_x + offset + xoff2, _y + yoffset, i);
 				if (i == selected) {
 					draw_sprite_stretched(sMenuCharSelectCursor, -1, _x + offset + xoff2, _y + yoffset, 87, 63);
 				}
