@@ -1079,6 +1079,7 @@
     {"id":{"name":"sAnyaSpecial","path":"sprites/sAnyaSpecial/sAnyaSpecial.yy",},},
     {"id":{"name":"sAnyaWeapon","path":"sprites/sAnyaWeapon/sAnyaWeapon.yy",},},
     {"id":{"name":"sArrow","path":"sprites/sArrow/sArrow.yy",},},
+    {"id":{"name":"sAsaCocoShoot_1","path":"sprites/sAsaCocoShoot_1/sAsaCocoShoot_1.yy",},},
     {"id":{"name":"sAsaCocoShoot","path":"sprites/sAsaCocoShoot/sAsaCocoShoot.yy",},},
     {"id":{"name":"sAsaCocoThumb","path":"sprites/sAsaCocoThumb/sAsaCocoThumb.yy",},},
     {"id":{"name":"sAtlanticRod","path":"sprites/sAtlanticRod/sAtlanticRod.yy",},},
