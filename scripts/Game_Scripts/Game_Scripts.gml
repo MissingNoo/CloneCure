@@ -681,10 +681,10 @@ w.set_on_animation_end(function() /*=>*/ {
     }
 	
 });
-w.set_damage([27, 27, 27, 36, 36, 36, 36], [33, 33, 33, 44, 44, 44, 44]);
+w.set_damage([10, 12, 12, 12, 12, 17, 17], [14, 16, 16, 16, 16, 21, 21]);
 w.set_cooldown(240, 240);
 w.set_delay(5);
-w.set_area([1, 1.30, 1.30, 1.30, 1.30, 2, 2]);
+w.set_area([1, 1, 1, 1.25, 1.25, 1.25, 1.25]);
 w.set_shoots([1, 1, 2, 2, 3, 3, 4]);
 w.set_type(weapon_type.Multishot);
 w.set_enchants([
@@ -698,22 +698,39 @@ w.set_enchants([
 w.set_knockback(10, 15);
 w.set_hit_cooldown(30);
 w.set_hits([3, 3, 8, 8, 8, 8, 8]);
-w.set_duration(999);
+w.set_duration(180);
 w.set_create(function() /*=>*/ {
-	if (oPlayer.image_xscale < 0 and can_spawn_other) {
-		image_xscale = image_xscale * -1;
+	exploded = false;
+	sticktimer = AirLib.frame + wid.delay;
+	sticks = wid.shoots[level] - 1;
+	direction = random(360);
+	speed = 8;
+});
+w.set_step(function() /*=>*/ {
+	if (!exploded and distance_to_object(oPlayer) > 180) {
+		direction = point_direction(x, y, oPlayer.x, oPlayer.y);
 	}
-	if (can_spawn_other and wid.shoots[level] == 2) {
+	if (sticktimer < AirLib.frame and can_spawn_other and sticks> 0) {
+		sticks--;
+		sticktimer = AirLib.frame + wid.delay;
 		var inst = weapon_create {
 			wid : wid,
-			image_xscale : image_xscale * -1,
-			image_yscale : image_yscale
 		});
 	}
 });
-w.set_step(function() /*=>*/ {
-	x = oPlayer.x;
-	y = oPlayer.y - 16;
+w.set_on_hit(function() {
+	if (hits <= 0) {
+		speed = 0;
+		exploded = true;
+		image_index = 0;
+		sprite_index = sGlowstickThumbExplosion;
+		image_xscale = image_xscale * 1.5;
+		image_yscale = image_xscale;
+		hits = 999;
+	}
+	if (sprite_index == sGlowstickThumbExplosion) {
+		dmg = dmg * 1.5;
+	}
 });
 #endregion
 

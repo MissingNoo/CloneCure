@@ -7,12 +7,11 @@ if (other.inv_frame > AirLib.frame or ohit > AirLib.frame or image_alpha == 0 or
 	exit;
 }
 hits--;
-on_hit();
 other.hit_frame[$ $"i{id}"] = AirLib.frame + wid.hit_cooldown;
 
 other.inv_frame = AirLib.frame + 15;
 dmg = irandom_range(wid.mindmg[wid.level], wid.maxdmg[wid.level]);
-
+on_hit();
 //Growth
 if (wid.perk) {
 	dmg += (((0.1 * shop_level("Growth")) * GameData.level) / max_projectiles) * wid.hit_cooldown < 20 ? wid.hit_cooldown / 20 : 1;

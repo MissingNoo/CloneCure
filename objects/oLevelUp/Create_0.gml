@@ -37,7 +37,7 @@ ups = [
 	Items[$ "Energy_Drink"],
 	Items[$ "Kusogaki_Shackles"],
 	Items[$ "Face_Mask"],
-	Weapons[$ "Ame_Pistol"],
+	Weapons[$ "Glowstick"],
 ];
 
 mx = 0;
