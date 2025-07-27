@@ -748,6 +748,13 @@ w.set_hit_cooldown(20);
 w.set_area([1.44, 1.656, 1.656, 1.656, 1.656, 1.656, 1.656,]);
 w.set_duration(630);
 w.set_damage([15, 15, 18, 18, 18, 18, 18], [19, 19, 22, 22, 22, 22, 22])
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Size,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Cooldown,
+	weapon_enchantments.Knockback
+])
 w.set_create(function () {
 	x = oPlayer.x + random_range(-50, 50);
 	y = oPlayer.y + random_range(-50, 50);
@@ -761,7 +768,6 @@ w.set_on_animation_end(function () {
 	}
 });
 #endregion
-
 
 #region Shockwave
 w = new weapon("Shockwave");
@@ -778,4 +784,44 @@ w.perk = true;
 w.set_duration(999);
 w.set_knockback(10, 10);
 #endregion
+
+#region Idol Song
+w = new weapon("Idol_Song");
+w.set_type(weapon_type.Ranged);
+w.set_weight(3);
+w.set_max_level(7);
+w.set_sprite(sIdolSongThumb, sIdolSong);
+w.set_area([1, 1, 1, 1.25, 1.25, 1.56, 1.56]);
+w.set_create(function () {
+	self[$ "second"] ??= false;
+	var spd = [0, 1, 1, 1.2, 1.2, 1.2, 1.2, 1.2];
+	speed = spd[level];
+	direction = second ? 90 : 270;
+	start_x = x;
+	var travel = [0, 64, 64, 80, 64, 64, 64, 64];
+	travel_width = travel[level];
+	if (!second) {
+		var inst = weapon_create {
+			wid : wid,
+			second : true
+		});
+	}
+	
+});
+w.set_step(function () {
+	x = sine_wave(current_time  / 1000, second ? -1 : 1, travel_width, start_x);
+});
+w.set_damage([11, 14, 14, 14, 14, 14, 22], [15, 18, 18, 18, 18, 18, 27]);
+w.set_cooldown([200, 200, 200, 200, 160, 160, 160], 10);
+w.set_hit_cooldown(20);
+w.set_duration(150);
+w.set_hits(9999);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Size,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Cooldown
+]);
+#endregion
+
 #endregion
