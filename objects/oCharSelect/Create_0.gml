@@ -212,6 +212,7 @@ st.add("Stage", {
 st.add("GO", {
     enter: function (){
         GameData.on_stage = true;
+		GameData.stage_name = selected_stage.name;
 		if (!is_undefined(GameData.music)) { audio_stop_sound(GameData.music); }
 		GameData.music = audio_play_sound(selected_stage.music, 0, -1, GameConfig.music_volume);
 		global.seconds = 0;

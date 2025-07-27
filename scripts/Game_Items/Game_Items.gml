@@ -361,7 +361,7 @@ i.set_sprite(sFaceMask)
 #endregion
 
 #region Full Meal
-i = new item("Face_Mask");
+i = new item("Full_Meal");
 i.set_sprite(sFullMeal)
 .set_type(item_type.Healing)
 .set_max_level(1)

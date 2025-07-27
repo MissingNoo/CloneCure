@@ -10,5 +10,4 @@ if (GameData.is_paused) {
 }
 GameData.touch.left.draw();
 GameData.touch.right.draw();
-
 //draw_text(gui_x_percent(25), gui_y_percent(30), GameData.t[]=+][AAouch);

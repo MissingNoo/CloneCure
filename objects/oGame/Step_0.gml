@@ -49,3 +49,9 @@ if (keyboard_check(vk_shift) and keyboard_check_released(vk_pageup)) {
 if (keyboard_check(vk_shift) and keyboard_check_released(vk_pagedown)) {
 	window_set_size(window_get_width() * 0.8, window_get_height() * 0.8);
 }
+if (global.minfps > fps_real and fps_real != 0) {
+	global.minfps = fps_real;
+}
+if (global.maxfps < fps_real) {
+	global.maxfps = fps_real;
+}
