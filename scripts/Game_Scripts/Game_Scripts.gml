@@ -239,7 +239,12 @@ function weapon(_name) : base_item(_name) constructor {
 	/// @description             Defines weapon scale.
 	/// @param {array}     _area The minimum damage for the weapon.
 	static set_area = function(_area) {
-		array_insert(_area, 0, 0);
+		if (!is_array(_area)) {
+			_area = array_create(8, _area);
+		}
+		else {
+			array_insert(_area, 0, 0);
+		}
 		area = _area;
 		return self;
 	}
@@ -822,6 +827,144 @@ w.set_enchants([
 	weapon_enchantments.Crit,
 	weapon_enchantments.Cooldown
 ]);
+#endregion
+
+//undone
+
+#region Bounce Ball
+w = new weapon("Bounce_Ball");
+w.set_type(weapon_type.Multishot);
+w.set_sprite(sBounceBallThumb, sBounceBall);
+w.set_weight(4);
+w.set_cooldown([120, 120, 120, 120, 120, 102, 102], 102);
+w.set_hits(999);
+w.set_area(0.6); //TODO: area by character size
+w.set_hit_cooldown(30);
+w.set_damage([10, 12, 12, 12, 12, 12, 17], [14, 16, 16, 16, 16, 16, 21]);
+w.set_delay(5);
+w.set_shoots([1, 1, 2, 2, 3, 3, 4])
+w.set_duration(180);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	//weapon_enchantments.Size,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Projectile,
+	weapon_enchantments.Cooldown
+]);
+w.set_create(function () {
+	timer = AirLib.frame + wid.delay;
+	balls = wid.shoots[level] - 1;
+	y = oPlayer.y - 200;
+	x = oPlayer.x + random_range(-200, 200);
+	//x = mouse_x;
+	vspeed = 8
+	hdest = 0;
+});
+w.set_step(function (){
+	vspeed = approach(vspeed, 8, 0.5);
+	hspeed = approach(hspeed, 0, 0.1);
+	if (can_spawn_other and balls > 0 and timer < AirLib.frame) {
+		balls--;
+		timer = AirLib.frame + wid.delay;
+		weapon_create {
+			wid : wid,
+		});
+	}
+});
+w.set_on_hit(function () {
+	var e = global.lastenemy;
+	vspeed = -4;
+	hspeed += irandom_range(3, 7) * (x > e.x ? 1 : -1);
+});
+/*
+#endregion
+#region CEO Tears
+w = new weapon("CEO_Tears");
+w.set_type(weapon_type.Multishot);
+w.set_sprite();
+w.set_weight();
+w.set_cooldown([], 0);
+w.set_hits();
+w.set_damage([], []);
+w.set_delay();
+w.set_duration();
+w.set_enchants([]);
+w.set_create();
+w.set_step();
+#endregion
+#region Cutting Board
+w = new weapon("Cutting_Board");
+w.set_type(weapon_type.Multishot);
+w.set_sprite();
+w.set_weight();
+w.set_cooldown([], 0);
+w.set_hits();
+w.set_damage([], []);
+w.set_delay();
+w.set_duration();
+w.set_enchants([]);
+w.set_create();
+w.set_step();
+#endregion
+#region Elite Lava Bucket
+w = new weapon("Elite_Lava_Bucket");
+w.set_type(weapon_type.Multishot);
+w.set_sprite();
+w.set_weight();
+w.set_cooldown([], 0);
+w.set_hits();
+w.set_damage([], []);
+w.set_delay();
+w.set_duration();
+w.set_enchants([]);
+w.set_create();
+w.set_step();
+#endregion
+#region EN Curse
+w = new weapon("EN_Curse");
+w.set_type(weapon_type.Multishot);
+w.set_sprite();
+w.set_weight();
+w.set_cooldown([], 0);
+w.set_hits();
+w.set_damage([], []);
+w.set_delay();
+w.set_duration();
+w.set_enchants([]);
+w.set_create();
+w.set_step();
+#endregion
+#region Plug Type Asacoco
+w = new weapon("Plug_Type_Asacoco");
+w.set_type(weapon_type.Multishot);
+w.set_sprite();
+w.set_weight();
+w.set_cooldown([], 0);
+w.set_hits();
+w.set_damage([], []);
+w.set_delay();
+w.set_duration();
+w.set_enchants([]);
+w.set_create();
+w.set_step();
+#endregion
+#region X-Potato
+w = new weapon("X-Potato");
+w.set_type(weapon_type.Multishot);
+w.set_sprite();
+w.set_weight();
+w.set_cooldown([], 0);
+w.set_hits();
+w.set_damage([], []);
+w.set_delay();
+w.set_duration();
+w.set_enchants([]);
+w.set_create();
+w.set_step();
+#endregion
+
+#region description
+
 #endregion
 
 #endregion

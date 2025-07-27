@@ -1,4 +1,8 @@
 // surf = surface_create(surface_get_width(application_surface), surface_get_height(application_surface));
+a = 1;
+b = 1;
+dbg = dbg_view("oGame", false);
+create_view_from_instance(self);
 global.maxfps = 0;
 global.minfps = 99999;
 surf = undefined;
