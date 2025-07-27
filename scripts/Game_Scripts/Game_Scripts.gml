@@ -710,7 +710,7 @@ w.set_step(function() /*=>*/ {
 	if (!exploded and distance_to_object(oPlayer) > 180) {
 		direction = point_direction(x, y, oPlayer.x, oPlayer.y);
 	}
-	if (sticktimer < AirLib.frame and can_spawn_other and sticks> 0) {
+	if (sticktimer < AirLib.frame and can_spawn_other and sticks > 0) {
 		sticks--;
 		sticktimer = AirLib.frame + wid.delay;
 		var inst = weapon_create {
@@ -730,6 +730,34 @@ w.set_on_hit(function() {
 	}
 	if (sprite_index == sGlowstickThumbExplosion) {
 		dmg = dmg * 1.5;
+	}
+});
+#endregion
+
+#region Holo Bomb
+w = new weapon("Holo_Bomb");
+w.set_sprite(sHolobomb, sHolobomb);
+w.set_type(weapon_type.Multishot);
+w.set_weight(3)
+w.set_cooldown([120, 120, 120, 120, 96, 96, 96], 10);
+w.set_max_level(7);
+w.set_delay(5);
+w.set_shoots([1, 1, 1, 2, 2, 2, 3]);
+w.set_hits(9999);
+w.set_hit_cooldown(20);
+w.set_area([1.44, 1.656, 1.656, 1.656, 1.656, 1.656, 1.656,]);
+w.set_duration(630);
+w.set_damage([15, 15, 18, 18, 18, 18, 18], [19, 19, 22, 22, 22, 22, 22])
+w.set_create(function () {
+	x = oPlayer.x + random_range(-50, 50);
+	y = oPlayer.y + random_range(-50, 50);
+});
+w.set_on_hit(function () {
+	sprite_index = sBombExplosion;
+});
+w.set_on_animation_end(function () {
+	if (sprite_index == sBombExplosion) {
+		instance_destroy();
 	}
 });
 #endregion
