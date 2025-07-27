@@ -671,6 +671,53 @@ w.set_step(function() /*=>*/ {
 });
 #endregion
 
+#region Glowstick
+w = new weapon("Glowstick");
+w.set_sprite(sGlowstickThumb, sGlowstick);
+w.set_weight(4);
+w.set_on_animation_end(function() /*=>*/ {
+    if (sprite_index == sGlowstickThumbExplosion) {
+    	instance_destroy();
+    }
+	
+});
+w.set_damage([27, 27, 27, 36, 36, 36, 36], [33, 33, 33, 44, 44, 44, 44]);
+w.set_cooldown(240, 240);
+w.set_delay(5);
+w.set_area([1, 1.30, 1.30, 1.30, 1.30, 2, 2]);
+w.set_shoots([1, 1, 2, 2, 3, 3, 4]);
+w.set_type(weapon_type.Multishot);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Size,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Knockback,
+	weapon_enchantments.Projectile,
+	weapon_enchantments.Cooldown
+]);
+w.set_knockback(10, 15);
+w.set_hit_cooldown(30);
+w.set_hits([3, 3, 8, 8, 8, 8, 8]);
+w.set_duration(999);
+w.set_create(function() /*=>*/ {
+	if (oPlayer.image_xscale < 0 and can_spawn_other) {
+		image_xscale = image_xscale * -1;
+	}
+	if (can_spawn_other and wid.shoots[level] == 2) {
+		var inst = weapon_create {
+			wid : wid,
+			image_xscale : image_xscale * -1,
+			image_yscale : image_yscale
+		});
+	}
+});
+w.set_step(function() /*=>*/ {
+	x = oPlayer.x;
+	y = oPlayer.y - 16;
+});
+#endregion
+
+
 #region Shockwave
 w = new weapon("Shockwave");
 w.set_sprite(sShockwave, sShockwave);
