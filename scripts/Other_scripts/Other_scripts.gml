@@ -33,6 +33,10 @@ function damage_player(dmg) {
 	if (dmg == 0) {
 		exit;
 	}
+	//var odmg = dmg;
+	var defbonus = 0.03 * shop_level("Defense_Up");
+	dmg = dmg * (1 - defbonus);
+	//trace($"DefBonus: {odmg} - {defbonus}% = {dmg}");
 	if (GameData.shield > 0) {
 		GameData.shield = clamp(GameData.shield - dmg, 0, GameData.max_shield);
 	} else {
