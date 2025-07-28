@@ -237,7 +237,7 @@ function weapon(_name) : base_item(_name) constructor {
 	}
 	/// @function                set_area(area)
 	/// @description             Defines weapon scale.
-	/// @param {array}     _area The minimum damage for the weapon.
+	/// @param {Any}     _area The minimum damage for the weapon.
 	static set_area = function(_area) {
 		if (!is_array(_area)) {
 			_area = array_create(8, _area);
@@ -832,7 +832,7 @@ w.set_enchants([
 //undone
 
 #region Bounce Ball
-w = new weapon("Bounce_Ball");
+w = new weapon("Bounce_Ball"); //TODO: Knockback
 w.set_type(weapon_type.Multishot);
 w.set_sprite(sBounceBallThumb, sBounceBall);
 w.set_weight(4);
@@ -876,22 +876,49 @@ w.set_on_hit(function () {
 	vspeed = -4;
 	hspeed += irandom_range(3, 7) * (x > e.x ? 1 : -1);
 });
-/*
 #endregion
+
 #region CEO Tears
 w = new weapon("CEO_Tears");
 w.set_type(weapon_type.Multishot);
-w.set_sprite();
-w.set_weight();
-w.set_cooldown([], 0);
-w.set_hits();
-w.set_damage([], []);
-w.set_delay();
-w.set_duration();
-w.set_enchants([]);
-w.set_create();
-w.set_step();
+w.set_sprite(sCeoTearsThumb, sCeoTears);
+w.set_weight(2);
+w.set_cooldown([30, 30, 30, 20, 20, 10, 10], 1);
+w.set_hits(1);
+w.set_hit_cooldown(30);
+w.set_damage([8, 10, 10, 10, 12, 12, 12], [12, 14, 14, 14, 16, 16, 16]);
+w.set_delay(1);
+w.set_duration(90);
+w.set_area(0.9);
+w.set_shoots([1, 1, 2, 2, 2, 2, 4]);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Size,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Projectile,
+	weapon_enchantments.Cooldown,
+]);
+w.set_create(function () {
+	var s = [0, 4, 4, 4, 4, 5, 5, 5];
+	timer = AirLib.frame + wid.delay;
+	tears = wid.shoots[level] - 1;
+	var e = instance_nearest_nth(x, y, oEnemy, irandom_range(0, instance_number(oEnemy)));
+	if (instance_exists(e)) {
+		direction = point_direction(x, y, e.x, e.y);
+		speed = s[level];
+	}
+});
+w.set_step(function () {
+	if (can_spawn_other and tears > 0 and timer < AirLib.frame) {
+		tears--;
+		timer = AirLib.frame + wid.delay;
+		weapon_create {
+			wid : wid,
+		});
+	}
+});
 #endregion
+/*
 #region Cutting Board
 w = new weapon("Cutting_Board");
 w.set_type(weapon_type.Multishot);

@@ -26,7 +26,7 @@ GameData.revives = 0;
 //show_debug_overlay(true);
 Player_Weapons = array_create(6, undefined);
 Player_Weapons[0] = variable_clone(Weapons[$ char.main_weapon]);
-Player_Weapons[0] = variable_clone(Weapons[$ "Bounce_Ball"]);
+Player_Weapons[0] = variable_clone(Weapons[$ "CEO_Tears"]);
 Player_Weapons[0].level = 1;
 /*Player_Weapons[1] = variable_clone(Weapons[$ "Sausage"]);
 Player_Weapons[1].level = 7;
