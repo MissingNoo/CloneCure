@@ -905,6 +905,7 @@ w.set_create(function () {
 	var e = instance_nearest_nth(x, y, oEnemy, irandom_range(0, instance_number(oEnemy)));
 	if (instance_exists(e)) {
 		direction = point_direction(x, y, e.x, e.y);
+		image_angle = direction;
 		speed = s[level];
 	}
 });
