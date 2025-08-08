@@ -5,10 +5,10 @@ for (var i = array_length(bars) - 1; i >= 0; i--) {
     }
 }
 //if (global.reset_button) {
-	array_foreach(btn_array, function(e, i) {
-        if (oMainMenu.buttons[$ e].on_area) {
-        	oMainMenu.selected = array_get_index(oMainMenu.btn_array, e);
+	btns.foreach(function(e, i) {
+        if (e.on_area) {
+        	oMainMenu.btns.selected = array_get_index(oMainMenu.btns.list, e);
         }
-    });
-    buttons[$ btn_array[selected]].keyboard_selected = true;
+    })
+    btns.get_selected().keyboard_selected = true;
 //}

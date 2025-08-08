@@ -855,3 +855,28 @@ function lerper(_value) constructor {
 
 	array_push(AirLib.lerpers, self);
 }
+
+function ui_element_list() constructor {
+	list = [];
+	selected = 0;
+	static add = function(e) {
+		if (is_array(e)) { 
+			list = array_concat(list, e);
+		} else {
+			array_push(list, e);
+		}
+		return self;
+	}
+	static next = function() {
+		selected = wrap(selected + 1, 0, array_length(list) - 1);
+	}
+	static previous = function() {
+		selected = wrap(selected - 1, 0, array_length(list) - 1);
+	}
+	static get_selected = function() {
+		return list[selected];
+	}
+	static foreach = function(f) {
+		array_foreach(list, f);
+	}
+}

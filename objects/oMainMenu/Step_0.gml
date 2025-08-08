@@ -1,12 +1,13 @@
 var left_right = - input_check_pressed("left") + input_check_pressed("right");
-selected = wrap(selected + left_right, 0, array_length(btn_array));
+btns.selected = wrap(btns.selected + left_right, 0, array_length(btns.list));
 if (left_right != 0) {
-	array_foreach(btn_array, function(e, i) {
-       oMainMenu.buttons[$ e].keyboard_selected = false;
+	btns.foreach(function(e, i) {
+       e.keyboard_selected = false; 
     });
+	btns.get_selected().keyboard_selected = true;
 }
-buttons[$ btn_array[selected]].keyboard_selected = true;
+
 if (input_check_pressed("accept")) {
-	buttons[$ btn_array[selected]].func();
+	btns.get_selected().func();
 }
 //start_y = lerp(start_y, 0, 0.1);

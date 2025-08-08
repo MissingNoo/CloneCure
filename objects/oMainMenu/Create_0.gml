@@ -29,8 +29,9 @@ struct_foreach(buttons, function(n, e) {
 		draw_sprite_ext(top_spr, on_area, area[0] + sprw, area[1] + sprh, 2, 2, 0, c_white, 1);
  	});
 });
-btn_array = ["button_leaderboards", "button_achievements", "button_shop", "button_play", "button_house", "button_settings", "button_credits", "button_quit"];
-selected = 3;
+btns = new ui_element_list();
+btns.add([buttons.button_leaderboards, buttons.button_achievements, buttons.button_shop, buttons.button_play, buttons.button_house, buttons.button_settings, buttons.button_credits, buttons.button_quit]);
+btns.selected = 3;
 buttons.button_quit.set_function(function() {
     game_end();
 });
