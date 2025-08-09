@@ -856,6 +856,30 @@ function lerper(_value) constructor {
 	array_push(AirLib.lerpers, self);
 }
 
+
+function EventManager() constructor {
+	events = {};
+	static add_listener = function(event, instance, callback) {
+		if (!struct_exists(events, event)) {
+			events[$ event] = [];
+		}
+		array_push(events[$ event], {instance, callback});
+	}
+	
+	static broadcast = function(event, message) {
+		if (struct_exists(events, event)) {
+			for (var i = 0; i < array_length(events[$ event]); i++) {
+				var e = events[$ event][i];
+				if (instance_exists(e.instance)) {
+					method(e.instance, e.callback)(message);
+				}
+			}
+		}
+	}
+}
+
+global.events = new EventManager();
+
 function ui_element_list() constructor {
 	list = [];
 	selected = 0;
