@@ -2,16 +2,34 @@
 GameData = {};
 #region GUI Functions
 
+/**
+ * Returns the X position on the gui based on the percentage
+ * @param {real} percent Description
+ * @returns {real} Description
+ */
 function gui_x_percent(percent) {
 	var guiw = display_get_gui_width();
 	return guiw * (percent / 100);
 }
 
+/**
+ * Returns the Y position on the gui based on the percentage
+ * @param {real} percent Description
+ * @returns {real} Description
+ */
 function gui_y_percent(percent) {
 	var guih = display_get_gui_height();
 	return guih * (percent / 100);
 }
 
+/**
+ * Checks if there was a mouse press in the area
+ * @param {real} x Description
+ * @param {real} y Description
+ * @param {real} w Description
+ * @param {real} h Description
+ * @returns {bool} Description
+ */
 function gui_click(x, y, w, h) {
 	if (
 		point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), x, y, w, h)
@@ -114,16 +132,30 @@ function mouse_in_area_gui(area) {
 	);
 }
 
+/**
+ * Draw a rectangle in the specified area
+ * @param {array} area Description
+ * @param {bool} outline Description
+ * @param {array<constant.color>} [color]=[c_black, c_white] Description
+ * @param {real} [alpha]=1 Description
+ */
 function draw_rectangle_area(area, outline, color = [c_black, c_white], alpha = 1) {
 	draw_set_alpha(alpha);
+    //feather ignore once GM1044
 	draw_set_color(color[0]);
 	draw_rectangle(area[0], area[1], area[2], area[3], false);
+    //feather ignore once GM1044
 	draw_set_color(color[1]);
 	draw_rectangle(area[0], area[1], area[2], area[3], true);
 	draw_set_color(c_white);
 	draw_set_alpha(1);
 }
 
+/**
+ * Draw part of the surface specified
+ * @param {id.Surface} surf Description
+ * @param {array} area Description
+ */
 function draw_surface_part_area(surf, area) {
 	draw_surface_part(
 		surf,
@@ -140,6 +172,9 @@ global.listboxopen = false;
 global.elementselected = noone;
 global.listboxtimer = 60;
 
+/**
+ * AirUI Textbox constructior
+ */
 function textbox() constructor {
 	type = "textbox";
 	only_numbers = false;
@@ -345,7 +380,11 @@ enum AirLibBtnStyle {
 	Rounded,
 }
 
-function button(_text) constructor {
+/**
+ * AirUI Button constructior
+ * @param {string} [_text]="" Base text
+ */
+function button(_text = "") constructor {
 	custom_draw = undefined;
 	type = "button";
 	use_text = true;
@@ -503,6 +542,9 @@ function button(_text) constructor {
 	};
 }
 
+/**
+ * AirUI Listbox constructior
+ */
 function listbox() constructor {
 	type = "listbox";
 	owner = noone;
@@ -641,6 +683,12 @@ function gui_can_interact() {
 
 global.currenttextbox = {selected: false};
 
+/**
+ * Checks if a string contains another one
+ * @param {string} str String to check
+ * @param {string} contain Substring to check for
+ * @returns {bool}
+ */
 function string_contains(str, contain) {
 	for (var i = 1; i < string_length(str); ++i) {
 		//show_debug_message("");
@@ -655,6 +703,13 @@ function string_contains(str, contain) {
 	return false;
 }
 
+/**
+ * Re-create a surface if it doesn't exists
+ * @param {id.Surface} surf Variable holding the surface
+ * @param {real} w Width
+ * @param {real} h Height
+ * @returns {id.Surface} Description
+ */
 function surface_recreate(surf, w, h) {
 	if (!surface_exists(surf)) {
 		return surface_create(w, h);
@@ -663,6 +718,11 @@ function surface_recreate(surf, w, h) {
 	}
 }
 
+/**
+ * Save an structure to a json file
+ * @param {any} _struct Structure to save
+ * @param {string} _filename Filename
+ */
 function json_save(_struct, _filename) {
 	// We stringify the struct itself into JSON formatting
 	var _json = json_stringify(_struct);
@@ -678,6 +738,10 @@ function json_save(_struct, _filename) {
 	buffer_delete(_buff);
 }
 
+/**
+ * Load a Json file to a structure
+ * @param {string} _filename Filename
+ */
 function json_load(_filename) {
 	// We load in the file
 	var _buff = buffer_load(_filename);
@@ -691,6 +755,11 @@ function json_load(_filename) {
 	return _struct;
 }
 
+/**
+ * Basic topdown movement system with normalization
+ * @param {any} owner Instance to manage
+ * @param {any*} _spd Base speed
+ */
 function topdown_movement(owner, _spd) constructor {
 	spd = _spd;
 	hspd = 0;
@@ -751,6 +820,11 @@ function topdown_movement(owner, _spd) constructor {
 	};
 }
 
+
+/**
+ * Used to animate sprites for manual drawing on objects
+ * @param {any} spr Sprite to animate
+ */
 function animated_sprite(spr) constructor {
 	f = 0;
 	sprite = spr;
@@ -778,6 +852,7 @@ function animated_sprite(spr) constructor {
 		return f;
 	};
 }
+
 
 function air_timer(timeout, callback) constructor {
 	amount = timeout;
@@ -808,7 +883,7 @@ function sprite_get_height_ext(spr, scale = 1) {
 
 /// @function     		 lenghtdir(lenght, dir)
 /// @description  		 Calculates the X and Y positions with the lenght and direction specified.
-/// @param {real} lenght The minimum damage for the weapon.
+/// @param {real} lenght Lenght to calculate
 /// @param {real} dir 	 The direction to calculate.
 /// @return {struct} 	 Returns a struct containing the calculated positions.
 function lengthdir(lenght, dir) {
