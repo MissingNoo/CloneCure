@@ -1,5 +1,6 @@
+window_set_caption("VCure");
 /// @description Initialize Discord.
-if (os_type == os_android) {
+if (os_type == os_android or os_type == os_gxgames) {
 	instance_destroy();
 }
 x = -100;

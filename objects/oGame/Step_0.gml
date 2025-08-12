@@ -1,6 +1,6 @@
 #region Touch movement
 for (var i = 0; i <= 1; i++) {
-	if (os_type != os_android) { break; }
+	if (os_type != os_android and os_type != os_gxgames) { break; }
 	var xm = device_mouse_x_to_gui(i);
 	var ym = device_mouse_y_to_gui(i);
 	var side = undefined;

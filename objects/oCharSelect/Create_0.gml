@@ -30,6 +30,8 @@ recsyoff = 30;
 recyoff = 40;
 recscale = 2;
 
+selected_skin = 0;
+
 select_char = function() {
 	if (selected < 0 or selected > struct_names_count(Characters) - 1) {
 		exit;

@@ -1,5 +1,12 @@
-GameData.music = audio_play_sound(bgm_SSS, 0, -1, GameConfig.music_volume);
-if (os_type != os_android) {
+if (!is_undefined(GameData.music)) {
+	if (audio_get_name(GameData.music) != "bgm_SSS") {
+		audio_stop_sound(GameData.music);
+	}
+} else {
+	GameData.music = audio_play_sound(bgm_SSS, 0, -1, GameConfig.music_volume);
+}
+
+if (os_type != os_android and os_type != os_gxgames) {
 	cursor_sprite = sCursor;
 }
 window_set_cursor(cr_none);
