@@ -19,7 +19,8 @@ function character(_name) constructor {
     unlocked = false;
     agency = undefined;
     locked_color = undefined;
-    
+    skins = {"base" : {idle: idle_sprite, run: run_sprite}};
+	skinorder = ["base"];
     Characters[$ _name] = self;
      
     static set_weapon = function(_w) {
@@ -32,6 +33,8 @@ function character(_name) constructor {
         run_sprite = run;
         portrait = port;
         title_sprite = title;
+		skins.base.idle = idle_sprite;
+		skins.base.run = run_sprite;
         var surf = surface_create(1, 1);
         surface_set_target(surf);
         draw_sprite_centered(title, 0, 0, 33);
@@ -78,6 +81,14 @@ function character(_name) constructor {
         agency = s;
         return self;
     }
+	static add_skin = function(sname, idlespr, runspr) {
+		skins[$ sname] = {
+			idle : idlespr,
+			run : runspr
+		}
+		array_push(skinorder, sname);
+		return self;
+	}
 }
 
 var c = new character("Amelia_Watson");
@@ -90,7 +101,9 @@ c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAme)
     .set_ballsize(3)
     .set_flat(false)
     .set_unlocked_default(true)
-
+	.add_skin("O1", sAmeliaIdleO1, sAmeliaRunO1)
+	.add_skin("O2", sAmeliaIdleO2, sAmeliaRunO2)
+	.add_skin("O3", sAmeliaIdleO3, sAmeliaRunO3);
 c = new character("Aki_Rosenthal");
 c.set_sprite(sAmeliaIdle, sAmeliaRun, sAkiPortrait, sTitleAki)
 .set_speed(1.35)

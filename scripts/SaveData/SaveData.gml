@@ -30,8 +30,12 @@ function update_save_data() {
 		if (is_undefined(SaveData.characters[$ name])) {
 			SaveData.characters[$ name] = {
 				fandomxp : 0,
-				outfits : ["base"]
+				outfits : ["base"],
+				lastoutfit : "base"
 			}
+		}
+		if (is_undefined(SaveData.characters[$ name][$ "lastoutfit"])) {
+			SaveData.characters[$ name][$ "lastoutfit"] = "base";
 		}
 	});
 }

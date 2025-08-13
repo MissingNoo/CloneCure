@@ -46,9 +46,9 @@ if (!GameData.strafing) {
 }
 
 if (movement.is_moving()) {
-	sprite_index = char.run_sprite;
+	sprite_index = sprites.run;
 } else {
-	sprite_index = char.idle_sprite;
+	sprite_index = sprites.idle;
 }
 
 array_foreach(Player_Weapons, function(e, i) /*=>*/ {

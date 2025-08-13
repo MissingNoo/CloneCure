@@ -1,8 +1,9 @@
 //display_set_gui_size(1280, 720);
 instance_create_depth(x, y, depth, oCam);
 //GameData.selected_character = "Tenma_Maemi";
-char = GameData.characters[$ GameData.selected_character];
-
+char = Characters[$ GameData.selected_character];
+sprites = char.skins[$ SaveData.characters[$ GameData.selected_character].lastoutfit];
+sprite_index = sprites.idle;
 GameData.max_hp = char.hp;
 GameData.max_hp_base = GameData.max_hp;
 repeat (shop_level("Max_HP_Up")) {

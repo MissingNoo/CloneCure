@@ -1,3 +1,4 @@
+selectarrow = new animated_sprite(sSelectArrow);
 forcez = false;
 repeat (6) {
 	instance_create_depth(irandom(gui_w), 0, 1000, oTriangle);
@@ -31,6 +32,7 @@ recyoff = 40;
 recscale = 2;
 
 selected_skin = 0;
+selected_skin_name = "base";
 
 select_char = function() {
 	if (selected < 0 or selected > struct_names_count(Characters) - 1) {
@@ -38,7 +40,10 @@ select_char = function() {
 	}
 	selected_char = chars[selected];
 	GameData.selected_character = selected_char;
-	charspr.set_sprite(Characters[$ selected_char].idle_sprite);
+	//charspr.set_sprite(Characters[$ selected_char].idle_sprite);
+	selected_skin_name = SaveData.characters[$ selected_char].lastoutfit;
+	selected_skin = array_get_index(Characters[$ selected_char].skinorder, selected_skin_name);
+	charspr.set_sprite(Characters[$ selected_char].skins[$ selected_skin_name].idle);
 	charoffset = -(sprite_get_width_ext(Characters[$ selected_char].title_sprite, charscale) + 20);
 }
 
@@ -166,9 +171,20 @@ st.add("Skin", {
 		ui.node_visible("char_list_2", false);
     },
     step: function (){
+		//var _left_right = - input_check_pressed("left") + input_check_pressed("right");
+		if (left_right != 0) {
+			selected_skin = wrap(selected_skin + left_right, 0, array_length(Characters[$ selected_char].skinorder));
+			selected_skin_name = Characters[$ selected_char].skinorder[selected_skin];
+			if (array_contains(SaveData.characters[$ selected_char].outfits, selected_skin_name)) {
+				SaveData.characters[$ selected_char].lastoutfit = selected_skin_name;
+			}
+			charspr.set_sprite(Characters[$ selected_char].skins[$ selected_skin_name].idle);
+		}
         if (input_check_pressed("accept") or forcez) {
-            skin_was_selected = true;
-        	st.change("StageMode");
+			if (array_contains(SaveData.characters[$ selected_char].outfits, selected_skin_name)) {
+				skin_was_selected = true;
+				st.change("StageMode");
+			}
         }
         if (input_check_pressed("cancel") or device_mouse_check_button_pressed(0, mb_right)) {
             st.change("Char");
@@ -219,6 +235,7 @@ st.add("GO", {
 		GameData.music = audio_play_sound(selected_stage.music, 0, -1, GameConfig.music_volume);
 		global.seconds = 0;
 		global.minutes = 0;
+		GameData.mouseAim = false;
 		room_goto(selected_stage.rm);
     },
     step:function (){

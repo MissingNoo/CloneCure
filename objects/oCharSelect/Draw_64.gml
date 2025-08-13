@@ -71,17 +71,17 @@ ui.foreach(function(name, pos, data) {
 				} else {
 					draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset + xoff2, _y + yoffset, 87, 63);
 					if (mouse_in_area_gui([_x + offset + xoff2, _y + yoffset, _x + offset + 87, _y + yoffset + 63])) {
-                        if ((lmxx != mx or lmy != my)) {
-                        	lmxx = mx;
-                            lmy = my;
-                            if (selected != i) {
-        						selected = i;
-        						select_char();
-                            }
-                        }
-                        if (selected == i and device_mouse_check_button_released(0, mb_left)) {
-                        	forcez = true;
-                        }
+						if ((lmxx != mx or lmy != my)) {
+							lmxx = mx;
+							lmy = my;
+							if (selected != i) {
+								selected = i;
+								select_char();
+							}
+						}
+						if (selected == i and device_mouse_check_button_released(0, mb_left)) {
+							forcez = true;
+						}
 					}
 				}
 				//draw_text(_x + offset + xoff2, _y + yoffset, i);
@@ -161,7 +161,13 @@ ui.foreach(function(name, pos, data) {
 		
 		case "char_sprite":
 			_y -= character_selected_offset;
+			var defog = false;
+			if (!array_contains(SaveData.characters[$ selected_char].outfits, selected_skin_name)) {
+				gpu_set_fog(true, c_black, 0, 0);
+				defog = true;
+			}
 			draw_sprite_ext(charspr.sprite, charspr.get_frame(), (_x + _w  / 2), _y + _h / 1.5, skin_scale / 2, skin_scale / 2, 0, c_white, 1);
+			if defog gpu_set_fog(false, c_black, 0, 0);
 			break;
 		
 		case "stat_hp":
@@ -218,9 +224,9 @@ ui.foreach(function(name, pos, data) {
 			draw_sprite_ext(Characters[$ selected_char].title_sprite, 0, gui_w - charoffset, chary, charscale * -1, charscale, 0, c_white, 0.8);
 			break;
 		
-        default:
+		default:
 			draw_sprite_stretched(spr, 0, _x, _y, _w, _h);
-	        break;
+			 break;
     }
 });
 
@@ -231,12 +237,38 @@ skinui.foreach(function(name, pos, data) {
 	switch (name) {
 		case "skin_area":
 			draw_sprite_stretched(sCharacterselected, 0, _x, _y, _w, _h);
+			var defog = false;
+			if (!array_contains(SaveData.characters[$ selected_char].outfits, selected_skin_name)) {
+				gpu_set_fog(true, c_black, 0, 0);
+				defog = true;
+			}
 			draw_sprite_centered_ext(charspr.sprite, charspr.get_frame(), (_x + _w / 2) + ((charspr.width * skin_scale) / 2), (_y + _h / 2) + ((charspr.height * skin_scale)), skin_scale, skin_scale, 0, c_white, 1);
-            if (mouse_in_area_gui(area)) {
-				if (device_mouse_check_button_released(0, mb_left)) {
-					forcez = true;
+			if defog gpu_set_fog(false, c_black, 0, 0);
+			if (array_length(Characters[$ selected_char].skinorder) > 1) {
+				draw_sprite_ext(sSelectArrow, selectarrow.get_frame(), _x + _w / 2, _y + _h / 2, 2, 2, 0, c_white, 1);
+				var _x1 = (_x + _w / 2);
+				var _w1 = (sprite_get_width_ext(sSelectArrow, 2) / 2);
+				var _y1 = (_y + _h / 2);
+				var _h1 = (sprite_get_height_ext(sSelectArrow, 2) / 2);
+				if (gui_click(_x1 - _w1, _y1 - _h1, _x1, _y1 + _h1)) {
+					left_right = -1;
+				}
+				if (gui_click(_x1, _y1 - _h1, _x1 + _w1, _y1 + _h1)) {
+					left_right = 1;
+				}
+				if (mouse_in_area_gui(area) and !mouse_in_area_gui([_x1 - _w1, _y1 - _h1, _x1 + _w1, _y1 + _h1])) {
+					if (device_mouse_check_button_released(0, mb_left)) {
+						forcez = true;
+					}
+				}
+			} else {
+				if (mouse_in_area_gui(area)) {
+					if (device_mouse_check_button_released(0, mb_left)) {
+						forcez = true;
+					}
 				}
 			}
+			 
 			break;
 		case "back_panel":
 			draw_set_color(c_black);
