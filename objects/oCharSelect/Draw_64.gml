@@ -320,7 +320,18 @@ stageinfo.foreach(function(name, pos, data) {
 			break;
 		case "stage_icon":
 			draw_sprite_stretched(selected_stage.bg, 0, _x, _y, _w, _h);
-			if (mouse_in_area_gui(area)) {
+			draw_sprite_ext(sSelectArrow, selectarrow.get_frame(), _x + _w / 2, _y + _h / 2, 2, 2, 0, c_white, 1);
+			var _x1 = (_x + _w / 2);
+			var _w1 = (sprite_get_width_ext(sSelectArrow, 2) / 2);
+			var _y1 = (_y + _h / 2);
+			var _h1 = (sprite_get_height_ext(sSelectArrow, 2) / 2);
+			if (gui_click(_x1 - _w1, _y1 - _h1, _x1, _y1 + _h1)) {
+				left_right = -1;
+			}
+			if (gui_click(_x1, _y1 - _h1, _x1 + _w1, _y1 + _h1)) {
+				left_right = 1;
+			}
+			if (mouse_in_area_gui(area) and !mouse_in_area_gui([_x1 - _w1, _y1 - _h1, _x1 + _w1, _y1 + _h1])) {
 				if (device_mouse_check_button_released(0, mb_left)) {
 					forcez = true;
 				}

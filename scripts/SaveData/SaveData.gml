@@ -34,8 +34,13 @@ function update_save_data() {
 				lastoutfit : "base"
 			}
 		}
+		
+		if (is_undefined(SaveData.characters[$ name][$ "outfits"])) {
+			SaveData.characters[$ name][$ "outfits"] = ["base"];
+		}
 		if (is_undefined(SaveData.characters[$ name][$ "lastoutfit"])) {
 			SaveData.characters[$ name][$ "lastoutfit"] = "base";
 		}
 	});
 }
+update_save_data();
