@@ -24,17 +24,17 @@ ui.foreach(function(name, pos, data) {
 				} else {
 					draw_sprite_stretched(GameData.characters[$ chars[i]].portrait, 0, _x + offset + xoff2, _y + yoffset, 87, 63);
 					if (mouse_in_area_gui([_x + offset + xoff2, _y + yoffset, _x + offset + 87 + xoff2, _y + yoffset + 63])) {
-                        if ((lmxx != mx or lmy != my)) {
-                        	lmxx = mx;
-                            lmy = my;
-                            if (selected != i) {
-        						selected = i;
-        						select_char();
-                            }
-                        }
-                        if (selected == i and device_mouse_check_button_released(0, mb_left)) {
-                        	forcez = true;
-                        }
+						 if ((lmxx != mx or lmy != my)) {
+							 lmxx = mx;
+							 lmy = my;
+							 if (selected != i) {
+								 selected = i;
+								 select_char();
+							 }
+						 }
+						 if (selected == i and device_mouse_check_button_released(0, mb_left)) {
+							 forcez = true;
+						 }
 					}
 				}
 				if (i == selected) {
@@ -256,7 +256,9 @@ skinui.foreach(function(name, pos, data) {
 				if (gui_click(_x1, _y1 - _h1, _x1 + _w1, _y1 + _h1)) {
 					left_right = 1;
 				}
-				if (mouse_in_area_gui(area) and !mouse_in_area_gui([_x1 - _w1, _y1 - _h1, _x1 + _w1, _y1 + _h1])) {
+						draw_text(gui_x_percent(50), gui_y_percent(50), mouse_in_area_gui([_x1 - _w1, _y1 - _h1, _x1 + _w1, _y1 + _h1]));
+
+				if (st.get_current_state() == "Skin" and mouse_in_area_gui(area) and !mouse_in_area_gui([_x1 - _w1, _y1 - _h1, _x1 + _w1, _y1 + _h1])) {
 					if (device_mouse_check_button_released(0, mb_left)) {
 						forcez = true;
 					}
@@ -331,7 +333,8 @@ stageinfo.foreach(function(name, pos, data) {
 			if (gui_click(_x1, _y1 - _h1, _x1 + _w1, _y1 + _h1)) {
 				left_right = 1;
 			}
-			if (mouse_in_area_gui(area) and !mouse_in_area_gui([_x1 - _w1, _y1 - _h1, _x1 + _w1, _y1 + _h1])) {
+			draw_rectangle(_x1 - _w1, _y1 - _h1, _x1 + _w1, _y1 + _h1, true);
+			if (st.get_current_state() == "Stage" and mouse_in_area_gui(area) and !mouse_in_area_gui([_x1 - _w1, _y1 - _h1, _x1 + _w1, _y1 + _h1])) {
 				if (device_mouse_check_button_released(0, mb_left)) {
 					forcez = true;
 				}

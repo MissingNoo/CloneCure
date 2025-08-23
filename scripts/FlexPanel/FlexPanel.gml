@@ -1,11 +1,14 @@
 //feather ignore all
 #macro AirUIDefaultSpr var spr = (data[$ "image"] != undefined and data[$ "image"] != "") ? asset_get_index(data.image) : undefined; spr = (spr != undefined and spr != -1) ? spr : sBlank
 #macro AirUIArea var _x = pos.left, _y = pos.top, _w = pos.width, _h = pos.height, area = [_x, _y, _x + _w, _y + _h]
+#macro AirUIFunctionStart method(self, function(name, pos, data) { var _x = pos.left, _y = pos.top, _w = pos.width, _h = pos.height, area = [_x, _y, _x + _w, _y + _h]
+#macro AirUIFunctionEnd })
 global.edit_mode = false;
 global.edit_node = undefined;
 global.edit_node_owner = undefined;
 
-function flexpanel_draw_tags(tags, pos) {
+function flexpanel_draw_tags(name, pos, data) {
+	var tags = data.tags;
 	for (var i = 0; i < array_length(tags); i++) {
 		var tag = tags[i];
 		draw_bg_fg(pos, {type: undefined, tags});
@@ -95,7 +98,8 @@ function window(struct, _generate = false) constructor {
 	instances = [];
 	editing = false;
 	startingdepth = 0;
-
+	draw_list = [];
+	draw_func = {};
 	recalculate();
 
 	static set_visible = function(boolean) {
@@ -111,10 +115,18 @@ function window(struct, _generate = false) constructor {
 		var pos = flexpanel_node_layout_get_position(node, false);
 		var _name = flexpanel_node_get_name(node);
 		var _data = flexpanel_node_get_data(node);
-
+		if (!is_undefined(draw_func[$ _name]) and is_undefined(_data[$ "added"])) {
+			_data[$ "added"] = true;
+			array_push(draw_list, [_name, pos, _data, draw_func[$ _name]]);
+		}
+		
 		#region tags
 		if (!is_undefined(_data[$ "tags"])) {
-			flexpanel_draw_tags(_data.tags, pos);
+			if (is_undefined(_data[$ "added"])) {
+				_data[$ "added"] = true;
+				array_push(draw_list, [_name, pos, _data, flexpanel_draw_tags]);
+			}
+			flexpanel_draw_tags(_name, pos, _data);
 		}
 		#endregion
 		_function(_name, pos, _data);
@@ -125,6 +137,25 @@ function window(struct, _generate = false) constructor {
 			foreach(_function, _child);
 		}
 	};
+	
+	static add_draw = function (name, func) {
+		draw_func[$ name] = func;
+		return self;
+	}
+	
+	static finish = function() {
+		draw_list = [];
+		foreach(function(){}, undefined);
+	}
+	
+	static draw = function() {
+		for (var i = 0; i < array_length(draw_list); i++) {
+			var name = draw_list[i][0];
+			var pos = draw_list[i][1];
+			var data = draw_list[i][2];
+			draw_list[i][3](name, pos, data);
+		}
+	}
 
 	static set_node_function = function(node, _function) {
 		set_data(node, {f: _function});
@@ -192,8 +223,11 @@ function window(struct, _generate = false) constructor {
 		return !flexpanel_node_style_get_display(nn);
 	};
 
-	static edit_mode = function() {
+	static edit_mode = function(_bool = undefined) {
 		editing = !editing;
+		if (!is_undefined(_bool)) {
+			editing = _bool;
+		}
 		for (var i = 0; i < array_length(instances); ++i) {
 			if (instance_exists(instances[i])) {
 				instances[i].editable = editing;
