@@ -1,4 +1,3 @@
-
 /// Feather ignore all
 
 /// @desc Returns the position from a matrix.
@@ -12,9 +11,15 @@ function matrix_get_position(_matrix) {
 /// @param {array} matrix The matrix.
 /// @returns {struct} Vector3(scalex, scaley, scalez)
 function matrix_get_scale(_matrix) {
-	var xScl = sqrt(_matrix[0] * _matrix[0] + _matrix[1] * _matrix[1] + _matrix[2] * _matrix[2]);
-	var yScl = sqrt(_matrix[4] * _matrix[4] + _matrix[5] * _matrix[5] + _matrix[6] * _matrix[6]);
-	var zScl = sqrt(_matrix[8] * _matrix[8] + _matrix[9] * _matrix[9] + _matrix[10] * _matrix[10]);
+	var xScl = sqrt(
+		_matrix[0] * _matrix[0] + _matrix[1] * _matrix[1] + _matrix[2] * _matrix[2]
+	);
+	var yScl = sqrt(
+		_matrix[4] * _matrix[4] + _matrix[5] * _matrix[5] + _matrix[6] * _matrix[6]
+	);
+	var zScl = sqrt(
+		_matrix[8] * _matrix[8] + _matrix[9] * _matrix[9] + _matrix[10] * _matrix[10]
+	);
 	return new Vector3(xScl, yScl, zScl);
 }
 
@@ -25,6 +30,7 @@ function matrix_get_x(_matrix) {
 	gml_pragma("forceinline");
 	return _matrix[12];
 }
+
 /// @desc Returns the y position from a matrix.
 /// @param {array} matrix The matrix.
 /// @returns {Real}
@@ -32,6 +38,7 @@ function matrix_get_y(_matrix) {
 	gml_pragma("forceinline");
 	return _matrix[13];
 }
+
 /// @desc Returns the z position from a matrix.
 /// @param {array} matrix The matrix.
 /// @returns {Real}
@@ -45,7 +52,9 @@ function matrix_get_z(_matrix) {
 /// @returns {Real}
 function matrix_get_xscale(_matrix) {
 	gml_pragma("forceinline");
-	return sqrt(_matrix[0] * _matrix[0] + _matrix[1] * _matrix[1] + _matrix[2] * _matrix[2]);
+	return sqrt(
+		_matrix[0] * _matrix[0] + _matrix[1] * _matrix[1] + _matrix[2] * _matrix[2]
+	);
 }
 
 /// @desc Returns the y scale from a matrix.
@@ -53,7 +62,9 @@ function matrix_get_xscale(_matrix) {
 /// @returns {Real}
 function matrix_get_yscale(_matrix) {
 	gml_pragma("forceinline");
-	return sqrt(_matrix[0] * _matrix[0] + _matrix[1] * _matrix[1] + _matrix[2] * _matrix[2]);
+	return sqrt(
+		_matrix[0] * _matrix[0] + _matrix[1] * _matrix[1] + _matrix[2] * _matrix[2]
+	);
 }
 
 /// @desc Returns the z scale from a matrix.
@@ -61,5 +72,7 @@ function matrix_get_yscale(_matrix) {
 /// @returns {Real}
 function matrix_get_zscale(_matrix) {
 	gml_pragma("forceinline");
-	return sqrt(_matrix[0] * _matrix[0] + _matrix[1] * _matrix[1] + _matrix[2] * _matrix[2]);
+	return sqrt(
+		_matrix[0] * _matrix[0] + _matrix[1] * _matrix[1] + _matrix[2] * _matrix[2]
+	);
 }

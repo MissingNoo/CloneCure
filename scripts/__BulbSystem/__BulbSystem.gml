@@ -12,43 +12,42 @@
 // https://mini.gmshaders.com/p/tonemaps
 // http://filmicworlds.com/blog/filmic-tonemapping-operators/
 
-#macro __BULB_ZFAR  1
+#macro __BULB_ZFAR 1
 
-function __BulbSystem()
-{
-    static _system = undefined;
-    if (_system != undefined) return _system;
-    
-    __BulbTrace("Welcome to Bulb by Juju Adams! This is version " + BULB_VERSION + ", " + BULB_DATE);
-    
-    _system = {};
-    with(_system)
-    {
-        try
-        {
-            var _ = surface_rgba16float;
-            
-            __BulbTrace("HDR available");
-            __hdrAvailable = true;
-        }
-        catch(_error)
-        {
-            __BulbTrace("HDR not available");
-            __hdrAvailable = false;
-        }
-        
-        try
-        {
-            gpu_get_stencil_ref();
-            __BulbTrace("GPU stencil functions available");
-            __hasStencil = true;
-        }
-        catch(_error)
-        {
-            __BulbTrace("GPU stencil functions not available");
-            __hasStencil = false;
-        }
-    }
-    
-    return _system;
+function __BulbSystem() {
+	static _system = undefined;
+	if (_system != undefined) {
+		return _system;
+	}
+
+	__BulbTrace(
+		"Welcome to Bulb by Juju Adams! This is version "
+			+ BULB_VERSION
+			+ ", "
+			+ BULB_DATE
+	);
+
+	_system = {};
+	with (_system) {
+		try {
+			var _ = surface_rgba16float;
+
+			__BulbTrace("HDR available");
+			__hdrAvailable = true;
+		} catch (_error) {
+			__BulbTrace("HDR not available");
+			__hdrAvailable = false;
+		}
+
+		try {
+			gpu_get_stencil_ref();
+			__BulbTrace("GPU stencil functions available");
+			__hasStencil = true;
+		} catch (_error) {
+			__BulbTrace("GPU stencil functions not available");
+			__hasStencil = false;
+		}
+	}
+
+	return _system;
 }

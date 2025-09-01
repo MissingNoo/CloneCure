@@ -4,8 +4,7 @@
 /// in microseconds. This value will sometimes be a little more than the time budget set by
 /// ScribblejrGetBudget().
 
-function ScribblejrGetBudgetUsed()
-{
-    static _system = __ScribblejrSystem();
-    return _system.__budgetUsedPrev;
+function ScribblejrGetBudgetUsed() {
+	static _system = __ScribblejrSystem();
+	return _system.__budgetUsedPrev;
 }

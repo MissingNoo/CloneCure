@@ -8,18 +8,16 @@
 ///              .add("gamepad face north", "Y")
 ///              //etc.
 
-function input_icons_keyboard_and_mouse()
-{
-    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
-    
-    var _name = "keyboard and mouse";
-    
-    var _icon_holder = _global.__icons[$ _name];
-    if (!is_struct(_icon_holder))
-    {
-        _icon_holder = new __input_class_icon_category(_name);
-        _global.__icons[$ string(_name)] = _icon_holder;
-    }
-    
-    return _icon_holder;
+function input_icons_keyboard_and_mouse() {
+	__INPUT_GLOBAL_STATIC_LOCAL; //Set static _global
+
+	var _name = "keyboard and mouse";
+
+	var _icon_holder = _global.__icons[$ _name];
+	if (!is_struct(_icon_holder)) {
+		_icon_holder = new __input_class_icon_category(_name);
+		_global.__icons[$ string(_name)] = _icon_holder;
+	}
+
+	return _icon_holder;
 }

@@ -11,7 +11,7 @@ __lexicon_init();
 /// @ignore
 /// feather ignore all
 function __lexicon_init() {
-	static _inst =  undefined;
+	static _inst = undefined;
 	if (_inst == undefined) {
 		_inst = {
 			languageMap: {},
@@ -25,7 +25,7 @@ function __lexicon_init() {
 			locale: "unknown",
 			isReady: false,
 			replaceChrLegacy: "%s",
-            jsonData: undefined,
+			jsonData: undefined,
 			replaceChr: __LEXICON_STRUCT_REPLACE_CHR_SYMBOLS,
 			fileAsyncList: [],
 			cacheUpdate: true,
@@ -37,24 +37,34 @@ function __lexicon_init() {
 			timeLength: lexicon_length.FULL,
 			framen: 0,
 			dynamicMap: {},
-			hashAvailable: true
-		}
-		
+			hashAvailable: true,
+		};
+
 		// Check if hash is available
 		try {
-            // Prevents GM from just optimizing this out.
-            // Which is weird, but for genuine valid reasons!
-            var _key = "foo";
-			variable_get_hash(_key);	
-		} catch(_) {
-			_inst.hashAvailable = false;	
+			// Prevents GM from just optimizing this out.
+			// Which is weird, but for genuine valid reasons!
+			var _key = "foo";
+			variable_get_hash(_key);
+		} catch (_) {
+			_inst.hashAvailable = false;
 		}
-		
-		
-		time_source_start(time_source_create(time_source_global, 1, time_source_units_frames, method(undefined, __lexicon_gc_cache), [], -1));
+
+		time_source_start(
+			time_source_create(
+				time_source_global,
+				1,
+				time_source_units_frames,
+				method(undefined, __lexicon_gc_cache),
+				[],
+				-1
+			)
+		);
 	}
-	
+
 	return _inst;
 }
 
-__lexicon_trace("v" + __LEXICON_VERSION + " initialized! Created by " + __LEXICON_CREDITS);
+__lexicon_trace(
+	"v" + __LEXICON_VERSION + " initialized! Created by " + __LEXICON_CREDITS
+);

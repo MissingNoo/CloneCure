@@ -1,3 +1,3 @@
 /// @desc LDtkLoad()
 
-LDtkLoad()
+LDtkLoad();

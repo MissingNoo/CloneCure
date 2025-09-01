@@ -1,4 +1,6 @@
-if (GameData.is_paused) { exit; }
+if (GameData.is_paused) {
+	exit;
+}
 
 #region spawn list
 var minutes = global.minutes;
@@ -10,11 +12,15 @@ if (seconds < 10) {
 	seconds = $"0{seconds}";
 }
 var time = $"m{minutes}s{seconds}";
-if (GameData.on_stage and !is_undefined(Stages[$ "Stage1"][$ "timings"][$ time]) and last_second != seconds) {
+if (
+	GameData.on_stage
+	&& !is_undefined(Stages[$ "Stage1"][$ "timings"][$ time])
+	&& last_second != seconds
+) {
 	last_second = seconds;
 	var arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "add"];
 	if (!is_undefined(arr)) {
-		array_foreach(arr, function(e, i){
+		array_foreach(arr, function(e, i) {
 			if (!array_contains(Spawn_List, e)) {
 				var weight = Enemies[$ e].weight;
 				show_debug_message($"Added {e} to spawn list with weight {weight}");
@@ -26,7 +32,7 @@ if (GameData.on_stage and !is_undefined(Stages[$ "Stage1"][$ "timings"][$ time])
 	}
 	arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "remove"];
 	if (!is_undefined(arr)) {
-		array_foreach(arr, function(e, i){
+		array_foreach(arr, function(e, i) {
 			show_debug_message($"Removed {e} from spawn list");
 			var index = array_get_index(Spawn_List, e);
 			do {
@@ -34,7 +40,7 @@ if (GameData.on_stage and !is_undefined(Stages[$ "Stage1"][$ "timings"][$ time])
 				index = array_get_index(Spawn_List, e);
 			} until (index == -1)
 		});
-	} 
+	}
 }
 #endregion
 
@@ -42,7 +48,7 @@ if (GameData.on_stage and !is_undefined(Stages[$ "Stage1"][$ "timings"][$ time])
 Stages[$ "Stage1"].tick_border();
 //var insts = [oEnemy, oAnvil, oUpgradeNew, oDropParent, oBubba, oBubbaBark, oMascot, oChest];
 if (oPlayer.x > room_width / 2) {
-with (oMapItemParent) {
+	with (oMapItemParent) {
 		if (x < 1100) {
 			x += 2560;
 		}

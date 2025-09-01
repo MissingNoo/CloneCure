@@ -294,7 +294,7 @@ function textbox() constructor {
 					}
 				}
 			}
-			if (keyboard_lastkey != vk_space and keyboard_lastkey != vk_nokey) {
+			if (keyboard_lastkey != vk_space && keyboard_lastkey != vk_nokey) {
 				text = string_trim(text);
 			}
 			keyboard_lastchar = "";
@@ -482,7 +482,7 @@ function button(_text) constructor {
 		} else {
 			custom_draw();
 		}
-		
+
 		var color = "c_white";
 		if (held) {
 			color = "c_black";
@@ -493,7 +493,7 @@ function button(_text) constructor {
 			scribble($"[alpha,{alpha}][{color}][fa_center][fa_middle]{text}")
 				.scale_to_box(
 					abs(area[0] - area[2]) - string_width("X") - 2,
-					abs(area[1] - area[3]) - (string_height("X")),
+					abs(area[1] - area[3]) - string_height("X"),
 					true
 				)
 				.draw(area[0] + ((area[2] - area[0]) / 2), _y);
@@ -591,12 +591,15 @@ function listbox() constructor {
 		if (open) {
 			self.ldepth = gpu_get_depth();
 			gpu_set_depth(self.ldepth - 100);
-			draw_bg_fg({
-				left : openarea[0],
-				top : openarea[1],
-				width : openarea[2] - openarea[0],
-				height : openarea[3] - openarea[1] 
-			}, self);
+			draw_bg_fg(
+				{
+					left: openarea[0],
+					top: openarea[1],
+					width: openarea[2] - openarea[0],
+					height: openarea[3] - openarea[1],
+				},
+				self
+			);
 			//draw_set_color(c_black);
 			//draw_rectangle_area(openarea, false);
 			//draw_set_color(c_white);
@@ -614,13 +617,12 @@ function listbox() constructor {
 					func_on_select(self);
 				}
 				var _str = $"[Fnt][c_black] {list[i]}";
-				var txt = scribble(_str)
-					.scale_to_box(
-						area[2] - area[0] - string_width("X") - 2,
-						area[3] - area[1] - 3,
-						true
-					);
-					txt.draw(openarea[0], _y);
+				var txt = scribble(_str).scale_to_box(
+					area[2] - area[0] - string_width("X") - 2,
+					area[3] - area[1] - 3,
+					true
+				);
+				txt.draw(openarea[0], _y);
 				offset += txt.get_bbox().height;
 				if (openarea[3] < _y) {
 					openarea[3] = _y;
@@ -637,9 +639,7 @@ function gui_can_interact() {
 	return !global.listboxopen && AirLib.listframe < AirLib.frame;
 }
 
-global.currenttextbox = {
-	selected : false
-};
+global.currenttextbox = {selected: false};
 
 function string_contains(str, contain) {
 	for (var i = 1; i < string_length(str); ++i) {
@@ -704,10 +704,10 @@ function topdown_movement(owner, _spd) constructor {
 		var up_down = -input_check("up") + input_check("down");
 
 		if (touch.enabled) {
-			left_right = - (touch.x < touch.startx) + (touch.x > touch.startx);
-			up_down = - (touch.y < touch.starty) + (touch.y > touch.starty);
+			left_right = -(touch.x < touch.startx) + (touch.x > touch.startx);
+			up_down = -(touch.y < touch.starty) + (touch.y > touch.starty);
 		}
-		
+
 		if (left_right != 0) {
 			last_h = left_right;
 		}
@@ -765,8 +765,8 @@ function animated_sprite(spr) constructor {
 		last_f = sprite_get_number(sprite);
 		width = sprite_get_width(sprite);
 		height = sprite_get_height(sprite);
-	}
-	
+	};
+
 	static animate = function() {
 		f += speed / game_get_speed(gamespeed_fps);
 		if (f > last_f) {
@@ -856,16 +856,16 @@ function lerper(_value) constructor {
 	array_push(AirLib.lerpers, self);
 }
 
-
 function EventManager() constructor {
 	events = {};
+
 	static add_listener = function(event, instance, callback) {
 		if (!struct_exists(events, event)) {
 			events[$ event] = [];
 		}
 		array_push(events[$ event], {instance, callback});
-	}
-	
+	};
+
 	static broadcast = function(event, message) {
 		if (struct_exists(events, event)) {
 			for (var i = 0; i < array_length(events[$ event]); i++) {
@@ -875,7 +875,7 @@ function EventManager() constructor {
 				}
 			}
 		}
-	}
+	};
 }
 
 global.events = new EventManager();
@@ -883,24 +883,29 @@ global.events = new EventManager();
 function ui_element_list() constructor {
 	list = [];
 	selected = 0;
+
 	static add = function(e) {
-		if (is_array(e)) { 
+		if (is_array(e)) {
 			list = array_concat(list, e);
 		} else {
 			array_push(list, e);
 		}
 		return self;
-	}
+	};
+
 	static next = function() {
 		selected = wrap(selected + 1, 0, array_length(list) - 1);
-	}
+	};
+
 	static previous = function() {
 		selected = wrap(selected - 1, 0, array_length(list) - 1);
-	}
+	};
+
 	static get_selected = function() {
 		return list[selected];
-	}
+	};
+
 	static foreach = function(f) {
 		array_foreach(list, f);
-	}
+	};
 }

@@ -1,6 +1,6 @@
 key.animate();
-var up_down = - input_check_pressed("up") + input_check_pressed("down");
-var left_right = - input_check_pressed("left") + input_check_pressed("right");
+var up_down = -input_check_pressed("up") + input_check_pressed("down");
+var left_right = -input_check_pressed("left") + input_check_pressed("right");
 if (selected_option < 4) {
 	selected_option = clamp(selected_option + up_down, 0, 4);
 } else {

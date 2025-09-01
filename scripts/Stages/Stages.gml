@@ -1,12 +1,13 @@
-GameData ??= {}
+GameData ??= {};
 #macro Stages GameData.stages
 #macro StagesArr GameData.stagesArr
 Stages = {};
 StagesArr = [];
 GameData.stage_mode = "STAGE";
+
 function Stage(_name) constructor {
-    name = _name;
-    timings = {};
+	name = _name;
+	timings = {};
 	border = [];
 	music = undefined;
 	rm = undefined;
@@ -14,40 +15,40 @@ function Stage(_name) constructor {
 	bg = sStage1Port;
 	recomendation = [];
 	fandom = undefined;
-    Stages[$ name] = self;
-    array_push(StagesArr, name);
-	
+	Stages[$ name] = self;
+	array_push(StagesArr, name);
+
 	static add_recomendation = function(spr, level) {
 		array_push(recomendation, [spr, level]);
 		return self;
-	}
-	
+	};
+
 	static set_fandom = function(_fandom) {
 		fandom = _fandom;
 		return self;
-	}
-	
-    static add_enemy = function(enemy, time) {
-        time = $"m{string_replace(time, ":", "s")}";
-        timings[$ time] ??= {};
-        timings[$ time][$ "add"] ??= [];
-        array_push(timings[$ time][$ "add"], enemy);
+	};
+
+	static add_enemy = function(enemy, time) {
+		time = $"m{string_replace(time, ":", "s")}";
+		timings[$ time] ??= {};
+		timings[$ time][$ "add"] ??= [];
+		array_push(timings[$ time][$ "add"], enemy);
 		return self;
-    }
-    
-    static remove_enemy = function(enemy, time) {
-        time = $"m{string_replace(time, ":", "s")}";
-        timings[$ time] ??= {};
-        timings[$ time][$ "remove"] ??= [];
-        array_push(timings[$ time][$ "remove"], enemy);
+	};
+
+	static remove_enemy = function(enemy, time) {
+		time = $"m{string_replace(time, ":", "s")}";
+		timings[$ time] ??= {};
+		timings[$ time][$ "remove"] ??= [];
+		array_push(timings[$ time][$ "remove"], enemy);
 		return self;
-    }
-	
-	static set_border = function(x1, y1, x2, y2){
+	};
+
+	static set_border = function(x1, y1, x2, y2) {
 		border = [x1, y1, x2, y2];
 		return self;
-	}
-	
+	};
+
 	static tp_insts = function(px, py) {
 		var insts = [oWeapon, oEnemy, oAnvil, oXP];
 		for (var i = 0; i < array_length(insts); ++i) {
@@ -60,10 +61,10 @@ function Stage(_name) constructor {
 				ystart = ystart + yy;
 			}
 		}
-	}
-	
+	};
+
 	static tick_border = function() {
-		var px = oPlayer.x; 
+		var px = oPlayer.x;
 		var py = oPlayer.y;
 		if (oPlayer.x < border[0]) {
 			oPlayer.x = border[2];
@@ -81,27 +82,27 @@ function Stage(_name) constructor {
 			oPlayer.y = border[1];
 			tp_insts(px, py);
 		}
-	}
-	
+	};
+
 	static set_music = function(snd) {
 		music = snd;
 		return self;
-	}
-	
+	};
+
 	static set_room = function(r) {
 		rm = r;
 		return self;
-	}
-	
+	};
+
 	static set_bg = function(_bg) {
 		bg = _bg;
 		return self;
-	}
-	
+	};
+
 	static set_coin_multiplier = function(amount) {
 		multiplier = amount;
 		return self;
-	}
+	};
 }
 
 var stage1 = new Stage("Stage1");

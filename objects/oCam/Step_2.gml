@@ -7,7 +7,7 @@ if (distance_to_object(oPlayer) > 50) {
 	y = oPlayer.y + yoffset;
 }
 
-var px = oPlayer.x; 
+var px = oPlayer.x;
 var py = oPlayer.y;
 xoffset = x - px;
 yoffset = y - py;

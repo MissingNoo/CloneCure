@@ -1,136 +1,143 @@
 GameData ??= {};
 GameData.characters = {};
 #macro Characters GameData.characters
-function character(_name) constructor {
-    name = _name;
-    uiname = string_replace_all(_name, "_", " ");
-    spd = 0;
-    idle_sprite = sBlank;
-    run_sprite = sBlank;
-    title_sprite = sBlank;
-    main_weapon = "undefined";
-    portrait = sBlank;
-    hp = 10;
-    atk = 1;
-    crit = 1;
-    ball_size = 1;
-    flat = false;
-    unlocked_by_default = true;
-    unlocked = false;
-    agency = undefined;
-    locked_color = undefined;
-    skins = {"base" : {idle: idle_sprite, run: run_sprite}};
-	skinorder = ["base"];
-    Characters[$ _name] = self;
-     
-    static set_weapon = function(_w) {
-        main_weapon = _w;
-        return self;
-    }
 
-    static set_sprite = function(idle, run, port, title) {
-        idle_sprite = idle;
-        run_sprite = run;
-        portrait = port;
-        title_sprite = title;
+function character(_name) constructor {
+	name = _name;
+	uiname = string_replace_all(_name, "_", " ");
+	spd = 0;
+	idle_sprite = sBlank;
+	run_sprite = sBlank;
+	title_sprite = sBlank;
+	main_weapon = "undefined";
+	portrait = sBlank;
+	hp = 10;
+	atk = 1;
+	crit = 1;
+	ball_size = 1;
+	flat = false;
+	unlocked_by_default = true;
+	unlocked = false;
+	agency = undefined;
+	locked_color = undefined;
+	skins = {"base": {idle: idle_sprite, run: run_sprite}};
+	skinorder = ["base"];
+	Characters[$ _name] = self;
+
+	static set_weapon = function(_w) {
+		main_weapon = _w;
+		return self;
+	};
+
+	static set_sprite = function(idle, run, port, title) {
+		idle_sprite = idle;
+		run_sprite = run;
+		portrait = port;
+		title_sprite = title;
 		skins.base.idle = idle_sprite;
 		skins.base.run = run_sprite;
-        var surf = surface_create(1, 1);
-        surface_set_target(surf);
-        draw_sprite_centered(title, 0, 0, 33);
-        surface_reset_target();
-        locked_color = surface_getpixel(surf, 0, 0);
-        surface_free(surf);
-        return self;
-    }
-    
-    static set_speed = function(s) {
-        spd = s;
-        return self;
-    }
-    static set_hp = function(s) {
-        hp = s;
-        return self;
-    }
-    static set_crit = function(s) {
-        crit = s;
-        return self;
-    }
-    static set_atk = function(s) {
-        atk = s;
-        return self;
-    }
-    static set_ballsize = function(s) {
-        ball_size = s;
-        return self;
-    }
-    static set_flat = function(s) {
-        flat = s;
-        return self;
-    }
-    static set_unlocked_default = function(s) {
-        unlocked_by_default = s;
-        unlocked = s;
-        return self;
-    }
-    static set_unlocked = function(s) {
-        unlocked = s;
-        return self;
-    }
-    static set_agency = function(s) {
-        agency = s;
-        return self;
-    }
+		var surf = surface_create(1, 1);
+		surface_set_target(surf);
+		draw_sprite_centered(title, 0, 0, 33);
+		surface_reset_target();
+		locked_color = surface_getpixel(surf, 0, 0);
+		surface_free(surf);
+		return self;
+	};
+
+	static set_speed = function(s) {
+		spd = s;
+		return self;
+	};
+
+	static set_hp = function(s) {
+		hp = s;
+		return self;
+	};
+
+	static set_crit = function(s) {
+		crit = s;
+		return self;
+	};
+
+	static set_atk = function(s) {
+		atk = s;
+		return self;
+	};
+
+	static set_ballsize = function(s) {
+		ball_size = s;
+		return self;
+	};
+
+	static set_flat = function(s) {
+		flat = s;
+		return self;
+	};
+
+	static set_unlocked_default = function(s) {
+		unlocked_by_default = s;
+		unlocked = s;
+		return self;
+	};
+
+	static set_unlocked = function(s) {
+		unlocked = s;
+		return self;
+	};
+
+	static set_agency = function(s) {
+		agency = s;
+		return self;
+	};
+
 	static add_skin = function(sname, idlespr, runspr) {
-		skins[$ sname] = {
-			idle : idlespr,
-			run : runspr
-		}
+		skins[$ sname] = {idle: idlespr, run: runspr};
 		array_push(skinorder, sname);
 		return self;
-	}
+	};
 }
 
 var c = new character("Amelia_Watson");
 c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAme)
-    .set_speed(1.35)
-    .set_weapon("Ame_Pistol")
-    .set_hp(75)
-    .set_atk(1.30)
-    .set_crit(1.10)
-    .set_ballsize(3)
-    .set_flat(false)
-    .set_unlocked_default(true)
+	.set_speed(1.35)
+	.set_weapon("Ame_Pistol")
+	.set_hp(75)
+	.set_atk(1.30)
+	.set_crit(1.10)
+	.set_ballsize(3)
+	.set_flat(false)
+	.set_unlocked_default(true)
 	.add_skin("O1", sAmeliaIdleO1, sAmeliaRunO1)
 	.add_skin("O2", sAmeliaIdleO2, sAmeliaRunO2)
 	.add_skin("O3", sAmeliaIdleO3, sAmeliaRunO3);
 c = new character("Aki_Rosenthal");
 c.set_sprite(sAmeliaIdle, sAmeliaRun, sAkiPortrait, sTitleAki)
-.set_speed(1.35)
-    .set_weapon("Ame_Pistol")
-    .set_hp(75)
-    .set_atk(1.30)
-    .set_crit(1.10)
-    .set_ballsize(3)
-    .set_flat(false)
+	.set_speed(1.35)
+	.set_weapon("Ame_Pistol")
+	.set_hp(75)
+	.set_atk(1.30)
+	.set_crit(1.10)
+	.set_ballsize(3)
+	.set_flat(false);
 
 c = new character("Takanashi_Kiara");
 c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleKiara)
-.set_speed(1.35)
-    .set_weapon("BL_Book")
-    .set_hp(75)
-    .set_atk(1.30)
-    .set_crit(1.10)
-    .set_ballsize(3)
-    .set_flat(false)
+	.set_speed(1.35)
+	.set_weapon("BL_Book")
+	.set_hp(75)
+	.set_atk(1.30)
+	.set_crit(1.10)
+	.set_ballsize(3)
+	.set_flat(false);
 
 c = new character("Tenma_Maemi");
 c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaPortrait, sTitleTenma)
-    .set_speed(1.35)
-    .set_weapon("Sausage")
-    .set_hp(75)
-    .set_atk(1.30)
-    .set_crit(1.10)
-    .set_ballsize(3)
-    .set_flat(false)
-    .set_unlocked_default(true)
+	.set_speed(1.35)
+	.set_weapon("Sausage")
+	.set_hp(75)
+	.set_atk(1.30)
+	.set_crit(1.10)
+	.set_ballsize(3)
+	.set_flat(false)
+	.set_unlocked_default(true);

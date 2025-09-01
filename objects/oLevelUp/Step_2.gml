@@ -18,7 +18,9 @@ if (input_check_pressed("accept")) {
 					} else {
 						pos = array_get_index(Player_Weapons, undefined);
 						if (pos != -1) {
-							Player_Weapons[pos] = variable_clone(Weapons[$ global.search]);
+							Player_Weapons[pos] = variable_clone(
+								Weapons[$ global.search]
+							);
 						}
 					}
 					break;

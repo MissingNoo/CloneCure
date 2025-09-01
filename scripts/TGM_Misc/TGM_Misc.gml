@@ -1,4 +1,3 @@
-
 /// Feather ignore all
 
 #macro gui_w display_get_gui_width()
@@ -9,15 +8,15 @@
 #macro gui_mouse_y_normalized (device_mouse_y_to_gui(0)/display_get_gui_height())
 
 /// @desc Returns the x position of the mouse without it being stuck in the window.
-/// @returns {real} 
+/// @returns {real}
 function window_mouse_x() {
-    return display_mouse_get_x() - window_get_x();
+	return display_mouse_get_x() - window_get_x();
 }
 
 /// @desc Returns the y position of the mouse without it being stuck in the window.
-/// @returns {real} 
+/// @returns {real}
 function window_mouse_y() {
-    return display_mouse_get_y() - window_get_y();
+	return display_mouse_get_y() - window_get_y();
 }
 
 /// @desc This function returns a boolean if you double-click the mouse.
@@ -54,6 +53,7 @@ function io_clear_both() {
 function __compare_ascending(_a, _b) {
 	return _a - _b;
 }
+
 /// @ignore
 function __compare_descending(_a, _b) {
 	return _b - _a;

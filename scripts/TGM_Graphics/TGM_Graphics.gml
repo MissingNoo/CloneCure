@@ -1,15 +1,14 @@
-
 /// Feather ignore all
 
 #region DISPLAY
 
 #macro ANTIALIASING_MAX_AVAILABLE max(display_aa & 2, display_aa & 4, display_aa & 8)
 
-
 /// @desc Get display inches.
-/// @returns {real} 
+/// @returns {real}
 function display_get_inches() {
-	return sqrt(sqr(display_get_width()) + sqr(display_get_height())) / max(display_get_dpi_x(), display_get_dpi_y());
+	return sqrt(sqr(display_get_width()) + sqr(display_get_height()))
+		/ max(display_get_dpi_x(), display_get_dpi_y());
 }
 
 /// @desc Returns the display count.
@@ -34,9 +33,16 @@ function display_get_true_resolutions(_width, _height, _aspectRatio) {
 	var aspect = displayWidth / displayHeight;
 	var resolutions = [];
 	// loop through possible resolutions to find matches
-	for(var width = displayWidth, height = 0; width > 0; width -= 1) {
+	for (var width = displayWidth, height = 0; width > 0; width -= 1) {
 		height = floor(width / aspect);
-			if (height > 0 && (width / height == _aspectRatio) && (width % 8 == 0) && (height % 8 == 0) && is_even(width) && is_even(height)) {
+		if (
+			height > 0
+			&& (width / height == _aspectRatio)
+			&& (width % 8 == 0)
+			&& (height % 8 == 0)
+			&& is_even(width)
+			&& is_even(height)
+		) {
 			array_push(resolutions, [width, height]);
 		}
 	}
@@ -49,9 +55,9 @@ function display_get_true_resolutions(_width, _height, _aspectRatio) {
 /// @returns {string} Description
 function aspect_ratio_gcd(_width, _height) {
 	var _gcd = gcd(_width, _height),
-	    _wAspect = floor(_width / _gcd),
-	    _hAspect = floor(_height / _gcd); 
-    return $"{_wAspect} / {_hAspect}";
+		_wAspect = floor(_width / _gcd),
+		_hAspect = floor(_height / _gcd);
+	return $"{_wAspect} / {_hAspect}";
 }
 
 #endregion
@@ -62,7 +68,11 @@ function aspect_ratio_gcd(_width, _height) {
 /// @param {Id.Surface} surfaceId The surface id.
 /// @param {string} fname The name of the saved image file.
 function surface_save_hdr(_surfaceId, _fname) {
-	var _surf = surface_create(surface_get_width(_surfaceId), surface_get_height(_surfaceId), surface_rgba8unorm);
+	var _surf = surface_create(
+		surface_get_width(_surfaceId),
+		surface_get_height(_surfaceId),
+		surface_rgba8unorm
+	);
 	surface_copy(_surf, 0, 0, _surfaceId);
 	surface_save(_surf, _fname);
 	surface_free(_surf);
@@ -74,12 +84,28 @@ function surface_save_hdr(_surfaceId, _fname) {
 /// @param {Function} pass_func The shader function.
 /// @param {Struct} pass_json_data The shader parameters.
 /// @param {Real} alpha Surface clear alpha.
-function surface_blit(_source, _dest, _passFunc=undefined, _passJsonData=undefined, _alpha=0) {
+function surface_blit(
+	_source,
+	_dest,
+	_passFunc = undefined,
+	_passJsonData = undefined,
+	_alpha = 0
+) {
 	gml_pragma("forceinline");
 	surface_set_target(_dest);
-	if (_alpha > -1) draw_clear_alpha(c_black, _alpha);
-	if (_passFunc != undefined) _passFunc(_passJsonData);
-	draw_surface_stretched(_source, 0, 0, surface_get_width(_dest), surface_get_height(_dest));
+	if (_alpha > -1) {
+		draw_clear_alpha(c_black, _alpha);
+	}
+	if (_passFunc != undefined) {
+		_passFunc(_passJsonData);
+	}
+	draw_surface_stretched(
+		_source,
+		0,
+		0,
+		surface_get_width(_dest),
+		surface_get_height(_dest)
+	);
 	shader_reset();
 	surface_reset_target();
 }
@@ -96,9 +122,11 @@ function surface_blit(_source, _dest, _passFunc=undefined, _passJsonData=undefin
 /// @param {array} groups_array Description
 function texturegroup_unload_except(_group, _groupsArray) {
 	var i = 0, isize = array_length(_groupsArray);
-	repeat(isize) {
+	repeat (isize) {
 		var _g = _groupsArray[i];
-		if (_g != _group) continue;
+		if (_g != _group) {
+			continue;
+		}
 		texturegroup_unload(_g);
 		++i;
 	}

@@ -9,12 +9,20 @@ if (room != lastroom) {
 			np_setpresence("Selecting a character", "", "", "");
 			break;
 		case rStage1:
-			np_setpresence(string_replace($"{GameData.selected_character} - {GameData.stage_name}" , "_", " "), "Saving the fans!", "", "");
+			np_setpresence(
+				string_replace(
+					$"{GameData.selected_character} - {GameData.stage_name}",
+					"_",
+					" "
+				),
+				"Saving the fans!",
+				"",
+				""
+			);
 			break;
 		case rShop:
 			np_setpresence("Shopping", "", "", "");
 			break;
 	}
-	
 }
 np_update();

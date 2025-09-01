@@ -3,7 +3,12 @@ if (is_undefined(ohit)) {
 	other.hit_frame[$ $"i{id}"] = 0;
 	ohit = 0;
 }
-if (other.inv_frame > AirLib.frame or ohit > AirLib.frame or image_alpha == 0 or other.image_alpha != 1) {
+if (
+	other.inv_frame > AirLib.frame
+	|| ohit > AirLib.frame
+	|| image_alpha == 0
+	|| other.image_alpha != 1
+) {
 	exit;
 }
 hits--;
@@ -15,7 +20,11 @@ global.lastenemy = other;
 on_hit();
 //Growth
 if (wid.perk) {
-	dmg += (((0.1 * shop_level("Growth")) * GameData.level) / max_projectiles) * wid.hit_cooldown < 20 ? wid.hit_cooldown / 20 : 1;
+	dmg += (((0.1 * shop_level("Growth")) * GameData.level) / max_projectiles)
+		* wid.hit_cooldown
+	< 20
+		? wid.hit_cooldown / 20
+		: 1;
 }
 
 var BaseATK = GameData.ATK;
@@ -38,21 +47,31 @@ array_foreach(Player_Items, function(e, i) /*=>*/ {
 
 other.hp -= dmg;
 
-instance_create_depth(other.x, other.y - (other.sprite_height / 2), other.depth - 1, oDamageText, {
-    dir : abs(image_xscale),
-    dmg : dmg
-});
-	
-audio_play_sound(choose(snd_hit1, snd_hit2, snd_hit3), 0, 0, GameConfig.sound_volume, undefined, random_range(0.75, 1));
+instance_create_depth(
+	other.x,
+	other.y - (other.sprite_height / 2),
+	other.depth - 1,
+	oDamageText,
+	{dir: abs(image_xscale), dmg: dmg}
+);
 
-if (wid.knockback_speed[level] != 0 and other.knocktimer < AirLib.frame) {
+audio_play_sound(
+	choose(snd_hit1, snd_hit2, snd_hit3),
+	0,
+	0,
+	GameConfig.sound_volume,
+	undefined,
+	random_range(0.75, 1)
+);
+
+if (wid.knockback_speed[level] != 0 && other.knocktimer < AirLib.frame) {
 	other.knocktimer = AirLib.frame + wid.knockback_duration[level];
 	var push = wid.knockback_speed[level];
-	
+
 	var dir = point_direction(x, y, other.x, other.y);
 	var hspd = lengthdir_x(push, dir);
 	var vspd = lengthdir_y(push, dir);
-	
+
 	other.x += hspd;
 	other.y += vspd;
 }

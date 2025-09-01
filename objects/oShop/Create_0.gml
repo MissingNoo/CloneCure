@@ -23,36 +23,38 @@ buyfunc = function() {
 	var sitem = Shop.upgrades[$ selected_item];
 	SaveData.money -= sitem.cost[sitem.level];
 	sitem.level++;
-}
+};
 buybutton = new button("Buy");
 buybutton.enabled = true;
 buybutton.set_function(method(self, buyfunc));
-buybutton.set_on_area_function(method(self, function() {
-	buysell = 0;
-}));
+buybutton
+	.set_on_area_function(method(self, function() {
+		buysell = 0;
+	}));
 
 sellfunc = function() {
 	var sitem = Shop.upgrades[$ selected_item];
 	sitem.level--;
 	SaveData.money += sitem.cost[sitem.level];
-}
+};
 sellbutton = new button("Refund");
 sellbutton.enabled = true;
 sellbutton.set_function(method(self, sellfunc));
-sellbutton.set_on_area_function(method(self, function() {
-	buysell = 1;
-}));
+sellbutton
+	.set_on_area_function(method(self, function() {
+		buysell = 1;
+	}));
 
 update_tab = function() {
-    tab_items = [];
-    var names = struct_get_names(Shop.upgrades);
-    for (var i = 0; i < array_length(names); i++) {
-    	if (Shop.upgrades[$ names[i]].type == tabs[selected_tab]) {
-        	array_push(tab_items, names[i]);
-        }
-    }
-    array_sort(tab_items, true);
-}
+	tab_items = [];
+	var names = struct_get_names(Shop.upgrades);
+	for (var i = 0; i < array_length(names); i++) {
+		if (Shop.upgrades[$ names[i]].type == tabs[selected_tab]) {
+			array_push(tab_items, names[i]);
+		}
+	}
+	array_sort(tab_items, true);
+};
 update_tab();
 tab_arrow_offset = 0;
 tab_arrow_offset_dist = 10;
@@ -76,6 +78,11 @@ dbg_section("Positions");
 var names = struct_get_names(self);
 for (var i = 0; i < array_length(names); i++) {
 	if (is_real(self[$ names[i]])) {
-		dbg_slider_int(ref_create(self, names[i]), -50, 100, string_first_letter_upper_case(string_replace_all(names[i], "_", " ")));
+		dbg_slider_int(
+			ref_create(self, names[i]),
+			-50,
+			100,
+			string_first_letter_upper_case(string_replace_all(names[i], "_", " "))
+		);
 	}
 }

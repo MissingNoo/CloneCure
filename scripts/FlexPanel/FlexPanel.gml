@@ -115,11 +115,11 @@ function window(struct, _generate = false) constructor {
 		var pos = flexpanel_node_layout_get_position(node, false);
 		var _name = flexpanel_node_get_name(node);
 		var _data = flexpanel_node_get_data(node);
-		if (!is_undefined(draw_func[$ _name]) and is_undefined(_data[$ "added"])) {
+		if (!is_undefined(draw_func[$ _name]) && is_undefined(_data[$ "added"])) {
 			_data[$ "added"] = true;
 			array_push(draw_list, [_name, pos, _data, draw_func[$ _name]]);
 		}
-		
+
 		#region tags
 		if (!is_undefined(_data[$ "tags"])) {
 			if (is_undefined(_data[$ "added"])) {
@@ -137,17 +137,17 @@ function window(struct, _generate = false) constructor {
 			foreach(_function, _child);
 		}
 	};
-	
-	static add_draw = function (name, func) {
+
+	static add_draw = function(name, func) {
 		draw_func[$ name] = func;
 		return self;
-	}
-	
+	};
+
 	static finish = function() {
 		draw_list = [];
-		foreach(function(){}, undefined);
-	}
-	
+		foreach(function() {}, undefined);
+	};
+
 	static draw = function() {
 		for (var i = 0; i < array_length(draw_list); i++) {
 			var name = draw_list[i][0];
@@ -155,7 +155,7 @@ function window(struct, _generate = false) constructor {
 			var data = draw_list[i][2];
 			draw_list[i][3](name, pos, data);
 		}
-	}
+	};
 
 	static set_node_function = function(node, _function) {
 		set_data(node, {f: _function});
@@ -209,15 +209,15 @@ function window(struct, _generate = false) constructor {
 
 	static node_visible = function(n, b = undefined) {
 		var nn = flexpanel_node_get_child(root, n);
-        if (is_undefined(b)) {
-        	flexpanel_node_style_set_display(nn, !flexpanel_node_style_get_display(nn));
-        } else {
-        	flexpanel_node_style_set_display(nn, !b);
-        }
-		
+		if (is_undefined(b)) {
+			flexpanel_node_style_set_display(nn, !flexpanel_node_style_get_display(nn));
+		} else {
+			flexpanel_node_style_set_display(nn, !b);
+		}
+
 		recalculate();
 	};
-	
+
 	static node_is_visible = function(n) {
 		var nn = flexpanel_node_get_child(root, n);
 		return !flexpanel_node_style_get_display(nn);
@@ -391,8 +391,8 @@ function get_align(str) {
 		case "absolute":
 			align = flexpanel_position_type.absolute;
 			break;
-		case "static":
-			align = flexpanel_position_type.static;
+			//case "static":
+			//	align = flexpanel_position_type.static;
 			break;
 		default:
 			align = -1;

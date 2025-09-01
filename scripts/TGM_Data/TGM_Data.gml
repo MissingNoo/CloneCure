@@ -1,11 +1,10 @@
-
 /// Feather ignore all
 
 /// @desc Make a new buffer, based on parts from an existing buffer.
 /// @param {Id.Buffer} buffer The buffer to slice.
 /// @param {Real} start Where to start slicing. Default 0.
 /// @param {Real} size Where to end the slice, default at the very end of the buffer (-1).
-function buffer_slice(_buffer, _start=0, _size=-1) {
+function buffer_slice(_buffer, _start = 0, _size = -1) {
 	var _alignment = buffer_get_alignment(_buffer);
 	if (_size == -1) {
 		_size = buffer_get_size(_buffer);
@@ -27,11 +26,11 @@ function rc4_cryptography(_buffer, _key, _offset, _length) {
 	var i, j, s, _temp, _keyLength, _pos;
 	s = array_create(256);
 	_keyLength = string_byte_length(_key);
-	for(i = 255; i >= 0; --i) {
+	for (i = 255; i >= 0; --i) {
 		s[i] = i;
 	}
 	j = 0;
-	for(i = 0; i <= 255; ++i) {
+	for (i = 0; i <= 255; ++i) {
 		j = (j + s[i] + string_byte_at(_key, i % _keyLength)) % 256;
 		_temp = s[i];
 		s[i] = s[j];
@@ -41,28 +40,38 @@ function rc4_cryptography(_buffer, _key, _offset, _length) {
 	j = 0;
 	_pos = 0;
 	buffer_seek(_buffer, buffer_seek_start, _offset);
-	repeat(_length) {
-		i = (i+1) % 256;
-		j = (j+s[i]) % 256;
+	repeat (_length) {
+		i = (i + 1) % 256;
+		j = (j + s[i]) % 256;
 		_temp = s[i];
 		s[i] = s[j];
 		s[j] = _temp;
 		var cur_byte = buffer_peek(_buffer, _pos++, buffer_u8);
-		buffer_write(_buffer, buffer_u8, s[(s[i]+s[j]) % 256] ^ cur_byte);
+		buffer_write(_buffer, buffer_u8, s[(s[i] + s[j]) % 256] ^ cur_byte);
 	}
 }
 
 // EXPERIMENTAL
 // https://www.sohamkamani.com/uuid-versions-explained/
 // https://www.uuidtools.com/uuid-versions-explained
-function uuid_v5_generate(_hyphen=false) {
+function uuid_v5_generate(_hyphen = false) {
 	// non-random, sha1
 	var _configData = os_get_info();
-	var _uuid = sha1_string_unicode(string(get_timer()*current_second*current_minute*current_hour*current_day*current_month)+
-	_configData[? "udid"]+string(_configData[? "video_adapter_subsysid"]));
+	var _uuid = sha1_string_unicode(
+		string(
+				get_timer()
+					* current_second
+					* current_minute
+					* current_hour
+					* current_day
+					* current_month
+			)
+			+ _configData[? "udid"]
+			+ string(_configData[? "video_adapter_subsysid"])
+	);
 	ds_map_destroy(_configData);
 	if (_hyphen) {
-		for(var i = 1; i < 32; ++i) {
+		for (var i = 1; i < 32; ++i) {
 			if (i == 9 || i == 14 || i == 19 || i == 24) {
 				_uuid = string_insert("-", _uuid, i);
 			}
@@ -72,12 +81,22 @@ function uuid_v5_generate(_hyphen=false) {
 }
 
 /// @desc Generates an UUID v3 string.
-/// @returns {string} 
+/// @returns {string}
 function uuid_v3_generate() {
 	// non-random, md5
 	var _configData = os_get_info();
-	var _uuid = md5_string_unicode(string(get_timer()*current_second*current_minute*current_hour*current_day*current_month)+_configData[? "udid"]+
-	string(_configData[? "video_adapter_subsysid"]));
+	var _uuid = md5_string_unicode(
+		string(
+				get_timer()
+					* current_second
+					* current_minute
+					* current_hour
+					* current_day
+					* current_month
+			)
+			+ _configData[? "udid"]
+			+ string(_configData[? "video_adapter_subsysid"])
+	);
 	ds_map_destroy(_configData);
 	return _uuid;
 }
@@ -85,15 +104,34 @@ function uuid_v3_generate() {
 /// @desc Generates an UUID v4 string.
 /// @param {bool} hyphen Defines whether hyphens will be added to the string
 /// warning: this function is not repeat safe... wip
-function uuid_v4_generate(_hyphen=false) {
+function uuid_v4_generate(_hyphen = false) {
 	// randomness
 	// by YellowAfterLife
 	var _uuid = "";
-	for(var i = 0; i < 32; i++) {
+	for (var i = 0; i < 32; i++) {
 		if (_hyphen) {
-			if (i == 8 || i == 12 || i == 16 || i == 20) _uuid += "-";
+			if (i == 8 || i == 12 || i == 16 || i == 20) {
+				_uuid += "-";
+			}
 		}
-		_uuid += choose("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F");
+		_uuid += choose(
+			"0",
+			"1",
+			"2",
+			"3",
+			"4",
+			"5",
+			"6",
+			"7",
+			"8",
+			"9",
+			"A",
+			"B",
+			"C",
+			"D",
+			"E",
+			"F"
+		);
 	}
 	return _uuid;
 }

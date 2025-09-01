@@ -6,7 +6,7 @@ function __lexicon_text_array_to_string(_textName, _textArray) {
 	var _arrayNames = array_create(array_length(_textArray), "");
 	_global.textEntriesArray[$ _textName] = _arrayNames;
 	var _i = 0;
-	repeat(array_length(_textArray)) {
+	repeat (array_length(_textArray)) {
 		var _textKey = _textName + string(_i);
 		_arrayNames[_i] = _textKey;
 		var _value = _textArray[_i];

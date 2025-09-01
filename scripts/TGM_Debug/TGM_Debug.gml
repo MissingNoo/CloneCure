@@ -1,4 +1,3 @@
-
 /// Feather ignore all
 
 #macro DEBUG_SPEED_INIT ___time = get_timer()

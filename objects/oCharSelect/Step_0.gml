@@ -5,8 +5,16 @@ if (left_right == 0) {
 	left_right = input_check_pressed("right") - input_check_pressed("left");
 }
 up_down = input_check_pressed("down") - input_check_pressed("up");
-character_selected_offset = lerp(character_selected_offset, character_was_selected ? character_selected_max_offset : 0, 0.4);
-stageoffset = lerp(stageoffset, (skin_was_selected ? 0 : gui_w) - (stagemodewasselected ? gui_w : 0), 0.4);
+character_selected_offset = lerp(
+	character_selected_offset,
+	character_was_selected ? character_selected_max_offset : 0,
+	0.4
+);
+stageoffset = lerp(
+	stageoffset,
+	(skin_was_selected ? 0 : gui_w) - (stagemodewasselected ? gui_w : 0),
+	0.4
+);
 charoffset = lerp(charoffset, 20, 0.3);
 charxoff = lerp(charxoff, 0, 0.2);
 st.step();

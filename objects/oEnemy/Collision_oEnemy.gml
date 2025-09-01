@@ -1,4 +1,4 @@
-var push = .5;
+var push = 0.5;
 
 var dir = point_direction(other.x, other.y, x, y);
 var hspd = lengthdir_x(push, dir);

@@ -2,7 +2,9 @@ ui.foreach(function(name, pos, data) {
 	AirUIArea;
 	switch (name) {
 		case "title":
-			scribble($"[fa_center][fa_middle][c_black]{title}").fit_to_box(_w, _h).draw(_x + _w / 2, _y + _h / 2);
+			scribble($"[fa_center][fa_middle][c_black]{title}")
+				.fit_to_box(_w, _h)
+				.draw(_x + _w / 2, _y + _h / 2);
 			break;
 		case "list":
 			offset = 0;
@@ -12,7 +14,7 @@ ui.foreach(function(name, pos, data) {
 				offset += button_height + 5;
 				e.draw();
 			}
-			if (device_mouse_check_button_released(0, mb_left) and mouse_in_area_gui(area)) {
+			if (device_mouse_check_button_released(0, mb_left) && mouse_in_area_gui(area)) {
 				instance_destroy();
 			}
 			break;

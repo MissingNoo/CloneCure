@@ -3,33 +3,35 @@ function pause_game(reason = undefined) {
 	if (reason == "lvlup") {
 		can_unpause = true;
 	}
-	if (!can_unpause and GameData.is_paused) {
+	if (!can_unpause && GameData.is_paused) {
 		exit;
 	}
 	if (GameData.is_paused) {
 		instance_destroy(oPauseUI);
-        GameData.is_paused = false;
-        instance_activate_all();
+		GameData.is_paused = false;
+		instance_activate_all();
 	} else if (GameData.on_stage) {
-		oGame.surf = surface_recreate(oGame.surf, surface_get_width(application_surface), surface_get_height(application_surface));
-        surface_copy(oGame.surf, 0, 0, application_surface);
-        instance_deactivate_all(true);
-        var dont_deactivate = [input_controller_object, oGameUI];
-        array_foreach(dont_deactivate, function(e, i) /*=>*/ {
-           instance_activate_object(e);
-        });
-        GameData.is_paused = true;
+		oGame.surf = surface_recreate(
+			oGame.surf,
+			surface_get_width(application_surface),
+			surface_get_height(application_surface)
+		);
+		surface_copy(oGame.surf, 0, 0, application_surface);
+		instance_deactivate_all(true);
+		var dont_deactivate = [input_controller_object, oGameUI];
+		array_foreach(dont_deactivate, function(e, i) /*=>*/ {
+			instance_activate_object(e);
+		});
+		GameData.is_paused = true;
 		switch (reason) {
 			case "pause":
 				instance_create_depth(0, 0, -1100, oPauseUI);
 				break;
 		}
-    	
 	}
 }
 
 function damage_player(dmg) {
-	
 	if (dmg == 0) {
 		exit;
 	}
@@ -43,10 +45,13 @@ function damage_player(dmg) {
 		GameData.hp = clamp(round(GameData.hp - dmg), 0, GameData.max_hp);
 	}
 	if (dmg > 0) {
-		instance_create_depth(x, y - (sprite_height / 2), depth - 1, oDamageText, {
-		    dir : abs(image_xscale),
-		    dmg : dmg
-		});
+		instance_create_depth(
+			x,
+			y - (sprite_height / 2),
+			depth - 1,
+			oDamageText,
+			{dir: abs(image_xscale), dmg: dmg}
+		);
 	}
 }
 
@@ -58,11 +63,11 @@ function player_have_item(name) {
 	var have = false;
 	global.isearch = name;
 	if (array_find_index(Player_Items, function(e, i) /*=>*/ {
-		if (is_undefined(e)) {
-			return false;
-		}
-		return e.name == global.isearch;
-	}) != -1) {
+			if (is_undefined(e)) {
+				return false;
+			}
+			return e.name == global.isearch;
+		}) != -1) {
 		have = true;
 	}
 	return have;

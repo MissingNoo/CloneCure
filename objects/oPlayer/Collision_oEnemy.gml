@@ -1,4 +1,4 @@
-if (other.attack_frame > AirLib.frame and inv_frame > AirLib.frame) {
+if (other.attack_frame > AirLib.frame && inv_frame > AirLib.frame) {
 	exit;
 }
 dmg = other.atk;

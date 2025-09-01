@@ -1,21 +1,23 @@
-if (timer > 0) { exit; }
+if (timer > 0) {
+	exit;
+}
 timer = 1;
 var pos = player_get_buff_pos(BuffNames.Sharpen);
 var _dmg = irandom_range(UPGRADES[0][$ "mindmg"], UPGRADES[0][$ "maxdmg"]);
 var percent = 1;
 switch (level) {
 	case 1:
-	    percent = 40;
-	    break;
+		percent = 40;
+		break;
 	case 2:
-	    percent = 50;
-	    break;
+		percent = 50;
+		break;
 	case 3:
-	    percent = 60;
-	    break;
+		percent = 60;
+		break;
 }
 var final_dmg = 0;
-for (var i = 1; i <= PlayerBuffs[pos][$ "count"] ; ++i) {
+for (var i = 1; i <= PlayerBuffs[pos][$ "count"]; ++i) {
 	if (i % 10 == 0) {
 		final_dmg += (_dmg * percent) / 100;
 	}

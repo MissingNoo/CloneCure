@@ -3,19 +3,21 @@
 /// @param   gamepadIndex
 /// @param   {Constant.GamepadAxis|Constant.GamepadButton} GMconstant
 
-function input_gamepad_delta(_index, _gm)
-{
-    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
-    
-    if ((_global.__cleared)
-    ||  (_index == undefined)
-    ||  (_index < 0)
-    ||  (_index >= array_length(_global.__gamepads)))
-    {
-        return false;
-    }
-    
-    var _gamepad = _global.__gamepads[_index];
-    if (!is_struct(_gamepad)) return false;
-    return _gamepad.__get_delta(_gm);
+function input_gamepad_delta(_index, _gm) {
+	__INPUT_GLOBAL_STATIC_LOCAL; //Set static _global
+
+	if (
+		_global.__cleared
+		|| (_index == undefined)
+		|| (_index < 0)
+		|| (_index >= array_length(_global.__gamepads))
+	) {
+		return false;
+	}
+
+	var _gamepad = _global.__gamepads[_index];
+	if (!is_struct(_gamepad)) {
+		return false;
+	}
+	return _gamepad.__get_delta(_gm);
 }

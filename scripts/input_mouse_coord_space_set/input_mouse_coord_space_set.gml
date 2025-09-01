@@ -7,9 +7,8 @@
 ///              .DEVICE    Raw device-space coordinates
 /// @param   coordSpace
 
-function input_mouse_coord_space_set(_coord_space)
-{
-    __INPUT_GLOBAL_STATIC_LOCAL  //Set static _global
-    
-    _global.__pointer_coord_space = _coord_space;
+function input_mouse_coord_space_set(_coord_space) {
+	__INPUT_GLOBAL_STATIC_LOCAL; //Set static _global
+
+	_global.__pointer_coord_space = _coord_space;
 }

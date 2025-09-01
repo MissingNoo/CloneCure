@@ -11,9 +11,8 @@
 //    ...
 //}
 
-function __input_config_verb_groups()
-{
-    return {
-        //Fill me up!
-    };
+function __input_config_verb_groups() {
+	return {
+		//Fill me up!
+	};
 }

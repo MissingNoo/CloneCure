@@ -6,7 +6,7 @@ function __lexicon_localization_map_init() {
 	//	var _t = get_timer();
 	//	var _buff = buffer_load("lexicon_db.json");
 	//	var _json = buffer_read(_buff, buffer_text);
-	//	buffer_delete(_buff);	
+	//	buffer_delete(_buff);
 	//	try {
 	//		_inst = {};
 	//		var _struct = json_parse(_json);
@@ -23,8 +23,8 @@ function __lexicon_localization_map_init() {
 	//				var _alts = _entry.children;
 	//				var _j = 0;
 	//				repeat(array_length(_alts)) {
-	//					__lexicon_localization(_alts[_j].name, _entry.region, _alts[_j].locale, 
-	//					(variable_struct_exists(_alts[_j], "format") ? __lexicon_struct_merge(_alts[_j].format, _entry.format) : _entry.format));	
+	//					__lexicon_localization(_alts[_j].name, _entry.region, _alts[_j].locale,
+	//					(variable_struct_exists(_alts[_j], "format") ? __lexicon_struct_merge(_alts[_j].format, _entry.format) : _entry.format));
 	//					++_j;
 	//				}
 	//			}
@@ -34,8 +34,8 @@ function __lexicon_localization_map_init() {
 	//	} catch(_ex) {
 	//		__lexicon_trace("Invalid lexicon_db.json!\n" + _ex.message);
 	//		_inst = {};
-	//	} 
+	//	}
 	//}
 	return _inst;
 }
-//__lexicon_localization_map_init();
+//__lexicon_localization_map_init(); 

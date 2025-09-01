@@ -1,6 +1,5 @@
 //Update the lights and shadows on the renderer
 
-
 //Apply the lighting to the application surface
 //First we target the normal map surface
 //surface_set_target(renderer.GetNormalMapSurface());
@@ -18,11 +17,11 @@
 //`BulbNormalMapDrawSelf()` can be used to easily draw normals to match basic objects
 //with(oAnvil)
 //{
-    //BulbNormalMapDrawSelf(sAnvilNormal);
+//BulbNormalMapDrawSelf(sAnvilNormal);
 //}
 
 //Reset the surface target and the shader, and we're done
 //surface_reset_target()
 //BulbNormalMapShaderReset();
 //renderer.Update();
-//BulbApplyLightingToSurface(renderer, application_surface);
+//BulbApplyLightingToSurface(renderer, application_surface); 

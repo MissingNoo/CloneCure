@@ -9,12 +9,12 @@ if (keyboard_check_pressed(ord("I"))) {
 	Player_Weapons[0].level--;
 }
 #region Revives
-if(GameData.hp <= 0 and GameData.revives > 0) {
+if (GameData.hp <= 0 && GameData.revives > 0) {
 	//TODO: revive window
 	GameData.revives--;
 	GameData.hp = GameData.max_hp / 2;
 	with (oEnemy) {
-		if(!boss){
+		if (!boss) {
 			hp = 0;
 		}
 	}
@@ -52,29 +52,35 @@ if (movement.is_moving()) {
 }
 
 array_foreach(Player_Weapons, function(e, i) /*=>*/ {
-    if (is_undefined(e)) {
-    	return;
-    }
-    if (e.cooldown <= AirLib.frame) {
-    	instance_create_depth(oPlayer.x, oPlayer.y - (sprite_height / 2), oPlayer.depth + 1, oWeapon, {
-            wid : e,
-            can_spawn_other : true,
-			direction : GameData.arrow_dir
-        });
+	if (is_undefined(e)) {
+		return;
+	}
+	if (e.cooldown <= AirLib.frame) {
+		instance_create_depth(
+			oPlayer.x,
+			oPlayer.y - (sprite_height / 2),
+			oPlayer.depth + 1,
+			oWeapon,
+			{wid: e, can_spawn_other: true, direction: GameData.arrow_dir}
+		);
 		var cool = e.base_cooldown[e.level];
-		var newcool = clamp(round(cool / (1 + (GameData.Haste / 100))), e.min_cooldown, infinity);
+		var newcool = clamp(
+			round(cool / (1 + (GameData.Haste / 100))),
+			e.min_cooldown,
+			infinity
+		);
 		//trace($"Cooldown: {cool} : {newcool}");
-        e.cooldown = AirLib.frame + cool;
-    }
+		e.cooldown = AirLib.frame + cool;
+	}
 });
 array_foreach(Player_Items, function(e, i) /*=>*/ {
-    if (is_undefined(e)) {
-    	return;
-    }
-    if (e.cooldown <=  AirLib.frame) {
+	if (is_undefined(e)) {
+		return;
+	}
+	if (e.cooldown <= AirLib.frame) {
 		e.on_cooldown();
-        e.cooldown = AirLib.frame + e.base_cooldown[e.level];
-    }
+		e.cooldown = AirLib.frame + e.base_cooldown[e.level];
+	}
 });
 
 //occluder.x = x;
@@ -84,10 +90,10 @@ light.y = y - sprite_height / 2;
 //light1.x = x;
 //light1.y = y - sprite_height / 2;
 light.angle = point_direction(x, y, mouse_x, mouse_y);
-var left_right = - input_check("left") + input_check("right");
-var up_down= - input_check("up") + input_check("down");
+var left_right = -input_check("left") + input_check("right");
+var up_down = -input_check("up") + input_check("down");
 GameData.strafing = input_check("accept");
-if ((left_right != 0 or up_down != 0) and !GameData.strafing) {
+if ((left_right != 0 || up_down != 0) && !GameData.strafing) {
 	dir = point_direction(0, 0, left_right, up_down);
 	GameData.arrow_dir += angle_difference(dir, GameData.arrow_dir) * 0.25;
 }
@@ -102,7 +108,5 @@ if (touch.enabled) {
 }
 //GameData.arrow_dir = point_direction(x, y, mouse_x, mouse_y);
 if (device_mouse_check_button_released(0, mb_right)) {
-	instance_create_depth(mouse_x, mouse_y, depth, oXP, {
-		xp : 10
-	});
+	instance_create_depth(mouse_x, mouse_y, depth, oXP, {xp: 10});
 }

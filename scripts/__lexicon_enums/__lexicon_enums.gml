@@ -9,19 +9,19 @@ enum lexicon_date_format {
 	DAY_MONTH_YEAR_SLASHES,
 	YEAR_MONTH_DAY_DOTS,
 	MONTH_DAY_YEAR_DOTS,
-	DAY_MONTH_YEAR_DOTS
+	DAY_MONTH_YEAR_DOTS,
 }
 
 enum lexicon_datetime_seperator {
-		DASHES,
-		DOTS,
-		SLASHES,
-		SPACES,
-		CUSTOM_SYMBOL
+	DASHES,
+	DOTS,
+	SLASHES,
+	SPACES,
+	CUSTOM_SYMBOL,
 }
 enum lexicon_length {
 	SHORT,
 	MEDIUM,
 	LONG,
-	FULL
+	FULL,
 }

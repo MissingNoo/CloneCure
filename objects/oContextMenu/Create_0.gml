@@ -1,4 +1,3 @@
-
 uistr = variable_clone(global.game_uis.context_menu);
 while (top + height > display_get_gui_height()) {
 	top--;

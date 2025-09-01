@@ -6,8 +6,8 @@ var yy = 0;
 var inst;
 repeat (count) {
 	inst = g[# 0, yy];
-    with (inst) {
-	    event_perform(ev_draw,0);
+	with (inst) {
+		event_perform(ev_draw, 0);
 	}
 	yy++;
 }

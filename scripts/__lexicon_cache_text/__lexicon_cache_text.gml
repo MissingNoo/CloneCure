@@ -8,8 +8,8 @@ function __lexicon_cache_text(_text, _cacheStr) constructor {
 	isDynamic = false;
 	cacheStr = _cacheStr;
 	timeStamp = _global.framen;
-	
+
 	static toString = function() {
-		return cacheStr;	
-	}
+		return cacheStr;
+	};
 }

@@ -9,7 +9,15 @@
 /// @param angle
 /// @param value
 
-function BulbSpecularMapDrawSpriteExt(_sprite, _image, _x, _y, _xScale, _yScale, _angle, _value)
-{
-    draw_sprite_ext(_sprite, _image, _x, _y, _xScale, _yScale, _angle, c_black, _value);
+function BulbSpecularMapDrawSpriteExt(
+	_sprite,
+	_image,
+	_x,
+	_y,
+	_xScale,
+	_yScale,
+	_angle,
+	_value
+) {
+	draw_sprite_ext(_sprite, _image, _x, _y, _xScale, _yScale, _angle, c_black, _value);
 }

@@ -1,4 +1,3 @@
-
 /// Feather ignore all
 
 // pi = The ratio of the circumference of a circle to its diameter.
@@ -13,7 +12,6 @@
 #macro GoldenAngle 2.3999632297
 #macro EulerNumber 2.7182818280
 
-
 /// @desc Linear interpolation (lerp) remap. Returns the result of a non-clamping linear remapping of a value from source range [_inMin, _inMax] to the destination range [_outMin, _outMax].
 /// @param {Real} inMin Input min value.
 /// @param {Real} inMax Input max value.
@@ -21,7 +19,7 @@
 /// @param {Real} inMin Output min value.
 /// @param {Real} inMax Output max value.
 function relerp(_inMin, _inMax, _value, _outMin, _outMax) {
-	return (_value-_inMin) / (_inMax-_inMin) * (_outMax-_outMin) + _outMin;
+	return (_value - _inMin) / (_inMax - _inMin) * (_outMax - _outMin) + _outMin;
 	//return lerp(_outMin, _outMax, linearstep(_inMin, _inMax, _value));
 }
 
@@ -71,7 +69,7 @@ function lerp_dt(_a, _b, _amount, _dt) {
 /// @param {Real} a The first angle value.
 /// @param {Real} b The second angle value.
 /// @param {Real} amount The amount to interpolate.
-/// @returns {Real} 
+/// @returns {Real}
 function lerp_angle(_a, _b, _amount) {
 	return _a - (angle_difference(_a, _b) * _amount);
 	//return lerp(_a, _a + angle_difference(_b, _a), _amount);
@@ -82,7 +80,7 @@ function lerp_angle(_a, _b, _amount) {
 /// @param {Real} b The second angle value.
 /// @param {Real} amount The amount to interpolate.
 /// @param {Real} dt The delta time.
-/// @returns {Real} 
+/// @returns {Real}
 function lerp_angle_dt(_a, _b, _amount, _dt) {
 	return lerp_dt(_a, _a + angle_difference(_b, _a), _amount, _dt);
 }
@@ -150,10 +148,10 @@ function clamp_angle_fov(_angle, _destAngle, _fov) {
 		return _angle;
 	} else {
 		if (_diff > 0) {
-            return _destAngle + _halfFov;
-        } else {
-            return _destAngle - _halfFov;
-        }
+			return _destAngle + _halfFov;
+		} else {
+			return _destAngle - _halfFov;
+		}
 	}
 }
 
@@ -169,16 +167,18 @@ function choose_weighted(_items, _weights) {
 	// sum weights
 	var _weights_sum = 0;
 	var i = 0;
-	repeat(wsize) {
+	repeat (wsize) {
 		_weights_sum += abs(_weights[i]);
 		++i;
 	}
 	// randomize
 	var _val = random(_weights_sum);
 	i = 0;
-	repeat(isize) {
+	repeat (isize) {
 		_val -= abs(_weights[i]);
-		if (_val < 0) return _items[i];
+		if (_val < 0) {
+			return _items[i];
+		}
 		++i;
 	}
 	return _items[0];
@@ -189,7 +189,7 @@ function choose_weighted(_items, _weights) {
 /// @returns {real}
 function cos01(_radiansAngle) {
 	gml_pragma("forceinline");
-	return (cos(_radiansAngle) * 0.5 + 0.5);
+	return cos(_radiansAngle) * 0.5 + 0.5;
 }
 
 /// @desc Returns the sine, but with a normalized range of 0 to 1
@@ -197,7 +197,7 @@ function cos01(_radiansAngle) {
 /// @returns {real}
 function sin01(_radiansAngle) {
 	gml_pragma("forceinline");
-	return (sin(_radiansAngle) * 0.5 + 0.5);
+	return sin(_radiansAngle) * 0.5 + 0.5;
 }
 
 /// @desc Returns the reciprocal of the square root of "val".
@@ -207,13 +207,17 @@ function inverse_sqrt(_value) {
 }
 
 /// @desc This function works like clamp(), but if the value is greater than max, it becomes min, and vice versa.
-/// 
+///
 /// You may also be interested: wrap().
 /// @param {Real} value The value to check.
 /// @param {Real} min The min value.
 /// @param {Real} max The max value.
 function clamp_wrap(_value, _min, _max) {
-	if (_value > _max) _value = _min; else if (_value < _min) _value = _max;
+	if (_value > _max) {
+		_value = _min;
+	} else if (_value < _min) {
+		_value = _max;
+	}
 	return _value;
 }
 
@@ -222,7 +226,7 @@ function clamp_wrap(_value, _min, _max) {
 /// @param {Real} min The min value.
 /// @param {Real} max The max value.
 function wrap(_value, _min, _max) {
-	var _mod = (_value - _min) mod (_max - _min);
+	var _mod = (_value - _min) % (_max - _min);
 	return (_mod < 0) ? _mod + _max : _mod + _min;
 }
 
@@ -230,38 +234,40 @@ function wrap(_value, _min, _max) {
 /// @param {Real} a The first value.
 /// @param {Real} b The second value.
 function mod_wrap(_a, _b) {
-    return _a - _b * floor(_a / _b);
+	return _a - _b * floor(_a / _b);
 }
 
 /// @desc Returns a boolean, indicating whether the number is a fraction.
 /// @param {real} value The number to check.
-/// @returns {bool} 
+/// @returns {bool}
 function is_fractional(_value) {
 	return abs(frac(_value)) > 0;
 }
 
 /// @desc Returns a boolean, indicating whether the number is even.
 /// @param {real} value The number to check.
-/// @returns {bool} 
+/// @returns {bool}
 function is_even(_value) {
-	return (_value & 1 == 0);
+	return _value & 1 == 0;
 	//return (_value % 2 == 0);
 }
 
 /// @desc Returns a boolean, indicating whether the number is odd.
 /// @param {real} value The number to check.
-/// @returns {bool} 
+/// @returns {bool}
 function is_odd(_value) {
-	return (_value & 1 == 1);
+	return _value & 1 == 1;
 	//return (_value % 2 == 1);
 }
 
 /// @desc Returns a boolean, indicating whether the number is prime.
 /// @param {real} value The number to check.
-/// @returns {bool} 
+/// @returns {bool}
 function is_prime(_value) {
-	if (_value < 2) return false;
-	for(var i = 2; i * i <= _value; i++) {
+	if (_value < 2) {
+		return false;
+	}
+	for (var i = 2; i * i <= _value; i++) {
 		if (_value % i == 0) {
 			return false;
 		}
@@ -285,10 +291,10 @@ function pow2_previous(_value) {
 
 /// @desc This function calculates and returns the nth Fibonacci number.
 /// @param {real} n The number to calculate.
-/// @returns {real} 
+/// @returns {real}
 function fibonacci(_n) {
 	var _numbers = [0, 1];
-	for(var i = 2; i <= _n; i++) {
+	for (var i = 2; i <= _n; i++) {
 		_numbers[i] = _numbers[i - 1] + _numbers[i - 2];
 	}
 	return _numbers[_n];
@@ -296,10 +302,10 @@ function fibonacci(_n) {
 
 /// @desc This function calculates the factorial of a given number "n".
 /// @param {real} n The number to calculate.
-/// @returns {real} 
+/// @returns {real}
 function factorial(_n) {
 	var _number = 1;
-	for(var i = 1; i <= _n; ++i) {
+	for (var i = 1; i <= _n; ++i) {
 		_number *= i;
 	}
 	return _number;
@@ -308,7 +314,7 @@ function factorial(_n) {
 /// @desc This function calculates the greatest common divisor (GCD) of two numbers "a" and "b".
 /// @param {real} a The first number.
 /// @param {real} b The second number.
-/// @returns {real} 
+/// @returns {real}
 function gcd(_a, _b) {
 	if (_b == 0) {
 		return _a;
@@ -320,25 +326,25 @@ function gcd(_a, _b) {
 /// @desc This function takes two parameters, "a" and "b", representing a fraction, and returns a reduced form of the fraction by dividing both numerator and denominator by their greatest common divisor (GCD).
 /// @param {real} a First number.
 /// @param {real} b Second number.
-/// @returns {struct} 
+/// @returns {struct}
 function fraction_reduce(_a, _b) {
 	var _gcd = gcd(_a, _b);
-	return new Vector2(_a/_gcd, _b/_gcd);
+	return new Vector2(_a / _gcd, _b / _gcd);
 }
 
 /// @desc Verify if a value is in a range and returns a boolean.
 /// @param {Real} value Value to check.
 /// @param {Real} a First value.
 /// @param {Real} b Second value.
-/// @returns {Bool} 
+/// @returns {Bool}
 function in_range(_value, _a, _b) {
-	return (_value >= _a && _value <= _b);
+	return _value >= _a && _value <= _b;
 }
 
 /// @desc Returns the difference/distance between two values.
 /// @param {Real} a First value.
 /// @param {Real} b Second value.
-/// @returns {Real} 
+/// @returns {Real}
 function distance_1d(_a, _b) {
 	return abs(_a - _b);
 }
@@ -390,12 +396,20 @@ function speed_to_reach(_distance, _friction) {
 /// @param {Real} targetSpeed Target moving speed.
 /// @param {Real} targetAngle Target moving angle/direction.
 /// @param {Real} bulletSpeed Bullet moving speed.
-/// @returns {Real} 
-function angle_predict_intersection(_x1, _y1, _x2, _y2, _targetSpeed, _targetAngle, _bulletSpeed) {
+/// @returns {Real}
+function angle_predict_intersection(
+	_x1,
+	_y1,
+	_x2,
+	_y2,
+	_targetSpeed,
+	_targetAngle,
+	_bulletSpeed
+) {
 	// Original author: Xot
 	var _angle = point_direction(_x1, _y1, _x2, _y2),
-		_beta = sin(degtorad(_targetAngle - _angle)) * (_targetSpeed/_bulletSpeed);
-	return (abs(_beta) < 1) ? _angle+radtodeg(arcsin(_beta)) : -1;
+		_beta = sin(degtorad(_targetAngle - _angle)) * (_targetSpeed / _bulletSpeed);
+	return (abs(_beta) < 1) ? _angle + radtodeg(arcsin(_beta)) : -1;
 }
 
 /// @desc This function returns the frame index to be used on a sprite, relative to the angle it is pointing at.
@@ -424,14 +438,16 @@ function point_direction_radians(_x1, _y1, _x2, _y2) {
 function point_direction_normalized(_x1, _y1, _x2, _y2) {
 	//var dir = degtorad(-point_direction(x1, y1, x2, y2));
 	var _len = point_distance(_x1, _y1, _x2, _y2);
-	if (_len == 0) return new Vector2(0, 0);
+	if (_len == 0) {
+		return new Vector2(0, 0);
+	}
 	return new Vector2((_x2 - _x1) / _len, (_y2 - _y1) / _len);
 }
 
 /// @desc This function prevents it from returning 0, returning another value instead, if this happen.
 /// @param {Real} value The value.
 /// @param {Real} zeroValue Value to return.
-function non_zero(_value, _zeroValue=1) {
+function non_zero(_value, _zeroValue = 1) {
 	return _value == 0 ? _zeroValue : _value;
 }
 
