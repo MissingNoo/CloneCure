@@ -63,13 +63,15 @@ function input_check_opposing_repeat(
 
 	//Most recent
 	if (_verb_struct_n.__press_time > _verb_struct_p.__press_time) {
-		return _repeat_n
-		&& !input_check_pressed(_verb_positive, _player_index, _delay + _predelay)
+		return
+			_repeat_n
+			&& !input_check_pressed(_verb_positive, _player_index, _delay + _predelay)
 			? -1
 			: 0;
 	} else {
-		return _repeat_p
-		&& !input_check_pressed(_verb_positive, _player_index, _delay + _predelay)
+		return
+			_repeat_p
+			&& !input_check_pressed(_verb_positive, _player_index, _delay + _predelay)
 			? 1
 			: 0;
 	}

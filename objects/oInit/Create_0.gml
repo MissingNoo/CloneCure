@@ -11,8 +11,7 @@ if (file_exists(game_save_id + "SaveData.json")) {
 	struct_foreach(SaveData.shop.upgrades, function(name, value) {
 		try {
 			Shop.upgrades[$ name].level = value;
-		}
-		 catch (error) {} //ignore
+		} catch (error) {} //ignore
 	});
 }
 if (file_exists(game_save_id + "Config.json")) {

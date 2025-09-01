@@ -28,6 +28,5 @@ try {
 	scribble($"[fa_center][fa_middle][alpha,{image_alpha}][fDmg][{color}]{_str}")
 		.scale(scale)
 		.draw(x - (dir == -1 ? 8 : 0), y - 8);
-}
-catch (err) {} //sometimes it errors out
+} catch (err) {} //sometimes it errors out
 draw_set_alpha(1);
