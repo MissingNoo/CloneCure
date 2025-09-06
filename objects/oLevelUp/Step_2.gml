@@ -44,6 +44,13 @@ if (input_check_pressed("accept")) {
 				case "Stats":
 					ups[selected_option].on_bought();
 					break;
+				case "Perks":
+					var pos = array_find_index(Player_Perks, function(e, i) {
+						return e.name == global.search;
+					});
+					Player_Perks[pos].level++;
+					ups[selected_option].on_bought();
+					break;
 				default:
 					show_message("WIP");
 					break;

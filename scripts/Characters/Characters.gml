@@ -22,6 +22,7 @@ function character(_name) constructor {
 	locked_color = undefined;
 	skins = {"base": {idle: idle_sprite, run: run_sprite}};
 	skinorder = ["base"];
+	perks = ["null", "null", "null"];
 	Characters[$ _name] = self;
 
 	static set_weapon = function(_w) {
@@ -90,6 +91,11 @@ function character(_name) constructor {
 		agency = s;
 		return self;
 	};
+	
+	static set_perks = function(p1, p2, p3) {
+		perks = [p1, p2, p3]
+		return self;
+	};
 
 	static add_skin = function(sname, idlespr, runspr) {
 		skins[$ sname] = {idle: idlespr, run: runspr};
@@ -110,7 +116,8 @@ c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAme)
 	.set_unlocked_default(true)
 	.add_skin("O1", sAmeliaIdleO1, sAmeliaRunO1)
 	.add_skin("O2", sAmeliaIdleO2, sAmeliaRunO2)
-	.add_skin("O3", sAmeliaIdleO3, sAmeliaRunO3);
+	.add_skin("O3", sAmeliaIdleO3, sAmeliaRunO3)
+	.set_perks("The_Ame_Way", "Detective_Eye", "Bubba");
 c = new character("Aki_Rosenthal");
 c.set_sprite(sAmeliaIdle, sAmeliaRun, sAkiPortrait, sTitleAki)
 	.set_speed(1.35)

@@ -29,3 +29,5 @@ if (wid.sound != undefined) {
 	audio_play_sound(wid.sound, 0, 0, GameConfig.sound_volume);
 }
 dmg = 0;
+crit_chance_bonus = 1;
+crit_dmg_bonus = 1;

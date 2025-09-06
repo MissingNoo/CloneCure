@@ -45,7 +45,19 @@ array_foreach(Player_Items, function(e, i) /*=>*/ {
 	}
 });
 
+array_foreach(Player_Perks, function(e, i) /*=>*/ {
+	if (e.level > 0) {
+		e.before_hit();
+	}
+});
+
 other.hp -= dmg;
+
+array_foreach(Player_Perks, function(e, i) /*=>*/ {
+	if (e.level > 0) {
+		e.after_hit();
+	}
+});
 
 instance_create_depth(
 	other.x,
