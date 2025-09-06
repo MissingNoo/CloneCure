@@ -592,11 +592,11 @@ skinui
 					if (gui_click(_x1, _y1 - _h1, _x1 + _w1, _y1 + _h1)) {
 						left_right = 1;
 					}
-					draw_text(
-						gui_x_percent(50),
-						gui_y_percent(50),
-						mouse_in_area_gui([_x1 - _w1, _y1 - _h1, _x1 + _w1, _y1 + _h1])
-					);
+					//draw_text(
+						//gui_x_percent(50),
+						//gui_y_percent(50),
+						//mouse_in_area_gui([_x1 - _w1, _y1 - _h1, _x1 + _w1, _y1 + _h1])
+					//);
 
 					if (
 						st.get_current_state() == "Skin"
@@ -693,7 +693,7 @@ stageinfo
 				if (gui_click(_x1, _y1 - _h1, _x1 + _w1, _y1 + _h1)) {
 					left_right = 1;
 				}
-				draw_rectangle(_x1 - _w1, _y1 - _h1, _x1 + _w1, _y1 + _h1, true);
+				//draw_rectangle(_x1 - _w1, _y1 - _h1, _x1 + _w1, _y1 + _h1, true);
 				if (
 					st.get_current_state() == "Stage"
 					&& mouse_in_area_gui(area)

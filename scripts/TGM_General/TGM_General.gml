@@ -13,7 +13,7 @@ function ___fps_average() {
 		ds_list_delete(fpsList, 0);
 	}
 	fpsSmooth = lerp(fpsSmooth, ds_list_mean(fpsList), fpsSmoothRate);
-	return fpsSmooth;
+	return round(fpsSmooth);
 }
 
 /// @desc Returns a boolean (true or false) indicating whether the game was exported as a standalone (executable).

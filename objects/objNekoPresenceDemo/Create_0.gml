@@ -3,6 +3,9 @@ window_set_caption("VCure");
 if (os_type == os_android || os_type == os_gxgames) {
 	instance_destroy();
 }
+if (os_type != os_linux) {
+	instance_destroy();
+}
 x = -100;
 #macro DISCORD_APP_ID "1399120068230647808"
 

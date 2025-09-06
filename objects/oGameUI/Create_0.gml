@@ -258,3 +258,4 @@ update_ui = function() {
 	surface_reset_target();
 };
 update_ui();
+global.events.add_listener("update_game_ui", self, function() {oGameUI.update_ui()});

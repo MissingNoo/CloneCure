@@ -11,12 +11,12 @@
   "androidsourcedir":"",
   "author":"",
   "classname":"",
-  "copyToTargets":194,
+  "copyToTargets":202,
   "description":"",
   "exportToGame":true,
   "extensionVersion":"1.3.2",
   "files":[
-    {"$GMExtensionFile":"v1","%Name":"","constants":[],"copyToTargets":194,"filename":"NekoPresence.gml","final":"","functions":[
+    {"$GMExtensionFile":"v1","%Name":"","constants":[],"copyToTargets":202,"filename":"NekoPresence.gml","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"np_get_avatar_url","argCount":0,"args":[1,1,],"documentation":"","externalName":"np_get_avatar_url","help":"np_get_avatar_url(user_id,avatar_hash)","hidden":false,"kind":2,"name":"np_get_avatar_url","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
       ],"init":"","kind":2,"name":"","origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},
     {"$GMExtensionFile":"v1","%Name":"","constants":[

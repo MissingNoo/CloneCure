@@ -145,6 +145,7 @@
     {"$GMFolder":"","%Name":"MapItems","folderPath":"folders/Objects/MapItems.yy","name":"MapItems","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Bushes","folderPath":"folders/Objects/MapItems/Bushes.yy","name":"Bushes","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Miscelaneous","folderPath":"folders/Objects/Miscelaneous.yy","name":"Miscelaneous","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Player","folderPath":"folders/Objects/Player.yy","name":"Player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Stage","folderPath":"folders/Objects/Stage.yy","name":"Stage","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"tween","folderPath":"folders/Objects/tween.yy","name":"tween","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"UI","folderPath":"folders/Objects/UI.yy","name":"UI","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -214,7 +215,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1400.0.880",
+    "IDEVersion":"2024.1400.0.884",
   },
   "name":"Shooter",
   "resources":[
@@ -231,6 +232,7 @@
     {"id":{"name":"objNekoPresenceDemo","path":"objects/objNekoPresenceDemo/objNekoPresenceDemo.yy",},},
     {"id":{"name":"oBush","path":"objects/oBush/oBush.yy",},},
     {"id":{"name":"oCam","path":"objects/oCam/oCam.yy",},},
+    {"id":{"name":"oCamWorld","path":"objects/oCamWorld/oCamWorld.yy",},},
     {"id":{"name":"oCharSelect","path":"objects/oCharSelect/oCharSelect.yy",},},
     {"id":{"name":"oCol","path":"objects/oCol/oCol.yy",},},
     {"id":{"name":"oContextMenu","path":"objects/oContextMenu/oContextMenu.yy",},},
