@@ -1,7 +1,8 @@
 if (GameData.is_paused) {
 	exit;
 }
-
+frame_since_last++;
+enemy_amount = instance_number(oEnemy);
 if (spawn_frame < AirLib.frame) {
 	var place = irandom_range(1, 4);
 	var _x = oPlayer.x;
@@ -24,15 +25,18 @@ if (spawn_frame < AirLib.frame) {
 			_y += random_range(0, camera_get_view_height(view_camera[0]) + 16);
 			break;
 	}
-	spawn_frame = AirLib.frame + 120;
-	if (array_length(Spawn_List) > 0) {
-		instance_create_layer(
-			_x,
-			_y,
-			"Instances",
-			oEnemy,
-			{name: Spawn_List[irandom(array_length(Spawn_List) - 1)]}
-		);
+	spawn_frame = AirLib.frame + spawn_rate;
+	var sstepSpawnAmount = 
+		max(1, ((round((spawn_amount + additional_spawn + (shop_level("Marketing")) * (GameData.stage_mode == "STAGE" or GameData.stage_mode == "ENDLESS")) / reduced_spawn)) + 
+						(GameData.stage_mode == "TIME") * timemode_spawn_scale));
+	for (var stepSpawnAmount = sstepSpawnAmount;  stepSpawnAmount > 0; stepSpawnAmount--) {
+		if (array_length(Spawn_List) > 0 and enemy_amount < enemy_limit) {
+			instance_create_layer(_x, _y, "Instances", oEnemy,
+				{name: Spawn_List[irandom(array_length(Spawn_List) - 1)]}
+			);
+			frame_since_last = 0;
+			mobs_spawned++;
+		}
 	}
 }
 

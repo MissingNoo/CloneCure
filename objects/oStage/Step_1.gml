@@ -41,6 +41,13 @@ if (
 			} until (index == -1)
 		});
 	}
+	arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "script"];
+	if (!is_undefined(arr)) {
+		array_foreach(arr, function(e, i) {
+			method(instance_find(oStage, 0), e)();
+			trace("ran script");
+		});
+	}
 }
 #endregion
 
