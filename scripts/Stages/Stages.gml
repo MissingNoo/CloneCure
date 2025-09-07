@@ -124,46 +124,46 @@ stage1
 stage1
 	.add_script("00:30", function() {
 		//self.AddMobChoice("Deadbeat", 1, 1)
-		spawnRate = 130;
+		spawn_rate = 130;
 	});
 stage1
 	.add_script("01:00", function() {
-		enemyLimit = 300;
-		spawnRate = 100;
+		enemy_limit = 300;
+		spawn_rate = 100;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("01:30", function() {
-		enemyLimit = 550;
-		spawnRate = 80;
-		spawnAmount = 5;
+		enemy_limit = 550;
+		spawn_rate = 80;
+		spawn_amount = 5;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("02:30", function() {
-		spawnAmount = 3;
+		spawn_amount = 3;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("04:20", function() {
-		spawnRate = 80;
-		spawnAmount = 7;
+		spawn_rate = 80;
+		spawn_amount = 7;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("05:00", function() {
-		enemyLimit = 400;
-		spawnAmount = 6;
+		enemy_limit = 400;
+		spawn_amount = 6;
 	});
 stage1
 	.add_script("07:00", function() {
-		spawnRate = 90;
+		spawn_rate = 90;
 	});
 stage1
 	.add_script("08:30", function() {
-		enemyLimit = 800;
-		spawnRate = 100;
-		spawnAmount = 27;
+		enemy_limit = 800;
+		spawn_rate = 100;
+		spawn_amount = 27;
 		currentSpawnPattern = "evenSurround";
 		//self.RemoveMobChoice("Deadbeat");
 		//self.AddMobChoice("Deadbeat", 8, 3);
@@ -173,9 +173,9 @@ stage1
 	});
 stage1
 	.add_script("08:45", function() {
-		enemyLimit = 500;
-		spawnRate = 120;
-		spawnAmount = 4;
+		enemy_limit = 500;
+		spawn_rate = 120;
+		spawn_amount = 4;
 		currentSpawnPattern = "evenSurround";
 		//self.AddMobChoice("Shrimp", 1, 2);
 		//self.AddMobChoice("BigBubba", 5, 1);
@@ -186,31 +186,31 @@ stage1
 	});
 stage1
 	.add_script("09:30", function() {
-		enemyLimit = 1000;
-		spawnRate = 90;
-		spawnAmount = 7;
+		enemy_limit = 1000;
+		spawn_rate = 90;
+		spawn_amount = 7;
 		currentSpawnPattern = "evenSurround";
 		//self.AddMobChoice("KFP", 1, 2);
 	});
 stage1
 	.add_script("10:00", function() {
-		enemyLimit = 1000;
-		spawnRate = 150;
-		spawnAmount = 4;
+		enemy_limit = 1000;
+		spawn_rate = 150;
+		spawn_amount = 4;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("10:30", function() {
-		enemyLimit = 1000;
-		spawnRate = 100;
-		spawnAmount = 10;
+		enemy_limit = 1000;
+		spawn_rate = 100;
+		spawn_amount = 10;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("11:00", function() {
-		enemyLimit = 1000;
-		spawnRate = 60;
-		spawnAmount = 10;
+		enemy_limit = 1000;
+		spawn_rate = 60;
+		spawn_amount = 10;
 		currentSpawnPattern = "evenSurround";
 		//self.RemoveMobChoice("Deadbeat");
 		//self.RemoveMobChoice("Takodachi");
@@ -223,24 +223,24 @@ stage1
 	});
 stage1
 	.add_script("11:20", function() {
-		enemyLimit = 1000;
-		spawnRate = 90;
-		spawnAmount = 8;
+		enemy_limit = 1000;
+		spawn_rate = 90;
+		spawn_amount = 8;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("12:00", function() {
-		enemyLimit = 1000;
-		spawnRate = 110;
-		spawnAmount = 9;
+		enemy_limit = 1000;
+		spawn_rate = 110;
+		spawn_amount = 9;
 		currentSpawnPattern = "evenSurround";
 		//self.AddMobChoice("Kromies", 1, 1);
 	});
 stage1
 	.add_script("14:00", function() {
-		enemyLimit = 150;
-		spawnRate = 75;
-		spawnAmount = 10;
+		enemy_limit = 150;
+		spawn_rate = 75;
+		spawn_amount = 10;
 		currentSpawnPattern = "horizontalSurround";
 		//self.RemoveMobChoice("Rats");
 		//self.RemoveMobChoice("Kromies");
@@ -254,16 +254,16 @@ stage1
 	});
 stage1
 	.add_script("15:00", function() {
-		enemyLimit = 300;
-		spawnRate = 100;
-		spawnAmount = 7;
+		enemy_limit = 300;
+		spawn_rate = 100;
+		spawn_amount = 7;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("15:45", function() {
-		enemyLimit = 300;
-		spawnRate = 120;
-		spawnAmount = 9;
+		enemy_limit = 300;
+		spawn_rate = 120;
+		spawn_amount = 9;
 		currentSpawnPattern = "evenSurround";
 		//self.RemoveMobChoice("ShrimpGang");
 		//self.RemoveMobChoice("DeadbeatGang");
@@ -272,18 +272,18 @@ stage1
 	});
 stage1
 	.add_script("18:00", function() {
-		enemyLimit = 200;
-		spawnRate = 150;
-		spawnAmount = 10;
+		enemy_limit = 200;
+		spawn_rate = 150;
+		spawn_amount = 10;
 		currentSpawnPattern = "evenSurround";
 		//self.RemoveMobChoice("Rats");
 		//self.AddMobChoice("Sanalites", 2, 1);
 	});
 stage1
 	.add_script("19:00", function() {
-		enemyLimit = 200;
-		spawnRate = 80;
-		spawnAmount = 8;
+		enemy_limit = 200;
+		spawn_rate = 80;
+		spawn_amount = 8;
 		currentSpawnPattern = "evenSurround";
 		//self.RemoveMobChoice("Sanalites");
 		//self.RemoveMobChoice("Saplings");
@@ -293,9 +293,9 @@ stage1
 	});
 stage1
 	.add_script("20:00", function() {
-		enemyLimit = 200;
-		spawnRate = 80;
-		spawnAmount = 5;
+		enemy_limit = 200;
+		spawn_rate = 80;
+		spawn_amount = 5;
 		currentSpawnPattern = "evenSurround";
 		//self.RemoveMobChoice("Deadbeat");
 		//self.RemoveMobChoice("Takodachi");
@@ -316,23 +316,23 @@ stage1
 	});
 stage1
 	.add_script("21:00", function() {
-		enemyLimit = 300;
-		spawnRate = 70;
-		spawnAmount = 7;
+		enemy_limit = 300;
+		spawn_rate = 70;
+		spawn_amount = 7;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("22:00", function() {
-		enemyLimit = 300;
-		spawnRate = 60;
-		spawnAmount = 8;
+		enemy_limit = 300;
+		spawn_rate = 60;
+		spawn_amount = 8;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("23:00", function() {
-		enemyLimit = 300;
-		spawnRate = 60;
-		spawnAmount = 5;
+		enemy_limit = 300;
+		spawn_rate = 60;
+		spawn_amount = 5;
 		currentSpawnPattern = "evenSurround";
 		//self.AddMobChoice("ShrimpGang", 1, 2);
 		//self.AddMobChoice("DeadbeatGang", 1, 2);
@@ -349,51 +349,51 @@ stage1
 	});
 stage1
 	.add_script("24:00", function() {
-		enemyLimit = 300;
-		spawnRate = 60;
-		spawnAmount = 5;
+		enemy_limit = 300;
+		spawn_rate = 60;
+		spawn_amount = 5;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("25:00", function() {
-		enemyLimit = 300;
-		spawnRate = 60;
-		spawnAmount = 5;
+		enemy_limit = 300;
+		spawn_rate = 60;
+		spawn_amount = 5;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("26:00", function() {
-		enemyLimit = 300;
-		spawnRate = 60;
-		spawnAmount = 5;
+		enemy_limit = 300;
+		spawn_rate = 60;
+		spawn_amount = 5;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("27:00", function() {
-		enemyLimit = 300;
-		spawnRate = 55;
-		spawnAmount = 6;
+		enemy_limit = 300;
+		spawn_rate = 55;
+		spawn_amount = 6;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("28:00", function() {
-		enemyLimit = 300;
-		spawnRate = 50;
-		spawnAmount = 6;
+		enemy_limit = 300;
+		spawn_rate = 50;
+		spawn_amount = 6;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("29:00", function() {
-		enemyLimit = 300;
-		spawnRate = 45;
-		spawnAmount = 5;
+		enemy_limit = 300;
+		spawn_rate = 45;
+		spawn_amount = 5;
 		currentSpawnPattern = "evenSurround";
 	});
 stage1
 	.add_script("30:00", function() {
-		enemyLimit = 200;
-		spawnRate = 60;
-		spawnAmount = 5;
+		enemy_limit = 200;
+		spawn_rate = 60;
+		spawn_amount = 5;
 		with (oEnemy) {
 			if (!boss /*&& isEnemy*/) {
 				self.hp = 0;

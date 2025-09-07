@@ -26,10 +26,10 @@ if (spawn_frame < AirLib.frame) {
 			break;
 	}
 	spawn_frame = AirLib.frame + spawn_rate;
-	var sstepSpawnAmount = 
+	var sstepspawn_amount = 
 		max(1, ((round((spawn_amount + additional_spawn + (shop_level("Marketing")) * (GameData.stage_mode == "STAGE" or GameData.stage_mode == "ENDLESS")) / reduced_spawn)) + 
 						(GameData.stage_mode == "TIME") * timemode_spawn_scale));
-	for (var stepSpawnAmount = sstepSpawnAmount;  stepSpawnAmount > 0; stepSpawnAmount--) {
+	for (var stepspawn_amount = sstepspawn_amount;  stepspawn_amount > 0; stepspawn_amount--) {
 		if (array_length(Spawn_List) > 0 and enemy_amount < enemy_limit) {
 			instance_create_layer(_x, _y, "Instances", oEnemy,
 				{name: Spawn_List[irandom(array_length(Spawn_List) - 1)]}
@@ -39,21 +39,24 @@ if (spawn_frame < AirLib.frame) {
 		}
 	}
 }
-
-if (ds_queue_size(dir_queue) > 0 && !GameData.is_paused) {
-	var e = ds_queue_dequeue(dir_queue);
-	if (instance_exists(e)) {
-		with (e) {
-			if (hp <= 0) {
-				exit;
+queue_repeats = clamp(queue_repeats + (fps_average > 80 ? 1 : -1), 1, enemy_amount);
+repeat (queue_repeats) {
+	if (ds_queue_size(dir_queue) > 0 && !GameData.is_paused) {
+		var e = ds_queue_dequeue(dir_queue);
+		if (instance_exists(e)) {
+			with (e) {
+				if (hp <= 0) {
+					exit;
+				}
+				direction = point_direction(x, y, oPlayer.x, oPlayer.y);
+				if (x < oPlayer.x) {
+					image_xscale = abs(image_xscale);
+				} else if (sign(image_xscale)) {
+					image_xscale = image_xscale * -1;
+				}
+				ds_queue_enqueue(oStage.dir_queue, self.id);
 			}
-			direction = point_direction(x, y, oPlayer.x, oPlayer.y);
-			if (x < oPlayer.x) {
-				image_xscale = abs(image_xscale);
-			} else if (sign(image_xscale)) {
-				image_xscale = image_xscale * -1;
-			}
-			ds_queue_enqueue(oStage.dir_queue, self.id);
 		}
 	}
 }
+

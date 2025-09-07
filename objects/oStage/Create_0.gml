@@ -15,5 +15,6 @@ frame_since_last = 0;
 enemy_limit = 2000;
 additional_spawn = 0;
 reduced_spawn = 1;
+queue_repeats = 30;
 dbg = dbg_view("Stage", true);
 create_view_from_instance(self);
