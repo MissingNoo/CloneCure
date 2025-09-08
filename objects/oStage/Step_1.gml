@@ -21,24 +21,14 @@ if (
 	var arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "add"];
 	if (!is_undefined(arr)) {
 		array_foreach(arr, function(e, i) {
-			if (!array_contains(Spawn_List, e)) {
-				var weight = Enemies[$ e].weight;
-				show_debug_message($"Added {e} to spawn list with weight {weight}");
-				repeat (weight) {
-					array_push(Spawn_List, e);
-				}
-			}
+			add_mob_choice(e);
 		});
 	}
 	arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "remove"];
 	if (!is_undefined(arr)) {
 		array_foreach(arr, function(e, i) {
 			show_debug_message($"Removed {e} from spawn list");
-			var index = array_get_index(Spawn_List, e);
-			do {
-				array_delete(Spawn_List, index, 1);
-				index = array_get_index(Spawn_List, e);
-			} until (index == -1)
+			remove_mob_choice(e);
 		});
 	}
 	arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "script"];

@@ -3,7 +3,7 @@ GameData ??= {};
 Enemies = {};
 
 function Enemy(_name) constructor {
-	name = _name;
+	name = string_lower(_name);
 	sprite = sUrufu;
 	spd = 0;
 	hp = 1;
@@ -13,7 +13,7 @@ function Enemy(_name) constructor {
 	boss = false;
 	scale = 1;
 	knockback_immune = false;
-	Enemies[$ _name] = self;
+	Enemies[$ name] = self;
 
 	static set_sprite = function(val) {
 		sprite = val;

@@ -1,4 +1,19 @@
-if (global.gamePaused) {
+if (waitplayer) {
+	if (instance_exists(oPlayer)) {
+		onScreenArrow = sBlank;
+		offScreenArrow = sBubbaPointer;
+		x = oPlayer.x;
+		y = oPlayer.y;
+		target = {x : oPlayer.x, y : oPlayer.y};
+		barktimer = 100;
+		basespeed = 1;
+		level = 1;
+		visible = true;
+		waitplayer = false;
+	}
+	exit;
+}
+if (GameData.is_paused) {
 	speed = 0;
     exit;
 }

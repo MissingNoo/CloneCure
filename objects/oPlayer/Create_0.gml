@@ -29,6 +29,7 @@ GameData.Rerolls = shop_level("Reroll");
 GameData.Holds = shop_level("Hold");
 GameData.Eliminates = shop_level("Eliminate");
 GameData.revives = 0;
+GameData.bubba = false;
 Player_Perks[0] = variable_clone(Perks[$ char.perks[0]]);
 Player_Perks[1] = variable_clone(Perks[$ char.perks[1]]);
 Player_Perks[2] = variable_clone(Perks[$ char.perks[2]]);

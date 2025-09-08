@@ -38,5 +38,5 @@
     "path":"sprites/sAmeBubba1/sAmeBubba1.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

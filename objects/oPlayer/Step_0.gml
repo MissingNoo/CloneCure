@@ -1,3 +1,4 @@
+GameData.player_pos = {x, y, depth};
 if (keyboard_check(ord("C"))) {
 	//instance_create_depth(x, y + 40, depth, oAnvil);
 	//GameData.Pickup++;

@@ -1,6 +1,10 @@
 image_alpha = 0.01;
 knocktimer = 0;
 hit_frame = {};
+if (is_undefined(Enemies[$ name])) {
+	trace($"No monster named {name}");
+	e = "Urufugang";
+}
 e = Enemies[$ name];
 boss = e.boss;
 hp = e.hp;

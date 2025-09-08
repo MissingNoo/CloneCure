@@ -46,8 +46,9 @@ i.before_hit = method(i, function() {
 i = new perk("Bubba");
 i.sprite = sAmeliaBubba;
 i.on_bought = function() {
-	if (!instance_exists(oBubba)) {
-		instance_create_depth(oPlayer.x, oPlayer.y, oPlayer.depth, oBubba);
+	if (!GameData.bubba) {
+		instance_create_depth(GameData.player_pos.x, GameData.player_pos.x, GameData.player_pos.depth, oBubba);
+		GameData.bubba = true;
 	} else {
 		oBubba.level++;
 	}

@@ -26,12 +26,44 @@ if (spawn_frame < AirLib.frame) {
 			break;
 	}
 	spawn_frame = AirLib.frame + spawn_rate;
-	var sstepspawn_amount = 
-		max(1, ((round((spawn_amount + additional_spawn + (shop_level("Marketing")) * (GameData.stage_mode == "STAGE" or GameData.stage_mode == "ENDLESS")) / reduced_spawn)) + 
-						(GameData.stage_mode == "TIME") * timemode_spawn_scale));
-	for (var stepspawn_amount = sstepspawn_amount;  stepspawn_amount > 0; stepspawn_amount--) {
-		if (array_length(Spawn_List) > 0 and enemy_amount < enemy_limit) {
-			instance_create_layer(_x, _y, "Instances", oEnemy,
+	var sstepspawn_amount = max(
+		1,
+		(
+			round(
+				(
+					spawn_amount
+						+ additional_spawn
+						+ shop_level("Marketing")
+							* (
+								GameData.stage_mode == "STAGE"
+									|| GameData.stage_mode == "ENDLESS"
+							)
+				) / reduced_spawn
+			)
+				+ (GameData.stage_mode == "TIME") * timemode_spawn_scale
+		)
+	);
+	for (
+		var stepspawn_amount = sstepspawn_amount;
+		stepspawn_amount > 0;
+		stepspawn_amount--
+	) {
+		if (array_length(Spawn_List) > 0 && enemy_amount < enemy_limit) {
+			var pos = {};
+			var dir = GrabDirection();
+			if (instance_exists(oPlayer)) {
+				pos.x =
+					oPlayer.x
+					+ lengthdir_x((camera_get_view_width(view_camera[0]) / 1.5), dir);
+				pos.y =
+					oPlayer.y
+					+ lengthdir_y((camera_get_view_height(view_camera[0]) / 1.5), dir);
+			}
+			instance_create_layer(
+				pos.x,
+				pos.y,
+				"Instances",
+				oEnemy,
 				{name: Spawn_List[irandom(array_length(Spawn_List) - 1)]}
 			);
 			frame_since_last = 0;
@@ -59,4 +91,3 @@ repeat (queue_repeats) {
 		}
 	}
 }
-
