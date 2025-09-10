@@ -7,7 +7,7 @@ if (waitplayer) {
 		target = {x : oPlayer.x, y : oPlayer.y};
 		barktimer = 100;
 		basespeed = 1;
-		level = 1;
+		GameData.bubbalevel = 1;
 		visible = true;
 		waitplayer = false;
 	}

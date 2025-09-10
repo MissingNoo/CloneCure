@@ -12,7 +12,7 @@ start_x = -300;
 icon_x_offset = 3;
 icon_y_offset = 13;
 icon_scale = 2;
-dbg = dbg_view("stats", true, gui_x_percent(65));
+dbg = dbg_view("Player Stats", false, gui_x_percent(65));
 dbg_section("Position");
 dbg_slider_int(ref_create(self, "line_start"), 0, 50, "Line Start");
 dbg_slider_int(ref_create(self, "line_end"), 0, 50, "Line End");

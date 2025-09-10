@@ -5,7 +5,7 @@ ups = [
 	Weapons[$ "Ame_Pistol"],
 	Weapons[$ "Ame_Pistol"]
 ];
-
+icon_scale_mult = 0.6;
 stats = [];
 weapons = [];
 items = [];
@@ -76,19 +76,20 @@ description_x = 144;
 description_x_end = 146;
 description_y = 42;
 description_y_end = 49;
-dbg = dbg_view("stats", true, gui_x_percent(50));
-dbg_section("Position");
-var names = struct_get_names(self);
-for (var i = 0; i < array_length(names); i++) {
-	if (is_real(self[$ names[i]])) {
-		dbg_slider_int(
-			ref_create(self, names[i]),
-			-50,
-			300,
-			string_first_letter_upper_case(string_replace_all(names[i], "_", " "))
-		);
-	}
-}
+dbg = dbg_view("Level UP", false, gui_x_percent(50));
+create_view_from_instance(self);
+//dbg_section("Position");
+//var names = struct_get_names(self);
+//for (var i = 0; i < array_length(names); i++) {
+	//if (is_real(self[$ names[i]])) {
+		//dbg_slider_int(
+			//ref_create(self, names[i]),
+			//-50,
+			//300,
+			//string_first_letter_upper_case(string_replace_all(names[i], "_", " "))
+		//);
+	//}
+//}
 instance_create_depth(x, y, depth + 1, oPlayerStatsUI);
 key = new animated_sprite(sHudLeftKey);
 u0 = undefined;

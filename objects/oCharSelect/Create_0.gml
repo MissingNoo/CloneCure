@@ -140,7 +140,7 @@ charoffset = 0;
 
 skinselect = false;
 skin_scale = 6;
-dbg = dbg_view("CharSelect", true, gui_x_percent(50));
+dbg = dbg_view("CharSelect", false, gui_x_percent(50));
 dbg_section("Position");
 create_view_from_instance(self);
 left_right = 0;

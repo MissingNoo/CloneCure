@@ -22,5 +22,5 @@ global.bottomBorder = -1;
 global.leftBorder = -1;
 global.rightBorder = -1;
 event_user(0);
-dbg = dbg_view("Stage", true);
+dbg = dbg_view("Stage", false);
 create_view_from_instance(self);

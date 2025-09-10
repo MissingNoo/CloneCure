@@ -35,7 +35,7 @@ if (
 	if (!is_undefined(arr)) {
 		array_foreach(arr, function(e, i) {
 			method(instance_find(oStage, 0), e)();
-			trace("ran script");
+			//trace("ran script");
 		});
 	}
 }

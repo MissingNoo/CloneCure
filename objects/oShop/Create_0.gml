@@ -73,7 +73,7 @@ coins_offset = 2;
 coins_yoffset = 53;
 coins_scale = 4;
 
-dbg = dbg_view("Shop", true, gui_x_percent(10));
+dbg = dbg_view("Shop", false, gui_x_percent(10));
 dbg_section("Positions");
 var names = struct_get_names(self);
 for (var i = 0; i < array_length(names); i++) {

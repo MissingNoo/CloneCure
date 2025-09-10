@@ -50,6 +50,6 @@ i.on_bought = function() {
 		instance_create_depth(GameData.player_pos.x, GameData.player_pos.x, GameData.player_pos.depth, oBubba);
 		GameData.bubba = true;
 	} else {
-		oBubba.level++;
+		GameData.bubbalevel++;
 	}
 }
