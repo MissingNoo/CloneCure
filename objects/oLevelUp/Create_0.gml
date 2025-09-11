@@ -81,14 +81,14 @@ create_view_from_instance(self);
 //dbg_section("Position");
 //var names = struct_get_names(self);
 //for (var i = 0; i < array_length(names); i++) {
-	//if (is_real(self[$ names[i]])) {
-		//dbg_slider_int(
-			//ref_create(self, names[i]),
-			//-50,
-			//300,
-			//string_first_letter_upper_case(string_replace_all(names[i], "_", " "))
-		//);
-	//}
+//if (is_real(self[$ names[i]])) {
+//dbg_slider_int(
+//ref_create(self, names[i]),
+//-50,
+//300,
+//string_first_letter_upper_case(string_replace_all(names[i], "_", " "))
+//);
+//}
 //}
 instance_create_depth(x, y, depth + 1, oPlayerStatsUI);
 key = new animated_sprite(sHudLeftKey);

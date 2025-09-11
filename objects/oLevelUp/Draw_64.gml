@@ -63,21 +63,9 @@ ui.foreach(function(name, pos, data) {
 					});
 					if (index != -1) {
 						lvl = Player_Weapons[index].level;
-					}
-
+					};
 					self[$ $"u{opt}"] ??= scribble(
 						lexicon_text($"{ups[opt].lex}.{ups[opt].name}.{lvl + 1}")
-					);
-					draw_sprite_centered_ext(
-						ups[opt].sprite,
-						0,
-						_x + icon_x - sprite_get_width_ext(ups[opt].sprite, icon_scale_mult),
-						_y + icon_y - sprite_get_height_ext(ups[opt].sprite, icon_scale_mult)- 13,
-						icon_scale,
-						icon_scale,
-						0,
-						c_white,
-						1
 					);
 					break;
 				case "Stats":
@@ -109,17 +97,6 @@ ui.foreach(function(name, pos, data) {
 					self[$ $"u{opt}"] ??= scribble(
 						lexicon_text($"{ups[opt].lex}.{ups[opt].name}.{lvl + 1}")
 					);
-					draw_sprite_centered_ext(
-						ups[opt].sprite,
-						0,
-						_x + icon_x - sprite_get_width_ext(ups[opt].sprite, icon_scale_mult),
-						_y + icon_y - sprite_get_height_ext(ups[opt].sprite, icon_scale_mult)- 13,
-						icon_scale,
-						icon_scale,
-						0,
-						c_white,
-						1
-					);
 					break;
 				case "Perks":
 					index = array_find_index(Player_Perks, function(e, i) /*=>*/ {
@@ -131,21 +108,26 @@ ui.foreach(function(name, pos, data) {
 					self[$ $"u{opt}"] ??= scribble(
 						lexicon_text($"{ups[opt].lex}.{ups[opt].name}.{lvl + 1}")
 					);
-					draw_sprite_centered_ext(
-						ups[opt].sprite,
-						0,
-						_x + icon_x - sprite_get_width_ext(ups[opt].sprite, icon_scale_mult),
-						_y + icon_y - sprite_get_height_ext(ups[opt].sprite, icon_scale_mult)- 13,
-						icon_scale,
-						icon_scale,
-						0,
-						c_white,
-						1
-					);
 					break;
 				default:
 					self[$ $"u{opt}"] ??= scribble("err");
 					break;
+			}
+			if (ups[opt].lex != "Stats") {
+				draw_sprite_centered_ext(
+					ups[opt].sprite,
+					0,
+					_x + icon_x - sprite_get_width_ext(ups[opt].sprite, icon_scale_mult),
+					_y
+						+ icon_y
+						- sprite_get_height_ext(ups[opt].sprite, icon_scale_mult)
+						- 13,
+					icon_scale,
+					icon_scale,
+					0,
+					c_white,
+					1
+				);
 			}
 			self[$ $"u{opt}"]
 				.scale(title_scale)
@@ -169,7 +151,7 @@ ui.foreach(function(name, pos, data) {
 				);
 				if (selected) {
 					var left_right =
-						-input_check_pressed("left")
+						- input_check_pressed("left")
 						+ input_check_pressed("right")
 						- mouse_wheel_up()
 						+ mouse_wheel_down();

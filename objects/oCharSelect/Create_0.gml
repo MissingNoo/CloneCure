@@ -51,7 +51,6 @@ select_char = function() {
 		sprite_get_width_ext(Characters[$ selected_char].title_sprite, charscale) + 20
 	);
 };
-
 mx = 0;
 my = 0;
 lmxx = 0;
@@ -304,3 +303,4 @@ st.add("GO", {
 		}
 	},
 });
+select_char();
