@@ -12,31 +12,28 @@ ui.foreach(function(name, pos, data) {
 	switch (name) {
 		case "char_list_1":
 			for (var offset = 0, yoffset = 0, i = 0; i <= 19; i++) {
-				var xoff2 = charxoff * (i <= 9 ? 1 : -1);
+				var xoff2 = round(charxoff * (i <= 9 ? 1 : -1));
 				draw_set_color(c_black);
 				draw_set_alpha(0.25);
-				draw_rectangle(
+				draw_roundrect_ext(
 					_x + offset - 1 + xoff2,
 					_y + yoffset - 1,
 					_x + offset + 88 + xoff2,
 					_y + yoffset + 64,
-					false
+					charportround,
+					charportround,
+					true
 				);
 				draw_set_alpha(1);
 				draw_set_color(c_white);
-				draw_rectangle(
-					_x + offset - 1 + xoff2,
-					_y + yoffset - 1,
-					_x + offset + 88 + xoff2,
-					_y + yoffset + 64,
-					true
-				);
 				if (i > struct_names_count(GameData.characters) - 1) {
-					draw_sprite_centered(
-						sAchLocked,
+					draw_sprite_stretched(
+						sCharLock,
 						0,
-						_x + offset + 44 + xoff2,
-						_y + 31 + yoffset
+						_x + offset + xoff2,
+						_y + yoffset,
+						87,
+						63
 					);
 				} else {
 					draw_sprite_stretched(
@@ -73,6 +70,21 @@ ui.foreach(function(name, pos, data) {
 						}
 					}
 				}
+				//draw_roundrect_ext(
+					//_x + offset - 1 + xoff2,
+					//_y + yoffset - 1,
+					//_x + offset + 88 + xoff2,
+					//_y + yoffset + 64,
+					//charportround,
+					//charportround,
+					//true
+				//);
+				draw_sprite_stretched(sCharFG, 0, 
+					_x + offset - 1 + xoff2,
+					_y + yoffset - 1,
+					88,
+					64 
+				);
 				if (i == selected) {
 					draw_sprite_stretched(
 						sMenuCharSelectCursor,
@@ -105,28 +117,25 @@ ui.foreach(function(name, pos, data) {
 				}
 				draw_set_color(c_black);
 				draw_set_alpha(0.25);
-				draw_rectangle(
+				draw_roundrect_ext(
 					_x + offset - 1 + xoff2,
 					_y + yoffset - 1,
 					_x + offset + 88 + xoff2,
 					_y + yoffset + 64,
-					false
+					charportround,
+					charportround,
+					true
 				);
 				draw_set_alpha(1);
 				draw_set_color(c_white);
-				draw_rectangle(
-					_x + offset - 1 + xoff2,
-					_y + yoffset - 1,
-					_x + offset + 88 + xoff2,
-					_y + yoffset + 64,
-					true
-				);
 				if (i > struct_names_count(GameData.characters) - 1) {
-					draw_sprite_centered(
-						sAchLocked,
+					draw_sprite_stretched(
+						sCharLock,
 						0,
-						_x + offset + 44 + xoff2,
-						_y + 31 + yoffset
+						_x + offset + xoff2,
+						_y + yoffset,
+						87,
+						63
 					);
 				} else {
 					draw_sprite_stretched(
@@ -163,7 +172,21 @@ ui.foreach(function(name, pos, data) {
 						}
 					}
 				}
-				//draw_text(_x + offset + xoff2, _y + yoffset, i);
+				//draw_roundrect_ext(
+					//_x + offset - 1 + xoff2,
+					//_y + yoffset - 1,
+					//_x + offset + 88 + xoff2,
+					//_y + yoffset + 64,
+					//charportround,
+					//charportround,
+					//true
+				//);
+				draw_sprite_stretched(sCharFG, 0, 
+					_x + offset - 1 + xoff2,
+					_y + yoffset - 1,
+					88,
+					64 
+				);
 				if (i == selected) {
 					draw_sprite_stretched(
 						sMenuCharSelectCursor,

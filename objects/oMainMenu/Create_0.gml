@@ -87,7 +87,6 @@ buttons
 		//room_goto(stage.rm);
 		room_goto(rCharSelect);
 	});
-
 bars = [];
 start_y = 350;
 tween(self, "start_y", 0, "ease", 30);

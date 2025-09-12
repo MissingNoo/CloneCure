@@ -1,4 +1,5 @@
 selectarrow = new animated_sprite(sSelectArrow);
+charportround = 3;
 forcez = false;
 repeat (6) {
 	instance_create_depth(irandom(gui_w), 0, 1000, oTriangle);
