@@ -49,23 +49,8 @@ if (spawn_frame < AirLib.frame) {
 		stepspawn_amount--
 	) {
 		if (array_length(Spawn_List) > 0 && enemy_amount < enemy_limit) {
-			var pos = {};
-			var dir = GrabDirection();
-			if (instance_exists(oPlayer)) {
-				pos.x =
-					oPlayer.x
-					+ lengthdir_x((camera_get_view_width(view_camera[0]) / 1.5), dir);
-				pos.y =
-					oPlayer.y
-					+ lengthdir_y((camera_get_view_height(view_camera[0]) / 1.5), dir);
-			}
-			instance_create_layer(
-				pos.x,
-				pos.y,
-				"Instances",
-				oEnemy,
-				{name: Spawn_List[irandom(array_length(Spawn_List) - 1)]}
-			);
+			var pos = get_spawn_dir();
+			spawn_enemy(pos.x, pos.y, Spawn_List[irandom(array_length(Spawn_List) - 1)]);
 			frame_since_last = 0;
 			mobs_spawned++;
 		}

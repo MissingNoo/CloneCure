@@ -890,6 +890,7 @@
     {"id":{"name":"ScribblejrShrinkExt","path":"scripts/ScribblejrShrinkExt/ScribblejrShrinkExt.yy",},},
     {"id":{"name":"ShopData","path":"scripts/ShopData/ShopData.yy",},},
     {"id":{"name":"SnowState","path":"scripts/SnowState/SnowState.yy",},},
+    {"id":{"name":"Spawn_scripts","path":"scripts/Spawn_scripts/Spawn_scripts.yy",},},
     {"id":{"name":"Stages","path":"scripts/Stages/Stages.yy",},},
     {"id":{"name":"string_height_scribble_ext","path":"scripts/string_height_scribble_ext/string_height_scribble_ext.yy",},},
     {"id":{"name":"string_height_scribble","path":"scripts/string_height_scribble/string_height_scribble.yy",},},

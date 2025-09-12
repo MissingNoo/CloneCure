@@ -30,6 +30,8 @@ function remove_mob_choice(e) {
 	} until (index == -1)
 }
 
+
+
 function Stage(_name) constructor {
 	name = _name;
 	timings = {};
@@ -137,9 +139,13 @@ function Stage(_name) constructor {
 		return self;
 	};
 }
-
+#region Stage1
 var stage1 = new Stage("Stage1");
 stage1.add_enemy("Urufugang", "00:01");
+stage1
+	.add_script("00:05", function() {
+		clumped_spawn("Urufugang", 15);
+	});
 stage1
 	.add_script("00:08", function() {
 		enemy_limit = 100;
@@ -168,6 +174,12 @@ stage1
 	.add_script("02:30", function() {
 		spawn_amount = 3;
 		currentSpawnPattern = "evenSurround";
+	});
+stage1
+	.add_script("03:00", function() {
+		remove_mob_choice("Urufugang")
+        add_mob_choice("Takodachi", 2, 1)
+        spawn_rate = 120;
 	});
 stage1
 	.add_script("04:20", function() {
@@ -445,7 +457,8 @@ stage1.set_music(bgm_suspect);
 stage1.set_room(rStage1);
 stage1.set_bg(sStage1Port);
 stage1.set_coin_multiplier(1.25);
-
+#endregion
+#region Stage2
 var stage2 = new Stage("Stage2");
 stage2.add_enemy("Urufugang", "00:01");
 stage2.set_border(610, 610, 3170, 3170);
@@ -456,3 +469,4 @@ stage2.set_coin_multiplier(1.60);
 stage2.add_recomendation("SPD_Up", 6);
 stage2.add_recomendation("ATK_Up", 6);
 stage2.set_fandom(1);
+#endregion

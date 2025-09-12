@@ -1,7 +1,11 @@
-x = floor(oPlayer.x);
-y = floor(oPlayer.y);
+//x = floor(oPlayer.x);
+//y = floor(oPlayer.y);
 //x = round(oPlayer.x);
 //y = round(oPlayer.y);
+x = lerp(x, oPlayer.x, 0.8);
+y = lerp(y, oPlayer.y, 0.8);
+x = round(x);
+y = round(y);
 if (distance_to_object(oPlayer) > 50) {
 	x = oPlayer.x + xoffset;
 	y = oPlayer.y + yoffset;

@@ -13,19 +13,12 @@ ui.foreach(function(name, pos, data) {
 		case "char_list_1":
 			for (var offset = 0, yoffset = 0, i = 0; i <= 19; i++) {
 				var xoff2 = round(charxoff * (i <= 9 ? 1 : -1));
-				draw_set_color(c_black);
-				draw_set_alpha(0.25);
-				draw_roundrect_ext(
+				draw_sprite_stretched(sCharFG, 1, 
 					_x + offset - 1 + xoff2,
 					_y + yoffset - 1,
-					_x + offset + 88 + xoff2,
-					_y + yoffset + 64,
-					charportround,
-					charportround,
-					true
+					88,
+					64 
 				);
-				draw_set_alpha(1);
-				draw_set_color(c_white);
 				if (i > struct_names_count(GameData.characters) - 1) {
 					draw_sprite_stretched(
 						sCharLock,
@@ -115,19 +108,12 @@ ui.foreach(function(name, pos, data) {
 				if (i >= 38) {
 					xoff2 = charxoff * (i >= 38 ? 1 : -1);
 				}
-				draw_set_color(c_black);
-				draw_set_alpha(0.25);
-				draw_roundrect_ext(
+				draw_sprite_stretched(sCharFG, 1, 
 					_x + offset - 1 + xoff2,
 					_y + yoffset - 1,
-					_x + offset + 88 + xoff2,
-					_y + yoffset + 64,
-					charportround,
-					charportround,
-					true
+					88,
+					64 
 				);
-				draw_set_alpha(1);
-				draw_set_color(c_white);
 				if (i > struct_names_count(GameData.characters) - 1) {
 					draw_sprite_stretched(
 						sCharLock,

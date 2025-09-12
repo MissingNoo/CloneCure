@@ -11,7 +11,8 @@ if (instance_exists(objNekoPresenceDemo)) {
 		0.5
 	);
 }
-var _x = x, _y = y;
+//var _x = round(x), _y = round(y);
+var _x = (x), _y = (y);
 draw_sprite_ext(sCharShadow, 0, _x, _y, 1, 1, 0, c_white, 0.8);
 if (GameData.hp > 0 && GameData.hp < GameData.max_hp) {
 	draw_healthbar(

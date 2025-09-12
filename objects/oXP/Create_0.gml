@@ -2,6 +2,9 @@ direction = random(360);
 speed = 1;
 near = undefined;
 join = new air_timer(180, method(self, function() {
+	if (sprite_index == sXPMagnet) {
+		exit;
+	}
 	var xx = x, yy = y;
 	x += 10000;
 	y += 10000;
