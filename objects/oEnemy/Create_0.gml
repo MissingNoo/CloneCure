@@ -1,9 +1,10 @@
+//try {
 image_alpha = 0.01;
 knocktimer = 0;
 hit_frame = {};
 if (is_undefined(Enemies[$ name])) {
 	trace($"No monster named {name}");
-	e = "Urufugang";
+	e = "urufugang";
 }
 e = Enemies[$ name];
 boss = e.boss;
@@ -18,4 +19,8 @@ ds_queue_enqueue(oStage.dir_queue, self.id);
 was_hit = false;
 inv_frame = 0;
 attack_frame = 0;
-
+//}
+//catch (error) {
+    //trace(error);
+    //instance_destroy();	
+//}
