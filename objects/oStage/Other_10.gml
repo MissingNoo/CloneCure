@@ -72,9 +72,9 @@ GenerateDirections();
 //pos.y =
 //oPlayer.y
 //+ lengthdir_y((camera_get_view_height(view_camera[0]) / 1.5), dir);
-////if (string_count("stage2_", currentSpawnPattern) > 0) {
-////pos = self._Stage2GetPosition(dir);
-////}
+//if (string_count("stage2_", currentSpawnPattern) > 0) {
+//pos = self._Stage2GetPosition(dir);
+//}
 //choice.choice.SpawnMob(pos, level, obj_MobManager);
 //}
 //}
@@ -128,7 +128,7 @@ function ParseSpawnDirection_gml_Object_obj_StageManager_Other_10(dir) {
 }
 
 //function _Stage2GetPosition_gml_Object_obj_StageManager_Other_10(argument0) {
-////gml_Script__Stage2GetPosition_gml_Object_obj_StageManager_Other_10
+//gml_Script__Stage2GetPosition_gml_Object_obj_StageManager_Other_10
 //pos = {};
 //var side = 0;
 //argument0 = floor(argument0 / sliceSize);
@@ -240,7 +240,7 @@ function ParseSpawnDirection_gml_Object_obj_StageManager_Other_10(dir) {
 //argument2,
 //argument3
 //) {
-////gml_Script_RemoveTimeEvent_gml_Object_obj_StageManager_Other_10
+//gml_Script_RemoveTimeEvent_gml_Object_obj_StageManager_Other_10
 //if (argument3 == undefined) {
 //argument3 = false;
 //}
@@ -271,7 +271,7 @@ function ParseSpawnDirection_gml_Object_obj_StageManager_Other_10(dir) {
 //argument1,
 //argument2
 //) {
-////gml_Script_CheckTimeForEvent_gml_Object_obj_StageManager_Other_10
+//gml_Script_CheckTimeForEvent_gml_Object_obj_StageManager_Other_10
 //if (argument1 < 0 || argument1 > 59 || argument2 < 0 || argument2 > 59) {
 //return "Invalid time inputted.";
 //}
