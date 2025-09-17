@@ -1,3 +1,4 @@
+force_x = false;
 selectarrow = new animated_sprite(sSelectArrow);
 charportround = 3;
 forcez = false;
@@ -159,6 +160,7 @@ st.add("Char", {
 		if (
 			input_check_pressed("cancel")
 			|| device_mouse_check_button_pressed(0, mb_right)
+			|| force_x
 		) {
 			room_goto(rMainMenu);
 		}
@@ -230,6 +232,7 @@ st.add("Skin", {
 		if (
 			input_check_pressed("cancel")
 			|| device_mouse_check_button_pressed(0, mb_right)
+			|| force_x
 		) {
 			st.change("Char");
 		}
@@ -253,6 +256,7 @@ st.add("StageMode", {
 		if (
 			input_check_pressed("cancel")
 			|| device_mouse_check_button_pressed(0, mb_right)
+			|| force_x
 		) {
 			st.change("Skin");
 		}
@@ -272,6 +276,7 @@ st.add("Stage", {
 		if (
 			input_check_pressed("cancel")
 			|| device_mouse_check_button_pressed(0, mb_right)
+			|| force_x
 		) {
 			st.change("StageMode");
 		}
@@ -287,7 +292,7 @@ st.add("GO", {
 		GameData.music = audio_play_sound(
 			selected_stage.music,
 			0,
-			-1,
+			true,
 			GameConfig.music_volume
 		);
 		global.seconds = 0;
@@ -299,6 +304,7 @@ st.add("GO", {
 		if (
 			input_check_pressed("cancel")
 			|| device_mouse_check_button_pressed(0, mb_right)
+			|| force_x
 		) {
 			st.change("Stage");
 		}

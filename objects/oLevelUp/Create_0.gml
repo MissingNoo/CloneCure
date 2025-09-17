@@ -78,6 +78,7 @@ description_y = 42;
 description_y_end = 49;
 dbg = dbg_view("Level UP", false, gui_x_percent(50));
 create_view_from_instance(self);
+force_z = false;
 //dbg_section("Position");
 //var names = struct_get_names(self);
 //for (var i = 0; i < array_length(names); i++) {

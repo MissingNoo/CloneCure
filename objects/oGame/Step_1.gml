@@ -1,3 +1,6 @@
+if (os_type == os_android) {
+	show_debug_overlay(false);
+}
 if (keyboard_check_pressed(vk_f9)) {
 	show_debug_overlay(false);
 }

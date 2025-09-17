@@ -17,6 +17,9 @@ ui.foreach(function(name, pos, data) {
 		case "u2":
 		case "u3":
 			var opt = real(string_char_at(name, 2));
+			if (device_mouse_check_button_pressed(0, mb_left) and opt == selected_option) {
+				force_z = true;
+			}
 			mouse_select(_x, _y, _w, _h, opt);
 			var selected = selected_option == opt ? 1 : 0;
 			draw_sprite_stretched(sHudUpgrade, selected, _x, _y, _w, _h);

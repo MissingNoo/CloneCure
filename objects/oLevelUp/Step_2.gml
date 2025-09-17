@@ -1,4 +1,4 @@
-if (input_check_pressed("accept")) {
+if (input_check_pressed("accept") or force_z) {
 	switch (selected_option) {
 		case 0:
 		case 1:
@@ -62,3 +62,4 @@ if (input_check_pressed("accept")) {
 	}
 	instance_destroy();
 }
+force_z = false;

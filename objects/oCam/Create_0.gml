@@ -1,5 +1,11 @@
+aspect = display_get_aspect_ratio();
 baseW = 640;
 baseH = 360;
+if (os_type == os_android) {
+	do {
+		baseW += .1;
+	} until (baseW / baseH == aspect);
+}
 view_enabled = true;
 view_visible[0] = true;
 view_camera[0] = camera_create_view(0, 0, baseW, baseH, 0, oCam, -1, -1, 400, 250);
