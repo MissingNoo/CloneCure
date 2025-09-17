@@ -36,6 +36,7 @@ Player_Perks[2] = variable_clone(Perks[$ char.perks[2]]);
 //Player_Perks[0].level = 3;
 //show_debug_overlay(true);
 Player_Weapons = array_create(6, undefined);
+
 Player_Weapons[0] = variable_clone(Weapons[$ char.main_weapon]);
 //Player_Weapons[0] = variable_clone(Weapons[$ "CEO_Tears"]);
 Player_Weapons[0].level = 1;
@@ -59,3 +60,67 @@ dmg = 0;
 xplist = ds_list_create();
 healframe = 0;
 Player_Items = array_create(6, undefined);
+////ParticleSystem6
+//_ps = part_system_create();
+//part_system_draw_order(_ps, true);
+//_ps2 = part_system_create();
+//part_system_draw_order(_ps2, true);
+//_ps3 = part_system_create();
+//part_system_draw_order(_ps3, true);
+//
+////GM_Warp_Center
+//_ptype1 = part_type_create();
+//part_type_shape(_ptype1, pt_shape_sphere);
+//part_type_size(_ptype1, 0.5, 1, -0.01, 0);
+//part_type_scale(_ptype1, 0.1, 0.1);
+//part_type_speed(_ptype1, 10, 1, 0.01, 0);
+//part_type_direction(_ptype1, 200, 200, 0, 0);
+//part_type_gravity(_ptype1, 0, 270);
+//part_type_orientation(_ptype1, 0, 0, 0, 0, false);
+//part_type_colour3(_ptype1, $FFFFFF, $FFF600, $FFBB00);
+//part_type_alpha3(_ptype1, 1, 1, 0);
+//part_type_blend(_ptype1, false);
+//part_type_life(_ptype1, 50, 80);
+//part_life = 20;
+//part_scale= 0.15;
+//part_sizea = 0.5;
+//part_sizeb = 1;
+//dbg_view("Player", false);
+//create_view_from_instance(self);
+//_ptype2 = part_type_create();
+//part_type_shape(_ptype2, pt_shape_sphere);
+//part_type_size(_ptype2, 0.5, 1, -0.01, 0);
+//part_type_scale(_ptype2, 1, 1);
+//part_type_speed(_ptype2, 10, 1, 0.01, 0);
+//part_type_direction(_ptype2, 200, 200, 0, 0);
+//part_type_gravity(_ptype2, 0, 270);
+//part_type_orientation(_ptype2, 0, 0, 0, 0, false);
+//part_type_colour3(_ptype2, $FFFFFF, $FFF600, $FFBB00);
+//part_type_alpha3(_ptype2, 1, 1, 0);
+//part_type_blend(_ptype2, false);
+//part_type_life(_ptype2, 50, 80);
+//_ptype3 = part_type_create();
+//part_type_shape(_ptype3, pt_shape_sphere);
+//part_type_size(_ptype3, 0.5, 1, -0.01, 0);
+//part_type_scale(_ptype3, 1, 1);
+//part_type_speed(_ptype3, 10, 1, 0.01, 0);
+//part_type_direction(_ptype3, 200, 200, 0, 0);
+//part_type_gravity(_ptype3, 0, 270);
+//part_type_orientation(_ptype3, 0, 0, 0, 0, false);
+//part_type_colour3(_ptype3, $FFFFFF, $FFF600, $FFBB00);
+//part_type_alpha3(_ptype3, 1, 1, 0);
+//part_type_blend(_ptype3, false);
+//part_type_life(_ptype3, 50, 80);
+//
+//var _pemit1 = part_emitter_create(_ps);
+//var _pemit2 = part_emitter_create(_ps2);
+//var _pemit3 = part_emitter_create(_ps3);
+//part_emitter_region(_ps, _pemit1, -16, 16, -16, 16, ps_shape_ellipse, ps_distr_linear);
+//part_emitter_stream(_ps, _pemit1, _ptype1, -4);
+//part_emitter_region(_ps2, _pemit1, -16, 16, -16, 16, ps_shape_ellipse, ps_distr_linear);
+//part_emitter_stream(_ps2, _pemit1, _ptype2, -4);
+//part_emitter_region(_ps3, _pemit1, -16, 16, -16, 16, ps_shape_ellipse, ps_distr_linear);
+//part_emitter_stream(_ps3, _pemit1, _ptype3, -4);
+
+
+

@@ -13,9 +13,9 @@ function add_mob_choice(e, _level = 1, _weight = undefined, _extra = undefined) 
 			weight = _weight;
 		}
 		show_debug_message($"Added {e} to spawn list with weight {weight}");
-		if (_level != 1) {
-			e = $"{e}{_level}";
-		}
+		//if (_level != 1) {
+			//e = $"{e}{_level}";
+		//}
 		repeat (weight) {
 			array_push(Spawn_List, e);
 		}
@@ -170,6 +170,7 @@ stage1
 		spawn_amount = 5;
 		currentSpawnPattern = "evenSurround";
 	});
+stage1.add_enemy("MegaShrimp", "02:00");
 stage1
 	.add_script("02:30", function() {
 		spawn_amount = 3;
@@ -177,9 +178,14 @@ stage1
 	});
 stage1
 	.add_script("03:00", function() {
-		remove_mob_choice("Urufugang")
-        add_mob_choice("Takodachi", 2, 1)
+		remove_mob_choice("Urufugang");
+        add_mob_choice("Takodachi", 2, 1);
         spawn_rate = 120;
+	});
+stage1
+	.add_script("04:00", function() {
+        add_mob_choice("KFP", 2, 1)
+        spawn_amount = 3
 	});
 stage1
 	.add_script("04:20", function() {
@@ -189,6 +195,11 @@ stage1
 	});
 stage1
 	.add_script("05:00", function() {
+		add_mob_choice("Shrimp", 3, 2)
+        add_mob_choice("AngelFairy", 4, 1)
+        add_mob_choice("DevilFairy", 4, 1)
+        remove_mob_choice("Takodachi")
+        remove_mob_choice("Deadbeat")
 		enemy_limit = 400;
 		spawn_amount = 6;
 	});
@@ -204,7 +215,6 @@ stage1
 		currentSpawnPattern = "evenSurround";
 		remove_mob_choice("Deadbeat");
 		add_mob_choice("Deadbeat", 8, 3);
-		remove_mob_choice("Takodachi");
 		remove_mob_choice("BigBubba");
 		remove_mob_choice("Urufugang"); //Shrimp
 	});

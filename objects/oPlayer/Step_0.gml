@@ -1,3 +1,22 @@
+//part_type_life(_ptype1, part_life, part_life);
+//part_type_life(_ptype2, part_life, part_life);
+//part_type_life(_ptype3, part_life, part_life);
+//part_type_scale(_ptype1, part_scale, part_scale);
+//part_type_scale(_ptype2, part_scale, part_scale);
+//part_type_scale(_ptype3, part_scale, part_scale);
+//part_type_size(_ptype1, part_sizea, part_sizeb, -0.01, 0);
+//part_type_size(_ptype2, part_sizea, part_sizeb, -0.01, 0);
+//part_type_size(_ptype3, part_sizea, part_sizeb, -0.01, 0);
+//var _dir = point_direction(mouse_x, mouse_y, x, y);
+//part_type_direction(_ptype1, _dir, _dir, 0, 0);
+//part_system_position(_ps, x + lengthdir_x(-200, _dir), y + lengthdir_y(-200, _dir));
+//_dir = point_direction(mouse_x, mouse_y, x, y - 50);
+//part_type_direction(_ptype2, _dir, _dir, 0, 0);
+//part_system_position(_ps2, x + lengthdir_x(-200, _dir), y + lengthdir_y(-200, _dir));
+//_dir = point_direction(mouse_x, mouse_y, x, y + 50);
+//part_type_direction(_ptype3, _dir, _dir, 0, 0);
+//part_system_position(_ps3, x + lengthdir_x(-200, _dir), y + lengthdir_y(-200, _dir));
+//instance_destroy(oEnemy);
 GameData.player_pos = {x, y, depth};
 if (keyboard_check(ord("C"))) {
 	//instance_create_depth(x, y + 40, depth, oAnvil);

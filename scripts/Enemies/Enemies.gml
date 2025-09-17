@@ -11,6 +11,7 @@ function Enemy(_name) constructor {
 	experience = 0;
 	weight = 0;
 	boss = false;
+	miniboss = false;
 	scale = 1;
 	knockback_immune = false;
 	Enemies[$ name] = self;
@@ -49,6 +50,16 @@ function Enemy(_name) constructor {
 		scale = val;
 		return self;
 	};
+	
+	static set_boss = function(val) {
+		boss = val;
+		return self;
+	};
+	
+	static set_mini_boss = function(val) {
+		miniboss = val;
+		return self;
+	};
 }
 
 var e = new Enemy("Theo");
@@ -83,7 +94,8 @@ e.set_sprite(sUrufu)
 	.set_atk(6)
 	.set_experience(150)
 	.set_weight(1)
-	.set_scale(1);
+	.set_scale(1.5)
+	.set_mini_boss(true);
 var e = new Enemy("MegaDarkShrimp");
 e.set_sprite(sDarkShrimp)
 	.set_hp(2500)
@@ -116,14 +128,14 @@ e.set_sprite(sDeadBeatLV3)
 	.set_experience(8)
 	.set_weight(1)
 	.set_scale(1);
-var e = new Enemy("TakoDachi");
+var e = new Enemy("Takodachi");
 e.set_sprite(sTakodachi)
-	.set_hp(50)
+	.set_hp(80)
 	.set_spd(0.40)
 	.set_atk(4)
-	.set_experience(1)
+	.set_experience(8)
 	.set_weight(1)
-	.set_scale(1.50);
+	.set_scale(1);
 var e = new Enemy("TakoViking");
 e.set_sprite(sTakoViking)
 	.set_hp(50)
@@ -132,7 +144,7 @@ e.set_sprite(sTakoViking)
 	.set_experience(1)
 	.set_weight(0)
 	.set_scale(1.50);
-var e = new Enemy("KFPEmployee");
+var e = new Enemy("KFP");
 e.set_sprite(sKFPEmployee)
 	.set_hp(20)
 	.set_spd(1)
