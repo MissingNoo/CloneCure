@@ -26,3 +26,6 @@ if (global.seconds > 60) {
 	global.seconds -= 60;
 	global.minutes++;
 }
+if (instance_exists(oGameUI)) {
+	depth = oGameUI.depth + 1; 
+}

@@ -17,7 +17,7 @@ ui.foreach(function(name, pos, data) {
 		case "u2":
 		case "u3":
 			var opt = real(string_char_at(name, 2));
-			if (device_mouse_check_button_pressed(0, mb_left) and opt == selected_option) {
+			if (mouse_in_area_gui([_x, _y, _x + _w, _y + _h]) and device_mouse_check_button_pressed(0, mb_left) and opt == selected_option) {
 				force_z = true;
 			}
 			mouse_select(_x, _y, _w, _h, opt);

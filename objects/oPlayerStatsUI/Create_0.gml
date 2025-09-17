@@ -12,6 +12,7 @@ start_x = -300;
 icon_x_offset = 3;
 icon_y_offset = 13;
 icon_scale = 2;
+depth = oGameUI.depth;
 dbg = dbg_view("Player Stats", false, gui_x_percent(65));
 dbg_section("Position");
 dbg_slider_int(ref_create(self, "line_start"), 0, 50, "Line Start");

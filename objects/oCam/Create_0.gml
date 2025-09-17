@@ -1,10 +1,11 @@
-aspect = display_get_aspect_ratio();
+aspect = string_copy(string(display_get_aspect_ratio()), 1, 4);
 baseW = 640;
 baseH = 360;
 if (os_type == os_android) {
-	do {
-		baseW += .1;
-	} until (baseW / baseH == aspect);
+	baseW = 800; //TODO: calculate
+	//do {
+		//baseW -= .1;
+	//} until (string_copy(string(baseW / baseH), 1, 4) == aspect);
 }
 view_enabled = true;
 view_visible[0] = true;

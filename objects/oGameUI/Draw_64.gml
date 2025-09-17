@@ -1,4 +1,15 @@
 //feather ignore GM1041
+if (GameData.is_paused and surface_exists(GameData.GameSurf)) {
+	draw_surface_stretched_ext(
+		GameData.GameSurf,
+		0,
+		0,
+		display_get_gui_width(),
+		display_get_gui_height(),
+		c_white,
+		1
+	);
+}
 xpsurf = surface_recreate(
 	xpsurf,
 	sprite_get_width(sExpBarBG),
