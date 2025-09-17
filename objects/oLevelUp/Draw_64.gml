@@ -17,16 +17,22 @@ ui.foreach(function(name, pos, data) {
 		case "u2":
 		case "u3":
 			var opt = real(string_char_at(name, 2));
+		if (!off_set) {
+			off_set = true;
+			for (var i = 0; i < array_length(right_offset); i++) {
+				right_offset[i] = _w + 500 + (550 * i);
+			}
+		}
 			if (mouse_in_area_gui([_x, _y, _x + _w, _y + _h]) and device_mouse_check_button_pressed(0, mb_left) and opt == selected_option) {
 				force_z = true;
 			}
 			mouse_select(_x, _y, _w, _h, opt);
 			var selected = selected_option == opt ? 1 : 0;
-			draw_sprite_stretched(sHudUpgrade, selected, _x, _y, _w, _h);
+			draw_sprite_stretched(sHudUpgrade, selected, _x + right_offset[opt], _y, _w, _h);
 			draw_sprite_stretched_ext(
 				sHudUpgradeColor,
 				selected,
-				_x,
+				_x + right_offset[opt],
 				_y,
 				_w,
 				_h,
@@ -36,7 +42,7 @@ ui.foreach(function(name, pos, data) {
 			draw_sprite_centered_ext(
 				sItemType,
 				0,
-				_x + icon_x,
+				_x + icon_x + right_offset[opt],
 				_y + icon_y,
 				icon_scale,
 				icon_scale,
@@ -47,12 +53,12 @@ ui.foreach(function(name, pos, data) {
 			var iname = lexicon_text($"{ups[opt].lex}.{ups[opt].name}.name");
 			scribble($"[fa_bottom]{iname}")
 				.scale(title_scale)
-				.draw(_x + title_x, _y + title_y);
+				.draw(_x + title_x + right_offset[opt], _y + title_y);
 			scribble(
 				$"[fa_right][fa_bottom]>> {string_first_letter_upper_case(ups[opt].lex)}"
 			)
 				.scale(title_scale)
-				.draw(_x + _w - title_end_x, _y + title_y);
+				.draw(_x + _w - title_end_x + right_offset[opt], _y + title_y);
 			var lvl = 0;
 			var index = -1;
 			global.search = ups[opt].name;
@@ -78,7 +84,7 @@ ui.foreach(function(name, pos, data) {
 					draw_sprite_centered_ext(
 						ups[opt].sprite,
 						0,
-						_x + icon_x - sprite_get_width_ext(ups[opt].sprite, 2.5),
+						_x + icon_x - sprite_get_width_ext(ups[opt].sprite, 2.5) + right_offset[opt],
 						_y + icon_y - sprite_get_height_ext(ups[opt].sprite, 2.5),
 						icon_scale,
 						icon_scale,
@@ -120,7 +126,7 @@ ui.foreach(function(name, pos, data) {
 				draw_sprite_centered_ext(
 					ups[opt].sprite,
 					0,
-					_x + icon_x - sprite_get_width_ext(ups[opt].sprite, icon_scale_mult),
+					_x + icon_x - sprite_get_width_ext(ups[opt].sprite, icon_scale_mult) + right_offset[opt],
 					_y
 						+ icon_y
 						- sprite_get_height_ext(ups[opt].sprite, icon_scale_mult)
@@ -136,7 +142,7 @@ ui.foreach(function(name, pos, data) {
 				.scale(title_scale)
 				.wrap(_w - description_x_end, _h - description_y_end);
 			var desc = self[$ $"u{opt}"];
-			desc.draw(_x + description_x, _y + description_y);
+			desc.draw(_x + description_x + right_offset[opt], _y + description_y);
 			if (desc.get_page_count() > 1) {
 				draw_sprite_centered_ext(
 					desc.get_page()

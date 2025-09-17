@@ -1,3 +1,6 @@
+for (var i = 0; i < array_length(right_offset); i++) {
+	right_offset[i] = lerp(right_offset[i], 0, 0.2);
+}
 key.animate();
 var up_down = -input_check_pressed("up") + input_check_pressed("down");
 var left_right = -input_check_pressed("left") + input_check_pressed("right");

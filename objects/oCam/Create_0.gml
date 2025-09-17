@@ -25,5 +25,6 @@ game_height = camera_get_view_height(view_camera[0]);
 camera_set_view_size(view_camera[0], game_width, game_height);
 camera_set_view_size(view_camera[1], game_width, game_height);
 
+
 GameData.GameSurf = -1;
 GameData.GameSurf2 = -1;

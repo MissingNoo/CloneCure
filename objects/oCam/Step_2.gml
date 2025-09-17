@@ -17,5 +17,7 @@ xoffset = x - px;
 yoffset = y - py;
 GameData.GameSurf = surface_recreate(GameData.GameSurf, game_width, game_height);
 GameData.GameSurf2 = surface_recreate(GameData.GameSurf2, game_width, game_height);
-view_surface_id[0] = GameData.GameSurf;
+if (os_type == os_android) {
+	view_surface_id[0] = GameData.GameSurf;
+}
 view_surface_id[1] = GameData.GameSurf2;

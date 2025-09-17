@@ -61,22 +61,22 @@ stats
 					.draw(_x + _w - line_end, _y + text_y);
 				break;
 			case "base":
-				if (!instance_exists(oLevelUp)) {
-					break;
-				}
-				draw_set_alpha(0.5);
-				draw_rectangle_color(
-					_x - start_x,
-					_y,
-					_x - start_x + _w,
-					_y + _h,
-					c_black,
-					c_black,
-					c_black,
-					c_black,
-					false
-				);
-				draw_set_alpha(1);
+				//if (!instance_exists(oLevelUp)) {
+					//break;
+				//}
+				//draw_set_alpha(0.5);
+				//draw_rectangle_color(
+					//_x - start_x,
+					//_y,
+					//_x - start_x + _w,
+					//_y + _h,
+					//c_black,
+					//c_black,
+					//c_black,
+					//c_black,
+					//false
+				//);
+				//draw_set_alpha(1);
 				break;
 			default:
 				var value = GameData[$ name];

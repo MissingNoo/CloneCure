@@ -1,4 +1,6 @@
 //feather disable all
+right_offset = [0,0,0,0];
+off_set = false;
 ups = [
 	Weapons[$ "Ame_Pistol"],
 	Weapons[$ "Ame_Pistol"],
