@@ -706,14 +706,30 @@ w.set_hits([3, 3, 8, 8, 8, 8, 8]);
 w.set_duration(180);
 w.set_create(function() /*=>*/ {
 	exploded = false;
+	returned = false;
 	sticktimer = AirLib.frame + wid.delay;
 	sticks = wid.shoots[level] - 1;
 	direction = random(360);
 	speed = 8;
 });
 w.set_step(function() /*=>*/ {
-	if (!exploded and distance_to_object(oPlayer) > 180) {
-		direction = point_direction(x, y, oPlayer.x, oPlayer.y);
+	if (!returned and !exploded and distance_to_object(oPlayer) > 70) {
+		returned = true;
+		//direction = point_direction(x, y, oPlayer.x, oPlayer.y);
+	}
+	if (returned) {
+		if (sprite_index = sGlowstickThumbExplosion) {
+			speed = 0;
+			exit;
+		}
+		if (speed > 0) {
+			speed = lerp(speed, 0, 0.1);
+			if (speed < 0.25) {
+				speed = 0;
+			}
+		} else {
+			speed = lerp(speed, -8, 0.05);
+		}
 	}
 	if (sticktimer < AirLib.frame and can_spawn_other and sticks > 0) {
 		sticks--;

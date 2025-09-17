@@ -1,4 +1,15 @@
+force_click = function () {
+	if (gui_can_interact()) {
+		clicktimer = AirLib.frame + 10;
+		forcez = true;
+	}
+}
+stage_skin_click_area = [0, 0, 0, 0];
 force_x = false;
+setmiddle = false;
+setmiddle2 = false;
+middle = 0;
+middle2 = 0;
 selectarrow = new animated_sprite(sSelectArrow);
 charportround = 3;
 forcez = false;
@@ -238,6 +249,7 @@ st.add("Skin", {
 		}
 	},
 	leave: function() {
+		forcez = false;
 		ui.node_visible("label_title", false);
 		ui.node_visible("char_list_1", false);
 		ui.node_visible("char_list_2", false);
@@ -245,6 +257,7 @@ st.add("Skin", {
 });
 st.add("StageMode", {
 	enter: function() {
+		forcez = false;
 		stagemodewasselected = false;
 		stageui.set_visible(true);
 	},
@@ -265,6 +278,9 @@ st.add("StageMode", {
 			btn[i].keyboard_selected = i == stagemodeselected;
 		}
 	},
+	leave: function() {
+		forcez = false;
+	}
 });
 st.add("Stage", {
 	step: function() {
@@ -281,6 +297,9 @@ st.add("Stage", {
 			st.change("StageMode");
 		}
 	},
+	leave: function() {
+		forcez = false;
+	}
 });
 st.add("GO", {
 	enter: function() {

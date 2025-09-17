@@ -677,8 +677,14 @@ function listbox() constructor {
 	};
 }
 
+function gui_cant_interact_frames(frames = 10) {
+	AirLib.waitframe = AirLib.frame + frames;
+}
+
 function gui_can_interact() {
-	return !global.listboxopen && AirLib.listframe < AirLib.frame;
+	var can = !global.listboxopen && AirLib.listframe < AirLib.frame && AirLib.waitframe < AirLib.frame;
+	gui_cant_interact_frames(10);
+	return can;
 }
 
 global.currenttextbox = {selected: false};
@@ -984,3 +990,4 @@ function ui_element_list() constructor {
 		array_foreach(list, f);
 	};
 }
+

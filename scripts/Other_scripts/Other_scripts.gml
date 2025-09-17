@@ -16,7 +16,15 @@ function pause_game(reason = undefined) {
 			surface_get_width(application_surface),
 			surface_get_height(application_surface)
 		);
-		surface_copy(oGame.surf, 0, 0, application_surface);
+		switch (os_type) {
+			case os_android:
+				surface_copy(oGame.surf, 0, 0, GameData.GameSurf);
+				break;
+			default:
+				surface_copy(oGame.surf, 0, 0, application_surface);
+				break;
+		}
+		
 		instance_deactivate_all(true);
 		var dont_deactivate = [input_controller_object, oGameUI];
 		array_foreach(dont_deactivate, function(e, i) /*=>*/ {
