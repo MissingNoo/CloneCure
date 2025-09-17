@@ -1,3 +1,8 @@
+
+if (os_type != os_android and device_mouse_check_button_pressed(0, mb_left)) {
+	GameData.mouseAim = !GameData.mouseAim;
+}
+
 //part_type_life(_ptype1, part_life, part_life);
 //part_type_life(_ptype2, part_life, part_life);
 //part_type_life(_ptype3, part_life, part_life);

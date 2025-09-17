@@ -42,6 +42,7 @@ if (GameData.xp >= GameData.needed_xp) {
 if (keyboard_check_pressed(vk_f1)) {
 	debug_rooms();
 }
+cursor_sprite = instance_exists(oPlayer) and GameData.mouseAim and !GameData.is_paused ? sMouseAim : sCursor;
 if (keyboard_check_pressed(vk_escape) or device_mouse_check_button_pressed(3, mb_left)) {
 	pause_game("pause");
 }
