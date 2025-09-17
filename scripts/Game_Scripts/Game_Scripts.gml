@@ -713,7 +713,7 @@ w.set_create(function() /*=>*/ {
 	speed = 8;
 });
 w.set_step(function() /*=>*/ {
-	if (!returned and !exploded and distance_to_object(oPlayer) > 70) {
+	if (!returned and !exploded and distance_to_point(xstart, ystart) > 70) {
 		returned = true;
 		//direction = point_direction(x, y, oPlayer.x, oPlayer.y);
 	}

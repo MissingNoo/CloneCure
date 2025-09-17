@@ -144,7 +144,7 @@ var stage1 = new Stage("Stage1");
 stage1.add_enemy("Urufugang", "00:01");
 stage1
 	.add_script("00:05", function() {
-		clumped_spawn("Urufugang", 15);
+		clumped_spawn("Urufugang", 9);
 	});
 stage1
 	.add_script("00:08", function() {
