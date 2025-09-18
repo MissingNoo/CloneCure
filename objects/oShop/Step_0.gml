@@ -43,6 +43,9 @@ switch (selecting) {
 		if (right) {
 			selecting = "item";
 		}
+		if (cancel) {
+			room_goto(rMainMenu);
+		}
 		break;
 	case "buysell":
 		if (cancel || device_mouse_check_button_released(0, mb_right)) {

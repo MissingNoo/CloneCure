@@ -37,7 +37,7 @@ for (var i = array_length(Player_Weapons) - 1; i >= 0; i--) {
 
 ups = [
 	Perks[$ "Bubba"],
-	Items[$ "Kusogaki_Shackles"],
+	Items[$ "Gorilla_Paw"],
 	Items[$ "Face_Mask"],
 	Weapons[$ "Glowstick"]
 ];

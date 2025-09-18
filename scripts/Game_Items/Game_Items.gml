@@ -86,7 +86,8 @@ i.set_type(item_type.Stat);
 i.set_max_level(3);
 i.set_on_bought(method(i, function(){
 	var bonus = [0, 1.2, 1.3, 1.4];
-	crit_debuff = [0, 0.20, 0.20, 0.20];
+	crit_debuff = [0, 20, 0, 0];
+	GameData.CRT -= crit_debuff[level];
 	damage_bonus = bonus[level];
 }));
 #endregion

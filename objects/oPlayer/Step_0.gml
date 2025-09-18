@@ -95,7 +95,7 @@ array_foreach(Player_Weapons, function(e, i) /*=>*/ {
 			infinity
 		);
 		//trace($"Cooldown: {cool} : {newcool}");
-		e.cooldown = AirLib.frame + cool;
+		e.cooldown = AirLib.frame + newcool;
 	}
 });
 array_foreach(Player_Items, function(e, i) /*=>*/ {

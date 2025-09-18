@@ -3,7 +3,7 @@ if (!is_undefined(GameData.music)) {
 		audio_stop_sound(GameData.music);
 	}
 } else {
-	GameData.music = audio_play_sound(bgm_SSS, 0, -1, GameConfig.music_volume);
+	GameData.music = audio_play_sound(bgm_SSS, 0, 1, GameConfig.music_volume);
 }
 
 if (os_type != os_android && os_type != os_gxgames) {

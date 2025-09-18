@@ -32,11 +32,23 @@ var damage_bonus = 1;
 
 for (var i = 0; i < array_length(Player_Items); i++) {
 	if (!is_undefined(Player_Items[i])) {
-		damage_bonus += Player_Items[i].damage_bonus - 1;
+		damage_bonus += Player_Items[i].damage_bonus - 1; //INFO: -1 for only the decimal point
 	}
 }
 //trace($"Damage Bonus: {BaseATK} + {damage_bonus}");
 dmg = (dmg * BaseATK) * damage_bonus;
+
+var ctrchance = 1 * clamp(GameData.CRT, 0, infinity);
+var rnd = irandom_range(1, 100);
+var was_crit = false;
+if (rnd <= ctrchance) {
+	was_crit = true;
+	var bonus_crit = 0;
+	if (GameData.CRT > 100) {
+		bonus_crit = 1 + ((GameData.CRT - 100)/200);
+	} 
+	dmg = (dmg * 1.5) + bonus_crit;
+}
 
 global.lastproj = self;
 array_foreach(Player_Items, function(e, i) /*=>*/ {
@@ -64,7 +76,7 @@ instance_create_depth(
 	other.y - (other.sprite_height / 2),
 	other.depth - 1,
 	oDamageText,
-	{dir: abs(image_xscale), dmg: dmg}
+	{dir: abs(image_xscale), dmg: dmg, critical: was_crit}
 );
 
 audio_play_sound(

@@ -34,7 +34,7 @@ i.sprite = sAmeliaFpsMastery;
 i = new perk("Detective_Eye");
 i.sprite = sAmeliaDetectiveEye;
 i.on_bought = function() {
-	GameData.CRT += 0.10;
+	GameData.CRT += 10;
 }
 i.before_hit = method(i, function() {
 	var rnd = irandom(100);

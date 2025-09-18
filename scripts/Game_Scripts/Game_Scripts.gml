@@ -73,7 +73,7 @@ s = new stat("SPD_Up", sHudSPDIcon, 4);
     });
 s = new stat("Crit_Up", sHudCRTIcon, 3);
     s.set_function(function() {
-        GameData.CRT += 0.03;
+        GameData.CRT += 3;
     });
 s = new stat("Pick_Up_Range", sHudPickupIcon, 4);
     s.set_function(function() {
