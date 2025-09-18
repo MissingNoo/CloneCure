@@ -85,10 +85,21 @@ i.set_sprite(sGorillaPaw);
 i.set_type(item_type.Stat);
 i.set_max_level(3);
 i.set_on_bought(method(i, function(){
+	self[$"curlevel"] ??= 0;
 	var bonus = [0, 1.2, 1.3, 1.4];
 	crit_debuff = [0, 20, 0, 0];
-	GameData.CRT -= crit_debuff[level];
 	damage_bonus = bonus[level];
+	if (level != curlevel) {
+		GameData.CRT -= crit_debuff[level];
+	}
+	var shacklescalc = function() {
+		if(player_have_item("Kusogaki_Shackles")){
+			var reduction = get_item_data("Kusogaki_Shackles").reduction;
+			GameData.CRT += 20 * (reduction / 100);
+		}
+	}
+	shacklescalc();
+	curlevel = level;
 }));
 #endregion
 
@@ -151,7 +162,7 @@ i.set_type(item_type.Utility);
 i.set_sprite(sKusogakiShackles);
 i.set_max_level(3);
 i.set_on_bought(method(i, function() /*=>*/ {
-	var reductions = [0, 33, 66, 100];
+	var reductions = [0, 33, 66, 1];//TODO: test all items
 	reduction = reductions[level];
 	array_foreach(Player_Items, function(e, p) /*=>*/ {
 		if (!is_undefined(e) and e.name != "Kusogaki_Shackles") { e.on_bought(); }
@@ -370,6 +381,17 @@ i.set_sprite(sFullMeal)
 .set_type(item_type.Healing)
 .set_max_level(1)
 .set_weight(1)
+#endregion
+
+#region Limiter
+i = new item("Limiter");
+i.set_sprite(sLimiter)
+.set_type(item_type.Stat)
+.set_max_level(3)
+.set_weight(4)
+.set_on_bought(method(i, function () {
+	GameData.Pickup += 100; 
+}))
 #endregion
 
 
