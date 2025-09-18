@@ -36,9 +36,9 @@ for (var i = array_length(Player_Weapons) - 1; i >= 0; i--) {
 }
 
 ups = [
-	Stats[$ "Pick_Up_Range"],
+	Items[$ "Membership"],
 	Items[$ "Corporate_Pin"],
-	Items[$ "Face_Mask"],
+	Items[$ "Kusogaki_Shackles"],
 	Weapons[$ "Glowstick"]
 ];
 

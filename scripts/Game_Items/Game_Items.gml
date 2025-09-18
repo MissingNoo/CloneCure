@@ -394,5 +394,60 @@ i.set_sprite(sLimiter)
 }))
 #endregion
 
+#region Membership
+i = new item("Membership");
+i.set_sprite(sMembership)
+.set_type(item_type.Stat)
+.set_max_level(3)
+.set_weight(3)
+.set_on_bought(method(i, function () {
+	self[$"atkremainder"] ??= 30;
+	self[$"atkheld"] ??= 0;
+	self[$"defbonus"] ??= 0;
+	self[$"defheld"] ??= 10;
+	self[$"curlevel"] ??= 1;
+	if (curlevel != level) {
+		atkremainder += 10;
+		var bonus = [0, 0, 8, 7];
+		defheld += bonus[level]
+	}
+	curlevel = level;
+}))
+.set_cooldown(seconds_to_frames(1), 1)
+.set_on_cooldown(method(i, function () {
+	if (keyboard_check(vk_control)) {
+		GameData.stage_coins += 10;
+		oGameUI.update_ui();
+	}
+	var loss = 3;
+	if (player_have_item("Kusogaki_Shackles")) {
+		loss -= get_item_data("Kusogaki_Shackles").level;
+	}
+	if (GameData.stage_coins > 0) {
+		GameData.stage_coins = clamp(GameData.stage_coins - loss, 0, infinity);
+		oGameUI.update_ui();
+	}
+	if (GameData.stage_coins > 0) {
+		GameData.ATK += atkremainder / 100;
+		defbonus += defheld;
+		defheld = 0;
+		if (atkremainder != 0) {
+			atkheld += atkremainder;
+			atkremainder = 0;
+		}
+	} else {
+		defheld += defbonus;
+		defbonus = 0;
+		GameData.ATK -= atkheld / 100;
+		atkremainder += atkheld;
+		atkheld = 0;
+	}
+}))
+.set_on_hurt(method(i, function() /*=>*/ {
+	var odmg = oPlayer.dmg;
+	oPlayer.dmg = oPlayer.dmg * (1 - (defbonus / 100));
+	//show_message($"{odmg}:{oPlayer.dmg}:B{defbonus}:{defheld}");
+}));
+#endregion
 
 #endregion

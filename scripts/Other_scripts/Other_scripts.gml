@@ -107,6 +107,8 @@ function get_item_data(itemname) {
 	});
 	if (item_index != -1) {
 		data = Player_Items[item_index];
+	} else {
+		trace($"no item with this name {itemname}");
 	}
 	return data;
 }
