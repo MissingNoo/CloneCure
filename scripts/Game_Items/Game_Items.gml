@@ -52,7 +52,7 @@ i.set_on_bought(method(i, function(){
 	var shield_levels = [0, 15, 20, 25, 30, 35];
 	GameData.max_shield = shield_levels[level];
 }));
-i.set_cooldown(15 * 60, 1);
+i.set_cooldown(seconds_to_frames(15), 1);
 i.set_on_cooldown(method(i, function() {
 	GameData.shield = GameData.max_shield;
 }));
@@ -218,16 +218,18 @@ i.set_on_bought(method(i, function() /*=>*/ {
 	}
 	curlevel = level;
 }));
-i.set_on_hurt(method(i, function() /*=>*/ {
+i.set_on_hurt(method(i, function() /*=>*/ { //TODO: affect enemy projectiles, dont proc on stealth mode
+	var odmg = oPlayer.dmg;
 	oPlayer.dmg = oPlayer.dmg * 0.75;
 	if (irandom_range(0, 100) <= rebound_chance) {
-		var odmg = oPlayer.dmg * multiplier;
+		var dmg = odmg * multiplier;
 		var inst = global.lastenemy;
 		if (instance_exists(inst)) {
-			inst.hp -= odmg;
+			dmg = crit_calc(odmg);
+			inst.hp -= dmg;
 			instance_create_depth(inst.x, inst.y - (inst.sprite_height / 2), inst.depth - 1, oDamageText, {
 			    dir : abs(oPlayer.image_xscale),
-			    dmg : odmg
+			    dmg : dmg
 			});
 		}
 	}
@@ -247,7 +249,8 @@ i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
 i.set_on_hit(method(i, function() /*=>*/ {
 	var projectile = global.lastproj;
 	if (instance_exists(projectile) and projectile.wid.from_skill) {
-		projectile.dmg = projectile.dmg * multiplier;
+		var mult = multiplier + ((1.5 * GameData.level) / 100);
+		projectile.dmg = projectile.dmg * mult;
 	}
 }));
 #endregion
@@ -260,7 +263,7 @@ i.set_sprite(sBlacksmithGear);
 i.set_max_level(3);
 i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
 	var enchant_lv = [0, 0, .5, 1];
-	enchant = enchant_lv[level];
+	enchant_bonus = enchant_lv[level];
 }));
 #endregion
 
@@ -305,14 +308,14 @@ i.set_sprite(sCorporatePin)
 #endregion
 
 #region Credit Card
-//TODO:    Enhancing cost reduction
+//TODO: Enhancing cost reduction
 i = new item("Credit_Card");
 i.set_sprite(sCreditCard)
 .set_type(item_type.Utility)
 .set_max_level(5)
 .set_weight(3)
 .set_on_bought(method(i, function() /*=>*/ {
-	var drop_levels = [0, 0.18, 0.28, 0.38, 0.45, 0.5];
+	var drop_levels = [0, 0.18	, 0.28, 0.38, 0.45, 0.5];
 	var reduction_levels = [0, 20, 25, 30, 35, 40];
 	reduction = reduction_levels[level];
 	drop_chance_buff = drop_levels[level];

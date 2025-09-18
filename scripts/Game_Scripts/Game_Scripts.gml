@@ -56,7 +56,21 @@ function stat(_name, _sprite, _weight) constructor {
     Stats[$ _name] = self;
 }
 #endregion
-
+function crit_calc(dmg) {
+	var ctrchance = 1 * clamp(GameData.CRT, 0, infinity);
+	var rnd = irandom_range(1, 100);
+	var was_crit = false;
+	if (rnd <= ctrchance) {
+		was_crit = true;
+		var bonus_crit = 0;
+		if (GameData.CRT > 100) {
+			bonus_crit = 1 + ((GameData.CRT - 100)/200);
+		} 
+		dmg = (dmg * 1.5) + bonus_crit;
+	}
+	return dmg;
+}
+	
 #region Stats
 var s = new stat("Max_HP_Up", sHudHPIcon, 2);
     s.set_function(function() {

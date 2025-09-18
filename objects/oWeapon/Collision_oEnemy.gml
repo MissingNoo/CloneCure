@@ -37,19 +37,12 @@ for (var i = 0; i < array_length(Player_Items); i++) {
 }
 //trace($"Damage Bonus: {BaseATK} + {damage_bonus}");
 dmg = (dmg * BaseATK) * damage_bonus;
-
-var ctrchance = 1 * clamp(GameData.CRT, 0, infinity);
-var rnd = irandom_range(1, 100);
 var was_crit = false;
-if (rnd <= ctrchance) {
+var before = dmg;
+dmg = crit_calc(dmg);
+if (dmg != before) {
 	was_crit = true;
-	var bonus_crit = 0;
-	if (GameData.CRT > 100) {
-		bonus_crit = 1 + ((GameData.CRT - 100)/200);
-	} 
-	dmg = (dmg * 1.5) + bonus_crit;
 }
-
 global.lastproj = self;
 array_foreach(Player_Items, function(e, i) /*=>*/ {
 	if (e != undefined) {
