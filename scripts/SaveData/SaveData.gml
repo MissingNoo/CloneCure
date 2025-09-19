@@ -6,6 +6,8 @@ SaveData = {
 	gacha: {},
 	seen_before: [],
 	shop: {upgrades: {}},
+	unlocked_items : {},
+	unlocked_weapons : {}
 };
 
 global.base_data = variable_clone(SaveData);
@@ -22,6 +24,16 @@ function update_save_data() {
 					SaveData[$ global.savenext][$ name] = value;
 				}
 			});
+		}
+	});
+	struct_foreach(Items, function(name, value) {
+		if (is_undefined(SaveData.unlocked_items[$ name])) {
+			SaveData.unlocked_items[$ name] = false;
+		}
+	});
+	struct_foreach(Weapons, function(name, value) {
+		if (is_undefined(SaveData.unlocked_weapons[$ name])) {
+			SaveData.unlocked_weapons[$ name] = false;
 		}
 	});
 	struct_foreach(Characters, function(name, value) {

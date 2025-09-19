@@ -1,5 +1,7 @@
 //feather disable all
-GameData = {};
+if (!variable_global_exists("gamedata")) {
+	GameData = {};
+}
 #region GUI Functions
 
 /**

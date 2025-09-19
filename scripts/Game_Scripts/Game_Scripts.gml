@@ -111,6 +111,7 @@ function base_item(_name) constructor {
 	on_cooldown = function(){};
 	on_bought = function(){};
 	weight = 3;
+	unlocked = false;
 	/// @function                set_max_level(lvl)
 	/// @description             Defines the max level for the item.
 	/// @param {real}    lvl     The max level.
@@ -118,6 +119,12 @@ function base_item(_name) constructor {
 		max_level = lvl;
 		return self;
 	}
+	
+	static set_unlocked = function (b) {
+		unlocked = b;
+		return self;
+	}
+	
 	/// @function                set_on_cooldown(function)
 	/// @description             Defines the function executed.
 	/// @param {function}    f   The function to be executed
@@ -170,7 +177,7 @@ function weapon(_name) : base_item(_name) constructor {
     hit_cooldown = 10;
     shoots = array_create(8, 1);
     projectile_sprite = sBlank;
-    perk = false;
+    is_perk = false;
     character_name = undefined;
     delay = 0;
     mindmg = [];
@@ -309,8 +316,11 @@ function weapon(_name) : base_item(_name) constructor {
 		return self;
 	}
 	static set_perk = function(boolean, char) {
-		perk = boolean;
+		is_perk = boolean;
 		character_name = char;
+		if (boolean) {
+			unlocked = true;
+		}
 		return self;
 	}
 	static set_delay = function(amount) {

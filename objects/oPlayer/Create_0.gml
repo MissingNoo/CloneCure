@@ -1,6 +1,4 @@
-//display_set_gui_size(1280, 720);
 instance_create_depth(x, y, depth, oCam);
-//GameData.selected_character = "Tenma_Maemi";
 char = Characters[$ GameData.selected_character];
 try {
 	sprites = char.skins[$ SaveData.characters[$ GameData.selected_character].lastoutfit];
