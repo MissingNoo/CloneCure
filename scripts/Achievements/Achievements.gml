@@ -12,6 +12,11 @@ function achievement(_name, _sprite) constructor {
 	unlocked = false;
 	char = noone;
 	static unlock = function () {
+		if (unlocked) {
+			exit;
+		}
+		unlocked = true;
+		instance_create_depth(0, 0, -1000, oAchNotify, {ach : self});
 		switch (unlock_type) {
 			case "money":
 				SaveData.money += amount;
@@ -30,7 +35,6 @@ function achievement(_name, _sprite) constructor {
 		_name = string_replace(_name, " ", "_");
 		unlock_type = "item";
 		unlock_name = _name;
-		show_message("test");
 		return self;
 	}
 	

@@ -23,6 +23,7 @@ function character(_name) constructor {
 	skins = {"base": {idle: idle_sprite, run: run_sprite}};
 	skinorder = ["base"];
 	perks = ["null", "null", "null"];
+	completion_ach = undefined;
 	Characters[$ _name] = self;
 
 	static set_weapon = function(_w) {
@@ -102,6 +103,11 @@ function character(_name) constructor {
 		array_push(skinorder, sname);
 		return self;
 	};
+	
+	static set_completion = function (achname) {
+		completion_ach = achname;
+		return self;
+	}
 }
 
 var c = new character("Amelia_Watson");
@@ -117,7 +123,8 @@ c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAme)
 	.add_skin("O1", sAmeliaIdleO1, sAmeliaRunO1)
 	.add_skin("O2", sAmeliaIdleO2, sAmeliaRunO2)
 	.add_skin("O3", sAmeliaIdleO3, sAmeliaRunO3)
-	.set_perks("The_Ame_Way", "Detective_Eye", "Bubba");
+	.set_perks("The_Ame_Way", "Detective_Eye", "Bubba")
+	.set_completion("HIC");
 //c = new character("Aki_Rosenthal");
 //c.set_sprite(sAmeliaIdle, sAmeliaRun, sAkiPortrait, sTitleAki)
 	//.set_speed(1.35)
