@@ -7,7 +7,8 @@ SaveData = {
 	seen_before: [],
 	shop: {upgrades: {}},
 	unlocked_items : {},
-	unlocked_weapons : {}
+	unlocked_weapons : {},
+	unlocked_achievements : {}
 };
 
 global.base_data = variable_clone(SaveData);
@@ -34,6 +35,11 @@ function update_save_data() {
 	struct_foreach(Weapons, function(name, value) {
 		if (is_undefined(SaveData.unlocked_weapons[$ name])) {
 			SaveData.unlocked_weapons[$ name] = false;
+		}
+	});
+	struct_foreach(AchievementsList, function(name, value) {
+		if (is_undefined(SaveData.unlocked_achievements[$ name])) {
+			SaveData.unlocked_achievements[$ name] = false;
 		}
 	});
 	struct_foreach(Characters, function(name, value) {

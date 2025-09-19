@@ -1,3 +1,4 @@
+show_message(AchievementsList);
 if (!is_undefined(GameData.music)) {
 	if (audio_get_name(GameData.music) != "bgm_SSS") {
 		audio_stop_sound(GameData.music);
