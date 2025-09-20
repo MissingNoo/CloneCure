@@ -73,7 +73,7 @@ i.set_on_hurt(method(i, function() {
 	var rnd = irandom_range(0, 100) <= chance;
 	if (rnd) {
 		oPlayer.dmg = 0;
-		var inst = weapon_create { wid : variable_clone(Weapons[$ "Shockwave"]) });
+		var inst = weapon_create { wid : variable_clone(Weapons[$ "shockwave"]) });
 	}
 }));
 #endregion
@@ -165,7 +165,7 @@ i.set_on_bought(method(i, function() /*=>*/ {
 	var reductions = [0, 33, 66, 1];//TODO: test all items
 	reduction = reductions[level];
 	array_foreach(Player_Items, function(e, p) /*=>*/ {
-		if (!is_undefined(e) and e.name != "Kusogaki_Shackles") { e.on_bought(); }
+		if (!is_undefined(e) and e.name != "kusogaki_shackles") { e.on_bought(); }
 	});
 }));
 #endregion
@@ -332,10 +332,9 @@ i.set_sprite(sCreditCard)
 	drop_chance_buff = drop_levels[level];
 	var anvil_timers = [[0, 0], [120, 240], [105, 210], [90, 180], [75, 150], [60, 120]];
 	var anvil_time = anvil_timers[level];
-	var anvil_create = time_source_create(time_source_game, irandom_range(anvil_time[0], anvil_time[1]), time_source_units_seconds, function() {
-		instance_create_depth(oPlayer.x, oPlayer.y - 80, oPlayer.depth, oAnvil);
+	call_later(irandom_range(anvil_time[0], anvil_time[1]), time_source_units_seconds, function () {
+		instance_create_depth(GameData.player_pos.x, GameData.player_pos.y - 80, -2000, oAnvil);
 	});
-	time_source_start(anvil_create);
 }));
 #endregion
 

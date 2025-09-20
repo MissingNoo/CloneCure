@@ -36,12 +36,31 @@ for (var i = array_length(Player_Weapons) - 1; i >= 0; i--) {
 		}
 	}
 }
-
+//
+var names = struct_get_names(Items);
+var names2 = struct_get_names(Weapons);
+if (Player_Items[array_length(Player_Items) - 1] != undefined) {
+	names = [];
+	for (var i = 0; i < array_length(Player_Items); i++) {
+		array_push(names, Player_Items[i].name);
+	}
+}
+if (Player_Weapons[array_length(Player_Weapons) - 1] != undefined) {
+	names2 = [];
+	for (var i = 0; i < array_length(Player_Weapons); i++) {
+		array_push(names2, Player_Weapons[i].name);
+	}
+}
+//
 ups = [
-	Items[$ "membership"],
-	Items[$ "corporate_pin"],
-	Items[$ "kusogaki_shackles"],
-	Weapons[$ "glowstick"]
+	choose(Items[$names[irandom_range(0, array_length(names) - 1)]], Weapons[$names2[irandom_range(0, array_length(names2) - 1)]]),
+	choose(Items[$names[irandom_range(0, array_length(names) - 1)]], Weapons[$names2[irandom_range(0, array_length(names2) - 1)]]),
+	choose(Items[$names[irandom_range(0, array_length(names) - 1)]], Weapons[$names2[irandom_range(0, array_length(names2) - 1)]]),
+	choose(Items[$names[irandom_range(0, array_length(names) - 1)]], Weapons[$names2[irandom_range(0, array_length(names2) - 1)]])
+	//Items[$ "membership"],
+	//Items[$ "corporate_pin"],
+	//Items[$ "kusogaki_shackles"],
+	//Weapons[$ "glowstick"]
 ];
 
 mx = 0;

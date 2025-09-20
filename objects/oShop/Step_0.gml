@@ -4,7 +4,7 @@ var up = input_check_pressed("up");
 var down = input_check_pressed("down");
 var right = input_check_pressed("right");
 var confirm = input_check_pressed("accept");
-var cancel = input_check_pressed("cancel");
+var cancel = input_check_pressed("cancel") or device_mouse_check_button(1, mb_left);
 switch (selecting) {
 	case "item":
 		var cant = [2, 5, 8, 11, 14];

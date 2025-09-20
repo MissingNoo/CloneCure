@@ -69,7 +69,7 @@ function damage_player(dmg) {
  */
 function player_have_item(name) {
 	var have = false;
-	global.isearch = name;
+	global.isearch = string_lower(name);
 	if (array_find_index(Player_Items, function(e, i) /*=>*/ {
 			if (is_undefined(e)) {
 				return false;
@@ -91,7 +91,7 @@ function player_have_item(name) {
 
 function get_item_level(itemname) {
 	var level = 0;
-	global.lvlsearch = itemname;
+	global.lvlsearch = string_lower(itemname);
 	var item_index = array_find_index(Player_Items, function(e, i) /*=>*/ {
 		if (is_undefined(e)) {
 			return false;
@@ -106,7 +106,7 @@ function get_item_level(itemname) {
 
 function get_item_data(itemname) {
 	var data = {};
-	global.datasearch = itemname;
+	global.datasearch = string_lower(itemname);
 	var item_index = array_find_index(Player_Items, function(e, i) /*=>*/ {
 		if (is_undefined(e)) {
 			return false;

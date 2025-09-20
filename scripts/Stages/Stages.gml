@@ -8,7 +8,15 @@ GameData.stage_mode = "STAGE";
 function add_mob_choice(e, _level = 1, _weight = undefined, _extra = undefined) {
 	e = string_lower(e);
 	if (!array_contains(Spawn_List, e)) {
-		var weight = Enemies[$ e].weight;
+		var weight = 1;
+		try {
+			weight = Enemies[$ e].weight;
+		}
+		catch (error) {
+			trace($"{e} : {error}");
+			return; 
+		}
+		
 		if (!is_undefined(_weight)) {
 			weight = _weight;
 		}

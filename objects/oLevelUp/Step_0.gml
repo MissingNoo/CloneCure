@@ -1,3 +1,7 @@
+
+if (device_mouse_check_button(2, mb_left)) {//TODO:Remove
+	instance_destroy();
+}
 for (var i = 0; i < array_length(right_offset); i++) {
 	right_offset[i] = lerp(right_offset[i], 0, 0.2);
 }
