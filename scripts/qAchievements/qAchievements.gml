@@ -28,10 +28,10 @@ function achievement(_name, _sprite) constructor {
 	};
 
 	static unlock = function() {
-		if (unlocked) {
-			exit;
+		if (AchievementsList[$ach_name].unlocked) {
+			return;
 		}
-		unlocked = true;
+		AchievementsList[$ach_name].unlocked = true;
 		instance_create_depth(
 			0,
 			0,

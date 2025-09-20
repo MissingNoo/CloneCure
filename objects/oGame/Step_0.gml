@@ -38,9 +38,11 @@ for (var i = 0; i <= 1; i++) {
 #endregion
 #region Level UP
 if (GameData.xp >= GameData.needed_xp) {
-	GameData.xp -= GameData.needed_xp;
-	pause_game();
-	instance_create_depth(0, 0, depth - 2, oLevelUp);
+	if (!instance_exists(oLevelUp)) {
+		GameData.xp -= GameData.needed_xp;
+		pause_game();
+		instance_create_depth(0, 0, depth - 2, oLevelUp);
+	} 
 }
 #endregion
 if (keyboard_check_pressed(vk_f1)) {
