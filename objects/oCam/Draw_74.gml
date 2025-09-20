@@ -13,14 +13,17 @@ if (os_type != os_android) {
 	}
 } else {
 	if (surface_exists(GameData.GameSurf)) {
-		draw_rectangle_colour(0,
+		draw_rectangle_colour(
+			0,
 			0,
 			display_get_gui_width(),
-			display_get_gui_height(), c_black
-	, c_black
-	, c_black
-	, c_black, false
-		)
+			display_get_gui_height(),
+			c_black,
+			c_black,
+			c_black,
+			c_black,
+			false
+		);
 		draw_surface_stretched_ext(
 			GameData.GameSurf,
 			-frac(x),
@@ -32,7 +35,6 @@ if (os_type != os_android) {
 		);
 	}
 }
-
 
 if (surface_exists(GameData.GameSurf)) {
 	draw_surface_ext(GameData.GameSurf2, 30, 30, 0.5, 0.5, 0, c_white, 1);

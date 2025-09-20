@@ -1,4 +1,4 @@
-#define  np_get_avatar_url
+#define   np_get_avatar_url
 
 if (
 	!is_string(argument0)

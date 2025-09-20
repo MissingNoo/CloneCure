@@ -1,5 +1,4 @@
-
-if (os_type != os_android and device_mouse_check_button_pressed(0, mb_left)) {
+if (os_type != os_android && device_mouse_check_button_pressed(0, mb_left)) {
 	GameData.mouseAim = !GameData.mouseAim;
 }
 
@@ -39,7 +38,7 @@ if (GameData.hp <= 0 && GameData.revives > 0) {
 	GameData.revives--;
 	GameData.hp = GameData.max_hp / 2;
 	with (oEnemy) {
-		if (!boss and !miniboss) {
+		if (!boss && !miniboss) {
 			hp = 0;
 		}
 	}

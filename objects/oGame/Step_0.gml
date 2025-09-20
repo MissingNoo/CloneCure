@@ -1,6 +1,5 @@
-if(keyboard_check_released(vk_f11))
-{
-    fullscreen = not fullscreen;
+if (keyboard_check_released(vk_f11)) {
+	fullscreen = !fullscreen;
 }
 window_set_fullscreen(fullscreen);
 #region Touch movement
@@ -47,8 +46,12 @@ if (GameData.xp >= GameData.needed_xp) {
 if (keyboard_check_pressed(vk_f1)) {
 	debug_rooms();
 }
-cursor_sprite = instance_exists(oPlayer) and GameData.mouseAim and !GameData.is_paused ? sMouseAim : sCursor;
-if (keyboard_check_pressed(vk_escape) or device_mouse_check_button_pressed(3, mb_left)) {
+cursor_sprite = instance_exists(oPlayer)
+&& GameData.mouseAim
+&& !GameData.is_paused
+	? sMouseAim
+	: sCursor;
+if (keyboard_check_pressed(vk_escape) || device_mouse_check_button_pressed(3, mb_left)) {
 	pause_game("pause");
 }
 if (global.minfps > fps_real && fps_real != 0) {

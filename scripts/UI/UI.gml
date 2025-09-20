@@ -3,262 +3,227 @@
 global.game_uis = {};
 
 global.game_uis.select = {
-  "name":"base",
-  "top":50.0,
-  "data":{
-    "image":"sTitleBG"
-  },
-  "left":275.0,
-  "nodes":[
-    {
-      "name":"panel_base_60398",
-      "top":0.0,
-      "data":{
-      },
-      "left":0.0,
-      "nodes":[
-        {
-          "flex":1.0,
-          "data":{
-          },
-          "name":"label_title"
-        }
-      ],
-      "padding":0.0,
-      "marginTop":20.0,
-      "height":50.0
-    },
-    {
-      "marginRight":0.0,
-      "top":0.0,
-      "data":{
-      },
-      "left":0.0,
-      "margin":0.0,
-      "padding":0.0,
-      "height":300.0,
-      "flex":1.0,
-      "nodes":[
-        
-        {
-          "flex":30.0,
-          "data":{
-          },
-          "nodes":[
-            {
-              "name":"char_list_1",
-              "marginLeft":182.0,
-              "marginRight":184.0,
-              "data":{
-              },
-              "padding":10.0,
-              "marginTop":10.0,
-              "height":133.0
-            },
-            {
-              "name":"char_list_2",
-              "marginLeft":228.0,
-              "marginRight":229.0,
-              "data":{
-              },
-              "padding":10.0,
-              "marginTop":6.0,
-              "height":203.0
-            }
-          ],
-          "margin":0.0,
-          "padding":10.0,
-          "name":"panel_52716"
-        },
-        
-      ],
-      "flexDirection":"row",
-      "name":"char_list_panel"
-    },
-    {
-      "name":"panel_base",
-      "flex":0.80000001192092896,
-      "top":0.0,
-      "data":{
-      },
-      "left":0.0,
-      "nodes":[
-        {
-          "marginLeft":40.0,
-          "marginRight":37.0,
-          "data":{
-          },
-          "margin":0.0,
-          "marginBottom":37.0,
-          "padding":0.0,
-          "flex":1.0,
-          "nodes":[
-            {
-              "flex":1.0,
-              "data":{
-              },
-              "nodes":[
-                {
-                  "name":"char_name",
-                  "padding":10.0,
-                  "data":{
-                  },
-                  "height":43.0
-                },
-                {
-                  "flex":1.0,
-                  "data":{
-                  },
-                  "nodes":[
-                    {
-                      "name":"oshi_level",
-                      "marginLeft":16.0,
-                      "data":{
-                      },
-                      "marginBottom":9.0,
-                      "padding":10.0,
-                      "marginTop":0.0,
-                      "width":47.0,
-                      "height":54.0
-                    },
-                    {
-                      "name":"char_sprite",
-                      "alignSelf":"center",
-                      "data":{
-                      },
-                      "margin":5.0,
-                      "padding":0.0,
-                      "width":110.0,
-                      "height":160.0
-                    },
-                    {
-                      "name":"panel_14422",
-                      "marginLeft":35.0,
-                      "flex":1.0,
-                      "marginRight":15.0,
-                      "alignSelf":"center",
-                      "nodes":[
-                        {
-                          "name":"stat_hp",
-                          "flex":1.0,
-                          "padding":7.0,
-                          "data":{
-                          },
-                          "height":60.0
-                        },
-                        {
-                          "name":"stat_atk",
-                          "flex":1.0,
-                          "data":{
-                          },
-                          "padding":10.0,
-                          "marginTop":0.0,
-                          "height":60.0
-                        },
-                        {
-                          "name":"stat_spd",
-                          "flex":1.0,
-                          "padding":10.0,
-                          "data":{
-                          },
-                          "height":60.0
-                        },
-                        {
-                          "name":"stat_crt",
-                          "flex":1.0,
-                          "data":{
-                          },
-                          "padding":10.0,
-                          "marginTop":0.0,
-                          "height":60.0
-                        },
-                        {
-                          "name":"g_rank",
-                          "flex":0.80000001192092896,
-                          "padding":10.0,
-                          "data":{
-                          },
-                          "height":60.0
-                        }
-                      ],
-                      "data":{
-                      },
-                      "padding":0.0,
-                      "height":180.0
-                    }
-                  ],
-                  "padding":0.0,
-                  "flexDirection":"row",
-                  "name":"panel_33250"
-                }
-              ],
-              "padding":0.0,
-              "width":60.0,
-              "name":"panel_61046"
-            },
-            {
-              "flex":1.0,
-              "data":{
-              },
-              "nodes":[
-                {
-                  "name":"weapon_name",
-                  "padding":10.0,
-                  "data":{
-                  },
-                  "height":43.0
-                },
-                {
-                  "name":"weapon_description",
-                  "flex":1.0,
-                  "padding":10.0,
-                  "data":{
-                  },
-                  "height":60.0
-                }
-              ],
-              "padding":0.0,
-              "width":60.0,
-              "name":"panel_48269"
-            },
-            {
-              "flex":1.0,
-              "data":{
-              },
-              "nodes":[
-                {
-                  "name":"special_name",
-                  "padding":10.0,
-                  "data":{
-                  },
-                  "height":43.0
-                },
-                {
-                  "name":"special_description",
-                  "flex":1.0,
-                  "padding":10.0,
-                  "data":{
-                  },
-                  "height":60.0
-                }
-              ],
-              "padding":0.0,
-              "width":60.0,
-              "name":"panel_90069"
-            }
-          ],
-          "flexDirection":"row",
-          "marginTop":8.0,
-          "name":"panel_info"
-        }
-      ],
-      "padding":0.0,
-      "height":300.0
-    }
-  ],
-  "width":1280.0,
-  "height":720.0
-}
+	"name": "base",
+	"top": 50.0,
+	"data": {"image": "sTitleBG"},
+	"left": 275.0,
+	"nodes": [
+		{
+			"name": "panel_base_60398",
+			"top": 0.0,
+			"data": {},
+			"left": 0.0,
+			"nodes": [{"flex": 1.0, "data": {}, "name": "label_title"}],
+			"padding": 0.0,
+			"marginTop": 20.0,
+			"height": 50.0,
+		},
+		{
+			"marginRight": 0.0,
+			"top": 0.0,
+			"data": {},
+			"left": 0.0,
+			"margin": 0.0,
+			"padding": 0.0,
+			"height": 300.0,
+			"flex": 1.0,
+			"nodes": [
+				{
+					"flex": 30.0,
+					"data": {},
+					"nodes": [
+						{
+							"name": "char_list_1",
+							"marginLeft": 182.0,
+							"marginRight": 184.0,
+							"data": {},
+							"padding": 10.0,
+							"marginTop": 10.0,
+							"height": 133.0,
+						},
+						{
+							"name": "char_list_2",
+							"marginLeft": 228.0,
+							"marginRight": 229.0,
+							"data": {},
+							"padding": 10.0,
+							"marginTop": 6.0,
+							"height": 203.0,
+						}
+					],
+					"margin": 0.0,
+					"padding": 10.0,
+					"name": "panel_52716",
+				}
+			],
+			"flexDirection": "row",
+			"name": "char_list_panel",
+		},
+		{
+			"name": "panel_base",
+			"flex": 0.80000001192092896,
+			"top": 0.0,
+			"data": {},
+			"left": 0.0,
+			"nodes": [
+				{
+					"marginLeft": 40.0,
+					"marginRight": 37.0,
+					"data": {},
+					"margin": 0.0,
+					"marginBottom": 37.0,
+					"padding": 0.0,
+					"flex": 1.0,
+					"nodes": [
+						{
+							"flex": 1.0,
+							"data": {},
+							"nodes": [
+								{
+									"name": "char_name",
+									"padding": 10.0,
+									"data": {},
+									"height": 43.0,
+								},
+								{
+									"flex": 1.0,
+									"data": {},
+									"nodes": [
+										{
+											"name": "oshi_level",
+											"marginLeft": 16.0,
+											"data": {},
+											"marginBottom": 9.0,
+											"padding": 10.0,
+											"marginTop": 0.0,
+											"width": 47.0,
+											"height": 54.0,
+										},
+										{
+											"name": "char_sprite",
+											"alignSelf": "center",
+											"data": {},
+											"margin": 5.0,
+											"padding": 0.0,
+											"width": 110.0,
+											"height": 160.0,
+										},
+										{
+											"name": "panel_14422",
+											"marginLeft": 35.0,
+											"flex": 1.0,
+											"marginRight": 15.0,
+											"alignSelf": "center",
+											"nodes": [
+												{
+													"name": "stat_hp",
+													"flex": 1.0,
+													"padding": 7.0,
+													"data": {},
+													"height": 60.0,
+												},
+												{
+													"name": "stat_atk",
+													"flex": 1.0,
+													"data": {},
+													"padding": 10.0,
+													"marginTop": 0.0,
+													"height": 60.0,
+												},
+												{
+													"name": "stat_spd",
+													"flex": 1.0,
+													"padding": 10.0,
+													"data": {},
+													"height": 60.0,
+												},
+												{
+													"name": "stat_crt",
+													"flex": 1.0,
+													"data": {},
+													"padding": 10.0,
+													"marginTop": 0.0,
+													"height": 60.0,
+												},
+												{
+													"name": "g_rank",
+													"flex": 0.80000001192092896,
+													"padding": 10.0,
+													"data": {},
+													"height": 60.0,
+												}
+											],
+											"data": {},
+											"padding": 0.0,
+											"height": 180.0,
+										}
+									],
+									"padding": 0.0,
+									"flexDirection": "row",
+									"name": "panel_33250",
+								}
+							],
+							"padding": 0.0,
+							"width": 60.0,
+							"name": "panel_61046",
+						},
+						{
+							"flex": 1.0,
+							"data": {},
+							"nodes": [
+								{
+									"name": "weapon_name",
+									"padding": 10.0,
+									"data": {},
+									"height": 43.0,
+								},
+								{
+									"name": "weapon_description",
+									"flex": 1.0,
+									"padding": 10.0,
+									"data": {},
+									"height": 60.0,
+								}
+							],
+							"padding": 0.0,
+							"width": 60.0,
+							"name": "panel_48269",
+						},
+						{
+							"flex": 1.0,
+							"data": {},
+							"nodes": [
+								{
+									"name": "special_name",
+									"padding": 10.0,
+									"data": {},
+									"height": 43.0,
+								},
+								{
+									"name": "special_description",
+									"flex": 1.0,
+									"padding": 10.0,
+									"data": {},
+									"height": 60.0,
+								}
+							],
+							"padding": 0.0,
+							"width": 60.0,
+							"name": "panel_90069",
+						}
+					],
+					"flexDirection": "row",
+					"marginTop": 8.0,
+					"name": "panel_info",
+				}
+			],
+			"padding": 0.0,
+			"height": 300.0,
+		}
+	],
+	"width": 1280.0,
+	"height": 720.0,
+};
 
 global.game_uis.stage = {
 	"width": 1280.0,
@@ -1014,223 +979,198 @@ global.game_uis.character_stats = {
 };
 
 global.game_uis.level_up = {
-  "name":"base",
-  "top":50.0,
-  "data":{
-    "image":"pauseda"
-  },
-  "margin":0.0,
-  "left":275.0,
-  "nodes":[
-    {
-      "name":"panel_base",
-      "flex":1.0,
-      "top":0.0,
-      "data":{
-      },
-      "left":0.0,
-      "nodes":[
-        {
-          "marginLeft":127.0,
-          "flex":0.39500001072883606,
-          "data":{
-          },
-          "margin":0.0,
-          "nodes":[
-            {
-              "name":"levelup",
-              "marginLeft":-6.0,
-              "flex":0.0,
-              "data":{
-                "image":"sLevelUP"
-              },
-              "marginTop":89.0,
-              "padding":0.0,
-              "width":214.0,
-              "height":45.0
-            }
-          ],
-          "marginTop":108.0,
-          "padding":6.0,
-          "width":60.0,
-          "name":"panel_93728"
-        },
-        {
-          "flex":1.0,
-          "data":{
-          },
-          "margin":0.0,
-          "nodes":[
-            {
-              "name":"panel_5849",
-              "flex":1.0,
-              "data":{
-              },
-              "nodes":[
-                {
-                  "name":"u0",
-                  "padding":0.0,
-                  "data":{
-                    "image":""
-                  },
-                  "minHeight":125.0,
-                  "height":60.0
-                },
-                {
-                  "name":"panel_19613",
-                  "flex":1.0,
-                  "data":{
-                  },
-                  "maxHeight":9999.0,
-                  "padding":0.0,
-                  "width":60.0,
-                  "height":60.0
-                },
-                {
-                  "name":"u1",
-                  "padding":10.0,
-                  "data":{
-                  },
-                  "height":126.0
-                },
-                {
-                  "name":"panel_54151",
-                  "flex":1.0,
-                  "data":{
-                  },
-                  "padding":0.0,
-                  "width":60.0,
-                  "height":12.0
-                },
-                {
-                  "name":"u2",
-                  "padding":10.0,
-                  "data":{
-                  },
-                  "height":126.0
-                },
-                {
-                  "name":"panel_18516",
-                  "flex":1.0,
-                  "data":{
-                  },
-                  "padding":0.0,
-                  "width":60.0,
-                  "height":12.0
-                },
-                {
-                  "name":"u3",
-                  "padding":10.0,
-                  "data":{
-                  },
-                  "height":126.0
-                }
-              ],
-              "marginTop":0.0,
-              "padding":0.0,
-              "height":60.0
-            },
-            {
-              "name":"panel_36140",
-              "data":{
-              },
-              "nodes":[
-                {
-                  "maxWidth":42.0,
-                  "flex":0.0,
-                  "data":{
-                  },
-                  "padding":10.0,
-                  "width":60.0,
-                  "name":"panel_42975"
-                },
-                {
-                  "flex":1.0,
-                  "data":{
-                  },
-                  "minWidth":223.0,
-                  "padding":0.0,
-                  "width":60.0,
-                  "name":"Reroll"
-                },
-                {
-                  "maxWidth":17.0,
-                  "flex":0.0,
-                  "data":{
-                  },
-                  "padding":0.0,
-                  "width":60.0,
-                  "name":"panel_29737"
-                },
-                {
-                  "flex":1.0,
-                  "data":{
-                  },
-                  "left":0.0,
-                  "minWidth":223.0,
-                  "padding":0.0,
-                  "width":198.0,
-                  "name":"Eliminate"
-                },
-                {
-                  "maxWidth":17.0,
-                  "flex":0.0,
-                  "data":{
-                  },
-                  "padding":0.0,
-                  "width":60.0,
-                  "name":"panel_38445"
-                },
-                {
-                  "flex":1.0,
-                  "data":{
-                  },
-                  "margin":0.0,
-                  "minWidth":223.0,
-                  "padding":0.0,
-                  "width":60.0,
-                  "name":"Hold"
-                },
-                {
-                  "maxWidth":16.0,
-                  "flex":0.0,
-                  "data":{
-                  },
-                  "padding":0.0,
-                  "width":60.0,
-                  "name":"panel_77150"
-                }
-              ],
-              "minWidth":769.0,
-              "padding":4.0,
-              "flexDirection":"row",
-              "height":52.0
-            }
-          ],
-          "marginTop":108.0,
-          "padding":0.0,
-          "border":0.0,
-          "name":"panel_89366"
-        },
-        {
-          "name":"collabs",
-          "marginLeft":48.0,
-          "data":{
-          },
-          "marginTop":108.0,
-          "padding":10.0,
-          "width":21.0,
-          "height":520.0
-        }
-      ],
-      "padding":0.0,
-      "flexDirection":"row",
-      "height":605.0
-    }
-  ],
-  "width":1280.0,
-  "height":720.0
-}
+	"name": "base",
+	"top": 50.0,
+	"data": {"image": "pauseda"},
+	"margin": 0.0,
+	"left": 275.0,
+	"nodes": [
+		{
+			"name": "panel_base",
+			"flex": 1.0,
+			"top": 0.0,
+			"data": {},
+			"left": 0.0,
+			"nodes": [
+				{
+					"marginLeft": 127.0,
+					"flex": 0.39500001072883606,
+					"data": {},
+					"margin": 0.0,
+					"nodes": [
+						{
+							"name": "levelup",
+							"marginLeft": -6.0,
+							"flex": 0.0,
+							"data": {"image": "sLevelUP"},
+							"marginTop": 89.0,
+							"padding": 0.0,
+							"width": 214.0,
+							"height": 45.0,
+						}
+					],
+					"marginTop": 108.0,
+					"padding": 6.0,
+					"width": 60.0,
+					"name": "panel_93728",
+				},
+				{
+					"flex": 1.0,
+					"data": {},
+					"margin": 0.0,
+					"nodes": [
+						{
+							"name": "panel_5849",
+							"flex": 1.0,
+							"data": {},
+							"nodes": [
+								{
+									"name": "u0",
+									"padding": 0.0,
+									"data": {"image": ""},
+									"minHeight": 125.0,
+									"height": 60.0,
+								},
+								{
+									"name": "panel_19613",
+									"flex": 1.0,
+									"data": {},
+									"maxHeight": 9999.0,
+									"padding": 0.0,
+									"width": 60.0,
+									"height": 60.0,
+								},
+								{
+									"name": "u1",
+									"padding": 10.0,
+									"data": {},
+									"height": 126.0,
+								},
+								{
+									"name": "panel_54151",
+									"flex": 1.0,
+									"data": {},
+									"padding": 0.0,
+									"width": 60.0,
+									"height": 12.0,
+								},
+								{
+									"name": "u2",
+									"padding": 10.0,
+									"data": {},
+									"height": 126.0,
+								},
+								{
+									"name": "panel_18516",
+									"flex": 1.0,
+									"data": {},
+									"padding": 0.0,
+									"width": 60.0,
+									"height": 12.0,
+								},
+								{
+									"name": "u3",
+									"padding": 10.0,
+									"data": {},
+									"height": 126.0,
+								}
+							],
+							"marginTop": 0.0,
+							"padding": 0.0,
+							"height": 60.0,
+						},
+						{
+							"name": "panel_36140",
+							"data": {},
+							"nodes": [
+								{
+									"maxWidth": 42.0,
+									"flex": 0.0,
+									"data": {},
+									"padding": 10.0,
+									"width": 60.0,
+									"name": "panel_42975",
+								},
+								{
+									"flex": 1.0,
+									"data": {},
+									"minWidth": 223.0,
+									"padding": 0.0,
+									"width": 60.0,
+									"name": "Reroll",
+								},
+								{
+									"maxWidth": 17.0,
+									"flex": 0.0,
+									"data": {},
+									"padding": 0.0,
+									"width": 60.0,
+									"name": "panel_29737",
+								},
+								{
+									"flex": 1.0,
+									"data": {},
+									"left": 0.0,
+									"minWidth": 223.0,
+									"padding": 0.0,
+									"width": 198.0,
+									"name": "Eliminate",
+								},
+								{
+									"maxWidth": 17.0,
+									"flex": 0.0,
+									"data": {},
+									"padding": 0.0,
+									"width": 60.0,
+									"name": "panel_38445",
+								},
+								{
+									"flex": 1.0,
+									"data": {},
+									"margin": 0.0,
+									"minWidth": 223.0,
+									"padding": 0.0,
+									"width": 60.0,
+									"name": "Hold",
+								},
+								{
+									"maxWidth": 16.0,
+									"flex": 0.0,
+									"data": {},
+									"padding": 0.0,
+									"width": 60.0,
+									"name": "panel_77150",
+								}
+							],
+							"minWidth": 769.0,
+							"padding": 4.0,
+							"flexDirection": "row",
+							"height": 52.0,
+						}
+					],
+					"marginTop": 108.0,
+					"padding": 0.0,
+					"border": 0.0,
+					"name": "panel_89366",
+				},
+				{
+					"name": "collabs",
+					"marginLeft": 48.0,
+					"data": {},
+					"marginTop": 108.0,
+					"padding": 10.0,
+					"width": 21.0,
+					"height": 520.0,
+				}
+			],
+			"padding": 0.0,
+			"flexDirection": "row",
+			"height": 605.0,
+		}
+	],
+	"width": 1280.0,
+	"height": 720.0,
+};
 
 global.game_uis.shop = {
 	"nodes": [

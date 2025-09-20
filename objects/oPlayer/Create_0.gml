@@ -1,11 +1,9 @@
 instance_create_depth(x, y, depth, oCam);
-instance_create_depth(x, y + 50, depth, oAnvil);
 char = Characters[$ GameData.selected_character];
 try {
 	sprites = char.skins[$ SaveData.characters[$ GameData.selected_character].lastoutfit];
-}
-catch (error) {
-	sprites = {idle : sAmeliaIdle, run: sAmeliaRun};
+} catch (error) {
+	sprites = {idle: sAmeliaIdle, run: sAmeliaRun};
 }
 sprite_index = sprites.idle;
 GameData.max_hp = char.hp;
@@ -121,7 +119,4 @@ Player_Items = array_create(6, undefined);
 //part_emitter_region(_ps2, _pemit1, -16, 16, -16, 16, ps_shape_ellipse, ps_distr_linear);
 //part_emitter_stream(_ps2, _pemit1, _ptype2, -4);
 //part_emitter_region(_ps3, _pemit1, -16, 16, -16, 16, ps_shape_ellipse, ps_distr_linear);
-//part_emitter_stream(_ps3, _pemit1, _ptype3, -4);
-
-
-
+//part_emitter_stream(_ps3, _pemit1, _ptype3, -4); 

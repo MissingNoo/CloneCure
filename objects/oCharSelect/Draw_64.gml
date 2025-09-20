@@ -61,8 +61,8 @@ ui.foreach(function(name, pos, data) {
 							}
 						}
 						if (
-							st.get_current_state() == "Char" &&
-							selected == i
+							st.get_current_state() == "Char"
+							&& selected == i
 							&& device_mouse_check_button_pressed(0, mb_left)
 						) {
 							force_click();
@@ -171,8 +171,8 @@ ui.foreach(function(name, pos, data) {
 							}
 						}
 						if (
-							st.get_current_state() == "Char" &&
-							selected == i
+							st.get_current_state() == "Char"
+							&& selected == i
 							&& device_mouse_check_button_pressed(0, mb_left)
 						) {
 							force_click();
@@ -576,8 +576,6 @@ ui.foreach(function(name, pos, data) {
 			break;
 	}
 });
-
-
 
 skinui
 	.foreach(function(name, pos, data) {

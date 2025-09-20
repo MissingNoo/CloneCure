@@ -14,13 +14,14 @@ function add_mob_choice(e, _level = 1, _weight = undefined, _extra = undefined) 
 		}
 		show_debug_message($"Added {e} to spawn list with weight {weight}");
 		//if (_level != 1) {
-			//e = $"{e}{_level}";
+		//e = $"{e}{_level}";
 		//}
 		repeat (weight) {
 			array_push(Spawn_List, e);
 		}
 	}
 }
+
 function remove_mob_choice(e) {
 	e = string_lower(e);
 	var index = array_get_index(Spawn_List, e);
@@ -29,8 +30,6 @@ function remove_mob_choice(e) {
 		index = array_get_index(Spawn_List, e);
 	} until (index == -1)
 }
-
-
 
 function Stage(_name) constructor {
 	name = _name;
@@ -139,6 +138,7 @@ function Stage(_name) constructor {
 		return self;
 	};
 }
+
 #region Stage1
 var stage1 = new Stage("Stage1");
 stage1.add_enemy("Urufugang", "00:01");
@@ -154,7 +154,7 @@ stage1
 	});
 stage1
 	.add_script("00:30", function() {
-		add_mob_choice("Deadbeat", 1, 1)
+		add_mob_choice("Deadbeat", 1, 1);
 		spawn_rate = 130;
 	});
 stage1
@@ -179,13 +179,13 @@ stage1
 stage1
 	.add_script("03:00", function() {
 		remove_mob_choice("Urufugang");
-        add_mob_choice("Takodachi", 2, 1);
-        spawn_rate = 120;
+		add_mob_choice("Takodachi", 2, 1);
+		spawn_rate = 120;
 	});
 stage1
 	.add_script("04:00", function() {
-        add_mob_choice("KFP", 2, 1)
-        spawn_amount = 3
+		add_mob_choice("KFP", 2, 1);
+		spawn_amount = 3;
 	});
 stage1
 	.add_script("04:20", function() {
@@ -195,11 +195,11 @@ stage1
 	});
 stage1
 	.add_script("05:00", function() {
-		add_mob_choice("Shrimp", 3, 2)
-        add_mob_choice("AngelFairy", 4, 1)
-        add_mob_choice("DevilFairy", 4, 1)
-        remove_mob_choice("Takodachi")
-        remove_mob_choice("Deadbeat")
+		add_mob_choice("Shrimp", 3, 2);
+		add_mob_choice("AngelFairy", 4, 1);
+		add_mob_choice("DevilFairy", 4, 1);
+		remove_mob_choice("Takodachi");
+		remove_mob_choice("Deadbeat");
 		enemy_limit = 400;
 		spawn_amount = 6;
 	});
@@ -292,12 +292,7 @@ stage1
 		remove_mob_choice("Rats");
 		remove_mob_choice("Kromies");
 		add_mob_choice("ShrimpGang", 1, 1, {dir: 0, pattern: "directionalSurround"});
-		add_mob_choice(
-		"DeadbeatGang",
-		1,
-		1,
-		{dir: 180, pattern: "directionalSurround"}
-		);
+		add_mob_choice("DeadbeatGang", 1, 1, {dir: 180, pattern: "directionalSurround"});
 	});
 stage1
 	.add_script("15:00", function() {

@@ -24,7 +24,7 @@ function pause_game(reason = undefined) {
 				surface_copy(oGame.surf, 0, 0, application_surface);
 				break;
 		}
-		
+
 		instance_deactivate_all(true);
 		var dont_deactivate = [input_controller_object, oGameUI];
 		array_foreach(dont_deactivate, function(e, i) /*=>*/ {

@@ -1,3 +1,3 @@
 event_inherited();
-/// @instancevar {Any} level 
+/// @instancevar {Any} level
 waitplayer = true;

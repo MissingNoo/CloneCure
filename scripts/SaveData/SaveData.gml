@@ -6,9 +6,9 @@ SaveData = {
 	gacha: {},
 	seen_before: [],
 	shop: {upgrades: {}},
-	unlocked_items : {},
-	unlocked_weapons : {},
-	unlocked_achievements : {}
+	unlocked_items: {},
+	unlocked_weapons: {},
+	unlocked_achievements: {},
 };
 
 global.base_data = variable_clone(SaveData);
@@ -48,7 +48,7 @@ function update_save_data() {
 				fandomxp: 0,
 				outfits: ["base"],
 				lastoutfit: "base",
-				unlocked : false
+				unlocked: false,
 			};
 		}
 

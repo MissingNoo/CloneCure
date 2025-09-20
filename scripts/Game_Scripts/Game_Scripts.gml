@@ -101,7 +101,7 @@ s = new stat("Haste_Up", sHudHasteIcon, 2);
 
 #region Base Item Constructor
 function base_item(_name) constructor {
-	name = _name;
+	name = string_lower(_name);
 	sprite = sBlank;
 	level = 1;
 	max_level = 7;

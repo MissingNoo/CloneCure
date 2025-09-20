@@ -37,7 +37,7 @@ if (st.get_current_state() == "Skin" || st.get_current_state() == "Stage") {
 	if (gui_click(_x1, _y1, _x2, _y2)) {
 		force_click();
 	}
-	
+
 	draw_rectangle(_x1 - _w, _y1, _x1, _y2, true);
 	draw_rectangle(_x2, _y1, _x2 + _w, _y2, true);
 	draw_set_colour(c_red);

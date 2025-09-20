@@ -17,18 +17,29 @@ ui.foreach(function(name, pos, data) {
 		case "u2":
 		case "u3":
 			var opt = real(string_char_at(name, 2));
-		if (!off_set) {
-			off_set = true;
-			for (var i = 0; i < array_length(right_offset); i++) {
-				right_offset[i] = _w + 500 + (550 * i);
+			if (!off_set) {
+				off_set = true;
+				for (var i = 0; i < array_length(right_offset); i++) {
+					right_offset[i] = _w + 500 + (550 * i);
+				}
 			}
-		}
-			if (mouse_in_area_gui([_x, _y, _x + _w, _y + _h]) and device_mouse_check_button_pressed(0, mb_left) and opt == selected_option) {
+			if (
+				mouse_in_area_gui([_x, _y, _x + _w, _y + _h])
+				&& device_mouse_check_button_pressed(0, mb_left)
+				&& opt == selected_option
+			) {
 				force_z = true;
 			}
 			mouse_select(_x, _y, _w, _h, opt);
 			var selected = selected_option == opt ? 1 : 0;
-			draw_sprite_stretched(sHudUpgrade, selected, _x + right_offset[opt], _y, _w, _h);
+			draw_sprite_stretched(
+				sHudUpgrade,
+				selected,
+				_x + right_offset[opt],
+				_y,
+				_w,
+				_h
+			);
 			draw_sprite_stretched_ext(
 				sHudUpgradeColor,
 				selected,
@@ -72,7 +83,7 @@ ui.foreach(function(name, pos, data) {
 					});
 					if (index != -1) {
 						lvl = Player_Weapons[index].level;
-					};
+					}
 					self[$ $"u{opt}"] ??= scribble(
 						lexicon_text($"{ups[opt].lex}.{ups[opt].name}.{lvl + 1}")
 					);
@@ -84,7 +95,10 @@ ui.foreach(function(name, pos, data) {
 					draw_sprite_centered_ext(
 						ups[opt].sprite,
 						0,
-						_x + icon_x - sprite_get_width_ext(ups[opt].sprite, 2.5) + right_offset[opt],
+						_x
+							+ icon_x
+							- sprite_get_width_ext(ups[opt].sprite, 2.5)
+							+ right_offset[opt],
 						_y + icon_y - sprite_get_height_ext(ups[opt].sprite, 2.5),
 						icon_scale,
 						icon_scale,
@@ -126,7 +140,10 @@ ui.foreach(function(name, pos, data) {
 				draw_sprite_centered_ext(
 					ups[opt].sprite,
 					0,
-					_x + icon_x - sprite_get_width_ext(ups[opt].sprite, icon_scale_mult) + right_offset[opt],
+					_x
+						+ icon_x
+						- sprite_get_width_ext(ups[opt].sprite, icon_scale_mult)
+						+ right_offset[opt],
 					_y
 						+ icon_y
 						- sprite_get_height_ext(ups[opt].sprite, icon_scale_mult)
@@ -160,7 +177,7 @@ ui.foreach(function(name, pos, data) {
 				);
 				if (selected) {
 					var left_right =
-						- input_check_pressed("left")
+						-input_check_pressed("left")
 						+ input_check_pressed("right")
 						- mouse_wheel_up()
 						+ mouse_wheel_down();

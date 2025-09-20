@@ -50,12 +50,12 @@ function Enemy(_name) constructor {
 		scale = val;
 		return self;
 	};
-	
+
 	static set_boss = function(val) {
 		boss = val;
 		return self;
 	};
-	
+
 	static set_mini_boss = function(val) {
 		miniboss = val;
 		return self;

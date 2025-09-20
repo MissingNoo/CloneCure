@@ -17,7 +17,7 @@ function item(_name) : base_item(_name) constructor {
 	crit_debuff = 0;
 	on_hurt = function(){};
 	on_hit = function(){};
-	Items[$ _name] = self;
+	Items[$ string_lower(_name)] = self;
 	
 	/// @function                set_on_hurt(function)
 	/// @description             Defines the function to be execute when a collision with a enemy happens.

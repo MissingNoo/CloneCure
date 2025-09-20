@@ -143,10 +143,10 @@ function mouse_in_area_gui(area) {
  */
 function draw_rectangle_area(area, outline, color = [c_black, c_white], alpha = 1) {
 	draw_set_alpha(alpha);
-    //feather ignore once GM1044
+	//feather ignore once GM1044
 	draw_set_color(color[0]);
 	draw_rectangle(area[0], area[1], area[2], area[3], false);
-    //feather ignore once GM1044
+	//feather ignore once GM1044
 	draw_set_color(color[1]);
 	draw_rectangle(area[0], area[1], area[2], area[3], true);
 	draw_set_color(c_white);
@@ -684,7 +684,10 @@ function gui_cant_interact_frames(frames = 10) {
 }
 
 function gui_can_interact() {
-	var can = !global.listboxopen && AirLib.listframe < AirLib.frame && AirLib.waitframe < AirLib.frame;
+	var can =
+		!global.listboxopen
+		&& AirLib.listframe < AirLib.frame
+		&& AirLib.waitframe < AirLib.frame;
 	gui_cant_interact_frames(10);
 	return can;
 }
@@ -828,7 +831,6 @@ function topdown_movement(owner, _spd) constructor {
 	};
 }
 
-
 /**
  * Used to animate sprites for manual drawing on objects
  * @param {any} spr Sprite to animate
@@ -860,7 +862,6 @@ function animated_sprite(spr) constructor {
 		return f;
 	};
 }
-
 
 function air_timer(timeout, callback) constructor {
 	amount = timeout;
@@ -960,7 +961,6 @@ function EventManager() constructor {
 				} else {
 					e.callback(message);
 				}
-				
 			}
 		}
 	};
@@ -997,4 +997,3 @@ function ui_element_list() constructor {
 		array_foreach(list, f);
 	};
 }
-

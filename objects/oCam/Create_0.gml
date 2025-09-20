@@ -4,7 +4,7 @@ baseH = 360;
 if (os_type == os_android) {
 	baseW = 800; //TODO: calculate
 	//do {
-		//baseW -= .1;
+	//baseW -= .1;
 	//} until (string_copy(string(baseW / baseH), 1, 4) == aspect);
 }
 view_enabled = true;
@@ -24,7 +24,6 @@ game_width = camera_get_view_width(view_camera[0]);
 game_height = camera_get_view_height(view_camera[0]);
 camera_set_view_size(view_camera[0], game_width, game_height);
 camera_set_view_size(view_camera[1], game_width, game_height);
-
 
 GameData.GameSurf = -1;
 GameData.GameSurf2 = -1;

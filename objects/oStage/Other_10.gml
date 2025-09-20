@@ -29,7 +29,7 @@ GenerateDirections = function() {
 	}
 	selectableQuadrants = [0, 1, 2, 3];
 	selectableQuadrantsContainer = [0, 1, 2, 3];
-}
+};
 
 GenerateDirections();
 

@@ -26,26 +26,20 @@ function GrabDirection() {
 
 function spawn_enemy(_x, _y, name) {
 	name = string_lower(name);
-	instance_create_layer(
-				_x,
-				_y,
-				"Instances",
-				oEnemy,
-				{name}
-			);
+	instance_create_layer(_x, _y, "Instances", oEnemy, {name});
 }
 
 function get_spawn_dir() {
 	var pos = {};
-			var dir = GrabDirection();
-			if (instance_exists(oPlayer)) {
-				pos.x = round(
-					oPlayer.x
-					+ lengthdir_x((camera_get_view_width(view_camera[0]) / 1.5), dir));
-				pos.y = round(
-					oPlayer.y
-					+ lengthdir_y((camera_get_view_height(view_camera[0]) / 1.5), dir));
-			}
+	var dir = GrabDirection();
+	if (instance_exists(oPlayer)) {
+		pos.x = round(
+			oPlayer.x + lengthdir_x((camera_get_view_width(view_camera[0]) / 1.5), dir)
+		);
+		pos.y = round(
+			oPlayer.y + lengthdir_y((camera_get_view_height(view_camera[0]) / 1.5), dir)
+		);
+	}
 	return pos;
 }
 

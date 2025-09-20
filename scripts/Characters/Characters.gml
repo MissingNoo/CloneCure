@@ -92,9 +92,9 @@ function character(_name) constructor {
 		agency = s;
 		return self;
 	};
-	
+
 	static set_perks = function(p1, p2, p3) {
-		perks = [p1, p2, p3]
+		perks = [p1, p2, p3];
 		return self;
 	};
 
@@ -103,11 +103,11 @@ function character(_name) constructor {
 		array_push(skinorder, sname);
 		return self;
 	};
-	
-	static set_completion = function (achname) {
+
+	static set_completion = function(achname) {
 		completion_ach = achname;
 		return self;
-	}
+	};
 }
 
 var c = new character("Amelia_Watson");
@@ -127,23 +127,23 @@ c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAme)
 	.set_completion("HIC");
 //c = new character("Aki_Rosenthal");
 //c.set_sprite(sAmeliaIdle, sAmeliaRun, sAkiPortrait, sTitleAki)
-	//.set_speed(1.35)
-	//.set_weapon("Ame_Pistol")
-	//.set_hp(75)
-	//.set_atk(30)
-	//.set_crit(1.10)
-	//.set_ballsize(3)
-	//.set_flat(false);
+//.set_speed(1.35)
+//.set_weapon("Ame_Pistol")
+//.set_hp(75)
+//.set_atk(30)
+//.set_crit(1.10)
+//.set_ballsize(3)
+//.set_flat(false);
 //
 //c = new character("Takanashi_Kiara");
 //c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleKiara)
-	//.set_speed(1.35)
-	//.set_weapon("BL_Book")
-	//.set_hp(75)
-	//.set_atk(30)
-	//.set_crit(1.10)
-	//.set_ballsize(3)
-	//.set_flat(false);
+//.set_speed(1.35)
+//.set_weapon("BL_Book")
+//.set_hp(75)
+//.set_atk(30)
+//.set_crit(1.10)
+//.set_ballsize(3)
+//.set_flat(false);
 
 c = new character("Tenma_Maemi");
 c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaPortrait, sTitleTenma)

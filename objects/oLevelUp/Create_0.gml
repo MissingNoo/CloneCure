@@ -1,7 +1,7 @@
 //feather disable all
 GameData.level++;
 global.events.broadcast("level_up", GameData.level);
-right_offset = [0,0,0,0];
+right_offset = [0, 0, 0, 0];
 off_set = false;
 ups = [
 	Weapons[$ "Ame_Pistol"],
@@ -38,10 +38,10 @@ for (var i = array_length(Player_Weapons) - 1; i >= 0; i--) {
 }
 
 ups = [
-	Items[$ "Membership"],
-	Items[$ "Corporate_Pin"],
-	Items[$ "Kusogaki_Shackles"],
-	Weapons[$ "Glowstick"]
+	Items[$ "membership"],
+	Items[$ "corporate_pin"],
+	Items[$ "kusogaki_shackles"],
+	Weapons[$ "glowstick"]
 ];
 
 mx = 0;

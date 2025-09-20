@@ -1,9 +1,9 @@
-force_click = function () {
+force_click = function() {
 	if (gui_can_interact()) {
 		clicktimer = AirLib.frame + 10;
 		forcez = true;
 	}
-}
+};
 stage_skin_click_area = [0, 0, 0, 0];
 force_x = false;
 setmiddle = false;
@@ -280,7 +280,7 @@ st.add("StageMode", {
 	},
 	leave: function() {
 		forcez = false;
-	}
+	},
 });
 st.add("Stage", {
 	step: function() {
@@ -299,7 +299,7 @@ st.add("Stage", {
 	},
 	leave: function() {
 		forcez = false;
-	}
+	},
 });
 st.add("GO", {
 	enter: function() {

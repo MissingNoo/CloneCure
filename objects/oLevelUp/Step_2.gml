@@ -1,10 +1,10 @@
-if (input_check_pressed("accept") or force_z) {
+if (input_check_pressed("accept") || force_z) {
 	switch (selected_option) {
 		case 0:
 		case 1:
 		case 2:
 		case 3:
-			global.search = ups[selected_option].name;
+			global.search = string_lower(ups[selected_option].name);
 			switch (ups[selected_option].lex) {
 				case "Weapons":
 					var pos = array_find_index(Player_Weapons, function(e, i) {
