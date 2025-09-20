@@ -199,7 +199,7 @@ function weapon(_name) : base_item(_name) constructor {
 		draw_self();
 	};
     clean_up = function(){};
-    Weapons[$ name] = self;
+    Weapons[$ string_lower(name)] = self;
 	/// @function                set_create(function)
 	/// @description             Defines the function executed when spawned.
 	/// @param {function}    f   The function to be executed
@@ -825,7 +825,7 @@ w.set_damage([0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]);
 w.set_on_animation_end(function() /*=>*/ {
 	instance_destroy();
 });
-w.perk = true;
+w.is_perk = true;
 w.set_duration(999);
 w.set_knockback(10, 10);
 #endregion

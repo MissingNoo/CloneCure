@@ -953,9 +953,14 @@ function EventManager() constructor {
 		if (struct_exists(events, event)) {
 			for (var i = 0; i < array_length(events[$ event]); i++) {
 				var e = events[$ event][i];
-				if (instance_exists(e.instance)) {
-					method(e.instance, e.callback)(message);
+				if (e.instance != noone) {
+					if (instance_exists(e.instance)) {
+						method(e.instance, e.callback)(message);
+					}
+				} else {
+					e.callback(message);
 				}
+				
 			}
 		}
 	};

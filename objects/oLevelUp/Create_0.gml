@@ -1,4 +1,6 @@
 //feather disable all
+GameData.level++;
+global.events.broadcast("level_up", GameData.level);
 right_offset = [0,0,0,0];
 off_set = false;
 ups = [
@@ -44,7 +46,6 @@ ups = [
 
 mx = 0;
 my = 0;
-GameData.level++;
 GameData.needed_xp +=
 	round((4 * (GameData.level + 1)) * 2.1) - round((4 * GameData.level) * 2.1);
 //feather ignore GM2023

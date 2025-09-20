@@ -7,6 +7,15 @@ if (os_type != os_android) {
 if (file_exists(game_save_id + "SaveData.json")) {
 	SaveData = json_load(game_save_id + "SaveData.json");
 	update_save_data();
+	struct_foreach(Items, function(name, value) {
+		Items[$ name].unlocked = SaveData.unlocked_items[$ name];
+	});
+	struct_foreach(Weapons, function(name, value) {
+		Weapons[$ name].unlocked = SaveData.unlocked_weapons[$ name];
+	});
+	struct_foreach(AchievementsList, function(name, value) {
+		AchievementsList[$ name].unlocked = SaveData.unlocked_achievements[$ name];
+	});
 	struct_foreach(SaveData.shop.upgrades, function(name, value) {
 		try {
 			Shop.upgrades[$ name].level = value;

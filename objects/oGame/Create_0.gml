@@ -1,4 +1,5 @@
 // surf = surface_create(surface_get_width(application_surface), surface_get_height(application_surface));
+fullscreen = false;
 GameData.mouseAim = false;
 a = 1;
 b = 1;

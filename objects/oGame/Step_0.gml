@@ -1,3 +1,8 @@
+if(keyboard_check_released(vk_f11))
+{
+    fullscreen = not fullscreen;
+}
+window_set_fullscreen(fullscreen);
 #region Touch movement
 for (var i = 0; i <= 1; i++) {
 	if (os_type != os_android && os_type != os_gxgames) {

@@ -11,5 +11,8 @@ struct_foreach(Weapons, function(name, value) {
 struct_foreach(AchievementsList, function(name, value) {
 	SaveData.unlocked_achievements[$ name] = value.unlocked;
 });
+struct_foreach(Characters, function(name, value) {
+	SaveData.characters[$ name][$ "unlocked"] = value.unlocked;
+});
 json_save(SaveData, game_save_id + "SaveData.json");
 json_save(GameConfig, game_save_id + "Config.json");

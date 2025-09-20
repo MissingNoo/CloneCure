@@ -48,11 +48,15 @@ function update_save_data() {
 				fandomxp: 0,
 				outfits: ["base"],
 				lastoutfit: "base",
+				unlocked : false
 			};
 		}
 
 		if (is_undefined(SaveData.characters[$ name][$ "outfits"])) {
 			SaveData.characters[$ name][$ "outfits"] = ["base"];
+		}
+		if (is_undefined(SaveData.characters[$ name][$ "unlocked"])) {
+			SaveData.characters[$ name][$ "unlocked"] = false;
 		}
 		if (is_undefined(SaveData.characters[$ name][$ "lastoutfit"])) {
 			SaveData.characters[$ name][$ "lastoutfit"] = "base";

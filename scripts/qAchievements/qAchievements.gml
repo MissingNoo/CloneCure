@@ -11,23 +11,44 @@ function achievement(_name, _sprite) constructor {
 	unlock_name = "";
 	unlocked = false;
 	char = noone;
+	
+	static unlock_event = function (event, f) {
+		global.events.add_listener(event, noone, method(self, f));
+		return self;
+	}
+	
+	static on_enemy = function (enemy) {
+		by_enemy = string_lower(enemy);
+		unlock_event("enemy_defeated", method(self, function(name) {
+			if (name == self.by_enemy) {
+				self.unlock();
+			};
+		}));
+	}
+	
 	static unlock = function () {
 		if (unlocked) {
 			exit;
 		}
 		unlocked = true;
-		instance_create_depth(0, 0, -1000, oAchNotify, {ach : self});
-		switch (unlock_type) {
-			case "money":
-				SaveData.money += amount;
-				break;
-			case "weapon":
-				Weapons[$ unlock_name].unlocked = true;
-				break;
-			case "item":
-				Items[$ unlock_name].unlocked = true;
-				break;
+		instance_create_depth(0, 0, -1000, oAchNotify, {ach : AchievementsList[$ach_name]});
+		try {
+			switch (unlock_type) {
+				case "money":
+					SaveData.money += amount;
+					break;
+				case "weapon":
+					Weapons[$ unlock_name].unlocked = true;
+					break;
+				case "item":
+					Items[$ unlock_name].unlocked = true;
+					break;
+			}
 		}
+		catch (error) {
+			trace($"No Item/Weapon named {unlock_name}");
+			unlocked = false; //Don't unlock achievement if item or weapon hasn't been implemented
+		} 
 		return self;
 	}
 	
@@ -56,41 +77,122 @@ function achievement(_name, _sprite) constructor {
 		return self;
 	}
 	
-	_name = string_lettersdigits(string_lower(string_replace_all(_name, " ", "_")));
-	AchievementsList[$_name] = self;
+	ach_name = string_lettersdigits(string_lower(string_replace_all(_name, " ", "_")));
+	AchievementsList[$ach_name] = self;
 }
 
-new achievement("First Win!", sAchFirstWin).set_money(500);
-new achievement("Fubura is coming", sAchFubura).set_weapon("Fan Beam");
-new achievement("BBBBRRRRRRRREEEEEE", sAchFirstBoss).set_item("Gorilla_Paw");
-new achievement("Tears of Happiness...?", sAchTears).set_weapon("CEO_Tears");
-new achievement("You have been Cursed", sAchCursed).set_money("EN_Curse");
-new achievement("Area 15", sBlank).set_weapon("Sausage");
-new achievement("I am... Peko!", sBlank).set_weapon("Owl Dagger");
-new achievement("Thousand Mile Stare", sBlank).set_money(10000);
-new achievement("Thank the Managers", sBlank).set_money(10000);
-new achievement("All Outta Candy", sBlank).set_money(10000);
-new achievement("Dah Lah", sBlank).set_money(10000);
-new achievement("Speed Runner", sBlank).set_money(2000);
-new achievement("Idol Group", sBlank).set_money(10000);
-new achievement("Special Attack", sBlank).set_item("Idol Costume");
-new achievement("Hai...", sBlank).set_money(100);
-new achievement("Time To Upgrade", sBlank).set_item("Credit Card");
-new achievement("Boing", sBlank).set_weapon("Bounce Ball");
-new achievement("It's Safe I Swear", sBlank).set_weapon("Injection Type Asacoco");
-new achievement("It's Super Chat Time", sBlank).set_item("Super Chatto Time");
-new achievement("The Real Grind", sBlank).set_money(10000);
-new achievement("Wamy.", sBlank).set_weapon("Wamy Water");
-new achievement("Decked Out", sBlank).set_item("Study Glasses");
-new achievement("Glasses are Versatile", sBlank).set_money(2000);
-new achievement("Delusional", sBlank).set_item("Halu");
-new achievement("Went Too Halu", sBlank).set_item("GWS Pill");
-new achievement("Hamburger Country Yeah!", sBlank).set_money(500);
-new achievement("Thousand Milestone!", sBlank).set_item("Devil Hat");
-new achievement("Over Nine Thousand?!", sBlank).set_money(2000);
-new achievement("Couch Potato", sBlank).set_money(10000);
-new achievement("Flesh Wound", sBlank).set_item("Just Bandage");
-new achievement("I don't need it", sBlank).set_money(1000);
+new achievement("First Win!", sAchFirstWin).set_money(500).on_enemy("Smol_Ame");
+new achievement("Fubura is coming", sAchFubura).set_weapon("Fan Beam").on_enemy("Fubura");
+new achievement("BBBBRRRRRRRREEEEEE", sAchFirstBoss).set_item("Gorilla_Paw").on_enemy("Smol_Ame");
+new achievement("Tears of Happiness...?", sAchTears).set_weapon("CEO_Tears").on_enemy("A-chan");
+new achievement("You have been Cursed", sAchCursed).set_money("EN_Curse").on_enemy("Spiderchama");
+new achievement("Area 15", sBlank).set_weapon("Sausage").on_enemy("Moontato");
+new achievement("I am... Peko!", sBlank).set_weapon("Owl Dagger").on_enemy("Pekodam");
+new achievement("Thousand Mile Stare", sBlank).set_money(10000).on_enemy("Haloween_Bae");
+new achievement("Thank the Managers", sBlank).set_money(10000).on_enemy("Harusaki_Nodoka");
+new achievement("All Outta Candy", sBlank).set_money(10000).on_enemy("Dino_Gura");
+new achievement("Dah Lah", sBlank).set_money(10000).on_enemy("Goriela");
+new achievement("Speed Runner", sBlank).set_money(2000).unlock_event("stage_clear", function () {
+	if (GameData.stage_mode == "TIME") {
+		unlock();
+	}
+});
+new achievement("Idol Group", sBlank).set_money(10000).unlock_event("character_unlock", function () { 
+	var	names = struct_get_names(Characters);
+	var all_unlocked = true;
+	for (var i = 0; i < array_length(names); i++) {
+		if (!Characters[$names[i]].unlocked) {
+			all_unlocked = false;
+		}
+	}
+	if (all_unlocked) {
+		unlock();
+	}
+});
+new achievement("Power of Idols", sBlank).set_item("Idol Costume").unlock_event("special", function () {
+	unlock();
+});
+new achievement("Hai...", sBlank).set_money(100).unlock_event("prop_destroyed", function (name) {
+	if (name == "yagoo_statue") {
+		unlock();
+	}
+});
+new achievement("Time To Upgrade", sBlank).set_item("Credit Card").unlock_event("anvil", function () {
+	unlock();
+});
+new achievement("Boing", sBlank).set_weapon("Bounce Ball").unlock_event("time_minute", function (minute) {
+	if (minute == 10 and player_have_item("Cutting_Board") and oPlayer.char.flat) {
+		unlock();
+	}
+});
+new achievement("It's Safe I Swear", sBlank).set_weapon("Injection Type Asacoco").unlock_event("get_money", function () {
+	if (player_have_item("Plug_Type_Asacoco")) {
+		unlock();
+	}
+});
+new achievement("It's Super Chat Time", sBlank).set_item("Super Chatto Time").unlock_event("get_money", function () {
+	if (SaveData.money > 5000) {
+		unlock();
+	}
+});
+new achievement("The Real Grind", sBlank).set_money(10000).unlock_event("stage_clear", function () {
+	if (SaveData.money > 1000000) {
+		unlock();
+	}
+});;
+new achievement("Wamy.", sBlank).set_weapon("Wamy Water").unlock_event("stage_clear", function () {
+	if (player_have_item("sake")) {
+		unlock();
+	}
+});
+new achievement("Decked Out", sBlank).set_item("Study Glasses").unlock_event("level_up", function (level) {
+	if (level == 50) {
+		unlock();
+	}
+});
+new achievement("Glasses are Versatile", sBlank).set_money(2000).unlock_event("level_up", function (level) {
+	if (level == 100) {
+		unlock();
+	}
+});
+new achievement("Delusional", sBlank).set_item("Halu").unlock_event("enemy_defeated", function () {
+	if (GameData.kills >= 5000) {
+		unlock();
+	}
+});
+new achievement("Went Too Halu", sBlank).set_item("GWS Pill").unlock_event("died", function () {
+	if (player_have_item("halu")) {
+		unlock();
+	}
+});
+new achievement("Hamburger Country Yeah!", sBlank).set_money(500).unlock_event("ate_food", function () {
+	if (GameData.burguers >= 50) {
+		unlock();
+	}
+});
+new achievement("Thousand Milestone!", sBlank).set_item("Devil Hat").unlock_event("damage_dealt", function (dmg) {
+	if (dmg >= 1000) {
+		unlock();
+	}
+});
+new achievement("Over Nine Thousand?!", sBlank).set_money(2000).unlock_event("damage_dealt", function (dmg) {
+	if (dmg >= 10000) {
+		unlock();
+	}
+});
+new achievement("Couch Potato", sBlank).set_money(10000).unlock_event("stage_clear", function () { //TODO:
+	
+});
+new achievement("Flesh Wound", sBlank).set_item("Just Bandage").unlock_event("died", function (dmg) {
+	if (global.minutes >= 10) {
+		unlock();
+	}
+});
+new achievement("I don't need it", sBlank).set_money(1000).unlock_event("stage_clear", function () {
+	if (!GameData.used_special and shop_level("Special_Attack") == 1) {
+		unlock();
+	}
+});
 new achievement("Buying Power", sBlank).set_item("Membership");
 new achievement("You Can Pet The Dog", sBlank).set_money(200);
 new achievement("Full Collab", sBlank).set_money(2000);

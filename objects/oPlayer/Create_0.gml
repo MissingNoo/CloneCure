@@ -1,4 +1,5 @@
 instance_create_depth(x, y, depth, oCam);
+instance_create_depth(x, y + 50, depth, oAnvil);
 char = Characters[$ GameData.selected_character];
 try {
 	sprites = char.skins[$ SaveData.characters[$ GameData.selected_character].lastoutfit];
@@ -28,6 +29,8 @@ GameData.Holds = shop_level("Hold");
 GameData.Eliminates = shop_level("Eliminate");
 GameData.revives = 0;
 GameData.bubba = false;
+GameData.burguers = 0;
+GameData.used_special = false;
 Player_Perks[0] = variable_clone(Perks[$ char.perks[0]]);
 Player_Perks[1] = variable_clone(Perks[$ char.perks[1]]);
 Player_Perks[2] = variable_clone(Perks[$ char.perks[2]]);

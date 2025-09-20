@@ -19,7 +19,7 @@ dmg = irandom_range(wid.mindmg[wid.level], wid.maxdmg[wid.level]);
 global.lastenemy = other;
 on_hit();
 //Growth
-if (wid.perk) {
+if (wid.is_perk) {
 	dmg += (((0.1 * shop_level("Growth")) * GameData.level) / max_projectiles)
 		* wid.hit_cooldown
 	< 20
@@ -57,7 +57,7 @@ array_foreach(Player_Perks, function(e, i) /*=>*/ {
 });
 
 other.hp -= dmg;
-
+global.events.broadcast("damage_dealt", dmg);
 array_foreach(Player_Perks, function(e, i) /*=>*/ {
 	if (e.level > 0) {
 		e.after_hit();

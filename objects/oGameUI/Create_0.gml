@@ -62,7 +62,7 @@ update_items = function(w, h) {
 							1
 						);
 						draw_sprite_ext(
-							wp.perk ? sUiLevelHeaderPink : sUiLevelHeaderWhite,
+							wp.is_perk ? sUiLevelHeaderPink : sUiLevelHeaderWhite,
 							0,
 							_x,
 							_y + _h,
@@ -73,7 +73,7 @@ update_items = function(w, h) {
 							1
 						);
 						draw_sprite_ext(
-							wp.perk ? sUiDigitPink : sUiDigitWhite,
+							wp.is_perk ? sUiDigitPink : sUiDigitWhite,
 							wp.level,
 							_x,
 							_y + _h,

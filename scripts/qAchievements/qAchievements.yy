@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Achievements",
+  "%Name":"qAchievements",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Achievements",
+  "name":"qAchievements",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

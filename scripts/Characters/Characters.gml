@@ -27,7 +27,7 @@ function character(_name) constructor {
 	Characters[$ _name] = self;
 
 	static set_weapon = function(_w) {
-		main_weapon = _w;
+		main_weapon = string_lower(_w);
 		return self;
 	};
 
@@ -152,6 +152,7 @@ c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaPortrait, sTitleTenma)
 	.set_hp(75)
 	.set_atk(1.30)
 	.set_crit(10)
-	.set_ballsize(3)
+	.set_flat(true)
+	.set_ballsize(1)
 	.set_flat(false)
 	.set_unlocked_default(true);

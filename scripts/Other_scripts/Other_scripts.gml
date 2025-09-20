@@ -78,6 +78,14 @@ function player_have_item(name) {
 		}) != -1) {
 		have = true;
 	}
+	if (array_find_index(Player_Weapons, function(e, i) /*=>*/ {
+			if (is_undefined(e)) {
+				return false;
+			}
+			return e.name == global.isearch;
+		}) != -1) {
+		have = true;
+	}
 	return have;
 }
 

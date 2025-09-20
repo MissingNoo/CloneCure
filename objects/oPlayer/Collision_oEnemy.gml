@@ -9,6 +9,9 @@ array_foreach(Player_Items, function(e, i) /*=>*/ {
 	}
 });
 damage_player(dmg);
+if (GameData.hp = 0) {
+	global.events.broadcast("died");
+}
 global.events.broadcast("update_game_ui");
 //oGameUI.update_ui();
 inv_frame = AirLib.frame + 15;
