@@ -28,10 +28,9 @@ function achievement(_name, _sprite) constructor {
 	};
 
 	static unlock = function() {
-		if (AchievementsList[$ach_name].unlocked) {
-			return;
-		}
-		AchievementsList[$ach_name].unlocked = true;
+		if (!SaveData.unlocked_achievements[$ ach_name]) {
+		
+		SaveData.unlocked_achievements[$ ach_name] = true;
 		instance_create_depth(
 			0,
 			0,
@@ -56,7 +55,7 @@ function achievement(_name, _sprite) constructor {
 			trace($"No Item/Weapon named {unlock_name}");
 			unlocked = false;
 		}
-		return self;
+		}
 	};
 
 	static set_item = function(_name) {
@@ -230,7 +229,9 @@ new achievement("Over Nine Thousand?!", sBlank)
 new achievement("Couch Potato", sBlank)
 	.set_money(10000)
 	.unlock_event("stage_clear", function() {
-		//TODO:
+		if (GameData.player_origin.x == GameData.player_pos.x and GameData.player_origin.y == GameData.player_pos.y) {
+			unlock();
+		}
 	})
 new achievement("Flesh Wound", sBlank)
 	.set_item("Just Bandage")
@@ -247,17 +248,65 @@ new achievement("I don't need it", sBlank)
 		}
 	})
 new achievement("Buying Power", sBlank).set_item("Membership")
+.unlock_event("stage_clear", function() {
+		if (player_have_item("super_chatto_time")) {
+			unlock();
+		}
+	})
 new achievement("You Can Pet The Dog", sBlank).set_money(200)
+.unlock_event("bubba_pet", function() {
+			unlock();
+	})
 new achievement("Full Collab", sBlank).set_money(2000)
+.unlock_event("level_up", function() {
+		var four = 0;
+	for (var i = 0; i < array_length(Player_Weapons); i++) {
+		if (!is_undefined(Player_Weapons[i]) and Player_Weapons[i].collab) {
+			four++;
+		}
+	}
+			if (four >= 4) {
+				unlock();
+			}
+	})
 new achievement("Muscle!", sBlank).set_item("Breastplate")
+.unlock_event("damage_taken", function() {
+	if (GameData.damage_taken >= 500) {
+					unlock();
+
+	}
+	})
 new achievement("Please Don't Fail", sBlank).set_item("Blacksmith Gear")
-new achievement("I'm CEO now", sBlank).set_money(2500)
-new achievement("Payday", sBlank).set_item("Stolen Piggy Bank")
-new achievement("Free Stickers", sBlank).set_money(500)
+.unlock_event("anvil_enhance", function() {
+					unlock();
+	})
+new achievement("I'm CEO now", sBlank).set_money(2500).on_enemy("yagoo")
+
+new achievement("Payday", sBlank).set_item("Stolen Piggy Bank").on_enemy("golden_yagoo")
+
+new achievement("Free Stickers", sBlank).set_money(500).on_enemy("silver_yagoo")
 new achievement("Fired", sBlank).set_money(3000)
+.unlock_event("died", function() {
+					if (global.lastenemy.name == "yagoo"
+) {
+						unlock();
+					}
+	})
 new achievement("Lucky Day", sBlank).set_money(500)
-new achievement("Pain Peko", sBlank).set_money(1000)
+.unlock_event("super_box", function() {
+					if (global.lastenemy.name == "yagoo"
+) {
+						unlock();
+					}
+	})
+new achievement("Pain Peko", sBlank).set_money(1000)//TODO:add super item screen
 new achievement("Hardcore Gamer", sBlank).set_money(1000)
+.unlock_event("stage_clear", function() {//TODO: add hardcore
+					//if (shop_level("hardcore") == 1
+//) {
+						//unlock();
+					//}
+	})
 new achievement("Pay To Win", sBlank).set_money(5000)
 new achievement("Solo Beater", sBlank).set_money(10000)
 new achievement("True RNG", sBlank).set_money(2000)

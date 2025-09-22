@@ -6,6 +6,7 @@ try {
 	sprites = {idle: sAmeliaIdle, run: sAmeliaRun};
 }
 sprite_index = sprites.idle;
+GameData.player_origin = {x:x, y:y};
 GameData.max_hp = char.hp;
 GameData.max_hp_base = GameData.max_hp;
 repeat (shop_level("Max_HP_Up")) {
@@ -13,6 +14,7 @@ repeat (shop_level("Max_HP_Up")) {
 }
 GameData.hp = GameData.max_hp;
 GameData.shield = 0;
+GameData.damage_taken = 0;
 GameData.max_shield = 0;
 GameData.ATK = char.atk + (0.06 * shop_level("ATK_Up"));
 GameData.SPD = char.spd + (0.06 * shop_level("SPD_Up"));

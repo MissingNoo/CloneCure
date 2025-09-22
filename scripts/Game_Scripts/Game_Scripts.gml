@@ -189,6 +189,7 @@ function weapon(_name) : base_item(_name) constructor {
 	knockback_duration = array_create(8, 0); 
     knockback_speed = array_create(8, 0);
 	sound = undefined;
+	collab = false;
 	run_create = function(){};
 	run_begin_step = function(){};
 	run_step = function(){};
