@@ -37,7 +37,7 @@ for (var i = 0; i <= 1; i++) {
 }
 #endregion
 #region Level UP
-if (GameData.xp >= GameData.needed_xp) {
+if (!GameData.is_paused and GameData.xp >= GameData.needed_xp) {
 	if (!instance_exists(oLevelUp)) {
 		GameData.xp -= GameData.needed_xp;
 		pause_game();
@@ -52,7 +52,7 @@ cursor_sprite = instance_exists(oPlayer)
 && GameData.mouseAim
 && !GameData.is_paused
 	? sMouseAim
-	: sCursor;
+	: (os_type != os_android ? sCursor : sBlank);
 if (keyboard_check_pressed(vk_escape) || device_mouse_check_button_pressed(3, mb_left)) {
 	pause_game("pause");
 }

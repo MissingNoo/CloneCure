@@ -31,6 +31,7 @@ GameData.revives = 0;
 GameData.bubba = false;
 GameData.burguers = 0;
 GameData.used_special = false;
+GameData.failed_enchant = 0;
 Player_Perks[0] = variable_clone(Perks[$ char.perks[0]]);
 Player_Perks[1] = variable_clone(Perks[$ char.perks[1]]);
 Player_Perks[2] = variable_clone(Perks[$ char.perks[2]]);

@@ -172,6 +172,7 @@ function base_item(_name) constructor {
 #region Weapon Constructor
 function weapon(_name) : base_item(_name) constructor {
 	from_skill = false;
+	enhacement = 0;
     hits = 0;
     duration = array_create(8, 10);
     hit_cooldown = 10;

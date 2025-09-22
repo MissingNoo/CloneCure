@@ -1,6 +1,5 @@
 force_click = function() {
 	if (gui_can_interact()) {
-		clicktimer = AirLib.frame + 10;
 		forcez = true;
 	}
 };

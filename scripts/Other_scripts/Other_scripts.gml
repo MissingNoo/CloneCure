@@ -52,9 +52,6 @@ function damage_player(dmg) {
 	} else {
 		GameData.hp = clamp(round(GameData.hp - dmg), 0, GameData.max_hp);
 		GameData.damage_taken += dmg;
-		if (condition) {
-			
-		}
 	}
 	global.events.broadcast("damage_taken", dmg);
 	if (dmg > 0) {

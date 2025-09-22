@@ -308,15 +308,44 @@ new achievement("Hardcore Gamer", sBlank).set_money(1000)
 					//}
 	})
 new achievement("Pay To Win", sBlank).set_money(5000)
+.unlock_event("anvil", function() {
+					for (var i = 0; i < array_length(Player_Weapons); i++) {
+						var w = Player_Weapons[i];
+						if (!is_undefined(i) and i.enhacement >= 10) {
+							unlock();
+						}
+					}
+	})
 new achievement("Solo Beater", sBlank).set_money(10000)
+.unlock_event("stage_clear", function() {
+					if (is_undefined(Player_Weapons[1])) {
+						unlock();
+					}
+	})
 new achievement("True RNG", sBlank).set_money(2000)
-new achievement("Just RNG", sBlank).set_money(500)
+.unlock_event("anvil", function() {
+					if (GameData.failed_enchant >= 5) {
+						unlock();
+					}
+	})
+
+new achievement("Just RNG", sBlank).set_money(500)//TODO
 new achievement("Hallucinated", sBlank).set_money(3000)
+.unlock_event("stage_clear", function() {
+					if (player_have_item("halu") and get_item_level("halu") == 5) {
+						unlock();
+					}
+	})
 new achievement("I Did It.", sBlank).set_money(10000)
-new achievement("Obliterated", sBlank).set_money(2000)
-new achievement("Pacifist", sBlank).set_money(1000)
-new achievement("Power Leveling", sBlank).set_money(2000)
-new achievement("Fully Loaded", sBlank).set_money(10000)
+.unlock_event("time_minute", function(minute) {
+		if (minute == 30 && player_have_item("halu") and get_item_level("halu") == 5) {
+			unlock();
+		}
+	})
+new achievement("Obliterated", sBlank).set_money(2000)//TODO
+new achievement("Pacifist", sBlank).set_money(1000)//TODO
+new achievement("Power Leveling", sBlank).set_money(2000)//TODO
+new achievement("Fully Loaded", sBlank).set_money(10000)//TODO
 new achievement("Thank You", sBlank).set_money(1000)
 new achievement("Not taking any chances", sBlank).set_money(2000)
 new achievement("Millionaire", sBlank).set_money(5000)
