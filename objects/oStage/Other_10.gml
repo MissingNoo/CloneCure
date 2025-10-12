@@ -1,35 +1,4 @@
-GenerateDirections = function() {
-	if ((slices % 4) != 0) {
-		slices -= slices % 4;
-	}
-	quadrantSize = slices / 4;
-	center = 360 / slices / 2;
-	sliceSize = 360 / slices;
-	directions = [];
-	directionsContainer = [];
-	if (global.topBorder != -1 && global.bottomBorder != -1) {
-		topBorder = global.topBorder;
-		stageHeight = global.bottomBorder - global.topBorder;
-		verticalSliceHeight = stageHeight / (slices / 2);
-	} else {
-		topBorder = NaN;
-		stageHeight = NaN;
-		verticalSliceHeight = NaN;
-	}
-	for (var i = 0; i < slices; i++) {
-		if ((i % quadrantSize) == 0) {
-			array_push(directions, []);
-			array_push(directionsContainer, []);
-		}
-		array_push(directions[floor(i / quadrantSize)], (center + i * sliceSize));
-		array_push(
-			directionsContainer[floor(i / quadrantSize)],
-			(center + i * sliceSize)
-		);
-	}
-	selectableQuadrants = [0, 1, 2, 3];
-	selectableQuadrantsContainer = [0, 1, 2, 3];
-};
+
 
 GenerateDirections();
 
@@ -80,52 +49,7 @@ GenerateDirections();
 //}
 //}
 
-function ParseSpawnDirection_gml_Object_obj_StageManager_Other_10(dir) {
-	switch (currentSpawnPattern) {
-		default:
-		case "evenSurround":
-			return dir;
-		//case "horizontalSurround":
-		//if (
-		//(argument0 >= obj_EXPAbsorb && argument0 <= obj_holoHouseNPC)
-		//|| (argument0 >= obj_ShionPortal && argument0 <= obj_Kotatsu)
-		//) {
-		//argument0 += 90;
-		//return argument0;
-		//} else {
-		//argument0 = argument0;
-		//return argument0;
-		//}
-		//case "verticalSurround":
-		//if (
-		//(argument0 >= obj_holoHouseNPC && argument0 <= obj_CastleBookshelfB)
-		//|| (argument0 >= obj_Rock3 && argument0 <= obj_ShionPortal)
-		//|| (argument0 >= obj_Kotatsu && argument0 <= obj_EXPAbsorb)
-		//) {
-		//argument0 += 90;
-		//return argument0;
-		//} else {
-		//argument0 = argument0;
-		//return argument0;
-		//}
-		//case "directionalSurround":
-		//var targetDir = argument2;
-		//argument0 = targetDir - 45 + round(argument0 / 4);
-		//return argument0;
-		//case "stage2_evenSurround":
-		//argument0 = argument0;
-		//return argument0;
-		//case "stage2_leftSurround":
-		//argument0 /= 2;
-		//return argument0;
-		//case "stage2_rightSurround":
-		//argument0 = argument0 / 2 + 180;
-		//return argument0;
-		case "random":
-			dir = irandom(360);
-			return dir;
-	}
-}
+
 
 //function _Stage2GetPosition_gml_Object_obj_StageManager_Other_10(argument0) {
 //gml_Script__Stage2GetPosition_gml_Object_obj_StageManager_Other_10

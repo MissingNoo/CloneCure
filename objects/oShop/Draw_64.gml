@@ -64,6 +64,8 @@ ui.foreach(function(name, pos, data) {
 			}
 			break;
 		case "items_panel":
+			var _scissor = gpu_get_scissor();
+			gpu_set_scissor(_x, _y, _w, _h + 5);
 			var item_width = _w / 3;
 			var item_height = _h / 4;
 			var item_names = tab_items;
@@ -72,7 +74,7 @@ ui.foreach(function(name, pos, data) {
 					offset = 0;
 					yoffset += item_height + 2;
 				}
-				if (
+				if (mouse_in_area_gui([_x, _y, _x + _w, _y + _h]) and
 					mouse_in_area_gui(
 						[
 							_x + offset,
@@ -162,7 +164,8 @@ ui.foreach(function(name, pos, data) {
 				}
 				//scribble($"[fa_center][fa_middle]{item_names[i]}").draw(_x + offset + item_width / 2, _y + yoffset + item_height / 2);
 				offset += item_width + 5;
-			}
+			} 
+			gpu_set_scissor(_scissor);
 			break;
 		case "item_desc_panel":
 			draw_sprite_stretched(sHudUpgrade, 1, _x, _y, _w, _h);

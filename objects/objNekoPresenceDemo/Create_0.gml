@@ -6,6 +6,7 @@ if (os_type == os_android || os_type == os_gxgames) {
 if (os_type != os_linux) {
 	instance_destroy();
 }
+instance_destroy();
 x = -100;
 #macro DISCORD_APP_ID "1399120068230647808"
 

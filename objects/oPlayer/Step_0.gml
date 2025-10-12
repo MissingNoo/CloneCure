@@ -2,6 +2,7 @@ if (os_type != os_android && device_mouse_check_button_pressed(0, mb_left)) {
 	GameData.mouseAim = !GameData.mouseAim;
 }
 
+
 //part_type_life(_ptype1, part_life, part_life);
 //part_type_life(_ptype2, part_life, part_life);
 //part_type_life(_ptype3, part_life, part_life);
@@ -22,9 +23,8 @@ if (os_type != os_android && device_mouse_check_button_pressed(0, mb_left)) {
 //part_system_position(_ps3, x + lengthdir_x(-200, _dir), y + lengthdir_y(-200, _dir));
 //instance_destroy(oEnemy);
 GameData.player_pos = {x, y, depth};
-if (keyboard_check(ord("C"))) {
-	//instance_create_depth(x, y + 40, depth, oAnvil);
-	//GameData.Pickup++;
+if (keyboard_check_pressed(ord("C"))) {
+	global.seconds += 10;
 }
 if (keyboard_check_pressed(ord("O"))) {
 	Player_Weapons[0].level++;

@@ -4,6 +4,7 @@ force_click = function() {
 	}
 };
 stage_skin_click_area = [0, 0, 0, 0];
+lastw = 0;
 force_x = false;
 setmiddle = false;
 setmiddle2 = false;

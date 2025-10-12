@@ -1,4 +1,7 @@
 function GrabDirection() {
+	with (oStage) {
+		
+	
 	var amountOfQuadrants = array_length(selectableQuadrants);
 	if (amountOfQuadrants == 0) {
 		array_copy(selectableQuadrants, 0, selectableQuadrantsContainer, 0, 4);
@@ -22,6 +25,7 @@ function GrabDirection() {
 	var randomSlice = directions[randomQuadrantIndex][randomSliceIndex];
 	array_delete(directions[randomQuadrantIndex], randomSliceIndex, 1);
 	return randomSlice;
+	}
 }
 
 function spawn_enemy(_x, _y, name) {

@@ -901,8 +901,11 @@ w.set_create(function () {
 	//x = mouse_x;
 	vspeed = 8
 	hdest = 0;
+	dir = choose(-1, 1);
+	rotspd = irandom(3) * dir;
 });
 w.set_step(function (){
+	image_angle += rotspd;
 	vspeed = approach(vspeed, 8, 0.5);
 	hspeed = approach(hspeed, 0, 0.1);
 	if (can_spawn_other and balls > 0 and timer < AirLib.frame) {

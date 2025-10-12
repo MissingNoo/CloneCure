@@ -100,6 +100,7 @@ function window(struct, _generate = false) constructor {
 	startingdepth = 0;
 	draw_list = [];
 	draw_func = {};
+	lastw = 0;
 	recalculate();
 
 	static set_visible = function(boolean) {
@@ -107,7 +108,11 @@ function window(struct, _generate = false) constructor {
 	};
 
 	static foreach = function(_function, node = undefined) {
-		//fit_to_gui();
+		//if (lastw != display_get_gui_width()) {
+			//lastw = display_get_gui_width();
+			//fit_to_gui();
+		//}
+		
 		if (!visible) {
 			exit;
 		}

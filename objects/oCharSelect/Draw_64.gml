@@ -1,4 +1,11 @@
 //feather ignore GM1041
+if (lastw != display_get_gui_width()) {
+	lastw = display_get_gui_width();
+	setmiddle = false;
+	setmiddle2 = false;
+	middle = 0;
+	middle2 = 0;
+}
 ui.foreach(function(name, pos, data) {
 	AirUIDefaultSpr;
 	AirUIArea;

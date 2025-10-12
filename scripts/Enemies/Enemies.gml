@@ -14,6 +14,7 @@ function Enemy(_name) constructor {
 	miniboss = false;
 	scale = 1;
 	knockback_immune = false;
+	levels = array_create(10, self);
 	Enemies[$ name] = self;
 
 	static set_sprite = function(val) {
@@ -60,6 +61,21 @@ function Enemy(_name) constructor {
 		miniboss = val;
 		return self;
 	};
+	
+	static set_lifetime = function(val) {
+		lifetime = val;
+		return self;
+	};
+	
+	static level_of = function (main, level) {
+		var n = string_lower(main);
+		if (is_undefined(Enemies[$n])) {
+			show_debug_message($"[ENEMIES] no main enemy named {main}");
+		} else {
+			Enemies[$n].levels[level] = self;
+		}
+		return self;
+	}
 }
 
 var e = new Enemy("Theo");
@@ -71,7 +87,7 @@ e.experience = 6;
 e.weight = 3;
 e.scale = 1;
 // feather disable GM2044
-var e = new Enemy("Urufugang");
+var e = new Enemy("Shrimp");
 e.set_sprite(sUrufu)
 	.set_hp(8)
 	.set_spd(0.35)
@@ -87,7 +103,7 @@ e.set_sprite(sDarkShrimp)
 	.set_experience(12)
 	.set_weight(1)
 	.set_scale(1);
-var e = new Enemy("MegaShrimp");
+var e = new Enemy("ShrimpMiniBoss");
 e.set_sprite(sUrufu)
 	.set_hp(600)
 	.set_spd(0.50)
@@ -119,9 +135,11 @@ e.set_sprite(sDeadBatter)
 	.set_atk(7)
 	.set_experience(9)
 	.set_weight(1)
-	.set_scale(1);
+	.set_scale(1)
+	.level_of("DeadBeat", 2);
 var e = new Enemy("DeadBeatLV3");
 e.set_sprite(sDeadBeatLV3)
+	.set_hp(380)
 	.set_hp(380)
 	.set_spd(0.65)
 	.set_atk(5)
@@ -152,7 +170,7 @@ e.set_sprite(sKFPEmployee)
 	.set_experience(3)
 	.set_weight(1)
 	.set_scale(1);
-var e = new Enemy("Tako Grande");
+var e = new Enemy("TakodachiMiniBoss");
 e.set_sprite(sTakodachi)
 	.set_hp(1800)
 	.set_spd(0.75)
@@ -160,7 +178,7 @@ e.set_sprite(sTakodachi)
 	.set_experience(600)
 	.set_weight(1)
 	.set_scale(2);
-var e = new Enemy("Bloom");
+var e = new Enemy("AngelFairy");
 e.set_sprite(sBloom)
 	.set_hp(30)
 	.set_spd(0.70)
@@ -168,7 +186,7 @@ e.set_sprite(sBloom)
 	.set_experience(12)
 	.set_weight(1)
 	.set_scale(1);
-var e = new Enemy("Gloom");
+var e = new Enemy("DevilFairy");
 e.set_sprite(sGloom)
 	.set_hp(30)
 	.set_spd(0.70)
@@ -176,14 +194,34 @@ e.set_sprite(sGloom)
 	.set_experience(12)
 	.set_weight(1)
 	.set_scale(1);
-var e = new Enemy("Investi-Gator");
+var e = new Enemy("BigBubba");
+e.set_sprite(sThiccBubba)
+	.set_hp(1000)
+	.set_spd(0.85)
+	.set_atk(12)
+	.set_experience(20)
+	.set_weight(1)
+	.set_scale(1);
+var e = new Enemy("Investi-Gator4");
 e.set_sprite(sInvestigator)
 	.set_hp(180)
 	.set_spd(0.85)
 	.set_atk(7)
 	.set_experience(9)
 	.set_weight(1)
-	.set_scale(1);
+	.set_scale(1)
+	.level_of("BigBubba", 4)
+var e = new Enemy("Investi-Gator1");
+e.set_sprite(sInvestigator)
+	.set_hp(1000)
+	.set_spd(1.6)
+	.set_atk(7)
+	.set_experience(10)
+	.set_weight(1)
+	.set_scale(1)
+	.set_lifetime(20)
+	.level_of("BigBubba", 1)
+
 var e = new Enemy("GiantDeadBeatLV2");
 e.set_sprite(sDeadBatter)
 	.set_hp(3500)
@@ -350,14 +388,6 @@ e.set_sprite(sSaplingKing)
 	.set_spd(0.40)
 	.set_atk(17)
 	.set_experience(15)
-	.set_weight(1)
-	.set_scale(1);
-var e = new Enemy("Thicc_Bubba");
-e.set_sprite(sThiccBubba)
-	.set_hp(1000)
-	.set_spd(0.85)
-	.set_atk(12)
-	.set_experience(20)
 	.set_weight(1)
 	.set_scale(1);
 var e = new Enemy("Smol_Ame");

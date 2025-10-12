@@ -1,37 +1,23 @@
 //feather disable all
-if (!variable_global_exists("gamedata")) {
+try {
+	GameData ??= {};
+}
+catch (error) {
 	GameData = {};
 }
+
 #region GUI Functions
 
-/**
- * Returns the X position on the gui based on the percentage
- * @param {real} percent Description
- * @returns {real} Description
- */
 function gui_x_percent(percent) {
 	var guiw = display_get_gui_width();
 	return guiw * (percent / 100);
 }
 
-/**
- * Returns the Y position on the gui based on the percentage
- * @param {real} percent Description
- * @returns {real} Description
- */
 function gui_y_percent(percent) {
 	var guih = display_get_gui_height();
 	return guih * (percent / 100);
 }
 
-/**
- * Checks if there was a mouse press in the area
- * @param {real} x Description
- * @param {real} y Description
- * @param {real} w Description
- * @param {real} h Description
- * @returns {bool} Description
- */
 function gui_click(x, y, w, h) {
 	if (
 		point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), x, y, w, h)
@@ -123,7 +109,30 @@ function worldxy_to_guixy(_x, _y) {
 	return [gui_x, gui_y];
 }
 
+function area_add_width_height(area) {
+	if (area[2] < area[0]) {
+		area[2] = area[0] + area[2];
+	}
+	if (area[3] < area[1]) {
+		area[3] = area[1] + area[3];
+	}
+	return area;
+}
+
+function mouse_in_area(area) {
+	area = area_add_width_height(area);
+	return point_in_rectangle(
+		mouse_x,
+		mouse_y,
+		area[0],
+		area[1],
+		area[2],
+		area[3]
+	);
+}
+
 function mouse_in_area_gui(area) {
+	area = area_add_width_height(area);
 	return point_in_rectangle(
 		device_mouse_x_to_gui(0),
 		device_mouse_y_to_gui(0),
@@ -134,30 +143,16 @@ function mouse_in_area_gui(area) {
 	);
 }
 
-/**
- * Draw a rectangle in the specified area
- * @param {array} area Description
- * @param {bool} outline Description
- * @param {array<constant.color>} [color]=[c_black, c_white] Description
- * @param {real} [alpha]=1 Description
- */
 function draw_rectangle_area(area, outline, color = [c_black, c_white], alpha = 1) {
 	draw_set_alpha(alpha);
-	//feather ignore once GM1044
 	draw_set_color(color[0]);
 	draw_rectangle(area[0], area[1], area[2], area[3], false);
-	//feather ignore once GM1044
 	draw_set_color(color[1]);
 	draw_rectangle(area[0], area[1], area[2], area[3], true);
 	draw_set_color(c_white);
 	draw_set_alpha(1);
 }
 
-/**
- * Draw part of the surface specified
- * @param {id.Surface} surf Description
- * @param {array} area Description
- */
 function draw_surface_part_area(surf, area) {
 	draw_surface_part(
 		surf,
@@ -174,9 +169,6 @@ global.listboxopen = false;
 global.elementselected = noone;
 global.listboxtimer = 60;
 
-/**
- * AirUI Textbox constructior
- */
 function textbox() constructor {
 	type = "textbox";
 	only_numbers = false;
@@ -382,11 +374,7 @@ enum AirLibBtnStyle {
 	Rounded,
 }
 
-/**
- * AirUI Button constructior
- * @param {string} [_text]="" Base text
- */
-function button(_text = "") constructor {
+function button(_text) constructor {
 	custom_draw = undefined;
 	type = "button";
 	use_text = true;
@@ -404,6 +392,7 @@ function button(_text = "") constructor {
 	held = false;
 	func = function(struct) {};
 	on_area_func = function() {};
+	exit_area_func = function() {};
 
 	static style_draw = function() {
 		draw_bg_fg(pos, self);
@@ -463,6 +452,11 @@ function button(_text = "") constructor {
 		return self;
 	};
 
+	static set_exit_area_function = function(f) {
+		exit_area_func = f;
+		return self;
+	};
+
 	static on_click = function() {
 		if (
 			enabled
@@ -494,6 +488,9 @@ function button(_text = "") constructor {
 			on_area = true;
 			on_area_func();
 		} else {
+			if (on_area) {
+				exit_area_func();
+			}
 			on_area = false;
 		}
 		if (keyboard_selected) {
@@ -534,7 +531,7 @@ function button(_text = "") constructor {
 			scribble($"[alpha,{alpha}][{color}][fa_center][fa_middle]{text}")
 				.scale_to_box(
 					abs(area[0] - area[2]) - string_width("X") - 2,
-					abs(area[1] - area[3]) - string_height("X"),
+					abs(area[1] - area[3]),
 					true
 				)
 				.draw(area[0] + ((area[2] - area[0]) / 2), _y);
@@ -544,9 +541,6 @@ function button(_text = "") constructor {
 	};
 }
 
-/**
- * AirUI Listbox constructior
- */
 function listbox() constructor {
 	type = "listbox";
 	owner = noone;
@@ -684,22 +678,13 @@ function gui_cant_interact_frames(frames = 10) {
 }
 
 function gui_can_interact() {
-	var can =
-		!global.listboxopen
-		&& AirLib.listframe < AirLib.frame
-		&& AirLib.waitframe < AirLib.frame;
-	gui_cant_interact_frames(10);
+	var can = !global.listboxopen && AirLib.listframe < AirLib.frame;// && AirLib.waitframe < AirLib.frame;
+	//gui_cant_interact_frames(10);
 	return can;
 }
 
 global.currenttextbox = {selected: false};
 
-/**
- * Checks if a string contains another one
- * @param {string} str String to check
- * @param {string} contain Substring to check for
- * @returns {bool}
- */
 function string_contains(str, contain) {
 	for (var i = 1; i < string_length(str); ++i) {
 		//show_debug_message("");
@@ -714,13 +699,6 @@ function string_contains(str, contain) {
 	return false;
 }
 
-/**
- * Re-create a surface if it doesn't exists
- * @param {id.Surface} surf Variable holding the surface
- * @param {real} w Width
- * @param {real} h Height
- * @returns {id.Surface} Description
- */
 function surface_recreate(surf, w, h) {
 	if (!surface_exists(surf)) {
 		return surface_create(w, h);
@@ -729,11 +707,6 @@ function surface_recreate(surf, w, h) {
 	}
 }
 
-/**
- * Save an structure to a json file
- * @param {any} _struct Structure to save
- * @param {string} _filename Filename
- */
 function json_save(_struct, _filename) {
 	// We stringify the struct itself into JSON formatting
 	var _json = json_stringify(_struct);
@@ -749,10 +722,6 @@ function json_save(_struct, _filename) {
 	buffer_delete(_buff);
 }
 
-/**
- * Load a Json file to a structure
- * @param {string} _filename Filename
- */
 function json_load(_filename) {
 	// We load in the file
 	var _buff = buffer_load(_filename);
@@ -766,11 +735,6 @@ function json_load(_filename) {
 	return _struct;
 }
 
-/**
- * Basic topdown movement system with normalization
- * @param {any} owner Instance to manage
- * @param {any*} _spd Base speed
- */
 function topdown_movement(owner, _spd) constructor {
 	spd = _spd;
 	hspd = 0;
@@ -830,7 +794,6 @@ function topdown_movement(owner, _spd) constructor {
 		return self;
 	};
 }
-
 /**
  * Used to animate sprites for manual drawing on objects
  * @param {any} spr Sprite to animate
@@ -892,7 +855,7 @@ function sprite_get_height_ext(spr, scale = 1) {
 
 /// @function     		 lenghtdir(lenght, dir)
 /// @description  		 Calculates the X and Y positions with the lenght and direction specified.
-/// @param {real} lenght Lenght to calculate
+/// @param {real} lenght The minimum damage for the weapon.
 /// @param {real} dir 	 The direction to calculate.
 /// @return {struct} 	 Returns a struct containing the calculated positions.
 function lengthdir(lenght, dir) {
@@ -950,16 +913,12 @@ function EventManager() constructor {
 		array_push(events[$ event], {instance, callback});
 	};
 
-	static broadcast = function(event, message = "") {
+	static broadcast = function(event, message) {
 		if (struct_exists(events, event)) {
 			for (var i = 0; i < array_length(events[$ event]); i++) {
 				var e = events[$ event][i];
-				if (e.instance != noone) {
-					if (instance_exists(e.instance)) {
-						method(e.instance, e.callback)(message);
-					}
-				} else {
-					e.callback(message);
+				if (instance_exists(e.instance)) {
+					method(e.instance, e.callback)(message);
 				}
 			}
 		}
@@ -995,5 +954,45 @@ function ui_element_list() constructor {
 
 	static foreach = function(f) {
 		array_foreach(list, f);
+	};
+}
+
+function checkbox(boolean = false) constructor {
+	checked = boolean;
+	type = "checkbox"
+	on_change = function(){};
+	area = [0,0,0,0];
+	on_area = false;
+	custom_draw = false;
+	pos = {left:0,top:0,width:0,height:0};
+	static set_on_change = function (f) {
+		on_change = f;
+		return self;
+	}
+	static tick = function () {
+		if (gui_click(area[0], area[1], area[2], area[3])) {
+			checked = !checked;
+			on_change(checked);
+		}
+		return self;
+	}
+	static draw = function () {
+		tick();
+		if (custom_draw == false) {
+			draw_bg_fg(pos, self);
+		} else {
+			custom_draw(pos);
+		}
+			return self;
+			
+	}
+		static position = function(x, y, xx, yy) {
+		var newarea = [x, y, xx, yy];
+		if (array_equals(area, newarea)) {
+			return self;
+		}
+		area = newarea;
+		pos = {left: x, top: y, width: xx - x, height: yy - y};
+		return self;
 	};
 }

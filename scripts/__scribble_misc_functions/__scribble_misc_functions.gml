@@ -1,7 +1,7 @@
 // Feather disable all
 
 function __scribble_trace() {
-	var _string = "ScribbleDX: ";
+	var _string = "[ScribbleDX] ";
 
 	var _i = 0;
 	repeat (argument_count) {

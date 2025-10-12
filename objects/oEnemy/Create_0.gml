@@ -4,7 +4,7 @@ try {
 	hit_frame = {};
 	if (is_undefined(Enemies[$ name])) {
 		trace($"No monster named {name}");
-		e = "urufugang";
+		e = "Shrimp";
 	}
 	e = Enemies[$ name];
 	boss = e.boss;

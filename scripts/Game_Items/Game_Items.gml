@@ -187,7 +187,7 @@ i.set_on_cooldown(method(i, function() /*=>*/ {
 		percent = clamp(percent + 1, 1, max_percent);
 	}
 	GameData.xp += GameData.needed_xp * (percent / 100);
-	trace(percent);
+	//trace(percent);
 }));
 i.set_on_hurt(method(i, function() /*=>*/ {
 	percent = 1;
@@ -298,7 +298,7 @@ i.set_sprite(sCandySweets)
 	curlevel = level;
 }))
 .set_on_hit(method(i, function() /*=>*/ {
-	trace($"mult: {multiplier}");
+	//trace($"mult: {multiplier}");
 	var projectile = global.lastproj;
 	if (instance_exists(projectile)) {
 		projectile.dmg = projectile.dmg * multiplier;

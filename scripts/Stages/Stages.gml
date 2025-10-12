@@ -7,23 +7,27 @@ GameData.stage_mode = "STAGE";
 
 function add_mob_choice(e, _level = 1, _weight = undefined, _extra = undefined) {
 	e = string_lower(e);
+	show_debug_message($"[STAGE] trying to add {e}");
 	if (!array_contains(Spawn_List, e)) {
 		var weight = 1;
 		try {
 			weight = Enemies[$ e].weight;
-		}
-		catch (error) {
+		} catch (error) {
 			trace($"{e} : {error}");
-			return; 
+			return;
 		}
-		
 		if (!is_undefined(_weight)) {
 			weight = _weight;
 		}
-		show_debug_message($"Added {e} to spawn list with weight {weight}");
-		//if (_level != 1) {
-		//e = $"{e}{_level}";
-		//}
+		try {
+			if (_level != 1) {
+				e = $"{Enemies[$ e].levels[_level].name}";
+			}
+		} catch (error) {
+			trace($"{e} : {error}");
+			return;
+		}
+		show_debug_message($"[STAGE] Added {e} to spawn list with weight {weight}");
 		repeat (weight) {
 			array_push(Spawn_List, e);
 		}
@@ -37,6 +41,7 @@ function remove_mob_choice(e) {
 		array_delete(Spawn_List, index, 1);
 		index = array_get_index(Spawn_List, e);
 	} until (index == -1)
+	show_debug_message($"[STAGE] Removed {e} from spawn list");
 }
 
 function Stage(_name) constructor {
@@ -145,341 +150,472 @@ function Stage(_name) constructor {
 		multiplier = amount;
 		return self;
 	};
+
+	//Cheated this in
+	static AddTimeEvent = function(
+		hour,
+		minute,
+		second,
+		eventname,
+		data1 = undefined,
+		data2 = undefined
+	) {
+		if (minute < 10) {
+			minute = $"0{minute}";
+		}
+		if (second < 10) {
+			second = $"0{second}";
+		}
+		switch (eventname) {
+			case "EventSpawnClumpedDirection":
+				var data = {enemy: data2.id, amount: data2.amount};
+				self.add_script($"{minute}:{second}", method(data, function() {
+					clumped_spawn(enemy, amount);
+				}));
+				break;
+			case "NewMob":
+				self.add_script($"{minute}:{second}", data1);
+				show_debug_message($"[STAGE] will add mob at {minute}:{second}");
+				break;
+			default:
+				trace($"[STAGE] No defined action for {eventname} on stage {name}");
+				break;
+		}
+	};
+	//
 }
 
-#region Stage1
-var stage1 = new Stage("Stage1");
-stage1.add_enemy("Urufugang", "00:01");
-stage1
-	.add_script("00:05", function() {
-		clumped_spawn("Urufugang", 9);
-	});
-stage1
-	.add_script("00:08", function() {
-		enemy_limit = 100;
-		spawn_rate = 150;
-		spawn_pattern = "evenSurround";
-	});
-stage1
-	.add_script("00:30", function() {
-		add_mob_choice("Deadbeat", 1, 1);
-		spawn_rate = 130;
-	});
-stage1
-	.add_script("01:00", function() {
-		enemy_limit = 300;
-		spawn_rate = 100;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("01:30", function() {
-		enemy_limit = 550;
-		spawn_rate = 80;
-		spawn_amount = 5;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1.add_enemy("MegaShrimp", "02:00");
-stage1
-	.add_script("02:30", function() {
-		spawn_amount = 3;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("03:00", function() {
-		remove_mob_choice("Urufugang");
-		add_mob_choice("Takodachi", 2, 1);
-		spawn_rate = 120;
-	});
-stage1
-	.add_script("04:00", function() {
-		add_mob_choice("KFP", 2, 1);
-		spawn_amount = 3;
-	});
-stage1
-	.add_script("04:20", function() {
-		spawn_rate = 80;
-		spawn_amount = 7;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("05:00", function() {
-		add_mob_choice("Shrimp", 3, 2);
-		add_mob_choice("AngelFairy", 4, 1);
-		add_mob_choice("DevilFairy", 4, 1);
-		remove_mob_choice("Takodachi");
-		remove_mob_choice("Deadbeat");
-		enemy_limit = 400;
-		spawn_amount = 6;
-	});
-stage1
-	.add_script("07:00", function() {
-		spawn_rate = 90;
-	});
-stage1
-	.add_script("08:30", function() {
-		enemy_limit = 800;
-		spawn_rate = 100;
-		spawn_amount = 27;
-		currentSpawnPattern = "evenSurround";
-		remove_mob_choice("Deadbeat");
-		add_mob_choice("Deadbeat", 8, 3);
-		remove_mob_choice("BigBubba");
-		remove_mob_choice("Urufugang"); //Shrimp
-	});
-stage1
-	.add_script("08:45", function() {
-		enemy_limit = 500;
-		spawn_rate = 120;
-		spawn_amount = 4;
-		currentSpawnPattern = "evenSurround";
-		add_mob_choice("Shrimp", 1, 2);
-		add_mob_choice("BigBubba", 5, 1);
-		add_mob_choice("Takodachi", 3, 2);
-		remove_mob_choice("Deadbeat");
-		add_mob_choice("AngelFairy", 2, 1);
-		add_mob_choice("DevilFairy", 2, 1);
-	});
-stage1
-	.add_script("09:30", function() {
-		enemy_limit = 1000;
-		spawn_rate = 90;
-		spawn_amount = 7;
-		currentSpawnPattern = "evenSurround";
-		add_mob_choice("KFP", 1, 2);
-	});
-stage1
-	.add_script("10:00", function() {
-		enemy_limit = 1000;
-		spawn_rate = 150;
-		spawn_amount = 4;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("10:30", function() {
-		enemy_limit = 1000;
-		spawn_rate = 100;
-		spawn_amount = 10;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("11:00", function() {
-		enemy_limit = 1000;
-		spawn_rate = 60;
-		spawn_amount = 10;
-		currentSpawnPattern = "evenSurround";
-		remove_mob_choice("Deadbeat");
-		remove_mob_choice("Takodachi");
-		remove_mob_choice("BigBubba");
-		remove_mob_choice("Shrimp");
-		remove_mob_choice("KFP");
-		remove_mob_choice("AngelFairy");
-		remove_mob_choice("DevilFairy");
-		add_mob_choice("Rats", 1, 1);
-	});
-stage1
-	.add_script("11:20", function() {
-		enemy_limit = 1000;
-		spawn_rate = 90;
-		spawn_amount = 8;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("12:00", function() {
-		enemy_limit = 1000;
-		spawn_rate = 110;
-		spawn_amount = 9;
-		currentSpawnPattern = "evenSurround";
-		add_mob_choice("Kromies", 1, 1);
-	});
-stage1
-	.add_script("14:00", function() {
-		enemy_limit = 150;
-		spawn_rate = 75;
-		spawn_amount = 10;
-		currentSpawnPattern = "horizontalSurround";
-		remove_mob_choice("Rats");
-		remove_mob_choice("Kromies");
-		add_mob_choice("ShrimpGang", 1, 1, {dir: 0, pattern: "directionalSurround"});
-		add_mob_choice("DeadbeatGang", 1, 1, {dir: 180, pattern: "directionalSurround"});
-	});
-stage1
-	.add_script("15:00", function() {
-		enemy_limit = 300;
-		spawn_rate = 100;
-		spawn_amount = 7;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("15:45", function() {
-		enemy_limit = 300;
-		spawn_rate = 120;
-		spawn_amount = 9;
-		currentSpawnPattern = "evenSurround";
-		remove_mob_choice("ShrimpGang");
-		remove_mob_choice("DeadbeatGang");
-		add_mob_choice("Saplings", 4, 1);
-		add_mob_choice("Hoomans", 1, 1);
-	});
-stage1
-	.add_script("18:00", function() {
-		enemy_limit = 200;
-		spawn_rate = 150;
-		spawn_amount = 10;
-		currentSpawnPattern = "evenSurround";
-		remove_mob_choice("Rats");
-		add_mob_choice("Sanalites", 2, 1);
-	});
-stage1
-	.add_script("19:00", function() {
-		enemy_limit = 200;
-		spawn_rate = 80;
-		spawn_amount = 8;
-		currentSpawnPattern = "evenSurround";
-		remove_mob_choice("Sanalites");
-		remove_mob_choice("Saplings");
-		remove_mob_choice("Hoomans");
-		add_mob_choice("Kromies", 5, 2);
-		add_mob_choice("Saplings", 5, 2);
-	});
-stage1
-	.add_script("20:00", function() {
-		enemy_limit = 200;
-		spawn_rate = 80;
-		spawn_amount = 5;
-		currentSpawnPattern = "evenSurround";
-		remove_mob_choice("Deadbeat");
-		remove_mob_choice("Takodachi");
-		remove_mob_choice("BigBubba");
-		remove_mob_choice("Shrimp");
-		remove_mob_choice("KFP");
-		remove_mob_choice("AngelFairy");
-		remove_mob_choice("DevilFairy");
-		remove_mob_choice("Kromies");
-		remove_mob_choice("Saplings");
-		remove_mob_choice("Hoomans");
-		add_mob_choice("BigBubba", 1, 2);
-		with (oEnemy) {
-			if (!boss /*&& isEnemy*/) {
-				self.hp = 0;
-			}
+function GenerateDirections() {
+	if ((slices % 4) != 0) {
+		slices -= slices % 4;
+	}
+	quadrantSize = slices / 4;
+	center = 360 / slices / 2;
+	sliceSize = 360 / slices;
+	directions = [];
+	directionsContainer = [];
+	if (global.topBorder != -1 && global.bottomBorder != -1) {
+		topBorder = global.topBorder;
+		stageHeight = global.bottomBorder - global.topBorder;
+		verticalSliceHeight = stageHeight / (slices / 2);
+	} else {
+		topBorder = NaN;
+		stageHeight = NaN;
+		verticalSliceHeight = NaN;
+	}
+	for (var i = 0; i < slices; i++) {
+		if ((i % quadrantSize) == 0) {
+			array_push(directions, []);
+			array_push(directionsContainer, []);
 		}
-	});
-stage1
-	.add_script("21:00", function() {
-		enemy_limit = 300;
-		spawn_rate = 70;
-		spawn_amount = 7;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("22:00", function() {
-		enemy_limit = 300;
-		spawn_rate = 60;
-		spawn_amount = 8;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("23:00", function() {
-		enemy_limit = 300;
-		spawn_rate = 60;
-		spawn_amount = 5;
-		currentSpawnPattern = "evenSurround";
-		add_mob_choice("ShrimpGang", 1, 2);
-		add_mob_choice("DeadbeatGang", 1, 2);
-		add_mob_choice("Takodachi", 1, 3);
-		add_mob_choice("KFP", 1, 3);
-		add_mob_choice("BigBubba", 1, 3);
-		add_mob_choice("AngelFairy", 1, 2);
-		add_mob_choice("DevilFairy", 1, 2);
-		add_mob_choice("Rats", 1, 3);
-		add_mob_choice("Kromies", 1, 3);
-		add_mob_choice("Hoomans", 1, 2);
-		add_mob_choice("Saplings", 1, 3);
-		add_mob_choice("Sanalites", 1, 2);
-	});
-stage1
-	.add_script("24:00", function() {
-		enemy_limit = 300;
-		spawn_rate = 60;
-		spawn_amount = 5;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("25:00", function() {
-		enemy_limit = 300;
-		spawn_rate = 60;
-		spawn_amount = 5;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("26:00", function() {
-		enemy_limit = 300;
-		spawn_rate = 60;
-		spawn_amount = 5;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("27:00", function() {
-		enemy_limit = 300;
-		spawn_rate = 55;
-		spawn_amount = 6;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("28:00", function() {
-		enemy_limit = 300;
-		spawn_rate = 50;
-		spawn_amount = 6;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("29:00", function() {
-		enemy_limit = 300;
-		spawn_rate = 45;
-		spawn_amount = 5;
-		currentSpawnPattern = "evenSurround";
-	});
-stage1
-	.add_script("30:00", function() {
-		enemy_limit = 200;
-		spawn_rate = 60;
-		spawn_amount = 5;
-		with (oEnemy) {
-			if (!boss /*&& isEnemy*/) {
-				self.hp = 0;
-			}
-		}
-		currentSpawnPattern = "evenSurround";
-		remove_mob_choice("DeadbeatGang");
-		remove_mob_choice("Takodachi");
-		remove_mob_choice("BigBubba");
-		remove_mob_choice("ShrimpGang");
-		remove_mob_choice("KFP");
-		remove_mob_choice("AngelFairy");
-		remove_mob_choice("DevilFairy");
-		remove_mob_choice("Kromies");
-		remove_mob_choice("Saplings");
-		remove_mob_choice("Sanalites");
-		remove_mob_choice("Hoomans");
-		remove_mob_choice("Rats");
-		add_mob_choice("Yagoos", 1, 1);
-	});
+		array_push(directions[floor(i / quadrantSize)], (center + i * sliceSize));
+		array_push(
+			directionsContainer[floor(i / quadrantSize)],
+			(center + i * sliceSize)
+		);
+	}
+	selectableQuadrants = [0, 1, 2, 3];
+	selectableQuadrantsContainer = [0, 1, 2, 3];
+}
 
-stage1.set_border(610, 610, 3170, 3170);
-stage1.set_music(bgm_suspect);
-stage1.set_room(rStage1);
-stage1.set_bg(sStage1Port);
-stage1.set_coin_multiplier(1.25);
-#endregion
-#region Stage2
-var stage2 = new Stage("Stage2");
-stage2.add_enemy("Urufugang", "00:01");
-stage2.set_border(610, 610, 3170, 3170);
-stage2.set_music(bgm_suspect);
-stage2.set_room(rStage1);
-stage2.set_bg(sStage2Port);
-stage2.set_coin_multiplier(1.60);
-stage2.add_recomendation("SPD_Up", 6);
-stage2.add_recomendation("ATK_Up", 6);
-stage2.set_fandom(1);
-#endregion
+function ParseSpawnDirection(dir, pattern = undefined) {
+	var pt = "evenSurround";
+	if (instance_exists(oStage)) {
+		pt = oStage.currentSpawnPattern;
+	}
+	if (!is_undefined(pattern)) {
+		pt = pattern;
+	}
+	switch (pt) {
+		default:
+		case "evenSurround":
+			return dir;
+		//case "horizontalSurround":
+		//if (
+		//(argument0 >= obj_EXPAbsorb && argument0 <= obj_holoHouseNPC)
+		//|| (argument0 >= obj_ShionPortal && argument0 <= obj_Kotatsu)
+		//) {
+		//argument0 += 90;
+		//return argument0;
+		//} else {
+		//argument0 = argument0;
+		//return argument0;
+		//}
+		//case "verticalSurround":
+		//if (
+		//(argument0 >= obj_holoHouseNPC && argument0 <= obj_CastleBookshelfB)
+		//|| (argument0 >= obj_Rock3 && argument0 <= obj_ShionPortal)
+		//|| (argument0 >= obj_Kotatsu && argument0 <= obj_EXPAbsorb)
+		//) {
+		//argument0 += 90;
+		//return argument0;
+		//} else {
+		//argument0 = argument0;
+		//return argument0;
+		//}
+		//case "directionalSurround":
+		//var targetDir = argument2;
+		//argument0 = targetDir - 45 + round(argument0 / 4);
+		//return argument0;
+		//case "stage2_evenSurround":
+		//argument0 = argument0;
+		//return argument0;
+		//case "stage2_leftSurround":
+		//argument0 /= 2;
+		//return argument0;
+		//case "stage2_rightSurround":
+		//argument0 = argument0 / 2 + 180;
+		//return argument0;
+		case "random":
+			dir = irandom(360);
+			return dir;
+	}
+}
+
+stage1_fill();
+//#region Stage1
+//var stage1 = new Stage("Stage1");
+//stage1.add_enemy("Shrimp", "00:01");
+//stage1
+//.add_script("00:05", function() {
+//clumped_spawn("Shrimp", 9);
+//});
+//stage1
+//.add_script("00:08", function() {
+//enemy_limit = 100;
+//spawn_rate = 150;
+//spawn_pattern = "evenSurround";
+//});
+//stage1
+//.add_script("00:30", function() {
+//add_mob_choice("Deadbeat", 1, 1);
+//spawn_rate = 130;
+//});
+//stage1
+//.add_script("01:00", function() {
+//enemy_limit = 300;
+//spawn_rate = 100;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("01:30", function() {
+//enemy_limit = 550;
+//spawn_rate = 80;
+//spawn_amount = 5;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1.add_enemy("MegaShrimp", "02:00");
+//stage1
+//.add_script("02:30", function() {
+//spawn_amount = 3;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("03:00", function() {
+//remove_mob_choice("Shrimp");
+//add_mob_choice("Takodachi", 2, 1);
+//spawn_rate = 120;
+//});
+//stage1
+//.add_script("04:00", function() {
+//add_mob_choice("KFP", 2, 1);
+//add_mob_choice("Tako_Grande", 2, 1);
+//spawn_amount = 3;
+//});
+//stage1
+//.add_script("04:20", function() {
+//spawn_rate = 80;
+//spawn_amount = 7;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("05:00", function() {
+//add_mob_choice("DarkShrimp", 3, 2);
+//add_mob_choice("AngelFairy", 4, 1);//TODO guyrys
+//add_mob_choice("DevilFairy", 4, 1);
+//remove_mob_choice("Takodachi");
+//remove_mob_choice("Deadbeat");
+//enemy_limit = 400;
+//spawn_amount = 6;
+//});
+//stage1
+//.add_script("05:55", function() {
+//add_mob_choice("DeadBeatLV2", 4, 1);
+//});
+//stage1
+//.add_script("06:00", function() {
+//add_mob_choice("MegaDarkShrimp", 3, 2);
+//remove_mob_choice("KFP");
+//});
+//stage1
+//.add_script("07:00", function() {
+//spawn_rate = 90;
+//});
+//stage1
+//.add_script("08:30", function() {
+//enemy_limit = 800;
+//spawn_rate = 100;
+//spawn_amount = 27;
+//currentSpawnPattern = "evenSurround";
+//remove_mob_choice("DeadbeatLV2");
+//add_mob_choice("Deadbeat", 8, 3);
+//remove_mob_choice("BigBubba");
+//remove_mob_choice("Shrimp");
+//});
+//stage1
+//.add_script("08:45", function() {
+//enemy_limit = 500;
+//spawn_rate = 120;
+//spawn_amount = 4;
+//currentSpawnPattern = "evenSurround";
+//add_mob_choice("Shrimp", 1, 2);
+//add_mob_choice("BigBubba", 5, 1);
+//add_mob_choice("Takodachi", 3, 2);
+//remove_mob_choice("Deadbeat");
+//add_mob_choice("AngelFairy", 2, 1);
+//add_mob_choice("DevilFairy", 2, 1);
+//});
+//stage1
+//.add_script("09:30", function() {
+//enemy_limit = 1000;
+//spawn_rate = 90;
+//spawn_amount = 7;
+//currentSpawnPattern = "evenSurround";
+//add_mob_choice("KFP", 1, 2);
+//});
+//stage1
+//.add_script("10:00", function() {
+//enemy_limit = 1000;
+//spawn_rate = 150;
+//spawn_amount = 4;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("10:30", function() {
+//enemy_limit = 1000;
+//spawn_rate = 100;
+//spawn_amount = 10;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("11:00", function() {
+//enemy_limit = 1000;
+//spawn_rate = 60;
+//spawn_amount = 10;
+//currentSpawnPattern = "evenSurround";
+//remove_mob_choice("Deadbeat");
+//remove_mob_choice("Takodachi");
+//remove_mob_choice("BigBubba");
+//remove_mob_choice("Shrimp");
+//remove_mob_choice("KFP");
+//remove_mob_choice("AngelFairy");
+//remove_mob_choice("DevilFairy");
+//add_mob_choice("Rats", 1, 1);
+//});
+//stage1
+//.add_script("11:20", function() {
+//enemy_limit = 1000;
+//spawn_rate = 90;
+//spawn_amount = 8;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("12:00", function() {
+//enemy_limit = 1000;
+//spawn_rate = 110;
+//spawn_amount = 9;
+//currentSpawnPattern = "evenSurround";
+//add_mob_choice("Kromies", 1, 1);
+//});
+//stage1
+//.add_script("14:00", function() {
+//enemy_limit = 150;
+//spawn_rate = 75;
+//spawn_amount = 10;
+//currentSpawnPattern = "horizontalSurround";
+//remove_mob_choice("Rats");
+//remove_mob_choice("Kromies");
+//add_mob_choice("ShrimpGang", 1, 1, {dir: 0, pattern: "directionalSurround"});
+//add_mob_choice("DeadbeatGang", 1, 1, {dir: 180, pattern: "directionalSurround"});
+//});
+//stage1
+//.add_script("15:00", function() {
+//enemy_limit = 300;
+//spawn_rate = 100;
+//spawn_amount = 7;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("15:45", function() {
+//enemy_limit = 300;
+//spawn_rate = 120;
+//spawn_amount = 9;
+//currentSpawnPattern = "evenSurround";
+//remove_mob_choice("ShrimpGang");
+//remove_mob_choice("DeadbeatGang");
+//add_mob_choice("Saplings", 4, 1);
+//add_mob_choice("Hoomans", 1, 1);
+//});
+//stage1
+//.add_script("18:00", function() {
+//enemy_limit = 200;
+//spawn_rate = 150;
+//spawn_amount = 10;
+//currentSpawnPattern = "evenSurround";
+//remove_mob_choice("Rats");
+//add_mob_choice("Sanalites", 2, 1);
+//});
+//stage1
+//.add_script("19:00", function() {
+//enemy_limit = 200;
+//spawn_rate = 80;
+//spawn_amount = 8;
+//currentSpawnPattern = "evenSurround";
+//remove_mob_choice("Sanalites");
+//remove_mob_choice("Saplings");
+//remove_mob_choice("Hoomans");
+//add_mob_choice("Kromies", 5, 2);
+//add_mob_choice("Saplings", 5, 2);
+//});
+//stage1
+//.add_script("20:00", function() {
+//enemy_limit = 200;
+//spawn_rate = 80;
+//spawn_amount = 5;
+//currentSpawnPattern = "evenSurround";
+//remove_mob_choice("Deadbeat");
+//remove_mob_choice("Takodachi");
+//remove_mob_choice("BigBubba");
+//remove_mob_choice("Shrimp");
+//remove_mob_choice("KFP");
+//remove_mob_choice("AngelFairy");
+//remove_mob_choice("DevilFairy");
+//remove_mob_choice("Kromies");
+//remove_mob_choice("Saplings");
+//remove_mob_choice("Hoomans");
+//add_mob_choice("BigBubba", 1, 2);
+//with (oEnemy) {
+//if (!boss /*&& isEnemy*/) {
+//self.hp = 0;
+//}
+//}
+//});
+//stage1
+//.add_script("21:00", function() {
+//enemy_limit = 300;
+//spawn_rate = 70;
+//spawn_amount = 7;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("22:00", function() {
+//enemy_limit = 300;
+//spawn_rate = 60;
+//spawn_amount = 8;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("23:00", function() {
+//enemy_limit = 300;
+//spawn_rate = 60;
+//spawn_amount = 5;
+//currentSpawnPattern = "evenSurround";
+//add_mob_choice("ShrimpGang", 1, 2);
+//add_mob_choice("DeadbeatGang", 1, 2);
+//add_mob_choice("Takodachi", 1, 3);
+//add_mob_choice("KFP", 1, 3);
+//add_mob_choice("BigBubba", 1, 3);
+//add_mob_choice("AngelFairy", 1, 2);
+//add_mob_choice("DevilFairy", 1, 2);
+//add_mob_choice("Rats", 1, 3);
+//add_mob_choice("Kromies", 1, 3);
+//add_mob_choice("Hoomans", 1, 2);
+//add_mob_choice("Saplings", 1, 3);
+//add_mob_choice("Sanalites", 1, 2);
+//});
+//stage1
+//.add_script("24:00", function() {
+//enemy_limit = 300;
+//spawn_rate = 60;
+//spawn_amount = 5;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("25:00", function() {
+//enemy_limit = 300;
+//spawn_rate = 60;
+//spawn_amount = 5;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("26:00", function() {
+//enemy_limit = 300;
+//spawn_rate = 60;
+//spawn_amount = 5;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("27:00", function() {
+//enemy_limit = 300;
+//spawn_rate = 55;
+//spawn_amount = 6;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("28:00", function() {
+//enemy_limit = 300;
+//spawn_rate = 50;
+//spawn_amount = 6;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("29:00", function() {
+//enemy_limit = 300;
+//spawn_rate = 45;
+//spawn_amount = 5;
+//currentSpawnPattern = "evenSurround";
+//});
+//stage1
+//.add_script("30:00", function() {
+//enemy_limit = 200;
+//spawn_rate = 60;
+//spawn_amount = 5;
+//with (oEnemy) {
+//if (!boss /*&& isEnemy*/) {
+//self.hp = 0;
+//}
+//}
+//currentSpawnPattern = "evenSurround";
+//remove_mob_choice("DeadbeatGang");
+//remove_mob_choice("Takodachi");
+//remove_mob_choice("BigBubba");
+//remove_mob_choice("ShrimpGang");
+//remove_mob_choice("KFP");
+//remove_mob_choice("AngelFairy");
+//remove_mob_choice("DevilFairy");
+//remove_mob_choice("Kromies");
+//remove_mob_choice("Saplings");
+//remove_mob_choice("Sanalites");
+//remove_mob_choice("Hoomans");
+//remove_mob_choice("Rats");
+//add_mob_choice("Yagoos", 1, 1);
+//});
+//
+//stage1.set_border(610, 610, 3170, 3170);
+//stage1.set_music(bgm_suspect);
+//stage1.set_room(rStage1);
+//stage1.set_bg(sStage1Port);
+//stage1.set_coin_multiplier(1.25);
+//#endregion
+//#region Stage2
+//var stage2 = new Stage("Stage2");
+//stage2.add_enemy("Shrimp", "00:01");
+//stage2.set_border(610, 610, 3170, 3170);
+//stage2.set_music(bgm_suspect);
+//stage2.set_room(rStage1);
+//stage2.set_bg(sStage2Port);
+//stage2.set_coin_multiplier(1.60);
+//stage2.add_recomendation("SPD_Up", 6);
+//stage2.add_recomendation("ATK_Up", 6);
+//stage2.set_fandom(1);
+//#endregion 

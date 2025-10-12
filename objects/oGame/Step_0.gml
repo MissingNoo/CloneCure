@@ -1,6 +1,19 @@
 if (keyboard_check_released(vk_f11)) {
 	fullscreen = !fullscreen;
 }
+
+if (keyboard_check_pressed(vk_numpad1)) {
+	display_set_gui_size(896, 504);
+}
+if (keyboard_check_pressed(vk_numpad2)) {
+	display_set_gui_size(1280, 720);
+}
+if (keyboard_check_pressed(vk_numpad3)) {
+	display_set_gui_size(1408, 792);
+}
+if (keyboard_check_pressed(vk_numpad4)) {
+	display_set_gui_size(1536, 864);
+}
 window_set_fullscreen(fullscreen);
 #region Touch movement
 for (var i = 0; i <= 1; i++) {

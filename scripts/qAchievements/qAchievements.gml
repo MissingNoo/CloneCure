@@ -29,32 +29,32 @@ function achievement(_name, _sprite) constructor {
 
 	static unlock = function() {
 		if (!SaveData.unlocked_achievements[$ ach_name]) {
-		
-		SaveData.unlocked_achievements[$ ach_name] = true;
-		instance_create_depth(
-			0,
-			0,
-			-1000,
-			oAchNotify,
-			{ach: AchievementsList[$ ach_name]}
-		);
-		try {
-			switch (unlock_type) {
-				case "money":
-					SaveData.money += amount;
-					break;
-				case "weapon":
-					Weapons[$ unlock_name].unlocked = true;
-					break;
-				case "item":
-					Items[$ unlock_name].unlocked = true;
-					break;
+			SaveData.unlocked_achievements[$ ach_name] = true;
+			instance_create_depth(
+				0,
+				0,
+				-1000,
+				oAchNotify,
+				{ach: AchievementsList[$ ach_name]}
+			);
+			try {
+				switch (unlock_type) {
+					case "money":
+						SaveData.money += amount;
+						break;
+					case "weapon":
+						Weapons[$ unlock_name].unlocked = true;
+						break;
+					case "item":
+						Items[$ unlock_name].unlocked = true;
+						break;
+				}
 			}
-		} catch (error) {
-			//Don't unlock achievement if item or weapon hasn't been implemented
-			trace($"No Item/Weapon named {unlock_name}");
-			unlocked = false;
-		}
+			 catch (error) {
+				//Don't unlock achievement if item or weapon hasn't been implemented
+				trace($"No Item/Weapon named {unlock_name}");
+				unlocked = false;
+			}
 		}
 	};
 
@@ -229,7 +229,10 @@ new achievement("Over Nine Thousand?!", sBlank)
 new achievement("Couch Potato", sBlank)
 	.set_money(10000)
 	.unlock_event("stage_clear", function() {
-		if (GameData.player_origin.x == GameData.player_pos.x and GameData.player_origin.y == GameData.player_pos.y) {
+		if (
+			GameData.player_origin.x == GameData.player_pos.x
+			&& GameData.player_origin.y == GameData.player_pos.y
+		) {
 			unlock();
 		}
 	})
@@ -247,105 +250,116 @@ new achievement("I don't need it", sBlank)
 			unlock();
 		}
 	})
-new achievement("Buying Power", sBlank).set_item("Membership")
-.unlock_event("stage_clear", function() {
+new achievement("Buying Power", sBlank)
+	.set_item("Membership")
+	.unlock_event("stage_clear", function() {
 		if (player_have_item("super_chatto_time")) {
 			unlock();
 		}
 	})
-new achievement("You Can Pet The Dog", sBlank).set_money(200)
-.unlock_event("bubba_pet", function() {
-			unlock();
+new achievement("You Can Pet The Dog", sBlank)
+	.set_money(200)
+	.unlock_event("bubba_pet", function() {
+		unlock();
 	})
-new achievement("Full Collab", sBlank).set_money(2000)
-.unlock_event("level_up", function() {
+new achievement("Full Collab", sBlank)
+	.set_money(2000)
+	.unlock_event("level_up", function() {
 		var four = 0;
-	for (var i = 0; i < array_length(Player_Weapons); i++) {
-		if (!is_undefined(Player_Weapons[i]) and Player_Weapons[i].collab) {
-			four++;
-		}
-	}
-			if (four >= 4) {
-				unlock();
+		for (var i = 0; i < array_length(Player_Weapons); i++) {
+			if (!is_undefined(Player_Weapons[i]) && Player_Weapons[i].collab) {
+				four++;
 			}
+		}
+		if (four >= 4) {
+			unlock();
+		}
 	})
-new achievement("Muscle!", sBlank).set_item("Breastplate")
-.unlock_event("damage_taken", function() {
-	if (GameData.damage_taken >= 500) {
-					unlock();
-
-	}
+new achievement("Muscle!", sBlank)
+	.set_item("Breastplate")
+	.unlock_event("damage_taken", function() {
+		if (GameData.damage_taken >= 500) {
+			unlock();
+		}
 	})
-new achievement("Please Don't Fail", sBlank).set_item("Blacksmith Gear")
-.unlock_event("anvil_enhance", function() {
-					unlock();
+new achievement("Please Don't Fail", sBlank)
+	.set_item("Blacksmith Gear")
+	.unlock_event("anvil_enhance", function() {
+		unlock();
 	})
 new achievement("I'm CEO now", sBlank).set_money(2500).on_enemy("yagoo")
 
 new achievement("Payday", sBlank).set_item("Stolen Piggy Bank").on_enemy("golden_yagoo")
 
 new achievement("Free Stickers", sBlank).set_money(500).on_enemy("silver_yagoo")
-new achievement("Fired", sBlank).set_money(3000)
-.unlock_event("died", function() {
-					if (global.lastenemy.name == "yagoo"
-) {
-						unlock();
-					}
-	})
-new achievement("Lucky Day", sBlank).set_money(500)
-.unlock_event("super_box", function() {
-					if (global.lastenemy.name == "yagoo"
-) {
-						unlock();
-					}
-	})
-new achievement("Pain Peko", sBlank).set_money(1000)//TODO:add super item screen
-new achievement("Hardcore Gamer", sBlank).set_money(1000)
-.unlock_event("stage_clear", function() {//TODO: add hardcore
-					//if (shop_level("hardcore") == 1
-//) {
-						//unlock();
-					//}
-	})
-new achievement("Pay To Win", sBlank).set_money(5000)
-.unlock_event("anvil", function() {
-					for (var i = 0; i < array_length(Player_Weapons); i++) {
-						var w = Player_Weapons[i];
-						if (!is_undefined(i) and i.enhacement >= 10) {
-							unlock();
-						}
-					}
-	})
-new achievement("Solo Beater", sBlank).set_money(10000)
-.unlock_event("stage_clear", function() {
-					if (is_undefined(Player_Weapons[1])) {
-						unlock();
-					}
-	})
-new achievement("True RNG", sBlank).set_money(2000)
-.unlock_event("anvil", function() {
-					if (GameData.failed_enchant >= 5) {
-						unlock();
-					}
-	})
-
-new achievement("Just RNG", sBlank).set_money(500)//TODO
-new achievement("Hallucinated", sBlank).set_money(3000)
-.unlock_event("stage_clear", function() {
-					if (player_have_item("halu") and get_item_level("halu") == 5) {
-						unlock();
-					}
-	})
-new achievement("I Did It.", sBlank).set_money(10000)
-.unlock_event("time_minute", function(minute) {
-		if (minute == 30 && player_have_item("halu") and get_item_level("halu") == 5) {
+new achievement("Fired", sBlank)
+	.set_money(3000)
+	.unlock_event("died", function() {
+		if (global.lastenemy.name == "yagoo") {
 			unlock();
 		}
 	})
-new achievement("Obliterated", sBlank).set_money(2000)//TODO
-new achievement("Pacifist", sBlank).set_money(1000)//TODO
-new achievement("Power Leveling", sBlank).set_money(2000)//TODO
-new achievement("Fully Loaded", sBlank).set_money(10000)//TODO
+new achievement("Lucky Day", sBlank)
+	.set_money(500)
+	.unlock_event("super_box", function() {
+		if (global.lastenemy.name == "yagoo") {
+			unlock();
+		}
+	})
+new achievement("Pain Peko", sBlank).set_money(1000) //TODO:add super item screen
+new achievement("Hardcore Gamer", sBlank)
+	.set_money(1000)
+	.unlock_event("stage_clear", function() {
+		//TODO: add hardcore
+		//if (shop_level("hardcore") == 1
+		//) {
+		//unlock();
+		//}
+	})
+new achievement("Pay To Win", sBlank)
+	.set_money(5000)
+	.unlock_event("anvil", function() {
+		for (var i = 0; i < array_length(Player_Weapons); i++) {
+			var w = Player_Weapons[i];
+			if (!is_undefined(i) && Player_Weapons[i].enhacement >= 10) {
+				unlock();
+			}
+		}
+	})
+new achievement("Solo Beater", sBlank)
+	.set_money(10000)
+	.unlock_event("stage_clear", function() {
+		if (is_undefined(Player_Weapons[1])) {
+			unlock();
+		}
+	})
+new achievement("True RNG", sBlank)
+	.set_money(2000)
+	.unlock_event("anvil", function() {
+		if (GameData.failed_enchant >= 5) {
+			unlock();
+		}
+	})
+
+new achievement("Just RNG", sBlank).set_money(500) //TODO
+new achievement("Hallucinated", sBlank)
+	.set_money(3000)
+	.unlock_event("stage_clear", function() {
+		if (player_have_item("halu") && get_item_level("halu") == 5) {
+			unlock();
+		}
+	})
+new achievement("I Did It.", sBlank)
+	.set_money(10000)
+	.unlock_event("time_minute", function(minute) {
+		if (minute == 30 && player_have_item("halu") && get_item_level("halu") == 5) {
+			unlock();
+		}
+	})
+new achievement("Obliterated", sBlank).set_money(2000) //TODO
+new achievement("Pacifist", sBlank).set_money(1000) //TODO
+new achievement("Power Leveling", sBlank).set_money(2000) //TODO
+new achievement("Fully Loaded", sBlank).set_money(10000) //TODO
 new achievement("Thank You", sBlank).set_money(1000)
 new achievement("Not taking any chances", sBlank).set_money(2000)
 new achievement("Millionaire", sBlank).set_money(5000)

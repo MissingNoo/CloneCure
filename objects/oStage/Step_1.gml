@@ -17,7 +17,6 @@ if (
 	&& !is_undefined(Stages[$ "Stage1"][$ "timings"][$ time])
 	&& last_second != seconds
 ) {
-	last_second = seconds;
 	var arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "add"];
 	if (!is_undefined(arr)) {
 		array_foreach(arr, function(e, i) {
@@ -27,14 +26,17 @@ if (
 	arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "remove"];
 	if (!is_undefined(arr)) {
 		array_foreach(arr, function(e, i) {
-			show_debug_message($"Removed {e} from spawn list");
 			remove_mob_choice(e);
 		});
 	}
 	arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "script"];
 	if (!is_undefined(arr)) {
 		array_foreach(arr, function(e, i) {
-			method(instance_find(oStage, 0), e)();
+			if (!is_method(e)) {
+				method(instance_find(oStage, 0), e)();
+			} else {
+				e();
+			}
 			//trace("ran script");
 		});
 	}
@@ -73,3 +75,4 @@ if (oPlayer.y < room_height / 2) {
 	}
 }
 #endregion
+last_second = seconds;
