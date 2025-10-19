@@ -1,9 +1,27 @@
 function EventSpawnDirectionLocked (){}
 function EventSpawnClumpedDirection (){}
 function EventSpawnWall(){}
-function EventSpawnHorde(){}
+function check_enemy(_id) {
+	_id = string_lower(_id);
+	return is_undefined(Enemies[$ _id]) ? "shrimp" : _id;
+}
+function EventSpawnHorde(data){
+	var enemy = check_enemy(data.id);
+	show_debug_message($"[STAGE] spawning {enemy} horde!");
+	for (var i = 0; i < data.amount; i++) {
+		spawn_enemy(oPlayer.x + lengthdir_x(oCam.baseW, data.dir), oPlayer.y + lengthdir_y(oCam.baseH, data.dir), enemy);
+	}
+}
 function EventSpawnDirection(){}
-function EventSpawnCircle(){}
+function EventSpawnCircle(data = {id: "ShrimpWall", dir: "evenSurround", amount: 120}) {
+	var enemy = check_enemy(data.id);
+	show_debug_message($"[STAGE] spawning {enemy} circle!");
+	var c = 360 / data.amount;
+	for (var circle_pos = 0, i = 0; i < data.amount; i++) {
+		spawn_enemy(oPlayer.x + lengthdir_x(oCam.baseH, circle_pos), oPlayer.y + lengthdir_y(oCam.baseH, circle_pos), enemy);
+		circle_pos += c;
+	}
+}
 function stage1_fill() {
 	
 	//global.topBorder = -1
@@ -53,8 +71,8 @@ function stage1_fill() {
 	});
 	stage1.AddTimeEvent(
 		0,
-		1,
-		5,
+		0,
+		4,
 		"EventSpawnHorde",
 		EventSpawnHorde,
 		{

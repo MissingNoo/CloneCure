@@ -1,3 +1,6 @@
+if (!drop) {
+	exit;
+}
 GameData.kills++;
 var drop_chance = 1300;
 if (player_have_item("Credit_Card")) {

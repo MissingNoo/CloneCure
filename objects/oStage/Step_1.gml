@@ -30,12 +30,14 @@ if (
 		});
 	}
 	arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "script"];
+	global.dd = Stages[$ "Stage1"][$ "timings"][$ time][$ "data"];
 	if (!is_undefined(arr)) {
 		array_foreach(arr, function(e, i) {
+			var dd = global.dd[i];
 			if (!is_method(e)) {
-				method(instance_find(oStage, 0), e)();
+				method(instance_find(oStage, 0), e)(dd);
 			} else {
-				e();
+				e(dd);
 			}
 			//trace("ran script");
 		});

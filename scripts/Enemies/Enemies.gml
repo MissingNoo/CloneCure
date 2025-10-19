@@ -15,6 +15,8 @@ function Enemy(_name) constructor {
 	scale = 1;
 	knockback_immune = false;
 	levels = array_create(10, self);
+	lock_dir = false;
+	lifetime = undefined;
 	Enemies[$ name] = self;
 
 	static set_sprite = function(val) {
@@ -64,6 +66,11 @@ function Enemy(_name) constructor {
 	
 	static set_lifetime = function(val) {
 		lifetime = val;
+		return self;
+	};
+
+	static lock_direction = function(val) {
+		lock_dir = val;
 		return self;
 	};
 	
@@ -170,6 +177,16 @@ e.set_sprite(sKFPEmployee)
 	.set_experience(3)
 	.set_weight(1)
 	.set_scale(1);
+var e = new Enemy("KFPHorde");
+e.set_sprite(sKFPEmployee)
+	.set_hp(20)
+	.set_spd(1.65)
+	.set_atk(1)
+	.set_experience(2)
+	.set_weight(1)
+	.set_scale(1)
+	.set_lifetime(350)
+	.lock_direction(true)
 var e = new Enemy("TakodachiMiniBoss");
 e.set_sprite(sTakodachi)
 	.set_hp(1800)

@@ -19,6 +19,8 @@ tab_items = [];
 selecting = "item";
 buysell = 0;
 
+yscroll = 0;
+
 buyfunc = function() {
 	var sitem = Shop.upgrades[$ selected_item];
 	SaveData.money -= sitem.cost[sitem.level];

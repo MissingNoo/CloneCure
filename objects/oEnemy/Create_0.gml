@@ -2,13 +2,16 @@ try {
 	image_alpha = 0.01;
 	knocktimer = 0;
 	hit_frame = {};
-	if (is_undefined(Enemies[$ name])) {
-		trace($"No monster named {name}");
-		e = "Shrimp";
-	}
-	e = Enemies[$ name];
+	e = Enemies[$ check_enemy(name)];
 	boss = e.boss;
 	miniboss = e.miniboss;
+	lock_dir_frame = 0;
+	if (!is_undefined(e.lifetime)) {
+		alarm[0] = e.lifetime * 2;
+	}
+	if (e.lock_dir) {
+		lock_dir_frame = AirLib.frame + seconds_to_frames(3);
+	}
 	if (boss || miniboss) {
 		remove_mob_choice(name);
 	}
@@ -23,6 +26,7 @@ try {
 	was_hit = false;
 	inv_frame = 0;
 	attack_frame = 0;
+	drop = true;
 } catch (error) {
 	trace(error);
 	show_message(error);

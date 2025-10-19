@@ -1,5 +1,5 @@
 if (hp <= 0) {
-	if (image_alpha == 1) {
+	if (image_alpha == 1 and drop) {
 		instance_create_depth(x, y, depth, oXP, {xp: e.experience});
 		global.events.broadcast("enemy_defeated", name);
 	}

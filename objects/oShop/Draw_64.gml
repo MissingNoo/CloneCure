@@ -69,10 +69,19 @@ ui.foreach(function(name, pos, data) {
 			var item_width = _w / 3;
 			var item_height = _h / 4;
 			var item_names = tab_items;
-			for (var offset = 0, yoffset = 0, i = 0; i < array_length(item_names); i++) {
+			draw_text(mouse_x, mouse_y, yscroll);
+			for (var offset = 0, yoffset = yscroll, i = 0; i < array_length(item_names); i++) {
 				if (_x + offset > _x + _w) {
 					offset = 0;
 					yoffset += item_height + 2;
+				}
+				if (selected_item_num == i) {
+					if (_y + yoffset + item_s_offset > _y + _h) {
+						yscroll -= item_height + 2;
+					}
+					if (_y + yoffset + item_s_offset < _y) {
+						yscroll += item_height + 2;
+					}
 				}
 				if (mouse_in_area_gui([_x, _y, _x + _w, _y + _h]) and
 					mouse_in_area_gui(

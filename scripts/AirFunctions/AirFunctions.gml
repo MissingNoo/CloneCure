@@ -531,7 +531,7 @@ function button(_text) constructor {
 			scribble($"[alpha,{alpha}][{color}][fa_center][fa_middle]{text}")
 				.scale_to_box(
 					abs(area[0] - area[2]) - string_width("X") - 2,
-					abs(area[1] - area[3]),
+					abs(area[1] - area[3]) - string_width("X") - 2,
 					true
 				)
 				.draw(area[0] + ((area[2] - area[0]) / 2), _y);

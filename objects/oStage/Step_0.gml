@@ -65,6 +65,9 @@ repeat (queue_repeats) {
 				if (hp <= 0) {
 					exit;
 				}
+				if (lock_dir_frame != 0 and AirLib.frame > lock_dir_frame) {
+					exit;
+				}
 				direction = point_direction(x, y, oPlayer.x, oPlayer.y);
 				if (x < oPlayer.x) {
 					image_xscale = abs(image_xscale);

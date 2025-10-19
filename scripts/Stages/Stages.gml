@@ -83,11 +83,13 @@ function Stage(_name) constructor {
 		return self;
 	};
 
-	static add_script = function(time, f) {
+	static add_script = function(time, f, data = {}) {
 		time = $"m{string_replace(time, ":", "s")}";
 		timings[$ time] ??= {};
 		timings[$ time][$ "script"] ??= [];
+		timings[$ time][$ "data"] ??= [];
 		array_push(timings[$ time][$ "script"], f);
+		array_push(timings[$ time][$ "data"], data);
 		return self;
 	};
 
@@ -169,16 +171,26 @@ function Stage(_name) constructor {
 		switch (eventname) {
 			case "EventSpawnClumpedDirection":
 				var data = {enemy: data2.id, amount: data2.amount};
+				show_debug_message($"[STAGE] will spawn {data.enemy} clump at {minute}:{second}");
 				self.add_script($"{minute}:{second}", method(data, function() {
 					clumped_spawn(enemy, amount);
 				}));
 				break;
 			case "NewMob":
+			case "Changespawn_rate":
 				self.add_script($"{minute}:{second}", data1);
-				show_debug_message($"[STAGE] will add mob at {minute}:{second}");
+				show_debug_message($"[STAGE] running script at {minute}:{second}");
+				break;
+			case "EventSpawnCircle":
+				self.add_script($"{minute}:{second}", data1, data2);
+				show_debug_message($"[STAGE] will spawn {data2.id} circle at {minute}:{second}");
+				break;
+			case "EventSpawnHorde":
+				self.add_script($"{minute}:{second}", data1, data2);
+				show_debug_message($"[STAGE] will spawn {data2.id} horde at {minute}:{second}");
 				break;
 			default:
-				trace($"[STAGE] No defined action for {eventname} on stage {name}");
+				trace($"[STAGE] No defined action for {eventname} on stage {name} at {minute}:{second}");
 				break;
 		}
 	};
