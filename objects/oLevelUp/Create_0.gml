@@ -18,6 +18,24 @@ struct_foreach(Stats, function(i, e) {
 		array_push(oLevelUp.stats, e.name);
 	}
 });
+struct_foreach(Items, function(i, e) {
+	repeat (e.weight) {
+		array_push(oLevelUp.items, e.name);
+	}
+});
+for (var i = array_length(Player_Items) - 1; i >= 0; i--) {
+	if (is_undefined(Player_Items[i])) {
+		continue;
+	}
+	if (Player_Items[i].level == 7) {
+		repeat (Player_Items[i].weight + 1) {
+			var index = array_get_index(weapons, Player_Items[i].name);
+			if (index != -1) {
+				array_delete(weapons, index, 1);
+			}
+		}
+	}
+}
 struct_foreach(Weapons, function(i, e) {
 	repeat (e.weight) {
 		array_push(oLevelUp.weapons, e.name);
@@ -36,27 +54,37 @@ for (var i = array_length(Player_Weapons) - 1; i >= 0; i--) {
 		}
 	}
 }
-//
-var names = struct_get_names(Items);
-var names2 = struct_get_names(Weapons);
-if (Player_Items[array_length(Player_Items) - 1] != undefined) {
-	names = [];
-	for (var i = 0; i < array_length(Player_Items); i++) {
-		array_push(names, Player_Items[i].name);
+grab_upgrade = function () {
+	var c = choose("item", "weapon");
+	var grabbed_item = undefined;
+	var name = "";
+	switch (c) {
+		case "item":
+			name = items[irandom_range(0, array_length(items) - 1)];
+			for (var i = array_length(items) - 1; i >= 0; i--) {
+				if (items[i] == name) {
+					array_delete(items, i, 1);
+				}
+			}
+			grabbed_item = Items[$ name];
+			break;
+		case "weapon":
+			name = weapons[irandom_range(0, array_length(weapons) - 1)];
+			for (var i = array_length(weapons) - 1; i >= 0; i--) {
+				if (weapons[i] == name) {
+					array_delete(weapons, i, 1);
+				}
+			}
+			grabbed_item = Weapons[$ name];
+			break;
 	}
+	return grabbed_item;
 }
-if (Player_Weapons[array_length(Player_Weapons) - 1] != undefined) {
-	names2 = [];
-	for (var i = 0; i < array_length(Player_Weapons); i++) {
-		array_push(names2, Player_Weapons[i].name);
-	}
-}
-//
 ups = [
-	choose(Items[$names[irandom_range(0, array_length(names) - 1)]], Weapons[$names2[irandom_range(0, array_length(names2) - 1)]]),
-	choose(Items[$names[irandom_range(0, array_length(names) - 1)]], Weapons[$names2[irandom_range(0, array_length(names2) - 1)]]),
-	choose(Items[$names[irandom_range(0, array_length(names) - 1)]], Weapons[$names2[irandom_range(0, array_length(names2) - 1)]]),
-	choose(Items[$names[irandom_range(0, array_length(names) - 1)]], Weapons[$names2[irandom_range(0, array_length(names2) - 1)]])
+	grab_upgrade(),
+	grab_upgrade(),
+	grab_upgrade(),
+	grab_upgrade(),
 	//Items[$ "membership"],
 	//Items[$ "corporate_pin"],
 	//Items[$ "kusogaki_shackles"],
@@ -65,8 +93,7 @@ ups = [
 
 mx = 0;
 my = 0;
-GameData.needed_xp +=
-	round((4 * (GameData.level + 1)) * 2.1) - round((4 * GameData.level) * 2.1);
+GameData.needed_xp += round((4 * (GameData.level + 1)) * 2.1) - round((4 * GameData.level) * 2.1);
 //feather ignore GM2023
 //feather ignore GM1041
 ui = new window(global.game_uis.level_up);
