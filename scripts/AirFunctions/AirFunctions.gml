@@ -461,7 +461,7 @@ function button(_text) constructor {
 		if (
 			enabled
 			&& (gui ? mouse_in_area_gui(area) : mouse_in_area(area))
-			&& device_mouse_check_button_released(0, mb_left)
+			&& device_mouse_check_button_pressed(0, mb_left)
 			&& gui_can_interact()
 		) {
 			func(self);

@@ -7,9 +7,7 @@ if (keyboard_check_pressed(vk_f9)) {
 if (keyboard_check_pressed(vk_f10)) {
 	show_debug_overlay(true);
 }
-if (GameData.is_paused) {
-	exit;
-}
+exit_if_paused;
 if (GameData.on_stage) {
 	if (!instance_exists(oGameUI)) {
 		instance_create_depth(0, 0, depth - 1, oGameUI);

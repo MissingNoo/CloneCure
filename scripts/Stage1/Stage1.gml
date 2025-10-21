@@ -1,4 +1,13 @@
-function EventSpawnDirectionLocked (){}
+function EventSpawnDirectionLocked (data){
+	var enemy = check_enemy(data.id);
+	show_debug_message($"[STAGE] spawning {enemy} dirlock!");
+	var y_offset = -(data.spacing * data.amount / 2);
+	data.lock_dir_frame = 1;
+	for (var i = 0; i < data.amount; i++) {
+		spawn_enemy(oPlayer.x + lengthdir_x(oCam.baseW / 1.9, data.dir), oPlayer.y + y_offset, enemy, data);
+		y_offset += data.spacing;
+	}
+}
 function EventSpawnClumpedDirection (){}
 function EventSpawnWall(){}
 function check_enemy(_id) {
@@ -71,8 +80,8 @@ function stage1_fill() {
 	});
 	stage1.AddTimeEvent(
 		0,
-		0,
-		4,
+		1,
+		5,
 		"EventSpawnHorde",
 		EventSpawnHorde,
 		{

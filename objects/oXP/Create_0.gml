@@ -43,3 +43,4 @@ var rnd_range = player_have_item("Super_Study_Glasses") ? 1500 : 3000;
 if (irandom_range(0, rnd_range) == 1) {
 	sprite_index = sXPMagnet;
 }
+magnetized = false;

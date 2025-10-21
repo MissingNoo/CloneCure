@@ -189,6 +189,11 @@ function Stage(_name) constructor {
 				self.add_script($"{minute}:{second}", data1, data2);
 				show_debug_message($"[STAGE] will spawn {data2.id} horde at {minute}:{second}");
 				break;
+			case "EventSpawnDirectionLockedA":
+			case "EventSpawnDirectionLockedB":
+				self.add_script($"{minute}:{second}", data1, data2);
+				show_debug_message($"[STAGE] will spawn {data2.id} lockdir at {minute}:{second}");
+				break;
 			default:
 				trace($"[STAGE] No defined action for {eventname} on stage {name} at {minute}:{second}");
 				break;

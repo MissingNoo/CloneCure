@@ -17,6 +17,7 @@ additional_spawn = 0;
 reduced_spawn = 1;
 queue_repeats = 30;
 slices = 36;
+last_time = "";
 global.topBorder = -1;
 global.bottomBorder = -1;
 global.leftBorder = -1;

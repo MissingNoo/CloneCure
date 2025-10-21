@@ -28,9 +28,53 @@ function GrabDirection() {
 	}
 }
 
-function spawn_enemy(_x, _y, name) {
+function spawn_enemy(_x, _y, name, dataset = {}) {
 	name = string_lower(name);
-	instance_create_layer(_x, _y, "Instances", oEnemy, {name});
+	var e = instance_create_layer(_x, _y, "Instances", oEnemy, {name});
+	var datanames = variable_struct_get_names(dataset);
+	for (var i = 0; i < array_length(datanames); i++) {
+		var cur = datanames[i];
+		switch (cur) {
+			case "id":
+			case "dir":
+			case "amount":
+			case "spacing":
+			case "level":
+				continue;
+			case "dirMoving":
+				e.lock_dir_frame = 1;
+				cur = "direction";
+			default:
+				break;
+		}
+		e[$cur] = dataset[$datanames[i]];
+	}
+	if (!is_undefined(dataset[$"spawnOverride"])) {
+		datanames = variable_struct_get_names(dataset.spawnOverride);
+		for (var i = 0; i < array_length(datanames); i++) {
+			var cur = datanames[i];
+			switch (cur) {
+				case "HP":
+					cur = "hp";
+					break;
+				case "ignoreHalu":
+					cur = "ignore_halu";
+					break;
+				case "knockbackImmune":
+					cur = "knockback_immune";
+					break;
+				case "canFreeze":
+					cur = "can_freeze";
+					break;
+				case "lifeTime":
+					e.alarm[0] = dataset.spawnOverride.lifeTime;
+					continue;
+				default:
+					break;
+			}
+			e[$cur] = dataset.spawnOverride[$datanames[i]];
+		}
+	}
 }
 
 function get_spawn_dir() {

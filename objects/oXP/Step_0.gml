@@ -1,3 +1,8 @@
+if (magnetized) {
+	direction = point_direction(x, y, oPlayer.x, oPlayer.y);
+	speed = GameData.SPD + 1;
+	exit;
+}
 if (!following) {
 	speed = lerp(speed, 0, 0.1);
 }

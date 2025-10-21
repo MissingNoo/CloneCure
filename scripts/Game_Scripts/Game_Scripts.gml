@@ -1,3 +1,4 @@
+#macro exit_if_paused if (GameData.is_paused) { exit; }
 #macro GameConfig global.game_config
 #macro weapon_create instance_create_depth(oPlayer.x, oPlayer.y - (oPlayer.sprite_height / 2), oPlayer.depth + 1, oWeapon, 
 GameConfig = {

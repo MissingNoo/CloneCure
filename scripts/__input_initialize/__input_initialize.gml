@@ -22,7 +22,7 @@ function __input_initialize() {
 		+ ".txt";
 	if (__INPUT_EXTERNAL_DEBUG_LOG && __INPUT_DEBUG) {
 		show_debug_message(
-			"Input: Set external debug log to \"" + string(_global.__debug_log) + "\""
+			"[INPUT] Set external debug log to \"" + string(_global.__debug_log) + "\""
 		);
 		exception_unhandled_handler(__input_exception_handler);
 	}

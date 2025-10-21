@@ -7,7 +7,7 @@ function __input_trace() {
 		++_i;
 	}
 
-	show_debug_message("Input: " + _string);
+	show_debug_message("[INPUT] " + _string);
 
 	if (__INPUT_EXTERNAL_DEBUG_LOG) {
 		var _file = file_text_open_append(_global.__debug_log);

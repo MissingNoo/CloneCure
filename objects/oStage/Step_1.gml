@@ -15,7 +15,7 @@ var time = $"m{minutes}s{seconds}";
 if (
 	GameData.on_stage
 	&& !is_undefined(Stages[$ "Stage1"][$ "timings"][$ time])
-	&& last_second != seconds
+	&& last_time != time
 ) {
 	var arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "add"];
 	if (!is_undefined(arr)) {
@@ -43,6 +43,7 @@ if (
 		});
 	}
 }
+last_time = time;
 #endregion
 
 #region Border

@@ -18,6 +18,12 @@ function Enemy(_name) constructor {
 	lock_dir = false;
 	lifetime = undefined;
 	Enemies[$ name] = self;
+	create_function = function () {};
+	
+	static on_create = function (f) {
+		create_function = f;
+		return self;
+	}
 
 	static set_sprite = function(val) {
 		sprite = val;
@@ -271,7 +277,7 @@ e.set_sprite(sFubuzilla)
 	.set_experience(2000)
 	.set_weight(1)
 	.set_scale(1);
-var e = new Enemy("BaeRat");
+var e = new Enemy("Rats");
 e.set_sprite(sBaeRat)
 	.set_hp(100)
 	.set_spd(1.10)
@@ -279,22 +285,17 @@ e.set_sprite(sBaeRat)
 	.set_experience(8)
 	.set_weight(1)
 	.set_scale(1);
-var e = new Enemy("KronieA");
+var e = new Enemy("Kromies");
 e.set_sprite(sKronieA)
 	.set_hp(450)
 	.set_spd(0.80)
 	.set_atk(11)
 	.set_experience(10)
 	.set_weight(1)
-	.set_scale(1);
-var e = new Enemy("KronieB");
-e.set_sprite(sKronieA)
-	.set_hp(450)
-	.set_spd(0.80)
-	.set_atk(11)
-	.set_experience(10)
-	.set_weight(1)
-	.set_scale(1);
+	.set_scale(1)
+	.on_create(function () {
+		sprite_index = choose(sKronieA, sKronieB);
+	})
 var e = new Enemy("King_Kronie");
 e.set_sprite(sKingKronie)
 	.set_hp(5500)
