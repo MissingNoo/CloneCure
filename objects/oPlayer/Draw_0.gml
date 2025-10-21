@@ -74,4 +74,9 @@ if (GameData.mouseAim) {
 		1
 	);
 }
+//with (oEnemy) {
+	//if (name == "takodachi") {
+		//draw_line(x, y, oPlayer.x, oPlayer.y);
+	//}
+//}
 //draw_text(x, y - 30, $"SPD: {movement.spd}"); 

@@ -1,11 +1,20 @@
 function EventSpawnDirectionLocked (data){
 	var enemy = check_enemy(data.id);
 	show_debug_message($"[STAGE] spawning {enemy} dirlock!");
-	var y_offset = -(data.spacing * data.amount / 2);
-	data.lock_dir_frame = 1;
+	var offset = data[$"offset"] ?? 0;
+	var x_offset = (data.dirMoving == 90 or data.dirMoving == 270) ? -(data.spacing * data.amount / 2) + offset : 0;
+	var sx = x_offset;
+	var y_offset = (data.dirMoving == 180 or data.dirMoving == 0) ? -(data.spacing * data.amount / 2) + offset : 0;
+	var sy = y_offset;
+	data.lock_dir_frame = data[$"lock_dir_frame"] ?? 1;
 	for (var i = 0; i < data.amount; i++) {
-		spawn_enemy(oPlayer.x + lengthdir_x(oCam.baseW / 1.9, data.dir), oPlayer.y + y_offset, enemy, data);
-		y_offset += data.spacing;
+		spawn_enemy(oPlayer.x + lengthdir_x(oCam.baseW / 1.9, data.dir) + x_offset, oPlayer.y  + lengthdir_y(oCam.baseH / 1.9, data.dir) + y_offset, enemy, data);
+		if (sy != 0) {
+			y_offset += data.spacing;
+		}
+		if (sx != 0) {
+			x_offset += data.spacing;
+		}
 	}
 }
 function EventSpawnClumpedDirection (){}
@@ -21,7 +30,26 @@ function EventSpawnHorde(data){
 		spawn_enemy(oPlayer.x + lengthdir_x(oCam.baseW, data.dir), oPlayer.y + lengthdir_y(oCam.baseH, data.dir), enemy);
 	}
 }
-function EventSpawnDirection(){}
+function EventSpawnDirection(data){
+	var dir = 0;
+	var enemy = check_enemy(data.id);
+	var amnt = data[$"amount"] ?? 1;
+	show_debug_message($"[STAGE] spawning {enemy} dirlock!");
+	repeat (amnt) {
+		switch (data.dir) {
+			case "random":
+				dir = random(360);
+				break;
+			case "evenSurround":
+				dir += 360 / amnt;
+				break;
+			default:
+				dir = 0;
+				break;
+		}
+		spawn_enemy(oPlayer.x + lengthdir_x(oCam.baseW, dir), oPlayer.y  + lengthdir_y(oCam.baseH, dir), enemy, data);
+	}
+}
 function EventSpawnCircle(data = {id: "ShrimpWall", dir: "evenSurround", amount: 120}) {
 	var enemy = check_enemy(data.id);
 	show_debug_message($"[STAGE] spawning {enemy} circle!");
@@ -150,8 +178,8 @@ function stage1_fill() {
 	});
 	stage1.AddTimeEvent(
 		0,
-		2,
 		0,
+		10,
 		"EventSpawnDirection",
 		EventSpawnDirection,
 		{id: "ShrimpMiniBoss", level: "1", dir: "random", amount: 1}

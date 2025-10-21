@@ -244,8 +244,7 @@ e.set_sprite(sInvestigator)
 	.set_scale(1)
 	.set_lifetime(20)
 	.level_of("BigBubba", 1)
-
-var e = new Enemy("GiantDeadBeatLV2");
+var e = new Enemy("DeadBeatMiniBoss");
 e.set_sprite(sDeadBatter)
 	.set_hp(3500)
 	.set_spd(1)
