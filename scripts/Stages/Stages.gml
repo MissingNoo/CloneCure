@@ -178,6 +178,10 @@ function Stage(_name) constructor {
 				break;
 			case "NewMob":
 			case "Changespawn_rate":
+			case "AlertA":
+			case "AlertB":
+			case "AlertC":
+			case "AlertD":
 				self.add_script($"{minute}:{second}", data1);
 				//show_debug_message($"[STAGE] running script at {minute}:{second}");
 				break;

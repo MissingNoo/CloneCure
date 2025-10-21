@@ -1,3 +1,4 @@
+bb();
 if (os_type == os_android) {
 	show_debug_overlay(false);
 }

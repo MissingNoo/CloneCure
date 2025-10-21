@@ -79,4 +79,4 @@ if (GameData.mouseAim) {
 		//draw_line(x, y, oPlayer.x, oPlayer.y);
 	//}
 //}
-//draw_text(x, y - 30, $"SPD: {movement.spd}"); 
+//draw_text(x, y - 30, $"Enemies: {instance_number(oEnemy)}"); 

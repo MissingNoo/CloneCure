@@ -199,7 +199,7 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 2, 44, "AlertB", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_2881_gml_Object_obj_StageManager_Other_11
-		var alert = instance_create_depth(x, y, depth, obj_caution);
+		var alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 0;
 	});
 	stage1.AddTimeEvent(
@@ -302,12 +302,12 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 3, 39, "AlertA", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_4537_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 90;
 	});
 	stage1.AddTimeEvent(0, 3, 39, "AlertB", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_4672_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 270;
 	});
 	stage1.AddTimeEvent(
@@ -461,7 +461,7 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 5, 29, "AlertA", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_7256_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 0;
 	});
 	stage1.AddTimeEvent(
@@ -763,22 +763,22 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 10, 14, "AlertA", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_12554_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 0;
 	});
 	stage1.AddTimeEvent(0, 10, 14, "AlertB", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_12689_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 90;
 	});
 	stage1.AddTimeEvent(0, 10, 14, "AlertC", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_12825_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 180;
 	});
 	stage1.AddTimeEvent(0, 10, 14, "AlertD", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_12962_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 270;
 	});
 	stage1.AddTimeEvent(
@@ -923,7 +923,7 @@ function stage1_fill() {
 	});
 	stage1.AddTimeEvent(0, 12, 19, "AlertA", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_15577_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 0;
 	});
 	stage1.AddTimeEvent(
@@ -953,7 +953,7 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 12, 19, "AlertB", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_16067_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 180;
 	});
 	stage1.AddTimeEvent(
@@ -984,7 +984,7 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 12, 24, "AlertA", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_16571_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 90;
 	});
 	stage1.AddTimeEvent(
@@ -1014,7 +1014,7 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 12, 24, "AlertB", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_17061_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 270;
 	});
 	stage1.AddTimeEvent(
@@ -1044,12 +1044,12 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 12, 44, "AlertA", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_17547_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 180;
 	});
 	stage1.AddTimeEvent(0, 12, 44, "AlertB", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_17684_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 270;
 	});
 	stage1.AddTimeEvent(
@@ -1457,7 +1457,7 @@ function stage1_fill() {
 	});
 	stage1.AddTimeEvent(0, 14, 19, "AlertA", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_23610_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 90;
 	});
 	stage1.AddTimeEvent(
@@ -1486,7 +1486,7 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 14, 24, "AlertB", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_24116_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 270;
 	});
 	stage1.AddTimeEvent(
@@ -1515,7 +1515,7 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 14, 29, "AlertA", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_24619_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 270;
 	});
 	stage1.AddTimeEvent(
@@ -1544,7 +1544,7 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 14, 29, "AlertB", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_25126_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 90;
 	});
 	stage1.AddTimeEvent(
@@ -1574,7 +1574,7 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 14, 34, "AlertA", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_25642_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 180;
 	});
 	stage1.AddTimeEvent(
@@ -1701,7 +1701,7 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 14, 34, "AlertB", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_27660_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 0;
 	});
 	stage1.AddTimeEvent(
@@ -1828,22 +1828,22 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 14, 44, "AlertA", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_29648_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 0;
 	});
 	stage1.AddTimeEvent(0, 14, 44, "AlertB", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_29783_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 90;
 	});
 	stage1.AddTimeEvent(0, 14, 44, "AlertC", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_29919_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 180;
 	});
 	stage1.AddTimeEvent(0, 14, 44, "AlertD", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_30056_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 270;
 	});
 	stage1.AddTimeEvent(
@@ -1986,22 +1986,22 @@ function stage1_fill() {
 	});
 	stage1.AddTimeEvent(0, 16, 14, "AlertA", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_32584_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 0;
 	});
 	stage1.AddTimeEvent(0, 16, 14, "AlertB", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_32719_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 90;
 	});
 	stage1.AddTimeEvent(0, 16, 14, "AlertC", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_32855_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 180;
 	});
 	stage1.AddTimeEvent(0, 16, 14, "AlertD", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_32992_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 270;
 	});
 	stage1.AddTimeEvent(
@@ -2074,22 +2074,22 @@ function stage1_fill() {
 	);
 	stage1.AddTimeEvent(0, 16, 59, "AlertA", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_34341_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 0;
 	});
 	stage1.AddTimeEvent(0, 16, 59, "AlertB", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_34476_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 90;
 	});
 	stage1.AddTimeEvent(0, 16, 59, "AlertC", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_34612_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 180;
 	});
 	stage1.AddTimeEvent(0, 16, 59, "AlertD", function() {
 		//gml_Script_anon_gml_Object_obj_StageManager_Other_11_34749_gml_Object_obj_StageManager_Other_11
-		alert = instance_create_depth(x, y, depth, obj_caution);
+		alert = instance_create_depth(0, 0, 1000, oAlert);
 		alert.dir = 270;
 	});
 	stage1.AddTimeEvent(
