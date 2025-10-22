@@ -132,7 +132,8 @@ e.set_sprite(sDarkShrimp)
 	.set_atk(10)
 	.set_experience(1000)
 	.set_weight(1)
-	.set_scale(1);
+	.set_scale(1.5)
+	.level_of("ShrimpMiniBoss", 2);
 var e = new Enemy("DeadBeat");
 e.set_sprite(sTheo)
 	.set_hp(40)
@@ -268,7 +269,7 @@ e.set_sprite(sHungryTakodachi)
 	.set_experience(9)
 	.set_weight(1)
 	.set_scale(1.50);
-var e = new Enemy("FubuZilla");
+var e = new Enemy("Fubura");
 e.set_sprite(sFubuzilla)
 	.set_hp(8000)
 	.set_spd(0.80)

@@ -60,7 +60,7 @@ function EventSpawnCircle(data = {id: "ShrimpWall", dir: "evenSurround", amount:
 	}
 }
 function stage1_fill() {
-	
+	show_debug_message("[STAGE] Loading Stage 1 data");
 	//global.topBorder = -1
 	//global.bottomBorder = -1
 	//global.leftBorder = -1
@@ -77,7 +77,7 @@ function stage1_fill() {
 		0,
 		0,
 		5,
-		"EventSpawnClumpedDirection",
+		"EventwClumpedDirection",
 		EventSpawnClumpedDirection,
 		{id: "Shrimp", level: "1", dir: "0", amount: 15, size: 40}
 	);
@@ -178,8 +178,8 @@ function stage1_fill() {
 	});
 	stage1.AddTimeEvent(
 		0,
+		2,
 		0,
-		10,
 		"EventSpawnDirection",
 		EventSpawnDirection,
 		{id: "ShrimpMiniBoss", level: "1", dir: "random", amount: 1}

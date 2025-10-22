@@ -1,0 +1,1 @@
+alpha = sine_wave(current_time  / 1000, 1, 1, 0);

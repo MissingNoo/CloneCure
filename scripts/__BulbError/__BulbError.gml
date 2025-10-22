@@ -9,6 +9,6 @@ function __BulbError() {
 		++_i;
 	}
 
-	show_debug_message("Bulb: " + string_replace_all(_string, "\n", "\n          "));
-	show_error("Bulb:\n" + _string + "\n ", true);
+	show_debug_message("[Bulb] " + string_replace_all(_string, "\n", "\n          "));
+	show_error("[Bulb]\n" + _string + "\n ", true);
 }

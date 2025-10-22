@@ -18,6 +18,7 @@ var x_offset = (dir == 90 or dir == 270) ? -(sprite_width) : 0;
 var sx = x_offset;
 var y_offset = (dir == 180 or dir == 0) ? -(sprite_height) : 0;
 var sy = y_offset;
+draw_set_alpha(alpha);
 repeat (3) {
 	//draw_line(x + x_offset, y + y_offset, gui_w / 2, gui_h / 2);
 	draw_sprite(sprite_index, image_index, x + x_offset, y + y_offset);
@@ -28,3 +29,4 @@ repeat (3) {
 		y_offset += sprite_height;
 	}
 }
+draw_set_alpha(1);

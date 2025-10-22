@@ -29,7 +29,12 @@ function GrabDirection() {
 }
 
 function spawn_enemy(_x, _y, name, dataset = {}) {
+	oStage.mobs_spawned += 1;
 	name = string_lower(name);
+	if (!is_undefined(dataset[$"level"])) {
+		var lv = real(dataset.level);
+		name = Enemies[$name].levels[lv].name;
+	}
 	var e = instance_create_layer(_x, _y, "Instances", oEnemy, {name});
 	var datanames = variable_struct_get_names(dataset);
 	for (var i = 0; i < array_length(datanames); i++) {
@@ -70,6 +75,7 @@ function spawn_enemy(_x, _y, name, dataset = {}) {
 					e.alarm[0] = dataset.spawnOverride.lifeTime;
 					continue;
 				default:
+					show_debug_message($"[STAGE] conversion not defined for {cur} in override!");
 					break;
 			}
 			e[$cur] = dataset.spawnOverride[$datanames[i]];
@@ -92,9 +98,8 @@ function get_spawn_dir() {
 }
 
 function clumped_spawn(name, count) {
-	trace($"Spawned {count} {name}");
+	trace($"[STAGE] Spawned {count} {name}");
 	var pos = get_spawn_dir();
-	oStage.mobs_spawned += count;
 	repeat (count) {
 		spawn_enemy(pos.x, pos.y, name);
 	}

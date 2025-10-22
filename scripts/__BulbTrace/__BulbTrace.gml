@@ -9,5 +9,5 @@ function __BulbTrace() {
 		++_i;
 	}
 
-	show_debug_message("Bulb: " + _string);
+	show_debug_message("[Bulb] " + _string);
 }

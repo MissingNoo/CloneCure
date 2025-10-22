@@ -7,7 +7,6 @@ GameData.stage_mode = "STAGE";
 
 function add_mob_choice(e, _level = 1, _weight = undefined, _extra = undefined) {
 	e = string_lower(e);
-	show_debug_message($"[STAGE] trying to add {e}");
 	if (!array_contains(Spawn_List, e)) {
 		var weight = 1;
 		try {
@@ -205,7 +204,7 @@ function Stage(_name) constructor {
 				//show_debug_message($"[STAGE] will spawn {data2.id} lockdir at {minute}:{second}");
 				break;
 			default:
-				trace($"[STAGE] No defined action for {eventname} on stage {name} at {minute}:{second}");
+				trace($"[STAGE] No defined action for {eventname} for stage {name} at {minute}:{second}");
 				break;
 		}
 	};

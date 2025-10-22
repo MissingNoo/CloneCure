@@ -1,9 +1,9 @@
-bb();
-if (os_type == os_android) {
+if (os_type == os_android or GameData.debug == false) {
 	show_debug_overlay(false);
 }
 if (keyboard_check_pressed(vk_f9)) {
-	show_debug_overlay(false);
+	GameData.debug = !GameData.debug;
+	show_debug_overlay(GameData.debug);
 }
 if (keyboard_check_pressed(vk_f10)) {
 	show_debug_overlay(true);

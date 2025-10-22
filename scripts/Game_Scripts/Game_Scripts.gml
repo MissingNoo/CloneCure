@@ -9,6 +9,7 @@ global.minutes = 0;
 global.seconds = 0;
 
 GameData ??= {};
+GameData.debug = false;
 GameData.xp = 0;
 GameData.needed_xp = 79;
 GameData.music = undefined;

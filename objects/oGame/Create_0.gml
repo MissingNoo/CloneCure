@@ -1,10 +1,3 @@
-aa = function () {
-	return 1
-}
-bb = function () {
-	static _y = 0;
-	_y += aa();
-}
 // surf = surface_create(surface_get_width(application_surface), surface_get_height(application_surface));
 fullscreen = false;
 GameData.mouseAim = false;
