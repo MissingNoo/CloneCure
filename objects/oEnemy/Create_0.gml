@@ -32,6 +32,8 @@ try {
 	attack_frame = 0;
 	drop = true;
 	method(self, e.create_function)();
+	step = method(self, e.step_function);
+	draw = method(self, e.draw_function);
 } catch (error) {
 	trace(error);
 	show_message(error);

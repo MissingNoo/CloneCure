@@ -18,10 +18,22 @@ function Enemy(_name) constructor {
 	lock_dir = false;
 	lifetime = undefined;
 	Enemies[$ name] = self;
+	step_function = function () {};
 	create_function = function () {};
+	draw_function = function () {};
 	
 	static on_create = function (f) {
 		create_function = f;
+		return self;
+	}
+	
+	static on_draw = function (f) {
+		draw_function = f;
+		return self;
+	}
+	
+	static on_step = function (f) {
+		step_function = f;
 		return self;
 	}
 
@@ -276,7 +288,33 @@ e.set_sprite(sFubuzilla)
 	.set_atk(15)
 	.set_experience(2000)
 	.set_weight(1)
-	.set_scale(1);
+	.set_scale(1.8)
+	.set_mini_boss(true)
+	.on_create(function() {
+		hard_mode = false;
+		laser_dir = 0;
+		laser_frame = AirLib.frame + seconds_to_frames(3);
+	})
+	.on_step(function() {
+		if (hard_mode) {
+			laser_dir = point_direction(x, y, oPlayer.x, oPlayer.y);
+		} else {
+			laser_dir = oPlayer.x > x ? 0 : 180;
+		}
+		if (AirLib.frame > laser_frame) {
+			laser_frame = AirLib.frame + seconds_to_frames(6);
+			var xoff = 0;
+			switch (laser_dir) {
+				case 0:
+					xoff = sprite_width / 3;
+					break;
+				case 180:
+					xoff = -(sprite_width / 3);
+					break;
+			}
+			instance_create_depth(-10000, -10000, depth, oFubuzillaBeam, {image_angle : laser_dir, owner : self.id, xoff : xoff});
+		}
+	});
 var e = new Enemy("Rats");
 e.set_sprite(sBaeRat)
 	.set_hp(100)

@@ -1,4 +1,4 @@
-if ((lock_dir_frame != 0 or other.lock_dir_frame != 0) and other.name != name) {
+if ((lock_dir_frame != 0 or other.lock_dir_frame != 0 or boss or other.boss or miniboss or other.miniboss) and other.name != name) {
 	exit;
 }
 var push = 0.5;

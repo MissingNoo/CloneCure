@@ -73,6 +73,18 @@ function stage1_fill() {
 	stage1.set_bg(sStage1Port);
 	stage1.set_coin_multiplier(1.25);
 	stage1.add_enemy("Shrimp", "00:01");
+	
+	#region debug
+	//stage1.AddTimeEvent(
+		//0,
+		//0,
+		//3,
+		//"EventSpawnDirection",
+		//EventSpawnDirection,
+		//{id: "Fubura", level: "1", dir: "random", amount: 1}
+	//);
+	#endregion
+	
 	stage1.AddTimeEvent(
 		0,
 		0,

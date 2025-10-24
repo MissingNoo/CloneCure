@@ -11,4 +11,5 @@ if (hp <= 0) {
 	}
 } else {
 	image_alpha = lerp(image_alpha, 1, 0.1);
+	step();
 }
