@@ -966,21 +966,55 @@ w.set_step(function () {
 	}
 });
 #endregion
-/*
+
 #region Cutting Board
 w = new weapon("Cutting_Board");
 w.set_type(weapon_type.Multishot);
-w.set_sprite();
-w.set_weight();
-w.set_cooldown([], 0);
-w.set_hits();
-w.set_damage([], []);
-w.set_delay();
-w.set_duration();
-w.set_enchants([]);
-w.set_create();
-w.set_step();
+w.set_sprite(sCuttingBoardThumb, sCuttingBoard);
+w.set_type(weapon_type.Ranged);
+w.set_weight(2);
+w.set_cooldown([180, 180, 180, 180, 180, 150, 150], 0);
+w.set_shoots([1, 1, 1, 1, 1, 1, 3]);
+w.set_hits(999);
+w.set_damage([11, 11, 14, 14, 23, 23, 23], [15, 15, 18, 18, 28, 28, 28]);
+w.set_delay(1);
+w.set_area([1, 1.3, 1.3, 1.3, 1.3, 1.3, 1.3]);
+w.set_duration(120);
+w.set_knockback(20, 7);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Size,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Cooldown,
+]);
+w.set_create(function(){
+	if (Characters[$ GameData.selected_character].flat) {
+		image_xscale = image_xscale * 1.3;
+		image_yscale = image_yscale * 1.3;
+	}
+	if (can_spawn_other) {
+		direction = GameData.arrow_dir + 180;
+	}
+	image_angle = direction;
+	speed = 7;
+	boards = wid.shoots[level] - 1;
+	if (can_spawn_other and boards > 0) {
+		boards = 0;
+		weapon_create {
+			wid : wid,
+			direction : direction - 90
+		});
+		weapon_create {
+			wid : wid,
+			direction : direction + 90
+		});
+	}
+});
+w.set_step(function () {
+	speed = approach(speed, 0, 0.3);
+});
 #endregion
+/*
 #region Elite Lava Bucket
 w = new weapon("Elite_Lava_Bucket");
 w.set_type(weapon_type.Multishot);

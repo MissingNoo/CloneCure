@@ -27,7 +27,7 @@ function EventSpawnHorde(data){
 	var enemy = check_enemy(data.id);
 	show_debug_message($"[STAGE] spawning {enemy} horde!");
 	for (var i = 0; i < data.amount; i++) {
-		spawn_enemy(oPlayer.x + lengthdir_x(oCam.baseW, data.dir), oPlayer.y + lengthdir_y(oCam.baseH, data.dir), enemy);
+		spawn_enemy(oPlayer.x + lengthdir_x(oCam.baseW, data.dir) + irandom_range(-30, 30), oPlayer.y + lengthdir_y(oCam.baseH, data.dir) + irandom_range(-30, 30), enemy);
 	}
 }
 function EventSpawnDirection(data){
@@ -89,7 +89,7 @@ function stage1_fill() {
 		0,
 		0,
 		5,
-		"EventwClumpedDirection",
+		"EventSpawnClumpedDirection",
 		EventSpawnClumpedDirection,
 		{id: "Shrimp", level: "1", dir: "0", amount: 15, size: 40}
 	);
