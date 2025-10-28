@@ -969,7 +969,6 @@ w.set_step(function () {
 
 #region Cutting Board
 w = new weapon("Cutting_Board");
-w.set_type(weapon_type.Multishot);
 w.set_sprite(sCuttingBoardThumb, sCuttingBoard);
 w.set_type(weapon_type.Ranged);
 w.set_weight(2);
@@ -997,9 +996,7 @@ w.set_create(function(){
 	}
 	image_angle = direction;
 	speed = 7;
-	boards = wid.shoots[level] - 1;
-	if (can_spawn_other and boards > 0) {
-		boards = 0;
+	if (can_spawn_other and wid.shoots[level] - 1 > 0) {
 		weapon_create {
 			wid : wid,
 			direction : direction - 90

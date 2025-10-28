@@ -35,7 +35,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sFubuzillaBeam",
+    "path":"sprites/sFubuzillaBeam/sFubuzillaBeam.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
