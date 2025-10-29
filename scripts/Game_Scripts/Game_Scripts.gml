@@ -1024,7 +1024,7 @@ w.set_damage([6, 6, 6, 10, 14, 14, 11], [10, 10, 10, 14, 18, 18, 15]);
 w.set_delay(5);
 w.set_area([0.9, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1]);
 w.set_duration([180, 180, 180, 270, 270, 270, 270]);
-w.set_knockback(20, 7);
+w.set_knockback(0, 0);
 w.set_enchants([
 	weapon_enchantments.Damage,
 	weapon_enchantments.Size,
@@ -1073,21 +1073,65 @@ w.set_on_animation_end(function () {
 });
 #endregion
 
-/*
+
 #region EN Curse
 w = new weapon("EN_Curse");
+w.set_sprite(sENCurseThumb, sENCurse);
 w.set_type(weapon_type.Multishot);
-w.set_sprite();
-w.set_weight();
-w.set_cooldown([], 0);
-w.set_hits();
-w.set_damage([], []);
-w.set_delay();
-w.set_duration();
-w.set_enchants([]);
-w.set_create();
-w.set_step();
+w.set_weight(2);
+w.set_cooldown([110, 110, 110, 110, 110, 93, 93], 1);
+w.set_shoots([1, 1, 1, 1, 2, 2, 3]);
+w.set_hits(1);
+w.set_damage([12, 17, 17, 17, 17, 17, 17], [16, 21, 21, 21, 21, 21, 21]);
+w.set_delay(0);
+w.set_area(1.5);
+w.set_duration(90);
+w.set_knockback(20, 7);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Size,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Projectile,
+	weapon_enchantments.Cooldown,
+]);
+w.set_create(function(){
+	direction = GameData.arrow_dir;
+	if (!can_spawn_other) {
+		direction = random(360);
+	}
+	image_angle = direction;
+	speed = 7;
+	curses = wid.shoots[level] - 1;
+	chance = [0, 0.7, 0.8, 0.8, 0.8, 0.9, 0.9, 0.9];
+	multiplier = 0;
+});
+w.set_step(function () {
+	if (can_spawn_other and curses > 0) {
+		curses--;
+		weapon_create {
+			wid : wid,
+		});
+	}
+});
+w.set_on_hit(function () {
+	var rnd = random_range(0, 1);
+	if (rnd <= chance[level]) {
+		hits++;
+		if (level == 7) {
+			multiplier++;
+			repeat (multiplier) {
+				dmg = dmg * 1.1;
+			}
+		}
+		var nearest = instance_nearest_nth(x, y, oEnemy, 2);
+		if (nearest != noone) {
+			direction = point_direction(x, y, nearest.x, nearest.y);
+			image_angle = direction;
+		}
+	}
+});
 #endregion
+/*
 #region Plug Type Asacoco
 w = new weapon("Plug_Type_Asacoco");
 w.set_type(weapon_type.Multishot);
