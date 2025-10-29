@@ -32,6 +32,7 @@ stageinfo = new window(global.game_uis.stage_info);
 stageinfo.fit_to_gui();
 
 chars = struct_get_names(Characters);
+array_sort(chars, true);
 selected_char = "Amelia_Watson";
 charspr = new animated_sprite(Characters[$ selected_char].idle_sprite);
 selected = 0;

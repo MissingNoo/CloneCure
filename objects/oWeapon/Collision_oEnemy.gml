@@ -7,6 +7,7 @@ if (
 	other.inv_frame > AirLib.frame
 	|| ohit > AirLib.frame
 	|| image_alpha == 0
+	|| ghost
 	|| other.image_alpha != 1
 ) {
 	exit;

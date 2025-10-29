@@ -904,7 +904,7 @@ w.set_create(function () {
 	vspeed = 8
 	hdest = 0;
 	dir = choose(-1, 1);
-	rotspd = irandom(3) * dir;
+	rotspd = irandom_range(1, 3) * dir;
 });
 w.set_step(function (){
 	image_angle += rotspd;
@@ -1011,21 +1011,69 @@ w.set_step(function () {
 	speed = approach(speed, 0, 0.3);
 });
 #endregion
-/*
+
 #region Elite Lava Bucket
 w = new weapon("Elite_Lava_Bucket");
+w.set_sprite(sEliteLavaBucketThumb, sLavaBucket);
 w.set_type(weapon_type.Multishot);
-w.set_sprite();
-w.set_weight();
-w.set_cooldown([], 0);
-w.set_hits();
-w.set_damage([], []);
-w.set_delay();
-w.set_duration();
-w.set_enchants([]);
-w.set_create();
-w.set_step();
+w.set_weight(3);
+w.set_cooldown([300, 300, 300, 300, 300, 300, 300], 0);
+w.set_shoots([1, 1, 2, 2, 2, 3, 4]);
+w.set_hits(999);
+w.set_damage([6, 6, 6, 10, 14, 14, 11], [10, 10, 10, 14, 18, 18, 15]);
+w.set_delay(5);
+w.set_area([0.9, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1]);
+w.set_duration([180, 180, 180, 270, 270, 270, 270]);
+w.set_knockback(20, 7);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Size,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Cooldown,
+	weapon_enchantments.Hit_Rate,
+]);
+w.set_create(function(){
+	direction = random(360);
+	speed = 6;
+	timer = AirLib.frame + wid.delay;
+	buckets = wid.shoots[level] - 1;
+	slow_spd = random_range(0.1, 0.3);
+	depth = oPlayer.depth - 30;
+	ghost = true;
+});
+w.set_step(function () {
+	if (can_spawn_other and buckets > 0 and AirLib.frame > timer) {
+		buckets--;
+		timer = AirLib.frame + wid.delay;
+		weapon_create {
+			wid : wid,
+		});
+	}
+	speed = approach(speed, 0, slow_spd);
+	if (speed == 0 and sprite_index == sLavaBucket) {
+		ghost = false;
+		sprite_index = sLavaPoolStart;
+		y -= sprite_get_height_ext(sLavaPoolStart, wid.area[level]) / 2;
+	}
+	if (last_frame < AirLib.frame) {
+		last_frame = AirLib.frame + 9999;
+		image_index = 0;
+		sprite_index = sLavaPoolEnd;
+	}
+});
+w.set_on_animation_end(function () {
+	switch (sprite_index) {
+		case sLavaPoolStart:
+			sprite_index = sLavaPoolLoop;
+			break;
+		case sLavaPoolEnd:
+			instance_destroy();
+			break;
+	}
+});
 #endregion
+
+/*
 #region EN Curse
 w = new weapon("EN_Curse");
 w.set_type(weapon_type.Multishot);

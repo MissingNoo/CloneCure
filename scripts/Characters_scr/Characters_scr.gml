@@ -3,7 +3,7 @@ GameData.characters = {};
 #macro Characters GameData.characters
 
 function character(_name) constructor {
-	name = _name;
+	name = string_replace_all(_name, " ", "_");
 	uiname = string_replace_all(_name, "_", " ");
 	spd = 0;
 	idle_sprite = sBlank;
@@ -154,5 +154,15 @@ c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaPortrait, sTitleTenma)
 	.set_crit(10)
 	.set_flat(true)
 	.set_ballsize(1)
+	.set_unlocked_default(true);
+
+c = new character("A_Debug");
+c.set_sprite(sTrickyIdle, sTrickyRun, sTrickyPortrait, sTrickyTitle)
+	.set_speed(1.35)
+	.set_weapon("Elite_Lava_Bucket")
+	.set_hp(100)
+	.set_atk(1)
+	.set_crit(10)
 	.set_flat(false)
+	.set_ballsize(3)
 	.set_unlocked_default(true);
