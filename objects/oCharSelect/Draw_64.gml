@@ -13,6 +13,7 @@ ui.foreach(function(name, pos, data) {
 	var char_name = Characters[$ selected_char].uiname;
 	var char_weapon = Weapons[$ Characters[$ selected_char].main_weapon];
 	var chars = struct_get_names(GameData.characters);
+	array_sort(chars, true);
 	if (!ui.node_is_visible(name)) {
 		exit;
 	}

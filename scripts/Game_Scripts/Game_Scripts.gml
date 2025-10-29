@@ -1086,7 +1086,7 @@ w.set_damage([12, 17, 17, 17, 17, 17, 17], [16, 21, 21, 21, 21, 21, 21]);
 w.set_delay(0);
 w.set_area(1.5);
 w.set_duration(90);
-w.set_knockback(20, 7);
+w.set_knockback(0, 0);
 w.set_enchants([
 	weapon_enchantments.Damage,
 	weapon_enchantments.Size,

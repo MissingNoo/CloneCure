@@ -82,7 +82,7 @@ audio_play_sound(
 	random_range(0.75, 1)
 );
 
-if (wid.knockback_speed[level] != 0 && other.knocktimer < AirLib.frame) {
+if (!other.boss and !other.miniboss and wid.knockback_speed[level] != 0 && other.knocktimer < AirLib.frame) {
 	other.knocktimer = AirLib.frame + wid.knockback_duration[level];
 	var push = wid.knockback_speed[level];
 

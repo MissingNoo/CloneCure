@@ -17,9 +17,9 @@ draw_sprite_ext(sCharShadow, 0, _x, _y, 1, 1, 0, c_white, 0.8);
 if (GameData.hp > 0 && GameData.hp < GameData.max_hp) {
 	draw_healthbar(
 		(_x - 13),
-		((_y - sprite_height) - 3),
+		((_y - 19) - 3),
 		(_x + 13),
-		((_y - sprite_height) - 6),
+		((_y - 19) - 6),
 		((GameData.hp / GameData.max_hp) * 100),
 		c_red,
 		c_lime,
