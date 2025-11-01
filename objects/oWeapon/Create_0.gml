@@ -9,6 +9,9 @@ clean_up = method(self, wid.clean_up);
 on_animation_end = method(self, wid.run_on_animation_end);
 level = wid.level;
 max_projectiles = wid.shoots[level];
+afterimage = wid.afterimage;
+afterimage_array = [];
+after_next_frame = AirLib.frame;
 if (image_xscale == 1) {
 	image_xscale = image_xscale * wid.area[level];
 	image_yscale = image_yscale * wid.area[level];

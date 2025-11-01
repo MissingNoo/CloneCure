@@ -396,8 +396,8 @@ function get_align(str) {
 		case "absolute":
 			align = flexpanel_position_type.absolute;
 			break;
-			//case "static":
-			//	align = flexpanel_position_type.static;
+			case "static":
+				align = flexpanel_position_type.static;
 			break;
 		default:
 			align = -1;

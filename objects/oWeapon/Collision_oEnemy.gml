@@ -45,13 +45,13 @@ if (dmg != before) {
 	was_crit = true;
 }
 global.lastproj = self;
-array_foreach(Player_Items, function(e, i) /*=>*/ {
+array_foreach(Player_Items, function(e, i) {
 	if (e != undefined) {
 		e.on_hit();
 	}
 });
 
-array_foreach(Player_Perks, function(e, i) /*=>*/ {
+array_foreach(Player_Perks, function(e, i) {
 	if (e.level > 0) {
 		e.before_hit();
 	}
@@ -59,7 +59,7 @@ array_foreach(Player_Perks, function(e, i) /*=>*/ {
 
 other.hp -= dmg;
 global.events.broadcast("damage_dealt", dmg);
-array_foreach(Player_Perks, function(e, i) /*=>*/ {
+array_foreach(Player_Perks, function(e, i) {
 	if (e.level > 0) {
 		e.after_hit();
 	}
