@@ -85,7 +85,7 @@ audio_play_sound(
 if (!other.boss and !other.miniboss and wid.knockback_speed[level] != 0 && other.knocktimer < AirLib.frame) {
 	other.knocktimer = AirLib.frame + wid.knockback_duration[level];
 	var push = wid.knockback_speed[level];
-
+	
 	var dir = point_direction(x, y, other.x, other.y);
 	var hspd = lengthdir_x(push, dir);
 	var vspd = lengthdir_y(push, dir);

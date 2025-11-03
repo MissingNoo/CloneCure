@@ -190,6 +190,8 @@
     {"$GMFolder":"","%Name":"Shop","folderPath":"folders/Sprites/Shop.yy","name":"Shop","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Gacha","folderPath":"folders/Sprites/Shop/Gacha.yy","name":"Gacha","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Stages","folderPath":"folders/Sprites/Stages.yy","name":"Stages","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Weapons","folderPath":"folders/Weapons.yy","name":"Weapons","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Collabs","folderPath":"folders/Weapons/Collabs.yy","name":"Collabs","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[

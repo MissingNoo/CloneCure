@@ -67,3 +67,4 @@ i.on_bought = function() {
 		GameData.bubbalevel++;
 	}
 };
+

@@ -35,7 +35,7 @@ function item(_name) : base_item(_name) constructor {
 		return self;
 	}
 	
-	static set_type = function(_type) /*=>*/ {
+	static set_type = function(_type) {
 		type = _type;
 		return self;
 	}
@@ -109,7 +109,7 @@ i.set_weight(2);
 i.set_type(item_type.Utility);
 i.set_sprite(sChickenFeather);
 i.set_max_level(3);
-i.set_on_bought(function() /*=>*/ {
+i.set_on_bought(function() {
 	GameData.revives++;
 });
 #endregion
@@ -120,7 +120,7 @@ i.set_weight(3);
 i.set_type(item_type.Stat);
 i.set_sprite(sEnergyDrink);
 i.set_max_level(3);
-i.set_on_bought(method(i, function() /*=>*/ {
+i.set_on_bought(method(i, function() {
 	self[$ "curlevel"] ??= 0;
 	self[$ "lowered_hp"] ??= false;
 	self[$ "hpdiff"] ??= 0;
@@ -161,10 +161,10 @@ i.set_weight(1);
 i.set_type(item_type.Utility);
 i.set_sprite(sKusogakiShackles);
 i.set_max_level(3);
-i.set_on_bought(method(i, function() /*=>*/ {
+i.set_on_bought(method(i, function() {
 	var reductions = [0, 33, 66, 1];//TODO: test all items
 	reduction = reductions[level];
-	array_foreach(Player_Items, function(e, p) /*=>*/ {
+	array_foreach(Player_Items, function(e, p) {
 		if (!is_undefined(e) and e.name != "kusogaki_shackles") { e.on_bought(); }
 	});
 }));
@@ -177,19 +177,19 @@ i.set_type(item_type.Stat);
 i.set_sprite(sResearcherCoat);
 i.set_max_level(3);
 i.set_cooldown(120, 120);
-i.set_on_bought(method(i, function() /*=>*/ {
+i.set_on_bought(method(i, function() {
 	var lv = [0, 2, 3, 4];
 	max_percent = lv[level];
 	self[$ "percent"] ??= 1;
 }));
-i.set_on_cooldown(method(i, function() /*=>*/ {
+i.set_on_cooldown(method(i, function() {
 	if (GameData.hp == GameData.max_hp) {
 		percent = clamp(percent + 1, 1, max_percent);
 	}
 	GameData.xp += GameData.needed_xp * (percent / 100);
 	//trace(percent);
 }));
-i.set_on_hurt(method(i, function() /*=>*/ {
+i.set_on_hurt(method(i, function() {
 	percent = 1;
 }));
 #endregion
@@ -201,7 +201,7 @@ i.set_type(item_type.Utility);
 i.set_sprite(sBreastplate);
 i.set_max_level(3);
 i.set_cooldown(120, 120);
-i.set_on_bought(method(i, function() /*=>*/ {
+i.set_on_bought(method(i, function() {
 	self[$ "curlevel"] ??= 0;
 	var rebound_lv = [0, 50, 60, 70];
 	rebound_chance = rebound_lv[level];
@@ -229,7 +229,7 @@ i.set_on_bought(method(i, function() /*=>*/ {
 	}
 	curlevel = level;
 }));
-i.set_on_hurt(method(i, function() /*=>*/ { //TODO: affect enemy projectiles, dont proc on stealth mode
+i.set_on_hurt(method(i, function() { //TODO: affect enemy projectiles, dont proc on stealth mode
 	var odmg = oPlayer.dmg;
 	oPlayer.dmg = oPlayer.dmg * 0.75;
 	if (irandom_range(0, 100) <= rebound_chance) {
@@ -253,11 +253,11 @@ i.set_weight(3);
 i.set_type(item_type.Stat);
 i.set_sprite(sBeetle);
 i.set_max_level(3);
-i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
+i.set_on_bought(method(i, function(recalc = false) {
 	var multiplier_lv = [0, 1.33, 1.66, 2];
 	multiplier = multiplier_lv[level];
 }));
-i.set_on_hit(method(i, function() /*=>*/ {
+i.set_on_hit(method(i, function() {
 	var projectile = global.lastproj;
 	if (instance_exists(projectile) and projectile.wid.from_skill) {
 		var mult = multiplier + ((1.5 * GameData.level) / 100);
@@ -272,7 +272,7 @@ i.set_weight(1);
 i.set_type(item_type.Utility);
 i.set_sprite(sBlacksmithGear);
 i.set_max_level(3);
-i.set_on_bought(method(i, function(recalc = false) /*=>*/ {
+i.set_on_bought(method(i, function(recalc = false) {
 	var enchant_lv = [0, 0, .5, 1];
 	enchant_bonus = enchant_lv[level];
 }));
@@ -284,7 +284,7 @@ i.set_sprite(sCandySweets)
 .set_type(item_type.Stat)
 .set_max_level(3)
 .set_weight(2)
-.set_on_bought(method(i, function() /*=>*/ {
+.set_on_bought(method(i, function() {
 	self[$ "curlevel"] ??= 0;
 	var haste_levels = [0, 40, 10, 10];
 	multiplier = 0.75;
@@ -297,7 +297,7 @@ i.set_sprite(sCandySweets)
 	}
 	curlevel = level;
 }))
-.set_on_hit(method(i, function() /*=>*/ {
+.set_on_hit(method(i, function() {
 	//trace($"mult: {multiplier}");
 	var projectile = global.lastproj;
 	if (instance_exists(projectile)) {
@@ -312,7 +312,7 @@ i.set_sprite(sCorporatePin)
 .set_type(item_type.Stat)
 .set_max_level(3)
 .set_weight(3) //TODO: Unknown?
-.set_on_bought(method(i, function() /*=>*/ {
+.set_on_bought(method(i, function() {
 	var multiplier_lv = [0, 0.02, 0.025, 0.03];
 	multiplier = multiplier_lv[level];
 }));
@@ -325,14 +325,14 @@ i.set_sprite(sCreditCard)
 .set_type(item_type.Utility)
 .set_max_level(5)
 .set_weight(3)
-.set_on_bought(method(i, function() /*=>*/ {
+.set_on_bought(method(i, function() {
 	var drop_levels = [0, 0.18	, 0.28, 0.38, 0.45, 0.5];
 	var reduction_levels = [0, 20, 25, 30, 35, 40];
 	reduction = reduction_levels[level];
 	drop_chance_buff = drop_levels[level];
 	var anvil_timers = [[0, 0], [120, 240], [105, 210], [90, 180], [75, 150], [60, 120]];
 	var anvil_time = anvil_timers[level];
-	call_later(irandom_range(anvil_time[0], anvil_time[1]), time_source_units_seconds, function () {
+	call_later(irandom_range(anvil_time[0], anvil_time[1]), time_source_units_seconds, function() {
 		instance_create_depth(GameData.player_pos.x, GameData.player_pos.y - 80, -2000, oAnvil);
 	});
 }));
@@ -344,7 +344,7 @@ i.set_sprite(sFaceMask)
 .set_type(item_type.Stat)
 .set_max_level(1)
 .set_weight(1)
-.set_on_bought(method(i, function() /*=>*/ { 
+.set_on_bought(method(i, function() { 
 	self[$ "curlevel"] ??= 0;
 	multiplier = 1.30;
 	taken_multiplier = 1.30;
@@ -388,7 +388,7 @@ i.set_sprite(sLimiter)
 .set_type(item_type.Stat)
 .set_max_level(3)
 .set_weight(4)
-.set_on_bought(method(i, function () {
+.set_on_bought(method(i, function() {
 	GameData.Pickup += 100; 
 }))
 #endregion
@@ -399,7 +399,7 @@ i.set_sprite(sMembership)
 .set_type(item_type.Stat)
 .set_max_level(3)
 .set_weight(3)
-.set_on_bought(method(i, function () {
+.set_on_bought(method(i, function() {
 	self[$"atkremainder"] ??= 30;
 	self[$"atkheld"] ??= 0;
 	self[$"defbonus"] ??= 0;
@@ -413,7 +413,7 @@ i.set_sprite(sMembership)
 	curlevel = level;
 }))
 .set_cooldown(seconds_to_frames(1), 1)
-.set_on_cooldown(method(i, function () {
+.set_on_cooldown(method(i, function() {
 	if (keyboard_check(vk_control)) {
 		GameData.stage_coins += 10;
 		oGameUI.update_ui();
@@ -442,7 +442,7 @@ i.set_sprite(sMembership)
 		atkheld = 0;
 	}
 }))
-.set_on_hurt(method(i, function() /*=>*/ {
+.set_on_hurt(method(i, function() {
 	var odmg = oPlayer.dmg;
 	oPlayer.dmg = oPlayer.dmg * (1 - (defbonus / 100));
 	//show_message($"{odmg}:{oPlayer.dmg}:B{defbonus}:{defheld}");

@@ -193,7 +193,12 @@ function weapon(_name) : base_item(_name) constructor {
     knockback_speed = array_create(8, 0);
 	sound = undefined;
 	collab = false;
-	afterimage = false;
+	afterimage = {
+		enabled : false,
+		delay : 0,
+		amount : 0,
+		color : c_yellow
+	};
 	run_create = function(){};
 	run_begin_step = function(){};
 	run_step = function(){};
@@ -353,8 +358,13 @@ function weapon(_name) : base_item(_name) constructor {
 	/// @function                set_afterimage(snd)
 	/// @description             Defines if the weapon have a afterimage.
 	/// @param {boolean}   bool.
-	static set_afterimage = function(b) {
-		afterimage = b;
+	static set_afterimage = function(b, _color = c_yellow, _delay = 5, _amount = 5) {
+		afterimage = {
+			enabled : b,
+			delay : _delay,
+			amount : _amount,
+			color : _color
+		};
 		return self;
 	}
 	/// @function                set_knockback(duration, speed)
@@ -737,7 +747,6 @@ w.set_enchants([
 	weapon_enchantments.Projectile,
 	weapon_enchantments.Cooldown
 ]);
-w.set_knockback(10, 15);
 w.set_hit_cooldown(30);
 w.set_hits([3, 3, 8, 8, 8, 8, 8]);
 w.set_duration(180);
@@ -1188,38 +1197,83 @@ w.set_step(function() {
 	}
 });
 #endregion
-/*
-#region 
-w = new weapon("Plug_Type_Asacoco");
-w.set_type(weapon_type.Multishot);
-w.set_sprite();
-w.set_weight();
-w.set_cooldown([], 0);
-w.set_hits();
-w.set_damage([], []);
-w.set_delay();
-w.set_duration();
-w.set_enchants([]);
-w.set_create();
-w.set_step();
-#endregion
+
 #region X-Potato
 w = new weapon("X-Potato");
+w.set_sprite(sXPotatoThumb, sXPotato);
 w.set_type(weapon_type.Multishot);
-w.set_sprite();
-w.set_weight();
-w.set_cooldown([], 0);
-w.set_hits();
-w.set_damage([], []);
-w.set_delay();
-w.set_duration();
-w.set_enchants([]);
-w.set_create();
-w.set_step();
+w.set_weight(2);
+w.set_cooldown([210, 210, 210, 210, 127, 127, 127], 1);
+w.set_shoots([1, 1, 2, 2, 2, 2, 4]);
+w.set_hits([10, 10, 10, 10, 999, 999, 999]);
+w.set_damage([7, 7, 7, 12, 12, 12, 12], 
+			 [11, 11, 11, 16, 16, 16, 16]);
+w.set_delay(5);
+w.set_area([1, 1, 1, 1, 1, 1.3, 1.3]);
+w.set_duration(180);
+w.set_afterimage(false);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Size,
+	weapon_enchantments.Projectile,
+	weapon_enchantments.Cooldown,
+]);
+w.set_create(function(){
+	speed = 6.5;
+	direction = random(360);
+	image_angle = direction;
+	rotdir = choose(1, -1);
+	rotspd = irandom_range(2, 4);
+	potatoes = wid.shoots[level] - 1;
+	potato_timer = AirLib.frame + wid.delay;
+	
+});
+w.set_step(function() {
+	if (last_frame < AirLib.frame) {
+		last_frame = AirLib.frame + 9999;
+		sprite_index = sXPotatoExplosion;
+		mindmg = [0, 16, 16, 16, 26, 26, 26, 26][level];
+		maxdmg = [0, 20, 20, 20, 31, 31, 31, 31][level];
+		if (level <= 1) {
+			image_xscale = image_xscale * 0.8;
+			image_yscale = image_yscale * 0.8;
+		}
+		speed = 0;
+	}
+	image_angle += rotspd * rotdir;
+	if (x > oPlayer.x + (oCam.baseW / 2) or
+		x < oPlayer.x - (oCam.baseW / 2) or 
+		y > oPlayer.y + (oCam.baseH / 2) or 
+		y < oPlayer.y - (oCam.baseH / 2)) {
+		direction = point_direction(x, y, oPlayer.x, oPlayer.y) + irandom_range(-90, 90); //TODO: Multiplayer
+	}
+	if (can_spawn_other and potatoes > 0 and potato_timer < AirLib.frame) {
+		potato_timer = AirLib.frame + wid.delay;
+		potatoes--;
+		weapon_create {
+			wid : wid,
+		});
+	}
+});
+w.set_on_hit(function() {
+	if (hits <= 0) {
+		hits = 9999;
+		sprite_index = sXPotatoExplosion;
+		mindmg = [0, 16, 16, 16, 26, 26, 26, 26][level];
+		maxdmg = [0, 20, 20, 20, 31, 31, 31, 31][level];
+		speed = 0;
+	}
+});
+w.set_on_animation_end(function() {
+	if (sprite_index == sXPotatoExplosion) instance_destroy();
+});
 #endregion
 
 #region description
 
 #endregion
 
+#endregion
+#region Collabs
 #endregion
