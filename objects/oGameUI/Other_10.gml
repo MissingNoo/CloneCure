@@ -1,64 +1,22 @@
 #region draws
-ui.add_draw("w0", 
-	AirUIFunctionStart
-	draw_weapon(_x, _y, _w, _h, name);
-	AirUIFunctionEnd
+ui.add_draw("killspr", 
+	AirUIDefaultDraw
 );
-ui.add_draw("w1", 
-	AirUIFunctionStart
-	draw_weapon(_x, _y, _w, _h, name);
-	AirUIFunctionEnd
+ui.add_draw("got_items", 
+	AirUIDefaultDraw
 );
-ui.add_draw("w2", 
-	AirUIFunctionStart
-	draw_weapon(_x, _y, _w, _h, name);
-	AirUIFunctionEnd
-);
-ui.add_draw("w3", 
-	AirUIFunctionStart
-	draw_weapon(_x, _y, _w, _h, name);
-	AirUIFunctionEnd
-);
-ui.add_draw("w4", 
-	AirUIFunctionStart
-	draw_weapon(_x, _y, _w, _h, name);
-	AirUIFunctionEnd
-);
-ui.add_draw("w5", 
-	AirUIFunctionStart
-	draw_weapon(_x, _y, _w, _h, name);
-	AirUIFunctionEnd
-);
-ui.add_draw("i0", 
-	AirUIFunctionStart
-	draw_item(_x, _y, _w, _h, name);
-	AirUIFunctionEnd
-);
-ui.add_draw("i1", 
-	AirUIFunctionStart
-	draw_item(_x, _y, _w, _h, name);
-	AirUIFunctionEnd
-);
-ui.add_draw("i2", 
-	AirUIFunctionStart
-	draw_item(_x, _y, _w, _h, name);
-	AirUIFunctionEnd
-);
-ui.add_draw("i3", 
-	AirUIFunctionStart
-	draw_item(_x, _y, _w, _h, name);
-	AirUIFunctionEnd
-);
-ui.add_draw("i4", 
-	AirUIFunctionStart
-	draw_item(_x, _y, _w, _h, name);
-	AirUIFunctionEnd
-);
-ui.add_draw("i5", 
-	AirUIFunctionStart
-	draw_item(_x, _y, _w, _h, name);
-	AirUIFunctionEnd
-);
+for (var i = 0; i <= 5; i++) { //Add weapon and items draw func
+	ui.add_draw($"w{i}", 
+		AirUIFunctionStart
+		draw_item(_x, _y, _w, _h, name, Player_Weapons, sUiLevelHeaderWhite, sUiDigitWhite, sUiEmptySlotWeapon);
+		AirUIFunctionEnd
+	);
+	ui.add_draw($"i{i}", 
+		AirUIFunctionStart
+		draw_item(_x, _y, _w, _h, name, Player_Items, sUiLevelHeaderYellow, sUiDigitYellow, sUiEmptySlotItem);
+		AirUIFunctionEnd
+	);
+}
 ui.add_draw("kills", 
 	AirUIFunctionStart
 	var str = $"[fa_middle][fDmg]{GameData.kills}";
@@ -132,9 +90,46 @@ ui.add_draw("hp",
 );
 ui.add_draw("exp", 
 	AirUIFunctionStart
-	if (surface_exists(xpsurf)) {
-		draw_surface_stretched(xpsurf, _x, _y, _w, _h);
-	}
+	draw_healthbar(
+				_x,
+				_y + 2,
+				_x + _w,
+				_y + _h - 6,
+				(GameData.xp / GameData.needed_xp) * 100,
+				c_red,
+				#5EDDEE,
+				#5EDDEE,
+				0,
+				1,
+				0
+			);
+			draw_healthbar(
+				_x,
+				_y + 2,
+				_x + _w,
+				_y + 5,
+				(GameData.xp / GameData.needed_xp) * 100,
+				c_red,
+				#90E4F0,
+				#90E4F0,
+				0,
+				1,
+				0
+			);
+			draw_healthbar(
+				_x,
+				_y + _h - 6,
+				_x + _w,
+				_y + _h - 4,
+				(GameData.xp / GameData.needed_xp) * 100,
+				c_red,
+				#56C3D8,
+				#56C3D8,
+				0,
+				1,
+				0
+			);
+	draw_sprite(sXPTitle, 0, _x, _y);
 	AirUIFunctionEnd
 );
 ui.add_draw("stage", 

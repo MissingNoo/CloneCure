@@ -11,25 +11,25 @@ if (GameData.is_paused && surface_exists(GameData.GameSurf)) {
 	);
 }
 ui.draw();
-xpsurf = surface_recreate(
-	xpsurf,
-	sprite_get_width(sExpBarBG),
-	sprite_get_height(sExpBarBG)
-);
-surface_set_target(xpsurf);
-draw_sprite(sExpBarBG, 0, 0, 0);
-draw_sprite_part(
-	sExpBar,
-	-1,
-	0,
-	0,
-	((GameData.xp / GameData.needed_xp) * sprite_get_width(sExpBar)),
-	sprite_get_height(sExpBarBG),
-	0,
-	0
-);
-draw_sprite(sExpBarBG, 1, 0, 0);
-surface_reset_target();
+//xpsurf = surface_recreate(
+	//xpsurf,
+	//sprite_get_width(sExpBarBG),
+	//sprite_get_height(sExpBarBG)
+//);
+//surface_set_target(xpsurf);
+//draw_sprite(sExpBarBG, 0, 0, 0);
+//draw_sprite_part(
+	//sExpBar,
+	//-1,
+	//0,
+	//0,
+	//((GameData.xp / GameData.needed_xp) * sprite_get_width(sExpBar)),
+	//sprite_get_height(sExpBarBG),
+	//0,
+	//0
+//);
+//draw_sprite(sExpBarBG, 1, 0, 0);
+//surface_reset_target();
 //draw_surface_stretched(
 	//xpsurf,
 	//0,

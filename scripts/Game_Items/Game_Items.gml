@@ -14,6 +14,7 @@ function item(_name) : base_item(_name) constructor {
 	type = item_type.Null;
 	lex = "Items";
 	damage_bonus = 1;
+	is_perk = false;
 	crit_debuff = 0;
 	on_hurt = function(){};
 	on_hit = function(){};

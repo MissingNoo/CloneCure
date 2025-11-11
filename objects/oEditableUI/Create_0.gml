@@ -1,4 +1,5 @@
 randomize();
+copy = {};
 scribble_font_set_default("Fnt_1")
 down = false;
 up = false;
@@ -177,7 +178,7 @@ load = function() {
 		),
 		true
 	);
-	//ui.edit_mode();
+	ui.edit_mode();
 };
 
 depth = depth + 1;
