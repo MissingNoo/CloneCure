@@ -1,5 +1,5 @@
 s();
-if (AirLib.frame > after_next_frame) {
+if (AirLib.frame > after_next_frame and !ghost) {
 	after_next_frame = AirLib.frame + afterimage.delay;
 	var b = {
 		index : floor(image_index),

@@ -1163,7 +1163,7 @@ w.set_delay(5);
 w.set_area(1);
 w.set_duration(45);
 w.set_knockback([0, 0, 0, 0, 0, 15, 15], [0, 0, 0, 0, 0, 7, 7]);
-w.set_afterimage(true);
+w.set_afterimage(true, c_yellow, 2, 3);
 w.set_enchants([
 	weapon_enchantments.Damage,
 	weapon_enchantments.Crit,

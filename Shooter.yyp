@@ -212,12 +212,13 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1400.0.911",
+    "IDEVersion":"2024.1400.1.921",
   },
   "name":"Shooter",
   "resources":[
     {"id":{"name":"tween_curves","path":"animcurves/tween_curves/tween_curves.yy",},},
     {"id":{"name":"NekoPresence","path":"extensions/NekoPresence/NekoPresence.yy",},},
+    {"id":{"name":"Fnt_1","path":"fonts/Fnt_1/Fnt_1.yy",},},
     {"id":{"name":"Fnt","path":"fonts/Fnt/Fnt.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
     {"id":{"name":"TGM_Credits","path":"notes/TGM_Credits/TGM_Credits.yy",},},
@@ -1581,9 +1582,9 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rInit","path":"rooms/rInit/rInit.yy",},},
+    {"roomId":{"name":"rUIEditor","path":"rooms/rUIEditor/rUIEditor.yy",},},
     {"roomId":{"name":"rMainMenu","path":"rooms/rMainMenu/rMainMenu.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
-    {"roomId":{"name":"rUIEditor","path":"rooms/rUIEditor/rUIEditor.yy",},},
     {"roomId":{"name":"rStage1","path":"rooms/rStage1/rStage1.yy",},},
     {"roomId":{"name":"rCharSelect","path":"rooms/rCharSelect/rCharSelect.yy",},},
     {"roomId":{"name":"rShop","path":"rooms/rShop/rShop.yy",},},

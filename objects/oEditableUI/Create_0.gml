@@ -1,4 +1,5 @@
 randomize();
+scribble_font_set_default("Fnt_1")
 down = false;
 up = false;
 edit_node = undefined;
@@ -170,7 +171,7 @@ load = function() {
 	ui = new window(
 		json_parse(
 			buffer_read(
-				buffer_load("/home/airgeadlamh/.config/DenoTest1/test.ui"),
+				buffer_load(global.filename),
 				buffer_text
 			)
 		),

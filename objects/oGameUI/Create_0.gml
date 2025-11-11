@@ -1,3 +1,7 @@
+md5_frame = AirLib.frame + 60;
+current_md5 = "";
+last_md5 = "";
+kill_enemies = false;
 ui = new window(global.game_uis.stage, false);
 ui.fit_to_gui();
 tempui = new window(global.game_uis.stage, false);

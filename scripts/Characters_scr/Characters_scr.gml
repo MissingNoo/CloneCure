@@ -159,7 +159,7 @@ c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaPortrait, sTitleTenma)
 c = new character("A_Debug");
 c.set_sprite(sTrickyIdle, sTrickyRun, sTrickyPortrait, sTrickyTitle)
 	.set_speed(1.35)
-	.set_weapon("X-Potato")
+	.set_weapon("BL_Book")
 	.set_hp(100)
 	.set_atk(1)
 	.set_crit(10)
