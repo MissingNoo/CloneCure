@@ -832,3 +832,54 @@ for (var i = 0; i < array_length(global.options); ++i) {
 }
 
 //global.inspector = flexpanel_node_get_struct(global.inspector); 
+function cache_container() constructor  {
+	data = {};
+	static cache = function (name, _data) {
+		struct_set(data, name, _data);
+		return self;
+	}
+	static get = function (name) {
+		return struct_get(data, name);
+	}
+	static is_cached = function (name) {
+		return struct_exists(data, name);
+	}
+	static flush = function () {
+		data = {};
+	}
+}
+global.flexcache = new cache_container();
+function airui_fit_height(spr, pos) {
+	var scale = 1;
+	var aa = pos.top + pos.height / 2;
+	do {
+		scale += .01;
+	} until (aa - (sprite_get_height_ext(spr, scale) / 2) <= pos.top);
+	scale -= 0.1;
+	return scale;
+}
+enum airui_fit {
+	width,
+	height,
+	stretch
+}
+function airui_draw_sprite_centered(name, spr, pos, fit, scalediv = 1) {
+	switch (fit) {
+		default:
+		case airui_fit.height:
+			if (!global.flexcache.is_cached(name)) {
+				global.flexcache.cache(name, airui_fit_height(spr, pos));
+			}
+			var scale = global.flexcache.get(name);
+			draw_sprite_ext(spr, 0,
+				(pos.left + pos.width / 2) - (sprite_get_width_ext(spr, scale) / 2),
+				(pos.top + pos.height / 2) - (sprite_get_height_ext(spr, scale) / 2),
+				scale * scalediv,
+				scale * scalediv,
+				0,
+				c_white,
+				1
+				);
+			break;
+	}
+}

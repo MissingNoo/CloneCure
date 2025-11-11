@@ -14,53 +14,23 @@ coinspr = new animated_sprite(sHolocoin);
 GameData.kills = 0;
 GameData.stage_coins = 0;
 
+
+
+
+
+
 draw_weapon = function (_x, _y, _w, _h, name) {
-	sscale = 1;
-					var aa = _y + _h / 2;
-					do {
-						sscale += .01;
-					} until (aa - (sprite_get_height_ext(sUiEmptySlotWeapon, sscale) / 2) <= _y);
-					sscale -= 0.1;
-					draw_sprite_ext(sUiEmptySlotWeapon, 0,
-					(_x + _w / 2) - (sprite_get_width_ext(sUiEmptySlotWeapon, sscale) / 2),
-					(_y + _h / 2) - (sprite_get_height_ext(sUiEmptySlotWeapon, sscale) / 2),
-					sscale / 2,
-					sscale / 2,
-					0,
-					c_white,
-					1
-				);
+			airui_draw_sprite_centered(name + "bg", sUiEmptySlotWeapon, {left:_x, top:_y, width : _w, height : _h}, airui_fit.height, 0.5);
 			var wp = Player_Weapons[real(string_digits(name))];
 			if (wp != undefined) {
 				var _sw = sprite_get_width(wp.sprite) / 2;
 				var _sh = sprite_get_height(wp.sprite) / 2;
-				//draw_sprite_stretched(wp.sprite, wp.level == wp.max_level ? 1 : 0, _x + _sw, _y + _sh, _w - (_sw * 2), _h - (_sh * 2));
-				//draw_sprite_ext(wp.sprite, wp.level == wp.max_level ? 1 : 0, _x + (_w / 2 ), _y + ((sprite_get_width(wp.sprite) * 2) / 2), sc, sc, 0, c_white, 1);
-				
-					sscale = 1;
-					var aa = _y + _h / 2;
-					do {
-						sscale += .01;
-					} until (aa - (sprite_get_height_ext(wp.sprite, sscale) / 2) <= _y);
-					sscale -= 0.1;
-				
-				draw_sprite_ext(
-					wp.sprite,
-					wp.level == wp.max_level ? 1 : 0,
-					(_x + _w / 2) - (sprite_get_width_ext(wp.sprite, sscale) / 2),
-					(_y + _h / 2) - (sprite_get_height_ext(wp.sprite, sscale) / 2),
-					sscale,
-					sscale,
-					0,
-					c_white,
-					1
-				);
-				
+				airui_draw_sprite_centered(name, wp.sprite, {left:_x, top:_y, width : _w, height : _h}, airui_fit.height);
 				draw_sprite_stretched(
 					wp.is_perk ? sUiLevelHeaderPink : sUiLevelHeaderWhite,
-					wp.level,
-					_x,
-					_y + _h,
+					0,
+					_x + _w - sprite_get_width(sUiLevelHeaderPink),
+					_y + _h - sprite_get_height(sUiLevelHeaderPink),
 					_w,
 					sprite_get_height(sUiLevelHeaderPink)
 				);
