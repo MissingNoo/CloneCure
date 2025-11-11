@@ -10,8 +10,7 @@ if (md5_frame < AirLib.frame) {
 			);
 		ui = new window(f, false);
 		ui.fit_to_gui();
-		tempui = new window(f, false);
-		tempui.fit_to_dimension(1280, 720);
+		event_user(0);
 	}
 	last_md5 = md5_file("/home/airgeadlamh/export.ui");
 }
