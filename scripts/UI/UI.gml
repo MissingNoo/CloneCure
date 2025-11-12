@@ -1928,7 +1928,7 @@ global.game_uis.stage = {
 				{
 					"name": "grid_panel7",
 					"data": {},
-					"flex": 1.0,
+					"flex": 2.0,
 					"nodes": [
 						{
 							"name": "panel_21727",
@@ -1952,16 +1952,8 @@ global.game_uis.stage = {
 					"width": 60.0,
 				},
 				{
-					"flexDirection": "row",
 					"data": {},
-					"flex": 2.0,
-					"padding": 0.0,
-					"width": 60.0,
-					"name": "grid_panel8",
-				},
-				{
-					"data": {},
-					"flex": 0.80000001192092896,
+					"flex": 1.5,
 					"nodes": [
 						{
 							"name": "panel_977",
@@ -2105,7 +2097,14 @@ global.game_uis.stage = {
 					],
 					"padding": 0.0,
 					"width": 60.0,
+					"name": "grid_panel8",
+				},
+				{
 					"name": "grid_panel9",
+					"padding": 0.0,
+					"data": {},
+					"flex": 2.0,
+					"width": 60.0,
 				}
 			],
 			"padding": 0.0,

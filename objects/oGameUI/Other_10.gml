@@ -1,10 +1,20 @@
 #region draws
+ui.add_draw("got_items", 
+	AirUIFunctionStart
+	lvlup_offset = lerp(lvlup_offset, instance_exists(oLevelUp) ? _h : 0, 0.1);
+	_y = area[1];
+	area[1] += lvlup_offset;
+	AirUIDrawDefaultSpr
+	items_surf = surface_recreate(items_surf, surface_get_width(application_surface), surface_get_height(application_surface));
+	draw_surface_part_area(items_surf, area);
+	AirUIFunctionEnd
+);
 ui.add_draw("killspr", 
 	AirUIDefaultDraw
 );
-ui.add_draw("got_items", 
-	AirUIDefaultDraw
-);
+//ui.add_draw("got_items", 
+	//AirUIDefaultDraw
+//);
 for (var i = 0; i <= 5; i++) { //Add weapon and items draw func
 	ui.add_draw($"w{i}", 
 		AirUIFunctionStart
