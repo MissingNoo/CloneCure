@@ -18,7 +18,7 @@ ui.foreach(function(name, pos, data) {
 		exit;
 	}
 	switch (name) {
-		case "char_list_1":
+		case "char_list_1_panel":
 			if (setmiddle) {
 				_x = middle;
 			}
@@ -738,3 +738,4 @@ stageinfo
 				break;
 		}
 	});
+ui.draw();

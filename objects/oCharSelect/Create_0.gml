@@ -1,3 +1,7 @@
+md5_frame = 0;
+last_md5 = "";
+
+//display_set_gui_maximise(1.5, 1.5);
 force_click = function() {
 	if (gui_can_interact()) {
 		forcez = true;
@@ -95,7 +99,7 @@ btnfunc = function() {
 	scribble($"[fa_center][fa_middle]{text}")
 		.scale(2)
 		.draw((area[0] + area[2]) / 2, area[1] + 25);
-	if (on_area || keyboard_selected) {
+	if (on_area) {
 		draw_set_alpha(0.25);
 		draw_sprite_stretched(
 			sUpgradeBackgroundWH,
@@ -108,17 +112,17 @@ btnfunc = function() {
 		draw_set_alpha(1);
 	}
 };
-on_area_func = function() {
-	oCharSelect.time.keyboard_selected = false;
-	oCharSelect.endless.keyboard_selected = false;
-	oCharSelect.stage.keyboard_selected = false;
-	keyboard_selected = true;
-	oCharSelect.stagemodeselected = array_get_index(oCharSelect.btn, self);
-};
+//on_area_func = function() {
+	//oCharSelect.time.keyboard_selected = false;
+	//oCharSelect.endless.keyboard_selected = false;
+	//oCharSelect.stage.keyboard_selected = false;
+	//keyboard_selected = true;
+	//global.currentelement = array_get_index(oCharSelect.btn, self);
+//};
 
 time = new button("Time");
 time.custom_draw = method(time, btnfunc);
-time.set_on_area_function(method(time, on_area_func));
+//time.set_on_area_function(method(time, on_area_func));
 time.use_text = false;
 time.desc = "test";
 time.set_function(function() {
@@ -127,7 +131,7 @@ time.set_function(function() {
 });
 endless = new button("Endless");
 endless.custom_draw = method(endless, btnfunc);
-endless.set_on_area_function(method(endless, on_area_func));
+//endless.set_on_area_function(method(endless, on_area_func));
 endless.use_text = false;
 endless.desc = "test";
 endless
@@ -137,7 +141,7 @@ endless
 	});
 stage = new button("Stage");
 stage.custom_draw = method(stage, btnfunc);
-stage.set_on_area_function(method(stage, on_area_func));
+//stage.set_on_area_function(method(stage, on_area_func));
 stage.use_text = false;
 stage.desc = "test";
 stage
@@ -145,7 +149,14 @@ stage
 		GameData.stage_mode = "STAGE";
 		forcez = true;
 	});
-btn = [stage, endless, time];
+btn = new ui_element_list();
+btn.add(
+	[
+		stage, 
+		endless, 
+		time
+	]
+)
 
 charscale = 4;
 chary = 180;
@@ -261,8 +272,10 @@ st.add("StageMode", {
 		forcez = false;
 		stagemodewasselected = false;
 		stageui.set_visible(true);
+		global.currentelement = endless;
 	},
 	step: function() {
+		btn.select(left_right);
 		if (input_check_pressed("accept") || forcez) {
 			stagemodewasselected = true;
 			st.change("Stage");
@@ -275,9 +288,9 @@ st.add("StageMode", {
 			st.change("Skin");
 		}
 		stagemodeselected = wrap(stagemodeselected + left_right, 0, 3);
-		for (var i = 0; i < array_length(btn); i++) {
-			btn[i].keyboard_selected = i == stagemodeselected;
-		}
+		//for (var i = 0; i < array_length(btn); i++) {
+			//btn[i].keyboard_selected = i == stagemodeselected;
+		//}
 	},
 	leave: function() {
 		forcez = false;

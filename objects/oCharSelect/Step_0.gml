@@ -1,4 +1,4 @@
-btn[stagemodeselected].keyboard_selected = true;
+//btn[stagemodeselected].keyboard_selected = true;
 charspr.animate();
 selectarrow.animate();
 if (left_right == 0) {

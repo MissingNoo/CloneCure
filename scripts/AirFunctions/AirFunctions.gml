@@ -1,10 +1,32 @@
 //feather disable all
 try {
 	GameData ??= {};
-}
-catch (error) {
+} catch (error) {
 	GameData = {};
 }
+
+#region disable if input installed
+//function input_check_pressed(k) {
+	//var _k = k;
+	//var f = false;
+	//if (!is_numeric(k)) {
+		//switch (k) {
+			//case "accept":
+				//k = "Z";
+				//break;
+			//case "cancel":
+				//k = "X";
+				//break;
+		//}
+		//_k = ord(string_upper(k));
+	//}
+	//if (f || keyboard_check_pressed(_k)) {
+		//return true;
+	//}
+	//return false;
+//}
+#endregion
+
 
 #region GUI Functions
 
@@ -121,14 +143,7 @@ function area_add_width_height(area) {
 
 function mouse_in_area(area) {
 	area = area_add_width_height(area);
-	return point_in_rectangle(
-		mouse_x,
-		mouse_y,
-		area[0],
-		area[1],
-		area[2],
-		area[3]
-	);
+	return point_in_rectangle(mouse_x, mouse_y, area[0], area[1], area[2], area[3]);
 }
 
 function mouse_in_area_gui(area) {
@@ -168,7 +183,7 @@ function draw_surface_part_area(surf, area) {
 global.listboxopen = false;
 global.elementselected = noone;
 global.listboxtimer = 60;
-
+global.currentelement = noone;
 function textbox() constructor {
 	type = "textbox";
 	only_numbers = false;
@@ -380,12 +395,12 @@ function button(_text) constructor {
 	use_text = true;
 	owner = noone;
 	text = _text;
+	unselect_on_leave = true;
 	original_area = [0, 0, 0, 0];
 	area = [0, 0, 0, 0];
 	selected_area = [0, 0, 0, 0];
 	pos = {left: 0, top: 0, width: 0, height: 0};
 	on_area = false;
-	keyboard_selected = false;
 	enabled = true;
 	gui = true;
 	sprite_back = AirLibDefaultButtonSprite;
@@ -460,8 +475,8 @@ function button(_text) constructor {
 	static on_click = function() {
 		if (
 			enabled
-			&& (gui ? mouse_in_area_gui(area) : mouse_in_area(area))
-			&& device_mouse_check_button_pressed(0, mb_left)
+			&& ((gui ? mouse_in_area_gui(area) : mouse_in_area(area)) or on_area)
+			&& (device_mouse_check_button_released(0, mb_left) or input_check_pressed("accept"))
 			&& gui_can_interact()
 		) {
 			func(self);
@@ -469,12 +484,14 @@ function button(_text) constructor {
 		}
 		return self;
 	};
-
 	static draw = function() {
 		if (area[0] == area[2]) {
 			exit;
 		}
-		on_click();
+		if (global.currentelement == self) {
+			on_click();
+		}
+		
 		//draw_set_color(c_black);
 		//draw_rectangle_area(area, false);
 		//draw_set_color(c_white);
@@ -486,20 +503,27 @@ function button(_text) constructor {
 		) {
 			global.reset_button = true;
 			on_area = true;
+			global.currentelement = self;
 			on_area_func();
 		} else {
 			if (on_area) {
+				if (unselect_on_leave and global.currentelement == self) {
+					global.currentelement = noone;
+				}
 				exit_area_func();
 			}
 			on_area = false;
 		}
-		if (keyboard_selected) {
-			if (!global.reset_button) {
-				on_area = true;
-			} else {
-				global.reset_button = false;
-				keyboard_selected = false;
-			}
+		//if (keyboard_selected) {
+			//if (!global.reset_button) {
+				//on_area = true;
+			//} else {
+				//global.reset_button = false;
+				//keyboard_selected = false;
+			//}
+		//}
+		if (global.currentelement == self) {
+			on_area = true;
 		}
 		if (on_area) {
 			area = selected_area;
@@ -531,7 +555,7 @@ function button(_text) constructor {
 			scribble($"[alpha,{alpha}][{color}][fa_center][fa_middle]{text}")
 				.scale_to_box(
 					abs(area[0] - area[2]) - string_width("X") - 2,
-					abs(area[1] - area[3]) - string_width("X") - 2,
+					abs(area[1] - area[3]),
 					true
 				)
 				.draw(area[0] + ((area[2] - area[0]) / 2), _y);
@@ -678,7 +702,7 @@ function gui_cant_interact_frames(frames = 10) {
 }
 
 function gui_can_interact() {
-	var can = !global.listboxopen && AirLib.listframe < AirLib.frame;// && AirLib.waitframe < AirLib.frame;
+	var can = !global.listboxopen && AirLib.listframe < AirLib.frame; // && AirLib.waitframe < AirLib.frame;
 	//gui_cant_interact_frames(10);
 	return can;
 }
@@ -794,6 +818,7 @@ function topdown_movement(owner, _spd) constructor {
 		return self;
 	};
 }
+
 /**
  * Used to animate sprites for manual drawing on objects
  * @param {any} spr Sprite to animate
@@ -805,14 +830,15 @@ function animated_sprite(spr) constructor {
 	last_f = sprite_get_number(sprite);
 	width = sprite_get_width(sprite);
 	height = sprite_get_height(sprite);
-	
+	repeat_animation = true;	
+
 	animation_end = function () {};
-	
+
 	static on_animation_end = function (f) {
 		animation_end = f;
 		return self;
 	}
-	
+
 	static set_sprite = function(spr) {
 		sprite = spr;
 		speed = sprite_get_speed(sprite);
@@ -822,12 +848,13 @@ function animated_sprite(spr) constructor {
 	};
 
 	static animate = function() {
-		f += speed / game_get_speed(gamespeed_fps);
-		if (ceil(f) == last_f) {
-			animation_end();
+		if (f <= last_f) {
+			f += speed / game_get_speed(gamespeed_fps);
 		}
 		if (f > last_f) {
-			f = 0;
+			if (repeat_animation)
+				f = 0;
+			on_animation_end();
 		}
 	};
 
@@ -923,7 +950,7 @@ function EventManager() constructor {
 		array_push(events[$ event], {instance, callback});
 	};
 
-	static broadcast = function(event, message = "") {
+	static broadcast = function(event, message) {
 		if (struct_exists(events, event)) {
 			for (var i = 0; i < array_length(events[$ event]); i++) {
 				var e = events[$ event][i];
@@ -951,12 +978,25 @@ function ui_element_list() constructor {
 	};
 
 	static next = function() {
-		selected = wrap(selected + 1, 0, array_length(list) - 1);
+		selected = wrap(selected + 1, 0, array_length(list));
+		global.currentelement = list[selected];
 	};
 
 	static previous = function() {
-		selected = wrap(selected - 1, 0, array_length(list) - 1);
+		selected = wrap(selected - 1, 0, array_length(list));
+		global.currentelement = list[selected];
 	};
+	
+	static select = function(num) {
+		if (num == 0) {
+			exit;
+		}
+		if (num > 0) {
+			next();
+		} else {
+			previous();
+		}
+	}
 
 	static get_selected = function() {
 		return list[selected];
@@ -969,34 +1009,37 @@ function ui_element_list() constructor {
 
 function checkbox(boolean = false) constructor {
 	checked = boolean;
-	type = "checkbox"
-	on_change = function(){};
-	area = [0,0,0,0];
+	type = "checkbox";
+	on_change = function() {};
+	area = [0, 0, 0, 0];
 	on_area = false;
 	custom_draw = false;
-	pos = {left:0,top:0,width:0,height:0};
-	static set_on_change = function (f) {
+	pos = {left: 0, top: 0, width: 0, height: 0};
+
+	static set_on_change = function(f) {
 		on_change = f;
 		return self;
-	}
-	static tick = function () {
+	};
+
+	static tick = function() {
 		if (gui_click(area[0], area[1], area[2], area[3])) {
 			checked = !checked;
 			on_change(checked);
 		}
 		return self;
-	}
-	static draw = function () {
+	};
+
+	static draw = function() {
 		tick();
 		if (custom_draw == false) {
 			draw_bg_fg(pos, self);
 		} else {
 			custom_draw(pos);
 		}
-			return self;
-			
-	}
-		static position = function(x, y, xx, yy) {
+		return self;
+	};
+
+	static position = function(x, y, xx, yy) {
 		var newarea = [x, y, xx, yy];
 		if (array_equals(area, newarea)) {
 			return self;
@@ -1005,4 +1048,72 @@ function checkbox(boolean = false) constructor {
 		pos = {left: x, top: y, width: xx - x, height: yy - y};
 		return self;
 	};
+}
+
+function touch_control() constructor {
+	device_mouse_dbclick_enable(false); // ignore second tap as right button
+	enabled = false;
+	device = undefined;
+	x = 0;
+	y = 0;
+	startx = undefined;
+	starty = undefined;
+
+	static get_direction = function() {
+		return point_direction(startx, starty, x, y);
+	};
+
+	static reset = function() {
+		x = 0;
+		y = 0;
+		startx = undefined;
+		starty = undefined;
+		device = undefined;
+		enabled = false;
+	};
+
+	#region Touch left right screen example
+	//GameData.touch = {left: new touch_control(), right: new touch_control()};
+	//for (var i = 0; i <= 1; i++) {
+	//var xm = device_mouse_x_to_gui(i);
+	//var ym = device_mouse_y_to_gui(i);
+	//var side = undefined;
+	//if (xm > gui_x_percent(50)) {
+	//side = "right";
+	//} else {
+	//side = "left";
+	//}
+	//var touch = GameData.touch[$ side];
+	//if (device_mouse_check_button(i, mb_left)) {
+	//if (touch.device == undefined) {
+	//touch.device = i;
+	//touch.enabled = true;
+	//}
+	//if (touch.device == i) {
+	//touch.startx ??= xm;
+	//touch.starty ??= ym;
+	//touch.x = xm;
+	//touch.y = ym;
+	//}
+	//}
+	//if (device_mouse_check_button_released(i, mb_left)) {
+	//if (touch.device == i) {
+	//touch.reset();
+	//}
+	//}
+	//}
+	#endregion
+}
+
+/// @desc Move linearly value A to value B in the specified amount.
+/// @param {Real} a First value.
+/// @param {Real} b Second value.
+/// @param {Real} amount Amount to move.
+/// @returns {Real}
+function approach(val1, val2, amount) {
+    if (val1 < val2) {
+        return min(val1 + amount, val2);
+    } else {
+        return max(val1 - amount, val2);
+    }
 }

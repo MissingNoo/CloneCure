@@ -1,3 +1,6 @@
+if (selected_option < 4) { 
+	global.currentelement = noone;
+}
 if (input_check_pressed("accept") || force_z) {
 	switch (selected_option) {
 		case 0:

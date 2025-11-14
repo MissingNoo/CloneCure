@@ -94,20 +94,6 @@ function eerp(_a, _b, _amount) {
 	return _a * exp(_amount * log2(_b / _a));
 }
 
-/// @desc Move linearly value A to value B in the specified amount.
-/// @param {Real} a First value.
-/// @param {Real} b Second value.
-/// @param {Real} amount Amount to move.
-/// @returns {Real}
-function approach(_a, _b, _amount) {
-	//return a - clamp(a-b, -amount, amount);
-	if (_a < _b) {
-		return min(_a + _amount, _b);
-	} else {
-		return max(_a - _amount, _b);
-	}
-}
-
 /// @desc Move linearly angle A to angle B in the specified amount.
 /// @param {Real} a First angle.
 /// @param {Real} b Second angle.

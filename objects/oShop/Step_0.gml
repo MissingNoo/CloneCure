@@ -72,15 +72,16 @@ switch (selecting) {
 		if (left && buybutton.enabled) {
 			buysell = 0;
 		}
-		buybutton.keyboard_selected = buysell == 0;
-		sellbutton.keyboard_selected = buysell == 1;
+		//buybutton.keyboard_selected = buysell == 0;
+		//sellbutton.keyboard_selected = buysell == 1;
+		global.currentelement = buysell == 1 ? sellbutton : buybutton;
 		if (confirm) {
 			switch (buysell) {
 				case 0:
-					buybutton.func();
+					buybutton.func(undefined);
 					break;
 				case 1:
-					sellbutton.func();
+					sellbutton.func(undefined);
 					break;
 			}
 		}

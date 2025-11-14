@@ -5,10 +5,10 @@ for (var i = array_length(bars) - 1; i >= 0; i--) {
 	}
 }
 //if (global.reset_button) {
-btns.foreach(function(e, i) {
-	if (e.on_area) {
-		oMainMenu.btns.selected = array_get_index(oMainMenu.btns.list, e);
-	}
-});
-btns.get_selected().keyboard_selected = true;
+//btns.foreach(function(e, i) {
+	//if (e.on_area) {
+		//oMainMenu.btns.selected = array_get_index(oMainMenu.btns.list, e);
+	//}
+//});
+//global.currentelement = btns.get_selected();
 //} 

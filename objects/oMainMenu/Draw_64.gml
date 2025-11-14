@@ -3,11 +3,8 @@
 //oo += (- input_check_pressed("left") + input_check_pressed("right")) * 0.05;
 //show_debug_message($"o {oo}");
 ui.foreach(function(name, pos, data) {
-	var spr = (data[$ "image"] != undefined && data[$ "image"] != "")
-		? asset_get_index(data.image)
-		: undefined;
-	spr = (spr != undefined && spr != -1) ? spr : sBlank;
-	var _x = pos.left, _y = pos.top, _w = pos.width, _h = pos.height;
+	AirUIDefaultSpr
+	AirUIArea
 	var _xc = _x + (_w / 1.5), _yc = _y + (_h / 1.5);
 	//draw_rectangle(_x, _y, _x + _w, _y + _h, true);
 	if (string_contains(name, "button")) {

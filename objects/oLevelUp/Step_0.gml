@@ -1,7 +1,3 @@
-
-if (device_mouse_check_button(2, mb_left)) {//TODO:Remove
-	instance_destroy();
-}
 for (var i = 0; i < array_length(right_offset); i++) {
 	right_offset[i] = lerp(right_offset[i], 0, 0.2);
 }
@@ -19,23 +15,26 @@ if (selected_option < 4) {
 }
 switch (selected_option) {
 	case 4:
-		reroll.keyboard_selected = true;
-		eliminate.keyboard_selected = false;
-		hold.keyboard_selected = false;
+		global.currentelement = reroll;
+		//reroll.keyboard_selected = true;
+		//eliminate.keyboard_selected = false;
+		//hold.keyboard_selected = false;
 		break;
 	case 5:
-		reroll.keyboard_selected = false;
-		eliminate.keyboard_selected = true;
-		hold.keyboard_selected = false;
+		global.currentelement = eliminate;
+		//reroll.keyboard_selected = false;
+		//eliminate.keyboard_selected = true;
+		//hold.keyboard_selected = false;
 		break;
 	case 6:
-		reroll.keyboard_selected = false;
-		eliminate.keyboard_selected = false;
-		hold.keyboard_selected = true;
+		global.currentelement = hold;
+		//reroll.keyboard_selected = false;
+		//eliminate.keyboard_selected = false;
+		//hold.keyboard_selected = true;
 		break;
 	default:
-		reroll.keyboard_selected = false;
-		eliminate.keyboard_selected = false;
-		hold.keyboard_selected = false;
+		//reroll.keyboard_selected = false;
+		//eliminate.keyboard_selected = false;
+		//hold.keyboard_selected = false;
 		break;
 }

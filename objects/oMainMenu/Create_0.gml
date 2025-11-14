@@ -34,19 +34,20 @@ struct_foreach(buttons, function(n, e) {
 		$"sTitle{string_first_letter_upper_case(string_replace(n, "button_", ""))}"
 	);
 	e.custom_draw = method(e, function() {
-		var sprw = sprite_get_width_ext(top_spr, 2) / 2;
-		var sprh = sprite_get_height_ext(top_spr, 2) / 2;
-		draw_sprite_ext(
-			top_spr,
-			on_area,
-			area[0] + sprw,
-			area[1] + sprh,
-			2,
-			2,
-			0,
-			c_white,
-			1
-		);
+		airui_draw_sprite_centered(text, top_spr, pos, airui_fit.height, 1, 1, on_area);
+		//var sprw = sprite_get_width_ext(top_spr, 2) / 2;
+		//var sprh = sprite_get_height_ext(top_spr, 2) / 2;
+		//draw_sprite_ext(
+			//top_spr,
+			//on_area,
+			//area[0] + sprw,
+			//area[1] + sprh,
+			//2,
+			//2,
+			//0,
+			//c_white,
+			//1
+		//);
 	});
 });
 btns = new ui_element_list();
@@ -97,3 +98,6 @@ array_sort(chars, true);
 //repeat (30) {
 //array_push(chars, chars[irandom(array_length(chars) - 1)]);
 //} 
+btns.foreach(function(e, i) {
+	e.unselect_on_leave = false;
+});

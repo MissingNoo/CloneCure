@@ -1,9 +1,9 @@
 #region draws
 ui.add_draw("got_items", 
 	AirUIFunctionStart
-	lvlup_offset = lerp(lvlup_offset, instance_exists(oLevelUp) ? _h : 0, 0.1);
-	_y = area[1];
-	area[1] += lvlup_offset;
+	lvlup_offset = approach(lvlup_offset, instance_exists(oLevelUp) ? _h : 0, 10);
+	_y += lvlup_offset;
+	area[1] = _y + lvlup_offset;
 	AirUIDrawDefaultSpr
 	items_surf = surface_recreate(items_surf, surface_get_width(application_surface), surface_get_height(application_surface));
 	draw_surface_part_area(items_surf, area);
@@ -100,7 +100,8 @@ ui.add_draw("hp",
 );
 ui.add_draw("exp", 
 	AirUIFunctionStart
-	draw_healthbar(
+	if (!use_old_ui) {
+		draw_healthbar(
 				_x,
 				_y + 2,
 				_x + _w,
@@ -140,6 +141,9 @@ ui.add_draw("exp",
 				0
 			);
 	draw_sprite(sXPTitle, 0, _x, _y);
+	} else if (surface_exists(xpsurf)) {
+		draw_surface_stretched(xpsurf, 0, 0, gui_w, 120)
+	}
 	AirUIFunctionEnd
 );
 ui.add_draw("stage", 

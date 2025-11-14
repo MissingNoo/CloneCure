@@ -15,4 +15,15 @@ buttons
 	.set_function(function() {
 		game_end();
 	});
+btns = new ui_element_list();
+btns.add(
+	[
+		buttons.button_character,
+		buttons.button_stamps,
+		buttons.button_collabs,
+		buttons.button_resume,
+		buttons.button_settings,
+		buttons.button_quit
+	]
+);
 stats = instance_create_depth(x, y, depth, oPlayerStatsUI);
