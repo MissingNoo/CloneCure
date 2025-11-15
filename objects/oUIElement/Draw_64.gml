@@ -2,7 +2,7 @@
 try {
 	draw_set_color(c_white);
 	if (!is_undefined(data[$ "tags"])) {
-		flexpanel_draw_tags(data.tags, {top: y, left: x, width, height});
+		flexpanel_draw_tags("", {top: y, left: x, width, height}, data);
 	}
 	if (draw_back) {
 		switch (AirLibDefaultStyle) {
@@ -77,17 +77,22 @@ try {
 	
 	// Draw text, can optionally be centred
 	if (text != "" && element == undefined) {
-		if (center_text) {
-			draw_set_halign(fa_center);
-			draw_set_valign(fa_middle);
+		//if (center_text) {
+		//draw_set_halign(fa_center);
+		//draw_set_valign(fa_middle);
+		//}
+		//draw_set_color(c_black);
+		var _add = "";
+		if (string_contains(name, "_elnam")) {
+			_add = "[Fnt]";
 		}
-		draw_set_color(c_black);
-		draw_text(x + (width / 2) * center_text, y + (height / 2) * center_text, text);
-		draw_set_color(c_black);
-		if (center_text) {
-			draw_set_halign(fa_left);
-			draw_set_valign(fa_top);
-		}
+		scribble($"[c_black]{text}").draw(x, y + height / 2);
+		//draw_text(x + (width / 2) * center_text, y + (height / 2) * center_text, text);
+		//draw_set_color(c_black);
+		//if (center_text) {
+		//draw_set_halign(fa_left);
+		//draw_set_valign(fa_top);
+		//}
 	}
 	
 	if (element != undefined) {
@@ -304,7 +309,6 @@ try {
 		draw_set_color(c_white);
 	}
 	//scribble($"[c_blue][fa_center][fa_middle]{type}").draw(x + (width / 2), y + (height / 2)); 
-		
 }
 catch (error) {
 	show_debug_message(error);

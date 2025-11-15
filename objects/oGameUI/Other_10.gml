@@ -5,8 +5,10 @@ ui.add_draw("got_items",
 	_y += lvlup_offset;
 	area[1] = _y + lvlup_offset;
 	AirUIDrawDefaultSpr
-	items_surf = surface_recreate(items_surf, surface_get_width(application_surface), surface_get_height(application_surface));
-	draw_surface_part_area(items_surf, area);
+	items_surf = surface_recreate(items_surf, gui_w, gui_h);
+	items_surf_copy = surface_recreate(items_surf_copy, _w, _h);
+	surface_copy_part(items_surf_copy, 0, 0, items_surf, _x, _y, _w, _h);
+	draw_surface_stretched(items_surf_copy, _x, _y,_w, _h);
 	AirUIFunctionEnd
 );
 ui.add_draw("killspr", 

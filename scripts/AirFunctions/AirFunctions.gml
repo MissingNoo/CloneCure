@@ -147,6 +147,9 @@ function mouse_in_area(area) {
 }
 
 function mouse_in_area_gui(area) {
+	if (is_struct(area)) {
+		area = [area.left, area.top, area.left + area.width, area.top + area.height];
+	}
 	area = area_add_width_height(area);
 	return point_in_rectangle(
 		device_mouse_x_to_gui(0),
@@ -476,7 +479,7 @@ function button(_text) constructor {
 		if (
 			enabled
 			&& ((gui ? mouse_in_area_gui(area) : mouse_in_area(area)) or on_area)
-			&& (device_mouse_check_button_released(0, mb_left) or input_check_pressed("accept"))
+			&& (device_mouse_check_button_pressed(0, mb_left) or input_check_pressed("accept"))
 			&& gui_can_interact()
 		) {
 			func(self);

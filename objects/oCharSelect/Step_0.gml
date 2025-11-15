@@ -65,7 +65,7 @@ if (keyboard_check_released(ord("Z")) or forcez) {
 		skinui.set_visible(true);
 		ui.node_visible("label_title");
 		ui.node_visible("char_list_1");
-		ui.node_visible("char_list_2");
+		ui.node_visible("char_list_2_panel");
 		exit;
 	}
 	

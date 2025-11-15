@@ -1,4 +1,5 @@
 var scale = os_type == os_android ? 1.5 : 0.25;
+//var scale = 1;
 if (os_type != os_android) {
 	display_set_gui_size(1280, 720);
 } else {

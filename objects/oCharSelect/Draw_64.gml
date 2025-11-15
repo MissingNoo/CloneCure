@@ -18,216 +18,216 @@ ui.foreach(function(name, pos, data) {
 		exit;
 	}
 	switch (name) {
-		case "char_list_1_panel":
-			if (setmiddle) {
-				_x = middle;
-			}
-			for (var offset = 0, yoffset = 0, i = 0; i <= 19; i++) {
-				var xoff2 = round(charxoff * (i <= 9 ? 1 : -1));
-				draw_sprite_stretched(
-					sCharFG,
-					1,
-					_x + offset - 1 + xoff2,
-					_y + yoffset - 1,
-					88,
-					64
-				);
-				if (i > struct_names_count(GameData.characters) - 1) {
-					draw_sprite_stretched(
-						sCharLock,
-						0,
-						_x + offset + xoff2,
-						_y + yoffset,
-						87,
-						63
-					);
-				} else {
-					draw_sprite_stretched(
-						GameData.characters[$ chars[i]].portrait,
-						0,
-						_x + offset + xoff2,
-						_y + yoffset,
-						87,
-						63
-					);
-					if (
-						mouse_in_area_gui(
-							[
-								_x + offset + xoff2,
-								_y + yoffset,
-								_x + offset + 87 + xoff2,
-								_y + yoffset + 63
-							]
-						)
-					) {
-						if (lmxx != mx || lmy != my) {
-							lmxx = mx;
-							lmy = my;
-							if (selected != i) {
-								selected = i;
-								select_char();
-							}
-						}
-						if (
-							st.get_current_state() == "Char"
-							&& selected == i
-							&& device_mouse_check_button_pressed(0, mb_left)
-						) {
-							force_click();
-						}
-					}
-				}
-				//draw_roundrect_ext(
-				//_x + offset - 1 + xoff2,
-				//_y + yoffset - 1,
-				//_x + offset + 88 + xoff2,
-				//_y + yoffset + 64,
-				//charportround,
-				//charportround,
-				//true
+		//case "char_list_1":
+			//if (setmiddle) {
+				//_x = middle;
+			//}
+			//for (var offset = 0, yoffset = 0, i = 0; i <= 19; i++) {
+				//var xoff2 = round(charxoff * (i <= 9 ? 1 : -1));
+				//draw_sprite_stretched(
+					//sCharFG,
+					//1,
+					//_x + offset - 1 + xoff2,
+					//_y + yoffset - 1,
+					//88,
+					//64
 				//);
-				draw_sprite_stretched(
-					sCharFG,
-					0,
-					_x + offset - 1 + xoff2,
-					_y + yoffset - 1,
-					88,
-					64
-				);
-				if (i == selected) {
-					draw_sprite_stretched(
-						sMenuCharSelectCursor,
-						-1,
-						_x + offset + xoff2,
-						_y + yoffset,
-						87,
-						63
-					);
-				}
-				offset += char1o;
-				if (!setmiddle && offset > middle) {
-					middle = offset + char1o;
-				}
-				if (i == 9) {
-					offset = 0;
-					yoffset += char1yo;
-				}
-			}
-			if (!setmiddle) {
-				setmiddle = true;
-				middle = (display_get_gui_width() / 2) - (middle / 2);
-			}
-			break;
+				//if (i > struct_names_count(GameData.characters) - 1) {
+					//draw_sprite_stretched(
+						//sCharLock,
+						//0,
+						//_x + offset + xoff2,
+						//_y + yoffset,
+						//87,
+						//63
+					//);
+				//} else {
+					//draw_sprite_stretched(
+						//GameData.characters[$ chars[i]].portrait,
+						//0,
+						//_x + offset + xoff2,
+						//_y + yoffset,
+						//87,
+						//63
+					//);
+					//if (
+						//mouse_in_area_gui(
+							//[
+								//_x + offset + xoff2,
+								//_y + yoffset,
+								//_x + offset + 87 + xoff2,
+								//_y + yoffset + 63
+							//]
+						//)
+					//) {
+						//if (lmxx != mx || lmy != my) {
+							//lmxx = mx;
+							//lmy = my;
+							//if (selected != i) {
+								//selected = i;
+								//select_char();
+							//}
+						//}
+						//if (
+							//st.get_current_state() == "Char"
+							//&& selected == i
+							//&& device_mouse_check_button_pressed(0, mb_left)
+						//) {
+							//force_click();
+						//}
+					//}
+				//}
+				////draw_roundrect_ext(
+				////_x + offset - 1 + xoff2,
+				////_y + yoffset - 1,
+				////_x + offset + 88 + xoff2,
+				////_y + yoffset + 64,
+				////charportround,
+				////charportround,
+				////true
+				////);
+				//draw_sprite_stretched(
+					//sCharFG,
+					//0,
+					//_x + offset - 1 + xoff2,
+					//_y + yoffset - 1,
+					//88,
+					//64
+				//);
+				//if (i == selected) {
+					//draw_sprite_stretched(
+						//sMenuCharSelectCursor,
+						//-1,
+						//_x + offset + xoff2,
+						//_y + yoffset,
+						//87,
+						//63
+					//);
+				//}
+				//offset += char1o;
+				//if (!setmiddle && offset > middle) {
+					//middle = offset + char1o;
+				//}
+				//if (i == 9) {
+					//offset = 0;
+					//yoffset += char1yo;
+				//}
+			//}
+			//if (!setmiddle) {
+				//setmiddle = true;
+				//middle = (display_get_gui_width() / 2) - (middle / 2);
+			//}
+			//break;
 
-		case "char_list_2":
-			if (setmiddle2) {
-				_x = middle2;
-			}
-			for (var offset = 0, yoffset = 0, i = 20; i <= 46; i++) {
-				var xoff2 = 0;
-				if (i >= 20) {
-					xoff2 = charxoff * (i >= 20 ? 1 : -1);
-				}
-				if (i >= 29) {
-					xoff2 = charxoff * (i >= 29 ? -1 : 1);
-				}
-				if (i >= 38) {
-					xoff2 = charxoff * (i >= 38 ? 1 : -1);
-				}
-				draw_sprite_stretched(
-					sCharFG,
-					1,
-					_x + offset - 1 + xoff2,
-					_y + yoffset - 1,
-					88,
-					64
-				);
-				if (i > struct_names_count(GameData.characters) - 1) {
-					draw_sprite_stretched(
-						sCharLock,
-						0,
-						_x + offset + xoff2,
-						_y + yoffset,
-						87,
-						63
-					);
-				} else {
-					draw_sprite_stretched(
-						GameData.characters[$ chars[i]].portrait,
-						0,
-						_x + offset + xoff2,
-						_y + yoffset,
-						87,
-						63
-					);
-					if (
-						mouse_in_area_gui(
-							[
-								_x + offset + xoff2,
-								_y + yoffset,
-								_x + offset + 87,
-								_y + yoffset + 63
-							]
-						)
-					) {
-						if (lmxx != mx || lmy != my) {
-							lmxx = mx;
-							lmy = my;
-							if (selected != i) {
-								selected = i;
-								select_char();
-							}
-						}
-						if (
-							st.get_current_state() == "Char"
-							&& selected == i
-							&& device_mouse_check_button_pressed(0, mb_left)
-						) {
-							force_click();
-						}
-					}
-				}
-				//draw_roundrect_ext(
-				//_x + offset - 1 + xoff2,
-				//_y + yoffset - 1,
-				//_x + offset + 88 + xoff2,
-				//_y + yoffset + 64,
-				//charportround,
-				//charportround,
-				//true
+		//case "char_list_2_panel":
+			//if (setmiddle2) {
+				//_x = middle2;
+			//}
+			//for (var offset = 0, yoffset = 0, i = 20; i <= 46; i++) {
+				//var xoff2 = 0;
+				//if (i >= 20) {
+					//xoff2 = charxoff * (i >= 20 ? 1 : -1);
+				//}
+				//if (i >= 29) {
+					//xoff2 = charxoff * (i >= 29 ? -1 : 1);
+				//}
+				//if (i >= 38) {
+					//xoff2 = charxoff * (i >= 38 ? 1 : -1);
+				//}
+				//draw_sprite_stretched(
+					//sCharFG,
+					//1,
+					//_x + offset - 1 + xoff2,
+					//_y + yoffset - 1,
+					//88,
+					//64
 				//);
-				draw_sprite_stretched(
-					sCharFG,
-					0,
-					_x + offset - 1 + xoff2,
-					_y + yoffset - 1,
-					88,
-					64
-				);
-				if (i == selected) {
-					draw_sprite_stretched(
-						sMenuCharSelectCursor,
-						-1,
-						_x + offset + xoff2,
-						_y + yoffset,
-						87,
-						63
-					);
-				}
-				offset += char1o;
-				if (!setmiddle2 && offset > middle2) {
-					middle2 = offset + char1o;
-				}
-				if (i == 28 || i == 37) {
-					offset = 0;
-					yoffset += char1yo;
-				}
-			}
-			if (!setmiddle2) {
-				setmiddle2 = true;
-				middle2 = (display_get_gui_width() / 2) - (middle2 / 2) + (char1o / 2);
-			}
-			break;
+				//if (i > struct_names_count(GameData.characters) - 1) {
+					//draw_sprite_stretched(
+						//sCharLock,
+						//0,
+						//_x + offset + xoff2,
+						//_y + yoffset,
+						//87,
+						//63
+					//);
+				//} else {
+					//draw_sprite_stretched(
+						//GameData.characters[$ chars[i]].portrait,
+						//0,
+						//_x + offset + xoff2,
+						//_y + yoffset,
+						//87,
+						//63
+					//);
+					//if (
+						//mouse_in_area_gui(
+							//[
+								//_x + offset + xoff2,
+								//_y + yoffset,
+								//_x + offset + 87,
+								//_y + yoffset + 63
+							//]
+						//)
+					//) {
+						//if (lmxx != mx || lmy != my) {
+							//lmxx = mx;
+							//lmy = my;
+							//if (selected != i) {
+								//selected = i;
+								//select_char();
+							//}
+						//}
+						//if (
+							//st.get_current_state() == "Char"
+							//&& selected == i
+							//&& device_mouse_check_button_pressed(0, mb_left)
+						//) {
+							//force_click();
+						//}
+					//}
+				//}
+				////draw_roundrect_ext(
+				////_x + offset - 1 + xoff2,
+				////_y + yoffset - 1,
+				////_x + offset + 88 + xoff2,
+				////_y + yoffset + 64,
+				////charportround,
+				////charportround,
+				////true
+				////);
+				//draw_sprite_stretched(
+					//sCharFG,
+					//0,
+					//_x + offset - 1 + xoff2,
+					//_y + yoffset - 1,
+					//88,
+					//64
+				//);
+				//if (i == selected) {
+					//draw_sprite_stretched(
+						//sMenuCharSelectCursor,
+						//-1,
+						//_x + offset + xoff2,
+						//_y + yoffset,
+						//87,
+						//63
+					//);
+				//}
+				//offset += char1o;
+				//if (!setmiddle2 && offset > middle2) {
+					//middle2 = offset + char1o;
+				//}
+				//if (i == 28 || i == 37) {
+					//offset = 0;
+					//yoffset += char1yo;
+				//}
+			//}
+			//if (!setmiddle2) {
+				//setmiddle2 = true;
+				//middle2 = (display_get_gui_width() / 2) - (middle2 / 2) + (char1o / 2);
+			//}
+			//break;
 
 		case "label_title":
 			draw_set_alpha(0.25);

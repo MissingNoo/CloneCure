@@ -20,11 +20,7 @@ forcez = false;
 repeat (6) {
 	instance_create_depth(irandom(gui_w), 0, 1000, oTriangle);
 }
-ui = new window(global.game_uis.select, false);
-ui.fit_to_gui();
-ui.node_visible("label_title");
-ui.node_visible("char_list_1");
-ui.node_visible("char_list_2");
+
 skinui = new window(global.game_uis.skin_area);
 skinui.fit_to_gui();
 skinui.set_visible(false);
@@ -169,14 +165,22 @@ dbg_section("Position");
 create_view_from_instance(self);
 left_right = 0;
 up_down = 0;
+
+ui = new window(variable_clone(global.game_uis.select), false);
+ui.fit_to_gui();
+event_user(0);
+//ui.node_visible("label_title", true);
+//ui.node_visible("char_list_1_panel", true);
+//ui.node_visible("char_list_2_panel", true);
+
 st = new SnowState("Char");
 st.add("Char", {
 	enter: function() {
 		charxoff = 1800;
 		skinui.set_visible(false);
 		ui.node_visible("label_title", true);
-		ui.node_visible("char_list_1", true);
-		ui.node_visible("char_list_2", true);
+		ui.node_visible("char_list_1_panel", true);
+		ui.node_visible("char_list_2_panel", true);
 		character_was_selected = false;
 	},
 	step: function() {
@@ -217,8 +221,8 @@ st.add("Skin", {
 		skin_was_selected = false;
 		skinui.set_visible(true);
 		ui.node_visible("label_title", false);
-		ui.node_visible("char_list_1", false);
-		ui.node_visible("char_list_2", false);
+		ui.node_visible("char_list_1_panel", false);
+		ui.node_visible("char_list_2_panel", false);
 	},
 	step: function() {
 		//var _left_right = - input_check_pressed("left") + input_check_pressed("right");
@@ -263,8 +267,8 @@ st.add("Skin", {
 	leave: function() {
 		forcez = false;
 		ui.node_visible("label_title", false);
-		ui.node_visible("char_list_1", false);
-		ui.node_visible("char_list_2", false);
+		ui.node_visible("char_list_1_panel", false);
+		ui.node_visible("char_list_2_panel", false);
 	},
 });
 st.add("StageMode", {
