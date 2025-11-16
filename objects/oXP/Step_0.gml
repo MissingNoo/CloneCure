@@ -1,3 +1,4 @@
+if disabled exit;
 if (magnetized) {
 	direction = point_direction(x, y, oPlayer.x, oPlayer.y);
 	speed = GameData.SPD + 1;
@@ -17,6 +18,9 @@ if (!is_undefined(near) && !instance_exists(near)) {
 if (!is_undefined(near) && place_meeting(x, y, near)) {
 	following = false;
 	xp += near.xp;
-	instance_destroy(near);
+	//instance_destroy(near);
+	ds_queue_enqueue(GameData.xp_list, near);
+	near.disabled = true;
+	near = undefined;
 	event_perform(ev_create, 0);
 }

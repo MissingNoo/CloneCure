@@ -56,7 +56,7 @@ if (spawn_frame < AirLib.frame) {
 		}
 	}
 }
-queue_repeats = clamp(queue_repeats + (fps_average > 80 ? 1 : -1), 1, enemy_amount);
+queue_repeats = clamp(queue_repeats + (fps_average > 90 ? 1 : -1), 1, enemy_amount);
 repeat (queue_repeats) {
 	if (ds_queue_size(dir_queue) > 0 && !GameData.is_paused) {
 		var e = ds_queue_dequeue(dir_queue);

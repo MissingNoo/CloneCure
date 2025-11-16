@@ -62,3 +62,16 @@ dmg = 0;
 xplist = ds_list_create();
 healframe = 0;
 Player_Items = array_create(6, undefined);
+ds_queue_clear(GameData.xp_list);
+ds_queue_clear(GameData.dmg_list);
+repeat (80) {
+	var xx = instance_create_depth(0, 0, depth + 1, oXP, {disabled : true});
+	ds_queue_enqueue(GameData.xp_list, xx);
+	var yy = instance_create_depth(
+		0,
+		0,
+		depth - 1,
+		oDamageText,
+		{dir: abs(image_xscale), dmg: 0, critical: false}
+	);
+}

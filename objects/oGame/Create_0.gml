@@ -1,6 +1,8 @@
 // surf = surface_create(surface_get_width(application_surface), surface_get_height(application_surface));
 fullscreen = false;
 GameData.mouseAim = false;
+GameData.xp_list = ds_queue_create();
+GameData.dmg_list = ds_queue_create();
 a = 1;
 b = 1;
 dbg = dbg_view("oGame", false);

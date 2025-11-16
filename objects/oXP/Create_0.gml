@@ -13,6 +13,7 @@ join = new air_timer(180, method(self, function() {
 	y -= 10000;
 	if (
 		near.sprite_index != sXPMagnet
+		&& !near.disabled
 		&& !near.following
 		&& distance_to_object(near) < 40
 	) {

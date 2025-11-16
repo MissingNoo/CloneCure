@@ -1,4 +1,5 @@
 function EventSpawnDirectionLocked (data){
+	oStage.queue_repeats = oStage.queue_repeats / 2;
 	var enemy = check_enemy(data.id);
 	show_debug_message($"[STAGE] spawning {enemy} dirlock!");
 	var offset = data[$"offset"] ?? 0;
@@ -24,6 +25,7 @@ function check_enemy(_id) {
 	return is_undefined(Enemies[$ _id]) ? "shrimp" : _id;
 }
 function EventSpawnHorde(data){
+	oStage.queue_repeats = oStage.queue_repeats / 2;
 	var enemy = check_enemy(data.id);
 	show_debug_message($"[STAGE] spawning {enemy} horde!");
 	for (var i = 0; i < data.amount; i++) {
@@ -31,6 +33,7 @@ function EventSpawnHorde(data){
 	}
 }
 function EventSpawnDirection(data){
+	oStage.queue_repeats = oStage.queue_repeats / 2;
 	var dir = 0;
 	var enemy = check_enemy(data.id);
 	var amnt = data[$"amount"] ?? 1;
@@ -51,6 +54,7 @@ function EventSpawnDirection(data){
 	}
 }
 function EventSpawnCircle(data = {id: "ShrimpWall", dir: "evenSurround", amount: 120}) {
+	oStage.queue_repeats = oStage.queue_repeats / 2;
 	var enemy = check_enemy(data.id);
 	show_debug_message($"[STAGE] spawning {enemy} circle!");
 	var c = 360 / data.amount;

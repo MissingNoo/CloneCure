@@ -1,3 +1,4 @@
+if image_alpha <= 0 exit;
 if (!fall) {
 	y -= amnt;
 	if (y < ystart - 20) {
@@ -10,5 +11,6 @@ if (!fall) {
 hspeed = 0.40 * dir;
 image_alpha -= 0.03;
 if (image_alpha <= 0) {
-	instance_destroy();
+	ds_queue_enqueue(GameData.dmg_list, id);
+	//instance_destroy();
 }
