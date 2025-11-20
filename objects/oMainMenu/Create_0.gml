@@ -75,6 +75,10 @@ buttons
 		room_goto(rShop);
 	});
 
+buttons.button_house.set_function(function () {
+	room_goto(rHoloHouse);
+})
+
 buttons
 	.button_play
 	.set_function(function() {

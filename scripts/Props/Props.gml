@@ -22,25 +22,32 @@ function prop_start() {
 }
 
 function prop_draw() {
-	if (!instance_exists(oPlayer)) {
-		return;
+	//var sprw = sprite_width / 2;
+	//var sprh = sprite_height;
+	var a = false;
+	if (instance_exists(oPlayer)) {
+		a = oPlayer.y < y;
 	}
-	var sprw = sprite_width / 2;
-	var sprh = sprite_height;
-	var alpha = oPlayer.y < y
-	&& collision_rectangle(x - sprw, y - sprh, x + sprw, y, oPlayer, false, false)
+	
+	var player_obj = oPlayer;
+	if (instance_exists(oPlayerWorld)) {
+		player_obj = oPlayerWorld;
+	}
+	
+	var alpha = a
+	&& place_meeting(x, y, player_obj)
 		? 0.75
 		: 1;
 	var _offset = 0;
 	switch (sprite_index) {
-		case sTree:
-			_offset = 16;
-			break;
+		//case sTree:
+			//_offset = 16;
+			//break;
 		default:
 			// code here
 			break;
 	}
 
-	draw_sprite_ext(sprite_index, 0, x, y + _offset, 1, -0.75, 0, c_black, 0.25);
-	draw_sprite_ext(sprite_index, 0, x, y, 1, 1, 0, c_white, alpha);
+	draw_sprite_ext(sprite_index, image_index, x, y + _offset, 1, -0.75, 0, c_black, 0.25);
+	draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, 0, c_white, alpha);
 }

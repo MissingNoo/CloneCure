@@ -89,17 +89,11 @@ for (var i = 0; i <= 46; i++) {
 		char_draw(data, area, pos);
 		AirUIFunctionEnd
 	);
-}
 	
-//ui.add_draw("char_list_1_panel", 
-		//AirUIFunctionStart
-		//
-		//AirUIFunctionEnd
-	//);
+}
 
 ui.recalculate();
 ui.finish();
-		
 }
 catch (error) {
 	show_debug_message(error)	
