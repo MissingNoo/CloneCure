@@ -1,8 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
-
-// Inherit the parent event
 event_inherited();
+buyselected = 0;
 image_xscale = -1;
 visible = true;
 ui = new window(global.game_uis.chat);
@@ -56,7 +53,9 @@ state.add("menu",
 		enable_buttons(true);
 	},
 	step : function () {
-		btns.select(- input_check_pressed("up") + input_check_pressed("down"));
+		if (state.get_current_state() == "menu") {
+			btns.select(- input_check_pressed("up") + input_check_pressed("down"));
+		}
 		if (input_check_pressed("cancel")) {
 			state.change(state.get_current_state() == "menu" ? "idle" : "menu");
 		}
@@ -71,6 +70,7 @@ state.add_child("menu", "buy",
 	enter : function () {},
 	step : function () {
 		state.inherit();
+		buyselected = clamp(buyselected - input_check_pressed("up") + input_check_pressed("down"), 0, 5);
 	},
 	update : function () {}
 });
@@ -82,3 +82,5 @@ state.add_child("menu", "sell",
 	},
 	update : function () {}
 });
+buysurfacebase = -1;
+buysurface = -1;
