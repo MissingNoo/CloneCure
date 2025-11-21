@@ -1,1 +1,1 @@
-dbg_view_delete(dbg);
+//dbg_view_delete(dbg);

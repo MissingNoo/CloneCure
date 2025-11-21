@@ -809,7 +809,7 @@ function topdown_movement(owner, _spd) constructor {
 	static movement = function() {
 		get_input();
 		normalize();
-		move(hspd, vspd, [oCol, oFence1, oFence2, oFence3, oFishShop]);
+		move(hspd, vspd, [oCol, oFence1, oFence2, oFence3, oFishShop, oPond, oTree, oDeadTree]);
 	};
 
 	static is_moving = function() {

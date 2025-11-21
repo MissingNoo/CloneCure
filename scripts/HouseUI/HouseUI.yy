@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"HouseUI",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"HouseUI",
+  "parent":{
+    "name":"Holohouse",
+    "path":"folders/Holohouse.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

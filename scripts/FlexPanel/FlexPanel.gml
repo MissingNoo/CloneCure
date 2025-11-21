@@ -195,6 +195,20 @@ function window(struct, _generate = false) constructor {
 			}
 		}
 	};
+	
+	static draw_element = function (name, pos, data) {
+		data.element.position(pos.left, pos.top, pos.left + pos.width, pos.top + pos.height);
+		data.element.draw();
+	}
+	
+	static add_element = function (node, element) {
+		try {
+			var n = flexpanel_node_get_child(root, node);
+			var name = flexpanel_node_get_name(n);
+			set_data(node, {element})
+			draw_func[$ name] = draw_element;
+		} catch (err) {/*ignore*/}
+	}
 
 	static set_node_function = function(node, _function) {
 		set_data(node, {f: _function});
@@ -958,6 +972,15 @@ function airui_draw_sprite_centered(name, spr, pos, fit, scalediv = 1, alpha = 1
 }
 
 function airui_hotreload(uifile = "/tmp/export.ui", user_event = 0) {
+	if (is_undefined(self[$"md5_frame"])) {
+		md5_frame = 0;
+	}
+	if (is_undefined(self[$"current_md5"])) {
+		current_md5 = "";
+	}
+	if (is_undefined(self[$"last_md5"])) {
+		last_md5 = "";
+	}
 	self[$"md5_frame"] ??= "";
 	if (md5_frame < AirLib.frame) {
 		current_md5 = md5_file(uifile);

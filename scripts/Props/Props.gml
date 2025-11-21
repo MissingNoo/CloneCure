@@ -48,6 +48,6 @@ function prop_draw() {
 			break;
 	}
 
-	draw_sprite_ext(sprite_index, image_index, x, y + _offset, 1, -0.75, 0, c_black, 0.25);
-	draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, 0, c_white, alpha);
+	draw_sprite_ext(sprite_index, image_index, x, y + _offset, image_xscale, (image_yscale - 0.25) * -1, 0, c_black, 0.25);
+	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_white, alpha);
 }

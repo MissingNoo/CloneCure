@@ -5,3 +5,4 @@ count = 0;
 if (instance_number(oDepthManager) > 1) {
 	instance_destroy();
 }
+depth = -3000;

@@ -11,8 +11,8 @@
   "name":"oContextMenu",
   "overriddenProperties":[],
   "parent":{
-    "name":"AirLib",
-    "path":"folders/AirLib.yy",
+    "name":"AirNetworking",
+    "path":"folders/AirNetworking.yy",
   },
   "parentObjectId":null,
   "persistent":false,

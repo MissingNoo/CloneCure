@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"oPond",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"oPond",
   "overriddenProperties":[],
@@ -9,10 +11,7 @@
     "name":"Fishing",
     "path":"folders/Holohouse/Fishing.yy",
   },
-  "parentObjectId":{
-    "name":"oDepthParent",
-    "path":"objects/oDepthParent/oDepthParent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
