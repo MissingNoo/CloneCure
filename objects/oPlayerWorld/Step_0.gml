@@ -2,7 +2,9 @@ GameData.player_pos = {x, y, depth};
 
 spd = char.spd;
 movement.set_speed(spd);
-movement.movement();
+if (!GameData.on_dialog) {
+	movement.movement();
+}
 if (movement.is_moving()) {
 	sprite_index = sprites.run;
 } else {

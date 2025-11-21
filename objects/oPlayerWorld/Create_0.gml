@@ -1,3 +1,4 @@
+GameData.on_dialog = false;
 instance_create_depth(x, y, depth, oCamWorld);
 GameData.selected_character = "A_Debug";
 char = Characters[$ GameData.selected_character];

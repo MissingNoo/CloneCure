@@ -6,25 +6,25 @@ try {
 }
 
 #region disable if input installed
-//function input_check_pressed(k) {
-	//var _k = k;
-	//var f = false;
-	//if (!is_numeric(k)) {
-		//switch (k) {
-			//case "accept":
-				//k = "Z";
-				//break;
-			//case "cancel":
-				//k = "X";
-				//break;
-		//}
-		//_k = ord(string_upper(k));
-	//}
-	//if (f || keyboard_check_pressed(_k)) {
-		//return true;
-	//}
-	//return false;
-//}
+/*function input_check_pressed(k) {
+	var _k = k;
+	var f = false;
+	if (!is_numeric(k)) {
+		switch (k) {
+			case "accept":
+				k = "Z";
+				break;
+			case "cancel":
+				k = "X";
+				break;
+		}
+		_k = ord(string_upper(k));
+	}
+	if (f || keyboard_check_pressed(_k)) {
+		return true;
+	}
+	return false;
+}*/
 #endregion
 
 
@@ -375,7 +375,7 @@ function textbox() constructor {
 		var _text = text == "" ? backtext : text;
 		var _x = area[0];
 
-		scribble($"{align}[Fnt][{textcolor}] {_text}")
+		scribble($"{align}[Fnt][{textcolor}] {_text}{selected ? "_" : ""}")
 			.scale_to_box(
 				area[2] - area[0] - string_width("X") - 2,
 				area[3] - area[1] - 3,
@@ -479,7 +479,7 @@ function button(_text) constructor {
 		if (
 			enabled
 			&& ((gui ? mouse_in_area_gui(area) : mouse_in_area(area)) or on_area)
-			&& (device_mouse_check_button_pressed(0, mb_left) or input_check_pressed("accept"))
+			&& (device_mouse_check_button_released(0, mb_left) or input_check_pressed("accept"))
 			&& gui_can_interact()
 		) {
 			func(self);
@@ -558,7 +558,7 @@ function button(_text) constructor {
 			scribble($"[alpha,{alpha}][{color}][fa_center][fa_middle]{text}")
 				.scale_to_box(
 					abs(area[0] - area[2]) - string_width("X") - 2,
-					abs(area[1] - area[3]),
+					abs(area[1] - area[3]) - string_height("X") - 2,
 					true
 				)
 				.draw(area[0] + ((area[2] - area[0]) / 2), _y);
@@ -575,6 +575,7 @@ function listbox() constructor {
 	list = [];
 	open = false;
 	area = undefined;
+	areaset = false;
 	pos = {left: 0, top: 0, width: 0, height: 0};
 	openarea = undefined;
 	text = "";
@@ -809,7 +810,7 @@ function topdown_movement(owner, _spd) constructor {
 	static movement = function() {
 		get_input();
 		normalize();
-		move(hspd, vspd, [oCol, oFence1, oFence2, oFence3, oFishShop, oPond, oTree, oDeadTree]);
+		move(hspd, vspd, oCol);
 	};
 
 	static is_moving = function() {
@@ -991,6 +992,11 @@ function ui_element_list() constructor {
 	};
 	
 	static select = function(num) {
+		if (num == "reset") {
+			selected = 0;
+			global.currentelement = list[0];
+			exit;
+		}
 		if (num == 0) {
 			exit;
 		}
@@ -1008,6 +1014,10 @@ function ui_element_list() constructor {
 	static foreach = function(f) {
 		array_foreach(list, f);
 	};
+	
+	static sort = function (f) {
+		array_sort(list, f);
+	}
 }
 
 function checkbox(boolean = false) constructor {

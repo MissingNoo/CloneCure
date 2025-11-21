@@ -1,2 +1,4 @@
-draw_text(10, 10, "test");
+if (state.get_current_state() == "idle") {
+	exit;
+}
 ui.draw();
