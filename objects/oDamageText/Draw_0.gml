@@ -1,4 +1,4 @@
-if image_alpha <= 0 or fps_average < 60 exit;
+if image_alpha <= 0 exit;
 /// @instancevar {Any} critical
 /// @instancevar {Any} dmg
 var scale = 0.50;

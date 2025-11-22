@@ -21,7 +21,7 @@ if (GameData.hp <= 0 && GameData.revives > 0) {
 	GameData.revives--;
 	GameData.hp = GameData.max_hp / 2;
 	with (oEnemy) {
-		if (!boss && !miniboss) {
+		if (!boss || !miniboss) {
 			hp = 0;
 		}
 	}

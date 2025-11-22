@@ -239,13 +239,14 @@ i.set_on_hurt(method(i, function() { //TODO: affect enemy projectiles, dont proc
 		if (instance_exists(inst)) {
 			dmg = crit_calc(odmg);
 			inst.hp -= dmg;
-			instance_create_depth(inst.x, inst.y - (inst.sprite_height / 2), inst.depth - 1, oDamageText, {
+			dmg_text(inst.x, inst.y, inst.depth - 1, {
 			    dir : abs(oPlayer.image_xscale),
 			    dmg : dmg
-			});
+			}, inst);
 		}
 	}
 }));
+
 #endregion
 
 #region Beetle

@@ -10,6 +10,7 @@ global.seconds = 0;
 
 GameData ??= {};
 GameData.debug = false;
+GameData.dmgtextframe = 0;
 GameData.xp = 0;
 GameData.needed_xp = 79;
 GameData.music = undefined;
@@ -25,7 +26,34 @@ Stats = {};
 Player_Weapons = array_create(6, undefined);
 
 #region Functions
-
+function dmg_text(_x, _y, depth, data = {}, oth = noone) {
+	if (GameData.dmgtextframe > AirLib.frame) {
+		return;
+	}
+	if (fps >= 58) {
+		var dobj = ds_queue_dequeue(GameData.dmg_list);
+		if (is_undefined(dobj)) {
+			instance_create_depth(x, y, depth, oDamageText, data);
+		} else {
+			var xx = _x;
+			var yy = _y - (oth != noone ? (oth.sprite_height / 2) : 0);
+			var dir = abs(oPlayer.image_xscale);
+			var _dmg = data.dmg;
+			with (dobj) {
+				x = xx;
+				y = yy;
+				dir = dir;
+				dmg = _dmg;
+				fall = false;
+				amnt = 1.5;
+				critical = (!is_undefined(data[$"critical"])) ? data.critical : false;
+				image_alpha = 1;
+			}
+		}
+	} else {
+		GameData.dmgtextframe = AirLib.frame + 60;
+	}
+}
 #endregion
 enum weapon_type {
     Multishot,

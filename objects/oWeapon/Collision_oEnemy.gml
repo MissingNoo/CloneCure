@@ -64,33 +64,7 @@ array_foreach(Player_Perks, function(e, i) {
 		e.after_hit();
 	}
 });
-
-var dobj = ds_queue_dequeue(GameData.dmg_list);
-if (is_undefined(dobj)) {
-	instance_create_depth(
-		other.x,
-		other.y - (other.sprite_height / 2),
-		other.depth - 1,
-		oDamageText,
-		{dir: abs(image_xscale), dmg: dmg, critical: was_crit}
-	);
-} else {
-	var xx = other.x;
-	var yy = other.y - (other.sprite_height / 2);
-	var dir = abs(image_xscale);
-	var _dmg = dmg;
-	with (dobj) {
-		x = xx;
-		y = yy;
-		dir = dir;
-		dmg = _dmg;
-		fall = false;
-		amnt = 1.5;
-		critical = was_crit
-		image_alpha = 1;
-	}
-}
-
+dmg_text(other.x, other.y, other.depth - 1, {dir: abs(image_xscale), dmg: dmg, critical: was_crit}, other);
 
 audio_play_sound(
 	choose(snd_hit1, snd_hit2, snd_hit3),

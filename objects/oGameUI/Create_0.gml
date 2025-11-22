@@ -18,6 +18,7 @@ GameData.stage_coins = 0;
 items_surf = -1;
 items_surf_copy = -1;
 draw_item = function (_x, _y, _w, _h, name, struct, header, digit, bg) {
+	items_surf = surface_recreate(items_surf, gui_w, gui_h);
 	surface_set_target(items_surf);
 	airui_draw_sprite_centered(name + "bg", bg, {left:_x, top:_y, width : _w, height : _h}, airui_fit.height, 0.5, 0.5);
 	var wp = struct[real(string_digits(name))];
