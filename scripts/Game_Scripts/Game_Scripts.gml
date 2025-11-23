@@ -227,6 +227,8 @@ function weapon(_name) : base_item(_name) constructor {
 		amount : 0,
 		color : c_yellow
 	};
+	collab_materials = [undefined, undefined];
+	can_collab = [];
 	run_create = function(){};
 	run_begin_step = function(){};
 	run_step = function(){};
@@ -245,6 +247,35 @@ function weapon(_name) : base_item(_name) constructor {
 		run_create = f;
 		return self;
 	}
+	
+	static check_collab = function () {
+		for (var i = 0; i < array_length(can_collab); i++) {
+			var mat = can_collab[i];
+			global.search = mat;
+			var index = array_find_index(Player_Weapons, function (e, i) {
+				if (is_undefined(e)) {
+					return false;
+				}
+				return e.name == global.search;
+			});
+			if (index != -1) {
+				if (Player_Weapons[index].level == 7) {
+					show_message("Can Collab");
+				}
+			}
+		}
+	}
+	
+	static set_collab_materials = function (material1, material2) {
+		collab = true;
+		material1 = string_lower(material1);
+		material2 = string_lower(material2);
+		array_push(Weapons[$ material1].can_collab, material2);
+		array_push(Weapons[$ material2].can_collab, material1);
+		collab_materials = [material1, material2];
+		return self;
+	}
+	
 	/// @function                set_begin_step(function)
 	/// @description             Defines the function executed before step.
 	/// @param {function}    f   The function to be executed
@@ -1304,4 +1335,6 @@ w.set_on_animation_end(function() {
 
 #endregion
 #region Collabs
+w = new weapon("test");
+w.set_collab_materials("BL_Book", "X-Potato");
 #endregion

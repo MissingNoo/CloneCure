@@ -24,6 +24,7 @@ GameData.Haste = 0 + (100 * (0.04 * shop_level("Haste_Up")));
 GameData.xp = 0;
 GameData.needed_xp = 79;
 GameData.level = 1;
+GameData.ignore_weapons = [];
 GameData.Rerolls = shop_level("Reroll");
 GameData.Holds = shop_level("Hold");
 GameData.Eliminates = shop_level("Eliminate");

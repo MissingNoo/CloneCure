@@ -2,7 +2,7 @@ event_inherited();
 buyselected = 0;
 image_xscale = -1;
 visible = true;
-ui = new window(global.game_uis.chat);
+ui = new window(global.game_uis.bloop);
 buy = new button("Buy");
 buy.set_function(method(self, function () {
 	state.change("buy");

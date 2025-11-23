@@ -18,6 +18,9 @@ if (input_check_pressed("accept") || force_z) {
 					});
 					if (pos != -1) {
 						Player_Weapons[pos].level++;
+						if (Player_Weapons[pos].level == 7) {
+							Player_Weapons[pos].check_collab();
+						}
 					} else {
 						pos = array_get_index(Player_Weapons, undefined);
 						if (pos != -1) {
