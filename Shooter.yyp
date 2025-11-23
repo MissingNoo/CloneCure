@@ -522,6 +522,7 @@
     {"id":{"name":"draw_text_scribble_ext","path":"scripts/draw_text_scribble_ext/draw_text_scribble_ext.yy",},},
     {"id":{"name":"draw_text_scribble","path":"scripts/draw_text_scribble/draw_text_scribble.yy",},},
     {"id":{"name":"Enemies","path":"scripts/Enemies/Enemies.yy",},},
+    {"id":{"name":"FarmingScripts","path":"scripts/FarmingScripts/FarmingScripts.yy",},},
     {"id":{"name":"FlexPanel","path":"scripts/FlexPanel/FlexPanel.yy",},},
     {"id":{"name":"Game_Items","path":"scripts/Game_Items/Game_Items.yy",},},
     {"id":{"name":"Game_Scripts","path":"scripts/Game_Scripts/Game_Scripts.yy",},},

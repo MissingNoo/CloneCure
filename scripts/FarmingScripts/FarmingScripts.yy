@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"FarmingScripts",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"FarmingScripts",
+  "parent":{
+    "name":"Farming",
+    "path":"folders/Holohouse/Farming.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

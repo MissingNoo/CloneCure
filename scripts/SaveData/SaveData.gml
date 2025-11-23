@@ -9,6 +9,7 @@ SaveData = {
 	unlocked_items: {},
 	unlocked_weapons: {},
 	unlocked_achievements: {},
+	plants : array_create(8, undefined)
 };
 
 global.base_data = variable_clone(SaveData);

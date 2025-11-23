@@ -911,6 +911,10 @@ function seconds_to_frames(seconds) {
 	return seconds * game_get_speed(gamespeed_fps);
 }
 
+function minutes_to_frames(minutes) {
+	return (minutes * 60) * game_get_speed(gamespeed_fps);
+}
+
 function create_view_from_instance(inst) {
 	for (var names = struct_get_names(inst), i = 0; i < array_length(names); ++i) {
 		if (is_real(inst[$ names[i]])) {
