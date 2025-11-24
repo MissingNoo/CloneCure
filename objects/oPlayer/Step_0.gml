@@ -3,17 +3,27 @@ if (os_type != os_android && device_mouse_check_button_pressed(0, mb_left)) {
 }
 
 GameData.player_pos = {x, y, depth};
-if (keyboard_check_pressed(ord("C"))) {
-	global.seconds += 10;
-}
+//if (keyboard_check_pressed(ord("C"))) {
+	//global.seconds += 10;
+//}
 //if (keyboard_check(ord("J"))) {
 	//spawn_enemy(mouse_x, mouse_y, "shrimp");
 //}
 if (keyboard_check_pressed(ord("O"))) {
-	Player_Weapons[0].level++;
+	array_foreach(Player_Weapons, function (e, i) {
+		if (!is_undefined(e)) {
+			e.level = clamp(e.level+1, 0, 7);
+		}
+	})
+	//Player_Weapons[0].level++;
 }
 if (keyboard_check_pressed(ord("I"))) {
-	Player_Weapons[0].level--;
+	array_foreach(Player_Weapons, function (e, i) {
+		if (!is_undefined(e)) {
+			e.level = clamp(e.level-1, 0, 7);
+		}
+	})
+	//Player_Weapons[0].level--;
 }
 #region Revives
 if (GameData.hp <= 0 && GameData.revives > 0) {
@@ -35,7 +45,6 @@ if (healframe < AirLib.frame) {
 #endregion
 var basespd = GameData.SPD;
 movement.set_speed(basespd);
-Player_Weapons[0].level = clamp(Player_Weapons[0].level, 1, 7);
 ds_list_clear(xplist);
 var pickrange = 40 * (GameData.Pickup / 100);
 var xps = collision_circle_list(x, y, pickrange, oXP, false, true, xplist, true);

@@ -1,9 +1,9 @@
 #macro AirLib global.__air
 #macro AirLibDefaultStyle AirLibBtnStyle.Default //Default, Rounded, Flat
-#macro AirLibDefaultBGSprite sAirBG
+#macro AirLibDefaultBGSprite sBG
 #macro AirLibDefaultTextBoxSprite sAirBG
 #macro AirLibDefaultListSprite sAirBG
-#macro AirLibDefaultFGSprite sAirFG
+#macro AirLibDefaultFGSprite sShopSelected
 #macro AirLibDefaultButtonSprite sButton
 #macro AirLibTags ["bg", "fg", "button", "input"]
 #macro AirLibBG #FFEED5

@@ -229,6 +229,7 @@ function weapon(_name) : base_item(_name) constructor {
 	};
 	collab_materials = [undefined, undefined];
 	can_collab = [];
+	materials = [undefined, undefined];
 	run_create = function(){};
 	run_begin_step = function(){};
 	run_step = function(){};
@@ -248,7 +249,7 @@ function weapon(_name) : base_item(_name) constructor {
 		return self;
 	}
 	
-	static check_collab = function () {
+	check_collab = function () {
 		for (var i = 0; i < array_length(can_collab); i++) {
 			var mat = can_collab[i];
 			global.search = mat;
@@ -260,7 +261,7 @@ function weapon(_name) : base_item(_name) constructor {
 			});
 			if (index != -1) {
 				if (Player_Weapons[index].level == 7) {
-					show_message("Can Collab");
+					instance_create_depth(GameData.player_pos.x, GameData.player_pos.y - 30, -1000, oGoldenAnvil);
 				}
 			}
 		}
@@ -1327,6 +1328,7 @@ w.set_on_hit(function() {
 w.set_on_animation_end(function() {
 	if (sprite_index == sXPotatoExplosion) instance_destroy();
 });
+//w.set_collab_materials("BL_Book", "Plug_Type_Asacoco");
 #endregion
 
 #region description
@@ -1335,6 +1337,6 @@ w.set_on_animation_end(function() {
 
 #endregion
 #region Collabs
-w = new weapon("test");
-w.set_collab_materials("BL_Book", "X-Potato");
+//w = new weapon("test");
+//w.set_collab_materials("BL_Book", "X-Potato");
 #endregion

@@ -76,3 +76,4 @@ repeat (20) {
 		{dir: abs(image_xscale), dmg: 0, critical: false}
 	);
 }
+//instance_create_depth(x, y, depth, oGoldenAnvil);

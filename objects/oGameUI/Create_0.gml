@@ -20,6 +20,9 @@ items_surf_copy = -1;
 draw_item = function (_x, _y, _w, _h, name, struct, header, digit, bg) {
 	items_surf = surface_recreate(items_surf, gui_w, gui_h);
 	surface_set_target(items_surf);
+	if (name == "w0") {
+		draw_clear_alpha(c_black, 0);
+	}
 	airui_draw_sprite_centered(name + "bg", bg, {left:_x, top:_y, width : _w, height : _h}, airui_fit.height, 0.5, 0.5);
 	var wp = struct[real(string_digits(name))];
 	if (wp != undefined) {

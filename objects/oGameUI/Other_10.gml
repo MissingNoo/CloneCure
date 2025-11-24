@@ -7,6 +7,9 @@ ui.add_draw("got_items",
 	AirUIDrawDefaultSpr
 	items_surf = surface_recreate(items_surf, gui_w, gui_h);
 	items_surf_copy = surface_recreate(items_surf_copy, _w, _h);
+	surface_set_target(items_surf_copy);
+		draw_clear_alpha(c_black, 0);
+	surface_reset_target();
 	surface_copy_part(items_surf_copy, 0, 0, items_surf, _x, _y, _w, _h);
 	draw_surface_stretched(items_surf_copy, _x, _y,_w, _h);
 	AirUIFunctionEnd

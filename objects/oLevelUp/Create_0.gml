@@ -38,7 +38,7 @@ for (var i = array_length(Player_Items) - 1; i >= 0; i--) {
 }
 struct_foreach(Weapons, function(i, e) {
 	repeat (e.weight) {
-		if (!array_contains(GameData.ignore_weapons, e.name)) {
+		if (!array_contains(GameData.ignore_weapons, e.name) && !e.collab) {
 			array_push(oLevelUp.weapons, e.name);
 		}
 	}
@@ -85,13 +85,13 @@ grab_upgrade = function () {
 ups = [
 	grab_upgrade(),
 	grab_upgrade(),
-	//grab_upgrade(),
-	//grab_upgrade(),
+	grab_upgrade(),
+	grab_upgrade(),
 	//Items[$ "membership"],
 	//Items[$ "corporate_pin"],
 	//Items[$ "kusogaki_shackles"],
-	Weapons[$ "bl_book"],
-	Weapons[$ "x-potato"]
+	//Weapons[$ "bl_book"],
+	//Weapons[$ "plug_type_asacoco"]
 ];
 
 mx = 0;
