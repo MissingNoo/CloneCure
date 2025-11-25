@@ -1,2 +1,3 @@
 event_inherited();
-prop_start();
+//prop_start();
+

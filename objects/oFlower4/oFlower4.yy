@@ -9,7 +9,10 @@
     "name":"Map",
     "path":"folders/Holohouse/Map.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oMapItemParent",
+    "path":"objects/oMapItemParent/oMapItemParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

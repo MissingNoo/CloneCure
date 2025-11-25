@@ -9,7 +9,10 @@
     "name":"Map",
     "path":"folders/Holohouse/Map.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oMapItemParent",
+    "path":"objects/oMapItemParent/oMapItemParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -28,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sFlower11",
-    "path":"sprites/sFlower11/sFlower11.yy",
+    "name":"sFlower1_1",
+    "path":"sprites/sFlower1_1/sFlower1_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

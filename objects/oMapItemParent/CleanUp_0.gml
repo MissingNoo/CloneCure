@@ -1,3 +1,3 @@
-if (part != undefined) {
-	part_system_destroy(part);
+if (_ps != undefined) {
+	part_system_destroy(_ps);
 }
