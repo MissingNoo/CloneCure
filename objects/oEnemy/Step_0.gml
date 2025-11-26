@@ -1,5 +1,9 @@
 if (hp <= 0) {
 	image_speed = 0;
+	if (image_alpha == 1) {
+		var p = part_system_create(part_saved);
+		part_system_position(p, x, bbox_top);
+	}
 	if (image_alpha == 1 and drop) {
 		var xpobj = ds_queue_dequeue(GameData.xp_list);
 		if (is_undefined(xpobj)) {
