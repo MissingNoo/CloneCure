@@ -18,7 +18,7 @@ function character(_name) constructor {
 	flat = false;
 	unlocked_by_default = true;
 	unlocked = false;
-	agency = undefined;
+	agency = Agencies.Unknown;
 	locked_color = undefined;
 	skins = {"base": {idle: idle_sprite, run: run_sprite}};
 	skinorder = ["base"];
@@ -124,7 +124,8 @@ c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAme)
 	.add_skin("O2", sAmeliaIdleO2, sAmeliaRunO2)
 	.add_skin("O3", sAmeliaIdleO3, sAmeliaRunO3)
 	.set_perks("The_Ame_Way", "Detective_Eye", "Bubba")
-	.set_completion("HIC");
+	.set_completion("HIC")
+	.set_agency(Agencies.Hololive);
 //c = new character("Aki_Rosenthal");
 //c.set_sprite(sAmeliaIdle, sAmeliaRun, sAkiPortrait, sTitleAki)
 //.set_speed(1.35)
@@ -144,6 +145,12 @@ c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAme)
 //.set_crit(1.10)
 //.set_ballsize(3)
 //.set_flat(false);
+enum Agencies {
+	Unknown,
+	Hololive,
+	PhaseConnect,
+	Indies
+}
 
 c = new character("Tenma_Maemi");
 c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaPortrait, sTitleTenma)
@@ -154,15 +161,41 @@ c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaPortrait, sTitleTenma)
 	.set_crit(10)
 	.set_flat(true)
 	.set_ballsize(1)
-	.set_unlocked_default(true);
+	.set_unlocked_default(true)
+	.set_agency(Agencies.PhaseConnect);
 
 c = new character("A_Debug");
 c.set_sprite(sTrickyIdle, sTrickyRun, sTrickyPortrait, sTrickyTitle)
 	.set_speed(1.35)
-	.set_weapon("BL_Book")
+	.set_weapon("Bird_Feather")
 	.set_hp(100)
 	.set_atk(1)
 	.set_crit(10)
 	.set_flat(false)
 	.set_ballsize(3)
-	.set_unlocked_default(true);
+	.set_unlocked_default(true)
+	.set_agency(Agencies.Indies);
+
+//c = new character("Korone_Inugami");
+//c.set_sprite(sBlank, sBlank, sKoronePortrait, spr_Title_Korone_0)
+	//.set_agency(Agencies.Hololive);
+//c = new character("Okayu_Nekomata");
+//c.set_sprite(sBlank, sBlank, sOkayuPortrait, spr_Title_Okayu_0)
+	//.set_agency(Agencies.Hololive);
+c = new character("Fubuki_Shirakami");
+c.set_sprite(sFubukiIdle, sFubukiRun, sFubukiPortrait, spr_Title_Fubuki_0)
+	.set_agency(Agencies.Hololive)
+	.set_weapon("Fox_Tail")
+	.set_perks("Kon_Kon", "Friendzone", "Fox_King")
+	.set_hp(55)
+	.set_atk(1)
+	.set_speed(1.5)
+	.set_crit(5)
+	.set_flat(true)
+	.set_ballsize(2);
+//c = new character("Haato_Akai");
+//c.set_sprite(sBlank, sBlank, sHaatoPortrait, spr_Title_Haato_0)
+	//.set_agency(Agencies.Hololive);
+//c = new character("Irys_blank");
+//c.set_sprite(sBlank, sBlank, sIrysPortrait, spr_Title_Irys_0)
+	//.set_agency(Agencies.Hololive);

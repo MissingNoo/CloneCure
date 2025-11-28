@@ -945,7 +945,7 @@ enum airui_fit {
 	stretch,
 }
 
-function airui_draw_sprite_centered(name, spr, pos, fit, scalediv = 1, alpha = 1, subimg = 0, xoff = 0, yoff = 0) {
+function airui_draw_sprite_centered(name, spr, pos, fit, scalediv = 1, alpha = 1, subimg = 0, xoff = 0, yoff = 0, color = c_white) {
 	switch (fit) {
 		default:
 		case airui_fit.height:
@@ -961,7 +961,7 @@ function airui_draw_sprite_centered(name, spr, pos, fit, scalediv = 1, alpha = 1
 				scale * scalediv,
 				scale * scalediv,
 				0,
-				c_white,
+				color,
 				alpha
 			);
 			break;

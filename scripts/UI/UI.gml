@@ -2118,10 +2118,14 @@ global.game_uis.stage = {
 global.game_uis.select = {
   "left":275.0,
   "top":50.0,
+  "width":1280.0,
+  "height":720.0,
   "nodes":[
     {
       "left":0.0,
       "top":0.0,
+      "padding":0.0,
+      "height":50.0,
       "marginTop":20.0,
       "nodes":[
         {
@@ -2131,8 +2135,6 @@ global.game_uis.select = {
           }
         }
       ],
-      "padding":0.0,
-      "height":50.0,
       "name":"panel_base_60398",
       "data":{
       }
@@ -2140,21 +2142,80 @@ global.game_uis.select = {
     {
       "left":0.0,
       "top":0.0,
+      "flexDirection":"row",
+      "marginRight":0.0,
       "padding":0.0,
-      "margin":0.0,
-      "name":"char_list_panel",
       "data":{
       },
+      "name":"char_list_panel",
+      "margin":0.0,
+      "height":300.0,
       "flex":1.0,
       "nodes":[
         {
+          "flexDirection":"row",
+          "padding":10.0,
           "flex":30.0,
           "nodes":[
             {
-              "flex":0.20000000298023224,
+              "flexDirection":"row",
               "width":60.0,
               "padding":0.0,
-              "height":10.0,
+              "flex":0.20000000298023224,
+              "nodes":[
+                {
+                  "width":60.0,
+                  "padding":10.0,
+                  "height":60.0,
+                  "flex":0.5,
+                  "name":"panel_9696",
+                  "data":{
+                  }
+                },
+                {
+                  "width":60.0,
+                  "padding":10.0,
+                  "flex":1.0,
+                  "nodes":[
+                    {
+                      "padding":10.0,
+                      "height":60.0,
+                      "flex":0.05000000074505806,
+                      "name":"up",
+                      "data":{
+                      }
+                    },
+                    {
+                      "padding":0.0,
+                      "height":60.0,
+                      "flex":1.0,
+                      "name":"corps",
+                      "data":{
+                      }
+                    },
+                    {
+                      "padding":10.0,
+                      "height":60.0,
+                      "flex":0.05000000074505806,
+                      "name":"down",
+                      "data":{
+                      }
+                    }
+                  ],
+                  "name":"corps_panel",
+                  "data":{
+                  }
+                },
+                {
+                  "width":60.0,
+                  "padding":10.0,
+                  "height":60.0,
+                  "flex":0.5,
+                  "name":"panel_27612",
+                  "data":{
+                  }
+                }
+              ],
               "name":"panel_46591",
               "data":{
               }
@@ -2162,155 +2223,156 @@ global.game_uis.select = {
             {
               "padding":0.0,
               "flex":1.0,
-              "name":"panel_22997",
-              "data":{
-              },
               "nodes":[
                 {
+                  "marginRight":0.0,
                   "marginLeft":0.0,
+                  "padding":0.0,
+                  "height":133.0,
                   "flex":0.69999998807907104,
                   "marginTop":10.0,
                   "nodes":[
                     {
-                      "flex":1.0,
-                      "marginBottom":2.0,
+                      "flexDirection":"row",
                       "padding":0.0,
                       "height":60.0,
-                      "margin":0.0,
+                      "flex":1.0,
+                      "marginBottom":2.0,
                       "name":"chars1",
                       "data":{
                       },
-                      "flexDirection":"row"
+                      "margin":0.0
                     },
                     {
-                      "flex":1.0,
-                      "marginTop":2.0,
+                      "flexDirection":"row",
                       "padding":0.0,
                       "height":60.0,
+                      "flex":1.0,
+                      "marginTop":2.0,
                       "name":"chars2",
                       "data":{
-                      },
-                      "flexDirection":"row"
+                      }
                     }
                   ],
-                  "padding":0.0,
-                  "height":133.0,
                   "name":"char_list_1_panel",
                   "data":{
-                  },
-                  "marginRight":0.0
+                  }
                 },
                 {
+                  "flexDirection":"row",
+                  "padding":0.0,
+                  "height":60.0,
                   "flex":1.0,
                   "nodes":[
                     {
-                      "flex":0.05000000074505806,
                       "width":60.0,
                       "padding":10.0,
                       "height":10.0,
+                      "flex":0.05000000074505806,
                       "name":"panel_25044",
                       "data":{
                       }
                     },
                     {
+                      "marginRight":0.0,
                       "marginLeft":0.0,
+                      "padding":0.0,
                       "flex":1.0,
                       "marginTop":6.0,
                       "nodes":[
                         {
-                          "flex":1.0,
+                          "flexDirection":"row",
                           "padding":0.0,
                           "height":60.0,
+                          "flex":1.0,
                           "name":"chars3",
                           "data":{
-                          },
-                          "flexDirection":"row"
+                          }
                         },
                         {
-                          "flex":1.0,
-                          "marginTop":2.0,
+                          "flexDirection":"row",
                           "padding":0.0,
                           "height":60.0,
+                          "flex":1.0,
+                          "marginTop":2.0,
                           "name":"chars4",
                           "data":{
-                          },
-                          "flexDirection":"row"
+                          }
                         },
                         {
-                          "flex":1.0,
-                          "marginTop":2.0,
+                          "flexDirection":"row",
                           "padding":0.0,
                           "height":60.0,
+                          "flex":1.0,
+                          "marginTop":2.0,
                           "name":"chars5",
                           "data":{
-                          },
-                          "flexDirection":"row"
+                          }
                         }
                       ],
-                      "padding":0.0,
                       "name":"char_list_2_panel",
                       "data":{
-                      },
-                      "marginRight":0.0
+                      }
                     },
                     {
-                      "flex":0.05000000074505806,
                       "width":60.0,
                       "padding":10.0,
                       "height":10.0,
+                      "flex":0.05000000074505806,
                       "name":"panel_42404",
                       "data":{
                       }
                     }
                   ],
-                  "padding":0.0,
-                  "height":60.0,
                   "name":"panel_12210",
                   "data":{
-                  },
-                  "flexDirection":"row"
+                  }
                 }
-              ]
+              ],
+              "name":"panel_22997",
+              "data":{
+              }
             },
             {
-              "flex":0.20000000298023224,
               "width":60.0,
               "padding":0.0,
               "height":10.0,
+              "flex":0.20000000298023224,
               "name":"panel_10647",
               "data":{
               }
             }
           ],
-          "padding":10.0,
-          "margin":0.0,
-          "name":"panel_52716",
+          "name":"asdasdsa_panel",
           "data":{
           },
-          "flexDirection":"row"
+          "margin":0.0
         }
-      ],
-      "height":300.0,
-      "flexDirection":"row",
-      "marginRight":0.0
+      ]
     },
     {
       "left":0.0,
-      "flex":0.80000001192092896,
       "top":0.0,
+      "padding":0.0,
+      "height":590.0,
+      "flex":0.80000001192092896,
       "nodes":[
         {
+          "flexDirection":"row",
+          "marginRight":37.0,
           "marginLeft":40.0,
+          "padding":0.0,
           "marginTop":8.0,
           "marginBottom":37.0,
-          "padding":0.0,
-          "margin":0.0,
           "name":"panel_info",
           "data":{
           },
+          "margin":0.0,
           "flex":1.0,
           "nodes":[
             {
+              "width":60.0,
+              "padding":0.0,
               "flex":1.0,
               "nodes":[
                 {
@@ -2322,32 +2384,35 @@ global.game_uis.select = {
                   }
                 },
                 {
+                  "flexDirection":"row",
+                  "padding":10.0,
+                  "height":60.0,
                   "flex":1.0,
                   "nodes":[
                     {
+                      "width":60.0,
+                      "padding":0.0,
                       "flex":1.0,
                       "nodes":[
                         {
-                          "flex":1.0,
                           "width":60.0,
                           "padding":0.0,
                           "height":60.0,
+                          "flex":1.0,
                           "name":"oshi_level",
                           "data":{
                           }
                         },
                         {
-                          "flex":2.0,
                           "width":60.0,
                           "padding":0.0,
                           "height":60.0,
+                          "flex":2.0,
                           "name":"oshi_spacer",
                           "data":{
                           }
                         }
                       ],
-                      "width":60.0,
-                      "padding":0.0,
                       "name":"oshi_panel",
                       "data":{
                       }
@@ -2361,6 +2426,8 @@ global.game_uis.select = {
                       "width":60.0
                     },
                     {
+                      "width":60.0,
+                      "padding":0.0,
                       "flex":3.0,
                       "nodes":[
                         {
@@ -2396,28 +2463,26 @@ global.game_uis.select = {
                           }
                         }
                       ],
-                      "width":60.0,
-                      "padding":0.0,
                       "name":"status_panel",
                       "data":{
                       }
                     }
                   ],
-                  "padding":10.0,
-                  "height":60.0,
                   "name":"character_panel",
                   "data":{
                   },
-                  "flexDirection":"row"
+                  "margin":0.0
                 }
               ],
-              "width":60.0,
-              "padding":0.0,
               "name":"panel_61046",
               "data":{
+                "tags":[
+                ]
               }
             },
             {
+              "width":60.0,
+              "padding":0.0,
               "flex":1.0,
               "nodes":[
                 {
@@ -2434,16 +2499,18 @@ global.game_uis.select = {
                   "flex":1.0,
                   "name":"weapon_description",
                   "data":{
+                    "tags":[
+                    ]
                   }
                 }
               ],
-              "width":60.0,
-              "padding":0.0,
               "name":"panel_48269",
               "data":{
               }
             },
             {
+              "width":60.0,
+              "padding":0.0,
               "flex":1.0,
               "nodes":[
                 {
@@ -2463,26 +2530,18 @@ global.game_uis.select = {
                   }
                 }
               ],
-              "width":60.0,
-              "padding":0.0,
               "name":"panel_90069",
               "data":{
               }
             }
-          ],
-          "marginRight":37.0,
-          "flexDirection":"row"
+          ]
         }
       ],
-      "padding":0.0,
-      "height":590.0,
       "name":"panel_base",
       "data":{
       }
     }
   ],
-  "width":1280.0,
-  "height":720.0,
   "name":"base",
   "data":{
     "image":"sTitleBG"

@@ -17,6 +17,8 @@ function __input_config_verbs() {
 			down: [input_binding_key(vk_down), input_binding_key("S")],
 			left: [input_binding_key(vk_left), input_binding_key("A")],
 			right: [input_binding_key(vk_right), input_binding_key("D")],
+			previous_corp: input_binding_key("Q"),
+			next_corp: input_binding_key("E"),
 			accept: input_binding_key("Z"),
 			cancel: [input_binding_key("X"), input_binding_key(vk_backspace)],
 			action: input_binding_key(vk_enter),
@@ -54,6 +56,8 @@ function __input_config_verbs() {
 				input_binding_gamepad_button(gp_shoulderlb),
 				input_binding_gamepad_button(gp_shoulderrb)
 			],
+			previous_corp: input_binding_gamepad_button(gp_shoulderl),
+			next_corp: input_binding_gamepad_button(gp_shoulderr),
 			pause: input_binding_gamepad_button(gp_start),
 		},
 		touch: {

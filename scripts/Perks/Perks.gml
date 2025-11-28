@@ -68,3 +68,9 @@ i.on_bought = function() {
 	}
 };
 
+i = new perk("Kon_Kon");
+i.sprite = sFubukiPerk1;
+i = new perk("Friendzone");
+i.sprite = sFubukiPerk2;
+i = new perk("Fox_King");
+i.sprite = sFubukiPerk3;

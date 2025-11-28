@@ -495,10 +495,106 @@ w.set_duration(120);
 w.set_hit_cooldown(20);
 w.set_cooldown([80, 80, 80, 80, 60, 60, 60], 50);
 w.set_shoots([3, 5, 5, 5, 5, 5, 5]);
-w.set_perk(true, "Amelia");
+w.set_perk(true, "Amelia_Watson");
 w.set_delay(6);
 w.set_damage([8, 8, 10, 10, 10, 12, 12], [12, 12, 14, 14, 14, 16, 16]);
 w.set_type(weapon_type.Multishot);
+#endregion
+
+#region Fox_Tail
+w = new weapon("Fox_Tail");
+w.set_sprite(sFoxTailThumb, sFoxTail);
+w.set_create(function() {
+    //timer = wid.delay;
+    //remaining = wid.shoots[level] - 1;
+    image_angle = direction;
+    //speed = 5;
+});
+//w.set_step(function() {
+    //
+//});
+//w.set_on_hit(function() {
+    //if (level > 4 and hits <= 0 and !ricocheted) {
+        //ricocheted = true;
+    	//hits = 3;
+        //direction = random(360);
+        //image_angle = direction;
+    //}
+    ////TODO: Level 7, no fucking idea
+//});
+w.set_on_animation_end(function () {
+	instance_destroy();
+})
+w.set_hits(999);
+w.set_duration(120);
+w.set_hit_cooldown(20);
+w.set_cooldown([70, 70, 70, 70, 59, 59, 59], 59);
+w.set_shoots([1, 1, 1, 2, 2, 2, 2]);
+w.set_perk(true, "Fubuki_Shirakami");
+w.set_area([1.00, 1.00, 1.20, 1.20, 1.20, 1.44, 1.44]);
+w.set_delay(6);
+w.set_damage([13, 16, 16, 16, 16, 16, 16], [17, 20, 20, 20, 20, 20, 20]);
+w.set_type(weapon_type.Melee);
+w.set_weight(3);
+#endregion
+
+#region Bird_Feather
+w = new weapon("Bird_Feather");
+w.set_sprite(sBirdFeatherThumb, sBirdFeather);
+w.set_create(function() {
+	bspeed = [0, 9, 9, 9, 9, 9, 9, 17][level];
+	speed = bspeed;
+	range = [0, 120, 120, 120, 120, 120, 120, 120][level];
+	homing = noone;
+	image_angle = direction;
+	feathertimer = AirLib.frame + wid.delay;
+	feathers = wid.shoots[level] - 1;
+});
+w.set_step(function() {
+	if (feathertimer < AirLib.frame and can_spawn_other and feathers > 0) {
+		feathers--;
+		feathertimer = AirLib.frame + wid.delay;
+		var inst = weapon_create {
+			wid : wid,
+			direction,
+			image_angle
+		});
+	}
+	if (level == 7 and homing == noone and distance_to_point(xstart, ystart) > range) {
+		homing = instance_nearest_nth(x, y, oEnemy, irandom_range(2, instance_number(oEnemy) - 1));
+	}
+	
+	if (homing != noone and instance_exists(homing)) {
+		direction = point_direction(x, y, homing.x, homing.bbox_top + (homing.sprite_height / 2));
+		image_angle = direction;
+		if (place_meeting(x, y, homing)) {
+			speed = approach(speed, 0, 1);
+		} else {
+			speed = approach(speed, bspeed, 1);
+		}
+	}
+	
+	if (homing != noone and !instance_exists(homing)) {
+		homing = instance_nearest(x, y, oEnemy);
+	}
+});
+w.set_on_hit(function() {
+	if (homing != noone) {
+		homing = instance_nearest_nth(x, y, oEnemy, irandom_range(2, instance_number(oEnemy) - 1));
+	}
+});
+w.set_hits([5, 5, 10, 10, 10, 10, 10]);
+w.set_duration([25, 25, 25, 25, 25, 25, 60]);
+w.set_hit_cooldown(20);
+w.set_cooldown([90, 90, 90, 90, 63, 63, 63], 63);
+w.set_shoots([2, 2, 2, 3, 3, 4, 4]);
+w.set_perk(true, "Nanashi_Mumei");
+w.set_area([1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.50]);
+w.set_delay(4);
+//w.set_delay([5, 5, 5, 4, 4, 4, 4]);//TODO: leveled delays
+w.set_damage([10, 12, 12, 12, 12, 12, 12], [14, 16, 16, 16, 16, 16, 16]);
+w.set_type(weapon_type.Multishot);
+w.set_weight(3);
 #endregion
 
 #region BL Book

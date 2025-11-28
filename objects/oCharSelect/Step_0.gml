@@ -15,8 +15,12 @@ stageoffset = lerp(
 	(skin_was_selected ? 0 : gui_w) - (stagemodewasselected ? gui_w : 0),
 	0.4
 );
+corps_x_offset = approach(corps_x_offset, st.get_current_state() == "Char" ? 0 : 300, corps_approach);
 charoffset = lerp(charoffset, 20, 0.3);
 charxoff = lerp(charxoff, 0, 0.2);
+if (st.get_current_state() == "Char") {
+	select_corp(-input_check_pressed("previous_corp") + input_check_pressed("next_corp"))
+}
 if (st.get_current_state() == "Skin" || st.get_current_state() == "Stage") {
 	var area = stage_skin_click_area;
 	var _x = area[0];
