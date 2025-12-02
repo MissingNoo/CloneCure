@@ -239,7 +239,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1400.1.926",
+    "IDEVersion":"2024.1400.2.936",
   },
   "name":"Shooter",
   "resources":[
@@ -1371,6 +1371,7 @@
     {"id":{"name":"sLiaArt","path":"sprites/sLiaArt/sLiaArt.yy",},},
     {"id":{"name":"sLiaBolt","path":"sprites/sLiaBolt/sLiaBolt.yy",},},
     {"id":{"name":"sLiaBoltShock","path":"sprites/sLiaBoltShock/sLiaBoltShock.yy",},},
+    {"id":{"name":"sLiacon","path":"sprites/sLiacon/sLiacon.yy",},},
     {"id":{"name":"sLiaIdle","path":"sprites/sLiaIdle/sLiaIdle.yy",},},
     {"id":{"name":"sLiaPortrait","path":"sprites/sLiaPortrait/sLiaPortrait.yy",},},
     {"id":{"name":"sLiaRun","path":"sprites/sLiaRun/sLiaRun.yy",},},

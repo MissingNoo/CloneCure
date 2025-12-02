@@ -173,13 +173,13 @@ e.set_sprite(sDeadBeatLV3)
 	.set_weight(1)
 	.set_scale(1);
 var e = new Enemy("Takodachi");
-e.set_sprite(sTakodachi)
+e.set_sprite(sLiacon)
 	.set_hp(80)
 	.set_spd(0.40)
 	.set_atk(4)
 	.set_experience(8)
 	.set_weight(1)
-	.set_scale(1);
+	.set_scale(0.85);
 var e = new Enemy("TakoViking");
 e.set_sprite(sTakoViking)
 	.set_hp(50)
