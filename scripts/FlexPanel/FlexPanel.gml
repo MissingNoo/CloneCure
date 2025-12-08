@@ -906,6 +906,7 @@ function cache_container() constructor {
 
 	static cache = function(name, _data) {
 		struct_set(data, name, _data);
+		show_debug_message($"[AirUI] cached {_data} for {name}");
 		return self;
 	};
 

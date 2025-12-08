@@ -1,3 +1,5 @@
+occluder.x = x;
+occluder.y = y;
 if (hp <= 0) {
 	image_speed = 0;
 	if (image_alpha == 1) {

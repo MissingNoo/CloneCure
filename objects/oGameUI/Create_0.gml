@@ -11,7 +11,7 @@ xpsurf = undefined;
 #endregion
 
 a = 1;
-coinspr = new animated_sprite(sHolocoin);
+coinspr = new animated_sprite(sPhaseCoinNew);
 GameData.kills = 0;
 GameData.stage_coins = 0;
 
