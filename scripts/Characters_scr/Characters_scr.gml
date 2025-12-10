@@ -94,7 +94,7 @@ function character(_name) constructor {
 	};
 
 	static set_perks = function(p1, p2, p3) {
-		perks = [p1, p2, p3];
+		perks = [string_lower(p1), string_lower(p2), string_lower(p3)];
 		return self;
 	};
 

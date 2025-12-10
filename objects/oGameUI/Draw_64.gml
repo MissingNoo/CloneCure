@@ -40,5 +40,4 @@ if (use_old_ui) {
 	);	
 }
 
-//update_ui();
 draw_text(10, gui_y_percent(95), $"Current:{fps_real}: Average:{fps_average} : {fps} xpqueue: {ds_queue_size(GameData.xp_list)} dmgqueue: {ds_queue_size(GameData.dmg_list)}");

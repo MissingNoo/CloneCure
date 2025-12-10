@@ -16,6 +16,7 @@ function item(_name) : base_item(_name) constructor {
 	damage_bonus = 1;
 	is_perk = false;
 	crit_debuff = 0;
+	use_only = false;
 	on_hurt = function(){};
 	on_hit = function(){};
 	Items[$ string_lower(_name)] = self;
@@ -33,6 +34,11 @@ function item(_name) : base_item(_name) constructor {
 	/// @param {function}    f   The function to be executed
 	static set_on_hit = function(f) {
 		on_hit = f;
+		return self;
+	}
+	
+	static direct_use = function (b) {
+		use_only = true;
 		return self;
 	}
 	
@@ -395,6 +401,30 @@ i.set_sprite(sLimiter)
 }))
 #endregion
 
+#region Money
+i = new item("Money");
+i.set_sprite(sPhaseCoinNew)
+.set_type(item_type.Utility)
+.set_max_level(0)
+.set_weight(0)
+.direct_use(true)
+.set_on_bought(function () {
+	GameData.stage_coins += 300;
+})
+#endregion
+
+#region Burguer
+i = new item("Burger");
+i.set_sprite(sHamburger)
+.set_type(item_type.Utility)
+.set_max_level(0)
+.set_weight(0)
+.direct_use(true)
+.set_on_bought(function () {
+	eat_food();
+})
+#endregion
+
 #region Membership
 i = new item("Membership");
 i.set_sprite(sMembership)
@@ -416,17 +446,12 @@ i.set_sprite(sMembership)
 }))
 .set_cooldown(seconds_to_frames(1), 1)
 .set_on_cooldown(method(i, function() {
-	if (keyboard_check(vk_control)) {
-		GameData.stage_coins += 10;
-		oGameUI.update_ui();
-	}
 	var loss = 3;
 	if (player_have_item("Kusogaki_Shackles")) {
 		loss -= get_item_data("Kusogaki_Shackles").level;
 	}
 	if (GameData.stage_coins > 0) {
 		GameData.stage_coins = clamp(GameData.stage_coins - loss, 0, infinity);
-		oGameUI.update_ui();
 	}
 	if (GameData.stage_coins > 0) {
 		GameData.ATK += atkremainder / 100;

@@ -1,13 +1,36 @@
 if (selected_option < 4) { 
 	global.currentelement = noone;
 }
+var eliminated = false;
+var held = false;
 if (input_check_pressed("accept") || force_z) {
+	
 	switch (selected_option) {
 		case 0:
 		case 1:
 		case 2:
 		case 3:
 			global.search = string_lower(ups[selected_option].name);
+			if (eliminating) {
+				array_push(GameData.ignore_ups, global.search);
+				ups[selected_option] = undefined;
+				eliminating = false;
+				eliminated = true;
+				hold.set_enabled(GameData.Holds > 0);
+				reroll.set_enabled(GameData.Rerolls > 0);
+				eliminate.set_enabled(GameData.Eliminates > 0);
+				break;
+			}
+			if (holding) {
+				GameData.held = [selected_option, ups[selected_option]];
+				holding = false;
+				heldpos = selected_option;
+				held = true;
+				hold.set_enabled(GameData.Holds > 0);
+				reroll.set_enabled(GameData.Rerolls > 0);
+				eliminate.set_enabled(GameData.Eliminates > 0);
+				break;
+			}
 			switch (ups[selected_option].lex) {
 				case "Weapons":
 					var pos = array_find_index(Player_Weapons, function(e, i) {
@@ -31,6 +54,10 @@ if (input_check_pressed("accept") || force_z) {
 					}
 					break;
 				case "Items":
+					if (Items[$ global.search].use_only) {
+						Items[$ global.search].on_bought();
+						break;
+					}
 					var pos = array_find_index(Player_Items, function(e, i) {
 						if (e == undefined) {
 							return false;
@@ -45,7 +72,9 @@ if (input_check_pressed("accept") || force_z) {
 							Player_Items[pos] = variable_clone(Items[$ global.search]);
 						}
 					}
-					Player_Items[pos].on_bought();
+					if (pos != -1) {
+						Player_Items[pos].on_bought();
+					}
 					break;
 				case "Stats":
 					ups[selected_option].on_bought();
@@ -66,6 +95,8 @@ if (input_check_pressed("accept") || force_z) {
 			show_message("WIP");
 			break;
 	}
-	instance_destroy();
+	if (!eliminated and !held) {
+		instance_destroy();
+	}
 }
 force_z = false;

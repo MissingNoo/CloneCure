@@ -13,7 +13,6 @@ if (GameData.hp == 0) {
 	global.events.broadcast("died");
 }
 global.events.broadcast("update_game_ui");
-//oGameUI.update_ui();
 inv_frame = AirLib.frame + 15;
 other.attack_frame = AirLib.frame + 25;
 audio_play_sound(snd_hurt, 0, 0, GameConfig.sound_volume, 0, random_range(0.8, 1));

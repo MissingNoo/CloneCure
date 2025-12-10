@@ -1,4 +1,7 @@
 //feather disable all
+eliminating = false;
+holding = false;
+heldpos = -1;
 GameData.level++;
 global.events.broadcast("level_up", GameData.level);
 right_offset = [0, 0, 0, 0];
@@ -10,89 +13,7 @@ ups = [
 	Weapons[$ "Ame_Pistol"]
 ];
 icon_scale_mult = 0.6;
-stats = [];
-weapons = [];
-items = [];
-struct_foreach(Stats, function(i, e) {
-	repeat (e.weight) {
-		array_push(oLevelUp.stats, e.name);
-	}
-});
-struct_foreach(Items, function(i, e) {
-	repeat (e.weight) {
-		array_push(oLevelUp.items, e.name);
-	}
-});
-for (var i = array_length(Player_Items) - 1; i >= 0; i--) {
-	if (is_undefined(Player_Items[i])) {
-		continue;
-	}
-	if (Player_Items[i].level == 7) {
-		repeat (Player_Items[i].weight + 1) {
-			var index = array_get_index(weapons, Player_Items[i].name);
-			if (index != -1) {
-				array_delete(weapons, index, 1);
-			}
-		}
-	}
-}
-struct_foreach(Weapons, function(i, e) {
-	repeat (e.weight) {
-		if (!array_contains(GameData.ignore_weapons, e.name) && !e.collab) {
-			array_push(oLevelUp.weapons, e.name);
-		}
-	}
-});
-for (var i = array_length(Player_Weapons) - 1; i >= 0; i--) {
-	if (is_undefined(Player_Weapons[i])) {
-		continue;
-	}
-	if (Player_Weapons[i].level == 7) {
-		repeat (Player_Weapons[i].weight + 1) {
-			var index = array_get_index(weapons, Player_Weapons[i].name);
-			if (index != -1) {
-				array_delete(weapons, index, 1);
-			}
-		}
-	}
-}
-grab_upgrade = function () {
-	var c = choose("item", "weapon");
-	var grabbed_item = undefined;
-	var name = "";
-	switch (c) {
-		case "item":
-			name = items[irandom_range(0, array_length(items) - 1)];
-			for (var i = array_length(items) - 1; i >= 0; i--) {
-				if (items[i] == name) {
-					array_delete(items, i, 1);
-				}
-			}
-			grabbed_item = Items[$ name];
-			break;
-		case "weapon":
-			name = weapons[irandom_range(0, array_length(weapons) - 1)];
-			for (var i = array_length(weapons) - 1; i >= 0; i--) {
-				if (weapons[i] == name) {
-					array_delete(weapons, i, 1);
-				}
-			}
-			grabbed_item = Weapons[$ name];
-			break;
-	}
-	return grabbed_item;
-}
-ups = [
-	grab_upgrade(),
-	grab_upgrade(),
-	grab_upgrade(),
-	grab_upgrade(),
-	//Items[$ "membership"],
-	//Items[$ "corporate_pin"],
-	//Items[$ "kusogaki_shackles"],
-	//Weapons[$ "bl_book"],
-	//Weapons[$ "plug_type_asacoco"]
-];
+event_user(0);
 
 mx = 0;
 my = 0;
@@ -105,17 +26,38 @@ selected_option = 0;
 eliminate = new button("Eliminate");
 eliminate
 	.set_function(function() {
-		GameData.Eliminates = clamp(GameData.Eliminates - 1, 0, infinity);
+		if (GameData.Eliminates > 0) {
+			GameData.Eliminates = clamp(GameData.Eliminates - 1, 0, infinity);
+			eliminating = true;
+			eliminate.set_enabled(false);
+			reroll.set_enabled(false);
+			hold.set_enabled(false);
+			selected_option = 0;
+		}
 	});
+eliminate.set_enabled(GameData.Eliminates > 0);
 reroll = new button("Reroll");
 reroll
 	.set_function(function() {
+		if (GameData.Rerolls > 0) {
+			event_user(0);
+		}
 		GameData.Rerolls = clamp(GameData.Rerolls - 1, 0, infinity);
 	});
+reroll.set_enabled(GameData.Rerolls > 0);
 hold = new button("Hold");
 hold.set_function(function() {
-	GameData.Holds = clamp(GameData.Holds - 1, 0, infinity);
+	if (GameData.Holds > 0) {
+		GameData.Holds = clamp(GameData.Holds - 1, 0, infinity);
+		holding = true;
+		eliminate.set_enabled(false);
+		eliminate.set_enabled(false);
+		reroll.set_enabled(false);
+		hold.set_enabled(false);
+		selected_option = 0;
+	}
 });
+hold.set_enabled(GameData.Holds > 0);
 
 icon_x = 104;
 icon_y = 114;

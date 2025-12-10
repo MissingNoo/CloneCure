@@ -1,9 +1,6 @@
 //feather ignore GM1041
 //feather ignore GM1044
 //feather ignore GM2016
-//yy += - input_check_pressed("up") + input_check_pressed("down");
-//oo += (- input_check_pressed("left") + input_check_pressed("right")) * 0.05;
-//show_debug_message($"o {oo}");
 ui.foreach(function(name, pos, data) {
 	var spr = (data[$ "image"] != undefined && data[$ "image"] != "")
 		? asset_get_index(data.image)
@@ -17,6 +14,9 @@ ui.foreach(function(name, pos, data) {
 		case "u2":
 		case "u3":
 			var opt = real(string_char_at(name, 2));
+			if (is_undefined(ups[opt])) {
+				break;
+			}
 			if (!off_set) {
 				off_set = true;
 				for (var i = 0; i < array_length(right_offset); i++) {
@@ -62,7 +62,7 @@ ui.foreach(function(name, pos, data) {
 				1
 			);
 			var iname = lexicon_text($"{ups[opt].lex}.{ups[opt].name}.name");
-			scribble($"[fa_bottom]{iname}")
+			scribble($"[{heldpos == opt ? "c_red" : "c_white"}][fa_bottom]{iname}")
 				.scale(title_scale)
 				.draw(_x + title_x + right_offset[opt], _y + title_y);
 			scribble(

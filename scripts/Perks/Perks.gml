@@ -5,9 +5,9 @@ GameData.perks = {};
 #macro LastProj global.lastproj
 
 function perk(_name) constructor {
-	name = _name;
+	name = string_lower(_name);
 	level = 0;
-	maxlevel = 3;
+	max_level = 3;
 	sprite = sBlank;
 	lex = "Perks";
 	effect = function() {};

@@ -3,9 +3,10 @@ if (os_type != os_android && device_mouse_check_button_pressed(0, mb_left)) {
 }
 
 GameData.player_pos = {x, y, depth};
-//if (keyboard_check_pressed(ord("C"))) {
+if (keyboard_check_pressed(ord("C"))) {
 	//global.seconds += 10;
-//}
+	instance_create_depth(x, y, depth, oXP, {xp : GameData.needed_xp});
+}
 //if (keyboard_check(ord("J"))) {
 	//spawn_enemy(mouse_x, mouse_y, "shrimp");
 //}

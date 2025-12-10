@@ -26,6 +26,13 @@ Stats = {};
 Player_Weapons = array_create(6, undefined);
 
 #region Functions
+function eat_food() {
+	var heal = GameData.max_hp * 0.2;
+	if (player_have_item("Full_Meal")) {
+		heal = heal * 2;
+	}
+	GameData.hp = clamp(GameData.hp + heal, 0, GameData.max_hp);
+}
 function dmg_text(_x, _y, depth, data = {}, oth = noone) {
 	if (GameData.dmgtextframe > AirLib.frame) {
 		return;
