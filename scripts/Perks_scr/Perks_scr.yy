@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Stages",
+  "%Name":"Perks_scr",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Stages",
+  "name":"Perks_scr",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

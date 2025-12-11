@@ -16,7 +16,7 @@ GameData.needed_xp = 79;
 GameData.music = undefined;
 #macro Spawn_List GameData.spawn_list
 Spawn_List = [];
-#macro GameData global.gamedata
+#macro GameData global[$"gamedata"]
 GameData.selected_character = "noone";
 #macro Weapons global.gamedata.weapons
 Weapons = {};

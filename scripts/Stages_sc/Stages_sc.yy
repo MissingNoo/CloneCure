@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"SaveData",
+  "%Name":"Stages_sc",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SaveData",
+  "name":"Stages_sc",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

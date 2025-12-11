@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Perks",
+  "%Name":"Enemies_scr",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Perks",
+  "name":"Enemies_scr",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
