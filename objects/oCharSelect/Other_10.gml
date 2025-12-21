@@ -328,7 +328,7 @@ try {
 	//airui_draw_sprite_centered($"charfg{data.name}", sCharFG, pos, airui_fit.height, 2, 2, 0, 1);
 	//airui_draw_sprite_centered($"charlock{data.name}", sCharLock, pos, airui_fit.height, 0.5, 1, 0);
 	draw_sprite_stretched(sCharLock, 0, pos.left, pos.top, pos.width, pos.height);
-	var _pos = array_get_index(chars, data.name);
+	var _pos = array_get_index(agencie_chars, data.name);
 	if (!is_undefined(data.name)) {
 		airui_draw_sprite_centered($"charpic{data.name}", GameData.characters[$ data.name].portrait, pos, airui_fit.stretch, 1, 1, 0);
 		if ( mouse_in_area_gui(
@@ -340,7 +340,7 @@ try {
 					lmy = my;
 					if (_pos != -1) {
 						if (selected != _pos) {
-							selected = _pos;
+							selected = array_get_index(agencie_chars, data.name);
 							select_char();
 						}
 					}

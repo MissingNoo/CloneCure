@@ -11,3 +11,4 @@
 a += (-keyboard_check_pressed(vk_pageup) + keyboard_check_pressed(vk_pagedown)) * 0.1;
 a += -keyboard_check_pressed(vk_home) + keyboard_check_pressed(vk_end);
 coinspr.animate();
+nxp = lerp(nxp, (GameData.xp / GameData.needed_xp) * 100, 0.1);

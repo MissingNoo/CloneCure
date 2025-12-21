@@ -88,6 +88,7 @@ corps_x_offset = 300;
 corps_panel_x_base = undefined;
 corps_approach = 30;
 event_user(2);
+event_user(3);
 
 charscale = 4;
 chary = 180;

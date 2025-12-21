@@ -1,4 +1,32 @@
 ///States
+state_order = ["Char", "Skin", "StageMode", "Stage", "GO"];
+current_state = 0;
+confirm_state = function (confirm_overwrite = undefined, cancel_overwrite = undefined) {
+	if (input_check_pressed("accept") || forcez) {
+		if (is_undefined(confirm_overwrite)) {
+			current_state = array_get_index(state_order, st.get_current_state());
+			current_state++;
+			st.change(state_order[current_state]);
+		} else {
+			confirm_overwrite();
+		}
+		
+	}
+	if (
+		 input_check_pressed("cancel")
+			|| device_mouse_check_button_pressed(0, mb_right)
+			|| force_x
+		) {
+		if (is_undefined(cancel_overwrite)) {
+			current_state = array_get_index(state_order, st.get_current_state());
+			current_state--;
+			st.change(state_order[current_state]);
+		} else {
+			cancel_overwrite();
+		}
+	}
+}
+///States
 st = new SnowState("Char");
 st.add("Char", {
 	enter: function() {
@@ -8,19 +36,14 @@ st.add("Char", {
 		ui.node_visible("char_list_1_panel", true);
 		ui.node_visible("char_list_2_panel", true);
 		character_was_selected = false;
+		stagemodewasselected = false;
+		stageui.set_visible(false);
+		skinui.set_visible(false);
 	},
 	step: function() {
-		if (
-			input_check_pressed("cancel")
-			|| device_mouse_check_button_pressed(0, mb_right)
-			|| force_x
-		) {
+		confirm_state(undefined, function () {
 			room_goto(rMainMenu);
-		}
-		if (input_check_pressed("accept") || forcez) {
-			character_was_selected = true;
-			st.change("Skin");
-		}
+		})
 		if (up_down == 1) {
 			if (selected <= 10) {
 				up_down = 10;
@@ -40,7 +63,10 @@ st.add("Char", {
 			select_char();
 		}
 	},
-	leave: function() {},
+	leave: function() {
+		character_was_selected = true;
+	},
+	draw: function () {}
 });
 st.add("Skin", {
 	enter: function() {
@@ -71,7 +97,7 @@ st.add("Skin", {
 				Characters[$ selected_char].skins[$ selected_skin_name].idle
 			);
 		}
-		if (input_check_pressed("accept") || forcez) {
+		confirm_state(function () {
 			if (
 				array_contains(
 					SaveData.characters[$ selected_char].outfits,
@@ -81,14 +107,7 @@ st.add("Skin", {
 				skin_was_selected = true;
 				st.change("StageMode");
 			}
-		}
-		if (
-			input_check_pressed("cancel")
-			|| device_mouse_check_button_pressed(0, mb_right)
-			|| force_x
-		) {
-			st.change("Char");
-		}
+		});
 	},
 	leave: function() {
 		forcez = false;
@@ -96,6 +115,7 @@ st.add("Skin", {
 		ui.node_visible("char_list_1_panel", false);
 		ui.node_visible("char_list_2_panel", false);
 	},
+	draw: function () {skinuidraw();}
 });
 st.add("StageMode", {
 	enter: function() {
@@ -106,17 +126,10 @@ st.add("StageMode", {
 	},
 	step: function() {
 		btn.select(left_right);
-		if (input_check_pressed("accept") || forcez) {
+		confirm_state(function () {
 			stagemodewasselected = true;
 			st.change("Stage");
-		}
-		if (
-			input_check_pressed("cancel")
-			|| device_mouse_check_button_pressed(0, mb_right)
-			|| force_x
-		) {
-			st.change("Skin");
-		}
+		});
 		stagemodeselected = wrap(stagemodeselected + left_right, 0, 3);
 		//for (var i = 0; i < array_length(btn); i++) {
 			//btn[i].keyboard_selected = i == stagemodeselected;
@@ -125,25 +138,18 @@ st.add("StageMode", {
 	leave: function() {
 		forcez = false;
 	},
+	draw: function () {}
 });
 st.add("Stage", {
 	step: function() {
 		stagenum = clamp_wrap(stagenum + left_right, 0, array_length(StagesArr) - 1);
 		selected_stage = Stages[$ StagesArr[stagenum]];
-		if (input_check_pressed("accept") || forcez) {
-			st.change("GO");
-		}
-		if (
-			input_check_pressed("cancel")
-			|| device_mouse_check_button_pressed(0, mb_right)
-			|| force_x
-		) {
-			st.change("StageMode");
-		}
+		confirm_state();
 	},
 	leave: function() {
 		forcez = false;
 	},
+	draw: function () {}
 });
 st.add("GO", {
 	enter: function() {
@@ -164,12 +170,7 @@ st.add("GO", {
 		room_goto(selected_stage.rm);
 	},
 	step: function() {
-		if (
-			input_check_pressed("cancel")
-			|| device_mouse_check_button_pressed(0, mb_right)
-			|| force_x
-		) {
-			st.change("Stage");
-		}
+		//confirm_state();
 	},
+	draw: function () {}
 });

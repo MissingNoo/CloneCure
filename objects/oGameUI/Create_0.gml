@@ -9,7 +9,7 @@ lvlup_offset = 0;
 #region surfaces
 xpsurf = undefined;
 #endregion
-
+nxp = 0;
 a = 1;
 coinspr = new animated_sprite(sPhaseCoinNew);
 GameData.kills = 0;
