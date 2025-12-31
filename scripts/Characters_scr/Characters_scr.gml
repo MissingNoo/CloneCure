@@ -164,6 +164,18 @@ c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaPortrait, sTitleTenma)
 	.set_unlocked_default(true)
 	.set_agency(Agencies.PhaseConnect);
 
+c = new character("Maifumi_z");
+c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaPortrait, sMaifumiTitle)
+	.set_speed(1.35)
+	.set_weapon("Cutting_Board")
+	.set_hp(75)
+	.set_atk(1.30)
+	.set_crit(10)
+	.set_flat(true)
+	.set_ballsize(1)
+	.set_unlocked_default(true)
+	.set_agency(Agencies.PhaseConnect);
+
 c = new character("A_Debug");
 c.set_sprite(sTrickyIdle, sTrickyRun, sTrickyPortrait, sTrickyTitle)
 	.set_speed(1.35)
