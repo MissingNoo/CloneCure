@@ -26,7 +26,7 @@
   "origin":9,
   "parent":{
     "name":"UrukaNote",
-    "path":"folders/Sprites/Powers/CharacterPerks/UrukaNote.yy",
+    "path":"folders/Characters/PhaseConnect/Uruka/UrukaNote.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

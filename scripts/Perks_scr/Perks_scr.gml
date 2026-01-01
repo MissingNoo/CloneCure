@@ -14,6 +14,9 @@ function perk(_name) constructor {
 	before_hit = function() {};
 	after_hit = function() {};
 	on_bought = function() {};
+	on_hurt = function() {};
+	on_kill = function() {};
+	
 	Perks[$ name] = self;
 }
 
@@ -74,3 +77,43 @@ i = new perk("Friendzone");
 i.sprite = sFubukiPerk2;
 i = new perk("Fox_King");
 i.sprite = sFubukiPerk3;
+
+
+i = new perk("Dirty_Mind");
+i.sprite = sDirtyMind;
+i.on_hurt = method(i, function () {
+	var chance = [0, 15, 20, 25];
+	var negate = irandom(100) <= chance[level];
+	if (negate) {
+		oPlayer.dmg = (oPlayer.dmg / 2) * -1;
+		show_debug_message("[PERK] Dirty Mind negated the damage!");
+	}
+});
+
+i = new perk("Trash_Bear");
+i.sprite = sTrashBear;
+i.on_kill = method(i, function (e) {
+	var chance = [0, 3, 5, 7];
+	if (irandom(100) <= chance[level]) {
+		instance_create_depth(e.x, e.y, e.depth, oFood, {sprite_index : sSpaghetti});
+	}
+});
+
+i = new perk("Brittle_Bones");
+i.sprite = sWeakBones;
+i.on_hurt = method(i, function () {
+	var plus = [0, 2, 3, 4];
+	oPlayer.dmg += plus[level];
+	Buffs.metronome.base_time = seconds_to_frames(2 + get_perk_level("Brittle_Bones"))
+	self[$ "restnotecooldown"] ??= AirLib.frame - 1;
+	if (restnotecooldown < AirLib.frame) {
+		restnotecooldown = AirLib.frame + 60;
+		for (var i = 0; i < 360; i += 90) {
+			weapon_create {
+				wid : variable_clone(Weapons[$ "rest_note"]),
+				direction : i,
+				speed : 3
+			});
+		}
+	}
+});

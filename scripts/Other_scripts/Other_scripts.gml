@@ -47,14 +47,19 @@ function damage_player(dmg) {
 	var defbonus = 0.03 * shop_level("Defense_Up");
 	dmg = dmg * (1 - defbonus);
 	//trace($"DefBonus: {odmg} - {defbonus}% = {dmg}");
-	if (GameData.shield > 0) {
+	if (dmg < 0) {
+		if (player_have_item("Full_Meal")) {
+			dmg = (abs(dmg) * 2) * -1;
+		}
+	}
+	if (dmg > 0 and GameData.shield > 0) {
 		GameData.shield = clamp(GameData.shield - dmg, 0, GameData.max_shield);
 	} else {
 		GameData.hp = clamp(round(GameData.hp - dmg), 0, GameData.max_hp);
 		GameData.damage_taken += dmg;
 	}
 	global.events.broadcast("damage_taken", dmg);
-	if (dmg > 0) {
+	if (dmg != 0) {
 		dmg_text(other.x, other.y, other.depth, {dmg}, oPlayer);
 	}
 }
@@ -96,6 +101,21 @@ function get_item_level(itemname) {
 	});
 	if (item_index != -1) {
 		level = Player_Items[item_index].level;
+	}
+	return level;
+}
+
+function get_perk_level(itemname) {
+	var level = 0;
+	global.lvlsearch = string_lower(itemname);
+	var item_index = array_find_index(Player_Perks, function(e, i) /*=>*/ {
+		if (is_undefined(e)) {
+			return false;
+		}
+		return e.name == global.lvlsearch;
+	});
+	if (item_index != -1) {
+		level = Player_Perks[item_index].level;
 	}
 	return level;
 }

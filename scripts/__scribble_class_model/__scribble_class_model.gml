@@ -399,9 +399,9 @@ function __scribble_class_model(_element, _model_cache_name) constructor {
 		}
 
 		if (!SCRIBBLE_ALLOW_GLYPH_DATA_GETTER) {
-			__scribble_error(
+			/*__scribble_error(
 				"Getting glyph data requires SCRIBBLE_ALLOW_GLYPH_DATA_GETTER to be set to <true>"
-			);
+			);*/
 		}
 
 		return __pages_array[_page].__glyph_grid;

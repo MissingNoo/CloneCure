@@ -173,9 +173,9 @@ function __scribble_class_page() constructor {
 
 	static __get_glyph_data = function(_index) {
 		if (!SCRIBBLE_ALLOW_GLYPH_DATA_GETTER) {
-			__scribble_error(
+			/*__scribble_error(
 				"Cannot get glyph data, SCRIBBLE_ALLOW_GLYPH_DATA_GETTER = <false>\nPlease set SCRIBBLE_ALLOW_GLYPH_DATA_GETTER to <true> to get glyph data"
-			);
+			);*/
 		}
 
 		if (_index < 0) {

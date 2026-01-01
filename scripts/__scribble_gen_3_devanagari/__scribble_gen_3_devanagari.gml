@@ -469,7 +469,7 @@ function __scribble_gen_3_devanagari() {
 
 			//If our glyph is missing, choose the missing character glyph instead!
 			if (_data_index == undefined) {
-				__scribble_trace(
+				/*__scribble_trace(
 					"Couldn't find glyph data for character code "
 						+ string(_found_glyph)
 						+ " ("
@@ -477,14 +477,14 @@ function __scribble_gen_3_devanagari() {
 						+ ") in font \""
 						+ string(_font_name)
 						+ "\""
-				);
+				);*/
 				_glyph_write = ord(SCRIBBLE_MISSING_CHARACTER);
 				_data_index = _font_glyphs_map[? _glyph_write];
 			}
 
 			if (_data_index == undefined) {
 				//This should only happen if SCRIBBLE_MISSING_CHARACTER is missing for a font
-				__scribble_trace(
+				/*__scribble_trace(
 					"Couldn't find glyph data for character code "
 						+ string(_glyph_write)
 						+ " ("
@@ -492,7 +492,7 @@ function __scribble_gen_3_devanagari() {
 						+ ") in font \""
 						+ string(_font_name)
 						+ "\""
-				);
+				);*/
 			} else if (
 				_font_glyph_data_grid[# _data_index, SCRIBBLE_GLYPH.BIDI]
 				!= __SCRIBBLE_BIDI.WHITESPACE

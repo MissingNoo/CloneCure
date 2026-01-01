@@ -409,8 +409,16 @@ function weapon(_name) : base_item(_name) constructor {
 	/// @param {array}     _min  The minimum damage for the weapon.
 	/// @param {array}     _max  The max damage for the weapon.
 	static set_damage = function(_min, _max) {
-		array_insert(_min, 0, 0);
-		array_insert(_max, 0, 0);
+		if (is_array(_min)) {
+			array_insert(_min, 0, 0);
+		} else {
+			_min = array_create(8, _min);
+		}
+		if (is_array(_max)) {
+			array_insert(_max, 0, 0);
+		} else {
+			_max = array_create(8, _max);
+		}
 		mindmg = _min;
 		maxdmg = _max;
 		return self;
@@ -505,6 +513,93 @@ w.set_shoots([3, 5, 5, 5, 5, 5, 5]);
 w.set_perk(true, "Amelia_Watson");
 w.set_delay(6);
 w.set_damage([8, 8, 10, 10, 10, 12, 12], [12, 12, 14, 14, 14, 16, 16]);
+w.set_type(weapon_type.Multishot);
+#endregion
+
+#region Music_Note
+var w = new weapon("Music_Note");
+w.set_sprite(sUrukaNote, sFullNote);
+w.set_create(function() {
+	sprite_index = choose(sFullNote, sHalfNote, sEightNote, sQuarterNote);
+	switch (sprite_index) {
+		case sFullNote:
+			hits = 8;
+			break;
+		case sEightNote:
+			hits = 4;
+			break;
+		case sHalfNote:
+			hits = 2;
+			break;
+		case sQuarterNote:
+			hits = 1;
+			break;
+	}
+	timer = wid.delay;
+	remaining = wid.shoots[level] - 1;
+	direction = oPlayer.image_xscale > 0 ? 0 : 180;
+	speed = 3;
+	travel_width = 30;
+	self.explode = function () {
+		hits = 999;
+		sprite_index = sNoteExplosion;
+		speed = 0;
+		dmg *= 2;
+	}
+});
+w.set_step(function() {
+	if (sprite_index != sNoteExplosion) {
+		y = sine_wave(current_time  / 1000, 1, travel_width, ystart);
+	} 
+    timer = clamp(timer - 1, 0, infinity);
+    if (can_spawn_other and timer == 0 and remaining > 0) {
+        remaining--;
+        timer = wid.delay;
+        var inst = weapon_create {
+            wid : wid
+        }); 
+    }
+	if (level == 7 and last_frame < AirLib.frame) {
+		last_frame = AirLib.frame + 900;
+		self.explode();
+	}
+});
+w.set_on_hit(function() {
+	if (level == 7 and hits <= 0) {
+		self.explode();
+	}
+});
+w.set_on_animation_end(function () {
+	if (sprite_index == sNoteExplosion) {
+		instance_destroy();
+	}
+})
+w.set_hits([1, 2, 2, 2, 3, 3, 3]);
+w.set_duration(120);
+w.set_hit_cooldown(20);
+w.set_cooldown([80, 80, 80, 80, 60, 60, 60], 50);
+w.set_shoots([1, 1, 2, 2, 2, 2, 2]);
+w.set_perk(true, "Fujikura_Uruka");
+w.set_delay(40);
+w.set_damage([8, 8, 10, 10, 10, 12, 12], [12, 12, 14, 14, 14, 16, 16]);
+w.set_type(weapon_type.Multishot);
+#endregion
+
+#region Rest_Note
+var w = new weapon("Rest_Note");
+w.set_sprite(sUrukaNote, sRestNote);
+w.set_on_hit(function() {
+	apply_buff(global.lastenemy, "metronome");
+	//array_push(global.lastenemy.debuffs, ); //metronome stun
+});
+w.set_hits(1);
+w.set_duration(120);
+w.set_hit_cooldown(20);
+w.set_cooldown([80, 80, 80, 80, 60, 60, 60], 50);
+w.set_shoots(1);
+w.set_perk(true, "noone");
+w.set_delay(60);
+w.set_damage(0, 0);
 w.set_type(weapon_type.Multishot);
 #endregion
 

@@ -48,7 +48,7 @@ for (var i = array_length(Player_Items) - 1; i >= 0; i--) {
 if (is_undefined(Player_Weapons[array_length(Player_Weapons) - 1])) {
 	struct_foreach(Weapons, function(i, e) {
 		repeat (e.weight) {
-			if (!array_contains(GameData.ignore_ups, e.name) && !e.collab) {
+			if (!array_contains(GameData.ignore_ups, e.name) && !e.collab && (!e.is_perk || (e.is_perk && e.character_name == GameData.selected_character))) {
 				array_push(oLevelUp.weapons, e.name);
 			}
 		}

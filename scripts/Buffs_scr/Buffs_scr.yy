@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Buffs_scr",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Buffs_scr",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

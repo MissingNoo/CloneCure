@@ -1,4 +1,5 @@
 try {
+	buffs = [];
 	image_alpha = 0.01;
 	knocktimer = 0;
 	hit_frame = {};

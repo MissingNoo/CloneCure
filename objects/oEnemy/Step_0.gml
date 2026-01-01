@@ -1,5 +1,8 @@
 //occluder.x = x;
 //occluder.y = y;
+for (var i = 0; i < array_length(buffs); i++) {
+	buffs[i].step();
+}
 if (hp <= 0) {
 	image_speed = 0;
 	if (image_alpha == 1) {
@@ -28,6 +31,11 @@ if (hp <= 0) {
 	image_alpha -= 0.05;
 	x -= image_xscale;
 	if (image_alpha <= 0) {
+		array_foreach(Player_Perks, function(e, i) /*=>*/ {
+			if (e != undefined) {
+				e.on_kill(self);
+			}
+		});
 		instance_destroy();
 	}
 } else {
