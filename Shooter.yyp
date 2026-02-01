@@ -70,6 +70,7 @@
     {"$GMFolder":"","%Name":"Uruka","folderPath":"folders/Characters/PhaseConnect/Uruka.yy","name":"Uruka","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Outfits","folderPath":"folders/Characters/PhaseConnect/Uruka/Outfits.yy","name":"Outfits","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Perks","folderPath":"folders/Characters/PhaseConnect/Uruka/Perks.yy","name":"Perks","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"UrukaNote","folderPath":"folders/Characters/PhaseConnect/Uruka/UrukaNote.yy","name":"UrukaNote","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"TitleArtts","folderPath":"folders/Characters/TitleArtts.yy","name":"TitleArtts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -213,7 +214,6 @@
     {"$GMFolder":"","%Name":"CharacterPerks","folderPath":"folders/Sprites/Powers/CharacterPerks.yy","name":"CharacterPerks","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"GuraTrident","folderPath":"folders/Sprites/Powers/CharacterPerks/GuraTrident.yy","name":"GuraTrident","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"InaTentacle","folderPath":"folders/Sprites/Powers/CharacterPerks/InaTentacle.yy","name":"InaTentacle","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"UrukaNote","folderPath":"folders/Characters/PhaseConnect/Uruka/UrukaNote.yy","name":"UrukaNote","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Collabs","folderPath":"folders/Sprites/Powers/Collabs.yy","name":"Collabs","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Shop","folderPath":"folders/Sprites/Shop.yy","name":"Shop","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Gacha","folderPath":"folders/Sprites/Shop/Gacha.yy","name":"Gacha","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -241,7 +241,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1400.2.941",
+    "IDEVersion":"2024.1400.3.974",
   },
   "name":"Shooter",
   "resources":[
@@ -1066,6 +1066,7 @@
     {"id":{"name":"sAmeliaWeapon","path":"sprites/sAmeliaWeapon/sAmeliaWeapon.yy",},},
     {"id":{"name":"sAmeliaWeaponProjectile","path":"sprites/sAmeliaWeaponProjectile/sAmeliaWeaponProjectile.yy",},},
     {"id":{"name":"sAmeMinWand","path":"sprites/sAmeMinWand/sAmeMinWand.yy",},},
+    {"id":{"name":"sAmeShadow","path":"sprites/sAmeShadow/sAmeShadow.yy",},},
     {"id":{"name":"sAnvil","path":"sprites/sAnvil/sAnvil.yy",},},
     {"id":{"name":"sAnvilNormal","path":"sprites/sAnvilNormal/sAnvilNormal.yy",},},
     {"id":{"name":"sAnvilPointer","path":"sprites/sAnvilPointer/sAnvilPointer.yy",},},

@@ -63,6 +63,15 @@ function EventSpawnCircle(data = {id: "ShrimpWall", dir: "evenSurround", amount:
 		circle_pos += c;
 	}
 }
+function dbg_stage() {
+	var stage1 = new Stage("ADBG");
+	stage1.set_border(610, 610, 3170, 3170);
+	stage1.set_music(bgm_suspect);
+	stage1.set_room(rStage1);
+	stage1.set_bg(sStage2Port);
+	stage1.set_coin_multiplier(1.25);
+	stage1.add_enemy("Smol_Ame", "00:01");
+}
 function stage1_fill() {
 	show_debug_message("[STAGE] Loading Stage 1 data");
 	//global.topBorder = -1

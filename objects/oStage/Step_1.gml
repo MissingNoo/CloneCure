@@ -14,23 +14,23 @@ if (seconds < 10) {
 var time = $"m{minutes}s{seconds}";
 if (
 	GameData.on_stage
-	&& !is_undefined(Stages[$ "Stage1"][$ "timings"][$ time])
+	&& !is_undefined(Stages[$ GameData.stage_name][$ "timings"][$ time])
 	&& last_time != time
 ) {
-	var arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "add"];
+	var arr = Stages[$ GameData.stage_name][$ "timings"][$ time][$ "add"];
 	if (!is_undefined(arr)) {
 		array_foreach(arr, function(e, i) {
 			add_mob_choice(e);
 		});
 	}
-	arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "remove"];
+	arr = Stages[$ GameData.stage_name][$ "timings"][$ time][$ "remove"];
 	if (!is_undefined(arr)) {
 		array_foreach(arr, function(e, i) {
 			remove_mob_choice(e);
 		});
 	}
-	arr = Stages[$ "Stage1"][$ "timings"][$ time][$ "script"];
-	global.dd = Stages[$ "Stage1"][$ "timings"][$ time][$ "data"];
+	arr = Stages[$ GameData.stage_name][$ "timings"][$ time][$ "script"];
+	global.dd = Stages[$ GameData.stage_name][$ "timings"][$ time][$ "data"];
 	if (!is_undefined(arr)) {
 		array_foreach(arr, function(e, i) {
 			var dd = global.dd[i];
@@ -47,7 +47,7 @@ last_time = time;
 #endregion
 
 #region Border
-Stages[$ "Stage1"].tick_border();
+Stages[$ GameData.stage_name].tick_border();
 //var insts = [oEnemy, oAnvil, oUpgradeNew, oDropParent, oBubba, oBubbaBark, oMascot, oChest];
 if (oPlayer.x > room_width / 2) {
 	with (oMapItemParent) {

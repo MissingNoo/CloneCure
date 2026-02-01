@@ -35,6 +35,7 @@ try {
 	method(self, e.create_function)();
 	step = method(self, e.step_function);
 	draw = method(self, e.draw_function);
+	animation_end = method(self, e.animation_end_function);
 } catch (error) {
 	trace(error);
 	show_message(error);

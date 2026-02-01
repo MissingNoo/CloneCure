@@ -298,6 +298,7 @@ function ParseSpawnDirection(dir, pattern = undefined) {
 	}
 }
 
+dbg_stage();
 stage1_fill();
 //#region Stage1
 //var stage1 = new Stage("Stage1");

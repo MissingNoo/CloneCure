@@ -21,6 +21,7 @@ function Enemy(_name) constructor {
 	step_function = function () {};
 	create_function = function () {};
 	draw_function = function () {};
+	animation_end_function = function () {};
 	
 	static on_create = function (f) {
 		create_function = f;
@@ -34,6 +35,11 @@ function Enemy(_name) constructor {
 	
 	static on_step = function (f) {
 		step_function = f;
+		return self;
+	}
+	
+	static on_animation_end = function (f) {
+		animation_end_function = f;
 		return self;
 	}
 
@@ -454,6 +460,101 @@ e.set_sprite(sSmolAme)
 	.set_experience(5000)
 	.set_weight(1)
 	.set_scale(1);
+e.boss = true;
+
+e.on_create(method(e, function () {
+	jump_timer = AirLib.frame + seconds_to_frames(5);
+	fall_timer = AirLib.frame + seconds_to_frames(2);
+	ame = new SnowState("normal");
+	ame.add("normal", {
+		enter : function () {
+			sprite_index = sSmolAme;
+			speed = e.spd;
+		},
+		step : function () {
+			if (AirLib.frame > jump_timer) {
+				ame.change("jumping");
+			}
+		},
+		draw : function () {}
+	});
+	ame.add("jumping", {
+		enter : function () {
+			jump_timer = AirLib.frame + seconds_to_frames(irandom_range(8, 12));
+			sprite_index = sSmolAmeJump;
+			jy = y;
+		},
+		step : function () {
+			if (image_index > 10) {
+				ame.change("falling");
+			} else {
+				y -= 15;
+			}
+		},
+		draw : function () {
+		},
+		leave : function () {
+			y = jy;
+		}
+	});
+	ame.add("falling", {
+		enter:function () {
+			jt = 0;
+			image_speed = 0;
+			speed = GameData.SPD - 0.3;
+			mask_index = sBlank;
+			x = oPlayer.x;
+			y = oPlayer.y;
+			fall_timer = AirLib.frame + seconds_to_frames(irandom_range(2, 3));
+		},
+		step:function () {
+			if (AirLib.frame > fall_timer) {
+				ame.change("fall");
+			}
+		},
+		draw:function (){
+			draw_sprite_ext(sAmeShadow, 0, x, y, 2, 2, 0, c_white, 0.8);
+			draw_self();
+		}
+	});
+	ame.add("fall", {
+		enter:function () {
+			image_speed = 1;
+			speed = 0;
+			sprite_index = sSmolAmeGroundpound;
+			by = y;
+			y -= sprite_height * 2;
+			image_index = 0;
+		},
+		step:function () {
+			if (y != by and image_index > 14) {
+				image_speed = 0;
+			}
+			y = clamp(y + 12, 0, by);
+			if (y == by) {
+				mask_index = sSmolAme;
+				image_speed = 1;
+			}
+		},
+		draw:function (){
+			draw_sprite_ext(sAmeShadow, 0, x, by, 2, 2, 0, c_white, 0.8);
+			draw_self();
+		}
+	});
+}));
+e.on_step(method(e, function () {
+	ame.step();
+}));
+e.on_draw(method(e, function () {
+	ame.draw();
+}));
+e.on_animation_end(function () {
+	switch (sprite_index) {
+		case sSmolAmeGroundpound:
+			ame.change("normal");
+			break;
+	}
+})
 //var e = new Enemy("Endless"); e.set_sprite(sUrufu).set_hp(5000).set_spd(1).set_atk(15).set_experience(25).set_weight(1).set_scale(1);
 //var e = new Enemy("Endless"); e.set_sprite(sQDeadBeat).set_hp(5000).set_spd(1).set_atk(15).set_experience(25).set_weight(1).set_scale(1);
 //var e = new Enemy("Endless"); e.set_sprite(sTakodachi).set_hp(5000).set_spd(1).set_atk(15).set_experience(25).set_weight(1).set_scale(1);
