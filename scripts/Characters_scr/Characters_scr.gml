@@ -201,6 +201,30 @@ c.set_sprite(sTrickyIdle, sTrickyRun, sTrickyPortrait, sTrickyTitle)
 	.set_unlocked_default(true)
 	.set_agency(Agencies.Indies);
 
+c = new character("Rinkou_Ahelia");
+c.set_sprite(sLiaIdle, sLiaRun, sLiaPortrait, sBlank)
+	.set_speed(1.35)
+	.set_weapon("Bird_Feather")
+	.set_hp(100)
+	.set_atk(1)
+	.set_crit(10)
+	.set_flat(false)
+	.set_ballsize(3)
+	.set_unlocked_default(true)
+	.set_agency(Agencies.PhaseConnect);
+
+c = new character("Tsukiboshi_Lumin");
+c.set_sprite(sLuminIdle, sLuminRun, sBlank, sBlank)
+	.set_speed(1.35)
+	.set_weapon("Bird_Feather")
+	.set_hp(100)
+	.set_atk(1)
+	.set_crit(10)
+	.set_flat(false)
+	.set_ballsize(3)
+	.set_unlocked_default(true)
+	.set_agency(Agencies.Indies);
+
 //c = new character("Korone_Inugami");
 //c.set_sprite(sBlank, sBlank, sKoronePortrait, spr_Title_Korone_0)
 	//.set_agency(Agencies.Hololive);

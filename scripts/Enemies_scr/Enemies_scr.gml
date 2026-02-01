@@ -513,7 +513,7 @@ e.on_create(method(e, function () {
 			}
 		},
 		draw:function (){
-			draw_sprite_ext(sAmeShadow, 0, x, y, 2, 2, 0, c_white, 0.8);
+			draw_sprite_ext(sAmeShadow, 0, x, y, 1, 2, 0, c_white, 0.8);
 			draw_self();
 		}
 	});
@@ -537,7 +537,7 @@ e.on_create(method(e, function () {
 			}
 		},
 		draw:function (){
-			draw_sprite_ext(sAmeShadow, 0, x, by, 2, 2, 0, c_white, 0.8);
+			draw_sprite_ext(sAmeShadow, 0, x, by, 1, 2, 0, c_white, 0.8);
 			draw_self();
 		}
 	});

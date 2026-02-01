@@ -105,3 +105,5 @@ array_sort(chars, true);
 btns.foreach(function(e, i) {
 	e.unselect_on_leave = false;
 });
+title_w = 1;
+bopspd = {};

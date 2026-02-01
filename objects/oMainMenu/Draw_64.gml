@@ -34,14 +34,16 @@ ui.foreach(function(name, pos, data) {
 				i < array_length(chars);
 				i++
 			) {
+				var tspr = Characters[$ chars[i]].title_sprite;
+				var nspr = sprite_get_name(tspr);
+				bopspd[$ nspr] ??= choose(-3, -4, -5, 3, 4, 5);
 				var n = string_split(chars[i], "_");
 				var si = sine_between(
 					current_time / 1000,
-					clamp((string_length(n[0]) * 2) / (string_length(n[1]) / 4), -3, 5),
+					bopspd[$ nspr],
 					10,
 					-10
-				);
-				var tspr = Characters[$ chars[i]].title_sprite;
+				); 
 				gpu_set_fog(
 					!Characters[$ chars[i]].unlocked,
 					Characters[$ chars[i]].locked_color,
@@ -60,14 +62,7 @@ ui.foreach(function(name, pos, data) {
 					1
 				);
 				gpu_set_fog(false, 0, 0, 0);
-				if (_x + xoffset > title_x && yoffset == 0) {
-					do {
-						xoffset++;
-					} until (
-						_x + xoffset
-						> title_x_end - (sprite_get_width(sTitleAme) * 1)
-					)
-				}
+				
 				xoffset += (sprite_get_width(tspr) * 1.20) - layer_dist;
 				if (
 					_x + xoffset
@@ -80,6 +75,14 @@ ui.foreach(function(name, pos, data) {
 					_x += layer_dist;
 					layer_dist = layer_dist / row;
 				}
+				if (_x + xoffset > title_x && yoffset == 0) {
+					do {
+						xoffset++;
+					} until (
+						_x + xoffset
+						> title_x_end + (sprite_get_width(tspr) * 1)
+					)
+				}
 			}
 			break;
 		case "version":
@@ -90,6 +93,7 @@ ui.foreach(function(name, pos, data) {
 		case "title":
 			title_x ??= _x - 10;
 			title_x_end ??= _x + _w;
+			title_w = _w;
 			_y += sine_between(current_time / 1000, 6, -10, 7) - start_y;
 			draw_sprite_stretched(spr, 0, _x, _y, _w, _h);
 			break;
