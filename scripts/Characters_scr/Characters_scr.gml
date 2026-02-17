@@ -177,8 +177,8 @@ c.set_sprite(sUrukaIdle, sUrukaRunning, sUrukaPortrait, sBlank)
 	.set_unlocked_default(true)
 	.set_agency(Agencies.PhaseConnect);
 
-c = new character("Maifumi_z");
-c.set_sprite(sTenmaIdle, sTenmaRun, sTenmaPortrait, sMaifumiTitle)
+c = new character("Kasumi_Mai");
+c.set_sprite(sMaiIdle, sMaiRun, sMaifumiPort, sMaifumiTitle)
 	.set_speed(1.50)
 	.set_weapon("Cutting_Board")
 	.set_hp(60)

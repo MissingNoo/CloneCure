@@ -65,15 +65,17 @@ array_foreach(Player_Perks, function(e, i) {
 	}
 });
 dmg_text(other.x, other.y, other.depth - 1, {dir: abs(image_xscale), dmg: dmg, critical: was_crit}, other);
+if (!audio_is_playing(snd_hit1) and !audio_is_playing(snd_hit2) and !audio_is_playing(snd_hit3)) {
+	audio_play_sound(
+		choose(snd_hit1, snd_hit2, snd_hit3),
+		0,
+		0,
+		GameConfig.sound_volume,
+		undefined,
+		random_range(0.75, 1)
+	);
+}
 
-audio_play_sound(
-	choose(snd_hit1, snd_hit2, snd_hit3),
-	0,
-	0,
-	GameConfig.sound_volume,
-	undefined,
-	random_range(0.75, 1)
-);
 
 if (!other.boss and !other.miniboss and wid.knockback_speed[level] != 0 && other.knocktimer < AirLib.frame) {
 	other.knocktimer = AirLib.frame + wid.knockback_duration[level];

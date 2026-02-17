@@ -241,7 +241,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.1400.3.974",
+    "IDEVersion":"2024.1400.4.991",
   },
   "name":"Shooter",
   "resources":[
@@ -1392,7 +1392,11 @@
     {"id":{"name":"sLockLobby","path":"sprites/sLockLobby/sLockLobby.yy",},},
     {"id":{"name":"sLuminIdle","path":"sprites/sLuminIdle/sLuminIdle.yy",},},
     {"id":{"name":"sLuminRun","path":"sprites/sLuminRun/sLuminRun.yy",},},
+    {"id":{"name":"sMaifumiPort","path":"sprites/sMaifumiPort/sMaifumiPort.yy",},},
     {"id":{"name":"sMaifumiTitle","path":"sprites/sMaifumiTitle/sMaifumiTitle.yy",},},
+    {"id":{"name":"sMaifumiTitleOld","path":"sprites/sMaifumiTitleOld/sMaifumiTitleOld.yy",},},
+    {"id":{"name":"sMaiIdle","path":"sprites/sMaiIdle/sMaiIdle.yy",},},
+    {"id":{"name":"sMaiRun","path":"sprites/sMaiRun/sMaiRun.yy",},},
     {"id":{"name":"sMantaRay","path":"sprites/sMantaRay/sMantaRay.yy",},},
     {"id":{"name":"sMantaRayIcon","path":"sprites/sMantaRayIcon/sMantaRayIcon.yy",},},
     {"id":{"name":"sMatsuriPortrait","path":"sprites/sMatsuriPortrait/sMatsuriPortrait.yy",},},
