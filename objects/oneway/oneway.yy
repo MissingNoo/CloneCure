@@ -1,19 +1,22 @@
 {
   "$GMObject":"",
-  "%Name":"oPlatformPlayer",
+  "%Name":"oneway",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":55,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oPlatformPlayer",
+  "name":"oneway",
   "overriddenProperties":[],
   "parent":{
     "name":"Platform",
     "path":"folders/Platform.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oCol",
+    "path":"objects/oCol/oCol.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sTenmaIdle",
-    "path":"sprites/sTenmaIdle/sTenmaIdle.yy",
+    "name":"sOneway",
+    "path":"sprites/sOneway/sOneway.yy",
   },
   "spriteMaskId":null,
   "visible":true,

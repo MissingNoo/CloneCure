@@ -102,11 +102,11 @@ array_foreach(Player_Items, function(e, i) /*=>*/ {
 
 //occluder.x = x;
 //occluder.y = y;
-light.x = x;
-light.y = y - sprite_height / 2;
+//light.x = x;
+//light.y = y - sprite_height / 2;
 //light1.x = x;
 //light1.y = y - sprite_height / 2;
-light.angle = point_direction(x, y, mouse_x, mouse_y);
+//light.angle = point_direction(x, y, mouse_x, mouse_y);
 var left_right = -input_check("left") + input_check("right");
 var up_down = -input_check("up") + input_check("down");
 GameData.strafing = input_check("accept");

@@ -1,5 +1,5 @@
-x = oPlayerWorld.x;
-y = oPlayerWorld.y;
+x = P.x;
+y = P.y;
 //this is cahnges the zoom based on scolling but you can set it how ever you like
 zoom_level = clamp(zoom_level + ((mouse_wheel_up() - mouse_wheel_down()) * 0.1), 0.5, 2);
 
