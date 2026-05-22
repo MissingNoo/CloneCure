@@ -1,5 +1,6 @@
 try {
 	buffs = [];
+	knockback_immune = false;
 	image_alpha = 0.01;
 	knocktimer = 0;
 	hit_frame = {};

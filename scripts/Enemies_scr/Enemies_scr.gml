@@ -454,7 +454,7 @@ e.set_sprite(sSaplingKing)
 	.set_scale(1);
 var e = new Enemy("Smol_Ame");
 e.set_sprite(sSmolAme)
-	.set_hp(10000)
+	.set_hp(10000 / 2)
 	.set_spd(1.20)
 	.set_atk(20)
 	.set_experience(5000)
@@ -513,7 +513,7 @@ e.on_create(method(e, function () {
 			}
 		},
 		draw:function (){
-			draw_sprite_ext(sAmeShadow, 0, x, y, 1, 2, 0, c_white, 0.8);
+			draw_sprite_ext(sAmeShadow, 0, x, y, 2, 3, 0, c_white, 0.8);
 			draw_self();
 		}
 	});

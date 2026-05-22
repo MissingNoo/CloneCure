@@ -77,7 +77,7 @@ if (!audio_is_playing(snd_hit1) and !audio_is_playing(snd_hit2) and !audio_is_pl
 }
 
 
-if (!other.boss and !other.miniboss and wid.knockback_speed[level] != 0 && other.knocktimer < AirLib.frame) {
+if (!other.boss and !other.miniboss and wid.knockback_speed[level] != 0 && other.knocktimer < AirLib.frame and !other.knockback_immune) {
 	other.knocktimer = AirLib.frame + wid.knockback_duration[level];
 	var push = wid.knockback_speed[level];
 	

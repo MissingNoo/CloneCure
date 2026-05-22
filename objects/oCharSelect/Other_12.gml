@@ -34,6 +34,7 @@ btnfunc = function() {
 
 time = new button("Time");
 time.custom_draw = method(time, btnfunc);
+time.unselect_on_leave = false;
 //time.set_on_area_function(method(time, on_area_func));
 time.use_text = false;
 time.desc = "test";
@@ -43,6 +44,7 @@ time.set_function(function() {
 });
 endless = new button("Endless");
 endless.custom_draw = method(endless, btnfunc);
+endless.unselect_on_leave = false;
 //endless.set_on_area_function(method(endless, on_area_func));
 endless.use_text = false;
 endless.desc = "test";
@@ -53,6 +55,7 @@ endless
 	});
 stage = new button("Stage");
 stage.custom_draw = method(stage, btnfunc);
+stage.unselect_on_leave = false;
 //stage.set_on_area_function(method(stage, on_area_func));
 stage.use_text = false;
 stage.desc = "test";

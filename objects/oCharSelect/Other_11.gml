@@ -2,7 +2,11 @@
 state_order = ["Char", "Skin", "StageMode", "Stage", "GO"];
 current_state = 0;
 confirm_state = function (confirm_overwrite = undefined, cancel_overwrite = undefined) {
+	if (!gui_can_interact()) {
+		return;
+	}
 	if (input_check_pressed("accept") || forcez) {
+		gui_cant_interact_frames(10);
 		if (is_undefined(confirm_overwrite)) {
 			current_state = array_get_index(state_order, st.get_current_state());
 			current_state++;
@@ -17,6 +21,7 @@ confirm_state = function (confirm_overwrite = undefined, cancel_overwrite = unde
 			|| device_mouse_check_button_pressed(0, mb_right)
 			|| force_x
 		) {
+		gui_cant_interact_frames(10);
 		if (is_undefined(cancel_overwrite)) {
 			current_state = array_get_index(state_order, st.get_current_state());
 			current_state--;
@@ -70,11 +75,29 @@ st.add("Char", {
 });
 st.add("Skin", {
 	enter: function() {
+		confirm_skin = function () {
+			if (
+				array_contains(
+					SaveData.characters[$ selected_char].outfits,
+					selected_skin_name
+				)
+			) {
+				skin_was_selected = true;
+				st.change("StageMode");
+			}
+		};
 		skin_was_selected = false;
 		skinui.set_visible(true);
 		ui.node_visible("label_title", false);
 		ui.node_visible("char_list_1_panel", false);
 		ui.node_visible("char_list_2_panel", false);
+		if (array_length(Characters[$ selected_char].skinorder) == 1) {
+			if (st.get_previous_state() == "StageMode") {
+				st.change("Char");
+			} else {
+				confirm_skin();
+			}
+		};
 	},
 	step: function() {
 		//var _left_right = - input_check_pressed("left") + input_check_pressed("right");
@@ -97,17 +120,7 @@ st.add("Skin", {
 				Characters[$ selected_char].skins[$ selected_skin_name].idle
 			);
 		}
-		confirm_state(function () {
-			if (
-				array_contains(
-					SaveData.characters[$ selected_char].outfits,
-					selected_skin_name
-				)
-			) {
-				skin_was_selected = true;
-				st.change("StageMode");
-			}
-		});
+		confirm_state(confirm_skin);
 	},
 	leave: function() {
 		forcez = false;

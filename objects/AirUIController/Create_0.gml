@@ -1,3 +1,4 @@
+window_set_fullscreen(true);
 if (instance_number(AirUIController) > 1) {
 	instance_destroy();
 }

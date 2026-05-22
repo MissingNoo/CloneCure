@@ -479,7 +479,7 @@ function button(_text) constructor {
 		if (
 			enabled
 			&& ((gui ? mouse_in_area_gui(area) : mouse_in_area(area)) or on_area)
-			&& (device_mouse_check_button_released(0, mb_left) or input_check_pressed("accept"))
+			&& (device_mouse_check_button_pressed(0, mb_left) or input_check_pressed("accept"))
 			&& gui_can_interact()
 		) {
 			func(self);
@@ -706,7 +706,7 @@ function gui_cant_interact_frames(frames = 10) {
 }
 
 function gui_can_interact() {
-	var can = !global.listboxopen && AirLib.listframe < AirLib.frame; // && AirLib.waitframe < AirLib.frame;
+	var can = !global.listboxopen && AirLib.listframe < AirLib.frame && AirLib.waitframe < AirLib.frame;
 	//gui_cant_interact_frames(10);
 	return can;
 }

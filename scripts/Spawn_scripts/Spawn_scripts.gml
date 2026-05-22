@@ -73,7 +73,8 @@ function spawn_enemy(_x, _y, name, dataset = {}) {
 					break;
 				case "lifeTime":
 					e.alarm[0] = dataset.spawnOverride.lifeTime;
-					continue;
+					break;
+					//continue;
 				default:
 					show_debug_message($"[STAGE] conversion not defined for {cur} in override!");
 					break;
