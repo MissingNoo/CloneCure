@@ -22,6 +22,7 @@ function Enemy(_name) constructor {
 	create_function = function () {};
 	draw_function = function () {};
 	animation_end_function = function () {};
+	selfknockback = false;
 	
 	static on_create = function (f) {
 		create_function = f;
@@ -93,6 +94,11 @@ function Enemy(_name) constructor {
 		return self;
 	};
 
+	static set_selfknockback = function(val) {
+		selfknockback = val;
+		return self;
+	};
+
 	static lock_direction = function(val) {
 		lock_dir = val;
 		return self;
@@ -109,8 +115,8 @@ function Enemy(_name) constructor {
 	}
 }
 
-var e = new Enemy("Theo");
-e.sprite = sTheo;
+var e = new Enemy("TattleTail");
+e.sprite = sTattleTail;
 e.hp = 20;
 e.spd = 0.35;
 e.atk = 2;
@@ -153,7 +159,7 @@ e.set_sprite(sDarkShrimp)
 	.set_scale(1.5)
 	.level_of("ShrimpMiniBoss", 2);
 var e = new Enemy("DeadBeat");
-e.set_sprite(sTheo)
+e.set_sprite(sTattleTail)
 	.set_hp(40)
 	.set_spd(0.40)
 	.set_atk(4)
@@ -201,7 +207,8 @@ e.set_sprite(sKFPEmployee)
 	.set_atk(2)
 	.set_experience(3)
 	.set_weight(1)
-	.set_scale(1);
+	.set_scale(1)
+	.set_selfknockback(true);
 var e = new Enemy("KFPHorde");
 e.set_sprite(sKFPEmployee)
 	.set_hp(20)
@@ -212,6 +219,7 @@ e.set_sprite(sKFPEmployee)
 	.set_scale(1)
 	.set_lifetime(350)
 	.lock_direction(true)
+	.set_selfknockback(true);
 var e = new Enemy("TakodachiMiniBoss");
 e.set_sprite(sTakodachi)
 	.set_hp(1800)
@@ -219,7 +227,8 @@ e.set_sprite(sTakodachi)
 	.set_atk(10)
 	.set_experience(600)
 	.set_weight(1)
-	.set_scale(2);
+	.set_scale(2)
+	.set_mini_boss(true);
 var e = new Enemy("AngelFairy");
 e.set_sprite(sBloom)
 	.set_hp(30)

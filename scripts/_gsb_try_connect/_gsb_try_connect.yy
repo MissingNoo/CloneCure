@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"_gsb_try_connect",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"_gsb_try_connect",
+  "parent":{
+    "name":"Shooter",
+    "path":"Shooter.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

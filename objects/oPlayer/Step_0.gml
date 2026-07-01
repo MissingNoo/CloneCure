@@ -3,14 +3,14 @@ if (os_type != os_android && device_mouse_check_button_pressed(0, mb_left)) {
 }
 
 GameData.player_pos = {x, y, depth};
-if (keyboard_check_pressed(ord("C"))) {
+/*if (keyboard_check_pressed(ord("C"))) {
 	//global.seconds += 10;
 	instance_create_depth(x, y, depth, oXP, {xp : GameData.needed_xp});
-}
+}*/
 //if (keyboard_check(ord("J"))) {
 	//spawn_enemy(mouse_x, mouse_y, "shrimp");
 //}
-if (keyboard_check_pressed(ord("O"))) {
+/*if (keyboard_check_pressed(ord("O"))) {
 	array_foreach(Player_Weapons, function (e, i) {
 		if (!is_undefined(e)) {
 			e.level = clamp(e.level+1, 0, 7);
@@ -25,7 +25,7 @@ if (keyboard_check_pressed(ord("I"))) {
 		}
 	})
 	//Player_Weapons[0].level--;
-}
+}*/
 #region Revives
 if (GameData.hp <= 0 && GameData.revives > 0) {
 	//TODO: revive window
@@ -38,6 +38,14 @@ if (GameData.hp <= 0 && GameData.revives > 0) {
 	}
 }
 #endregion
+
+#region Dead
+if (GameData.hp <= 0) {
+	image_alpha = 0;
+	exit;
+}
+#endregion
+
 #region Regeneration
 if (healframe < AirLib.frame) {
 	healframe = AirLib.frame + seconds_to_frames(5);
@@ -122,8 +130,4 @@ if (touch.enabled) {
 	} else {
 		movement.last_h = 1;
 	}
-}
-//GameData.arrow_dir = point_direction(x, y, mouse_x, mouse_y);
-if (device_mouse_check_button_released(0, mb_right)) {
-	instance_create_depth(mouse_x, mouse_y, depth, oXP, {xp: 10});
 }

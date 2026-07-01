@@ -1,6 +1,10 @@
 
-if (other.knockback_immune or (lock_dir_frame != 0 or other.lock_dir_frame != 0 or boss or other.boss or miniboss or other.miniboss) and other.name != name) {
-	exit;
+if (other.knockback_immune or (lock_dir_frame != 0 or other.lock_dir_frame != 0 or boss or other.boss or miniboss or other.miniboss)) {
+	if (selfknockback and name == other.name) {
+		
+	} else {
+		exit;
+	}
 }
 var push = 0.5;
 

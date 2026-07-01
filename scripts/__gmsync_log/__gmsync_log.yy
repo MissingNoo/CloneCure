@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"__gmsync_log",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"__gmsync_log",
+  "parent":{
+    "name":"Shooter",
+    "path":"Shooter.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -995,6 +995,12 @@ function ui_element_list() constructor {
 		global.currentelement = list[selected];
 	};
 	
+	static set_selected = function (_pos) {
+		do {
+			next();
+		} until (selected == _pos);
+	}
+	
 	static select = function(num) {
 		if (num == "reset") {
 			selected = 0;

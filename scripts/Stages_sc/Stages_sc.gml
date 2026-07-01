@@ -298,8 +298,9 @@ function ParseSpawnDirection(dir, pattern = undefined) {
 	}
 }
 
-dbg_stage();
+
 stage1_fill();
+dbg_stage();
 //#region Stage1
 //var stage1 = new Stage("Stage1");
 //stage1.add_enemy("Shrimp", "00:01");

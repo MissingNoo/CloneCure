@@ -26,6 +26,25 @@ Stats = {};
 Player_Weapons = array_create(6, undefined);
 
 #region Functions
+function spawn_xp(expvalue) {
+	var xpobj = ds_queue_dequeue(GameData.xp_list);
+	if (is_undefined(xpobj)) {
+		instance_create_depth(x, y, depth, oXP, {xp: expvalue});
+	} else {
+		var xx = x
+		var yy = y;
+		var xpv = expvalue;
+		with (xpobj) {
+			x = xx;
+			y = yy;
+			disabled = false;
+			xp = xpv;
+			event_user(0);
+			event_perform(ev_create, 0);
+		}
+	}
+}
+
 function eat_food() {
 	var heal = GameData.max_hp * 0.2;
 	if (player_have_item("Full_Meal")) {

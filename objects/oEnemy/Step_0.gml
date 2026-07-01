@@ -1,3 +1,8 @@
+if (GameData.hp <= 0) {
+	image_speed = lerp(image_speed, 0, 0.01);
+	speed = lerp(speed, 0, 0.01);
+	exit;
+}
 //occluder.x = x;
 //occluder.y = y;
 for (var i = 0; i < array_length(buffs); i++) {
@@ -10,21 +15,9 @@ if (hp <= 0) {
 		part_system_position(p, x, y - (sprite_height / 2));
 	}
 	if (image_alpha == 1 and drop) {
-		var xpobj = ds_queue_dequeue(GameData.xp_list);
-		if (is_undefined(xpobj)) {
-			instance_create_depth(x, y, depth, oXP, {xp: expvalue});
-		} else {
-			var xx = x
-			var yy = y;
-			var xpv = expvalue;
-			with (xpobj) {
-				x = xx;
-				y = yy;
-				disabled = false;
-				xp = xpv;
-				event_user(0);
-				event_perform(ev_create, 0);
-			}
+		xps = (miniboss or boss) ? irandom_range(5, 10) : 1;
+		repeat (xps) {
+			spawn_xp(expvalue / xps);
 		}
 		global.events.broadcast("enemy_defeated", name);
 	}

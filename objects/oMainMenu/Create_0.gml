@@ -63,7 +63,8 @@ btns.add(
 		buttons.button_quit
 	]
 );
-btns.selected = 3;
+//btns.selected = 3;
+btns.set_selected(3);
 buttons
 	.button_quit
 	.set_function(function() {

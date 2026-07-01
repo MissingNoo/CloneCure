@@ -1,10 +1,12 @@
 try {
+	
 	buffs = [];
 	knockback_immune = false;
 	image_alpha = 0.01;
 	knocktimer = 0;
 	hit_frame = {};
 	e = Enemies[$ check_enemy(name)];
+	selfknockback = e.selfknockback;
 	boss = e.boss;
 	miniboss = e.miniboss;
 	expvalue = e.experience;

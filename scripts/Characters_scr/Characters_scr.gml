@@ -180,7 +180,7 @@ c.set_sprite(sUrukaIdle, sUrukaRunning, sUrukaPortrait, sBlank)
 c = new character("Kasumi_Mai");
 c.set_sprite(sMaiIdle, sMaiRun, sMaifumiPort, sMaifumiTitle)
 	.set_speed(1.50)
-	.set_weapon("Cutting_Board")
+	.set_weapon("Fan_Beam")
 	.set_hp(60)
 	.set_atk(1.30)
 	.set_crit(10)

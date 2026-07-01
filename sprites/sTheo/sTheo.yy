@@ -28,8 +28,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Stage 1",
-    "path":"folders/Sprites/Monsters/Stage 1.yy",
+    "name":"Monsters",
+    "path":"folders/Sprites/Monsters.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
