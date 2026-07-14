@@ -1,6 +1,9 @@
 aspect = string_copy(string(display_get_aspect_ratio()), 1, 4);
 baseW = 640;
 baseH = 360;
+resolution_scale = 4;
+
+surface_resize(application_surface, baseW * resolution_scale, baseH * resolution_scale);
 if (os_type == os_android) {
 	baseW = 800; //TODO: calculate
 	//do {

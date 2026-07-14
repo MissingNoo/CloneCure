@@ -31,4 +31,5 @@ if (file_exists(game_save_id + "Config.json")) {
 lexicon_index_declare_from_json("english.json");
 lexicon_language_set("English");
 #endregion
-room_goto(rMainMenu);
+room_goto_next();
+//room_goto(rMainMenu);

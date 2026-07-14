@@ -26,10 +26,21 @@ Stats = {};
 Player_Weapons = array_create(6, undefined);
 
 #region Functions
-function spawn_xp(expvalue) {
+function reset_cursor() {
+    cursor_sprite = os_type != os_android ? sCursor : sBlank;
+}
+function start_stage(rm) {
+    GameData.on_stage = true;
+    GameData.mouseAim = false;
+    global.seconds = 0;
+    global.minutes = 0;
+    room_goto(rm);
+}
+    
+function spawn_xp(expvalue, _spd = 1) {
 	var xpobj = ds_queue_dequeue(GameData.xp_list);
 	if (is_undefined(xpobj)) {
-		instance_create_depth(x, y, depth, oXP, {xp: expvalue});
+		instance_create_depth(x, y, depth, oXP, {xp: expvalue, spd: _spd});
 	} else {
 		var xx = x
 		var yy = y;
@@ -39,6 +50,7 @@ function spawn_xp(expvalue) {
 			y = yy;
 			disabled = false;
 			xp = xpv;
+			spd = _spd;
 			event_user(0);
 			event_perform(ev_create, 0);
 		}
@@ -176,6 +188,18 @@ function base_item(_name) constructor {
 		return self;
 	}
 	
+	static set_debug = function(val) {
+		switch (lex) {
+			case "Items":
+				GameData.debug_item = name;
+				break;
+			case "Weapons":
+				GameData.debug_weapon = name;
+				break;
+		}
+		return self;
+	}
+
 	static set_unlocked = function(b) {
 		unlocked = b;
 		return self;
@@ -1545,6 +1569,7 @@ w.set_on_hit(function() {
 w.set_on_animation_end(function() {
 	if (sprite_index == sXPotatoExplosion) instance_destroy();
 });
+w.set_debug(true);
 //w.set_collab_materials("BL_Book", "Plug_Type_Asacoco");
 #endregion
 

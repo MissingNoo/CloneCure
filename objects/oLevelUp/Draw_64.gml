@@ -1,6 +1,11 @@
 //feather ignore GM1041
 //feather ignore GM1044
 //feather ignore GM2016
+draw_set_color(c_black);
+draw_set_alpha(0.3);
+draw_rectangle(0, 0, gui_w, gui_h, false);
+draw_set_alpha(1);
+draw_set_color(c_white);
 ui.foreach(function(name, pos, data) {
 	var spr = (data[$ "image"] != undefined && data[$ "image"] != "")
 		? asset_get_index(data.image)

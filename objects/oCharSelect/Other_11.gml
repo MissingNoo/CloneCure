@@ -166,7 +166,6 @@ st.add("Stage", {
 });
 st.add("GO", {
 	enter: function() {
-		GameData.on_stage = true;
 		GameData.stage_name = selected_stage.name;
 		if (!is_undefined(GameData.music)) {
 			audio_stop_sound(GameData.music);
@@ -177,13 +176,12 @@ st.add("GO", {
 			true,
 			GameConfig.music_volume
 		);
-		global.seconds = 0;
-		global.minutes = 0;
-		GameData.mouseAim = false;
-		room_goto(selected_stage.rm);
+		
+		start_stage(selected_stage.rm);
 	},
 	step: function() {
 		//confirm_state();
 	},
 	draw: function () {}
 });
+

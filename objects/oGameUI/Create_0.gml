@@ -6,6 +6,7 @@ use_old_ui = false;
 ui = new window(global.game_uis.stage, false);
 ui.fit_to_gui();
 lvlup_offset = 0;
+death_alpha = 0;
 #region surfaces
 xpsurf = undefined;
 #endregion

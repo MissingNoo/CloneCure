@@ -1,6 +1,8 @@
 if (GameData.hp <= 0) {
-	image_speed = lerp(image_speed, 0, 0.01);
 	speed = lerp(speed, 0, 0.01);
+	if (oGameUI.death_alpha > 0.4) {
+		image_speed = lerp(image_speed, 0, 0.01);
+	}
 	exit;
 }
 //occluder.x = x;
@@ -16,8 +18,9 @@ if (hp <= 0) {
 	}
 	if (image_alpha == 1 and drop) {
 		xps = (miniboss or boss) ? irandom_range(5, 10) : 1;
+		xpspd = (miniboss or boss) ? 2 : 1;
 		repeat (xps) {
-			spawn_xp(expvalue / xps);
+			spawn_xp(expvalue / xps, xpspd);
 		}
 		global.events.broadcast("enemy_defeated", name);
 	}

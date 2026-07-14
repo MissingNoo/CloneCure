@@ -2,9 +2,9 @@
 #region draws
 ui.add_draw("got_items", 
 	AirUIFunctionStart
-	lvlup_offset = approach(lvlup_offset, instance_exists(oLevelUp) ? _h : 0, 10);
-	_y += lvlup_offset;
-	area[1] = _y + lvlup_offset;
+	//lvlup_offset = approach(lvlup_offset, instance_exists(oLevelUp) ? _h : 0, 10);
+	//_y += lvlup_offset;
+	//area[1] = _y + lvlup_offset;
 	AirUIDrawDefaultSpr
 	items_surf = surface_recreate(items_surf, gui_w, gui_h);
 	items_surf_copy = surface_recreate(items_surf_copy, _w, _h);
@@ -72,42 +72,11 @@ ui.add_draw("hp",
 				1,
 				0
 			);
-			draw_healthbar(
-				_x,
-				_y + 2,
-				_x + _w,
-				_y + 5,
-				(GameData.hp / GameData.max_hp) * 100,
-				c_red,
-				#8CFFBD,
-				#8CFFBD,
-				0,
-				1,
-				0
-			);
-			draw_healthbar(
-				_x,
-				_y + _h - 6,
-				_x + _w,
-				_y + _h - 4,
-				(GameData.hp / GameData.max_hp) * 100,
-				c_red,
-				#069617,
-				#069617,
-				0,
-				1,
-				0
-			);
-			draw_sprite(sHPTitle, 0, _x, _y);
-			scribble($"[fa_middle][sHFont]{GameData.hp} / {GameData.max_hp}")
-				.scale(1.5)
-				.draw(_x + _w + 8, _y + _h / 2 + 2);
 	AirUIFunctionEnd
 );
 ui.add_draw("exp", 
 	AirUIFunctionStart
-	if (!use_old_ui) {
-		draw_healthbar(
+	draw_healthbar(
 				_x,
 				_y + 2,
 				_x + _w,
@@ -120,36 +89,6 @@ ui.add_draw("exp",
 				1,
 				0
 			);
-			draw_healthbar(
-				_x,
-				_y + 2,
-				_x + _w,
-				_y + 5,
-				nxp,
-				c_red,
-				#90E4F0,
-				#90E4F0,
-				0,
-				1,
-				0
-			);
-			draw_healthbar(
-				_x,
-				_y + _h - 6,
-				_x + _w,
-				_y + _h - 4,
-				nxp,
-				c_red,
-				#56C3D8,
-				#56C3D8,
-				0,
-				1,
-				0
-			);
-	draw_sprite(sXPTitle, 0, _x, _y);
-	} else if (surface_exists(xpsurf)) {
-		draw_surface_stretched(xpsurf, 0, 0, gui_w, 120)
-	}
 	AirUIFunctionEnd
 );
 ui.add_draw("stage", 

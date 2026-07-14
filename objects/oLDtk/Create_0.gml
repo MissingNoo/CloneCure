@@ -4,6 +4,7 @@
 // ...and to set this macro to 0 when building the game!
 #macro LDTK_LIVEO 1
 LDTK_LIVE = (GM_build_type == "run") ? 1 : 0;
+if (os_type == os_android) LDTK_LIVE = false;
 
 if (LDTK_LIVE) {
 	// live reload config

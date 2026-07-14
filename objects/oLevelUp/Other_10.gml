@@ -146,7 +146,7 @@ grab_upgrade = function (c) {
 	}
 	return grabbed_item;
 }
-show_debug_message($"rolled {o1type}:{o2type}:{o3type}:{o4type}");
+show_debug_message($"[LevelUP] Rolled {o1type}:{o2type}:{o3type}:{o4type}");
 ups = [
 	grab_upgrade(o1type),
 	grab_upgrade(o2type),
@@ -158,6 +158,13 @@ ups = [
 	//Weapons[$ "bl_book"],
 	//Weapons[$ "plug_type_asacoco"]
 ];
+if (!is_undefined(GameData[$"debug_item"])) {
+	ups[0] = Items[$ GameData.debug_item];
+}
+if (!is_undefined(GameData[$"debug_weapon"])) {
+	var dbgpos = !is_undefined(GameData[$"debug_item"]) ? 1 : 0;
+	ups[dbgpos] = Weapons[$ GameData.debug_weapon];
+}
 if (!is_undefined(GameData.held)) {
 	ups[GameData.held[0]] = GameData.held[1];
 	heldpos = GameData.held[0];

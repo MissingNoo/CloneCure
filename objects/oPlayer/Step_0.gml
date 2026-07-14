@@ -42,6 +42,10 @@ if (GameData.hp <= 0 && GameData.revives > 0) {
 #region Dead
 if (GameData.hp <= 0) {
 	image_alpha = 0;
+    reset_cursor();
+    if (!instance_exists(oDeathScreen)) {
+    	instance_create_depth(x, y, depth - 10, oDeathScreen);
+    }
 	exit;
 }
 #endregion

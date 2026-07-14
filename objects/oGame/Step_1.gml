@@ -16,6 +16,10 @@ if (GameData.on_stage) {
 	if (!instance_exists(oStage)) {
 		instance_create_depth(0, 0, depth - 1, oStage);
 	}
+} else {
+	if (instance_exists(oGameUI)) {
+    	instance_destroy(oGameUI);
+    }
 }
 if (room != lastroom) {
 	lastroom = room;

@@ -1,3 +1,6 @@
+if (GameData.hp <= 0) {
+	exit;
+}
 if (instance_exists(objNekoPresenceDemo)) {
 	draw_sprite_centered_ext(
 		objNekoPresenceDemo.sprite_index,

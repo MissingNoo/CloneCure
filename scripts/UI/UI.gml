@@ -1498,7 +1498,6 @@ global.game_uis.skin_area = {
 	"width": 1280.0,
 	"height": 720.0,
 };
-
 global.game_uis.stage_mode = {
 	"name": "main_panel",
 	"top": 120.0,
@@ -1714,406 +1713,458 @@ global.game_uis.stage_info = {
 };
 
 global.game_uis.stage = {
-	"name": "base",
-	"top": 50.0,
-	"data": {"image": "gamea"},
-	"left": 275.0,
-	"nodes": [
-		{
-			"name": "top_panel",
-			"flexDirection": "row",
-			"top": 0.0,
-			"data": {},
-			"left": 0.0,
-			"flex": 1.0,
-			"nodes": [
-				{
-					"data": {},
-					"flex": 1.0,
-					"nodes": [
-						{
-							"marginBottom": 0.0,
-							"data": {},
-							"marginTop": 0.0,
-							"flex": 1.0,
-							"nodes": [
-								{
-									"name": "hp",
-									"padding": 10.0,
-									"data": {"image": ""},
-									"flex": 0.0,
-									"height": 10.0,
-								},
-								{
-									"name": "exp",
-									"padding": 10.0,
-									"data": {"image": "sExpBar"},
-									"height": 10.0,
-								}
-							],
-							"marginLeft": 0.0,
-							"padding": 0.0,
-							"marginRight": 29.0,
-							"name": "char_panel",
-						}
-					],
-					"padding": 0.0,
-					"width": 60.0,
-					"name": "grid_panel1",
-				},
-				{
-					"name": "grid_panel2",
-					"flexDirection": "row",
-					"data": {},
-					"flex": 1.0,
-					"nodes": [
-						{
-							"name": "panel_40518",
-							"data": {},
-							"flex": 1.0,
-							"padding": 10.0,
-							"width": 60.0,
-							"height": 60.0,
-						},
-						{
-							"name": "stage",
-							"data": {},
-							"marginTop": 50.0,
-							"padding": 0.0,
-							"width": 86.0,
-							"height": 42.0,
-						},
-						{
-							"name": "panel_65507",
-							"data": {},
-							"flex": 1.0,
-							"padding": 10.0,
-							"width": 60.0,
-							"height": 60.0,
-						}
-					],
-					"padding": 0.0,
-					"margin": 0.0,
-					"width": 60.0,
-				},
-				{
-					"flexDirection": "row",
-					"data": {},
-					"flex": 1.0,
-					"nodes": [
-						{
-							"name": "panel_5887",
-							"data": {},
-							"flex": 1.0,
-							"padding": 10.0,
-							"width": 60.0,
-							"height": 60.0,
-						},
-						{
-							"name": "run_info",
-							"data": {},
-							"marginTop": 32.0,
-							"nodes": [
-								{
-									"name": "panel_50935",
-									"flexDirection": "row",
-									"data": {},
-									"flex": 1.0,
-									"nodes": [
-										{
-											"name": "coin",
-											"padding": 10.0,
-											"data": {"image": "sHolocoin"},
-											"flex": 1.0,
-											"width": 32.0,
-										},
-										{
-											"name": "money",
-											"padding": 10.0,
-											"data": {},
-											"flex": 1.0,
-											"width": 60.0,
-										}
-									],
-									"padding": 0.0,
-									"height": 60.0,
-								},
-								{
-									"name": "panel_40917",
-									"flexDirection": "row",
-									"data": {},
-									"flex": 1.0,
-									"nodes": [
-										{
-											"data": {"image": "sHuddefeatedEnemies"},
-											"marginTop": 4.0,
-											"flex": 1.0,
-											"padding": 10.0,
-											"width": 60.0,
-											"name": "killspr",
-										},
-										{
-											"data": {},
-											"marginTop": 4.0,
-											"flex": 1.0,
-											"padding": 10.0,
-											"width": 60.0,
-											"name": "kills",
-										}
-									],
-									"padding": 0.0,
-									"margin": 0.0,
-									"height": 60.0,
-								}
-							],
-							"marginLeft": 0.0,
-							"padding": 0.0,
-							"marginRight": 36.0,
-							"width": 62.0,
-							"height": 62.0,
-						}
-					],
-					"padding": 0.0,
-					"width": 60.0,
-					"name": "grid_panel3",
-				}
-			],
-			"padding": 0.0,
-			"height": 300.0,
-		},
-		{
-			"name": "middle_panel",
-			"flexDirection": "row",
-			"top": 0.0,
-			"data": {},
-			"left": 0.0,
-			"flex": 1.0,
-			"nodes": [
-				{
-					"name": "grid_panel4",
-					"padding": 0.0,
-					"data": {},
-					"flex": 1.0,
-					"width": 60.0,
-				},
-				{
-					"border": 0.0,
-					"name": "grid_panel5",
-					"data": {},
-					"flex": 1.0,
-					"padding": 0.0,
-					"width": 60.0,
-					"margin": 0.0,
-				},
-				{
-					"data": {},
-					"flex": 1.0,
-					"flexBasis": 0.0,
-					"padding": 0.0,
-					"width": 60.0,
-					"name": "grid_panel6",
-				}
-			],
-			"padding": 0.0,
-			"height": 300.0,
-		},
-		{
-			"name": "bottom_panel",
-			"flexDirection": "row",
-			"top": 0.0,
-			"data": {},
-			"left": 0.0,
-			"flex": 1.0,
-			"nodes": [
-				{
-					"name": "grid_panel7",
-					"data": {},
-					"flex": 2.0,
-					"nodes": [
-						{
-							"name": "panel_21727",
-							"data": {},
-							"flex": 3.0,
-							"padding": 10.0,
-							"width": 60.0,
-							"height": 60.0,
-						},
-						{
-							"name": "buffs",
-							"height": 60.0,
-							"data": {},
-							"padding": 10.0,
-							"margin": 10.0,
-							"width": 60.0,
-						}
-					],
-					"padding": 0.0,
-					"margin": 0.0,
-					"width": 60.0,
-				},
-				{
-					"data": {},
-					"flex": 1.5,
-					"nodes": [
-						{
-							"name": "panel_977",
-							"data": {},
-							"flex": 0.75,
-							"padding": 10.0,
-							"width": 60.0,
-							"height": 60.0,
-						},
-						{
-							"height": 60.0,
-							"data": {"image": "sItemsHud"},
-							"flex": 1.0,
-							"nodes": [
-								{
-									"name": "weapons",
-									"flexDirection": "row",
-									"data": {},
-									"flex": 1.0,
-									"nodes": [
-										{
-											"border": 0.0,
-											"name": "w0",
-											"data": {},
-											"flex": 1.0,
-											"marginLeft": 5.0,
-											"padding": 0.0,
-											"marginRight": 10.0,
-											"width": 60.0,
-											"margin": 0.0,
-										},
-										{
-											"name": "w1",
-											"data": {},
-											"left": 0.0,
-											"flex": 1.0,
-											"padding": 0.0,
-											"marginRight": 10.0,
-											"border": 0.0,
-											"width": 60.0,
-										},
-										{
-											"data": {},
-											"flex": 1.0,
-											"padding": 0.0,
-											"marginRight": 10.0,
-											"width": 60.0,
-											"name": "w2",
-										},
-										{
-											"data": {},
-											"flex": 1.0,
-											"padding": 0.0,
-											"marginRight": 10.0,
-											"width": 60.0,
-											"name": "w3",
-										},
-										{
-											"data": {},
-											"flex": 1.0,
-											"padding": 0.0,
-											"marginRight": 10.0,
-											"width": 60.0,
-											"name": "w4",
-										},
-										{
-											"data": {},
-											"flex": 1.0,
-											"padding": 0.0,
-											"marginRight": 5.0,
-											"width": 60.0,
-											"name": "w5",
-										}
-									],
-									"padding": 0.0,
-									"margin": 0.0,
-									"height": 60.0,
-								},
-								{
-									"name": "items_panel",
-									"flexDirection": "row",
-									"data": {},
-									"flex": 1.0,
-									"nodes": [
-										{
-											"data": {},
-											"flex": 1.0,
-											"marginLeft": 5.0,
-											"padding": 0.0,
-											"marginRight": 10.0,
-											"name": "i0",
-										},
-										{
-											"data": {},
-											"flex": 1.0,
-											"padding": 0.0,
-											"marginRight": 10.0,
-											"width": 60.0,
-											"name": "i1",
-										},
-										{
-											"data": {},
-											"flex": 1.0,
-											"padding": 0.0,
-											"marginRight": 10.0,
-											"width": 60.0,
-											"name": "i2",
-										},
-										{
-											"data": {},
-											"flex": 1.0,
-											"padding": 0.0,
-											"marginRight": 10.0,
-											"width": 60.0,
-											"name": "i3",
-										},
-										{
-											"data": {},
-											"flex": 1.0,
-											"padding": 0.0,
-											"marginRight": 10.0,
-											"width": 60.0,
-											"name": "i4",
-										},
-										{
-											"data": {},
-											"flex": 1.0,
-											"padding": 0.0,
-											"marginRight": 5.0,
-											"width": 60.0,
-											"name": "i5",
-										}
-									],
-									"padding": 0.0,
-									"height": 60.0,
-								}
-							],
-							"padding": 10.0,
-							"name": "got_items",
-						}
-					],
-					"padding": 0.0,
-					"width": 60.0,
-					"name": "grid_panel8",
-				},
-				{
-					"name": "grid_panel9",
-					"padding": 0.0,
-					"data": {},
-					"flex": 2.0,
-					"width": 60.0,
-				}
-			],
-			"padding": 0.0,
-			"height": 300.0,
-		}
-	],
-	"width": 1280.0,
-	"height": 720.0,
-};
+  "left":275.0,
+  "top":50.0,
+  "width":1280.0,
+  "height":720.0,
+  "nodes":[
+    {
+      "left":0.0,
+      "top":0.0,
+      "flexDirection":"row",
+      "padding":0.0,
+      "height":300.0,
+      "flex":1.0,
+      "nodes":[
+        {
+          "padding":0.0,
+          "flex":1.0,
+          "name":"grid_panel1",
+          "data":{
+          },
+          "width":60.0
+        },
+        {
+          "flexDirection":"row",
+          "margin":0.0,
+          "width":60.0,
+          "padding":0.0,
+          "flex":1.0,
+          "nodes":[
+            {
+              "width":60.0,
+              "padding":10.0,
+              "height":60.0,
+              "flex":1.0,
+              "name":"spacer_1",
+              "data":{
+              }
+            },
+            {
+              "marginTop":50.0,
+              "width":86.0,
+              "padding":0.0,
+              "height":42.0,
+              "name":"stage",
+              "data":{
+              }
+            },
+            {
+              "width":60.0,
+              "padding":10.0,
+              "height":60.0,
+              "flex":1.0,
+              "name":"spacer2",
+              "data":{
+              }
+            }
+          ],
+          "name":"grid_panel2",
+          "data":{
+          }
+        },
+        {
+          "flexDirection":"row",
+          "width":60.0,
+          "padding":0.0,
+          "flex":1.0,
+          "nodes":[
+            {
+              "width":60.0,
+              "padding":10.0,
+              "height":60.0,
+              "flex":1.0,
+              "name":"spacer3",
+              "data":{
+              }
+            },
+            {
+              "marginTop":32.0,
+              "width":62.0,
+              "padding":0.0,
+              "height":62.0,
+              "marginRight":36.0,
+              "nodes":[
+                {
+                  "flexDirection":"row",
+                  "padding":0.0,
+                  "height":60.0,
+                  "flex":1.0,
+                  "nodes":[
+                    {
+                      "padding":10.0,
+                      "flex":1.0,
+                      "name":"coin",
+                      "data":{
+                        "image":"sHolocoin"
+                      },
+                      "width":32.0
+                    },
+                    {
+                      "padding":10.0,
+                      "flex":1.0,
+                      "name":"money",
+                      "data":{
+                      },
+                      "width":60.0
+                    }
+                  ],
+                  "name":"panel_50935",
+                  "data":{
+                  }
+                },
+                {
+                  "flexDirection":"row",
+                  "margin":0.0,
+                  "padding":0.0,
+                  "height":60.0,
+                  "flex":1.0,
+                  "nodes":[
+                    {
+                      "marginTop":4.0,
+                      "width":60.0,
+                      "padding":10.0,
+                      "flex":1.0,
+                      "name":"killspr",
+                      "data":{
+                        "image":"sHuddefeatedEnemies"
+                      }
+                    },
+                    {
+                      "marginTop":4.0,
+                      "width":60.0,
+                      "padding":10.0,
+                      "flex":1.0,
+                      "name":"kills",
+                      "data":{
+                      }
+                    }
+                  ],
+                  "name":"panel_40917",
+                  "data":{
+                  }
+                }
+              ],
+              "name":"run_info",
+              "data":{
+              },
+              "marginLeft":0.0
+            }
+          ],
+          "name":"grid_panel3",
+          "data":{
+          }
+        }
+      ],
+      "name":"top_panel",
+      "data":{
+      }
+    },
+    {
+      "left":0.0,
+      "top":0.0,
+      "flexDirection":"row",
+      "padding":0.0,
+      "height":300.0,
+      "flex":1.0,
+      "nodes":[
+        {
+          "padding":0.0,
+          "flex":1.0,
+          "name":"grid_panel4",
+          "data":{
+          },
+          "width":60.0
+        },
+        {
+          "margin":0.0,
+          "width":60.0,
+          "padding":0.0,
+          "flex":1.0,
+          "border":0.0,
+          "name":"grid_panel5",
+          "data":{
+          }
+        },
+        {
+          "width":60.0,
+          "padding":0.0,
+          "flex":1.0,
+          "flexBasis":0.0,
+          "name":"grid_panel6",
+          "data":{
+          }
+        }
+      ],
+      "name":"middle_panel",
+      "data":{
+      }
+    },
+    {
+      "left":0.0,
+      "top":0.0,
+      "flexDirection":"row",
+      "padding":0.0,
+      "height":300.0,
+      "flex":1.0,
+      "nodes":[
+        {
+          "margin":0.0,
+          "width":60.0,
+          "padding":0.0,
+          "flex":2.0,
+          "nodes":[
+            {
+              "width":60.0,
+              "padding":10.0,
+              "height":60.0,
+              "flex":3.0,
+              "name":"spacer4",
+              "data":{
+              }
+            },
+            {
+              "margin":10.0,
+              "width":60.0,
+              "padding":10.0,
+              "height":60.0,
+              "name":"buffs",
+              "data":{
+              }
+            }
+          ],
+          "name":"grid_panel7",
+          "data":{
+          }
+        },
+        {
+          "width":60.0,
+          "padding":0.0,
+          "flex":1.5,
+          "nodes":[
+            {
+              "padding":10.0,
+              "height":60.0,
+              "flex":0.75,
+              "name":"spacer5",
+              "data":{
+              }
+            },
+            {
+              "padding":10.0,
+              "height":60.0,
+              "flex":1.3000000715255737,
+              "nodes":[
+                {
+                  "marginTop":20.0,
+                  "flexDirection":"row",
+                  "margin":0.0,
+                  "padding":0.0,
+                  "height":60.0,
+                  "flex":1.0,
+                  "nodes":[
+                    {
+                      "margin":0.0,
+                      "width":60.0,
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":10.0,
+                      "border":0.0,
+                      "name":"w0",
+                      "data":{
+                      },
+                      "marginLeft":5.0
+                    },
+                    {
+                      "left":0.0,
+                      "width":60.0,
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":10.0,
+                      "border":0.0,
+                      "name":"w1",
+                      "data":{
+                      }
+                    },
+                    {
+                      "width":60.0,
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":10.0,
+                      "name":"w2",
+                      "data":{
+                      }
+                    },
+                    {
+                      "width":60.0,
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":10.0,
+                      "name":"w3",
+                      "data":{
+                      }
+                    },
+                    {
+                      "width":60.0,
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":10.0,
+                      "name":"w4",
+                      "data":{
+                      }
+                    },
+                    {
+                      "width":60.0,
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":5.0,
+                      "name":"w5",
+                      "data":{
+                      }
+                    }
+                  ],
+                  "name":"weapons",
+                  "data":{
+                  }
+                },
+                {
+                  "flexDirection":"row",
+                  "padding":0.0,
+                  "height":60.0,
+                  "flex":1.0,
+                  "nodes":[
+                    {
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":10.0,
+                      "name":"i0",
+                      "data":{
+                      },
+                      "marginLeft":5.0
+                    },
+                    {
+                      "width":60.0,
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":10.0,
+                      "name":"i1",
+                      "data":{
+                      }
+                    },
+                    {
+                      "width":60.0,
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":10.0,
+                      "name":"i2",
+                      "data":{
+                      }
+                    },
+                    {
+                      "width":60.0,
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":10.0,
+                      "name":"i3",
+                      "data":{
+                      }
+                    },
+                    {
+                      "width":60.0,
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":10.0,
+                      "name":"i4",
+                      "data":{
+                      }
+                    },
+                    {
+                      "width":60.0,
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":5.0,
+                      "name":"i5",
+                      "data":{
+                      }
+                    }
+                  ],
+                  "name":"items_panel",
+                  "data":{
+                  }
+                },
+                {
+                  "marginTop":5.0,
+                  "marginBottom":0.0,
+                  "flexDirection":"row",
+                  "padding":0.0,
+                  "height":10.0,
+                  "flex":0.0,
+                  "nodes":[
+                    {
+                      "width":60.0,
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":6.0,
+                      "name":"hp",
+                      "data":{
+                      },
+                      "marginLeft":6.0
+                    },
+                    {
+                      "width":60.0,
+                      "padding":0.0,
+                      "flex":1.0,
+                      "marginRight":6.0,
+                      "name":"exp",
+                      "data":{
+                      },
+                      "marginLeft":6.0
+                    }
+                  ],
+                  "name":"info_panel",
+                  "data":{
+                  }
+                }
+              ],
+              "name":"got_items",
+              "data":{
+                "image":"sItemsHud2"
+              }
+            }
+          ],
+          "name":"grid_panel8",
+          "data":{
+          }
+        },
+        {
+          "padding":0.0,
+          "flex":2.0,
+          "name":"grid_panel9",
+          "data":{
+          },
+          "width":60.0
+        }
+      ],
+      "name":"bottom_panel",
+      "data":{
+      }
+    }
+  ],
+  "name":"main_panel",
+  "data":{
+    "image":"gamea"
+  }
+}
 
 global.game_uis.select = {
   "left":275.0,
@@ -4332,4 +4383,288 @@ global.game_uis.golden_anvil = {
   "name":"main_panel",
   "data":{
   }
+}
+
+global.game_uis.death = {
+  "name":"main_panel",
+  "left":275.0,
+  "top":50.0,
+  "width":1280.0,
+  "data":{
+    "image":"dead"
+  },
+  "height":720.0,
+  "nodes":[
+    {
+      "name":"top_panel_grid",
+      "flexDirection":"row",
+      "left":0.0,
+      "padding":0.0,
+      "top":0.0,
+      "flex":1.6999999284744263,
+      "data":{
+      },
+      "height":300.0,
+      "nodes":[
+        {
+          "padding":0.0,
+          "width":60.0,
+          "flex":1.0,
+          "data":{
+          },
+          "name":"grid_panel1"
+        },
+        {
+          "name":"grid_panel2",
+          "margin":0.0,
+          "padding":0.0,
+          "width":60.0,
+          "flex":1.0,
+          "data":{
+          },
+          "nodes":[
+            {
+              "name":"panel_13255",
+              "padding":10.0,
+              "width":60.0,
+              "flex":1.0,
+              "data":{
+              },
+              "height":60.0
+            },
+            {
+              "padding":10.0,
+              "data":{
+                "text":"",
+                "base_text":"",
+                "text_pos":":"
+              },
+              "height":60.0,
+              "name":"GameOver"
+            }
+          ]
+        },
+        {
+          "padding":0.0,
+          "width":60.0,
+          "flex":1.0,
+          "data":{
+          },
+          "name":"grid_panel3"
+        }
+      ]
+    },
+    {
+      "name":"middle_panel_grid",
+      "flexDirection":"row",
+      "left":0.0,
+      "padding":0.0,
+      "top":0.0,
+      "flex":3.2000000476837158,
+      "data":{
+      },
+      "height":300.0,
+      "nodes":[
+        {
+          "padding":0.0,
+          "width":60.0,
+          "flex":1.0,
+          "data":{
+          },
+          "name":"grid_panel4"
+        },
+        {
+          "name":"MiddlePanel",
+          "margin":0.0,
+          "padding":0.0,
+          "border":0.0,
+          "width":60.0,
+          "data":{
+          },
+          "flex":1.0,
+          "nodes":[
+            {
+              "name":"panel_59225",
+              "padding":0.0,
+              "width":60.0,
+              "flex":2.0999999046325684,
+              "data":{
+              },
+              "height":60.0
+            },
+            {
+              "padding":10.0,
+              "data":{
+              },
+              "flex":1.0,
+              "height":60.0,
+              "name":"Score"
+            },
+            {
+              "name":"panel_83047",
+              "padding":0.0,
+              "width":60.0,
+              "flex":0.20000001788139343,
+              "data":{
+              },
+              "height":60.0
+            },
+            {
+              "padding":10.0,
+              "data":{
+              },
+              "flex":1.0,
+              "height":60.0,
+              "name":"Coins"
+            },
+            {
+              "name":"panel_17781",
+              "padding":0.0,
+              "width":60.0,
+              "flex":0.5,
+              "data":{
+              },
+              "height":60.0
+            },
+            {
+              "nodes":[
+                {
+                  "name":"panel_73432",
+                  "padding":0.0,
+                  "width":60.0,
+                  "flex":0.30000001192092896,
+                  "data":{
+                  },
+                  "height":-3120.0
+                },
+                {
+                  "padding":10.0,
+                  "data":{
+                  },
+                  "flex":1.0,
+                  "height":60.0,
+                  "name":"Retry"
+                },
+                {
+                  "name":"panel_55909",
+                  "padding":0.0,
+                  "width":60.0,
+                  "flex":1.0,
+                  "data":{
+                  },
+                  "height":60.0
+                },
+                {
+                  "padding":10.0,
+                  "data":{
+                  },
+                  "flex":1.0,
+                  "height":60.0,
+                  "name":"CharacterSelect"
+                },
+                {
+                  "name":"panel_40701",
+                  "padding":0.0,
+                  "width":60.0,
+                  "flex":1.0,
+                  "data":{
+                  },
+                  "height":60.0
+                },
+                {
+                  "padding":10.0,
+                  "data":{
+                  },
+                  "flex":1.0,
+                  "height":60.0,
+                  "name":"MainMenu"
+                },
+                {
+                  "name":"panel_94323",
+                  "padding":0.0,
+                  "width":60.0,
+                  "flex":1.0,
+                  "data":{
+                  },
+                  "height":60.0
+                },
+                {
+                  "padding":10.0,
+                  "data":{
+                  },
+                  "flex":1.0,
+                  "height":60.0,
+                  "name":"Submit"
+                },
+                {
+                  "name":"panel_88053",
+                  "padding":0.0,
+                  "width":60.0,
+                  "flex":1.0,
+                  "data":{
+                  },
+                  "height":60.0
+                }
+              ],
+              "name":"Options_panel",
+              "marginRight":54.0,
+              "padding":10.0,
+              "flex":20.0,
+              "data":{
+              },
+              "height":60.0,
+              "marginLeft":53.0
+            }
+          ]
+        },
+        {
+          "name":"grid_panel6",
+          "flexBasis":0.0,
+          "padding":0.0,
+          "width":60.0,
+          "flex":1.0,
+          "data":{
+          }
+        }
+      ]
+    },
+    {
+      "name":"bottom_panel_grid",
+      "flexDirection":"row",
+      "left":0.0,
+      "padding":0.0,
+      "top":0.0,
+      "flex":0.30000001192092896,
+      "data":{
+      },
+      "height":300.0,
+      "nodes":[
+        {
+          "name":"grid_panel7",
+          "margin":0.0,
+          "padding":0.0,
+          "width":60.0,
+          "flex":1.0,
+          "data":{
+          }
+        },
+        {
+          "padding":0.0,
+          "width":60.0,
+          "flex":1.0,
+          "data":{
+          },
+          "name":"grid_panel8"
+        },
+        {
+          "padding":0.0,
+          "width":60.0,
+          "flex":1.0,
+          "data":{
+          },
+          "name":"grid_panel9"
+        }
+      ]
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 direction = random(360);
-speed = 1;
+speed = spd;
 near = undefined;
 join = new air_timer(180, method(self, function() {
 	if (sprite_index == sXPMagnet) {
