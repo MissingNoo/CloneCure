@@ -1,3 +1,4 @@
+///feather disable all
 // __gmsync_bridge — Async Networking Event (Other 68)
 // ⚠️ Это Other_68, НЕ Other_75! В GMS2 2024.x:
 //    Other_68 = Async Networking

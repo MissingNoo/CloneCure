@@ -9,7 +9,7 @@ array_foreach(Player_Items, function(e, i) /*=>*/ {
 	}
 });
 array_foreach(Player_Perks, function(e, i) /*=>*/ {
-	if (e != undefined) {
+	if (e != undefined and e.level > 0) {
 		e.on_hurt();
 	}
 });

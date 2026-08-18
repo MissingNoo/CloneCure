@@ -31,9 +31,10 @@ if (input_check_pressed("accept") || force_z) {
 				eliminate.set_enabled(GameData.Eliminates > 0);
 				break;
 			}
+			var pos = -1;
 			switch (ups[selected_option].lex) {
 				case "Weapons":
-					var pos = array_find_index(Player_Weapons, function(e, i) {
+					pos = array_find_index(Player_Weapons, function(e, i) {
 						if (e == undefined) {
 							return false;
 						}
@@ -58,7 +59,7 @@ if (input_check_pressed("accept") || force_z) {
 						Items[$ global.search].on_bought();
 						break;
 					}
-					var pos = array_find_index(Player_Items, function(e, i) {
+					pos = array_find_index(Player_Items, function(e, i) {
 						if (e == undefined) {
 							return false;
 						}
@@ -80,7 +81,7 @@ if (input_check_pressed("accept") || force_z) {
 					ups[selected_option].on_bought();
 					break;
 				case "Perks":
-					var pos = array_find_index(Player_Perks, function(e, i) {
+					pos = array_find_index(Player_Perks, function(e, i) {
 						return e.name == global.search;
 					});
 					Player_Perks[pos].level++;

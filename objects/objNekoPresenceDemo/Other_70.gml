@@ -19,8 +19,8 @@ if (ev_type == "DiscordReady") {
 	np_setpresence("On the Start Menu", "", "astraicon", "");
 
 	// passing a URL will add this sprite asynchronously via *internets*
-	/*
-	sprite_add(
+	
+	/*sprite_add(
 		np_get_avatar_url(async_load[? "user_id"], async_load[? "avatar"]),
 		1,
 		false,

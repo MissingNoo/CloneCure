@@ -30,7 +30,7 @@ if (st.get_current_state() == "Skin" || st.get_current_state() == "Stage") {
 	var _x1 = _x;
 	var _x2 = _x + _w;
 	var _y1 = _y;
-	var _w = 50;
+	_w = 50;
 	var _y2 = _y + _h;
 	if (gui_click(_x1 - _w, _y1, _x1, _y2)) {
 		left_right = -1;

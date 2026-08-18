@@ -1,3 +1,4 @@
+///feather disable all
 // __gmsync_bridge — Alarm 0: попытка подключения к VS Code
 if (__gsb_active) {
     show_debug_message("[GMSync] Alarm0: already connected, skip.");

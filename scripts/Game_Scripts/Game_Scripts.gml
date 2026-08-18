@@ -560,7 +560,7 @@ w.set_type(weapon_type.Multishot);
 #endregion
 
 #region Music_Note
-var w = new weapon("Music_Note");
+w = new weapon("Music_Note");
 w.set_sprite(sUrukaNote, sFullNote);
 w.set_create(function() {
 	sprite_index = choose(sFullNote, sHalfNote, sEightNote, sQuarterNote);
@@ -629,7 +629,7 @@ w.set_type(weapon_type.Multishot);
 #endregion
 
 #region Rest_Note
-var w = new weapon("Rest_Note");
+w = new weapon("Rest_Note");
 w.set_sprite(sUrukaNote, sRestNote);
 w.set_on_hit(function() {
 	apply_buff(global.lastenemy, "metronome");
@@ -1569,7 +1569,6 @@ w.set_on_hit(function() {
 w.set_on_animation_end(function() {
 	if (sprite_index == sXPotatoExplosion) instance_destroy();
 });
-w.set_debug(true);
 //w.set_collab_materials("BL_Book", "Plug_Type_Asacoco");
 #endregion
 

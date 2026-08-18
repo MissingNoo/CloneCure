@@ -41,6 +41,8 @@
     {"$GMObjectProperty":"v2","%Name":"orbit_place","filters":[],"listItems":[],"multiselect":false,"name":"orbit_place","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"undefined","varType":4,},
     {"$GMObjectProperty":"v2","%Name":"level","filters":[],"listItems":[],"multiselect":false,"name":"level","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"ghost","filters":[],"listItems":[],"multiselect":false,"name":"ghost","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
+    {"$GMObjectProperty":"v2","%Name":"variable_name","filters":[],"listItems":[],"multiselect":false,"name":"variable_name","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"second","filters":[],"listItems":[],"multiselect":false,"name":"second","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

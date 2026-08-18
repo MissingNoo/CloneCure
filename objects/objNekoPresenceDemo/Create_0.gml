@@ -12,7 +12,7 @@ x = -100;
 
 ready = false;
 
-alarm[0] = room_speed * 5;
+alarm[0] = game_get_speed(gamespeed_fps) * 5;
 
 if (!np_initdiscord(DISCORD_APP_ID, true, np_steam_app_id_empty)) {
 	instance_destroy();

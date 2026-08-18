@@ -26,19 +26,6 @@ if (keyboard_check_pressed(ord("I"))) {
 	})
 	//Player_Weapons[0].level--;
 }*/
-#region Revives
-if (GameData.hp <= 0 && GameData.revives > 0) {
-	//TODO: revive window
-	GameData.revives--;
-	GameData.hp = GameData.max_hp / 2;
-	with (oEnemy) {
-		if (!boss || !miniboss) {
-			hp = 0;
-		}
-	}
-}
-#endregion
-
 #region Dead
 if (GameData.hp <= 0) {
 	image_alpha = 0;

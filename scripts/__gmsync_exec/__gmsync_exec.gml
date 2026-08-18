@@ -1,3 +1,4 @@
+///feather disable all
 /// @param {string} _id
 /// @param {string} _cmd
 /// @desc Исполняет команду от GMSync Bridge и возвращает строку-результат.

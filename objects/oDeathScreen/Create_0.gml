@@ -52,3 +52,9 @@ ui.node_visible("MainMenu", false);
 ui.node_visible("Submit", false);
 ui.node_visible("Coins", false);
 ui.node_visible("Score", false);
+#region Revives
+if (GameData.revives > 0) {
+	instance_create_depth(x, y, depth, oRevive);
+	visible = false;
+}
+#endregion

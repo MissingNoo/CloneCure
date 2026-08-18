@@ -1,3 +1,4 @@
+///feather disable all
 global.__ldtk_config = {
 	file: "", // the project file
 	level_name: "", // the priority is: argument passed into LDtkLoad > config.level_name > current room level name

@@ -243,7 +243,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2026.0.0.16",
+    "IDEVersion":"2026.100.0.1121",
   },
   "name":"Shooter",
   "resources":[
@@ -321,6 +321,7 @@
     {"id":{"name":"oPlayerStatsUI","path":"objects/oPlayerStatsUI/oPlayerStatsUI.yy",},},
     {"id":{"name":"oPlayerWorld","path":"objects/oPlayerWorld/oPlayerWorld.yy",},},
     {"id":{"name":"oPond","path":"objects/oPond/oPond.yy",},},
+    {"id":{"name":"oRevive","path":"objects/oRevive/oRevive.yy",},},
     {"id":{"name":"oSharpenAura","path":"objects/oSharpenAura/oSharpenAura.yy",},},
     {"id":{"name":"oShop","path":"objects/oShop/oShop.yy",},},
     {"id":{"name":"oSoil","path":"objects/oSoil/oSoil.yy",},},

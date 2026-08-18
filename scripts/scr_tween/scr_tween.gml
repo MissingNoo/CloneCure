@@ -3,7 +3,7 @@ function tween(
 	_variable_name,
 	_value,
 	_animation = "back",
-	_time = room_speed,
+	_time = game_get_speed(gamespeed_fps),
 	_callback = -1
 ) {
 	var _tween = instance_create_depth(
