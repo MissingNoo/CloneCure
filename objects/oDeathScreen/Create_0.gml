@@ -21,25 +21,25 @@ create_view_from_instance(self);
 ui = new window(global.game_uis.death);
 ui.fit_to_gui();
 ui.add_draw("GameOver", 
-    AirUIFunctionStart
-        scribble($"[fa_center][fa_middle][c_white]GAME OVER")
-                    .scale_to_box(_w, _h, true)
-    				.draw(_x + _w / 2, (_y + _h / 2) - titleoffset);
-    AirUIFunctionEnd
+	AirUIFunctionStart 
+		scribble($"[fa_center][fa_middle][c_white]GAME OVER")
+			.scale_to_box(_w, _h, true)
+			.draw(_x + _w / 2, (_y + _h / 2) - titleoffset); 
+	AirUIFunctionEnd
 );
 ui.add_draw("Score", 
-    AirUIFunctionStart
-        scribble($"[fa_center][fa_middle][c_white]Score: 0")
-    				.scale_to_box(_w, _h, true)
-    				.draw(_x + _w / 2, _y + _h / 2);
-    AirUIFunctionEnd
+	AirUIFunctionStart
+	scribble($"[fa_center][fa_middle][c_white]Score: 0")
+				.scale_to_box(_w, _h, true)
+				.draw(_x + _w / 2, _y + _h / 2);
+	AirUIFunctionEnd
 );
 ui.add_draw("Coins", 
-    AirUIFunctionStart
-        scribble($"[fa_center][fa_middle][c_yellow]Coins Gained: 0")
-    				.scale_to_box(_w, _h, true)
-    				.draw(_x + _w / 2, _y + _h / 2);
-    AirUIFunctionEnd
+	AirUIFunctionStart
+		scribble($"[fa_center][fa_middle][c_yellow]Coins Gained: {GameData.stage_coins}")
+			.scale_to_box(_w, _h, true)
+		.draw(_x + _w / 2, _y + _h / 2);
+	AirUIFunctionEnd
 );
 ui.add_element("Retry", retry);
 ui.add_element("CharacterSelect", characterselect);

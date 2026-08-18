@@ -104,6 +104,8 @@ ui.add_draw("stage",
 	//scribble($"[fDmg]{minutes} : {seconds}").scale_to_box(_w, _h, true).draw(_x, _y);
 	var strm = $"[ffnt][fa_middle][fa_center]{minutes}:{seconds}";
 	var str = $"[fa_middle][fa_center]{GameData.stage_mode}";
+	///feather ignore GM1019
+	///feather ignore GM2039
 	scribble(str).scale(1).draw(_x + _w / 2, (_y + _h / 2) - string_height_scribble(strm));
 	scribble(strm).scale(1).draw(_x + _w / 2, _y + _h / 2);
 	AirUIFunctionEnd

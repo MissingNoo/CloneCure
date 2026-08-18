@@ -1572,6 +1572,28 @@ w.set_on_animation_end(function() {
 //w.set_collab_materials("BL_Book", "Plug_Type_Asacoco");
 #endregion
 
+#region Fen_Pencil
+w = new weapon("Fen_Pencil");
+w.set_sprite(sFenekoPencil, sFenekoPencil);
+w.set_type(weapon_type.Melee);
+w.set_weight(2);
+w.set_cooldown([210, 210, 210, 210, 127, 127, 127], 1);
+w.set_shoots([1, 1, 2, 2, 2, 2, 4]);
+w.set_hits([10, 10, 10, 10, 999, 999, 999]);
+w.set_damage([7, 7, 7, 12, 12, 12, 12], 
+			 [11, 11, 11, 16, 16, 16, 16]);
+w.set_delay(5);
+w.set_area([1, 1, 1, 1, 1, 1.3, 1.3]);
+w.set_duration(180);
+w.set_afterimage(false);
+w.set_enchants([
+	weapon_enchantments.Damage,
+	weapon_enchantments.Crit,
+	weapon_enchantments.Size,
+	weapon_enchantments.Projectile,
+	weapon_enchantments.Cooldown,
+]);
+
 #region description
 
 #endregion

@@ -1,5 +1,5 @@
 exit_if_paused;
-if (GameData.hp <= 0) { exit; }
+if (GameData[$"hp"] <= 0) { exit; }
 global.seconds += 1 / 60;
 if (global.seconds > 60) {
 	global.seconds = 0;

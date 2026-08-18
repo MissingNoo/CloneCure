@@ -231,11 +231,10 @@ c.set_sprite(sLuminIdle, sLuminRun, sBlank, sBlank)
 //c = new character("Okayu_Nekomata");
 //c.set_sprite(sBlank, sBlank, sOkayuPortrait, spr_Title_Okayu_0)
 	//.set_agency(Agencies.Hololive);
-c = new character("Fubuki_Shirakami");
-c.set_sprite(sFubukiIdle, sFubukiRun, sFubukiPortrait, spr_Title_Fubuki_0)
-	.set_agency(Agencies.Hololive)
-	.set_weapon("Fox_Tail")
-	.set_perks("Kon_Kon", "Friendzone", "Fox_King")
+c = new character("Feneko_Amy");
+c.set_sprite(sFenekoIdle, sFenekoIdle, sFenekoPort, sBlank)
+	.set_agency(Agencies.Indies)
+	.set_weapon("Fen_Pencil")
 	.set_hp(55)
 	.set_atk(1)
 	.set_speed(1.5)

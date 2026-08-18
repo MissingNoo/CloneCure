@@ -32,6 +32,9 @@ if (hp <= 0) {
 				e.on_kill(self);
 			}
 		});
+		if (irandom_range(0, 90) == 1) {
+			instance_create_depth(x, y, depth, oCoin);
+		}
 		instance_destroy();
 	}
 } else {

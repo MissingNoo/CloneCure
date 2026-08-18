@@ -34,20 +34,8 @@ function prop_draw() {
 		player_obj = oPlayerWorld;
 	}
 	
-	var alpha = a
-	&& place_meeting(x, y, player_obj)
-		? 0.75
-		: 1;
-	var _offset = 0;
-	switch (sprite_index) {
-		//case sTree:
-			//_offset = 16;
-			//break;
-		default:
-			// code here
-			break;
-	}
-
-	draw_sprite_ext(sprite_index, image_index, x, y + _offset, 1, 0.75, 0, c_black, 0.25);
+	var alpha = a && place_meeting(x, y, player_obj) ? 0.75 : 1;
+	
+	draw_sprite_ext(sprite_index, image_index, x, y, 1, 0.75, 0, c_black, 0.25);
 	draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, 0, c_white, alpha);
 }
