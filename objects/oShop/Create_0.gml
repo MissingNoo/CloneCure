@@ -16,9 +16,12 @@ cost_xoffset = 130;
 cost_yoffset = 65;
 cost_scale = 2;
 tab_items = [];
-selecting = "item";
+selecting = "tab";
 buysell = 0;
-
+sc_offset = 0;
+sc_yoffset = 0;
+sc_item_width = 0;
+sc_item_height = 0;
 yscroll = 0;
 
 buyfunc = function() {
@@ -88,3 +91,4 @@ for (var i = 0; i < array_length(names); i++) {
 		);
 	}
 }
+event_user(0);

@@ -40,6 +40,7 @@ switch (selecting) {
 		);
 		selected_tab = clamp(selected_tab - up + down, 0, 2);
 		update_tab();
+		selected_item_num = clamp(selected_item_num, 0, array_length(tab_items) - 1);
 		if (right) {
 			selecting = "item";
 		}

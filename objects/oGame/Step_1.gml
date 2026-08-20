@@ -1,4 +1,4 @@
-if (os_type == os_android or GameData.debug == false) {
+if (os_type == os_android || GameData.debug == false) {
 	show_debug_overlay(false);
 }
 if (keyboard_check_pressed(vk_f9)) {
@@ -18,8 +18,8 @@ if (GameData.on_stage) {
 	}
 } else {
 	if (instance_exists(oGameUI)) {
-    	instance_destroy(oGameUI);
-    }
+		instance_destroy(oGameUI);
+	}
 }
 if (room != lastroom) {
 	lastroom = room;

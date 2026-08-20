@@ -134,6 +134,7 @@ c.set_sprite(sAmeliaIdle, sAmeliaRun, sAmeliaPortrait, sTitleAme)
 //.set_atk(30)
 //.set_crit(1.10)
 //.set_ballsize(3)
+
 //.set_flat(false);
 //
 //c = new character("Takanashi_Kiara");

@@ -1,7 +1,7 @@
 switch (room) {
-    case rCharSelect:
+	case rCharSelect:
 	case rMainMenu:
-        GameData.on_stage = false;
-        reset_cursor();
-        break;
+		GameData.on_stage = false;
+		reset_cursor();
+		break;
 }
