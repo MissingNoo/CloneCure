@@ -1,0 +1,1 @@
+GameData.is_paused = currentinst != noone;

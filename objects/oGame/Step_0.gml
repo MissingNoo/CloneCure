@@ -50,8 +50,7 @@ if (GameData.on_stage) {
 	if (!GameData.is_paused && GameData.xp >= GameData.needed_xp) {
 		if (!instance_exists(oLevelUp)) {
 			GameData.xp -= GameData.needed_xp;
-			pause_game();
-			instance_create_depth(0, 0, depth - 2, oLevelUp);
+			global.events.broadcast("pause", "lvlup");
 		}
 	}
 	#endregion
@@ -64,6 +63,6 @@ if (GameData.on_stage) {
 	if (
 		keyboard_check_pressed(vk_escape) || device_mouse_check_button_pressed(3, mb_left)
 	) {
-		pause_game("pause");
+		global.events.broadcast("pause", "normal");
 	}
 }
