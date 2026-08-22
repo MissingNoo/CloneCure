@@ -260,6 +260,7 @@
     {"id":{"name":"oAchNotify","path":"objects/oAchNotify/oAchNotify.yy",},},
     {"id":{"name":"oAlert","path":"objects/oAlert/oAlert.yy",},},
     {"id":{"name":"oAnvil","path":"objects/oAnvil/oAnvil.yy",},},
+    {"id":{"name":"oAnvilInterface","path":"objects/oAnvilInterface/oAnvilInterface.yy",},},
     {"id":{"name":"obj_tween","path":"objects/obj_tween/obj_tween.yy",},},
     {"id":{"name":"Object74","path":"objects/Object74/Object74.yy",},},
     {"id":{"name":"objNekoPresenceDemo","path":"objects/objNekoPresenceDemo/objNekoPresenceDemo.yy",},},

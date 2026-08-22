@@ -3,7 +3,7 @@ currentinst = noone;
 events = {
 	lvlup : oLevelUp,
 	normal : oPauseUI,
-	anvil : oAnvil
+	anvil : oAnvilInterface
 }
 dont_deactivate = [input_controller_object, oGameUI, oPause, oGame];
 pause = function (reason) {

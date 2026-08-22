@@ -1,4 +1,5 @@
 instance_create_depth(x, y, depth, oCam);
+instance_create_depth(x, y + 30, depth, oAnvil);
 char = Characters[$ GameData.selected_character];
 try {
 	sprites = char.skins[$ SaveData.characters[$ GameData.selected_character].lastoutfit];
