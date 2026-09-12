@@ -12,6 +12,10 @@ start_x = -300;
 icon_x_offset = 3;
 icon_y_offset = 13;
 icon_scale = 2;
+if (!instance_exists(oGameUI)) {
+	instance_destroy();
+	exit;
+} 
 depth = oGameUI.depth;
 if (instance_exists(oLevelUp)) {
 	depth = oLevelUp.depth - 1;

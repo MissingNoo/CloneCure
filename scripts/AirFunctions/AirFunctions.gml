@@ -476,17 +476,21 @@ function button(_text) constructor {
 	};
 
 	static on_click = function() {
+		var can_click_mouse = (gui ? mouse_in_area_gui(area) : mouse_in_area(area));
+		var click_keyboard = input_check_pressed("accept");
+		var click_mouse = device_mouse_check_button_released(0, mb_left);
+		var was_clicked = (click_mouse and can_click_mouse) or (click_keyboard)
 		if (
 			enabled
-			&& ((gui ? mouse_in_area_gui(area) : mouse_in_area(area)) or on_area)
-			&& (device_mouse_check_button_pressed(0, mb_left) or input_check_pressed("accept"))
 			&& gui_can_interact()
+			&& was_clicked
 		) {
 			func(self);
 			global.elementselected = self;
 		}
 		return self;
 	};
+	
 	static draw = function() {
 		if (area[0] == area[2]) {
 			exit;
@@ -557,8 +561,8 @@ function button(_text) constructor {
 		if (use_text) {
 			scribble($"[alpha,{alpha}][{color}][fa_center][fa_middle]{text}")
 				.scale_to_box(
-					abs(area[0] - area[2]) - string_width("X") - 2,
-					abs(area[1] - area[3]) - string_height("X") - 2,
+					abs(area[0] - area[2]) - string_width("X") - 4,
+					abs(area[1] - area[3]),
 					true
 				)
 				.draw(area[0] + ((area[2] - area[0]) / 2), _y);
@@ -978,8 +982,16 @@ function ui_element_list() constructor {
 
 	static add = function(e) {
 		if (is_array(e)) {
+			for (var i = 0; i < array_length(e); i++) {
+				if (e[i].type == "button") {
+					e[i].unselect_on_leave = false;
+				}
+			}
 			list = array_concat(list, e);
 		} else {
+			if (e.type == "button") {
+				e.unselect_on_leave = false;
+			}
 			array_push(list, e);
 		}
 		return self;

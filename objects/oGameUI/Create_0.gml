@@ -1,4 +1,5 @@
 md5_frame = AirLib.frame + 60;
+show_debug_overlay(true);
 current_md5 = "";
 last_md5 = "";
 kill_enemies = false;

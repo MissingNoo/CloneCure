@@ -27,5 +27,6 @@ if (_r >= 0) {
 } else {
     network_destroy(_s);
     show_debug_message("[GMSync] Alarm0: VS Code not running (result=" + string(_r) + "), retry in 3s...");
-    alarm[0] = room_speed * 3;
+	instance_destroy();
+    //alarm[0] = room_speed * 3;
 }

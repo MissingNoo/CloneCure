@@ -4963,8 +4963,8 @@ global.game_uis.anvil = {
           "nodes":[
             {
               "padding":10.0,
-              "height":60.0,
-              "flex":0.5,
+              "height":173.0,
+              "flex":0.69999998807907104,
               "nodes":[
                 {
                   "marginBottom":5.0,
@@ -5037,7 +5037,7 @@ global.game_uis.anvil = {
                   "marginTop":5.0,
                   "flexDirection":"row",
                   "padding":10.0,
-                  "height":60.0,
+                  "height":-2991.0,
                   "flex":1.0,
                   "nodes":[
                     {
@@ -5102,6 +5102,61 @@ global.game_uis.anvil = {
                     }
                   ],
                   "name":"items_panel",
+                  "data":{
+                  }
+                },
+                {
+                  "flexDirection":"row",
+                  "padding":10.0,
+                  "height":60.0,
+                  "flex":0.5,
+                  "nodes":[
+                    {
+                      "padding":10.0,
+                      "flex":1.0,
+                      "name":"panel_53731",
+                      "data":{
+                      },
+                      "width":60.0
+                    },
+                    {
+                      "flex":3.0,
+                      "name":"Upgrade_button",
+                      "data":{
+                        "tags":[
+                          "button"
+                        ]
+                      },
+                      "width":60.0
+                    },
+                    {
+                      "padding":10.0,
+                      "flex":1.0,
+                      "name":"panel_41576",
+                      "data":{
+                      },
+                      "width":60.0
+                    },
+                    {
+                      "flex":3.0,
+                      "name":"Enchant_button",
+                      "data":{
+                        "tags":[
+                          "button"
+                        ]
+                      },
+                      "width":60.0
+                    },
+                    {
+                      "padding":10.0,
+                      "flex":1.0,
+                      "name":"panel_56475",
+                      "data":{
+                      },
+                      "width":60.0
+                    }
+                  ],
+                  "name":"panel_btn",
                   "data":{
                   }
                 }

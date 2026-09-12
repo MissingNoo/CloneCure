@@ -19,4 +19,4 @@ if (GameData.hp <= 0) {
 }
 draw_set_alpha(1);
 draw_set_color(c_white);
-//draw_text(10, gui_y_percent(95), $"Current:{fps_real}: Average:{fps_average} : {fps} xpqueue: {ds_queue_size(GameData.xp_list)} dmgqueue: {ds_queue_size(GameData.dmg_list)}");
+draw_text(10, gui_y_percent(95), $"FPS:{fps} Real:{fps_real}: Average:{fps_average} xpqueue: {ds_queue_size(GameData.xp_list)} dmgqueue: {ds_queue_size(GameData.dmg_list)}");
