@@ -17,6 +17,9 @@ other.hit_frame[$ $"i{id}"] = AirLib.frame + wid.hit_cooldown;
 
 other.inv_frame = AirLib.frame + 15;
 dmg = irandom_range(wid.mindmg[wid.level], wid.maxdmg[wid.level]);
+if (wid.enhacement > 0) {
+	dmg += (2 * wid.enhacement) / max_projectiles;
+}
 global.lastenemy = other;
 on_hit();
 //Growth
