@@ -1,11 +1,11 @@
 ///UI
 //try {
-	//ui = new window(json_parse(json_stringify(json_load("/home/airgeadlamh/.config/AirLibGMProject//export.ui"))));
+	ui = new window(json_parse(json_stringify(json_load("/home/airgeadlamh/.config/AirLibGMProject//export.ui"))));
 //}
 //catch (error) {
 	//
 //}
-ui = new window(global.game_uis.anvil);
+//ui = new window(global.game_uis.anvil);
 ui.fit_to_gui();
 for (var i = 0; i <= 5; i++) {
 	ui.add_draw($"w{i}",
@@ -55,7 +55,11 @@ ui.add_draw("item_panel",
 ui.add_draw("item_name",
 	AirUIFunctionStart
 		if (!is_undefined(selected)) {
-			scribble(lexicon_text($"{selected.lex}.{selected.name}.name")).wrap(_w).draw(_x, _y);
+			var append = "";
+			if (selected.level >= selected.max_level) {
+				append = $" [c_yellow] +{selected.enhacement} >> +{selected.enhacement + 1}"
+			}
+			scribble(lexicon_text($"{selected.lex}.{selected.name}.name") + append).wrap(_w).draw(_x, _y);
 		} else {
 			scribble("Item Name").wrap(_w).draw(_x, _y);
 		}
@@ -64,7 +68,13 @@ ui.add_draw("item_name",
 ui.add_draw("item_desc",
 	AirUIFunctionStart
 		if (!is_undefined(selected)) {
-			scribble(lexicon_text($"{selected.lex}.{selected.name}.desc")).wrap(_w).draw(_x, _y);
+			var desc = "";
+			if (selected.level < selected.max_level) {
+				desc = lexicon_text($"{selected.lex}.{selected.name}.{selected.level + 1}");
+			} else {
+				desc = lexicon_text($"Anvil.Enhance.{clamp(selected.enhacement, 0, 3)}");
+			}
+			scribble(desc).wrap(_w).draw(_x, _y);
 		} else {
 			scribble(Lorem).wrap(_w).draw(_x, _y);
 		}
@@ -87,6 +97,7 @@ Upgrade_button.set_function(method(self, function() {
 		selected.level++;
 	} else {
 		GameData.stage_coins -= 50 * selected.enhacement;
+		var rate = clamp(100 - (10 * selected.enhacement), 10, 100);
 		selected.enhacement++;
 	}
 	GameData.used_anvil = true;

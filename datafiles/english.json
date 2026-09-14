@@ -179,10 +179,10 @@
 		},
         "Anvil" : {
 			"Enhance":{
-				"0":"Increase base attack by 2",
-				"1":"Increase base attack by 2",
-				"2":"Increase base attack by 2.5",
-				"3":"Increase base attack by 3"
+				"0":"Increase base damage by [c_green]2[c_white].",
+				"1":"Increase base damage by [c_green]2[c_white].",
+				"2":"Increase base damage by [c_green]2.5[c_white].",
+				"3":"Enhance further to increase base damage by [c_green]3[c_white]."
 			}
         },
         "Weapons":{
@@ -194,7 +194,7 @@
 				"4" : "Reduce the time between attacks by [c_green]20%[c_white].",
 				"5" : "Increase attack area by and damage by [c_green]30%[c_white].",
 				"6" : "Reduce the time between attacks by [c_green]20%[c_white].",
-				"7" : "Sausage swing becomes a [c_green]2-hit combo[c_white].",
+				"7" : "Sausage swing becomes a [c_green]2-hit combo[c_white]."
 			},
 			"Aik":{
 				"name":"Aik",

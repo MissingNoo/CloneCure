@@ -25,7 +25,8 @@ st.add("idle",
 				Upgrade_button.enabled = true;
 				if (row == 0 and selected.level == selected.max_level) {
 					var en_value = 50 + (50 * selected.enhacement);
-					Upgrade_button.text = $"ENHANCE ({en_value})";
+					var rate = clamp(100 - (10 * selected.enhacement), 10, 100);
+					Upgrade_button.text = $"Cost: [c_white][sPhaseCoinNew][{Upgrade_button.on_area ? "c_black" : "c_white"}] {en_value} UPGRADE ({rate}%)";
 					if (en_value > GameData.stage_coins) {
 						Upgrade_button.enabled = false;
 					}
