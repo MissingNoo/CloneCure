@@ -4896,337 +4896,222 @@ global.game_uis.revive = {
 
 global.game_uis.anvil = {
   "left":275.0,
-  "top":50.0,
-  "width":1280.0,
-  "height":720.0,
   "nodes":[
     {
       "left":0.0,
-      "top":0.0,
-      "flexDirection":"row",
-      "padding":0.0,
-      "height":300.0,
-      "flex":1.0,
       "nodes":[
         {
+          "width":60.0,
           "padding":0.0,
-          "flex":1.0,
           "name":"grid_panel1",
           "data":{
           },
-          "width":60.0
+          "flex":1.0
+        },
+        {
+          "margin":0.0,
+          "width":60.0,
+          "padding":0.0,
+          "name":"grid_panel2",
+          "data":{
+          },
+          "flex":1.0
         },
         {
           "width":60.0,
           "padding":0.0,
-          "flex":1.0,
-          "margin":0.0,
-          "name":"grid_panel2",
-          "data":{
-          }
-        },
-        {
-          "padding":0.0,
-          "flex":1.0,
           "name":"grid_panel3",
           "data":{
           },
-          "width":60.0
+          "flex":1.0
         }
       ],
+      "top":0.0,
+      "padding":0.0,
+      "height":300.0,
+      "flexDirection":"row",
       "name":"top_panel_grid",
       "data":{
-      }
+      },
+      "flex":1.0
     },
     {
       "left":0.0,
-      "top":0.0,
-      "flexDirection":"row",
-      "padding":0.0,
-      "height":300.0,
-      "flex":1.7000000476837158,
       "nodes":[
         {
+          "width":60.0,
           "padding":0.0,
-          "flex":1.5,
           "name":"grid_panel4",
           "data":{
           },
-          "width":60.0
+          "flex":1.2000000476837158
         },
         {
-          "border":0.0,
-          "width":60.0,
-          "padding":0.0,
-          "flex":1.0,
           "margin":0.0,
           "nodes":[
             {
-              "padding":10.0,
-              "height":173.0,
-              "flex":0.69999998807907104,
               "nodes":[
                 {
-                  "marginBottom":5.0,
-                  "flexDirection":"row",
-                  "padding":10.0,
-                  "height":60.0,
-                  "flex":1.0,
                   "nodes":[
                     {
                       "marginRight":5.0,
                       "marginLeft":0.0,
                       "width":60.0,
                       "padding":10.0,
-                      "flex":1.0,
                       "name":"w0",
                       "data":{
-                      }
+                      },
+                      "flex":1.0
                     },
                     {
                       "marginRight":5.0,
                       "width":60.0,
                       "padding":10.0,
-                      "flex":1.0,
                       "name":"w1",
                       "data":{
-                      }
+                      },
+                      "flex":1.0
                     },
                     {
                       "marginRight":5.0,
                       "width":60.0,
                       "padding":10.0,
-                      "flex":1.0,
                       "name":"w2",
                       "data":{
-                      }
+                      },
+                      "flex":1.0
                     },
                     {
                       "marginRight":5.0,
                       "width":60.0,
                       "padding":10.0,
-                      "flex":1.0,
                       "name":"w3",
                       "data":{
-                      }
+                      },
+                      "flex":1.0
                     },
                     {
                       "marginRight":5.0,
                       "width":60.0,
                       "padding":10.0,
-                      "flex":1.0,
                       "name":"w4",
                       "data":{
-                      }
+                      },
+                      "flex":1.0
                     },
                     {
                       "marginRight":5.0,
                       "width":60.0,
                       "padding":10.0,
-                      "flex":1.0,
                       "name":"w5",
                       "data":{
-                      }
+                      },
+                      "flex":1.0
                     }
                   ],
-                  "name":"weapons_panel",
-                  "data":{
-                  }
-                },
-                {
-                  "marginTop":5.0,
-                  "flexDirection":"row",
-                  "padding":10.0,
-                  "height":-2991.0,
-                  "flex":1.0,
-                  "nodes":[
-                    {
-                      "marginRight":5.0,
-                      "marginLeft":0.0,
-                      "width":60.0,
-                      "padding":10.0,
-                      "flex":1.0,
-                      "name":"i0",
-                      "data":{
-                      }
-                    },
-                    {
-                      "marginRight":5.0,
-                      "marginLeft":0.0,
-                      "width":60.0,
-                      "padding":10.0,
-                      "flex":1.0,
-                      "name":"i1",
-                      "data":{
-                      }
-                    },
-                    {
-                      "marginRight":5.0,
-                      "marginLeft":0.0,
-                      "width":60.0,
-                      "padding":10.0,
-                      "flex":1.0,
-                      "name":"i2",
-                      "data":{
-                      }
-                    },
-                    {
-                      "marginRight":5.0,
-                      "marginLeft":0.0,
-                      "width":60.0,
-                      "padding":10.0,
-                      "flex":1.0,
-                      "name":"i3",
-                      "data":{
-                      }
-                    },
-                    {
-                      "marginRight":5.0,
-                      "marginLeft":0.0,
-                      "width":60.0,
-                      "padding":10.0,
-                      "flex":1.0,
-                      "name":"i4",
-                      "data":{
-                      }
-                    },
-                    {
-                      "marginRight":5.0,
-                      "marginLeft":0.0,
-                      "width":60.0,
-                      "padding":10.0,
-                      "flex":1.0,
-                      "name":"i5",
-                      "data":{
-                      }
-                    }
-                  ],
-                  "name":"items_panel",
-                  "data":{
-                  }
-                },
-                {
-                  "flexDirection":"row",
                   "padding":10.0,
                   "height":60.0,
-                  "flex":0.5,
+                  "marginBottom":5.0,
+                  "flexDirection":"row",
+                  "name":"weapons_panel",
+                  "data":{
+                  },
+                  "flex":1.0
+                },
+                {
                   "nodes":[
                     {
+                      "marginRight":5.0,
+                      "marginLeft":0.0,
+                      "width":60.0,
                       "padding":10.0,
-                      "flex":1.0,
-                      "name":"panel_53731",
+                      "name":"i0",
                       "data":{
                       },
-                      "width":60.0
+                      "flex":1.0
                     },
                     {
-                      "flex":3.0,
-                      "name":"Upgrade_button",
-                      "data":{
-                        "tags":[
-                          "button"
-                        ]
-                      },
-                      "width":60.0
-                    },
-                    {
+                      "marginRight":5.0,
+                      "marginLeft":0.0,
+                      "width":60.0,
                       "padding":10.0,
-                      "flex":1.0,
-                      "name":"panel_41576",
+                      "name":"i1",
                       "data":{
                       },
-                      "width":60.0
+                      "flex":1.0
                     },
                     {
-                      "flex":3.0,
-                      "name":"Enchant_button",
-                      "data":{
-                        "tags":[
-                          "button"
-                        ]
-                      },
-                      "width":60.0
-                    },
-                    {
+                      "marginRight":5.0,
+                      "marginLeft":0.0,
+                      "width":60.0,
                       "padding":10.0,
-                      "flex":1.0,
-                      "name":"panel_56475",
+                      "name":"i2",
                       "data":{
                       },
-                      "width":60.0
+                      "flex":1.0
+                    },
+                    {
+                      "marginRight":5.0,
+                      "marginLeft":0.0,
+                      "width":60.0,
+                      "padding":10.0,
+                      "name":"i3",
+                      "data":{
+                      },
+                      "flex":1.0
+                    },
+                    {
+                      "marginRight":5.0,
+                      "marginLeft":0.0,
+                      "width":60.0,
+                      "padding":10.0,
+                      "name":"i4",
+                      "data":{
+                      },
+                      "flex":1.0
+                    },
+                    {
+                      "marginRight":5.0,
+                      "marginLeft":0.0,
+                      "width":60.0,
+                      "padding":10.0,
+                      "name":"i5",
+                      "data":{
+                      },
+                      "flex":1.0
                     }
                   ],
-                  "name":"panel_btn",
+                  "padding":10.0,
+                  "height":-2991.0,
+                  "marginTop":5.0,
+                  "flexDirection":"row",
+                  "name":"items_panel",
                   "data":{
-                  }
+                  },
+                  "flex":1.0
                 }
               ],
+              "padding":10.0,
+              "height":173.0,
+              "marginBottom":10.0,
               "name":"all_panel",
               "data":{
-              }
-            }
-          ],
-          "name":"grid_panel5",
-          "data":{
-          }
-        },
-        {
-          "width":60.0,
-          "padding":0.0,
-          "flex":0.80000001192092896,
-          "name":"grid_panel6",
-          "data":{
-          },
-          "flexBasis":0.0
-        }
-      ],
-      "name":"middle_panel_grid",
-      "data":{
-      }
-    },
-    {
-      "left":0.0,
-      "top":0.0,
-      "flexDirection":"row",
-      "padding":0.0,
-      "height":300.0,
-      "flex":1.0,
-      "nodes":[
-        {
-          "width":60.0,
-          "padding":0.0,
-          "flex":0.69999998807907104,
-          "margin":0.0,
-          "name":"grid_panel7",
-          "data":{
-          }
-        },
-        {
-          "width":60.0,
-          "padding":0.0,
-          "flex":1.0,
-          "nodes":[
+              },
+              "flex":0.59999996423721313
+            },
             {
-              "padding":10.0,
-              "height":60.0,
-              "flex":0.69999998807907104,
               "nodes":[
                 {
                   "marginLeft":6.0,
-                  "marginTop":11.0,
                   "padding":10.0,
                   "height":60.0,
-                  "flex":0.10000000149011612,
+                  "marginTop":7.0,
                   "name":"item_name",
                   "data":{
-                  }
+                  },
+                  "flex":0.10000000149011612
                 },
                 {
-                  "marginTop":-10.0,
-                  "flexDirection":"row",
-                  "padding":10.0,
-                  "height":60.0,
-                  "flex":0.69999998807907104,
                   "nodes":[
                     {
                       "marginRight":20.0,
@@ -5238,43 +5123,152 @@ global.game_uis.anvil = {
                       }
                     },
                     {
+                      "margin":0.0,
                       "width":60.0,
                       "padding":10.0,
-                      "flex":1.0,
-                      "margin":0.0,
                       "name":"item_desc",
                       "data":{
-                      }
+                      },
+                      "flex":1.0
                     }
                   ],
+                  "padding":10.0,
+                  "height":60.0,
+                  "marginTop":-10.0,
+                  "flexDirection":"row",
                   "name":"panel",
                   "data":{
-                  }
+                  },
+                  "flex":0.80000001192092896
                 }
               ],
+              "border":0.0,
+              "padding":10.0,
+              "height":60.0,
+              "marginTop":0.0,
+              "marginBottom":0.0,
               "name":"item_panel",
               "data":{
-              }
+              },
+              "flex":0.30000001192092896
+            },
+            {
+              "nodes":[
+                {
+                  "width":60.0,
+                  "padding":10.0,
+                  "name":"panel_53731",
+                  "data":{
+                  },
+                  "flex":1.0
+                },
+                {
+                  "width":60.0,
+                  "name":"Upgrade_button",
+                  "data":{
+                    "tags":[
+                      "button"
+                    ]
+                  },
+                  "flex":3.0
+                },
+                {
+                  "width":60.0,
+                  "padding":10.0,
+                  "name":"panel_56475",
+                  "data":{
+                  },
+                  "flex":0.5
+                },
+                {
+                  "width":60.0,
+                  "name":"Enchant_button",
+                  "data":{
+                    "tags":[
+                      "button"
+                    ]
+                  },
+                  "flex":1.0
+                }
+              ],
+              "padding":10.0,
+              "height":60.0,
+              "flexDirection":"row",
+              "name":"panel_btn",
+              "data":{
+              },
+              "flex":0.10000000149011612
             }
           ],
-          "name":"grid_panel8",
+          "border":0.0,
+          "width":60.0,
+          "padding":0.0,
+          "name":"grid_panel5",
           "data":{
-          }
+          },
+          "flex":1.0
         },
         {
+          "flexBasis":0.0,
+          "width":60.0,
           "padding":0.0,
-          "flex":0.5,
+          "name":"grid_panel6",
+          "data":{
+          },
+          "flex":0.40000000596046448
+        }
+      ],
+      "top":0.0,
+      "padding":0.0,
+      "height":300.0,
+      "flexDirection":"row",
+      "name":"middle_panel_grid",
+      "data":{
+      },
+      "flex":2.7000000476837158
+    },
+    {
+      "left":0.0,
+      "nodes":[
+        {
+          "margin":0.0,
+          "width":60.0,
+          "padding":0.0,
+          "name":"grid_panel7",
+          "data":{
+          },
+          "flex":0.69999998807907104
+        },
+        {
+          "width":60.0,
+          "padding":0.0,
+          "name":"grid_panel8",
+          "data":{
+          },
+          "flex":1.0
+        },
+        {
+          "width":60.0,
+          "padding":0.0,
           "name":"grid_panel9",
           "data":{
           },
-          "width":60.0
+          "flex":0.5
         }
       ],
+      "top":0.0,
+      "padding":0.0,
+      "height":300.0,
+      "flexDirection":"row",
       "name":"bottom_panel_grid",
       "data":{
-      }
+      },
+      "flex":1.0
     }
   ],
+  "top":50.0,
+  "width":1280.0,
+  "height":720.0,
   "name":"main_panel",
   "data":{
   }

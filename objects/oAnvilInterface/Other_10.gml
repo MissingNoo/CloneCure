@@ -1,11 +1,11 @@
 ///UI
 //try {
-	ui = new window(json_parse(json_stringify(json_load("/home/airgeadlamh/.config/AirLibGMProject//export.ui"))));
+	//ui = new window(json_parse(json_stringify(json_load("/home/airgeadlamh/.config/AirLibGMProject//export.ui"))));
 //}
 //catch (error) {
 	//
 //}
-//ui = new window(global.game_uis.anvil);
+ui = new window(global.game_uis.anvil);
 ui.fit_to_gui();
 for (var i = 0; i <= 5; i++) {
 	ui.add_draw($"w{i}",
